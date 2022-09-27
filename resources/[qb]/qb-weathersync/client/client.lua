@@ -26,7 +26,7 @@ RegisterNetEvent('qb-weathersync:client:DisableSync', function()
 			SetWeatherTypePersist('CLEAR')
 			SetWeatherTypeNow('CLEAR')
 			SetWeatherTypeNowPersist('CLEAR')
-			NetworkOverrideClockTime(18, 0, 0)
+			NetworkOverrideClockTime(0, 0, 0)
 			Wait(5000)
 		end
 	end)
