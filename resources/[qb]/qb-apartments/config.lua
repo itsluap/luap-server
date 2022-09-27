@@ -40,7 +40,7 @@ Apartments.Locations = {
         name = "apartment3",
         label = "Integrity Way",
         coords = {
-            enter = vector4(269.73, -640.75, 42.02, 249.07),
+            enter = vector4(288.1, -654.69 42.02, 345.67),
         },
         polyzoneBoxData = {
             heading = 250,
