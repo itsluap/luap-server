@@ -9,7 +9,6 @@ local Translations = {
         vgkeys = 'Vous donnez les clés.',
         vgetkeys = 'Vous obtenez les clés du véhicule!',
         fpid = 'Remplissez les arguments ID et plaque.',
-        cjackfail = 'Le détournement de voiture a échoué',
     },
     progress = {
         takekeys = 'Prend les clés du corps..',
@@ -20,9 +19,9 @@ local Translations = {
         skeys = '~g~[H]~w~ - Chercher les clés',
         tlock = 'Verrouiller/Déverrouiller le véhicule',
         palert = 'Vol de véhicule en cours. Type: ',
-        engine = 'Allumer/Eteindre le moteur',
     },
     addcom = {
+        engine = 'Allumer/Eteindre le moteur',
         givekeys = 'Donner les clés à quelqu\'un. Si aucun ID, donne à la personne la plus proche ou à tout le monde dans le véhicule.',
         givekeys_id = 'id',
         givekeys_id_help = 'ID du joueur',

@@ -13,7 +13,6 @@ local Translations = {
         vgkeys = 'Ai dat cheile vehiculului.',
         vgetkeys = 'Ai primit cheile vehiculului!',
         fpid = 'Trebuie sa introduci ID-ul jucatorului si numarul de inmatriculare',
-        cjackfail = 'Furtul de mașină a eșuat',
     },
     progress = {
         takekeys = 'Iei chile de la vehicul...',
@@ -24,9 +23,9 @@ local Translations = {
         skeys = '~g~[H]~w~ - Cloneaza cheile',
         tlock = 'Blocheaza/Deblocheaza vehiculul',
         palert = 'Furt auto in desfasurare. Tip: ',
-        engine = 'Porneste/Opreste motorul',
     },
     addcom = {
+        engine = 'Porneste/Opreste motorul',
         givekeys = 'Dai cheile vehiculului unei alte persoane. Daca nu se precizeaza ID-ul, cheile se duc celei mai apropiate persoane de tine.',
         givekeys_id = 'ID',
         givekeys_id_help = 'ID-ul jucatorului caruia vrei sa-i dai cheile',
