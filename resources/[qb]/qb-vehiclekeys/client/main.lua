@@ -401,14 +401,14 @@ function LockpickDoor(isAdvanced)
     if success then
         lockpickFinish(success)
         TaskPlayAnim(ped, "veh@break_in@0h@p_m_one@", "low_force_entry_ds", 3.0, 3.0, -1, 16, 0, 0, 0, 0)
-	else
+	    else
         TriggerServerEvent('hud:server:GainStress', math.random(1, 4))
         QBCore.Functions.Notify("You failed lock-pick the vehicle !", "error")
-	end
+	    end
     end, 2, 20) -- NumberOfCircles, MS
 end
 
-function LockpickFinishCallback(success)
+function lockpickFinish(success)
     local vehicle = QBCore.Functions.GetClosestVehicle()
 
     local chance = math.random()
@@ -420,7 +420,7 @@ function LockpickFinishCallback(success)
             TriggerServerEvent('qb-vehiclekeys:server:AcquireVehicleKeys', QBCore.Functions.GetPlate(vehicle))
         else
             QBCore.Functions.Notify(Lang:t("notify.vlockpick"), 'success')
-            TriggerServerEvent('qb-vehiclekeys:server:setVehLockState', NetworkGetNetworkIdFromEntity(vehicle), 1)
+            SetVehicleDoorsLocked(vehicle, 1)
         end
 
     else
@@ -439,57 +439,19 @@ function LockpickFinishCallback(success)
     end
 end
 
---[[
-function Hotwire(vehicle, plate)
-    local hotwireTime = math.random(Config.minHotwireTime, Config.maxHotwireTime)
-    local ped = PlayerPedId()
-    IsHotwiring = true
-
-    SetVehicleAlarm(vehicle, true)
-    SetVehicleAlarmTimeLeft(vehicle, hotwireTime)
-    QBCore.Functions.Progressbar("hotwire_vehicle", Lang:t("progress.hskeys"), hotwireTime, false, true, {
-        disableMovement = true,
-        disableCarMovement = true,
-        disableMouse = false,
-        disableCombat = true
-    }, {
-        animDict = "anim@amb@clubhouse@tutorial@bkr_tut_ig3@",
-        anim = "machinic_loop_mechandplayer",
-        flags = 16
-    }, {}, {}, function() -- Done
-        StopAnimTask(ped, "anim@amb@clubhouse@tutorial@bkr_tut_ig3@", "machinic_loop_mechandplayer", 1.0)
-        TriggerServerEvent('hud:server:GainStress', math.random(1, 4))
-        if (math.random() <= Config.HotwireChance) then
-            TriggerServerEvent('qb-vehiclekeys:server:AcquireVehicleKeys', plate)
-        else
-            QBCore.Functions.Notify(Lang:t("notify.fvlockpick"), "error")
-        end
-        Wait(Config.TimeBetweenHotwires)
-        IsHotwiring = false
-    end, function() -- Cancel
-        StopAnimTask(ped, "anim@amb@clubhouse@tutorial@bkr_tut_ig3@", "machinic_loop_mechandplayer", 1.0)
-        IsHotwiring = false
-    end)
-    SetTimeout(10000, function()
-        AttemptPoliceAlert("steal")
-    end)
-    IsHotwiring = false
-end
-]]--
-
 function Hotwire(vehicle, plate)
     local ped = PlayerPedId()
     IsHotwiring = true
 
     SetVehicleAlarm(vehicle, true)
-    SetVehicleAlarmTimeLeft(vehicle, hotwireTime)
+    SetVehicleAlarmTimeLeft(vehicle, 20000)
     exports['ps-ui']:Circle(function(success)
     if success then
         TriggerServerEvent('qb-vehiclekeys:server:AcquireVehicleKeys', plate)
         else
         QBCore.Functions.Notify(Lang:t("notify.fvlockpick"), "error")
         end
-    end, 2, 20) -- NumberOfCircles, MS
+    end, 5, 20) -- NumberOfCircles, MS
 
     SetTimeout(10000, function()
         AttemptPoliceAlert("steal")
