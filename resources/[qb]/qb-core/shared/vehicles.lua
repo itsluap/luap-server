@@ -4581,6 +4581,27 @@ QBShared.Vehicles = {
         ['hash'] = `weevil2`,
         ['shop'] = 'pdm',
     },
+
+	-- LUAP VEHICELS --
+
+	['chr20'] = {
+        ['name'] = '2020 Hellcat',
+        ['brand'] = 'Dodge',
+        ['model'] = 'chr20',
+        ['price'] = 69645,
+        ['category'] = 'muscle',
+        ['hash'] = `chr20`,
+        ['shop'] = 'luap',
+    },
+	['redeye'] = {
+        ['name'] = 'Redeye',
+        ['brand'] = 'Dodge',
+        ['model'] = 'redeye',
+        ['price'] = 79725,
+        ['category'] = 'muscle',
+        ['hash'] = `redeye`,
+        ['shop'] = 'luap',
+    },
 }
 
 for _, v in pairs(QBShared.Vehicles) do

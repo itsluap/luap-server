@@ -30,7 +30,7 @@
 }
 
 .v-btn.location:hover {
-    background-color: #a90d2ca6!important;
+    background-color: #53B3CB!important;
     transition: 300ms;
 }
 
@@ -43,7 +43,7 @@
 }
 
 .v-btn.location.selected {
-    background-color: #a90d2ca6!important;
+    background-color: #53B3CB!important;
 }
 
 .submit-spawn {
