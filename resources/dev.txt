@@ -5,7 +5,7 @@ Main Stuff:
 To Do:
     - shadows in houses are broke, apartments are fine
     - change spawn options to last location and apartment (if possible)
-    - move city hall script
+    - move city hall script into mlo, change ped, customize menu
     - cant clear calls from dispatch in mdt
     - apartment stash only shows up when standing on top of it
     - look in to new banking script
@@ -17,6 +17,7 @@ To Do:
     - burgershot w/ working drive thru
     - gun crafting or blackmarket or both? (ask icey)
     - casino - working wheel spin?
+    - 
     -
     -
     -
