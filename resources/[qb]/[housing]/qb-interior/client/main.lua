@@ -64,19 +64,19 @@ end
 local function CreateApartmentShell(spawn)
 	local objects = {}
     local POIOffsets = {}
-	POIOffsets.exit = json.decode('{"x": 4.693, "y": -6.015, "z": 1.11, "h":358.634}')
+	POIOffsets.exit = json.decode('{"z":1.2,"y":3.00,"x":4.00,"h":2.26}')
 	DoScreenFadeOut(500)
     while not IsScreenFadedOut() do
         Wait(10)
     end
-	RequestModel(`shell_v16low`)
-	while not HasModelLoaded(`shell_v16low`) do
+	RequestModel(`gabz_pinkcage`)
+	while not HasModelLoaded(`gabz_pinkcage`) do
 	    Wait(1000)
 	end
-	local house = CreateObject(`shell_v16low`, spawn.x, spawn.y, spawn.z, false, false, false)
+	local house = CreateObject(`gabz_pinkcage`, spawn.x, spawn.y, spawn.z, false, false, false)
     FreezeEntityPosition(house, true)
 	objects[#objects+1] = house
-	TeleportToInterior(spawn.x + POIOffsets.exit.x, spawn.y + POIOffsets.exit.y, spawn.z + POIOffsets.exit.z, POIOffsets.exit.h)
+	TeleportToInterior(spawn.x - 3.32, spawn.y - 3.69, spawn.z + 1.2, POIOffsets.exit.h)
     return { objects, POIOffsets }
 end
 

@@ -1050,8 +1050,13 @@ RegisterNetEvent('inventory:server:combineItem', function(item, fromItem, toItem
 
 	TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item], 'add')
 	AddItem(src, item, 1)
-	RemoveItem(src, fromItem.name, 1)
-	RemoveItem(src, toItem.name, 1)
+	if fromItem.name ~= "weapon_knife" then
+		RemoveItem(src, fromItem.name, 1)
+		RemoveItem(src, toItem.name, 1)
+	else
+		RemoveItem(src, toItem.name, 1)
+	end
+
 end)
 
 RegisterNetEvent('inventory:server:CraftItems', function(itemName, itemCosts, amount, toSlot, points)
