@@ -39,9 +39,9 @@ RegisterCommand(bodybag, function(source, args, rawCommand)
     local player = QBCore.Functions.GetPlayerData()
     PlayerJob = player.job
 
-    if PlayerJob.name == 'police' or PlayerJob.name == 'ambulance'
+    if PlayerJob.name == 'police' or PlayerJob.name == 'ambulance' then
 
-        if args[1] and GetPlayerName(args[1])  ~= nil then
+        if args[1] and GetPlayerName(args[1]) ~= nil then
 
             local targetPed = GetPlayerPed(args[1])
 
