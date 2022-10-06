@@ -27,6 +27,20 @@ CreateThread(function()
             HideHudComponentThisFrame(disableHudComponents[i])
         end
 
+        ---------------------------------
+        if IsAimCamActive() then
+            SendNUIMessage({
+                action = "togglexhair",
+                show = true,
+            })
+        else
+            SendNUIMessage({
+                action = "togglexhair",
+                show = false,
+            })
+        end
+        ---------------------------------
+
         for i = 1, #disableControls do
             DisableControlAction(2, disableControls[i], true)
         end

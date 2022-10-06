@@ -62,6 +62,7 @@ RegisterNetEvent('qb-spawn:client:setupSpawns', function(cData, new, apps)
                 isNew = new
             })
         end, cData.citizenid)
+    
     elseif new then
         SendNUIMessage({
             action = "setupAppartements",
