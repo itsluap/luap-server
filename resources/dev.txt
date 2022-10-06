@@ -1,42 +1,41 @@
 Main Stuff:
     - server color ? 53B3CB
     - finish rewriting boosting script
-    - floating lights at pillbox (learn how to edit maps)
+
 To Do:
-    - shadows in houses are broke, apartments are fine
     - change spawn options to last location and apartment (if possible)
-    - move city hall script into mlo, change ped, customize menu
-    - cant clear calls from dispatch in mdt
-    - apartment stash only shows up when standing on top of it
     - look in to new banking script
-    - give lockpicks durability?
     - make lockpicking car doors harder
-    - cocaine plane stalls during take off?
-    - ps-ui, gang influence areas
     - stripclub script from dream (or try to find online)
     - burgershot w/ working drive thru
-    - gun crafting or blackmarket or both? (ask icey)
     - casino - working wheel spin?
-    - 
     -
     -
     -
     - job mlos
     - civ jobs
 
-banking:
-    - https://github.com/ImpulseFPS/simple-banking
-    - https://github.com/BahnMiFPS/Renewed-Banking
-
 Necessities:
-    - Police: cuffing, dragging, seating, jailing, mdt, dispatch, armory, mlos, better cars
     - EMS   : calls from downed players, heal players, revive players, body bag, stretcher, airmed, better ambulance
     - vehicle shop
     - apartment
     - better notifications
 
+Bugs:
+    - shadows in houses are broke, apartments are fine
+    - cant clear calls from dispatch in mdt
+    - apartment stash only shows up when standing on top of it
+    - cocaine plane stalls during take off?
+    - floating lights at pillbox (learn how to edit maps)
 
 what i've done so far:
     - vehicle boosting - needs to be finished
     - cocaine flights and proccessing
+    - Police: cuffing, dragging, seating, jailing, mdt, dispatch, armory, mlos, better cars
     - 
+
+Ideas:
+    - give lockpicks durability?
+    - ps-ui, gang influence areas
+    - gun crafting or blackmarket or both? (ask icey)
+
