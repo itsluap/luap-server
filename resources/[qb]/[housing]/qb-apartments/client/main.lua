@@ -18,6 +18,25 @@ local IsInsideStashZone = false
 local IsInsideOutfitsZone = false
 local IsInsideLogoutZone = false
 
+-- stash in eye --
+exports['qb-target']:AddBoxZone("Stash", vector3(0.252533, -1.963684, -1.775860), 0.45, 0.35, {
+	name = "Stash",
+	heading = 11.0,
+	debugPoly = false,
+	minZ = 30.77834,
+	maxZ = 30.87834,
+}, {
+	options = {
+		{
+            type = "client",
+            event = "apartments:client:OpenStash",
+			icon = "fas fa-box",
+			label = "Open Stash",
+			job = "",
+		},
+	},
+	distance = 2.5
+})
 
 -- polyzone integration
 
