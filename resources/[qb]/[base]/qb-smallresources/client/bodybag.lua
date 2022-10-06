@@ -1,5 +1,7 @@
 QBCore = exports['qb-core']:GetCoreObject()
 
+local command_name = "bodybag"
+
 local PlayerData = {}
 
 local bodyBag = nil
@@ -35,7 +37,7 @@ AddEventHandler('bodybag:PutInBag', PutInBodybag)
 
 -- bodybag command --
 
-RegisterCommand(bodybag, function(source, args, rawCommand)
+RegisterCommand(command_name, function(source, args, rawCommand)
     local player = QBCore.Functions.GetPlayerData()
     PlayerJob = player.job
 
