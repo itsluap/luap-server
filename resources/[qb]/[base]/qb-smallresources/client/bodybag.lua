@@ -18,13 +18,13 @@ function PutInBodybag()
     if deadCheck and not attached then
         SetEntityVisible(playerPed, false, false)
         
-        RequestModel(Config.bag_model)
+        RequestModel(xm_prop_body_bag)
 
-        while not HasModelLoaded(Config.bag_model) do
+        while not HasModelLoaded(xm_prop_body_bag) do
             Citizen.Wait(1)
         end
 
-        bodyBag = CreateObject(Config.bag_hash, playerCoords.x, playerCoords.y, playerCoords.z, true, true, true)
+        bodyBag = CreateObject(Config.xm_prop_body_bag, playerCoords.x, playerCoords.y, playerCoords.z, true, true, true)
 
         AttachEntityToEntity(bodyBag, playerPed, 0, -0.2, 0.75, -0.2, 0.0, 0.0, 0.0, false, false, false, false, 20, false)
         attached = true
