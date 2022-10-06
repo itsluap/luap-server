@@ -23,7 +23,7 @@ Config.PhoneApplications = {
         app = "whatsapp",
         color = "#25d366",
         icon = "fas fa-comment",
-        tooltipText = "Whatsapp",
+        tooltipText = "Messages",
         tooltipPos = "top",
         style = "font-size: 2.8vh";
         job = false,
@@ -122,16 +122,6 @@ Config.PhoneApplications = {
         job = false,
         blockedjobs = {},
         slot = 11,
-        Alerts = 0,
-    },
-    ["meos"] = {
-        app = "meos",
-        color = "#004682",
-        icon = "fas fa-ad",
-        tooltipText = "MDT",
-        job = "police",
-        blockedjobs = {},
-        slot = 13,
         Alerts = 0,
     },
     ["lawyers"] = {

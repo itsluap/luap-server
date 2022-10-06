@@ -46,7 +46,7 @@
 }
 
 .phone-selected-footer-tab {
-    color: #dc143c;
+    color: #53B3CB;
 }
 
 .phone-contacts {
@@ -137,7 +137,7 @@
 }
 
 .phone-recent-call:hover {
-    background-color: #dc143c;
+    background-color: #53B3CB;
 }
 .phone-recent-call-image {
     position: absolute;
@@ -245,7 +245,7 @@
 }
 
 .phone-contacts-header > i:hover {
-    color: #dc143c;
+    color: #53B3CB;
 }
 
 /* #phone-search-icon {
@@ -286,7 +286,7 @@
 }
 
 .phone-contact-list::-webkit-scrollbar-thumb {
-    background-color: #dc143c;
+    background-color: #53B3CB;
 }
 
 .phone-contact-list {
@@ -371,7 +371,7 @@
 }
 
 .phone-contact-action-buttons > i:hover {
-    color: #dc143c;
+    color: #53B3CB;
 }
 .phone-add-contact {
     display: none;
@@ -991,7 +991,7 @@
 }
 
 .suggested-contact:hover {
-    background-color: #dc143c;
+    background-color: #53B3CB;
 }
 
 .suggested-contact > i {

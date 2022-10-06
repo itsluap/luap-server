@@ -75,7 +75,7 @@
 }
 
 .mail:hover {
-    background-color: #dc143c;
+    background-color: #53B3CB;
     transition: .05s ease-in-out;
 }
 
@@ -147,7 +147,7 @@
 }
 
 .mail-back:hover #mail-back {
-    color: #dc143c;
+    color: #53B3CB;
     transition: .05s ease-in-out;
 }
 
@@ -233,7 +233,7 @@
 }
 
 .opened-mail-footer-item:hover {
-    color: #dc143c;
+    color: #53B3CB;
 }
 
 .opened-mail-footer-item:hover .mail-icon {

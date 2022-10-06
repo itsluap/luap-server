@@ -28,7 +28,7 @@
 }
 
 .bank-app-header-button-selected {
-    border-bottom: .3vh solid #dc143c;
+    border-bottom: .3vh solid #53B3CB;
 }
 .bank-app-header-button > i {
     position: absolute;
@@ -73,7 +73,7 @@
 }
 .bank-app-invoices-list::-webkit-scrollbar {
     width: .5vh;
-    background-color: #dc143c;
+    background-color: #53B3CB;
 }
 .bank-app-invoice {
     position: relative;
@@ -150,7 +150,7 @@
     box-shadow: 0rem 0rem 0.1rem 0.05rem #000000;
 }
 .bank-app-account:hover{
-    background-color: #dc143c;
+    background-color: #53B3CB;
     transition: .5s ease;
 }
 .bank-app-account-title {
@@ -209,7 +209,7 @@
 }
 
 .bank-app-account-actions:hover {
-    background-color: #dc143c;
+    background-color: #53B3CB;
     transition: .5s ease;
 }
 .bank-app-loaded {
@@ -351,7 +351,7 @@
     transition: .1s;
 }
 .bank-app-transfer-button:hover {
-    border-top: .2vh solid #dc143c;
+    border-top: .2vh solid #53B3CB;
 }
 .bank-app-my-contacts {
     display: none;
