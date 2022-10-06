@@ -1,6 +1,13 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 local VehicleNitrous = {}
 
+
+RegisterServerEvent('bodybag')
+AddEventHandler('bodybag', function(target)
+    TriggerClientEvent('bodybag:PutInBag', target)
+    -- Trigger a notification if you wish to have one
+end)
+
 RegisterNetEvent('tackle:server:TacklePlayer', function(playerId)
     TriggerClientEvent("tackle:client:GetTackled", playerId)
 end)
