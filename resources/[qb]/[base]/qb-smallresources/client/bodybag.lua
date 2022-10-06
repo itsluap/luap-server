@@ -57,7 +57,10 @@ RegisterCommand(command_name, function(source, args, rawCommand)
             if closestPlayer ~= -1 and closestDistance <= 3.0 and IsEntityDead(targetPed) then
 
                 TriggerServerEvent('bodybag', GetPlayerServerId(closestPlayer))
+            else
+                print("notification here")
             end
+        
         end
     end
 
