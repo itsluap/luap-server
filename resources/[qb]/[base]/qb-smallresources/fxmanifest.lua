@@ -22,5 +22,10 @@ files {
 	'relationships.dat'
 }
 
+exports {
+	'RequestAnimationDict',
+	'RequestModelHash',
+   }
+
 lua54 'yes'
 use_experimental_fxv2_oal 'yes'

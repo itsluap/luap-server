@@ -1,0 +1,361 @@
+local CurrentWorkObject, InRange, ShowingInteraction, AddedProps = {}, false, false, false
+local Framework, PlayerJob, LoggedIn = exports['qb-core']:GetCoreObject(), {}, false
+
+RegisterNetEvent('Framework:Client:OnPlayerLoaded')
+AddEventHandler('Framework:Client:OnPlayerLoaded', function()
+    Citizen.SetTimeout(1250, function()
+        PlayerJob = Framework.Functions.GetPlayerData().job
+        Citizen.Wait(1200)
+        LoggedIn = true
+    end)
+end)
+
+RegisterNetEvent('Framework:Client:OnPlayerUnload')
+AddEventHandler('Framework:Client:OnPlayerUnload', function()
+	RemoveWorkObjects()
+    LoggedIn, AddedProps = false, false
+end)
+
+RegisterNetEvent('Framework:Client:OnJobUpdate')
+AddEventHandler('Framework:Client:OnJobUpdate', function(JobInfo)
+    PlayerJob = JobInfo
+end)
+
+RegisterNetEvent('Framework:Client:SetDuty')
+AddEventHandler('Framework:Client:SetDuty', function()
+    PlayerJob = Framework.Functions.GetPlayerData().job
+end)
+
+-- Citizen.CreateThread(function()
+--     Citizen.SetTimeout(1, function()
+--         TriggerEvent("Framework:GetObject", function(obj) Framework = obj end)    
+--         PlayerJob = Framework.Functions.GetPlayerData().job
+--         Citizen.Wait(1200)
+--         LoggedIn = true
+--     end)
+-- end)
+
+-- Code
+
+-- // Loops \\ --
+
+Citizen.CreateThread(function()
+    while true do
+        Citizen.Wait(4)
+        if LoggedIn then
+            local NearAnything = false
+            local PlayerCoords = GetEntityCoords(GetPlayerPed(-1))
+            if PlayerJob.name == 'burger' and PlayerJob.onduty then
+                local Distance = #(PlayerCoords - Config.Intercom['Worker'])
+                if Distance < 1.5 then
+                    NearAnything = true
+                    if not ShowingInteraction then
+                        ShowingInteraction = true
+                        exports['qb-core']:DrawText('Drive Thru', 'left') -- text was "Drive Intercom"
+                        exports['pma-voice']:addPlayerToCall(878914, 'Phone')
+                    end
+                end
+            end
+            local Distance = #(PlayerCoords - Config.Intercom['Customer'])
+            if Distance < 3.0 then
+                NearAnything = true
+                if not ShowingInteraction then
+                    ShowingInteraction = true
+                    TriggerServerEvent('qb-burgershot:server:alert:workers')
+                    exports['qb-core']:DrawText('Drive Thru', 'left')
+                    exports['pma-voice']:addPlayerToCall(878914, 'Phone')
+                end
+            end
+            if not NearAnything then
+                if ShowingInteraction then
+                    ShowingInteraction = false
+                    exports['qb-core']:HideText()
+                    exports['pma-voice']:removePlayerFromCall(878914, 'Phone')
+                end
+                Citizen.Wait(1000)
+            end
+        end
+    end
+end)
+
+Citizen.CreateThread(function()
+    while true do
+        Citizen.Wait(4)
+        if LoggedIn then
+            local PlayerCoords = GetEntityCoords(GetPlayerPed(-1))
+            local Distance = GetDistanceBetweenCoords(PlayerCoords.x, PlayerCoords.y, PlayerCoords.z, -1193.70, -892.50, 13.99, true)
+            InRange = false
+            if Distance < 35.0 then
+                InRange = true
+                if not AddedProps then
+                    AddedProps = true
+                    SpawnWorkObjects()
+                end
+            end
+            if not InRange then
+                CheckDuty()
+                if AddedProps then
+                    AddedProps = false
+                    RemoveWorkObjects()
+                end
+                Citizen.Wait(1500)
+            end
+        end
+    end
+end)
+
+-- // Events \\ --
+
+RegisterNetEvent('qb-burgershot:client:give:payment')
+AddEventHandler('qb-burgershot:client:give:payment', function()
+    local PlayerContext = {['Title'] = 'Paypal ID?', ['Type'] = 'number', ['Logo'] = '<i class="fas fa-sort-numeric-up-alt"></i>'}
+    Framework.Functions.OpenInput(PlayerContext, function(PlayerId)
+        if PlayerId ~= false then
+            TriggerServerEvent('qb-burgershot:server:give:payment', tonumber(PlayerId))
+        end
+    end)
+end)
+
+RegisterNetEvent('qb-burgershot:client:call:intercom')
+AddEventHandler('qb-burgershot:client:call:intercom', function()
+    if Framework.Functions.GetPlayerData().job.name =='burger' and Framework.Functions.GetPlayerData().job.onduty then
+        Framework.Functions.Notify('Someone is at the drive thru', 'info', 10000)
+        PlaySoundFrontend( -1, "Beep_Green", "DLC_HEIST_HACKING_SNAKE_SOUNDS", 1)
+    end
+end)
+
+RegisterNetEvent('qb-burgershot:client:open:payment')
+AddEventHandler('qb-burgershot:client:open:payment', function()
+    local MenuItems = {}
+    for k, v in pairs(Config.ActivePayments) do
+        if Config.ActivePayments[k] ~= nil then
+          local NewData = {}
+          NewData['Title'] = 'Order: #'..k
+          NewData['Desc'] = 'Cost: $'..v['Price']..' <br>Note: '..v['Note']
+          NewData['Data'] = {['Event'] = 'qb-burgershot:server:pay:receipt', ['Type'] = 'Server', ['BillId'] = k, ['Price'] = v['Price'], ['Note'] = v['Note']}
+          table.insert(MenuItems, NewData)
+        end
+    end
+    if #MenuItems > 0 then
+        local Data = {['Title'] = 'Open Orders', ['MainMenuItems'] = MenuItems}
+        Framework.Functions.OpenMenu(Data)
+    else
+        Framework.Functions.Notify("There are no active orders..", "error")
+    end
+end)
+
+RegisterNetEvent('qb-burgershot:client:open:register')
+AddEventHandler('qb-burgershot:client:open:register', function()
+  local PrData = {['Title'] = 'Cost?', ['Type'] = 'number', ['Logo'] = '<i class="fas fa-coins"></i>'}
+  local TxData = {['Title'] = 'Order?', ['Type'] = 'text', ['Logo'] = '<i class="fas fa-hamburger"></i>'}
+  Framework.Functions.OpenInput(PrData, function(PriceData)
+      if PriceData ~= false then
+        Citizen.Wait(250)
+        Framework.Functions.OpenInput(TxData, function(NoteData)
+          if NoteData ~= false then
+            TriggerServerEvent('qb-burgershot:server:add:to:register', PriceData, NoteData)
+          end
+        end)
+      end
+  end)
+end)
+
+RegisterNetEvent('qb-burgershot:client:sync:register')
+AddEventHandler('qb-burgershot:client:sync:register', function(RegisterConfig)
+    Config.ActivePayments = RegisterConfig
+end)
+
+RegisterNetEvent('qb-burgershot:client:open:box')
+AddEventHandler('qb-burgershot:client:open:box', function(BoxId)
+    TriggerServerEvent("qb-inventory:server:OpenInventory", "stash", 'burgerbox_'..BoxId, {maxweight = 5000, slots = 6})
+    TriggerEvent("qb-inventory:client:SetCurrentStash", 'burgerbox_'..BoxId)
+end)
+
+RegisterNetEvent('qb-burgershot:client:open:cold:storage')
+AddEventHandler('qb-burgershot:client:open:cold:storage', function()
+    TriggerServerEvent("qb-inventory:server:OpenInventory", "stash", "burger_storage", {maxweight = 1000000, slots = 10})
+    TriggerEvent("qb-inventory:client:SetCurrentStash", "burger_storage")
+end)
+
+RegisterNetEvent('qb-burgershot:client:open:hot:storage')
+AddEventHandler('qb-burgershot:client:open:hot:storage', function()
+    TriggerServerEvent("qb-inventory:server:OpenInventory", "stash", "heattray", {maxweight = 1000000, slots = 10})
+    TriggerEvent("qb-inventory:client:SetCurrentStash", "warmtebak")
+end)
+
+RegisterNetEvent('qb-burgershot:client:open:tray')
+AddEventHandler('qb-burgershot:client:open:tray', function(Number)
+    TriggerServerEvent("qb-inventory:server:OpenInventory", "stash", "foodtray"..Number, {maxweight = 100000, slots = 3})
+    TriggerEvent("qb-inventory:client:SetCurrentStash", "foodtray"..Number)
+end)
+
+RegisterNetEvent('qb-burgershot:client:create:burger')
+AddEventHandler('qb-burgershot:client:create:burger', function(BurgerType)
+    Framework.Functions.TriggerCallback('qb-burgershot:server:has:burger:items', function(HasBurgerItems)
+        if HasBurgerItems then
+           MakeBurger(BurgerType)
+        else
+          Framework.Functions.Notify("You are missing ingredients to make this sandwich..", "error")
+        end
+    end)
+end)
+
+RegisterNetEvent('qb-burgershot:client:create:drink')
+AddEventHandler('qb-burgershot:client:create:drink', function(DrinkType)
+    MakeDrink(DrinkType)
+end)
+
+RegisterNetEvent('qb-burgershot:client:bake:fries')
+AddEventHandler('qb-burgershot:client:bake:fries', function()
+    Framework.Functions.TriggerCallback('Framework:HasItem', function(HasItem)
+        if HasItem then
+           MakeFries()
+        else
+          Framework.Functions.Notify("You dont have potatos..", "error")
+        end
+    end, 'burger-potato')
+end)
+
+RegisterNetEvent('qb-burgershot:client:bake:meat')
+AddEventHandler('qb-burgershot:client:bake:meat', function()
+    Framework.Functions.TriggerCallback('Framework:HasItem', function(HasItem)
+        if HasItem then
+           MakePatty()
+        else
+          Framework.Functions.Notify("You dont have meat..", "error")
+        end
+    end, 'burger-raw')
+end)
+
+-- // Functions \\ --
+
+function MakeBurger(BurgerName)
+    Citizen.SetTimeout(750, function()
+        
+    TriggerEvent('qb-inventory:client:set:busy', true)
+        exports['qb-smallresources']:RequestAnimationDict("mini@repair")
+        TaskPlayAnim(GetPlayerPed(-1), "mini@repair", "fixing_a_ped" ,3.0, 3.0, -1, 8, 0, false, false, false)
+        Framework.Functions.Progressbar("open-brick", "Making Burger..", 7500, false, true, {
+            disableMovement = true,
+            disableCarMovement = false,
+            disableMouse = false,
+            disableCombat = true,
+        }, {}, {}, {}, function() -- Done
+            TriggerServerEvent('qb-burgershot:server:finish:burger', BurgerName)
+            TriggerEvent('qb-inventory:client:set:busy', false)
+            StopAnimTask(GetPlayerPed(-1), "mini@repair", "fixing_a_ped", 1.0)
+        end, function()
+            TriggerEvent('qb-inventory:client:set:busy', false)
+            Framework.Functions.Notify("Cancelled..", "error")
+            StopAnimTask(GetPlayerPed(-1), "mini@repair", "fixing_a_ped", 1.0)
+        end)
+    end)
+end
+
+function MakeFries()
+    TriggerEvent('qb-inventory:client:set:busy', true)
+    TriggerEvent("qb-sound:client:play", "baking", 0.7)
+    exports['qb-smallresources']:RequestAnimationDict("amb@prop_human_bbq@male@base")
+    TaskPlayAnim(GetPlayerPed(-1), "amb@prop_human_bbq@male@base", "base" ,3.0, 3.0, -1, 8, 0, false, false, false)
+    Framework.Functions.Progressbar("open-brick", "Cooking Fries..", 6500, false, true, {
+        disableMovement = true,
+        disableCarMovement = false,
+        disableMouse = false,
+        disableCombat = true,
+    }, {}, {
+        model = "prop_cs_fork",
+        bone = 28422,
+        coords = { x = -0.005, y = 0.00, z = 0.00 },
+        rotation = { x = 175.0, y = 160.0, z = 0.0 },
+    }, {}, function() -- Done
+        TriggerServerEvent('qb-burgershot:server:finish:fries')
+        TriggerEvent('qb-inventory:client:set:busy', false)
+        StopAnimTask(GetPlayerPed(-1), "amb@prop_human_bbq@male@base", "base", 1.0)
+    end, function()
+        TriggerEvent('qb-inventory:client:set:busy', false)
+        Framework.Functions.Notify("Cancelled..", "error")
+        StopAnimTask(GetPlayerPed(-1), "amb@prop_human_bbq@male@base", "base", 1.0)
+    end)
+end
+
+function MakePatty()
+    TriggerEvent('qb-inventory:client:set:busy', true)
+    TriggerEvent("qb-sound:client:play", "baking", 0.7)
+    exports['qb-assets']:RequestAnimationDict("amb@prop_human_bbq@male@base")
+    TaskPlayAnim(GetPlayerPed(-1), "amb@prop_human_bbq@male@base", "base" ,3.0, 3.0, -1, 8, 0, false, false, false)
+    Framework.Functions.Progressbar("open-brick", "Cooking Burger..", 6500, false, true, {
+        disableMovement = true,
+        disableCarMovement = false,
+        disableMouse = false,
+        disableCombat = true,
+    }, {}, {
+        model = "prop_cs_fork",
+        bone = 28422,
+        coords = { x = -0.005, y = 0.00, z = 0.00},
+        rotation = { x = 175.0, y = 160.0, z = 0.0},
+    }, {}, function() -- Done
+        TriggerServerEvent('qb-burgershot:server:finish:patty')
+        TriggerEvent('qb-inventory:client:set:busy', false)
+        StopAnimTask(GetPlayerPed(-1), "amb@prop_human_bbq@male@base", "base", 1.0)
+    end, function()
+        TriggerEvent('qb-inventory:client:set:busy', false)
+        Framework.Functions.Notify("Cancelled..", "error")
+        StopAnimTask(GetPlayerPed(-1), "amb@prop_human_bbq@male@base", "base", 1.0)
+    end)
+end
+
+function MakeDrink(DrinkName)
+    TriggerEvent('qb-inventory:client:set:busy', false)
+    TriggerEvent("qb-sound:client:play", "pour-drink", 0.4)
+    exports['qb-smallresources']:RequestAnimationDict("amb@world_human_hang_out_street@female_hold_arm@idle_a")
+    TaskPlayAnim(GetPlayerPed(-1), "amb@world_human_hang_out_street@female_hold_arm@idle_a", "idle_a" ,3.0, 3.0, -1, 8, 0, false, false, false)
+    Framework.Functions.Progressbar("open-brick", "Pouring Drink..", 6500, false, true, {
+        disableMovement = true,
+        disableCarMovement = false,
+        disableMouse = false,
+        disableCombat = true,
+    }, {}, {}, {}, function() -- Done
+        TriggerServerEvent('qb-burgershot:server:finish:drink', DrinkName)
+        TriggerEvent('qb-inventory:client:set:busy', false)
+        StopAnimTask(GetPlayerPed(-1), "amb@world_human_hang_out_street@female_hold_arm@idle_a", "idle_a", 1.0)
+    end, function()
+        TriggerEvent('qb-inventory:client:set:busy', false)
+        Framework.Functions.Notify("Cancelled..", "error")
+        StopAnimTask(GetPlayerPed(-1), "amb@world_human_hang_out_street@female_hold_arm@idle_a", "idle_a", 1.0)
+    end)
+end
+
+function CheckDuty()
+    if Framework.Functions.GetPlayerData().job.name =='burger' and Framework.Functions.GetPlayerData().job.onduty then
+       TriggerServerEvent('Framework:ToggleDuty')
+       Framework.Functions.Notify("You left work!", "error")
+    end
+end
+
+function SpawnWorkObjects()
+    for k, v in pairs(Config.WorkProps) do
+        exports['qb-smallresources']:RequestModelHash(v['Prop'])
+        WorkObject = CreateObject(GetHashKey(v['Prop']), v["Coords"]["X"], v["Coords"]["Y"], v["Coords"]["Z"], false, true, false)
+        SetEntityHeading(WorkObject, v['Coords']['H'])
+        if v['PlaceOnGround'] then
+        	PlaceObjectOnGroundProperly(WorkObject)
+        end
+        if not v['ShowItem'] then
+        	SetEntityVisible(WorkObject, false)
+        end
+        FreezeEntityPosition(WorkObject, true)
+        SetEntityInvincible(WorkObject, true)
+        table.insert(CurrentWorkObject, WorkObject)
+    end
+end
+
+function RemoveWorkObjects()
+    for k, v in pairs(CurrentWorkObject) do
+       NetworkRequestControlOfEntity(v)
+    	 DeleteEntity(v)
+    end
+end
+
+function IsInsideBurgershot()
+    return InRange
+end
