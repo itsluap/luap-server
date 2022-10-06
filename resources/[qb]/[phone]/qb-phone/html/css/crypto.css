@@ -61,7 +61,7 @@
 }
 
 .crypto-action-page-buy-crypto-footer-button:hover {
-   color: #dc143c;
+   color: #53B3CB;
 }
 
 @keyframes Shake {
@@ -113,7 +113,7 @@
 }
 
 .crypto-header-footer-item-selected {
-    border-bottom: .2vh solid #dc143c;
+    border-bottom: .2vh solid #53B3CB;
 }
 
 .crypto-page {
@@ -357,7 +357,7 @@
 }
 
 .cryptotab-general-action:hover {
-    background-color: #dc143c;
+    background-color: #53B3CB;
 }
 
 .crypto-action-page-buy-crypto-input-money {

@@ -34,7 +34,7 @@
 }
 
 .houses-app-header-tab-selected {
-    border-bottom: .3vh solid #c23616;
+    border-bottom: .3vh solid #53B3CB;
 }
 
 .houses-app-header-tab-selected > p {
@@ -86,7 +86,7 @@
 }
 
 .myhouses-house:hover {
-    background-color: #dc143c;
+    background-color: #53B3CB;
 }
 
 .myhouse-house-icon {
@@ -391,7 +391,7 @@
 }
 
 .mykeys-key:hover {
-    background-color: #dc143c;
+    background-color: #53B3CB;
 }
 
 .mykeys-key-label {

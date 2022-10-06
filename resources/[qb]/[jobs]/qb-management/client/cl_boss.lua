@@ -90,15 +90,7 @@ RegisterNetEvent('qb-bossmenu:client:OpenMenu', function()
             params = {
                 event = "qb-bossmenu:client:Wardrobe",
             }
-        },
-        {
-            header = "Money Management",
-            txt = "Check your Company Balance",
-            icon = "fa-solid fa-sack-dollar",
-            params = {
-                event = "qb-bossmenu:client:SocietyMenu",
-            }
-        },
+        }
     }
 
     for _, v in pairs(DynamicMenuItems) do
@@ -237,82 +229,6 @@ RegisterNetEvent('qb-bossmenu:client:HireMenu', function()
         }
         exports['qb-menu']:openMenu(HireMenu)
     end)
-end)
-
-RegisterNetEvent('qb-bossmenu:client:SocietyMenu', function()
-    QBCore.Functions.TriggerCallback('qb-bossmenu:server:GetAccount', function(cb)
-        local SocietyMenu = {
-            {
-                header = "Balance: $" .. comma_value(cb) .. " - " .. string.upper(PlayerJob.label),
-                isMenuHeader = true,
-                icon = "fa-solid fa-circle-info",
-            },
-            {
-                header = "Deposit",
-                icon = "fa-solid fa-money-bill-transfer",
-                txt = "Deposit Money into account",
-                params = {
-                    event = "qb-bossmenu:client:SocetyDeposit",
-                    args = comma_value(cb)
-                }
-            },
-            {
-                header = "Withdraw",
-                icon = "fa-solid fa-money-bill-transfer",
-                txt = "Withdraw Money from account",
-                params = {
-                    event = "qb-bossmenu:client:SocetyWithDraw",
-                    args = comma_value(cb)
-                }
-            },
-            {
-                header = "Return",
-                icon = "fa-solid fa-angle-left",
-                params = {
-                    event = "qb-bossmenu:client:OpenMenu",
-                }
-            },
-        }
-        exports['qb-menu']:openMenu(SocietyMenu)
-    end, PlayerJob.name)
-end)
-
-RegisterNetEvent('qb-bossmenu:client:SocetyDeposit', function(money)
-    local deposit = exports['qb-input']:ShowInput({
-        header = "Deposit Money <br> Available Balance: $" .. money,
-        submitText = "Confirm",
-        inputs = {
-            {
-                type = 'number',
-                isRequired = true,
-                name = 'amount',
-                text = 'Amount'
-            }
-        }
-    })
-    if deposit then
-        if not deposit.amount then return end
-        TriggerServerEvent("qb-bossmenu:server:depositMoney", tonumber(deposit.amount))
-    end
-end)
-
-RegisterNetEvent('qb-bossmenu:client:SocetyWithDraw', function(money)
-    local withdraw = exports['qb-input']:ShowInput({
-        header = "Withdraw Money <br> Available Balance: $" .. money,
-        submitText = "Confirm",
-        inputs = {
-            {
-                type = 'number',
-                isRequired = true,
-                name = 'amount',
-                text = 'Amount'
-            }
-        }
-    })
-    if withdraw then
-        if not withdraw.amount then return end
-        TriggerServerEvent("qb-bossmenu:server:withdrawMoney", tonumber(withdraw.amount))
-    end
 end)
 
 -- MAIN THREAD

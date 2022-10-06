@@ -104,14 +104,6 @@ RegisterNetEvent('qb-gangmenu:client:OpenMenu', function()
                 event = "qb-gangmenu:client:Warbobe",
             }
         },
-        {
-            header = "Money Management",
-            icon = "fa-solid fa-sack-dollar",
-            txt = "Check your Gang Balance",
-            params = {
-                event = "qb-gangmenu:client:SocietyMenu",
-            }
-        },
     }
 
     for _, v in pairs(DynamicMenuItems) do
@@ -238,82 +230,6 @@ RegisterNetEvent('qb-gangmenu:client:HireMembers', function()
         }
         exports['qb-menu']:openMenu(HireMembersMenu)
     end)
-end)
-
-RegisterNetEvent('qb-gangmenu:client:SocietyMenu', function()
-    QBCore.Functions.TriggerCallback('qb-gangmenu:server:GetAccount', function(cb)
-        local SocietyMenu = {
-            {
-                header = "Balance: $" .. comma_valueGang(cb) .. " - " .. string.upper(PlayerGang.label),
-                isMenuHeader = true,
-                icon = "fa-solid fa-circle-info",
-            },
-            {
-                header = "Deposit",
-                icon = "fa-solid fa-money-bill-transfer",
-                txt = "Deposit Money",
-                params = {
-                    event = "qb-gangmenu:client:SocietyDeposit",
-                    args = comma_valueGang(cb)
-                }
-            },
-            {
-                header = "Withdraw",
-                icon = "fa-solid fa-money-bill-transfer",
-                txt = "Withdraw Money",
-                params = {
-                    event = "qb-gangmenu:client:SocietyWithdraw",
-                    args = comma_valueGang(cb)
-                }
-            },
-            {
-                header = "Return",
-                icon = "fa-solid fa-angle-left",
-                params = {
-                    event = "qb-gangmenu:client:OpenMenu",
-                }
-            },
-        }
-        exports['qb-menu']:openMenu(SocietyMenu)
-    end, PlayerGang.name)
-end)
-
-RegisterNetEvent('qb-gangmenu:client:SocietyDeposit', function(saldoattuale)
-    local deposit = exports['qb-input']:ShowInput({
-        header = "Deposit Money <br> Available Balance: $" .. saldoattuale,
-        submitText = "Confirm",
-        inputs = {
-            {
-                type = 'number',
-                isRequired = true,
-                name = 'amount',
-                text = 'Amount'
-            }
-        }
-    })
-    if deposit then
-        if not deposit.amount then return end
-        TriggerServerEvent("qb-gangmenu:server:depositMoney", tonumber(deposit.amount))
-    end
-end)
-
-RegisterNetEvent('qb-gangmenu:client:SocietyWithdraw', function(saldoattuale)
-    local withdraw = exports['qb-input']:ShowInput({
-        header = "Withdraw Money <br> Available Balance: $" .. saldoattuale,
-        submitText = "Confirm",
-        inputs = {
-            {
-                type = 'number',
-                isRequired = true,
-                name = 'amount',
-                text = '$'
-            }
-        }
-    })
-    if withdraw then
-        if not withdraw.amount then return end
-        TriggerServerEvent("qb-gangmenu:server:withdrawMoney", tonumber(withdraw.amount))
-    end
 end)
 
 -- MAIN THREAD
