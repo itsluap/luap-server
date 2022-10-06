@@ -43,7 +43,7 @@ Config.Locations = { -- Edit the various interaction points for players or creat
         [2] = vector3(-254.88, 6324.5, 32.58),
     },
     ["vehicle"] = {
-        [1] = vector4(294.578, -574.761, 43.179, 35.79),
+        [1] = vector4(326.25, -588.6, 28.8, 340.11),
         [2] = vector4(-234.28, 6329.16, 32.15, 222.5),
     },
     ["helicopter"] = {
@@ -51,7 +51,7 @@ Config.Locations = { -- Edit the various interaction points for players or creat
         [2] = vector4(-475.43, 5988.353, 31.716, 31.34),
     },
     ["armory"] = {
-        [1] = vector3(309.93, -602.94, 43.29),
+        [1] = vector3(310.39, -603.1, 43.28),
         [2] = vector3(-245.13, 6315.71, 32.82),
     },
     ["roof"] = {
