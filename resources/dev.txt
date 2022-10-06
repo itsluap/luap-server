@@ -11,6 +11,7 @@ To Do:
     - casino - working wheel spin?
     -
     - elevator tp for hospital and city hall
+    - the "press E to open" menu is - exports['qb-core']:DrawText(text, 'left') and to hide - exports['qb-core']:HideText()
     -
     -
     - job mlos
