@@ -1,27 +1,6 @@
 Main Stuff:
     - server color ? 53B3CB
 
-To Do:
-    - change spawn options to last location and apartment (if possible)
-    - look in to new banking script
-    - make lockpicking car doors harder
-    - stripclub script from dream (or try to find online)
-    - casino - working wheel spin?
-    - finish rewriting boosting script
-    -
-    - elevator tp for hospital and city hall
-    -
-    -
-    - job mlos
-    - civ jobs
-    -
-    - add ps-buffs and possibly ps-progressbar and ps-drugsproccessing
-    -
-    - steal players from other servers (give out a beta test reward)
-    -
-    - create new user guide - create some faqs - get discord ready
-    - create website - needs forums, applications, and tebex store
-
 Necessities:
     - EMS   : calls from downed players, heal players, revive players, body bag, stretcher, airmed, better ambulance
     - vehicle shop (go through vehicles, check prices, only basic cars available at pdm)
@@ -35,6 +14,27 @@ Bugs:
     - apartment stash only shows up when standing on top of it - (coords run an algorithim in qb-apartments)(try vector4 without algorithim?)
     - cocaine plane stalls during take off?
     - floating lights at pillbox (learn how to edit maps)
+
+To Do:
+    - bypass qb-spawn for characters that arent new?
+    - make lockpicking car doors medium difficulty
+    - stripclub script from dream (or try to find online)
+    - casino - working wheel spin?
+    - finish rewriting boosting script
+    -
+    - elevator tp for hospital and city hall
+    - fix broken doors at mrpd - add locks to doors that need it
+    -
+    -
+    - job mlos
+    - civ jobs
+    -
+    - add ps-buffs and possibly ps-progressbar and ps-drugsproccessing
+    -
+    - steal players from other servers (give out a beta test reward)
+    -
+    - create new user guide - create some faqs - get discord ready
+    - create website - needs forums, applications, and tebex store
 
 Ideas:
     - give lockpicks durability?
