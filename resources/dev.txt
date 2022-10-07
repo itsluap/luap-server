@@ -15,6 +15,8 @@ To Do:
     - job mlos
     - civ jobs
     -
+    - add ps-buffs and possibly ps-progressbar and ps-drugsproccessing
+    -
     - steal players from other servers (give out a beta test reward)
     -
     - create new user guide - create some faqs - get discord ready
@@ -22,7 +24,7 @@ To Do:
 
 Necessities:
     - EMS   : calls from downed players, heal players, revive players, body bag, stretcher, airmed, better ambulance
-    - vehicle shop
+    - vehicle shop (go through vehicles, check prices, only basic cars available at pdm)
     - apartment
     - better notifications
     - test all criminal activities and all civilian jobs
