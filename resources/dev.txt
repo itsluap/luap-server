@@ -1,6 +1,5 @@
 Main Stuff:
     - server color ? 53B3CB
-    - finish rewriting boosting script
 
 To Do:
     - change spawn options to last location and apartment (if possible)
@@ -8,12 +7,15 @@ To Do:
     - make lockpicking car doors harder
     - stripclub script from dream (or try to find online)
     - casino - working wheel spin?
+    - finish rewriting boosting script
     -
     - elevator tp for hospital and city hall
     -
     -
     - job mlos
     - civ jobs
+    -
+    - steal players from other servers (give out a beta test reward)
     -
     - create new user guide - create some faqs - get discord ready
     - create website - needs forums, applications, and tebex store
@@ -28,18 +30,9 @@ Necessities:
 Bugs:
     - shadows in houses are broke, apartments are fine
     - cant clear calls from dispatch in mdt
-    - apartment stash only shows up when standing on top of it
+    - apartment stash only shows up when standing on top of it - (coords run an algorithim in qb-apartments)(try vector4 without algorithim?)
     - cocaine plane stalls during take off?
     - floating lights at pillbox (learn how to edit maps)
-
-what i've done so far:
-    - vehicle boosting - needs to be finished
-    - cocaine flights and proccessing
-    - Police: cuffing, dragging, seating, jailing, mdt, dispatch, armory, mlos, better cars
-    - added bodybag command for police and ems
-    - changed banking and edited qb-management
-    - LegacyFuel to ps-fuel
-    - added burgetshot job - needs to be finished
 
 Ideas:
     - give lockpicks durability?
@@ -49,3 +42,12 @@ Ideas:
 Notes:
     - the "press E to open" menu is - exports['qb-core']:DrawText(text, 'left') and to hide - exports['qb-core']:HideText()
     - 
+
+what i've done so far:
+    - vehicle boosting - needs to be finished
+    - cocaine flights and proccessing
+    - Police: cuffing, dragging, seating, jailing, mdt, dispatch, armory, mlos, better cars
+    - added bodybag command for police and ems
+    - changed banking and edited qb-management
+    - LegacyFuel to ps-fuel
+    - added burgetshot job - needs to be finished
