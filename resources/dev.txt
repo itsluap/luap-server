@@ -14,6 +14,9 @@ To Do:
     -
     - job mlos
     - civ jobs
+    -
+    - create new user guide - create some faqs - get discord ready
+    - create website - needs forums, applications, and tebex store
 
 Necessities:
     - EMS   : calls from downed players, heal players, revive players, body bag, stretcher, airmed, better ambulance
