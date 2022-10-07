@@ -31,7 +31,7 @@ To Do:
     -
     - add ps-buffs and possibly ps-progressbar and ps-drugsproccessing
     -
-    - steal players from other servers (give out a beta test reward)
+    - steal players from other servers (give out a beta test reward) NEED A LOYAL TEAM - reach out to old fivem friends
     -
     - create new user guide - create some faqs - get discord ready
     - create website - needs forums, applications, and tebex store
