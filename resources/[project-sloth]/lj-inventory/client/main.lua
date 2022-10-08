@@ -1043,3 +1043,18 @@ end)
             },
         distance = 1.0
     })
+    exports['qb-target']:AddTargetModel(Config.VendingObjects, {
+        options = {
+            {
+                event = "inventory:client:OpenVending",
+                icon = "fas fa-reorder",
+                label = "Vending Machine", 
+            },
+
+        },
+    distance = 1.0
+    })
+
+RegisterNetEvent('inventory:client:OpenVending', function()    
+    OpenVending()
+end)
