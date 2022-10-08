@@ -13,7 +13,7 @@ Bugs:
     - shadows in houses are broke, apartments are fine
     - cant clear calls from dispatch in mdt
     - cocaine plane stalls during take off?
-    - floating lights at pillbox (learn how to edit maps)
+    - floating lights at pillbox (learn how to edit maps) lodlights_small030.ymap
 
 To Do:
     - bypass qb-spawn for characters that arent new? - try to figure this out
