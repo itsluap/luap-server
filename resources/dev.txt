@@ -2,6 +2,7 @@ Main Stuff:
     - server color ? 53B3CB
 
 Necessities:
+    - Police: cuffing, dragging, seating, jailing, mdt, dispatch, armory, mlos, better cars
     - EMS   : calls from downed players, heal players, revive players, body bag, stretcher, airmed, better ambulance
     - vehicle shop (go through vehicles, check prices, only basic cars available at pdm)
     - apartment
@@ -49,10 +50,10 @@ Notes:
 
 what i've done so far:
     - custom apartment interior
+    - made garage system better (have to be parked in a parking space)
     - added police dispatch and mdt
     - vehicle boosting - needs to be finished
     - cocaine flights and proccessing
-    - Police: cuffing, dragging, seating, jailing, mdt, dispatch, armory, mlos, better cars
     - added bodybag command for police and ems
     - changed banking and edited qb-management
     - LegacyFuel to ps-fuel
