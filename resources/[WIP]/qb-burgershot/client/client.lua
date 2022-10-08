@@ -234,7 +234,7 @@ function MakeBurger(BurgerName)
     Citizen.SetTimeout(750, function()
         
     TriggerEvent('qb-inventory:client:set:busy', true)
-        exports['qb-smallresources']:RequestAnimationDict("mini@repair")
+        exports['qb-assets']:RequestAnimationDict("mini@repair")
         TaskPlayAnim(GetPlayerPed(-1), "mini@repair", "fixing_a_ped" ,3.0, 3.0, -1, 8, 0, false, false, false)
         QBCore.Functions.Progressbar("open-brick", "Making Burger..", 7500, false, true, {
             disableMovement = true,
@@ -256,7 +256,7 @@ end
 function MakeFries()
     TriggerEvent('qb-inventory:client:set:busy', true)
     TriggerEvent("qb-sound:client:play", "baking", 0.7)
-    exports['qb-smallresources']:RequestAnimationDict("amb@prop_human_bbq@male@base")
+    exports['qb-assets']:RequestAnimationDict("amb@prop_human_bbq@male@base")
     TaskPlayAnim(GetPlayerPed(-1), "amb@prop_human_bbq@male@base", "base" ,3.0, 3.0, -1, 8, 0, false, false, false)
     QBCore.Functions.Progressbar("open-brick", "Cooking Fries..", 6500, false, true, {
         disableMovement = true,
@@ -308,7 +308,7 @@ end
 function MakeDrink(DrinkName)
     TriggerEvent('qb-inventory:client:set:busy', false)
     TriggerEvent("qb-sound:client:play", "pour-drink", 0.4)
-    exports['qb-smallresources']:RequestAnimationDict("amb@world_human_hang_out_street@female_hold_arm@idle_a")
+    exports['qb-assets']:RequestAnimationDict("amb@world_human_hang_out_street@female_hold_arm@idle_a")
     TaskPlayAnim(GetPlayerPed(-1), "amb@world_human_hang_out_street@female_hold_arm@idle_a", "idle_a" ,3.0, 3.0, -1, 8, 0, false, false, false)
     QBCore.Functions.Progressbar("open-brick", "Pouring Drink..", 6500, false, true, {
         disableMovement = true,
@@ -335,7 +335,7 @@ end
 
 function SpawnWorkObjects()
     for k, v in pairs(Config.WorkProps) do
-        exports['qb-smallresources']:RequestModelHash(v['Prop'])
+        exports['qb-assets']:RequestModelHash(v['Prop'])
         WorkObject = CreateObject(GetHashKey(v['Prop']), v["Coords"]["X"], v["Coords"]["Y"], v["Coords"]["Z"], false, true, false)
         SetEntityHeading(WorkObject, v['Coords']['H'])
         if v['PlaceOnGround'] then

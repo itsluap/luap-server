@@ -24,6 +24,7 @@ To Do:
     -
     - elevator tp  city hall?
     - fix broken doors at mrpd - add locks to doors that need it
+    - finish updating item animations - (updated item animations to show props - added qb-assets)
     -
     -
     - job mlos
@@ -58,5 +59,4 @@ what i've done so far:
     - changed banking and edited qb-management
     - LegacyFuel to ps-fuel
     - added burgetshot job - needs to be finished
-    - updated item animations to show props - added qb-assets
     -
