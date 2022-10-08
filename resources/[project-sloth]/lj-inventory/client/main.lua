@@ -1065,7 +1065,7 @@ end)
     exports['qb-target']:AddTargetModel(Config.VendingFoodObjects, {
         options = {
             {
-                event = "inventory:client:OpenVending",
+                event = "inventory:client:OpenFoodVending",
                 icon = "fas fa-reorder",
                 label = "Vending Machine", 
             },
