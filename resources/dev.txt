@@ -14,6 +14,7 @@ Bugs:
     - apartment stash only shows up when standing on top of it - (coords run an algorithim in qb-apartments)(try vector4 without algorithim?)
     - cocaine plane stalls during take off?
     - floating lights at pillbox (learn how to edit maps)
+    - vending machines not working anymore
 
 To Do:
     - bypass qb-spawn for characters that arent new?

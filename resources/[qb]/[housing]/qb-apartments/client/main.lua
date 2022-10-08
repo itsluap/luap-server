@@ -203,25 +203,6 @@ local function SetInApartmentTargets()
     RegisterInApartmentZone('logoutPos', logoutPos, 0, "[E] " .. Lang:t('text.logout'))
     RegisterInApartmentZone('entrancePos', entrancePos, 0, Lang:t('text.options'))
 
-    -- stash in eye --
-    exports['qb-target']:AddBoxZone("Stash", 'stashPOS', 0.45, 0.35, {
-        name = "Stash",
-        heading = 11.0,
-        debugPoly = false,
-        minZ = 30.77834,
-        maxZ = 30.87834,
-    }, {
-        options = {
-            {
-                type = "client",
-                event = "apartments:client:OpenStash",
-                icon = "fas fa-box",
-                label = "Open Stash",
-                job = "",
-            },
-        },
-        distance = 2.5
-    })
 end
 
 local function DeleteApartmentsEntranceTargets()
