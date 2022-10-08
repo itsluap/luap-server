@@ -13,16 +13,15 @@ Bugs:
     - cant clear calls from dispatch in mdt
     - cocaine plane stalls during take off?
     - floating lights at pillbox (learn how to edit maps)
-    - vending machines not working anymore
 
 To Do:
-    - bypass qb-spawn for characters that arent new?
+    - bypass qb-spawn for characters that arent new? - try to figure this out
     - make lockpicking car doors medium difficulty
     - stripclub script from dream (or try to find online)
     - casino - working wheel spin?
     - finish rewriting boosting script
     -
-    - elevator tp for hospital and city hall
+    - elevator tp  city hall?
     - fix broken doors at mrpd - add locks to doors that need it
     -
     -
@@ -35,6 +34,8 @@ To Do:
     -
     - create new user guide - create some faqs - get discord ready
     - create website - needs forums, applications, and tebex store
+    -
+    - go through and remove unneeded commands (search all server files)
 
 Ideas:
     - give lockpicks durability?
@@ -47,6 +48,8 @@ Notes:
     - 
 
 what i've done so far:
+    - custom apartment interior
+    - added police dispatch and mdt
     - vehicle boosting - needs to be finished
     - cocaine flights and proccessing
     - Police: cuffing, dragging, seating, jailing, mdt, dispatch, armory, mlos, better cars
@@ -54,3 +57,5 @@ what i've done so far:
     - changed banking and edited qb-management
     - LegacyFuel to ps-fuel
     - added burgetshot job - needs to be finished
+    - updated item animations to show props - added qb-assets
+    -
