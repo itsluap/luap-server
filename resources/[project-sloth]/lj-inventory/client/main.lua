@@ -82,6 +82,14 @@ local function OpenVending()
     TriggerServerEvent("inventory:server:OpenInventory", "shop", "Vendingshop_"..math.random(1, 99), ShopItems)
 end
 
+local function OpenFoodVending()
+    local ShopItems = {}
+    ShopItems.label = "Vending Machine"
+    ShopItems.items = Config.VendingFoodItem
+    ShopItems.slots = #Config.VendingFoodItem
+    TriggerServerEvent("inventory:server:OpenInventory", "shop", "Vendingshop_"..math.random(1, 99), ShopItems)
+end
+
 local function DrawText3Ds(x, y, z, text)
 	SetTextScale(0.35, 0.35)
     SetTextFont(4)
@@ -1054,7 +1062,21 @@ end)
         },
     distance = 1.0
     })
+    exports['qb-target']:AddTargetModel(Config.VendingFoodObjects, {
+        options = {
+            {
+                event = "inventory:client:OpenVending",
+                icon = "fas fa-reorder",
+                label = "Vending Machine", 
+            },
+
+        },
+    distance = 1.0
+    })
 
 RegisterNetEvent('inventory:client:OpenVending', function()    
     OpenVending()
+end)
+RegisterNetEvent('inventory:client:OpenFoodVending', function()    
+    OpenFoodVending()
 end)

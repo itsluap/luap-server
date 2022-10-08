@@ -16,6 +16,11 @@ Config.VendingObjects = {
     "prop_vend_water_01"
 }
 
+Config.VendingFoodObjects = {
+    "prop_vend_snak_01",
+
+}
+
 Config.BinObjects = {
     "prop_bin_05a",
 }
@@ -40,6 +45,19 @@ Config.VendingItem = {
         slot = 2,
     },
 }
+
+Config.VendingFoodItem = {
+    [1] = {
+        name = "sandwich",
+        price = 4,
+        amount = 50,
+        info = {},
+        type = "item",
+        slot = 1,
+    },
+
+}
+
 
 Config.CraftingItems = {
     [1] = {
