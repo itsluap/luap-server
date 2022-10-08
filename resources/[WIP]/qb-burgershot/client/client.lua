@@ -1,35 +1,35 @@
 local CurrentWorkObject, InRange, ShowingInteraction, AddedProps = {}, false, false, false
-local Framework, PlayerJob, LoggedIn = exports['qb-core']:GetCoreObject(), {}, false
+local QBCore, PlayerJob, LoggedIn = exports['qb-core']:GetCoreObject(), {}, false
 
-RegisterNetEvent('Framework:Client:OnPlayerLoaded')
-AddEventHandler('Framework:Client:OnPlayerLoaded', function()
+RegisterNetEvent('QBCore:Client:OnPlayerLoaded')
+AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
     Citizen.SetTimeout(1250, function()
-        PlayerJob = Framework.Functions.GetPlayerData().job
+        PlayerJob = QBCore.Functions.GetPlayerData().job
         Citizen.Wait(1200)
         LoggedIn = true
     end)
 end)
 
-RegisterNetEvent('Framework:Client:OnPlayerUnload')
-AddEventHandler('Framework:Client:OnPlayerUnload', function()
+RegisterNetEvent('QBCore:Client:OnPlayerUnload')
+AddEventHandler('QBCore:Client:OnPlayerUnload', function()
 	RemoveWorkObjects()
     LoggedIn, AddedProps = false, false
 end)
 
-RegisterNetEvent('Framework:Client:OnJobUpdate')
-AddEventHandler('Framework:Client:OnJobUpdate', function(JobInfo)
+RegisterNetEvent('QBCore:Client:OnJobUpdate')
+AddEventHandler('QBCore:Client:OnJobUpdate', function(JobInfo)
     PlayerJob = JobInfo
 end)
 
-RegisterNetEvent('Framework:Client:SetDuty')
-AddEventHandler('Framework:Client:SetDuty', function()
-    PlayerJob = Framework.Functions.GetPlayerData().job
+RegisterNetEvent('QBCore:Client:SetDuty')
+AddEventHandler('QBCore:Client:SetDuty', function()
+    PlayerJob = QBCore.Functions.GetPlayerData().job
 end)
 
 -- Citizen.CreateThread(function()
 --     Citizen.SetTimeout(1, function()
---         TriggerEvent("Framework:GetObject", function(obj) Framework = obj end)    
---         PlayerJob = Framework.Functions.GetPlayerData().job
+--         TriggerEvent("QBCore:GetObject", function(obj) QBCore = obj end)    
+--         PlayerJob = QBCore.Functions.GetPlayerData().job
 --         Citizen.Wait(1200)
 --         LoggedIn = true
 --     end)
@@ -51,6 +51,7 @@ Citizen.CreateThread(function()
                     NearAnything = true
                     if not ShowingInteraction then
                         ShowingInteraction = true
+                        print("near drive thru")
                         exports['qb-core']:DrawText('Drive Thru', 'left') -- text was "Drive Intercom"
                         exports['pma-voice']:addPlayerToCall(878914, 'Phone')
                     end
@@ -109,7 +110,7 @@ end)
 RegisterNetEvent('qb-burgershot:client:give:payment')
 AddEventHandler('qb-burgershot:client:give:payment', function()
     local PlayerContext = {['Title'] = 'Paypal ID?', ['Type'] = 'number', ['Logo'] = '<i class="fas fa-sort-numeric-up-alt"></i>'}
-    Framework.Functions.OpenInput(PlayerContext, function(PlayerId)
+    QBCore.Functions.OpenInput(PlayerContext, function(PlayerId)
         if PlayerId ~= false then
             TriggerServerEvent('qb-burgershot:server:give:payment', tonumber(PlayerId))
         end
@@ -118,8 +119,8 @@ end)
 
 RegisterNetEvent('qb-burgershot:client:call:intercom')
 AddEventHandler('qb-burgershot:client:call:intercom', function()
-    if Framework.Functions.GetPlayerData().job.name =='burger' and Framework.Functions.GetPlayerData().job.onduty then
-        Framework.Functions.Notify('Someone is at the drive thru', 'info', 10000)
+    if QBCore.Functions.GetPlayerData().job.name =='burger' and QBCore.Functions.GetPlayerData().job.onduty then
+        QBCore.Functions.Notify('Someone is at the drive thru', 'info', 10000)
         PlaySoundFrontend( -1, "Beep_Green", "DLC_HEIST_HACKING_SNAKE_SOUNDS", 1)
     end
 end)
@@ -138,9 +139,9 @@ AddEventHandler('qb-burgershot:client:open:payment', function()
     end
     if #MenuItems > 0 then
         local Data = {['Title'] = 'Open Orders', ['MainMenuItems'] = MenuItems}
-        Framework.Functions.OpenMenu(Data)
+        QBCore.Functions.OpenMenu(Data)
     else
-        Framework.Functions.Notify("There are no active orders..", "error")
+        QBCore.Functions.Notify("There are no active orders..", "error")
     end
 end)
 
@@ -148,10 +149,10 @@ RegisterNetEvent('qb-burgershot:client:open:register')
 AddEventHandler('qb-burgershot:client:open:register', function()
   local PrData = {['Title'] = 'Cost?', ['Type'] = 'number', ['Logo'] = '<i class="fas fa-coins"></i>'}
   local TxData = {['Title'] = 'Order?', ['Type'] = 'text', ['Logo'] = '<i class="fas fa-hamburger"></i>'}
-  Framework.Functions.OpenInput(PrData, function(PriceData)
+  QBCore.Functions.OpenInput(PrData, function(PriceData)
       if PriceData ~= false then
         Citizen.Wait(250)
-        Framework.Functions.OpenInput(TxData, function(NoteData)
+        QBCore.Functions.OpenInput(TxData, function(NoteData)
           if NoteData ~= false then
             TriggerServerEvent('qb-burgershot:server:add:to:register', PriceData, NoteData)
           end
@@ -191,11 +192,11 @@ end)
 
 RegisterNetEvent('qb-burgershot:client:create:burger')
 AddEventHandler('qb-burgershot:client:create:burger', function(BurgerType)
-    Framework.Functions.TriggerCallback('qb-burgershot:server:has:burger:items', function(HasBurgerItems)
+    QBCore.Functions.TriggerCallback('qb-burgershot:server:has:burger:items', function(HasBurgerItems)
         if HasBurgerItems then
            MakeBurger(BurgerType)
         else
-          Framework.Functions.Notify("You are missing ingredients to make this sandwich..", "error")
+          QBCore.Functions.Notify("You are missing ingredients to make this sandwich..", "error")
         end
     end)
 end)
@@ -207,22 +208,22 @@ end)
 
 RegisterNetEvent('qb-burgershot:client:bake:fries')
 AddEventHandler('qb-burgershot:client:bake:fries', function()
-    Framework.Functions.TriggerCallback('Framework:HasItem', function(HasItem)
+    QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
         if HasItem then
            MakeFries()
         else
-          Framework.Functions.Notify("You dont have potatos..", "error")
+          QBCore.Functions.Notify("You dont have potatos..", "error")
         end
     end, 'burger-potato')
 end)
 
 RegisterNetEvent('qb-burgershot:client:bake:meat')
 AddEventHandler('qb-burgershot:client:bake:meat', function()
-    Framework.Functions.TriggerCallback('Framework:HasItem', function(HasItem)
+    QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
         if HasItem then
            MakePatty()
         else
-          Framework.Functions.Notify("You dont have meat..", "error")
+          QBCore.Functions.Notify("You dont have meat..", "error")
         end
     end, 'burger-raw')
 end)
@@ -235,7 +236,7 @@ function MakeBurger(BurgerName)
     TriggerEvent('qb-inventory:client:set:busy', true)
         exports['qb-smallresources']:RequestAnimationDict("mini@repair")
         TaskPlayAnim(GetPlayerPed(-1), "mini@repair", "fixing_a_ped" ,3.0, 3.0, -1, 8, 0, false, false, false)
-        Framework.Functions.Progressbar("open-brick", "Making Burger..", 7500, false, true, {
+        QBCore.Functions.Progressbar("open-brick", "Making Burger..", 7500, false, true, {
             disableMovement = true,
             disableCarMovement = false,
             disableMouse = false,
@@ -246,7 +247,7 @@ function MakeBurger(BurgerName)
             StopAnimTask(GetPlayerPed(-1), "mini@repair", "fixing_a_ped", 1.0)
         end, function()
             TriggerEvent('qb-inventory:client:set:busy', false)
-            Framework.Functions.Notify("Cancelled..", "error")
+            QBCore.Functions.Notify("Cancelled..", "error")
             StopAnimTask(GetPlayerPed(-1), "mini@repair", "fixing_a_ped", 1.0)
         end)
     end)
@@ -257,7 +258,7 @@ function MakeFries()
     TriggerEvent("qb-sound:client:play", "baking", 0.7)
     exports['qb-smallresources']:RequestAnimationDict("amb@prop_human_bbq@male@base")
     TaskPlayAnim(GetPlayerPed(-1), "amb@prop_human_bbq@male@base", "base" ,3.0, 3.0, -1, 8, 0, false, false, false)
-    Framework.Functions.Progressbar("open-brick", "Cooking Fries..", 6500, false, true, {
+    QBCore.Functions.Progressbar("open-brick", "Cooking Fries..", 6500, false, true, {
         disableMovement = true,
         disableCarMovement = false,
         disableMouse = false,
@@ -273,7 +274,7 @@ function MakeFries()
         StopAnimTask(GetPlayerPed(-1), "amb@prop_human_bbq@male@base", "base", 1.0)
     end, function()
         TriggerEvent('qb-inventory:client:set:busy', false)
-        Framework.Functions.Notify("Cancelled..", "error")
+        QBCore.Functions.Notify("Cancelled..", "error")
         StopAnimTask(GetPlayerPed(-1), "amb@prop_human_bbq@male@base", "base", 1.0)
     end)
 end
@@ -283,7 +284,7 @@ function MakePatty()
     TriggerEvent("qb-sound:client:play", "baking", 0.7)
     exports['qb-assets']:RequestAnimationDict("amb@prop_human_bbq@male@base")
     TaskPlayAnim(GetPlayerPed(-1), "amb@prop_human_bbq@male@base", "base" ,3.0, 3.0, -1, 8, 0, false, false, false)
-    Framework.Functions.Progressbar("open-brick", "Cooking Burger..", 6500, false, true, {
+    QBCore.Functions.Progressbar("open-brick", "Cooking Burger..", 6500, false, true, {
         disableMovement = true,
         disableCarMovement = false,
         disableMouse = false,
@@ -299,7 +300,7 @@ function MakePatty()
         StopAnimTask(GetPlayerPed(-1), "amb@prop_human_bbq@male@base", "base", 1.0)
     end, function()
         TriggerEvent('qb-inventory:client:set:busy', false)
-        Framework.Functions.Notify("Cancelled..", "error")
+        QBCore.Functions.Notify("Cancelled..", "error")
         StopAnimTask(GetPlayerPed(-1), "amb@prop_human_bbq@male@base", "base", 1.0)
     end)
 end
@@ -309,7 +310,7 @@ function MakeDrink(DrinkName)
     TriggerEvent("qb-sound:client:play", "pour-drink", 0.4)
     exports['qb-smallresources']:RequestAnimationDict("amb@world_human_hang_out_street@female_hold_arm@idle_a")
     TaskPlayAnim(GetPlayerPed(-1), "amb@world_human_hang_out_street@female_hold_arm@idle_a", "idle_a" ,3.0, 3.0, -1, 8, 0, false, false, false)
-    Framework.Functions.Progressbar("open-brick", "Pouring Drink..", 6500, false, true, {
+    QBCore.Functions.Progressbar("open-brick", "Pouring Drink..", 6500, false, true, {
         disableMovement = true,
         disableCarMovement = false,
         disableMouse = false,
@@ -320,15 +321,15 @@ function MakeDrink(DrinkName)
         StopAnimTask(GetPlayerPed(-1), "amb@world_human_hang_out_street@female_hold_arm@idle_a", "idle_a", 1.0)
     end, function()
         TriggerEvent('qb-inventory:client:set:busy', false)
-        Framework.Functions.Notify("Cancelled..", "error")
+        QBCore.Functions.Notify("Cancelled..", "error")
         StopAnimTask(GetPlayerPed(-1), "amb@world_human_hang_out_street@female_hold_arm@idle_a", "idle_a", 1.0)
     end)
 end
 
 function CheckDuty()
-    if Framework.Functions.GetPlayerData().job.name =='burger' and Framework.Functions.GetPlayerData().job.onduty then
-       TriggerServerEvent('Framework:ToggleDuty')
-       Framework.Functions.Notify("You left work!", "error")
+    if QBCore.Functions.GetPlayerData().job.name =='burger' and QBCore.Functions.GetPlayerData().job.onduty then
+       TriggerServerEvent('QBCore:ToggleDuty')
+       QBCore.Functions.Notify("You left work!", "error")
     end
 end
 
