@@ -13,7 +13,7 @@ Bugs:
     - shadows in houses are broke, apartments are fine
     - cant clear calls from dispatch in mdt
     - cocaine plane stalls during take off?
-    - floating lights at pillbox (learn how to edit maps)
+    - floating lights at pillbox (learn how to edit maps) lodlights_small030.ymap
 
 To Do:
     - bypass qb-spawn for characters that arent new? - try to figure this out
@@ -43,7 +43,7 @@ Ideas:
     - give lockpicks durability?
     - ps-ui, gang influence areas
     - gun crafting or blackmarket or both? (ask icey)
-    - name ideas: blue rp, midnight,
+    - name ideas: blue rp, midnight, name the server indigo 100%
 
 Notes:
     - the "press E to open" menu is - exports['qb-core']:DrawText(text, 'left') and to hide - exports['qb-core']:HideText()
