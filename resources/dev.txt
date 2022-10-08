@@ -43,7 +43,7 @@ Ideas:
     - give lockpicks durability?
     - ps-ui, gang influence areas
     - gun crafting or blackmarket or both? (ask icey)
-    - name ideas: blue rp, midnight, name the server indigo 100%
+    - name ideas: blue rp, midnight, name the server indigo 2.0 - 100%
 
 Notes:
     - the "press E to open" menu is - exports['qb-core']:DrawText(text, 'left') and to hide - exports['qb-core']:HideText()
