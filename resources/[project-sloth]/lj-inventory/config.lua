@@ -48,12 +48,20 @@ Config.VendingItem = {
 
 Config.VendingFoodItem = {
     [1] = {
-        name = "sandwich",
+        name = "snikkel_candy",
         price = 4,
         amount = 50,
         info = {},
         type = "item",
         slot = 1,
+    },
+    [2] = {
+        name = "twerks_candy",
+        price = 4,
+        amount = 50,
+        info = {},
+        type = "item",
+        slot = 2,
     },
 
 }
