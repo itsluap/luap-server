@@ -60,3 +60,10 @@ what i've done so far:
     - LegacyFuel to ps-fuel
     - added burgetshot job - needs to be finished
     -
+
+
+    light coords (pillbox)
+    - 344.976
+    - 342.881
+    - 328.201
+    - 330.409
