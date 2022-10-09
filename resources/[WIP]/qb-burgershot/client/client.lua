@@ -376,8 +376,8 @@ exports['qb-target']:AddBoxZone("BurgershotBoard", vector3(vector3(-1191.27, -90
     name = "BurgershotBoard",
 	heading = 132,
 	debugPoly = true,
-	minZ = 15,
-	maxZ = 16,
+	minZ = 14,
+	maxZ = 15,
 }, {
     options = {
         {
