@@ -47,9 +47,10 @@ CreateThread(function()
 		"petroltank_r",
 		"wheel_rf",
 		"wheel_rr",
+		"wheel_lr",
 		"petrolcap ",
 		"seat_dside_r",
-		"engine",
+		--"engine",
 	}
 	exports['qb-target']:AddTargetBone(bones, {
 		options = {
