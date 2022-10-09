@@ -536,7 +536,6 @@ exports['qb-target']:AddTargetModel(`ch_prop_whiteboard`, {
             label = "Hot Tray",
             job = "burger",
             canInteract = onDuty
-            end,
         },
     },
     distance = 2.5
@@ -551,7 +550,6 @@ exports['qb-target']:AddTargetModel(`v_ret_gc_bag01`, {
             label = "Grill Meat",
             job = "burger",
             canInteract = onDuty
-            end,
         },
     },
     distance = 2.5
@@ -566,7 +564,6 @@ exports['qb-target']:AddTargetModel(`v_ret_gc_bag02`, {
             label = "Cook Fries",
             job = "burger",
             canInteract = onDuty
-            end,
         },
     },
     distance = 2.5
@@ -581,7 +578,6 @@ exports['qb-target']:AddTargetModel(`v_m_props_ff_fridge_01_door`, {
             label = "Refrigerated Storage",
             job = "burger",
             canInteract = onDuty
-            end,
         },
     },
     distance = 2.5
@@ -596,7 +592,6 @@ exports['qb-target']:AddTargetModel(`v_ret_fh_pot01`, {
             label = "Make Burger",
             job = "burger",
             canInteract = onDuty
-            end,
         },
     },
     distance = 2.5
@@ -611,7 +606,6 @@ exports['qb-target']:AddTargetModel(`v_ilev_fib_frame02`, {
             label = "Make Soda",
             job = "burger",
             canInteract = onDuty
-            end,
         },
     },
     options = {
@@ -622,7 +616,6 @@ exports['qb-target']:AddTargetModel(`v_ilev_fib_frame02`, {
             label = "Make Coffee",
             job = "burger",
             canInteract = onDuty
-            end,
         },
     },
     distance = 2.5
