@@ -29,6 +29,8 @@ To Do:
     - job mlos
     - civ jobs
     -
+    - add a qbcore-burgershot, implement features from dream-burgershot to make script better
+    -
     - fix pd cars - add ems heli and ambulance
     - add ps-buffs and possibly ps-progressbar and ps-drugsproccessing
     -
@@ -58,7 +60,6 @@ what i've done so far:
     - added bodybag command for police and ems
     - changed banking and edited qb-management
     - LegacyFuel to ps-fuel
-    - added burgetshot job - needs to be finished
     -
 
 
