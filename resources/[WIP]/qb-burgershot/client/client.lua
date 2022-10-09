@@ -396,7 +396,13 @@ exports['qb-target']:AddBoxZone("BurgershotBoard", vector3(-1191.27, -900.43, 13
     distance = 1
 })
 
-exports['qb-target']:AddTargetModel(`v_ind_bin_01`, {
+exports['qb-target']:AddBoxZone("BurgerRegister", vector3(-1194.86, -894.16, 13.98), 1, 1, {
+    name = "BurgerRegister",
+	heading = 307,
+	debugPoly = true,
+	minZ = 12.98,
+	maxZ = 14.98,
+}, {
     options = {
         {
             type = "client",
@@ -418,7 +424,7 @@ exports['qb-target']:AddTargetModel(`v_ind_bin_01`, {
             end,
         },
     },
-    distance = 2.5
+    distance = 1
 })
 
 exports['qb-target']:AddTargetModel(`v_ind_cfbin`, {
