@@ -372,7 +372,7 @@ function IsInsideBurgershot()
 end
 
 -- qb-target exports --
-exports['qb-target']:AddBoxZone("BurgershotBoard", vector3(-1191.27, -900.43, 13.98)), 1, 1, {
+exports['qb-target']:AddBoxZone("BurgershotBoard", vector3(-1191.27, -900.43, 13.98), 1, 1, {
     name = "BurgershotBoard",
 	heading = 132,
 	debugPoly = true,
