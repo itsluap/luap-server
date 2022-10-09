@@ -98,4 +98,5 @@ Config.WorkProps = {
     ['Prop'] = 'v_ind_cm_paintbckt01',
     ['Coords'] = {['X'] = -1193.86, ['Y'] = -894.46, ['Z'] = 13.60, ['H'] = 303.17},
   },
+
 }

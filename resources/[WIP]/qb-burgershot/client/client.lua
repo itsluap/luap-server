@@ -1,10 +1,13 @@
 local CurrentWorkObject, InRange, ShowingInteraction, AddedProps = {}, false, false, false
 local QBCore, PlayerJob, LoggedIn = exports['qb-core']:GetCoreObject(), {}, false
+onDuty = false
 
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded')
 AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
     Citizen.SetTimeout(1250, function()
+        local player = QBCore.Functions.GetPlayerData()
         PlayerJob = QBCore.Functions.GetPlayerData().job
+        onDuty = player.job.onduty
         Citizen.Wait(1200)
         LoggedIn = true
     end)
@@ -14,17 +17,24 @@ RegisterNetEvent('QBCore:Client:OnPlayerUnload')
 AddEventHandler('QBCore:Client:OnPlayerUnload', function()
 	RemoveWorkObjects()
     LoggedIn, AddedProps = false, false
+    onDuty = false
 end)
 
 RegisterNetEvent('QBCore:Client:OnJobUpdate')
 AddEventHandler('QBCore:Client:OnJobUpdate', function(JobInfo)
     PlayerJob = JobInfo
+    if JobInfo.name == "burger" and PlayerJob.name ~= "burger" then
+        if JobInfo.onduty then
+            TriggerServerEvent("QBCore:ToggleDuty")
+            onDuty = false
+        end
+    end
 end)
 
-RegisterNetEvent('QBCore:Client:SetDuty')
-AddEventHandler('QBCore:Client:SetDuty', function()
-    PlayerJob = QBCore.Functions.GetPlayerData().job
-end)
+-- RegisterNetEvent('QBCore:Client:SetDuty')
+-- AddEventHandler('QBCore:Client:SetDuty', function()
+--    PlayerJob = QBCore.Functions.GetPlayerData().job
+-- end)
 
 -- Citizen.CreateThread(function()
 --     Citizen.SetTimeout(1, function()
@@ -45,9 +55,9 @@ Citizen.CreateThread(function()
         if LoggedIn then
             local NearAnything = false
             local PlayerCoords = GetEntityCoords(GetPlayerPed(-1))
-            if PlayerJob.name == 'burger' and PlayerJob.onduty then
+            if PlayerJob.name == 'burger' and onDuty then
                 local Distance = #(PlayerCoords - Config.Intercom['Worker'])
-                if Distance < 1.5 then
+                if Distance < 3.5 then
                     NearAnything = true
                     if not ShowingInteraction then
                         ShowingInteraction = true
@@ -58,7 +68,7 @@ Citizen.CreateThread(function()
                 end
             end
             local Distance = #(PlayerCoords - Config.Intercom['Customer'])
-            if Distance < 3.0 then
+            if Distance < 3.5 then
                 NearAnything = true
                 if not ShowingInteraction then
                     ShowingInteraction = true
@@ -119,7 +129,7 @@ end)
 
 RegisterNetEvent('qb-burgershot:client:call:intercom')
 AddEventHandler('qb-burgershot:client:call:intercom', function()
-    if QBCore.Functions.GetPlayerData().job.name =='burger' and QBCore.Functions.GetPlayerData().job.onduty then
+    if QBCore.Functions.GetPlayerData().job.name =='burger' and onDuty then
         QBCore.Functions.Notify('Someone is at the drive thru', 'info', 10000)
         PlaySoundFrontend( -1, "Beep_Green", "DLC_HEIST_HACKING_SNAKE_SOUNDS", 1)
     end
@@ -327,7 +337,7 @@ function MakeDrink(DrinkName)
 end
 
 function CheckDuty()
-    if QBCore.Functions.GetPlayerData().job.name =='burger' and QBCore.Functions.GetPlayerData().job.onduty then
+    if QBCore.Functions.GetPlayerData().job.name =='burger' and onDuty then
        TriggerServerEvent('QBCore:ToggleDuty')
        QBCore.Functions.Notify("You left work!", "error")
     end
@@ -360,3 +370,262 @@ end
 function IsInsideBurgershot()
     return InRange
 end
+
+-- qb-target exports --
+exports['qb-target']:AddTargetModel(`v_ind_cs_toolboard`, {
+    options = {
+        {
+            type = "server",
+            event = "QBCore:ToggleDuty",
+            icon = "fas fa-user-clock",
+            label = "Clock In / Out",
+            job = "burger",
+            canInteract = function()
+                if exports['qb-burgershot']:IsInsideBurgershot() then
+                    return true
+                end
+            end,
+        },
+    },
+    distance = 2.5
+})
+
+exports['qb-target']:AddTargetModel(`v_ind_bin_01`, {
+    options = {
+        {
+            type = "client",
+            event = "qb-burgershot:client:open:register",
+            icon = "fas fa-cash-register",
+            label = "Take an order",
+            job = "burger",
+            canInteract = onDuty
+            end,
+        },
+        {
+            type = "client",
+            event = "qb-burgershot:client:open:payment",
+            icon = "fas fa-receipt",
+            label = "Pay",
+            canInteract = function()
+                if exports['qb-burgershot']:IsInsideBurgershot() then
+                    return true
+                end
+            end,
+        },
+    },
+    distance = 2.5
+})
+
+exports['qb-target']:AddTargetModel(`v_ind_cfbin`, {
+    options = {
+        {
+            type = "client",
+            event = "qb-burgershot:client:open:register",
+            icon = "fas fa-cash-register",
+            label = "Burgershot Checkout",
+            job = "burger",
+            canInteract = onDuty
+            end,
+        },
+    },
+    distance = 2.5
+})
+
+exports['qb-target']:AddTargetModel(`v_ind_cm_paintbckt01`, {
+    options = {
+        {
+            type = "client",
+            event = "qb-burgershot:client:open:tray",
+            icon = "fas fa-cash-utensils",
+            label = "Tray",
+            canInteract = function()
+                if exports['qb-burgershot']:IsInsideBurgershot() then
+                    return true
+                end
+            end,
+        },
+    },
+    distance = 2.5
+})
+
+exports['qb-target']:AddTargetModel(`v_ind_cm_paintbckt02`, {
+    options = {
+        {
+            type = "client",
+            event = "qb-burgershot:client:open:tray",
+            icon = "fas fa-cash-utensils",
+            label = "Tray",
+            canInteract = function()
+                if exports['qb-burgershot']:IsInsideBurgershot() then
+                    return true
+                end
+            end,
+        },
+    },
+    distance = 2.5
+})
+
+exports['qb-target']:AddTargetModel(`prop_food_bs_tray_03`, {
+    options = {
+        {
+            type = "client",
+            event = "qb-burgershot:client:open:tray",
+            icon = "fas fa-cash-utensils",
+            label = "Tray",
+            canInteract = function()
+                if exports['qb-burgershot']:IsInsideBurgershot() then
+                    return true
+                end
+            end,
+        },
+    },
+    distance = 2.5
+})
+
+
+exports['qb-target']:AddTargetModel(`prop_food_bs_bag_01`, {
+    options = {
+        {
+            type = "client",
+            event = "qb-burgershot:server:get:bag",
+            icon = "fas fa-shopping-bag",
+            label = "Get Box",
+            job = "burger",
+            canInteract = onDuty
+        },
+    },
+    distance = 2.5
+})
+
+exports['qb-target']:AddTargetModel(`prop_food_bs_bag_02`, {
+    options = {
+        {
+            type = "client",
+            event = "qb-burgershot:server:get:bag",
+            icon = "fas fa-shopping-bag",
+            label = "Get Box",
+            job = "burger",
+            canInteract = onDuty
+        },
+    },
+    distance = 2.5
+})
+
+exports['qb-target']:AddTargetModel(`prop_food_bs_bag_02`, {
+    options = {
+        {
+            type = "client",
+            event = "qb-burgershot:server:get:bag",
+            icon = "fas fa-shopping-bag",
+            label = "Get Box",
+            job = "burger",
+            canInteract = function()
+                if exports['qb-burgershot']:IsInsideBurgershot() then
+                    return true
+                end
+            end,
+        },
+    },
+    distance = 2.5
+})
+
+exports['qb-target']:AddTargetModel(`ch_prop_whiteboard`, {
+    options = {
+        {
+            type = "client",
+            event = "qb-burgershot:client:open:hot:storage",
+            icon = "fas fa-hamburger",
+            label = "Hot Tray",
+            job = "burger",
+            canInteract = onDuty
+            end,
+        },
+    },
+    distance = 2.5
+})
+
+exports['qb-target']:AddTargetModel(`v_ret_gc_bag01`, {
+    options = {
+        {
+            type = "client",
+            event = "qb-burgershot:client:bake:meat",
+            icon = "fas fa-drumstick-bite",
+            label = "Grill Meat",
+            job = "burger",
+            canInteract = onDuty
+            end,
+        },
+    },
+    distance = 2.5
+})
+
+exports['qb-target']:AddTargetModel(`v_ret_gc_bag02`, {
+    options = {
+        {
+            type = "client",
+            event = "qb-burgershot:client:bake:fries",
+            icon = "fas fa-drumstick-bite",
+            label = "Cook Fries",
+            job = "burger",
+            canInteract = onDuty
+            end,
+        },
+    },
+    distance = 2.5
+})
+
+exports['qb-target']:AddTargetModel(`v_m_props_ff_fridge_01_door`, {
+    options = {
+        {
+            type = "client",
+            event = "qb-burgershot:client:open:cold:storage",
+            icon = "fas fa-boxes",
+            label = "Refrigerated Storage",
+            job = "burger",
+            canInteract = onDuty
+            end,
+        },
+    },
+    distance = 2.5
+})
+
+exports['qb-target']:AddTargetModel(`v_ret_fh_pot01`, {
+    options = {
+        {
+            type = "client",
+            event = "qb-burgershot:client:create:burger",
+            icon = "fas fa-hamburger",
+            label = "Make Burger",
+            job = "burger",
+            canInteract = onDuty
+            end,
+        },
+    },
+    distance = 2.5
+})
+
+exports['qb-target']:AddTargetModel(`v_ilev_fib_frame02`, {
+    options = {
+        {
+            type = "client",
+            event = "qb-burgershot:client:create:drink",
+            icon = "fas fa-wine-bottle",
+            label = "Make Soda",
+            job = "burger",
+            canInteract = onDuty
+            end,
+        },
+    },
+    options = {
+        {
+            type = "client",
+            event = "qb-burgershot:client:create:drink",
+            icon = "fas fa-wine-bottle",
+            label = "Make Coffee",
+            job = "burger",
+            canInteract = onDuty
+            end,
+        },
+    },
+    distance = 2.5
+})
