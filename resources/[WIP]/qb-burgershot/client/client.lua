@@ -424,7 +424,6 @@ exports['qb-target']:AddTargetModel(`v_ind_cfbin`, {
             label = "Burgershot Checkout",
             job = "burger",
             canInteract = onDuty
-            end,
         },
     },
     distance = 2.5
