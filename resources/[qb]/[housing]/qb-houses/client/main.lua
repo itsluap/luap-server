@@ -1016,7 +1016,7 @@ RegisterNetEvent('qb-houses:client:EnterHouse', function()
 
     if ClosestHouse ~= nil then
         local dist = #(pos - vector3(Config.Houses[ClosestHouse].coords.enter.x, Config.Houses[ClosestHouse].coords.enter.y, Config.Houses[ClosestHouse].coords.enter.z))
-        if dist <= 1.5 then
+        if dist <= 5.0 then
             if HasHouseKey then
                 enterOwnedHouse(ClosestHouse)
             else
