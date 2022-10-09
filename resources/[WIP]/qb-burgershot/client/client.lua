@@ -372,7 +372,13 @@ function IsInsideBurgershot()
 end
 
 -- qb-target exports --
-exports['qb-target']:AddTargetModel(`v_ind_cs_toolboard`, {
+exports['qb-target']:AddBoxZone("BurgershotBoard", vector3(-1191.29, -900.44, 13.98), 2, 2, {
+    name = "BurgershotBoard",
+	heading = 0,
+	debugPoly = false,
+	minZ = 10.98,
+	maxZ = 80,
+}, {
     options = {
         {
             type = "server",
