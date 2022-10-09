@@ -56,7 +56,7 @@ Config.GangMenus = {
         vector3(0, 0, 0),
     },
     ['cartel'] = {
-        vector3(-1792.37, 423.04, 125.21),
+        vector3(-1791.52, 421.24, 125.21),
     },
     ['families'] = {
         vector3(0, 0, 0),
