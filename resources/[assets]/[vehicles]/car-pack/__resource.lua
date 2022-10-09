@@ -7,6 +7,8 @@ data_file 'VEHICLE_METADATA_FILE' 'data/**/vehicles.meta'
 data_file 'CARCOLS_FILE' 'data/**/carcols.meta'
 data_file 'VEHICLE_VARIATION_FILE' 'data/**/carvariations.meta'
 
+-- add veryron sound
+
 files {
     'data/**/handling.meta',
     'data/**/vehiclelayouts.meta',
@@ -21,8 +23,10 @@ files {
     'audioconfig/488sound_sounds.dat54.rel',
     'audioconfig/apollosv8_game.dat151.rel',
     'audioconfig/apollosv8_sounds.dat54.rel',
-    'audioconfig/avesvv12_game.dat151.rel',
-    'audioconfig/avesvv12_sounds.dat54.rel',
+    'audioconfig/avesv_game.dat151.rel',
+    'audioconfig/avesv_sounds.dat54.rel',
+    'audioconfig/avesv_game.dat151.rel',
+    'audioconfig/avesv_sounds.dat54.rel',
     'audioconfig/c6v8sound_game.dat151.rel',
     'audioconfig/c6v8sound_sounds.dat54.rel',
     'audioconfig/diablov12_game.dat151.rel',
@@ -57,6 +61,8 @@ files {
     'sfx/dlc_488sound/488sound_npc.awc',
     'sfx/dlc_apollosv8/apollosv8.awc',
     'sfx/dlc_apollosv8/apollosv8_npc.awc',
+    'sfx/dlc_avesv/avesv.awc',
+    'sfx/dlc_avesv/avesv_npc.awc',
     'sfx/dlc_avesvv12/avesvv12.awc',
     'sfx/dlc_avesvv12/avesvv12_npc.awc',
     'sfx/dlc_c6v8sound/c6v8sound.awc',
@@ -174,7 +180,11 @@ files {
     'audioconfig/elegyx_sounds.dat54.nametable',
     'audioconfig/elegyx_sounds.dat54.rel',
     'sfx/dlc_elegyx/elegyx.awc',
-    'sfx/dlc_elegyx/elegyx_npc.awc'
+    'sfx/dlc_elegyx/elegyx_npc.awc',
+    'audioconfig/cvpiv8_game.dat151.rel',
+    'audioconfig/cvpiv8_sounds.dat54.rel',
+    'sfx/dlc_cvpiv8/cvpiv8.awc',
+    'sfx/dlc_cvpiv8/cvpiv8_npc.awc'
 }
 
 -- mercedes sound
@@ -253,3 +263,36 @@ data_file 'AUDIO_SYNTHDATA' 'audioconfig/p60b40_amp.dat'
 data_file 'AUDIO_GAMEDATA' 'audioconfig/p60b40_game.dat'
 data_file 'AUDIO_SOUNDDATA' 'audioconfig/p60b40_sounds.dat'
 data_file 'AUDIO_WAVEPACK' 'sfx/dlc_p60b40'
+data_file 'AUDIO_GAMEDATA' 'audioconfig/cvpiv8_game.dat'
+data_file 'AUDIO_SOUNDDATA' 'audioconfig/cvpiv8_sounds.dat'
+data_file 'AUDIO_WAVEPACK' 'sfx/dlc_cvpiv8'
+data_file 'AUDIO_GAMEDATA' 'audioconfig/apollosv8_game.dat'
+data_file 'AUDIO_SOUNDDATA' 'audioconfig/apollosv8_sounds.dat'
+data_file 'AUDIO_WAVEPACK' 'sfx/dlc_apollosv8'
+data_file 'AUDIO_GAMEDATA' 'audioconfig/488sound_game.dat'
+data_file 'AUDIO_SOUNDDATA' 'audioconfig/488sound_sounds.dat'
+data_file 'AUDIO_WAVEPACK' 'sfx/dlc_488sound'
+data_file 'AUDIO_GAMEDATA' 'audioconfig/avesv_game.dat'
+data_file 'AUDIO_SOUNDDATA' 'audioconfig/avesv_sounds.dat'
+data_file 'AUDIO_WAVEPACK' 'sfx/dlc_avesv'
+data_file 'AUDIO_GAMEDATA' 'audioconfig/avesvv12_game.dat'
+data_file 'AUDIO_SOUNDDATA' 'audioconfig/avesvv12_sounds.dat'
+data_file 'AUDIO_WAVEPACK' 'sfx/dlc_avesvv12'
+data_file 'AUDIO_GAMEDATA' 'audioconfig/c6v8sound_game.dat'
+data_file 'AUDIO_SOUNDDATA' 'audioconfig/c6v8sound_sounds.dat'
+data_file 'AUDIO_WAVEPACK' 'sfx/dlc_c6v8sound'
+data_file 'AUDIO_GAMEDATA' 'audioconfig/gtaspanov10_game.dat'
+data_file 'AUDIO_SOUNDDATA' 'audioconfig/gtaspanov10_sounds.dat'
+data_file 'AUDIO_WAVEPACK' 'sfx/dlc_gtaspanov10'
+data_file 'AUDIO_GAMEDATA' 'audioconfig/laferrarisound_game.dat'
+data_file 'AUDIO_SOUNDDATA' 'audioconfig/laferrarisound_sounds.dat'
+data_file 'AUDIO_WAVEPACK' 'sfx/dlc_laferrarisound'
+data_file 'AUDIO_GAMEDATA' 'audioconfig/mclarenv8_game.dat'
+data_file 'AUDIO_SOUNDDATA' 'audioconfig/mclarenv8_sounds.dat'
+data_file 'AUDIO_WAVEPACK' 'sfx/dlc_mclarenv8'
+data_file 'AUDIO_GAMEDATA' 'audioconfig/perfov10_game.dat'
+data_file 'AUDIO_SOUNDDATA' 'audioconfig/perfov10_sounds.dat'
+data_file 'AUDIO_WAVEPACK' 'sfx/dlc_perfov10'
+data_file 'AUDIO_GAMEDATA' 'audioconfig/urusv8_game.dat'
+data_file 'AUDIO_SOUNDDATA' 'audioconfig/urusv8_sounds.dat'
+data_file 'AUDIO_WAVEPACK' 'sfx/dlc_urusv8'

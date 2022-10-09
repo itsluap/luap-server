@@ -144,7 +144,7 @@ RegisterCommand('togglelocks', function()
     ToggleVehicleLocks(GetVehicle())
 end)
 
-RegisterKeyMapping('engine', Lang:t("info.engine"), 'keyboard', 'G')
+--RegisterKeyMapping('engine', Lang:t("info.engine"), 'keyboard', 'G')
 RegisterCommand('engine', function()
     TriggerEvent("qb-vehiclekeys:client:ToggleEngine")
 end)

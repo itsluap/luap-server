@@ -8,10 +8,12 @@ this_is_a_map 'yes'
 
 client_scripts {
 	'client/main.lua',
+	'gabz_entitysets_mods_1.lua',
 	--'client/optional.lua'
 }
 
 files {
+	'gabz_timecycle_mods_1.xml',
 	'starter_shells_k4mb1.ytyp',
 	'stream/pinkcage/gabz_pinkcage.ytyp',
 	-- 'stream/ClassicHouseShells/shellpropsv19.ytyp',
@@ -36,6 +38,7 @@ files {
 }
 
 -- Default (included)
+data_file 'TIMECYCLEMOD_FILE' 'gabz_timecycle_mods_1.xml'
 data_file 'DLC_ITYP_REQUEST' 'starter_shells_k4mb1.ytyp'
 data_file 'DLC_ITYP_REQUEST' 'stream/pinkcage/gabz_pinkcage.ytyp'
 -- Classic
