@@ -216,15 +216,18 @@ RegisterNetEvent('hospital:client:RevivePlayer', function()
             local player, distance = GetClosestPlayer()
             if player ~= -1 and distance < 5.0 then
                 local playerId = GetPlayerServerId(player)
+                TaskPlayAnim(PlayerPedId(), 'mini@cpr@char_a@cpr_str', "cpr_pumpchest", 8.0, 1.0, -1, 01, 0, 0, 0, 0)
                 QBCore.Functions.Progressbar("hospital_revive", Lang:t('progress.revive'), 5000, false, true, {
                     disableMovement = false,
                     disableCarMovement = false,
                     disableMouse = false,
                     disableCombat = true,
                 }, {
+                    --[[
                     animDict = healAnimDict,
                     anim = healAnim,
                     flags = 16,
+                    ]]--
                 }, {}, {}, function() -- Done
                     StopAnimTask(PlayerPedId(), healAnimDict, "exit", 1.0)
                     QBCore.Functions.Notify(Lang:t('success.revived'), 'success')
@@ -248,15 +251,18 @@ RegisterNetEvent('hospital:client:TreatWounds', function()
             local player, distance = GetClosestPlayer()
             if player ~= -1 and distance < 5.0 then
                 local playerId = GetPlayerServerId(player)
+                TaskPlayAnim(PlayerPedId(), 'mini@cpr@char_a@cpr_str', "cpr_pumpchest", 8.0, 1.0, -1, 17, 0, 0, 0, 0)
                 QBCore.Functions.Progressbar("hospital_healwounds", Lang:t('progress.healing'), 5000, false, true, {
                     disableMovement = false,
                     disableCarMovement = false,
                     disableMouse = false,
                     disableCombat = true,
                 }, {
+                    --[[
                     animDict = healAnimDict,
                     anim = healAnim,
                     flags = 16,
+                    ]]--
                 }, {}, {}, function() -- Done
                     StopAnimTask(PlayerPedId(), healAnimDict, "exit", 1.0)
                     QBCore.Functions.Notify(Lang:t('success.helped_player'), 'success')

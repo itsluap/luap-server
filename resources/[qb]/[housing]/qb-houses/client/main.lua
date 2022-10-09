@@ -238,13 +238,34 @@ local function RegisterHouseExitZone(id)
 
     local house = Config.Houses[id]
     local coords = vector3(house.coords['enter'].x + POIOffsets.exit.x, house.coords['enter'].y + POIOffsets.exit.y, house.coords['enter'].z  - Config.MinZOffset + POIOffsets.exit.z + 1.0)
+    local aptcoords = vector3(house.coords['enter'].x - POIOffsets.exit.x, house.coords['enter'].y - POIOffsets.exit.y - 0.5, house.coords['enter'].z - Config.MinZOffset + POIOffsets.exit.z)
 
-    local zone = BoxZone:Create(coords, 2, 1, {
+    if Config.Houses[id].tier ~= 1 then
+        print("apartment tier 1")
+        local zone = BoxZone:Create(coords, 2, 1, {
+            name = boxName,
+            heading = 0.0,
+            debugPoly = false,
+            minZ = coords.z - 2.0,
+            maxZ = coords.z + 1.0,
+        })
+    else
+        --print("apartment tier 1")
+        local zone = BoxZone:Create(aptcoords, 2, 1, {
+            name = boxName,
+            heading = 0.0,
+            debugPoly = false,
+            minZ = aptcoords.z - 2.0,
+            maxZ = aptcoords.z + 1.0,
+        })
+    end
+
+    local zone = BoxZone:Create(aptcoords, 2, 1, {
         name = boxName,
         heading = 0.0,
         debugPoly = false,
-        minZ = coords.z - 2.0,
-        maxZ = coords.z + 1.0,
+        minZ = aptcoords.z - 2.0,
+        maxZ = aptcoords.z + 1.0,
     })
 
     zone:onPlayerInOut(function (isPointInside)
@@ -889,8 +910,8 @@ local function enterOwnedHouse(house)
     entering = true
     Wait(500)
     TriggerServerEvent('qb-houses:server:SetInsideMeta', house, true)
-    --TriggerEvent('qb-weathersync:client:DisableSync')
-    TriggerEvent('qb-weathersync:client:EnableSync')
+    TriggerEvent('qb-weathersync:client:DisableSync')
+    --TriggerEvent('qb-weathersync:client:EnableSync')
     TriggerEvent('qb-weed:client:getHousePlants', house)
     entering = false
     setHouseLocations()
@@ -1397,14 +1418,14 @@ end)
 
 RegisterNetEvent('qb-houses:client:ExitOwnedHouse', function()
     local door = vector3(Config.Houses[CurrentHouse].coords.enter.x + POIOffsets.exit.x, Config.Houses[CurrentHouse].coords.enter.y + POIOffsets.exit.y, Config.Houses[CurrentHouse].coords.enter.z - Config.MinZOffset + POIOffsets.exit.z)
-    if CheckDistance(door, 1.5) then
+    if CheckDistance(door, 50.0) then
         LeaveHouse(CurrentHouse)
     end
 end)
 
 RegisterNetEvent('qb-houses:client:FrontDoorCam', function()
     local door = vector3(Config.Houses[CurrentHouse].coords.enter.x + POIOffsets.exit.x, Config.Houses[CurrentHouse].coords.enter.y + POIOffsets.exit.y, Config.Houses[CurrentHouse].coords.enter.z - Config.MinZOffset + POIOffsets.exit.z)
-    if CheckDistance(door, 1.5) then
+    if CheckDistance(door, 3.5) then
         FrontDoorCam(Config.Houses[CurrentHouse].coords.enter)
     end
 end)
@@ -1415,7 +1436,7 @@ RegisterNetEvent('qb-houses:client:AnswerDoorbell', function()
         return
     end
     local door = vector3(Config.Houses[CurrentHouse].coords.enter.x + POIOffsets.exit.x, Config.Houses[CurrentHouse].coords.enter.y + POIOffsets.exit.y, Config.Houses[CurrentHouse].coords.enter.z - Config.MinZOffset + POIOffsets.exit.z)
-    if CheckDistance(door, 1.5) and CurrentDoorBell ~= 0 then
+    if CheckDistance(door, 3.5) and CurrentDoorBell ~= 0 then
         TriggerServerEvent("qb-houses:server:OpenDoor", CurrentDoorBell, ClosestHouse)
         CurrentDoorBell = 0
     end

@@ -66,7 +66,7 @@ Config.GangMenus = {
 Config.GangMenuZones = {
     
     ['cartel'] = {
-        { coords = vector3(-1791.52, 421.24, 125.21), length = 2.5, width = 2.5, heading = 0.0, minZ = 0.0, maxZ = 0.0 },
+        { coords = vector3(-1791.52, 421.24, 125.21), length = 1.5, width = 1.5, heading = 0.0, minZ = 115.21, maxZ = 125.21 },
     },
     
 }
