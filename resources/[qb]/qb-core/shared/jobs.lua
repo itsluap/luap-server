@@ -199,6 +199,36 @@ QBShared.Jobs = {
             },
         },
 	},
+    ['burger'] = {
+		label = 'Burgershot',
+        type = "burger",
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+            ['0'] = {
+                name = 'Janitor',
+                payment = 50
+            },
+			['1'] = {
+                name = 'Cashier',
+                payment = 75
+            },
+			['2'] = {
+                name = 'Crew Member',
+                payment = 100
+            },
+			['3'] = {
+                name = 'Grill Master',
+                payment = 125
+            },
+			['4'] = {
+                name = 'Manager',
+				isboss = true,
+                bankAuth = true,
+                payment = 150
+            },
+        },
+	},
 	['judge'] = {
 		label = 'Honorary',
 		defaultDuty = true,
