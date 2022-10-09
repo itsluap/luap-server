@@ -24,7 +24,6 @@ client_scripts {
 
     'scripts/cayo_perico_entitysets.lua', -- Responsible for spawning in heist props in El Rubio's Mansion safe. You can use this file to change the prop that appears.
 	 'scripts/cp_config.lua', -- Both Islands visible in game, however opposite island gets concealed (ENABLED BY DEFAULT, Island hangar won't work otherwise)
-	'scripts/blips.lua', -- Map Blips
 	'scripts/zones.lua', -- Displays all map zones, fixing the bug of showing North Yankton, and instead showing Cayo Perico
 	'scripts/peds_config.lua', -- Invincible peds that appear on the island, ie merryweather
 	'scripts/main_peds.lua', -- Don't touch
