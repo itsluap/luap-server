@@ -400,7 +400,7 @@ exports['qb-target']:AddBoxZone("BurgerRegister", vector3(-1194.86, -894.16, 13.
     name = "BurgerRegister",
 	heading = 307,
 	debugPoly = true,
-	minZ = 13.2,
+	minZ = 14,
 	maxZ = 15.4,
 }, {
     options = {
