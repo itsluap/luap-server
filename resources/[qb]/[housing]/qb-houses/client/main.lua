@@ -1097,7 +1097,7 @@ end)
 RegisterNetEvent('qb-houses:client:toggleDoorlock', function()
     local pos = GetEntityCoords(PlayerPedId())
     local dist = #(pos - vector3(Config.Houses[ClosestHouse].coords.enter.x, Config.Houses[ClosestHouse].coords.enter.y, Config.Houses[ClosestHouse].coords.enter.z))
-    if dist <= 1.5 then
+    if dist <= 50.0 then
         if HasHouseKey then
             if Config.Houses[ClosestHouse].locked then
                 TriggerServerEvent('qb-houses:server:lockHouse', false, ClosestHouse)
