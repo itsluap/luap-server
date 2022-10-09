@@ -328,35 +328,29 @@ if UseCommands then
 	end, false)
 
 	-- HOOD
-	TriggerEvent('chat:addSuggestion', '/hood', 'Open/Close Hood')
 
 	RegisterCommand("hood", function(source, args, rawCommand)
 		DoorControl(4)
 	end, false)
 
 	-- TRUNK
-	TriggerEvent('chat:addSuggestion', '/trunk', 'Open/Close Trunk')
-
 	RegisterCommand("trunk", function(source, args, rawCommand)
 		DoorControl(5)
 	end, false)
 
 	-- FRONT WINDOWS
-	TriggerEvent('chat:addSuggestion', '/windowfront', 'Roll Up/Down Front Windows')
 
 	RegisterCommand("windowfront", function(source, args, rawCommand)
 		FrontWindowControl()
 	end, false)
 
 	-- BACK WINDOWS
-	TriggerEvent('chat:addSuggestion', '/windowback', 'Roll Up/Down Back Windows')
 
 	RegisterCommand("windowback", function(source, args, rawCommand)
 		BackWindowControl()
 	end, false)
 
 	-- ALL WINDOWS
-	TriggerEvent('chat:addSuggestion', '/windowall', 'Roll Up/Down All Windows')
 
 	RegisterCommand("windowall", function(source, args, rawCommand)
 		AllWindowControl()
