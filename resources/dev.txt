@@ -29,6 +29,7 @@ To Do:
     - job mlos
     - civ jobs
     -
+    - fix pd cars - add ems heli and ambulance
     - add ps-buffs and possibly ps-progressbar and ps-drugsproccessing
     -
     - steal players from other servers (give out a beta test reward) NEED A LOYAL TEAM - reach out to old fivem friends
