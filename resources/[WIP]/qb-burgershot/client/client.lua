@@ -393,7 +393,7 @@ exports['qb-target']:AddBoxZone("BurgershotBoard", vector3(vector3(-1191.27, -90
             end,
         },
     },
-    distance = 2.5
+    distance = 1
 })
 
 exports['qb-target']:AddTargetModel(`v_ind_bin_01`, {
