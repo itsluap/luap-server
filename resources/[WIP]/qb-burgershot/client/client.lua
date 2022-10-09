@@ -399,7 +399,6 @@ exports['qb-target']:AddTargetModel(`v_ind_bin_01`, {
             label = "Take an order",
             job = "burger",
             canInteract = onDuty
-            end,
         },
         {
             type = "client",
