@@ -154,6 +154,19 @@ Config.Teleports = {
             drawText = '[E] Leave'
         },
     },
+    --Cartel Elevator
+    [3] = {
+        [1] = {
+            coords = vector4(5012.6, -5748.73, 28.95, 147.0),
+            ["AllowVehicle"] = false,
+            drawText = '[E] Take Elevador Up'
+        },
+        [2] = {
+            coords = vector4(5013.59, -5745.07, 15.48, 147.74),
+            ["AllowVehicle"] = false,
+            drawText = '[E] Take Elevator Down'
+        },
+    },
 }
 
 Config.CarWash = { -- carwash
