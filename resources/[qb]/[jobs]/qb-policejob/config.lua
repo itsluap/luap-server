@@ -24,7 +24,7 @@ Config.UseTarget = GetConvar('UseTarget', 'false') == 'true'
 Config.Locations = {
     ["duty"] = {
         [1] = vector3(453.64, -981.55, 31.63),
-        --[2] = vector3(-449.811, 6012.909, 31.815),
+        [2] = vector3(1555.56, 836.3, 77.66),
     },
     ["vehicle"] = {
         [1] = vector4(446.13, -986.19, 25.7, 270.99),
@@ -33,6 +33,7 @@ Config.Locations = {
     },
     ["stash"] = {
         [1] = vector3(486.45, -995.2, 30.69),
+        [2] = vector3(1545.44, 816.82, 77.66),
     },
     ["impound"] = {
         [1] = vector3(469.07, -992.35, 26.27),
@@ -44,6 +45,7 @@ Config.Locations = {
     },
     ["armory"] = {
         [1] = vector3(482.53, -995.2, 30.69),
+        [2] = vector3(1550.73, 842.03, 77.66),
     },
     ["trash"] = {
         [1] = vector3(471.89, -1002.33, 31.39),
@@ -54,7 +56,7 @@ Config.Locations = {
     ["evidence"] = {
         [1] = vector3(474.81, -996.38, 26.27),
         [2] = vector3(472.98, -994.5, 26.27),
-        --[3] = vector3(455.1456, -985.462, 30.689),
+        [3] = vector3(1547.82, 836.49, 77.66),
     },
     ["stations"] = {
         [1] = {label = "Police Station", coords = vector4(428.23, -984.28, 29.76, 3.5)},

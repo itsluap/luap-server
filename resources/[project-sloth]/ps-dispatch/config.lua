@@ -3,7 +3,7 @@ Config = {}
 Config.Enable = {}
 Config.Timer = {}
 
-Config.PoliceJob = { "police", "bcso"}
+Config.PoliceJob = { "police", "sheriff", "trooper"}
 
 -- Enable if you only want to send alerts to onDuty officers
 Config.OnDutyOnly = true

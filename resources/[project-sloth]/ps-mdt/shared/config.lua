@@ -3,7 +3,8 @@ Config = Config or {}
 Config.RosterLink = {
     ['police'] = '',
     ['ambulance'] = '',
-    ['bcso'] = '',
+    ['sheriff'] = '',
+    ['trooper'] = '',
     ['doj'] = '',
 }
 
@@ -239,13 +240,8 @@ Config.PenalCode = {
 
 Config.PoliceJobs = {
     ['police'] = true,
-    ['lspd'] = true,
-    ['bcso'] = true,
-    ['sast'] = true,
-    ['sasp'] = true,
-    ['doc'] = true,
-    ['sapr'] = true,
-    ['pa'] = true -- yucky
+    ['sheriff'] = true,
+    ['trooper'] = true,
 }
 
 Config.AmbulanceJobs = {
@@ -275,6 +271,12 @@ Config.LogPerms = {
 		[4] = true,
 	},
 	['police'] = {
+		[4] = true,
+	},
+    ['sheriff'] = {
+		[4] = true,
+	},
+    ['trooper'] = {
 		[4] = true,
 	},
 }
