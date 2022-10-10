@@ -27,3 +27,17 @@ Config.DoorList['cayo-2'] = {
     },
     distance = 2,
 }
+
+-- 3 created by luap
+Config.DoorList['cayo-3'] = {
+    distance = 2,
+    authorizedGangs = { ['cartel'] = 0 },
+    objName = -576022807,
+    doorLabel = 'Elevator',
+    doorRate = 1.0,
+    fixText = false,
+    objCoords = vec3(5011.749023, -5750.071289, 27.944746),
+    doorType = 'sliding',
+    locked = true,
+    objYaw = 328.17059326172,
+}
