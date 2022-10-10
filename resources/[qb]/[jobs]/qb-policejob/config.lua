@@ -413,7 +413,7 @@ Config.VehicleSettings = {
 		["livery"] = 2,
     },
     ["n16explorer"] = { --- Model name
-        ["extras"] =
+        ["extras"] = {
             ["1"] = true, -- on/off
             ["2"] = false,
             ["3"] = true,
