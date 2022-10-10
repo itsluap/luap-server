@@ -388,35 +388,89 @@ Config.Items = {
 }
 
 Config.VehicleSettings = {
-    ["pd1"] = { --- Model name
+    ["n11vic"] = { --- Model name
         ["extras"] = {
             ["1"] = true, -- on/off
             ["2"] = false,
-            ["3"] = false,
-            ["4"] = true,
+            ["3"] = true,
+            ["4"] = false,
             ["5"] = true,
             ["6"] = true,
             ["7"] = true,
-            ["8"] = true,
+            ["8"] = false,
+            ["9"] = false,
+            ["10"] = false,
+            ["11"] = false,
+            ["12"] = false,
         },
 		["livery"] = 1,
     },
-    ["car2"] = {
+    ["n16explorer"] = { --- Model name
         ["extras"] = {
-            ["1"] = true,
-            ["2"] = true,
+            ["1"] = true, -- on/off
+            ["2"] = false,
             ["3"] = true,
-            ["4"] = true,
+            ["4"] = false,
             ["5"] = true,
             ["6"] = true,
             ["7"] = true,
-            ["8"] = true,
-            ["9"] = true,
-            ["10"] = true,
-            ["11"] = true,
-            ["12"] = true,
-            ["13"] = true,
+            ["8"] = false,
+            ["9"] = false,
+            ["10"] = false,
+            ["11"] = false,
+            ["12"] = false,
         },
 		["livery"] = 1,
-    }
+    },
+    ["n18charger"] = { --- Model name
+        ["extras"] = {
+            ["1"] = true, -- on/off
+            ["2"] = false,
+            ["3"] = true,
+            ["4"] = false,
+            ["5"] = true,
+            ["6"] = true,
+            ["7"] = true,
+            ["8"] = false,
+            ["9"] = false,
+            ["10"] = false,
+            ["11"] = false,
+            ["12"] = false,
+        },
+		["livery"] = 1,
+    },
+    ["n18taurus"] = { --- Model name
+        ["extras"] = {
+            ["1"] = true, -- on/off
+            ["2"] = false,
+            ["3"] = true,
+            ["4"] = false,
+            ["5"] = true,
+            ["6"] = true,
+            ["7"] = true,
+            ["8"] = false,
+            ["9"] = false,
+            ["10"] = false,
+            ["11"] = false,
+            ["12"] = false,
+        },
+		["livery"] = 1,
+    },
+    ["n19mustang"] = { --- Model name
+        ["extras"] = {
+            ["1"] = true, -- on/off
+            ["2"] = false,
+            ["3"] = true,
+            ["4"] = false,
+            ["5"] = true,
+            ["6"] = true,
+            ["7"] = true,
+            ["8"] = false,
+            ["9"] = false,
+            ["10"] = false,
+            ["11"] = false,
+            ["12"] = false,
+        },
+		["livery"] = 1,
+    },
 }
