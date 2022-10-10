@@ -4,7 +4,6 @@ Main Stuff:
 Necessities:
     - Police: cuffing, dragging, seating, jailing, mdt, dispatch, armory, mlos, better cars
     - EMS   : calls from downed players, heal players, revive players, body bag, stretcher, airmed, better ambulance
-    - vehicle shop (go through vehicles, check prices, only basic cars available at pdm)
     - better notifications
     - test all criminal activities and all civilian jobs
 
@@ -25,6 +24,8 @@ To Do:
     - add a qbcore-burgershot, implement features from dream-burgershot to make script better
     - fix pd cars - add ems heli and ambulance
     - add ps-buffs and possibly ps-progressbar and ps-drugsproccessing
+    - vehicle shop (go through vehicles, check prices, only basic cars available at pdm)
+    - plane/heli shop - remove unneeded planes and helis - increase prices
     -
     -
     - job mlos
