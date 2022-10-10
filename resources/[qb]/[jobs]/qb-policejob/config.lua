@@ -410,7 +410,7 @@ Config.VehicleSettings = {
             ["11"] = false,
             ["12"] = true,
         },
-		["livery"] = 2,
+		["livery"] = 3,
     },
     ["n16explorer"] = { --- Model name
         ["extras"] = {
@@ -427,7 +427,7 @@ Config.VehicleSettings = {
             ["11"] = false,
             ["12"] = true,
         },
-		["livery"] = 2,
+		["livery"] = 3,
     },
     ["n18charger"] = { --- Model name
         ["extras"] = {
@@ -444,7 +444,7 @@ Config.VehicleSettings = {
             ["11"] = false,
             ["12"] = true,
         },
-		["livery"] = 2,
+		["livery"] = 3,
     },
     ["n18taurus"] = { --- Model name
         ["extras"] = {
@@ -461,7 +461,7 @@ Config.VehicleSettings = {
             ["11"] = false,
             ["12"] = true,
         },
-		["livery"] = 2,
+		["livery"] = 3,
     },
     ["n19mustang"] = { --- Model name
         ["extras"] = {
@@ -478,6 +478,6 @@ Config.VehicleSettings = {
             ["11"] = false,
             ["12"] = true,
         },
-		["livery"] = 2,
+		["livery"] = 3,
     },
 }
