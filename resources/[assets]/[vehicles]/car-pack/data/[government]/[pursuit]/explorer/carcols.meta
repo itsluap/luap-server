@@ -2048,7 +2048,7 @@
   </Lights>
   <Sirens>
     <Item>
-      <id value="5016" />
+      <id value="675862" />
       <!--Custom siren settings Explorer-->
       <name>custom siren raid exp</name>
       <timeMultiplier value="1.00000000" />
