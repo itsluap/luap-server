@@ -13,32 +13,40 @@ QBShared.Jobs = {
         },
 	},
 	['police'] = {
-		label = 'Law Enforcement',
+		label = 'LSPD',
         type = "leo",
 		defaultDuty = true,
 		offDutyPay = false,
 		grades = {
             ['0'] = {
                 name = 'Recruit',
-                payment = 50
+                payment = 100
             },
 			['1'] = {
                 name = 'Officer',
-                payment = 75
+                payment = 250
             },
 			['2'] = {
                 name = 'Sergeant',
-                payment = 100
+                payment = 350
             },
 			['3'] = {
                 name = 'Lieutenant',
-                payment = 125
+                payment = 450
             },
-			['4'] = {
+            ['4'] = {
+                name = 'Captain',
+                payment = 650
+            },
+            ['5'] = {
+                name = 'Deputy Chief',
+                payment = 750
+            },
+			['6'] = {
                 name = 'Chief',
 				isboss = true,
                 bankAuth = true,
-                payment = 150
+                payment = 900
             },
         },
 	},
