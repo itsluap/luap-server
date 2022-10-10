@@ -1,5 +1,11 @@
 Config = {}
 
+Config.PoliceJobs = {
+    "police",
+    "sheriff",
+    "trooper"
+}
+
 Config.Objects = {
     ["cone"] = {model = `prop_roadcone02a`, freeze = false},
     ["barrier"] = {model = `prop_barrier_work06a`, freeze = true},

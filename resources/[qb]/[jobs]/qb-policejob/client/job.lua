@@ -831,7 +831,7 @@ CreateThread(function()
     garageCombo:onPlayerInOut(function(isPointInside, point)
         if isPointInside then
             inGarage = true
-            if onDuty and PlayerJob.name == 'police' then
+            if onDuty and PlayerJob.name == Config.PoliceJobs then
                 if IsPedInAnyVehicle(PlayerPedId(), false) then
                     exports['qb-core']:DrawText(Lang:t('info.store_veh'), 'left')
 		    garage()

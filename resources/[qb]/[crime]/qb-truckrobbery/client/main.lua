@@ -99,7 +99,7 @@ function AlertPolice()
 end
 
 RegisterNetEvent('AttackTransport:InfoForLspd', function(x, y, z)
-    if PlayerJob ~= nil and PlayerJob.name == 'police' then
+    if PlayerJob ~= nil and PlayerJob.name == Config.PoliceJobs then
 
         if PoliceBlip == 0 then
             PoliceBlip = 1

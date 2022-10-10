@@ -41,7 +41,7 @@ RegisterCommand(command_name, function(source, args, rawCommand)
     local player = QBCore.Functions.GetPlayerData()
     PlayerJob = player.job
 
-    if PlayerJob.name == 'police' or PlayerJob.name == 'ambulance' then
+    if PlayerJob.name == Config.PoliceJobs or PlayerJob.name == 'ambulance' then
 
         if args[1] and GetPlayerName(args[1]) ~= nil then
 
