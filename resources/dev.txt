@@ -5,7 +5,6 @@ Necessities:
     - Police: cuffing, dragging, seating, jailing, mdt, dispatch, armory, mlos, better cars
     - EMS   : calls from downed players, heal players, revive players, body bag, stretcher, airmed, better ambulance
     - vehicle shop (go through vehicles, check prices, only basic cars available at pdm)
-    - apartment
     - better notifications
     - test all criminal activities and all civilian jobs
 
@@ -20,19 +19,16 @@ To Do:
     - stripclub script from dream (or try to find online)
     - casino - working wheel spin?
     - finish rewriting boosting script
-    -
     - elevator tp  city hall?
     - fix broken doors at mrpd - add locks to doors that need it
     - finish updating item animations - (updated item animations to show props - added qb-assets)
+    - add a qbcore-burgershot, implement features from dream-burgershot to make script better
+    - fix pd cars - add ems heli and ambulance
+    - add ps-buffs and possibly ps-progressbar and ps-drugsproccessing
     -
     -
     - job mlos
     - civ jobs
-    -
-    - add a qbcore-burgershot, implement features from dream-burgershot to make script better
-    -
-    - fix pd cars - add ems heli and ambulance
-    - add ps-buffs and possibly ps-progressbar and ps-drugsproccessing
     -
     - steal players from other servers (give out a beta test reward) NEED A LOYAL TEAM - reach out to old fivem friends
     -
