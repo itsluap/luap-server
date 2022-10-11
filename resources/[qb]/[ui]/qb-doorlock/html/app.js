@@ -6,7 +6,7 @@ const app = Vue.createApp({
             hash: "",
             doorlockStyleObject: {
                 "display": "none",
-                "background-color": "rgb(19, 28, 74)"
+                "background-color": "rgb(83, 179, 203)"
             },
             doorlockClassObject: {
                 "slide_in": false,

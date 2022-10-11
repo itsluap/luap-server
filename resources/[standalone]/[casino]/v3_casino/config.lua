@@ -4,7 +4,7 @@ Casino.LicenseKey = ""
 
 Framework = exports['qb-core']:GetCoreObject() -- If you are using defauly qb-core server, use : exports['qb-core']:GetCoreObject()
 
-Casino.Vehicle = "xa21"
+Casino.Vehicle = "sultan2"
 
 Casino.FoodList = {
     [1] = "sandwich",

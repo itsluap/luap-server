@@ -29,6 +29,7 @@ AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
             end
         end
     end)
+	isLoggedIn = true
 end)
 
 RegisterNetEvent('QBCore:Client:OnJobUpdate')
@@ -483,4 +484,53 @@ end
 RegisterNetEvent("qb-burgershot:shop")
 AddEventHandler("qb-burgershot:shop", function()
     TriggerServerEvent("inventory:server:OpenInventory", "shop", "burgershot", Config.Items)
+end)
+
+-- Drive Thru Update --
+
+Citizen.CreateThread(function()
+    while true do
+        Citizen.Wait(4)
+        if isLoggedIn then
+            local NearAnything = false
+            local PlayerCoords = GetEntityCoords(GetPlayerPed(-1))
+            if PlayerJob.name == 'burgershot' and PlayerJob.onduty then
+                local Distance = #(PlayerCoords - Config.Intercom['Worker'])
+                if Distance < 1.8 then
+                    NearAnything = true
+                    if not ShowingInteraction then
+                        ShowingInteraction = true
+                        exports['qb-core']:DrawText('Drive Thru', 'left')
+                        exports['pma-voice']:addPlayerToCall(878914, 'Phone')
+                    end
+                end
+            end
+            local Distance = #(PlayerCoords - Config.Intercom['Customer'])
+            if Distance < 3.5 then
+                NearAnything = true
+                if not ShowingInteraction then
+                    ShowingInteraction = true
+                    TriggerServerEvent('qb-burgershot:server:alert:workers')
+                    exports['qb-core']:DrawText('Drive Thru', 'left')
+                    exports['pma-voice']:addPlayerToCall(878914, 'Phone')
+                end
+            end
+            if not NearAnything then
+                if ShowingInteraction then
+                    ShowingInteraction = false
+                    exports['qb-core']:HideText()
+                    exports['pma-voice']:removePlayerFromCall(878914, 'Phone')
+                end
+                Citizen.Wait(1000)
+            end
+        end
+    end
+end)
+
+RegisterNetEvent('qb-burgershot:client:call:intercom')
+AddEventHandler('qb-burgershot:client:call:intercom', function()
+    if Framework.Functions.GetPlayerData().job.name =='burgershot' and Framework.Functions.GetPlayerData().job.onduty then
+        Framework.Functions.Notify('Someone is at the drive thru', 'info', 7000)
+        PlaySoundFrontend( -1, "Beep_Green", "DLC_HEIST_HACKING_SNAKE_SOUNDS", 1)
+    end
 end)

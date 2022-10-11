@@ -290,17 +290,6 @@ Config.PhoneApplications = {
         slot = 23,
         Alerts = 0,
     },
-    ["meos"] = {
-        app = "meos",
-        color = "#004682",
-        color2 = "#00325c",
-        icon = "fas fa-ad",
-        tooltipText = "MDT",
-        job = "police",
-        blockedjobs = {},
-        slot = 24,
-        Alerts = 0,
-    },
 
 
 
