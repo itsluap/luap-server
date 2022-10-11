@@ -1,0 +1,18 @@
+
+
+
+Necessities:
+    - Police: cuffing, dragging, seating, jailing, mdt, dispatch, armory, mlos, better cars
+    - EMS   : calls from downed players, heal players, revive players, body bag, stretcher, airmed, better ambulance
+    - test all criminal activities and all civilian jobs
+
+Bugs:
+    - players flicker invisible inside mlos
+    - cant clear calls from dispatch in mdt
+    - floating lights at pillbox - need to buy from gabz
+
+Notes:
+    - the "press E to open" menu is - exports['qb-core']:DrawText(text, 'left') and to hide - exports['qb-core']:HideText()
+    - server color ? 53B3CB
+    - GlobalState.isLEO returns true if player has job from ps-mdt config.lua
+    - 

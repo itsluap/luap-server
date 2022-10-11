@@ -1,0 +1,26 @@
+
+
+
+To Do:
+    - bypass qb-spawn for characters that arent new? - try to figure this out
+    - make lockpicking car doors medium difficulty
+    - stripclub script from dream (or try to find online)
+    - finish rewriting boosting script
+    - fix broken doors at mrpd - add locks to doors that need it
+    - finish updating item animations - (updated item animations to show props - added qb-assets)
+    - check if burgershot has boss management
+    - add ems heli and ambulance
+    - add ps-buffs and possibly ps-progressbar and ps-drugsproccessing
+    - vehicle shop (go through vehicles, check prices, only basic cars available at pdm)
+    - plane/heli shop - remove unneeded planes and helis - increase prices
+    -
+    -
+    - job mlos
+    - civ jobs
+    -
+    - steal players from other servers (give out a beta test reward) NEED A LOYAL TEAM - reach out to old fivem friends
+    -
+    - create new user guide - create some faqs - get discord ready
+    - create website - needs forums, applications, and tebex store
+    -
+    - go through and remove unneeded commands (search all server files)
