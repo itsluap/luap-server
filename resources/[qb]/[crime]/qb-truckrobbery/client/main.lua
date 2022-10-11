@@ -99,7 +99,7 @@ function AlertPolice()
 end
 
 RegisterNetEvent('AttackTransport:InfoForLspd', function(x, y, z)
-    if PlayerJob ~= nil and PlayerJob.name == Config.PoliceJobs then
+    if PlayerJob ~= nil and GlobalState.isLEO then
 
         if PoliceBlip == 0 then
             PoliceBlip = 1
@@ -161,7 +161,7 @@ RegisterNetEvent('qb-armoredtruckheist:client:911alert', function()
 end)
 
 RegisterNetEvent('qb-armoredtruckheist:client:robberyCall', function(streetLabel, coords)
-    if PlayerJob.name == "police" then
+    if GlobalState.isLEO then
         local store = "Armored Truck"
 
         PlaySound(-1, "Lose_1st", "GTAO_FM_Events_Soundset", 0, 0, 1)
@@ -315,7 +315,7 @@ Citizen.CreateThread(function()
                 Citizen.Wait(500)
             end
 
-            if dist <= 7 and BlownUp == 0 and PlayerJob.name ~= 'police' then
+            if dist <= 7 and BlownUp == 0 and not GlobalState.isLEO then
                 if BlowBackdoor == 0 then
                     hintToDisplay('Press [G] to blow up the back door and take the money')
                     BlowBackdoor = 1

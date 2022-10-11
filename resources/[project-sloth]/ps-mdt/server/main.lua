@@ -28,7 +28,13 @@ local function GetActiveData(cid)
 	return false
 end
 
+-- (add server wide support for multiple jobs) --
 
+RegisterServerEvent("luap:isLEO", function()
+	GlobalState.isLEO = true
+end)
+
+-------------------------------------------------
 
 RegisterServerEvent("ps-mdt:dispatchStatus", function(bool)
 	isDispatchRunning = bool

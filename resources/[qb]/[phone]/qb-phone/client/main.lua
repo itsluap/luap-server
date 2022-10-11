@@ -2033,7 +2033,7 @@ end)
 
 RegisterNetEvent('qb-phone:client:addPoliceAlert', function(alertData)
     PlayerJob = QBCore.Functions.GetPlayerData().job
-    if PlayerJob.name == 'police' and PlayerJob.onduty then
+    if GlobalState.isLEO and PlayerJob.onduty then
         SendNUIMessage({
             action = "AddPoliceAlert",
             alert = alertData,

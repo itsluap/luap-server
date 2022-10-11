@@ -350,7 +350,7 @@ end)
 RegisterNetEvent('qb-bankrobbery:client:robberyCall', function(type, coords)
     if not isLoggedIn then return end
     local PlayerJob = QBCore.Functions.GetPlayerData().job
-    if PlayerJob.name ~= "police" or not PlayerJob.onduty then return end
+    if  not GlobalState.isLEO or not PlayerJob.onduty then return end
     if type == "small" then
         PlaySound(-1, "Lose_1st", "GTAO_FM_Events_Soundset", 0, 0, 1)
         Config.OnPoliceAlert(Lang:t("general.fleeca_robbery_alert"))

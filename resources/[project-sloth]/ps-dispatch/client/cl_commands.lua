@@ -86,7 +86,7 @@ RegisterCommand('911', function(source, args, rawCommand)
                     },
                     dispatchMessage = "Incoming Call", -- message
                     information = msg,
-                    job = {"police", "ambulance"} -- jobs that will get the alerts
+                    job = {"police", "sheriff", "trooper", "ambulance"} -- jobs that will get the alerts
                 })
                 Wait(1000)
                 DeletePhone()
@@ -128,7 +128,7 @@ RegisterCommand('911a', function(source, args, rawCommand)
                     },
                     dispatchMessage = "Incoming Anonymous Call", -- message
                     information = msg,
-                    job = {"police", "ambulance"} -- jobs that will get the alerts
+                    job = {"police", "sheriff", "trooper", "ambulance"} -- jobs that will get the alerts
                 })
                 Wait(1000)
                 DeletePhone()
@@ -171,7 +171,7 @@ RegisterCommand('311', function(source, args, rawCommand)
                     },
                     dispatchMessage = "Incoming Call", -- message
                     information = msg,
-                    job = {"police", "ambulance"} -- jobs that will get the alerts
+                    job = {"police", "sheriff", "trooper", "ambulance"} -- jobs that will get the alerts
                 })
                 Wait(1000)
                 DeletePhone()
@@ -214,7 +214,7 @@ RegisterCommand('311a', function(source, args, rawCommand)
                     },
                     dispatchMessage = "Incoming Call", -- message
                     information = msg,
-                    job = {"police", "ambulance"} -- jobs that will get the alerts
+                    job = {"police", "sheriff", "trooper", "ambulance"} -- jobs that will get the alerts
                 })
                 Wait(1000)
                 DeletePhone()

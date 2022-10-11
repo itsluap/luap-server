@@ -138,8 +138,7 @@ CreateThread(function()
 	while true do
 		Wait(0)
 		if LocalPlayer.state.isLoggedIn then
-			print(Config.PoliceJobs)
-			if PlayerJob.name == Config.PoliceJobs and onDuty then
+			if GlobalState.isLEO and onDuty then
 				if IsPlayerInPolmav() then
 					local lPed = PlayerPedId()
 					local heli = GetVehiclePedIsIn(lPed)

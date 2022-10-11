@@ -139,7 +139,7 @@ local function selectOption(t, t2)
 end
 
 local function IsPoliceOrEMS()
-    return (PlayerData.job.name == "police" or PlayerData.job.name == "ambulance")
+    return (GlobalState.isLEO or PlayerData.job.name == "ambulance")
 end
 
 local function IsDowned()
