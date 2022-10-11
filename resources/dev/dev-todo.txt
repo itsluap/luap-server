@@ -2,6 +2,7 @@
 
 
 To Do:
+    - test all criminal activities and all civilian jobs
     - bypass qb-spawn for characters that arent new? - try to figure this out
     - make lockpicking car doors medium difficulty
     - stripclub script from dream (or try to find online)
@@ -15,6 +16,14 @@ To Do:
     - plane/heli shop - remove unneeded planes and helis - increase prices
     - finish changing colors to server color (qb-customs, qb-scenes, search whole server for qbcore color code)
     - discord webhooks
+    - repair kit for everyone (only fixes engine) (have to be outside vehicle)
+    - check shops around whole city
+    - better prison and move prison script coords
+    - apartments cant be raided - make apartments raidable -  ake stormram unlock doors in qb-doorlock (for mlos)
+    - 
+    - make sure all vehicles handle decent (not crazy fast or good)
+    - make sure all clothes added work correctly
+    - make sure addon vehicles are not oversized
     -
     - job mlos
     - civ jobs
