@@ -1,5 +1,6 @@
 Main Stuff:
     - server color ? 53B3CB
+    - GlobalState.isLEO returns true if player has job from ps-mdt config.lua
 
 Necessities:
     - Police: cuffing, dragging, seating, jailing, mdt, dispatch, armory, mlos, better cars
