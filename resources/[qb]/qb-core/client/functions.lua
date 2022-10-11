@@ -85,28 +85,18 @@ RegisterNUICallback('getNotifyConfig', function(_, cb)
     cb(QBCore.Config.Notify)
 end)
 
-function QBCore.Functions.Notify(text, texttype, length)
+function QBCore.Functions.Notify(text, textype, length)
+    if textype == "primary" then textype = "inform" end
     if type(text) == "table" then
         local ttext = text.text or 'Placeholder'
         local caption = text.caption or 'Placeholder'
-        texttype = texttype or 'primary'
-        length = length or 5000
-        SendNUIMessage({
-            action = 'notify',
-            type = texttype,
-            length = length,
-            text = ttext,
-            caption = caption
-        })
+        local ttype = textype or 'inform'
+        local length = length or 5000
+        exports['mythic_notify']:DoCustomHudText(ttype, ttext, length, caption)
     else
-        texttype = texttype or 'primary'
-        length = length or 5000
-        SendNUIMessage({
-            action = 'notify',
-            type = texttype,
-            length = length,
-            text = text
-        })
+        local ttype = textype or 'inform'
+        local length = length or 5000
+        exports['mythic_notify']:DoCustomHudText(ttype, text, length)
     end
 end
 

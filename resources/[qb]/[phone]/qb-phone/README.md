@@ -1,5 +1,13 @@
+![grab-landing-page](https://itzlarsen.xyz/uploads/images/u9m4xRqQkvQf3L7F4UFeJdxrw.gif)
+
 # qb-phone
-Advanced Phone for QB-Core Framework :iphone:
+Phone for QB-Core Framework. Edited for a NP-Style look with a few extra things, This file has been edited with the changes noted
+
+# NOTE
+NP does NOT have a suggested contact feature, therefore the tab for that in the Phone app has been removed. You can use /p# to show your number in chat in a small radius around you, or manually input the contacts.
+
+# Known Issues
+if you call from a payphone without a cell phone there is no way to hang up the call. The other person has to hang up the call. After they do that then the phone UI is stuck on your screen
 
 # License
 
@@ -20,48 +28,74 @@ Advanced Phone for QB-Core Framework :iphone:
     along with this program.  If not, see <https://www.gnu.org/licenses/>
 
 ## Dependencies
-- [qb-core](https://github.com/qbcore-framework/qb-core)
-- [qb-policejob](https://github.com/qbcore-framework/qb-policejob) - MEOS, handcuff check etc. 
-- [qb-crypto](https://github.com/qbcore-framework/qb-crypto) - Crypto currency trading 
-- [qb-lapraces](https://github.com/qbcore-framework/qb-lapraces) - Creating routes and racing 
-- [qb-houses](https://github.com/qbcore-framework/qb-houses) - House and Key Management App
-- [qb-garages](https://github.com/qbcore-framework/qb-garages) - For Garage App
-- [qb-banking](https://github.com/qbcore-framework/qb-banking) - For Banking App
+- [qb-core](https://github.com/QBCore-framework/qb-core)
+- [qb-policejob](https://github.com/QBCore-framework/qb-policejob) - MEOS, handcuff check etc. 
+- [qb-crypto](https://github.com/QBCore-framework/qb-crypto) - Crypto currency trading 
+- [qb-lapraces](https://github.com/QBCore-framework/qb-lapraces) - Creating routes and racing 
+- [qb-houses](https://github.com/QBCore-framework/qb-houses) - House and Key Management App
+- [qb-garages](https://github.com/QBCore-framework/qb-garages) - For Garage App
+- [qb-banking](https://github.com/QBCore-framework/qb-banking) - For Banking App
 - [screenshot-basic](https://github.com/citizenfx/screenshot-basic) - For Taking Photos
 - A Webhook for hosting photos (Discord or Imgur can provide this)
+- Some sort of help app for your Help icon to function, just place your event for opening it in client.lua line 2403 
+```
+RegisterNUICallback('openHelp', function()  
+    TriggerEvent('eventgoeshere')  <---------
+end)
+```
 
 
 ## Screenshots
-![Home](https://cdn.discordapp.com/attachments/921675245360922625/921675439783673897/home.jpg)
-![Bank](https://cdn.discordapp.com/attachments/921675245360922625/921675441142644756/bank.jpg)
-![Advert](https://cdn.discordapp.com/attachments/921675245360922625/921675440878415872/advert.jpg)
-![Mail](https://cdn.discordapp.com/attachments/921675245360922625/921675440278614068/mail.jpg)
-![Garage](https://cdn.discordapp.com/attachments/921675245360922625/921675439590760528/garage.jpg)
-![Garage Detail](https://cdn.discordapp.com/attachments/921675245360922625/921675441591422986/garage_in.jpg)
-![services](https://cdn.discordapp.com/attachments/921675245360922625/921675458670641152/services.jpg)
-![Houses](https://cdn.discordapp.com/attachments/921675245360922625/921675440005988362/house.jpg)
-![Racing](https://cdn.discordapp.com/attachments/921675245360922625/921675458423173140/race.jpg)
-![Crypto](https://cdn.discordapp.com/attachments/921675245360922625/921675457718517820/qbit.jpg)
-![Gallery](https://cdn.discordapp.com/attachments/921675245360922625/921675441381736448/gallery.jpg)
-![MEOS](https://cdn.discordapp.com/attachments/921675245360922625/921675440488341534/meos.jpg)
-![Twitter](https://cdn.discordapp.com/attachments/921675245360922625/921675459270438922/twitter.jpg)
-![Settings](https://cdn.discordapp.com/attachments/921675245360922625/921675458905513984/setting.jpg)
-![Whatsapp](https://cdn.discordapp.com/attachments/921675245360922625/921675459517906944/whatsapp.jpg)
-![Phone](https://cdn.discordapp.com/attachments/921675245360922625/921675440677064745/phone.jpg)
+![Home](https://cdn.discordapp.com/attachments/951493035173244999/951493181550243900/Screenshot_20.png)
+![Messages](https://cdn.discordapp.com/attachments/951493035173244999/951493291243880499/Screenshot_21.png)
+![Phone](https://cdn.discordapp.com/attachments/951493035173244999/951493463659122688/Screenshot_22.png)
+![Settings](https://cdn.discordapp.com/attachments/951493035173244999/951493587072319498/Screenshot_23.png)
+![MEOS](https://cdn.discordapp.com/attachments/951493035173244999/951495644563005470/Screenshot_35.png)
+![Vehicles](https://cdn.discordapp.com/attachments/951493035173244999/951493876777103440/Screenshot_24.png)
+![Email](https://cdn.discordapp.com/attachments/951493035173244999/951494010764140544/Screenshot_25.png)
+![Advertisements](https://cdn.discordapp.com/attachments/951493035173244999/951494113788821624/Screenshot_26.png)
+![Houses](https://cdn.discordapp.com/attachments/951493035173244999/951494238183505920/Screenshot_27.png)
+![Services](https://cdn.discordapp.com/attachments/951493035173244999/951495770249502760/Screenshot_36.png)
+![Racing](https://cdn.discordapp.com/attachments/951493035173244999/951495869289615400/Screenshot_37.png)
+![Crypto](https://cdn.discordapp.com/attachments/951493035173244999/951494393397927956/Screenshot_28.png)
+![Debt](https://cdn.discordapp.com/attachments/951493035173244999/951494527049433178/Screenshot_29.png)
+![Wenmo](https://cdn.discordapp.com/attachments/951493035173244999/951494642019471370/Screenshot_30.png)
+![Invoices](https://cdn.discordapp.com/attachments/951493035173244999/951494745648148560/Screenshot_31.png)
+![Casino](https://cdn.discordapp.com/attachments/951493035173244999/951494899994329088/Screenshot_32.png)
+![News](https://cdn.discordapp.com/attachments/951493035173244999/951495036351180860/Screenshot_33.png)
+![Notepad](https://cdn.discordapp.com/attachments/951493035173244999/951495531153195038/Screenshot_34.png)
+![Details](https://cdn.discordapp.com/attachments/951493035173244999/951496024885719111/Screenshot_38.png)
+![JobCenter](https://cdn.discordapp.com/attachments/951493035173244999/951496191202451586/Screenshot_39.png)
+![Employment](https://cdn.discordapp.com/attachments/951493035173244999/951496402008158328/Screenshot_40.png)
+![Calculator](https://cdn.discordapp.com/attachments/951493035173244999/951496520073621544/Screenshot_41.png)
 
 ## Features
 - Garages app to see your vehicle details
 - Mails to inform the player
-- Banking app to see balance and transfer money
+- Debt app for player invoices, Wenmo for quick bank transfers, Invoice app for legal invoices
 - Racing app to create races
-- App Store to download apps
-- MEOS app for polices to search
-- Houses app for house details and management
+- MEOS app for police to search
+- House app for house details and management
+- Casino app for players to make bets and possibly multiply money
+- News app for news postings
+- Details tab for some player information at the palm of your hand
+- Tweets save to database for recall on restarts, edit how long they stay in config
+- Notepad app to make and save notes
+- Calculator app
+- Job Center and Employment apps just like the NoPickle
 
 ## Installation
 ### Manual
 - Download the script and put it in the `[qb]` directory.
 - Import `qb-phone.sql` in your database
+- Add a third paramater in your Functions.AddMoney and Functions.RemoveMoney which will be a reaosn for your "Wenmo" app to show why you sent or received money. To do this you search all of your files for these 2 functions and add a reason to it.. Ex: 
+```
+Player.Functions.AddMoney('bank', payment)
+```
+would then be
+```
+ Player.Functions.AddMoney('bank', payment, "paycheck")
+ ```
 - Add the following code to your server.cfg/resouces.cfg
 ```
 ensure qb-core
@@ -75,28 +109,6 @@ ensure qb-garages
 ensure qb-banking
 ```
 
-## Configuration
-```
-
-Config = Config or {}
-
-Config.RepeatTimeout = 2000 -- Timeout for unanswered call notification
-Config.CallRepeats = 10 -- Repeats for unanswered call notification
-Config.OpenPhone = 244 -- Key to open phone display
-Config.PhoneApplications = {
-    ["phone"] = { -- Needs to be unique
-        app = "phone", -- App route
-        color = "#04b543", -- App icon color
-        icon = "fa fa-phone-alt", -- App icon
-        tooltipText = "Phone", -- App name
-        tooltipPos = "top",
-        job = false, -- Job requirement
-        blockedjobs = {}, -- Jobs cannot use this app
-        slot = 1, -- App position
-        Alerts = 0, -- Alert count
-    },
-}
-```
 ## Setup Webhook in `server/main.lua` for photos
 Set the following variable to your webhook (For example, a Discord channel or Imgur webhook)
 ### To use Discord:
@@ -110,4 +122,112 @@ Set the following variable to your webhook (For example, a Discord channel or Im
 - Paste into `WebHook` in `server/main.lua`
 ```
 local WebHook = ""
+```
+## To fixed undefined reason in Wenmo
+- Go to qb-core/server/player.lua
+- Replace this
+```
+    self.Functions.AddMoney = function(moneytype, amount, reason)
+        reason = reason or 'unknown'
+        local moneytype = moneytype:lower()
+        local amount = tonumber(amount)
+        if amount < 0 then
+            return
+        end
+        if self.PlayerData.money[moneytype] then
+            self.PlayerData.money[moneytype] = self.PlayerData.money[moneytype] + amount
+            self.Functions.UpdatePlayerData()
+            if amount > 100000 then
+                TriggerEvent('qb-log:server:CreateLog', 'playermoney', 'AddMoney', 'lightgreen', '**' .. GetPlayerName(self.PlayerData.source) .. ' (citizenid: ' .. self.PlayerData.citizenid .. ' | id: ' .. self.PlayerData.source .. ')** $' .. amount .. ' (' .. moneytype .. ') added, new ' .. moneytype .. ' balance: ' .. self.PlayerData.money[moneytype], true)
+            else
+                TriggerEvent('qb-log:server:CreateLog', 'playermoney', 'AddMoney', 'lightgreen', '**' .. GetPlayerName(self.PlayerData.source) .. ' (citizenid: ' .. self.PlayerData.citizenid .. ' | id: ' .. self.PlayerData.source .. ')** $' .. amount .. ' (' .. moneytype .. ') added, new ' .. moneytype .. ' balance: ' .. self.PlayerData.money[moneytype])
+            end
+            TriggerClientEvent('hud:client:OnMoneyChange', self.PlayerData.source, moneytype, amount, false)
+            return true
+        end
+        return false
+    end
+    self.Functions.RemoveMoney = function(moneytype, amount, reason)
+        reason = reason or 'unknown'
+        local moneytype = moneytype:lower()
+        local amount = tonumber(amount)
+        if amount < 0 then
+            return
+        end
+        if self.PlayerData.money[moneytype] then
+            for _, mtype in pairs(QBCore.Config.Money.DontAllowMinus) do
+                if mtype == moneytype then
+                    if self.PlayerData.money[moneytype] - amount < 0 then
+                        return false
+                    end
+                end
+            end
+            self.PlayerData.money[moneytype] = self.PlayerData.money[moneytype] - amount
+            self.Functions.UpdatePlayerData()
+            if amount > 100000 then
+                TriggerEvent('qb-log:server:CreateLog', 'playermoney', 'RemoveMoney', 'red', '**' .. GetPlayerName(self.PlayerData.source) .. ' (citizenid: ' .. self.PlayerData.citizenid .. ' | id: ' .. self.PlayerData.source .. ')** $' .. amount .. ' (' .. moneytype .. ') removed, new ' .. moneytype .. ' balance: ' .. self.PlayerData.money[moneytype], true)
+            else
+                TriggerEvent('qb-log:server:CreateLog', 'playermoney', 'RemoveMoney', 'red', '**' .. GetPlayerName(self.PlayerData.source) .. ' (citizenid: ' .. self.PlayerData.citizenid .. ' | id: ' .. self.PlayerData.source .. ')** $' .. amount .. ' (' .. moneytype .. ') removed, new ' .. moneytype .. ' balance: ' .. self.PlayerData.money[moneytype])
+            end
+            TriggerClientEvent('hud:client:OnMoneyChange', self.PlayerData.source, moneytype, amount, true)
+            if moneytype == 'bank' then
+                TriggerClientEvent('qb-phone:client:RemoveBankMoney', self.PlayerData.source, amount)
+            end
+            return true
+        end
+        return false
+    end
+```
+- To this
+```
+    self.Functions.AddMoney = function(moneytype, amount, reason)
+        reason = reason or 'unknown'
+        local moneytype = moneytype:lower()
+        local amount = tonumber(amount)
+        if amount < 0 then
+            return
+        end
+        if self.PlayerData.money[moneytype] then
+            self.PlayerData.money[moneytype] = self.PlayerData.money[moneytype] + amount
+            self.Functions.UpdatePlayerData()
+            if amount > 100000 then
+                TriggerEvent('qb-log:server:CreateLog', 'playermoney', 'AddMoney', 'lightgreen', '**' .. GetPlayerName(self.PlayerData.source) .. ' (citizenid: ' .. self.PlayerData.citizenid .. ' | id: ' .. self.PlayerData.source .. ')** $' .. amount .. ' (' .. moneytype .. ') added, new ' .. moneytype .. ' balance: ' .. self.PlayerData.money[moneytype], true)
+            else
+                TriggerEvent('qb-log:server:CreateLog', 'playermoney', 'AddMoney', 'lightgreen', '**' .. GetPlayerName(self.PlayerData.source) .. ' (citizenid: ' .. self.PlayerData.citizenid .. ' | id: ' .. self.PlayerData.source .. ')** $' .. amount .. ' (' .. moneytype .. ') added, new ' .. moneytype .. ' balance: ' .. self.PlayerData.money[moneytype])
+            end
+            TriggerClientEvent('hud:client:OnMoneyChange', self.PlayerData.source, moneytype, amount, false, reason)
+            return true
+        end
+        return false
+    end
+    self.Functions.RemoveMoney = function(moneytype, amount, reason)
+        reason = reason or 'unknown'
+        local moneytype = moneytype:lower()
+        local amount = tonumber(amount)
+        if amount < 0 then
+            return
+        end
+        if self.PlayerData.money[moneytype] then
+            for _, mtype in pairs(QBCore.Config.Money.DontAllowMinus) do
+                if mtype == moneytype then
+                    if self.PlayerData.money[moneytype] - amount < 0 then
+                        return false
+                    end
+                end
+            end
+            self.PlayerData.money[moneytype] = self.PlayerData.money[moneytype] - amount
+            self.Functions.UpdatePlayerData()
+            if amount > 100000 then
+                TriggerEvent('qb-log:server:CreateLog', 'playermoney', 'RemoveMoney', 'red', '**' .. GetPlayerName(self.PlayerData.source) .. ' (citizenid: ' .. self.PlayerData.citizenid .. ' | id: ' .. self.PlayerData.source .. ')** $' .. amount .. ' (' .. moneytype .. ') removed, new ' .. moneytype .. ' balance: ' .. self.PlayerData.money[moneytype], true)
+            else
+                TriggerEvent('qb-log:server:CreateLog', 'playermoney', 'RemoveMoney', 'red', '**' .. GetPlayerName(self.PlayerData.source) .. ' (citizenid: ' .. self.PlayerData.citizenid .. ' | id: ' .. self.PlayerData.source .. ')** $' .. amount .. ' (' .. moneytype .. ') removed, new ' .. moneytype .. ' balance: ' .. self.PlayerData.money[moneytype])
+            end
+            TriggerClientEvent('hud:client:OnMoneyChange', self.PlayerData.source, moneytype, amount, true, reason)
+            if moneytype == 'bank' then
+                TriggerClientEvent('qb-phone:client:RemoveBankMoney', self.PlayerData.source, amount)
+            end
+            return true
+        end
+        return false
+    end
 ```
