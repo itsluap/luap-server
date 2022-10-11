@@ -1,8 +1,9 @@
 fx_version 'cerulean'
 game 'gta5'
 
-description 'QB-Phone'
-version '1.0.0'
+author 'Booya#0001'
+description 'Edits and additionals with Jerzy#9709\'s assistance. Original inspiration and editing from amir_expert#1911'
+version 'Release'
 
 ui_page 'html/index.html'
 
@@ -18,8 +19,8 @@ client_scripts {
 }
 
 server_scripts {
-    '@oxmysql/lib/MySQL.lua',
-    'server/main.lua'
+    'server/main.lua',
+    '@oxmysql/lib/MySQL.lua'
 }
 
 files {
@@ -35,3 +36,5 @@ files {
 }
 
 lua54 'yes'
+
+dependency '/assetpacks'
