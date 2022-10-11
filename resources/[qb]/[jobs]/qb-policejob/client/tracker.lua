@@ -35,7 +35,7 @@ end)
 
 RegisterNetEvent('police:client:TrackerMessage', function(msg, coords)
     PlaySound(-1, "Lose_1st", "GTAO_FM_Events_Soundset", 0, 0, 1)
-    QBCore.Functions.Notify(msg, 'police')
+    QBCore.Functions.Notify(msg, 'error')
     local transG = 250
     local blip = AddBlipForCoord(coords.x, coords.y, coords.z)
     SetBlipSprite(blip, 458)
