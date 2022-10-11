@@ -89,3 +89,10 @@ QBCore.Functions.CreateUseableItem("burger-murdermeal", function(source, item)
     local Player = QBCore.Functions.GetPlayer(source)
     TriggerClientEvent("qb-burgershot:MurderMeal", source, item.name)
 end)
+
+-- update --
+
+RegisterServerEvent('qb-burgershot:server:alert:workers')
+AddEventHandler('qb-burgershot:server:alert:workers', function()
+    TriggerClientEvent('qb-burgershot:client:call:intercom', -1)
+end)
