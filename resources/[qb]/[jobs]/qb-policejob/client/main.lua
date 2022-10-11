@@ -157,8 +157,8 @@ RegisterNetEvent('police:client:policeAlert', function(coords, text)
     local street1, street2 = GetStreetNameAtCoord(coords.x, coords.y, coords.z)
     local street1name = GetStreetNameFromHashKey(street1)
     local street2name = GetStreetNameFromHashKey(street2)
-    QBCore.Functions.Notify({text = text, caption = street1name.. ' ' ..street2name}, 'police')
-    PlaySound(-1, "Lose_1st", "GTAO_FM_Events_Soundset", 0, 0, 1)
+    QBCore.Functions.Notify({text = text, caption = street1name.. ' ' ..street2name}, 'error')
+    TriggerServerEvent(“Server:SoundToAll”, PanicButton, 1.0f);
     local transG = 250
     local blip = AddBlipForCoord(coords.x, coords.y, coords.z)
     local blip2 = AddBlipForCoord(coords.x, coords.y, coords.z)
