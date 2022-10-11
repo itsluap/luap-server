@@ -7,7 +7,6 @@ Necessities:
     - test all criminal activities and all civilian jobs
 
 Bugs:
-    - fix crouch
     - cant clear calls from dispatch in mdt
     - floating lights at pillbox - need to buy from gabz
 
