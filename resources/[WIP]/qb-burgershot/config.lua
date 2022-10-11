@@ -1,7 +1,7 @@
 Config = {}
 
 Config.GaragePedLocations = {
-    {coords = vector4(-1178.588, -891.9196, 13.799622, 302.58825)},
+    {coords = vector4(-1163.45, -897.02, 14.04, 82.15)},
 }
 
 --if u are not using qb-target uncomment this.
