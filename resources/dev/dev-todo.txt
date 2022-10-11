@@ -13,6 +13,7 @@ To Do:
     - add ps-buffs and possibly ps-progressbar and ps-drugsproccessing
     - vehicle shop (go through vehicles, check prices, only basic cars available at pdm)
     - plane/heli shop - remove unneeded planes and helis - increase prices
+    - finish changing colors to server color (qb-customs, qb-scenes, search whole server for qbcore color code)
     -
     -
     - job mlos
