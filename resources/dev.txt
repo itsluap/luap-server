@@ -4,7 +4,6 @@ Main Stuff:
 Necessities:
     - Police: cuffing, dragging, seating, jailing, mdt, dispatch, armory, mlos, better cars
     - EMS   : calls from downed players, heal players, revive players, body bag, stretcher, airmed, better ambulance
-    - better notifications
     - test all criminal activities and all civilian jobs
 
 Bugs:
@@ -16,17 +15,14 @@ To Do:
     - bypass qb-spawn for characters that arent new? - try to figure this out
     - make lockpicking car doors medium difficulty
     - stripclub script from dream (or try to find online)
-    - casino - working wheel spin?
     - finish rewriting boosting script
-    - elevator tp  city hall?
     - fix broken doors at mrpd - add locks to doors that need it
     - finish updating item animations - (updated item animations to show props - added qb-assets)
-    - add a qbcore-burgershot, implement features from dream-burgershot to make script better
-    - fix pd cars - add ems heli and ambulance
+    - check if burgershot has boss management
+    - add ems heli and ambulance
     - add ps-buffs and possibly ps-progressbar and ps-drugsproccessing
     - vehicle shop (go through vehicles, check prices, only basic cars available at pdm)
     - plane/heli shop - remove unneeded planes and helis - increase prices
-    - police charger and explorer are broke
     -
     -
     - job mlos
@@ -42,8 +38,7 @@ To Do:
 Ideas:
     - give lockpicks durability?
     - ps-ui, gang influence areas
-    - gun crafting or blackmarket or both? (ask icey)
-    - name ideas: blue rp, midnight, name the server indigo 2.0 - 100%
+    - gun crafting and blackmarket
 
 Notes:
     - the "press E to open" menu is - exports['qb-core']:DrawText(text, 'left') and to hide - exports['qb-core']:HideText()
@@ -59,11 +54,4 @@ what i've done so far:
     - changed banking and edited qb-management
     - LegacyFuel to ps-fuel
     -
-
-
-    light coords (pillbox)
-    - 344.976
-    - 342.881
-    - 328.201
-    - 330.409
    
