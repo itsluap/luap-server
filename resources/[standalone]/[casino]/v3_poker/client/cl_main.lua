@@ -975,7 +975,7 @@ AquiverPoker = function(index, data)
                             if self.TimeLeft == nil or self.TimeLeft > 0 then
                                 -- bet input
                                 if IsDisabledControlJustPressed(0, 22) then --Custom Bet [space]
-                                    local tmpInput = getGenericTextInput('Tét')
+                                    local tmpInput = getGenericTextInput('Bet')
                                     if tonumber(tmpInput) then
                                         tmpInput = tonumber(tmpInput)
                                         if tmpInput > 0 then
