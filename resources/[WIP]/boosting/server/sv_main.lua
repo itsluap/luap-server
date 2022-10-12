@@ -452,7 +452,7 @@ RegisterServerEvent("boosting:CallCopsNotify" , function(plate , model , color ,
 
                     },
                     {PlayerCoords[1], PlayerCoords[2], PlayerCoords[3]},
-                    "police", "sheriif", "trooper" -- Job receiving alert
+                    "police", "sheriif", "trooper", -- Job receiving alert
                     5000, -- Time alert stays on screen
                     458, -- Blip Icon
                     3 -- Blip Color
