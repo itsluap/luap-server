@@ -14,7 +14,7 @@ Config.DateFormat = '%d-%m-%Y' -- (Date that appears in the contract interface) 
 
 Config.BotName = 'ServerName' -- Write the desired bot name
 
-Config.ServerName = 'ServerName' -- Write your server's name
+Config.ServerName = 'Indigo' -- Write your server's name
 
 Config.IconURL = '' -- Insert your desired image link
 

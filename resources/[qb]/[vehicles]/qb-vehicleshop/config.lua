@@ -51,8 +51,13 @@ Config.Shops = {
         ['ShowroomVehicles'] = {
             [1] = {
                 coords = vector4(-48.27, -1101.86, 25.44, 294.5),
-                defaultVehicle = 'schafter2',
-                chosenVehicle = 'schafter2'
+                defaultVehicle = 'kanjosj',
+                chosenVehicle = 'kanjosj'
+            },
+            [2] = {
+                coords = vector4(-48.41, -1093.25, 26.42, 128.05),
+                defaultVehicle = 'buffalo2',
+                chosenVehicle = 'buffalo2'
             }
         },
     },
