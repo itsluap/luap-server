@@ -10,8 +10,6 @@ To Do:
     - fix broken doors at mrpd - add locks to doors that need it
     - finish updating item animations - (updated item animations to show props - added qb-assets)
     - check if burgershot has boss management
-    - add ems heli and ambulance
-    - add ps-buffs and possibly ps-progressbar and ps-drugsproccessing
     - vehicle shop (go through vehicles, check prices, only basic cars available at pdm)
     - plane/heli shop - remove unneeded planes and helis - increase prices
     - finish changing colors to server color (qb-customs, qb-scenes, search whole server for qbcore color code)
@@ -20,6 +18,7 @@ To Do:
     - check shops around whole city
     - better prison and move prison script coords
     - apartments cant be raided - make apartments raidable -  ake stormram unlock doors in qb-doorlock (for mlos)
+    - ps-drugsproccessing: needs drug effects and add to corner selling, add ps-buffs after that
     - 
     - make sure all vehicles handle decent (not crazy fast or good)
     - make sure all clothes added work correctly
