@@ -1,6 +1,6 @@
 Config = {}
 Config.UseTarget = GetConvar('UseTarget', 'false') == 'true' -- Use qb-target interactions (don't change this, go to your server.cfg and add `setr UseTarget true` to use this and just that from true to false or the other way around)
-Config.FirearmsLicenseCheck = false -- Whether a arms dealer checks for a firearms license
+Config.FirearmsLicenseCheck = true -- Whether a arms dealer checks for a firearms license
 Config.SellCasinoChips = {
     coords = vector4(950.37, 34.72, 71.87, 33.82),
     radius = 1.5,
@@ -381,7 +381,7 @@ Config.Products = {
             info = {},
             type = "item",
             slot = 3,
-            requiredJob = { "mechanic", "police" }
+            --requiredJob = { "mechanic", "police" }
         },
         [4] = {
             name = "weapon_pistol",
@@ -402,15 +402,6 @@ Config.Products = {
             requiresLicense = true
         },
         [6] = {
-            name = "weapon_vintagepistol",
-            price = 4000,
-            amount = 5,
-            info = {},
-            type = "item",
-            slot = 6,
-            requiresLicense = true
-        },
-        [7] = {
             name = "pistol_ammo",
             price = 250,
             amount = 250,

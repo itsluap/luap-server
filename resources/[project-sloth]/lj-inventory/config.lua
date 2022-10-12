@@ -22,7 +22,12 @@ Config.VendingFoodObjects = {
 }
 
 Config.BinObjects = {
-    "prop_bin_05a",
+    "prop_dumpster_01a",
+    "prop_dumpster_02a",
+    "prop_dumpster_02b",
+    "prop_dumpster_03a",
+    "prop_dumpster_04a",
+    "prop_dumpster_04b",
 }
 
 Config.CraftingObject = `prop_toolchest_05` -- Only needed if not using target | Line 928 to change Target Models

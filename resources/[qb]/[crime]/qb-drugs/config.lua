@@ -1,6 +1,6 @@
 Config = Config or {}
 Config.Dealers = {}
-Config.UseTarget = GetConvar('UseTarget', 'false') == 'false'
+Config.UseTarget = GetConvar('UseTarget', 'false') == 'true'
 Config.PoliceCallChance = 15
 
 -- Shop Config
@@ -112,7 +112,9 @@ Config.CornerSellingDrugsList = {
     "weed_ak47",
     "crack_baggy",
     "cokebaggy",
-    "meth"
+    "meth",
+    "marijuana",
+    
 }
 
 Config.DrugsPrice = {
@@ -141,16 +143,16 @@ Config.DrugsPrice = {
         max = 40,
     },
     ["crack_baggy"] = {
-        min = 18,
-        max = 34,
+        min = 80,
+        max = 120,
     },
     ["cokebaggy"] = {
-        min = 18,
-        max = 37,
+        min = 80,
+        max = 120,
     },
     ["meth"] = {
-        min = 18,
-        max = 40,
+        min = 80,
+        max = 120,
     },
 }
 
@@ -166,12 +168,12 @@ Config.DeliveryItems = {
     [1] = {
         ["item"] = "weed_brick",
         ["minrep"] = 0,
-        ['payout'] = 1000
+        ['payout'] = 1200
     },
     [2] = {
         ["item"] = "coke_brick",
         ["minrep"] = 0,
-        ['payout'] = 1000
+        ['payout'] = 1200
     },
 }
 
