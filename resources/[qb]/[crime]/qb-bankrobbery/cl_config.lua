@@ -40,13 +40,6 @@ function Config.OnDrillingAction()
     TriggerServerEvent('hud:server:GainStress', math.random(4, 8))
 end
 
---- This is triggered whenever a robbery call is made by the alarm of a bank
---- @param message string
---- @return nil
-function Config.OnPoliceAlert(message)
-    TriggerServerEvent("police:server:policeAlert", message)
-end
-
 --- This is called when the user is nearby an interaction that requires said items, this will trigger the box that shows what items you need
 ---
 --- Format for `items`:

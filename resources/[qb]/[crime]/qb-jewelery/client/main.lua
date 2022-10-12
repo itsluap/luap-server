@@ -51,7 +51,7 @@ end
 
 local function smashVitrine(k)
     if not firstAlarm then
-        TriggerServerEvent('police:server:policeAlert', 'Suspicious Activity')
+        exports['ps-dispatch']:SuspiciousActivity()
         firstAlarm = true
     end
 
@@ -77,7 +77,7 @@ local function smashVitrine(k)
             }, {}, {}, {}, function() -- Done
                 TriggerServerEvent('qb-jewellery:server:vitrineReward', k)
                 TriggerServerEvent('qb-jewellery:server:setTimeout')
-                TriggerServerEvent('police:server:policeAlert', 'Robbery in progress')
+                exports['ps-dispatch']:VangelicoRobbery()
                 smashing = false
                 TaskPlayAnim(ped, animDict, "exit", 3.0, 3.0, -1, 2, 0, 0, 0, 0)
             end, function() -- Cancel

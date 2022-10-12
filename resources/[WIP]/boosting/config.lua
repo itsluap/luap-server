@@ -77,7 +77,7 @@ Config['Utils'] = {
     ["Laptop"] = {
         ["LogoUrl"] = "images/winlogo.png", 
         ["DefaultBackground"] = "images/background.png",
-        ["CopNotifyLength"] = 5000, -- Time in (ms) of the police Notify length
+        --["CopNotifyLength"] = 5000, -- Time in (ms) of the police Notify length
     },
 }
 

@@ -165,27 +165,7 @@ RegisterNetEvent('qb-armoredtruckheist:client:robberyCall', function(streetLabel
         local store = "Armored Truck"
 
         PlaySound(-1, "Lose_1st", "GTAO_FM_Events_Soundset", 0, 0, 1)
-        TriggerEvent('qb-policealerts:client:AddPoliceAlert', {
-            timeOut = 10000,
-            alertTitle = "Armored Truck Robbery Attempt",
-            coords = {
-                x = coords.x,
-                y = coords.y,
-                z = coords.z
-            },
-            details = {
-                [1] = {
-                    icon = '<i class="fas fa-university"></i>',
-                    detail = store
-                },
-                [2] = {
-                    icon = '<i class="fas fa-globe-europe"></i>',
-                    detail = streetLabel
-                }
-            },
-            callSign = QBCore.Functions.GetPlayerData().metadata["callsign"]
-        })
-
+        exports['ps-dispatch']:VanRobbery()
         local transG = 250
         local blip = AddBlipForCoord(coords.x, coords.y, coords.z)
         SetBlipSprite(blip, 487)

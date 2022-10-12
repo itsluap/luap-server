@@ -437,7 +437,7 @@ end)
 RegisterNetEvent('qb-storerobbery:client:robberyCall', function(_, _, _, coords)
     if GlobalState.isLEO and onDuty then
         PlaySound(-1, "Lose_1st", "GTAO_FM_Events_Soundset", 0, 0, 1)
-        TriggerServerEvent('police:server:policeAlert', Lang:t("email.storerobbery_progress"))
+        exports['ps-dispatch']:StoreRobbery()
 
         local transG = 250
         local blip = AddBlipForCoord(coords.x, coords.y, coords.z)

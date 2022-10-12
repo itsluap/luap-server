@@ -574,7 +574,7 @@ Citizen.CreateThread(function()
                 local hash = GetEntityModel(Vehicle)
                 local modelName = GetLabelText(GetDisplayNameFromVehicleModel(hash))
                 if not NotifySent then
-                  TriggerServerEvent("boosting:CallCopsNotify" , Contracts[startedcontractid].plate , modelName, primary..', '..secondary , getStreetandZone(GetEntityCoords(PlayerPed)))
+                  exports['ps-dispatch']:CarBoosting(vehicle)
                   CallingCops = true
                   NotifySent = true
                 end
@@ -611,7 +611,7 @@ Citizen.CreateThread(function()
                 local hash = GetEntityModel(Vehicle)
                 local modelName = GetLabelText(GetDisplayNameFromVehicleModel(hash))
                 if not NotifySent then
-                  TriggerServerEvent("boosting:CallCopsNotify" , Contracts[startedcontractid].plate , modelName, primary..', '..secondary , getStreetandZone(GetEntityCoords(PlayerPed)))
+                  exports['ps-dispatch']:CarBoosting(vehicle)
                   CallingCops = true
                   NotifySent = true
                 end
