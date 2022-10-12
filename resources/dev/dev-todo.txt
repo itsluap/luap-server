@@ -34,7 +34,3 @@ To Do:
     - create website - needs forums, applications, and tebex store
     -
     - go through and remove unneeded commands (search all server files)
-
-Notes:
-    - the "press E to open" menu is - exports['qb-core']:DrawText(text, 'left') and to hide - exports['qb-core']:HideText()
-    - 
