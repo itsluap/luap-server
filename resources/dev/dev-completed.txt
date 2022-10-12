@@ -1,0 +1,18 @@
+
+
+
+what i've done so far:
+    - custom apartment interior
+    - made garage system better (have to be parked in a parking space)
+    - added police dispatch and mdt
+    - vehicle boosting - needs to be finished
+    - cocaine flights and proccessing
+    - added bodybag command for police and ems
+    - changed banking and edited qb-management
+    - LegacyFuel to ps-fuel
+    -
+   
+list each script that is 100% done here:
+    -
+    -
+    -

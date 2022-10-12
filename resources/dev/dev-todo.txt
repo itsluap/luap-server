@@ -1,17 +1,8 @@
-Main Stuff:
-    - server color ? 53B3CB
-    - GlobalState.isLEO returns true if player has job from ps-mdt config.lua
 
-Necessities:
-    - Police: cuffing, dragging, seating, jailing, mdt, dispatch, armory, mlos, better cars
-    - EMS   : calls from downed players, heal players, revive players, body bag, stretcher, airmed, better ambulance
-    - test all criminal activities and all civilian jobs
 
-Bugs:
-    - cant clear calls from dispatch in mdt
-    - floating lights at pillbox - need to buy from gabz
 
 To Do:
+    - test all criminal activities and all civilian jobs
     - bypass qb-spawn for characters that arent new? - try to figure this out
     - make lockpicking car doors medium difficulty
     - stripclub script from dream (or try to find online)
@@ -23,7 +14,16 @@ To Do:
     - add ps-buffs and possibly ps-progressbar and ps-drugsproccessing
     - vehicle shop (go through vehicles, check prices, only basic cars available at pdm)
     - plane/heli shop - remove unneeded planes and helis - increase prices
-    -
+    - finish changing colors to server color (qb-customs, qb-scenes, search whole server for qbcore color code)
+    - discord webhooks
+    - repair kit for everyone (only fixes engine) (have to be outside vehicle)
+    - check shops around whole city
+    - better prison and move prison script coords
+    - apartments cant be raided - make apartments raidable -  ake stormram unlock doors in qb-doorlock (for mlos)
+    - 
+    - make sure all vehicles handle decent (not crazy fast or good)
+    - make sure all clothes added work correctly
+    - make sure addon vehicles are not oversized
     -
     - job mlos
     - civ jobs
@@ -39,7 +39,6 @@ Ideas:
     - give lockpicks durability?
     - ps-ui, gang influence areas
     - gun crafting and blackmarket
-    - weed script like nopixel, weed plants spawn in random spots
 
 Notes:
     - the "press E to open" menu is - exports['qb-core']:DrawText(text, 'left') and to hide - exports['qb-core']:HideText()
