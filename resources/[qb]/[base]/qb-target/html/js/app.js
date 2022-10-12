@@ -6,7 +6,7 @@ const Targeting = Vue.createApp({
             StandardEyeIcon: 'https://cdn.discordapp.com/attachments/903021216464531507/903024370665000981/normaleye.png', // Instead of icon it's using a image source found in HTML 
             CurrentIcon: 'https://cdn.discordapp.com/attachments/903021216464531507/903024370665000981/normaleye.png', // Instead of icon it's using a image source found in HTML
             SuccessIcon: 'https://cdn.discordapp.com/attachments/903021216464531507/903024373626208336/activeeye.png', // Instead of icon it's using a image source found in HTML
-            SuccessColor: "rgb(83, 179, 203)",
+            SuccessColor: "rgb(5, 241, 178)",
             StandardColor: "white",
             TargetHTML: "",
             TargetEyeStyleObject: {
