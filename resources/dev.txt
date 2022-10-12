@@ -39,6 +39,7 @@ Ideas:
     - give lockpicks durability?
     - ps-ui, gang influence areas
     - gun crafting and blackmarket
+    - weed script like nopixel, weed plants spawn in random spots
 
 Notes:
     - the "press E to open" menu is - exports['qb-core']:DrawText(text, 'left') and to hide - exports['qb-core']:HideText()
