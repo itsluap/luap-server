@@ -35,23 +35,6 @@ To Do:
     -
     - go through and remove unneeded commands (search all server files)
 
-Ideas:
-    - give lockpicks durability?
-    - ps-ui, gang influence areas
-    - gun crafting and blackmarket
-
 Notes:
     - the "press E to open" menu is - exports['qb-core']:DrawText(text, 'left') and to hide - exports['qb-core']:HideText()
     - 
-
-what i've done so far:
-    - custom apartment interior
-    - made garage system better (have to be parked in a parking space)
-    - added police dispatch and mdt
-    - vehicle boosting - needs to be finished
-    - cocaine flights and proccessing
-    - added bodybag command for police and ems
-    - changed banking and edited qb-management
-    - LegacyFuel to ps-fuel
-    -
-   
