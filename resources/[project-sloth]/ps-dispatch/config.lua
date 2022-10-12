@@ -8,7 +8,7 @@ Config.PoliceJob = { "police", "sheriff", "trooper"}
 -- Enable if you only want to send alerts to onDuty officers
 Config.OnDutyOnly = true
 
-Config.PoliceAndAmbulance = { "police", "ambulance", "bcso"}
+Config.PoliceAndAmbulance = { "police", "ambulance", "sheriff", "trooper"}
 Config.PhoneModel = 'prop_npc_phone_02'
 
 -- sets report chance to 100%
@@ -19,7 +19,7 @@ Config.DebugChance = true
 Config.ExplosionTypes = {9}
 
 -- enable default alerts
-Config.Enable.Speeding = true
+Config.Enable.Speeding = false
 Config.Enable.Shooting = true
 Config.Enable.Autotheft = true
 Config.Enable.Melee = true
@@ -28,7 +28,7 @@ Config.Enable.PlayerDowned = true
 Config.Locale = 'en'
 
 -- enable alerts when cops break the law and print to console
-Config.Debug = true
+Config.Debug = false
 
 -- changes the min and max offset for the radius
 Config.MinOffset = 1
