@@ -24,6 +24,10 @@ SetupCrouch = function()
 	end
 end
 
+RemoveCrouchAnim = function()
+	RemoveAnimDict('move_ped_crouched')
+end
+
 CanCrouch = function()
 	local PlayerPed = PlayerPedId()
 	if IsPedOnFoot(PlayerPed) and not IsPedJumping(PlayerPed) and not IsPedFalling(PlayerPed) and not IsPedDeadOrDying(PlayerPed) then
@@ -50,7 +54,6 @@ SetPlayerAimSpeed = function()
 end
 
 IsPlayerFreeAimed = function()
-	local Player = PlayerPedId()
 	local PlayerID = GetPlayerIndex()
 	if IsPlayerFreeAiming(PlayerID) or IsAimCamActive() or IsAimCamThirdPersonActive() then
 		return true
@@ -59,39 +62,41 @@ IsPlayerFreeAimed = function()
 	end
 end
 
-Citizen.CreateThread( function()
+CrouchLoop = function()
 	SetupCrouch()
-    while true do 
-        DisableControlAction(0, 36, true) -- DISABLE DUCK and this make 0.01 and some time 0.02 but always left control will disable
-		-- SetPedStealthMovement(PlayerPedId(), false, "DEFAULT_ACTION") -- DISABLE DUCK But make script idle 0.02
-		
-		if CrouchedForce then
-			local CanDo = CanCrouch()
-			if CanDo and Crouched and IsPlayerFreeAimed() then
-				SetPlayerAimSpeed()
-			elseif CanDo and (not Crouched or Aimed) then
-				CrouchPlayer()
-			elseif not CanDo and Crouched then
-				CrouchedForce = false
-				NormalWalk()
-			end
-			local NowCam = GetFollowPedCamViewMode()
-			if CanDo and Crouched and NowCam == 4 then
-				SetFollowPedCamViewMode(LastCam)
-			elseif CanDo and Crouched and NowCam ~= 4 then
-				LastCam = NowCam
-			end
-		elseif Crouched then
+	while CrouchedForce do
+		local CanDo = CanCrouch()
+		if CanDo and Crouched and IsPlayerFreeAimed() then
+			SetPlayerAimSpeed()
+		elseif CanDo and (not Crouched or Aimed) then
+			CrouchPlayer()
+		elseif not CanDo and Crouched then
+			CrouchedForce = false
 			NormalWalk()
 		end
-		
-        Citizen.Wait(5)
-    end
-end)
+
+		local NowCam = GetFollowPedCamViewMode()
+		if CanDo and Crouched and NowCam == 4 then
+			SetFollowPedCamViewMode(LastCam)
+		elseif CanDo and Crouched and NowCam ~= 4 then
+			LastCam = NowCam
+		end
+
+		Citizen.Wait(5)
+	end
+	NormalWalk()
+	RemoveCrouchAnim()
+end
 
 RegisterCommand('crouch', function()
+	DisableControlAction(0, 36, true) -- magic
 	if not Cooldown then
 		CrouchedForce = not CrouchedForce
+
+		if CrouchedForce then
+			CreateThread(CrouchLoop) -- Magic Part 2 lamo
+		end
+
 		Cooldown = true
 		SetTimeout(CoolDownTime, function()
 			Cooldown = false
@@ -104,7 +109,7 @@ RegisterKeyMapping('crouch', 'Crouch', 'keyboard', 'LCONTROL') -- now its better
 
 -- Exports --
 IsCrouched = function()
-    return Crouched
+	return Crouched
 end
 
 exports("IsCrouched", IsCrouched)
