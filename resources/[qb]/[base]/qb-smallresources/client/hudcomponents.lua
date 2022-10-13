@@ -28,10 +28,7 @@ CreateThread(function()
         end
 
         ---------------------------------
-        local player = game.Players.LocalPlayer
-        local character = player.Character or player.CharacterAdded:Wait()
-        local head = character:WaitForChild('Head')
-        if IsAimCamActive() and not head.LocalTransparencyModifier == 1 then
+        if IsAimCamActive() and not GetFollowPedCamViewMode() == 4 then
             SendNUIMessage({
                 action = "togglexhair",
                 show = true,
