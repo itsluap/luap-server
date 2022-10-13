@@ -28,7 +28,7 @@ CreateThread(function()
         end
 
         ---------------------------------
-        if IsAimCamActive() and not GetFollowPedCamViewMode() == 1 then
+        if IsAimCamActive() and GetFollowPedCamViewMode() == 4 then
             SendNUIMessage({
                 action = "togglexhair",
                 show = true,
