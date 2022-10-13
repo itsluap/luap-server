@@ -309,7 +309,7 @@
 
 .material-symbols-outlined {
     color: #ededed;
-    background-color: #DC143C;
+    background-color: #53B3CB;
     font-weight: 900;
     border-radius: .3vh;
     padding: .3vh;
@@ -519,7 +519,7 @@ input[type="date"]::-webkit-clear-button {
 }
 
 .v-date-picker-table .v-btn--active {
-    background: #DC143C;
+    background: #53B3CB;
 }
 
 .theme--light.v-picker__body {
@@ -531,7 +531,7 @@ input[type="date"]::-webkit-clear-button {
 }
 
 .v-picker__title.primary {
-    background: #DC143C!important;
+    background: #53B3CB!important;
 }
 
 .theme--light.v-date-picker-header .v-date-picker-header__value:not(.v-date-picker-header__value--disabled) button:not(:hover):not(:focus) {
@@ -548,7 +548,7 @@ input[type="date"]::-webkit-clear-button {
 }
 
 button.v-btn.v-date-picker-table__current.v-btn--rounded.v-btn--outlined.theme--light.accent--text {
-    border-color: #DC143C;
+    border-color: #53B3CB;
 }
 
 .v-date-picker-years {
