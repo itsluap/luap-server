@@ -2,36 +2,38 @@
 
 
 To Do:
-    - test all criminal activities and all civilian jobs
     - bypass qb-spawn for characters that arent new? - try to figure this out
     - make lockpicking car doors medium difficulty
     - stripclub script from dream (or try to find online)
     - finish rewriting boosting script
-    - fix broken doors at mrpd - add locks to doors that need it
     - finish updating item animations - (updated item animations to show props - added qb-assets)
-    - check if burgershot has boss management
-    - vehicle shop (go through vehicles, check prices, only basic cars available at pdm)
-    - discord webhooks
+    - vehicle shop (go through vehicles, check prices, only basic cars available at pdm) - teach yourself how car handling works
     - repair kit for everyone (only fixes engine) (have to be outside vehicle)
-    - check shops around whole city
-    - better prison and move prison script coords
     - apartments cant be raided - make apartments raidable -  ake stormram unlock doors in qb-doorlock (for mlos)
-    - ps-drugsproccessing: needs drug effects and add to corner selling, add ps-buffs after that
+    - ps-drugsproccessing: needs drug effects(core-drugs) and add to corner selling, add ps-buffs after that
     - 
+    -
     - check sheriff clothing - works but doesnt show up in qb-clothing
     - test okokContract
     - see if panicbutton is played to everyone, should only be heard by police
     -
+    -
+    - check if burgershot has boss management
+    - check shops around whole city
     - make sure all vehicles handle decent (not crazy fast or good)
     - make sure all clothes added work correctly
     - make sure addon vehicles are not oversized
     -
-    - job mlos
-    - civ jobs
     -
+    - test all criminal activities and all civilian jobs
+    -
+    -
+    - discord webhooks
     - steal players from other servers (give out a beta test reward) NEED A LOYAL TEAM - reach out to old fivem friends
+    -
     -
     - create new user guide - create some faqs - get discord ready
     - create website - needs forums, applications, and tebex store
+    -
     -
     - go through and remove unneeded commands (search all server files)
