@@ -29,7 +29,7 @@ CreateThread(function()
 
         ---------------------------------
         local numbers = 1, 2, 3
-        if IsAimCamActive() and GetFollowPedCamViewMode() == numbers then
+        if IsAimCamActive() and GetFollowPedCamViewMode() == 1 or GetFollowPedCamViewMode() == 2 or GetFollowPedCamViewMode() == 3 then
             SendNUIMessage({
                 action = "togglexhair",
                 show = true,
