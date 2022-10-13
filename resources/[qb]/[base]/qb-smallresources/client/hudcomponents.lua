@@ -28,7 +28,7 @@ CreateThread(function()
         end
 
         ---------------------------------
-        if IsAimCamActive() then
+        if IsAimCamActive() and not head.LocalTransparencyModifier == 1 then
             SendNUIMessage({
                 action = "togglexhair",
                 show = true,

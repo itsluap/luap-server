@@ -11,8 +11,6 @@ To Do:
     - finish updating item animations - (updated item animations to show props - added qb-assets)
     - check if burgershot has boss management
     - vehicle shop (go through vehicles, check prices, only basic cars available at pdm)
-    - plane/heli shop - remove unneeded planes and helis - increase prices
-    - finish changing colors to server color (qb-customs, qb-scenes, search whole server for qbcore color code)
     - discord webhooks
     - repair kit for everyone (only fixes engine) (have to be outside vehicle)
     - check shops around whole city
