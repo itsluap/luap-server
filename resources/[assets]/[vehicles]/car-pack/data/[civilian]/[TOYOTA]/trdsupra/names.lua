@@ -1,0 +1,6 @@
+Citizen.CreateThread(function()
+AddTextEntry("TOYOTA", "Toyota")
+AddTextEntry("trdsupra", "TRD Supra '1997")
+AddTextEntry("TRD", "Toyota Racing Development")
+AddTextEntry("NOWING", "No Spoiler")
+end)

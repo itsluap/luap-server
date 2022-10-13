@@ -15,6 +15,9 @@ files {
     'data/**/vehicles.meta',
     'data/**/carcols.meta',
     'data/**/carvariations.meta',
+    'audioconfig/*.dat151.rel',
+    'audioconfig/*.dat54.rel',
+    'sfx/**/*.awc',
     'audioconfig/w211_game.dat151.nametable',
     'audioconfig/w211_game.dat151.rel',
     'audioconfig/w211_sounds.dat54.nametable',
@@ -197,6 +200,12 @@ data_file 'AUDIO_WAVEPACK' 'sfx/dlc_w211'
 data_file 'AUDIO_GAMEDATA' 'audioconfig/elegyx_game.dat'
 data_file 'AUDIO_SOUNDDATA' 'audioconfig/elegyx_sounds.dat'
 data_file 'AUDIO_WAVEPACK' 'sfx/dlc_elegyx'
+
+-- for redeye
+
+data_file 'AUDIO_GAMEDATA' 'audioconfig/dodgehemihellcat_game.dat'
+data_file 'AUDIO_SOUNDDATA' 'audioconfig/dodgehemihellcat_sounds.dat'
+data_file 'AUDIO_WAVEPACK' 'sfx/dlc_dodgehemihellcat'
 
 -- sound pack
 
