@@ -18,8 +18,7 @@ To Do:
     - apartments cant be raided - make apartments raidable -  ake stormram unlock doors in qb-doorlock (for mlos)
     - ps-drugsproccessing: needs drug effects and add to corner selling, add ps-buffs after that
     - 
-    - check sheriff clothing
-    - check addon rims
+    - check sheriff clothing - works but doesnt show up in qb-clothing
     - test okokContract
     - see if panicbutton is played to everyone, should only be heard by police
     -
