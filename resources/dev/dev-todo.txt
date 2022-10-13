@@ -2,13 +2,13 @@
 
 
 To Do:
-    - bypass qb-spawn for characters that arent new? - try to figure this out
+    - bypass qb-spawn for characters that arent new? - try to figure this out !!! CAN DO AT WORK
     - make lockpicking car doors medium difficulty
     - stripclub script from dream (or try to find online)
     - finish rewriting boosting script
-    - finish updating item animations - (updated item animations to show props - added qb-assets)
+    - finish updating item animations - (updated item animations to show props - added qb-assets) !!! CAN DO AT WORK
     - vehicle shop (go through vehicles, check prices, only basic cars available at pdm) - teach yourself how car handling works
-    - repair kit for everyone (only fixes engine) (have to be outside vehicle)
+    - repair kit for everyone (only fixes engine) (have to be outside vehicle) !!! CAN DO AT WORK
     - apartments cant be raided - make apartments raidable -  ake stormram unlock doors in qb-doorlock (for mlos)
     - ps-drugsproccessing: needs drug effects(core-drugs) and add to corner selling, add ps-buffs after that
     - 
@@ -28,12 +28,12 @@ To Do:
     - test all criminal activities and all civilian jobs
     -
     -
-    - discord webhooks
+    - discord webhooks !!! CAN DO AT WORK
     - steal players from other servers (give out a beta test reward) NEED A LOYAL TEAM - reach out to old fivem friends
     -
     -
-    - create new user guide - create some faqs - get discord ready
-    - create website - needs forums, applications, and tebex store
+    - create new user guide - create some faqs - get discord ready !!! CAN DO AT WORK
+    - create website - needs forums, applications, and tebex store !!! CAN DO AT WORK
     -
     -
     - go through and remove unneeded commands (search all server files)
