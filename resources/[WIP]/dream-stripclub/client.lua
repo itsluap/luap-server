@@ -1,4 +1,4 @@
-Framework = exports["dream-core"]:GetCoreObject()
+Framework = exports["qb-core"]:GetCoreObject()
 local PlayerData = nil
 local ActiveParticles, UnicornProps = {}, {}
 local ColorR, ColorG, ColorB = 15, 15, 15
@@ -28,33 +28,33 @@ AddEventHandler("Framework:Client:OnJobUpdate", function(JobInfo)
 end)
 
 
-RegisterNetEvent("dream-vanillaunicorn:client:shop")
-AddEventHandler("dream-vanillaunicorn:client:shop", function()
-    TriggerServerEvent("dream-inventory:server:OpenInventory", "shop", "vanilla", Config.Items)
+RegisterNetEvent("qb-vanillaunicorn:client:shop")
+AddEventHandler("qb-vanillaunicorn:client:shop", function()
+    TriggerServerEvent("lj-inventory:server:OpenInventory", "shop", "vanilla", Config.Items)
 end)
 
 
-RegisterNetEvent('dream-stripclub:client:open:tray')
-AddEventHandler('dream-stripclub:client:open:tray', function(Numbers)
-    TriggerServerEvent("dream-inventory:server:OpenInventory", "stash", "stripclub"..Numbers, {maxweight = 100000, slots = 8})
-    TriggerEvent("dream-inventory:client:SetCurrentStash", "stripclub"..Numbers)
+RegisterNetEvent('qb-stripclub:client:open:tray')
+AddEventHandler('qb-stripclub:client:open:tray', function(Numbers)
+    TriggerServerEvent("lj-inventory:server:OpenInventory", "stash", "stripclub"..Numbers, {maxweight = 100000, slots = 8})
+    TriggerEvent("lj-inventory:client:SetCurrentStash", "stripclub"..Numbers)
 end)
 
 
-RegisterNetEvent('dream-stripclub:client:open:cigarettes')
-AddEventHandler('dream-stripclub:client:open:cigarettes', function(Numbers)
+RegisterNetEvent('qb-stripclub:client:open:cigarettes')
+AddEventHandler('qb-stripclub:client:open:cigarettes', function(Numbers)
 
-    TriggerServerEvent("dream-inventory:server:OpenInventory", "shop", "cigarettes", Config.ItemsCigarettes)
+    TriggerServerEvent("lj-inventory:server:OpenInventory", "shop", "cigarettes", Config.ItemsCigarettes)
 end)
 
-RegisterNetEvent('dream-stripclub:client:open:payment')
-AddEventHandler('dream-stripclub:client:open:payment', function()
+RegisterNetEvent('qb-stripclub:client:open:payment')
+AddEventHandler('qb-stripclub:client:open:payment', function()
   SetNuiFocus(true, true)
   SendNUIMessage({action = 'OpenPaymentStrip', payments = Config.ActivePaymentsStrip})
 end)
 
-RegisterNetEvent('dream-stripclub:client:open:register')
-AddEventHandler('dream-stripclub:client:open:register', function()
+RegisterNetEvent('qb-stripclub:client:open:register')
+AddEventHandler('qb-stripclub:client:open:register', function()
 	if isLoggedIn then
 		if PlayerJob.name == "vanilla" then
             SetNuiFocus(true, true)
@@ -65,13 +65,13 @@ AddEventHandler('dream-stripclub:client:open:register', function()
     end
 end)
 
-RegisterNetEvent('dream-stripclub:client:sync:register')
-AddEventHandler('dream-stripclub:client:sync:register', function(RegisterConfig)
+RegisterNetEvent('qb-stripclub:client:sync:register')
+AddEventHandler('qb-stripclub:client:sync:register', function(RegisterConfig)
   Config.ActivePaymentsStrip = RegisterConfig
 end)
 
-RegisterNetEvent('dream-stripclub:client:sync:config')
-AddEventHandler('dream-stripclub:client:sync:config', function(ConfigData)
+RegisterNetEvent('qb-stripclub:client:sync:config')
+AddEventHandler('qb-stripclub:client:sync:config', function(ConfigData)
     Config = ConfigData
 end)
 function GetActiveRegister()
@@ -178,7 +178,7 @@ function CheckPoleDance(CurrentPole)
     if not DoingDance then
         DoingDance = true
         local RandomDance = Config.Dances[math.random(1,#Config.Dances)]
-        exports['dream-assets']:RequestAnimationDict(RandomDance['Dict'])
+        exports['qb-assets']:RequestAnimationDict(RandomDance['Dict'])
         local DanceScene = NetworkCreateSynchronisedScene(Config.Poles[CurrentPole]['X'], Config.Poles[CurrentPole]['Y'], Config.Poles[CurrentPole]['Z'], 0.0, 0.0, 0.0, 2, false, true, 1065353216, 0, 1.3)
         NetworkAddPedToSynchronisedScene(PlayerPedId(), DanceScene, RandomDance['Dict'], RandomDance['Anim'], 1.5, -4.0, 1, 1, 1148846080, 0)
         NetworkStartSynchronisedScene(DanceScene)
@@ -203,16 +203,16 @@ function DrawText3D(x, y, z, text)
     ClearDrawOrigin()
 end
 
-RegisterNetEvent('dream-stripclub:client:open:opslag')
-AddEventHandler('dream-stripclub:client:open:opslag', function()
-    TriggerServerEvent("dream-inventory:server:OpenInventory", "stash", "strip_opslag", {maxweight = 90000, slots = 10})
-    TriggerEvent("dream-inventory:client:SetCurrentStash", "strip_opslag")
+RegisterNetEvent('qb-stripclub:client:open:opslag')
+AddEventHandler('qb-stripclub:client:open:opslag', function()
+    TriggerServerEvent("lj-inventory:server:OpenInventory", "stash", "strip_opslag", {maxweight = 90000, slots = 10})
+    TriggerEvent("lj-inventory:client:SetCurrentStash", "strip_opslag")
 end)
 
 
-RegisterNetEvent('dream-stripclub:client:cocktailmaken')
-AddEventHandler('dream-stripclub:client:cocktailmaken', function(Drankjez)
-  Framework.Functions.TriggerCallback('dream-stripclub:server:has:drank:items', function(Drankje)
+RegisterNetEvent('qb-stripclub:client:cocktailmaken')
+AddEventHandler('qb-stripclub:client:cocktailmaken', function(Drankjez)
+  Framework.Functions.TriggerCallback('qb-stripclub:server:has:drank:items', function(Drankje)
     if Drankje then
        MaakDrankje(Drankjez)
     else
@@ -224,8 +224,8 @@ end)
 
 function MaakDrankje(Drankjex)
     Citizen.SetTimeout(750, function()
-      TriggerEvent('dream-inventory:client:set:busy', true)
-      exports['dream-assets']:RequestAnimationDict("mini@repair")
+      TriggerEvent('lj-inventory:client:set:busy', true)
+      exports['qb-assets']:RequestAnimationDict("mini@repair")
       TaskPlayAnim(PlayerPedId(), "mini@repair", "fixing_a_ped" ,3.0, 3.0, -1, 8, 0, false, false, false)
       Framework.Functions.Progressbar("open-brick", "Making Drink.. ", 7500, false, true, {
           disableMovement = true,
@@ -233,22 +233,22 @@ function MaakDrankje(Drankjex)
           disableMouse = false,
           disableCombat = true,
       }, {}, {}, {}, function() -- Done
-          TriggerServerEvent('dream-stripclub:server:finish:create', Drankjex)
-          TriggerEvent('dream-inventory:client:set:busy', false)
+          TriggerServerEvent('qb-stripclub:server:finish:create', Drankjex)
+          TriggerEvent('lj-inventory:client:set:busy', false)
           StopAnimTask(PlayerPedId(), "mini@repair", "fixing_a_ped", 1.0)
       end, function()
-          TriggerEvent('dream-inventory:client:set:busy', false)
+          TriggerEvent('lj-inventory:client:set:busy', false)
           Framework.Functions.Notify("Geannuleerd..", "error")
           StopAnimTask(PlayerPedId(), "mini@repair", "fixing_a_ped", 1.0)
       end)
     end)
 end
 
-RegisterNetEvent("dream-stripclub:client:maken")
-AddEventHandler("dream-stripclub:client:maken", function()
-    TriggerEvent('dream-inventory:client:set:busy', true)
-    TriggerEvent("dream-sound:client:play", "pour-drink", 0.4)
-    exports['dream-assets']:RequestAnimationDict("amb@world_human_hang_out_street@female_hold_arm@idle_a")
+RegisterNetEvent("qb-stripclub:client:maken")
+AddEventHandler("qb-stripclub:client:maken", function()
+    TriggerEvent('lj-inventory:client:set:busy', true)
+    TriggerEvent("qb-sound:client:play", "pour-drink", 0.4)
+    exports['qb-assets']:RequestAnimationDict("amb@world_human_hang_out_street@female_hold_arm@idle_a")
     TaskPlayAnim(PlayerPedId(), "amb@world_human_hang_out_street@female_hold_arm@idle_a", "idle_a" ,3.0, 3.0, -1, 8, 0, false, false, false)
     Framework.Functions.Progressbar("open-brick", "Making Slushy..", 6500, false, true, {
         disableMovement = true,
@@ -256,18 +256,18 @@ AddEventHandler("dream-stripclub:client:maken", function()
         disableMouse = false,
         disableCombat = true,
     }, {}, {}, {}, function() -- Done
-        TriggerServerEvent('dream-prison:server:find:reward', 'slushy')
-        TriggerEvent('dream-inventory:client:set:busy', false)
+        TriggerServerEvent('qb-prison:server:find:reward', 'slushy')
+        TriggerEvent('lj-inventory:client:set:busy', false)
         StopAnimTask(PlayerPedId(), "amb@world_human_hang_out_street@female_hold_arm@idle_a", "idle_a", 1.0)
     end, function()
-        TriggerEvent('dream-inventory:client:set:busy', false)
+        TriggerEvent('lj-inventory:client:set:busy', false)
         Framework.Functions.Notify("Geannuleerd..", "error")
         StopAnimTask(PlayerPedId(), "amb@world_human_hang_out_street@female_hold_arm@idle_a", "idle_a", 1.0)
     end)
 end)
 
-RegisterNetEvent('dream-stripclub:client:open:effect:panel')
-AddEventHandler('dream-stripclub:client:open:effect:panel', function()
+RegisterNetEvent('qb-stripclub:client:open:effect:panel')
+AddEventHandler('qb-stripclub:client:open:effect:panel', function()
     local MenuItems = {}
     for k, v in pairs(Config.EffectsMenu) do
       local NewData = {}
@@ -276,7 +276,7 @@ AddEventHandler('dream-stripclub:client:open:effect:panel', function()
       NewData['Data'] = {['Event'] = v['Event'], ['Type'] = 'Server', ['Dict'] = v['Dict'], ['Effect'] = v['Effect']}
       table.insert(MenuItems, NewData)
     end
-    local ExtraData = {['Title'] = 'Stop Effects', ['Desc'] = 'Turn off all effects.', ['Data'] = {['Event'] = 'dream-stripclub:server:close:effect', ['Type'] = 'Server'}}
+    local ExtraData = {['Title'] = 'Stop Effects', ['Desc'] = 'Turn off all effects.', ['Data'] = {['Event'] = 'qb-stripclub:server:close:effect', ['Type'] = 'Server'}}
     table.insert(MenuItems, ExtraData)
     Citizen.SetTimeout(100, function()
         local Data = {['Title'] = 'Stripclub Effects', ['MainMenuItems'] = MenuItems}
@@ -284,8 +284,8 @@ AddEventHandler('dream-stripclub:client:open:effect:panel', function()
     end)
 end)
 
-RegisterNetEvent('dream-stripclub:client:stop:effects')
-AddEventHandler('dream-stripclub:client:stop:effects', function()
+RegisterNetEvent('qb-stripclub:client:stop:effects')
+AddEventHandler('qb-stripclub:client:stop:effects', function()
     for k, v in pairs(ActiveParticles) do
         StopParticleFxLooped(v, 0)
         RemoveParticleFx(v, 0)
@@ -302,11 +302,11 @@ RegisterNUICallback('Click', function()
   end)
   
   RegisterNUICallback('AddPrice', function(data)
-    TriggerServerEvent('dream-stripclub:server:add:to:register', data.Price, data.Note)
+    TriggerServerEvent('qb-stripclub:server:add:to:register', data.Price, data.Note)
   end)
   
   RegisterNUICallback('PayReceipt', function(data)
-    TriggerServerEvent('dream-stripclub:server:pay:receipt', data.Price, data.Note, data.Id)
+    TriggerServerEvent('qb-stripclub:server:pay:receipt', data.Price, data.Note, data.Id)
   end)
   
   RegisterNUICallback('CloseNui', function()
@@ -317,7 +317,7 @@ RegisterNUICallback('Click', function()
 function SpawnUnicornProps()
     for k, v in pairs(Config.UnicornProps) do
         local Prop = GetHashKey(v['Prop'])
-        exports['dream-assets']:RequestModelHash(Prop)
+        exports['qb-assets']:RequestModelHash(Prop)
         local Object = CreateObject(Prop, v['Coords']['X'], v['Coords']['Y'], v['Coords']['Z'], false, false, false)
         SetEntityHeading(Object, 123.46)
         FreezeEntityPosition(Object, true)
