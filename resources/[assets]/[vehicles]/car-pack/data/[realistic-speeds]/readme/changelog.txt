@@ -1,0 +1,274 @@
+===Version 2.5 (08.June 2018)===
+
+-Added 25 new vehicles
+Doomsday DLC: 		
+   Autarch, Comet SAFARI, Comet SR, Deluxo, Neon, Pariah, Raiden, Revolter,
+   Savestra, SC1, Sentinel Classic, Streiter, Stromberg, Viseris, Z190
+SSA Super Sports DLC:	
+   Dominator3 GTX, Ellie, Entity XXR, Flash GT, GB200, Hotring Sabre,
+  Jester Classic, Taipan, Tezeract, Tyrant
+
+-Reworked Vagner handling (more responsive, less wheelspin, increased stability)
+-Reworked Visione handling (more responsive, less wheelspin, increased stability)
+-Increased Rhino turret speed
+-Updated 'fastest cars' list (top 100)
+
+
+
+===Version 2.4 (05.Sept 2017)===
+
+New:
+-added Gunrunning DLC cars: Ardent, Cheetah Classic, Tampa Weaponized, Torero, Vagner, XA-21
+-added Smuggler's Run DLC cars: Cyclone, Rapid GT Classic, Retinue, Visione
+
+Changes:
+-Adjusted downforce for each car individually. New downforce was set slightly higher than the original 1.39 levels.
+-Added downforce to a few Muscle, Sports Classic and SUV vehicles in order to cancel out upforce.
+Other changes:
+-Adder: increased downforce
+-Carbonizarre: increased downforce
+-Infernus2: increased stability
+-Nero: increased downforce
+-Reaper: increased understeer
+-T20: increased stability
+-Tampa: reworked handling, added non-ABS brakes
+-Zentorno: increased downforce, increased understeer, increased stability
+
+
+
+===Version 2.3 (21.May 2017)===
+
+New:
+-added Virgo Classic (no ABS), Virgo Classic Custom (no ABS)
+-added more realistic InversePower settings
+-added alternative version compatible with GTAV 1.36 (1.0.877)
+
+Changes:
+-reworked FWD cars: Asterope, Blista1, Blista2 (no ABS), Penumbra, Pigalle (no ABS), Prairie
+-tweaked FWD cars: Brioso, Dilettante, Issi, Minivan, Premier, Primo, Stratum, Surge
+-tweaked SUVs: Cavcade, FQ2, Gresley, Habanero, Landstalker, Radius, Serrano, XLS
+-improved sportscar handling: Carbonizarre, Coquette1, GP1, RE7B, Tempesta, TurismoR
+-misc car tweaks: Blade, Cogcabrio, Cognoscenti, Windsor2
+-increased downforce: Tyrus, RE7B
+-improved rotating headlight angle for Infernus2 and Turismo2
+-minor surface grip tweaks (sand, mud, wet tarmac)
+
+
+
+===Version 2.2 (20.March 2017)===
+
+New:
+-Added 'MPSpecialRaces' DLC cars: GP1, Infernus2, Ruston, Turismo2
+
+Changes:
+-reworked X80 Proto handling (more grip and control at high speed)
+-tweaked Nero2 and Infernus handling
+-fixed supercar topspeed issues appearing after GTA Online update: Banshee2, Bullet, Cheetah, EntityXF, ETR1, FMJ,
+  Infernus, RE-7B, Nero, Osiris, Penetrator, Pfister811, Reaper, T20, TurismoR, Vacca, Zentorno
+-minor deformation improvements to cars lacking proper damage model: Lynx, Seven-70, Specter, Specter2, GP1, 
+  Infernus2, Turismo2 (thx lazy-ass Rockstar)
+-small adjustments to rally car offroad grip: Omnis, SultanRS, Tropos
+
+
+
+===Version 2.1 (22.Jan 2017)===
+
+New:
+-created 'increased deformation' version (each vehicle tweaked individually to make deformation more consistent)
+-complete rework of all dirt bikes
+-added new bikes: BF400, Esskey, Manchez
+-added trikes: Chimera, BF Raptor
+
+
+
+===Version 2.0.1 (16.Jan 2017)===
+
+Fixes:
+-fixed crash to desktop when loading a second savegame (caused by duplicate entry)
+
+Changes:
+-increased grip on wet tarmac
+-small grip adjustments to dusty concrete, sandstone, sand, snow
+-increased speed of AI vehicles on highways
+-tweaked Alpha handling
+-tweaked Buffalo S handling
+-tweaked ItaliGTB Custom handling
+-tweaked T20 handling
+-tweaked Tempesta handling
+-small adjustments to: Avarus, Buffalo, Comet Retro, Elegy Retro, Kuruma, Rapid GT, Rapid GT Convertible, Reaper, Voltic2, X80
+
+
+
+===Version 2.0 (06.Jan 2017)===
+
+New:
+-created 189 new unique car handlings from scratch, each one taking between 2 and 14 hours to create (470h total). 
+ Improvements include: Proper downforce, reduced understeer, more realistic drifting, more realistic suspension,
+ more realistic rollovers, more detailed handling characteristics and a complete rework of motorcycles:
+  Super: 27/27
+  Sports: 38/39
+  Coupe: 13/13
+  Sedan: 28/28
+  Compact: 2/7
+  Classic: 2
+  Muscle: 4
+  SUV: 25/26
+  OffRoad: 3
+  Van: 4
+  Utility: 2
+  Service: 1
+  Police: 3/9
+  Sports Bikes: 19/19
+  Touring Bikes: 5/5
+  Choppers: 13/13  
+
+-added 2 vehicles from the JANUARY2016 DLC: Banshee 900R, Sultan RS
+-added 1 vehicle from the VALENTINE DLC: Roosevelt Custom
+-added 2 vehicles from the LOWRIDERS 2 DLC: Minivan Custom, SabreGT Turbo Custom
+-added 9 vehicles from the FURTHER ADVENTURES IN FINANCES DLC: 
+  Super: FMJ, Pfister811, Reaper, X80
+  Sports: Bestia GTS, Seven70
+  Other: Windsor Drop, XLS, XLS2
+-added 13 vehicles from the CUNNING STUNTS DLC:
+  Super: ETR1, RE-7B, Tyrus
+  Sports: Drift Tampa, Lynx, Omnis, Tropos Rallye
+  Other: Brioso R/A, Cliffhanger, Contender, Desert Raid, Gargoyle, Trophy Truck
+-added 12 vehicles from the BIKERS DLC:
+  Sports Bikes: Defiler, Hakuchou Drag, Shotaro, Vortex
+  Choppers: Avarus, Daemon2, Nightblade, RatBike, Sanctus, Wolfsbane, Zombie Bobber, Zombie Chopper
+-added 16 vehicles from the IMPORT/EXPORT DLC:
+  Super: ItaliGTB, ItaliGTB Custom, Nero, Nero Custom, Penetrator, Rocket Voltic, Tempesta
+  Sports: Comet Retro, Elegy Retro, Specter, Specter Custom
+  Motorcycles: Diabolous, Diabolous Custom, FCR 1000, FCR 1000 Custom
+  Muscle: Ruiner 2000
+
+-created "Scaled Topspeed" version of this mod, converting the unique handling of each of the 311 vehicles to new specs.
+ Speed is scaled to vanilla GTAV levels while all features of this mod (realistic grip, realistic cornering, 
+ realistic acceleration, realistic brakes, realistic suspension, downforce, PIT-maneuver...)
+ are preserved. Even the acceleration and topspeed advantages of each car and bike remain intact.
+
+-added proper downforce to each individual car. The increase in force/grip closely resembles 
+ that of each car's corresponding real life counterpart.
+
+-new tire grip settings reduce understeer while increasing the need for counter-steer during drifts
+-car suspension saves more potential energy during compression, even small bumps will affect handling now
+-cars are pushed upwards and suffer minor loss of stabilty when driving over curbs
+-reworked the properties of all driveable surfaces (significant improvements to all sorts of on-road and off-road terrain. 
+ Also includes adjustments to wet surfaces and shallow water)
+-removed the 130kmh speed cap on dirt roads and runways (rally cars can go up to 220kmh now)
+-increased drag and tire sink-in in swampy areas (cars can actually get stuck)
+-improved collision with foliage (small bushes apply less force to car)
+-small AI improvement: normal traffic and racing AI handle sharp turns better. Also applies to motorcycles.
+-wheels can lock up. Removed ABS from a handful of cars.
+-all car handlings created from scratch for version 2.0 feature more realistic collisions and rollovers
+
+Changes:
+-removed realistic propeller plane handlings from this mod (due to incompatibility with AI, missions
+ and the lack of proper elevator trim)
+-reduced vanilla airplane turbulences by an average of 70%
+-increased weight transfer during cornering, braking, accelerating
+-improved center of mass. Cars are more likely to roll over during collisions and hillclimb
+-increased compatibility with story missions.
+-fixed faulty tire physics that R* gave the latest DLC cars (meadows and sand offering MORE GRIP than tarmac) 
+-changed engine and transmission settings of electric cars in order to achieve more realistic acceleration curve.
+-made adjustments to how quickly transmissions can change gears.
+-improved z-axis pivot point coordinates for cars and bikes.
+-small increase in tire squeal when braking
+-tweaked police cars to work better with AI limitations
+-tweaked car handling in heavy rain
+
+Other:
+-Police3 (Police Cruiser) physics are still screwed up. Rockstar did this and there is nothing i can do about it. 
+ Its hardcoded and ignores config files, only the idiots at Rockstar can fix this bug.
+ 
+
+
+===Version 1.1 (17.Dec 2015)===
+
+New:
+-added 17 new cars from EXECUTIVES and XMAS3 DLCs: 
+ Sedans: Cog55, Cog552, Congosc, Cognosc2, Limo2, Schafter5, Schafter6
+ Sports: Schafter3, Schafter4, Verlierer
+ SUVs: Baller3, Baller4, Baller5, Baller6
+ Muscle: Nightshade, Tampa
+ Classic: Mamba
+
+Changes:
+-improved suspension for every single vehicle (more vivid/reactive)
+-increased grip and control when speeding offroad
+-looping exhaust flames bug is gone. Rockstar had caused this bug and now they have reverted back
+-broken performance upgrades in the shop are fixed. Rockstar had caused this bug and now they have reverted back
+
+
+
+===Version 1.0 (22.Oct 2015)===
+
+New:
+-deformation: added option for increased vehicle deformation
+-new brakes: reworked each and every vehicle individually in order to disable the automated brake (80 hours of work)
+-added propeller planes: Cuban800, Dodo Seaplane, Duster, Mallard Stunt, Mammatus, Titan, Velum (38 hours)
+-added vans: Boxville, Burrito1, Burrito2, Clown Van, Gang Burrito, Paradise, Pony, Rumpo, Speedo, Taco Van, Utility Truck 3
+-added lowriders: Buccaneer2, Chino2, Faction1, Faction2, Primo2, Moonbeam1, Moonbeam2, Voodoo1
+-added halloween cars: Franken Stange (BType2), Lurcher (Buccaneer Hearse)
+-added emergency vehicles: Ambulance, Fire Truck
+-added shuttle busses: Tour Bus, Rental Shuttle Bus
+-added Guardian 4x4 Superduty (truck)
+-added Rhino (tank)
+
+Changes:
+-reworked suspension and weight transfer for most vehicles, g-forces more visible to the player
+-slightly improved cornering for all cars (mostly based on skidpad testing)
+-corrected the number of gears for several cars (resulted in CTD previously)  
+-improved brake physics for cars (less lateral grip when braking)
+-improved brake physics for bikes (less lateral grip when braking)
+-bike cornering made slightly more realistic (based on extensive skidpad testing)
+-bikes dont explode anymore when run over
+-changes to motorbike engine behavior
+-changes to motorbike offroad performance
+-Blazer and variants: more realistic acceleration and cornering
+-Brawler: added workaround for problems caused by gravity modifiers
+-Zentorno: added workaround for problems caused by inertia modifiers
+
+The following vehicles got full handling rework:
+Banshee, Bison, Carboniz, Elegy2, Enduro, EntityXF, Exemplar, F620, FBI2, Fugitive, Intruder, Jackal, Massacro, NineF,
+Osiris, SabreGT, Sanchez, Schafter2, Sentinel, StingerGT, SuperDiamond, Surano, Surfer, Tailgater, TurismoR, Vacca, Zion,
+Police1, Police2, Police4, Police Transport, Park Ranger, Sheriff, Sheriff2
+
+Cars broken by Rockstar (cannot be fixed): Police3
+
+
+
+===version 0.97 (29.Aug 2015)===
+
+new:
+-added Brawler (off-road)
+-added Chino (muscle car)
+-added Coquette3 BlackFin (muscle car)
+-added Touring Bikes (Bagger, Faggio2, Police Bike, Sovereign, Thrust, Vindicator)
+-added Choppers (Daemon, Hexer, Innovation)
+-added Motocross Bikes (Enduro, Sanchez, Sanchez2)
+changes:
+-tweaks to all Sport Bikes
+
+
+===version 0.95 (27.Aug 2015)===
+
+new:
+-added Sport Bikes (Akuma, Bati801, Bati801RR, CarbonRS, DoubleT, Hakuchou, Lectro, Nemesis, PCJ600, Ruffian, Vader)
+-added T20 supercar (McLaren P1)('ill gotten pains 2' DLC)
+changes:
+-made transmission shift times more realistic for all sports cars (Single-Clutch, Multi-Clutch, Dual-Clutch transmissions)
+-improved Radi handling
+-improved Schafter2 handling
+-improved TurismoR handling
+-improved Washington handling
+
+
+===version 0.90 (27.June 2015)===
+
+-first release, featuring new unique physics definitions for each of 177 vehicles
+
+
+----------------------------------
+ 13.May 2015 - work on mod begins
+
