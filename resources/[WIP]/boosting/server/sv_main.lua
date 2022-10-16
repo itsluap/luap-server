@@ -25,6 +25,7 @@ SQL = function(query, parameters, cb)
                 IsBusy = false
             end
         end)
+    end
     while IsBusy do
         Citizen.Wait(0)
     end
