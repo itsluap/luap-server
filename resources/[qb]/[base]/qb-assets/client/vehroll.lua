@@ -7,11 +7,13 @@ Citizen.CreateThread(function()
             local model = GetEntityModel(veh)
             -- If it's not a boat, plane or helicopter, and the vehilce is off the ground with ALL wheels, then block steering/leaning left/right/up/down.
             if not IsThisModelABoat(model) and not IsThisModelAHeli(model) and not IsThisModelAPlane(model) and not IsThisModelABike(model) and not IsThisModelABicycle(model) and IsEntityInAir(veh) then
+                print("in the air")
                 DisableControlAction(0, 59) -- leaning left/right
                 DisableControlAction(0, 60) -- leaning up/down
             end
             local roll = GetEntityRoll(vehicle)
             if (roll > 75.0 or roll < -75.0) and GetEntitySpeed(vehicle) < 2 then
+                print("disabling roll")
                 DisableControlAction(2,59,true) -- Disable left/right
                 DisableControlAction(2,60,true) -- Disable up/down
             end
