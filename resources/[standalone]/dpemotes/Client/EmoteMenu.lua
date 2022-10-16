@@ -293,7 +293,9 @@ function AddInfoMenu(menu)
 end
 
 function OpenEmoteMenu()
+  if not IsPedSittingInAnyVehicle(PlayerPedId()) then
     mainMenu:Visible(not mainMenu:Visible())
+  end
 end
 
 function firstToUpper(str)
