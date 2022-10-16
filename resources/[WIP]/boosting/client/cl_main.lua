@@ -866,6 +866,7 @@ Citizen.CreateThread(function()
         vehClass = "D"
       end
       print(vehClass)
+      print(perfRating)
     end)
   end
 end)
