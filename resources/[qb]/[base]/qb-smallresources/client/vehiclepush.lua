@@ -1,3 +1,4 @@
+--[[
 local QBCore = exports['qb-core']:GetCoreObject()
 
 local First = vector3(0.0, 0.0, 0.0)
@@ -131,3 +132,4 @@ CreateThread(function()
         Wait(sleep)
     end
 end)
+]]--
