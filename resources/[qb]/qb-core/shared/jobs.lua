@@ -311,6 +311,18 @@ QBShared.Jobs = {
             },
         },
 	},
+    ['vanilla'] = {
+		label = 'Vanilla Unicorn',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+            ['0'] = {
+                name = 'Manager',
+                payment = 50
+                isboss = true
+            },
+        },
+	},
 	['hotdog'] = {
 		label = 'Hotdog',
 		defaultDuty = true,
