@@ -314,7 +314,7 @@ _menuPool:RefreshIndex()
 Citizen.CreateThread(function()
     while true do
         Citizen.Wait(0)
-        if mainMenu:Visible(not mainMenu:Visible()) then
+        if _menuPool:IsAnyMenuOpen() then
           local veh = GetVehiclePedIsIn(PlayerPedId(), false)
           if DoesEntityExist(veh) and not IsEntityDead(veh) then
               local model = GetEntityModel(veh)
