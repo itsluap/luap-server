@@ -29,7 +29,7 @@ local function EjectFromVehicle()
     SetEntityVelocity(ped, veloc.x*4,veloc.y*4,veloc.z*4)
     local ejectspeed = math.ceil(GetEntitySpeed(ped) * 8)
     if GetEntityHealth(ped) - ejectspeed > 0 then
-        SetEntityHealth(ped, GetEntityHealth(ped) - 20) -- changes player health on eject
+        SetEntityHealth(ped, GetEntityHealth(ped) - 10) -- changes player health on eject
     end
     --[[
     elseif GetEntityHealth(ped) ~= 0 then
