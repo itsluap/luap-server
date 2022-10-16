@@ -16,27 +16,7 @@ end
 SQL = function(query, parameters, cb)
     local res = nil
     local IsBusy = true
-    if Config['General']["SQLWrapper"] == "mysql-async" then
-        if string.find(query, "SELECT") then
-            MySQL.Async.fetchAll(query, parameters, function(result)
-                if cb then
-                    cb(result)
-                else
-                    res = result
-                    IsBusy = false
-                end
-            end)
-        else
-            MySQL.Async.execute(query, parameters, function(result)
-                if cb then
-                    cb(result)
-                else
-                    res = result
-                    IsBusy = false
-                end
-            end)
-        end
-    elseif Config['General']["SQLWrapper"] == "oxmysql" then
+    if Config['General']["SQLWrapper"] == "oxmysql" then
         exports.oxmysql:execute(query, parameters, function(result)
             if cb then
                 cb(result)
@@ -45,16 +25,6 @@ SQL = function(query, parameters, cb)
                 IsBusy = false
             end
         end)
-    elseif Config['General']["SQLWrapper"] == "ghmattimysql" then
-        exports.ghmattimysql:execute(query, parameters, function(result)
-            if cb then
-                cb(result)
-            else
-                res = result
-                IsBusy = false
-            end
-        end)
-    end
     while IsBusy do
         Citizen.Wait(0)
     end

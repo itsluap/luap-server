@@ -73,15 +73,15 @@ function CreateVeh(model , coord, id)
     local vehClass = "F"
     if isMotorCycle then
       vehClass = "M"
-    elseif perfRating > 900 then
+    elseif perfRating > 1200 then
       vehClass = "X"
-    elseif perfRating > 700 then
+    elseif perfRating > 900 then
       vehClass = "S"
-    elseif perfRating > 550 then
+    elseif perfRating > 650 then
       vehClass = "A"
-    elseif perfRating > 400 then
+    elseif perfRating > 550 then
       vehClass = "B"
-    elseif perfRating > 325 then
+    elseif perfRating > 350 then
       vehClass = "C"
     else
       vehClass = "D"
