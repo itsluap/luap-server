@@ -38,7 +38,7 @@ Framework.Functions.CreateCallback('qb-stripclub:server:has:drank:items', functi
 end)
 
 RegisterServerEvent('qb-stripclub:server:finish:create')
-AddEventHandler('qb-stripclub:server:finish:create', function(Drankje)
+AddEventHandler('qb-stripclub:server:finish:create', function(Drink)
     local src = source
     local Player = Framework.Functions.GetPlayer(src)
     for k, v in pairs(Config.DrankItems) do
@@ -46,8 +46,8 @@ AddEventHandler('qb-stripclub:server:finish:create', function(Drankje)
         TriggerClientEvent('lj-inventory:client:ItemBox', src, Framework.Shared.Items[v], "remove")
     end
     Citizen.SetTimeout(350, function()
-        Player.Functions.AddItem(Drankje, 1)
-        TriggerClientEvent('lj-inventory:client:ItemBox', src, Framework.Shared.Items[Drankje], "add")
+        Player.Functions.AddItem(Drink, 1)
+        TriggerClientEvent('lj-inventory:client:ItemBox', src, Framework.Shared.Items[Drink], "add")
     end)
 end)
 
@@ -62,7 +62,7 @@ AddEventHandler('qb-stripclub:server:pay:receipt', function(Price, Note, Id)
             TriggerEvent('qb-stripclub:give:receipt:to:workers', Note, Price)
             TriggerClientEvent('qb-stripclub:client:sync:register', -1, Config.ActivePaymentsStrip)
         
-            TriggerEvent('qb-bossmenu:server:addAccountMoney', 'vanilla', Price)
+            TriggerEvent('qb-management:server:addAccountMoney', 'vanilla', Price)
         else
             TriggerClientEvent('Framework:Notify', src, 'Error..', 'error')
         end
@@ -94,7 +94,7 @@ AddEventHandler('qb-stripclub:server:sell:tickets', function()
         if v.name == 'burger-ticket' then
             Player.Functions.RemoveItem('burger-ticket', 1)
             -- Player.Functions.AddMoney('cash', math.random(60, 100), 'stripclub-payment')
-		TriggerEvent("qb-bossmenu:server:addAccountMoney", "vanilla", math.random(20, 40))
+		TriggerEvent("qb-management:server:addAccountMoney", "vanilla", math.random(20, 40))
         end
     end
     TriggerClientEvent('lj-inventory:client:ItemBox', Player.PlayerData.source, Framework.Shared.Items['burger-ticket'], "remove")

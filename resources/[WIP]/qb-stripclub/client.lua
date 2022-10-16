@@ -203,18 +203,18 @@ function DrawText3D(x, y, z, text)
     ClearDrawOrigin()
 end
 
-RegisterNetEvent('qb-stripclub:client:open:opslag')
-AddEventHandler('qb-stripclub:client:open:opslag', function()
-    TriggerServerEvent("lj-inventory:server:OpenInventory", "stash", "strip_opslag", {maxweight = 90000, slots = 10})
-    TriggerEvent("lj-inventory:client:SetCurrentStash", "strip_opslag")
+RegisterNetEvent('qb-stripclub:client:open:storage')
+AddEventHandler('qb-stripclub:client:open:storage', function()
+    TriggerServerEvent("lj-inventory:server:OpenInventory", "stash", "strip_storage", {maxweight = 90000, slots = 10})
+    TriggerEvent("lj-inventory:client:SetCurrentStash", "strip_storage")
 end)
 
 
-RegisterNetEvent('qb-stripclub:client:cocktailmaken')
-AddEventHandler('qb-stripclub:client:cocktailmaken', function(Drankjez)
-  Framework.Functions.TriggerCallback('qb-stripclub:server:has:drank:items', function(Drankje)
-    if Drankje then
-       MaakDrankje(Drankjez)
+RegisterNetEvent('qb-stripclub:client:makecocktail')
+AddEventHandler('qb-stripclub:client:makecocktail', function(Drinkz)
+  Framework.Functions.TriggerCallback('qb-stripclub:server:has:drank:items', function(Drink)
+    if Drink then
+       MaakDrink(Drinkz)
     else
       Framework.Functions.Notify("You are missing ingredients to make this drink..", "error")
     end
@@ -222,7 +222,7 @@ AddEventHandler('qb-stripclub:client:cocktailmaken', function(Drankjez)
 end)
 
 
-function MaakDrankje(Drankjex)
+function MaakDrink(Drinkx)
     Citizen.SetTimeout(750, function()
       TriggerEvent('lj-inventory:client:set:busy', true)
       exports['qb-assets']:RequestAnimationDict("mini@repair")
@@ -233,12 +233,12 @@ function MaakDrankje(Drankjex)
           disableMouse = false,
           disableCombat = true,
       }, {}, {}, {}, function() -- Done
-          TriggerServerEvent('qb-stripclub:server:finish:create', Drankjex)
+          TriggerServerEvent('qb-stripclub:server:finish:create', Drinkx)
           TriggerEvent('lj-inventory:client:set:busy', false)
           StopAnimTask(PlayerPedId(), "mini@repair", "fixing_a_ped", 1.0)
       end, function()
           TriggerEvent('lj-inventory:client:set:busy', false)
-          Framework.Functions.Notify("Geannuleerd..", "error")
+          Framework.Functions.Notify("Cancelled..", "error")
           StopAnimTask(PlayerPedId(), "mini@repair", "fixing_a_ped", 1.0)
       end)
     end)
@@ -261,7 +261,7 @@ AddEventHandler("qb-stripclub:client:maken", function()
         StopAnimTask(PlayerPedId(), "amb@world_human_hang_out_street@female_hold_arm@idle_a", "idle_a", 1.0)
     end, function()
         TriggerEvent('lj-inventory:client:set:busy', false)
-        Framework.Functions.Notify("Geannuleerd..", "error")
+        Framework.Functions.Notify("Cancelled..", "error")
         StopAnimTask(PlayerPedId(), "amb@world_human_hang_out_street@female_hold_arm@idle_a", "idle_a", 1.0)
     end)
 end)
