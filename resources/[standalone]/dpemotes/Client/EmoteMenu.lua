@@ -314,21 +314,23 @@ _menuPool:RefreshIndex()
 Citizen.CreateThread(function()
     while true do
         Citizen.Wait(0)
-        local veh = GetVehiclePedIsIn(PlayerPedId(), false)
-        if DoesEntityExist(veh) and not IsEntityDead(veh) then
-            local model = GetEntityModel(veh)
-            -- If it's not a boat, plane or helicopter, and the vehilce is off the ground with ALL wheels, then block steering/leaning left/right/up/down.
-            if not IsThisModelABoat(model) and not IsThisModelAHeli(model) and not IsThisModelAPlane(model) and not IsThisModelABike(model) and not IsThisModelABicycle(model) and IsEntityInAir(veh) then
-                print("in the air")
-                DisableControlAction(0, 59) -- leaning left/right
-                DisableControlAction(0, 60) -- leaning up/down
-            end
-            local roll = GetEntityRoll(vehicle)
-            if (roll > 75.0 or roll < -75.0) and GetEntitySpeed(vehicle) < 2 then
-                print("disabling roll")
-                DisableControlAction(2,59,true) -- Disable left/right
-                DisableControlAction(2,60,true) -- Disable up/down
-            end
+        if mainMenu:Visible(not mainMenu:Visible()) then
+          local veh = GetVehiclePedIsIn(PlayerPedId(), false)
+          if DoesEntityExist(veh) and not IsEntityDead(veh) then
+              local model = GetEntityModel(veh)
+              -- If it's not a boat, plane or helicopter, and the vehilce is off the ground with ALL wheels, then block steering/leaning left/right/up/down.
+              if not IsThisModelABoat(model) and not IsThisModelAHeli(model) and not IsThisModelAPlane(model) and not IsThisModelABike(model) and not IsThisModelABicycle(model) and IsEntityInAir(veh) then
+                  print("in the air")
+                  DisableControlAction(0, 59) -- leaning left/right
+                  DisableControlAction(0, 60) -- leaning up/down
+              end
+              local roll = GetEntityRoll(vehicle)
+              if (roll > 75.0 or roll < -75.0) and GetEntitySpeed(vehicle) < 2 then
+                  print("disabling roll")
+                  DisableControlAction(2,59,true) -- Disable left/right
+                  DisableControlAction(2,60,true) -- Disable up/down
+              end
+          end
         end
         _menuPool:ProcessMenus()
     end
@@ -339,22 +341,6 @@ AddEventHandler("dp:Update", function(state)
     UpdateAvailable = state
     AddInfoMenu(mainMenu)
     _menuPool:RefreshIndex()
-    local veh = GetVehiclePedIsIn(PlayerPedId(), false)
-    if DoesEntityExist(veh) and not IsEntityDead(veh) then
-        local model = GetEntityModel(veh)
-        -- If it's not a boat, plane or helicopter, and the vehilce is off the ground with ALL wheels, then block steering/leaning left/right/up/down.
-        if not IsThisModelABoat(model) and not IsThisModelAHeli(model) and not IsThisModelAPlane(model) and not IsThisModelABike(model) and not IsThisModelABicycle(model) and IsEntityInAir(veh) then
-            print("in the air 2")
-            DisableControlAction(0, 59) -- leaning left/right
-            DisableControlAction(0, 60) -- leaning up/down
-        end
-        local roll = GetEntityRoll(vehicle)
-        if (roll > 75.0 or roll < -75.0) and GetEntitySpeed(vehicle) < 2 then
-            print("disabling roll 2")
-            DisableControlAction(2,59,true) -- Disable left/right
-            DisableControlAction(2,60,true) -- Disable up/down
-        end
-    end
 end)
 
 RegisterNetEvent("dp:RecieveMenu") -- For opening the emote menu from another resource.
