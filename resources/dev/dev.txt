@@ -18,3 +18,4 @@ Notes:
     - GlobalState.isLEO returns true if player has job from ps-mdt config.lua
     - /grantlicense (for weapon license and driver license) (police command)
     - can exchange cryptosticks at lesters
+    - can use ifak to heal self
