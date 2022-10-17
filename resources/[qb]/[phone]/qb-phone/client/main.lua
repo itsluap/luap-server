@@ -1398,6 +1398,7 @@ RegisterNUICallback("TakePhoto", function(data,cb)
             end)
 
             takePhoto = false
+            GlobalState.TakingPhoto = false
         end
           HideHudComponentThisFrame(7)
           HideHudComponentThisFrame(8)
