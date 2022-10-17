@@ -36,7 +36,7 @@ end
 
 RegisterNetEvent('hospital:client:UseIfaks', function()
     local ped = PlayerPedId()
-    QBCore.Functions.Progressbar("use_bandage", Lang:t('progress.ifaks'), 5000, false, true, {
+    QBCore.Functions.Progressbar("use_bandage", Lang:t('progress.ifaks'), 8000, false, true, {
         disableMovement = false,
         disableCarMovement = false,
 		disableMouse = false,
@@ -50,8 +50,7 @@ RegisterNetEvent('hospital:client:UseIfaks', function()
         --TriggerServerEvent("hospital:server:removeIfaks")
         --TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["ifaks"], "remove")
         TriggerServerEvent('hud:server:RelieveStress', math.random(12, 24))
-        SetEntityMaxHealth(player, 200)
-        SetEntityHealth(player, 200)
+        SetEntityHealth(ped, 200)
         onPainKillers = true
         if painkillerAmount < 3 then
             painkillerAmount = painkillerAmount + 1
