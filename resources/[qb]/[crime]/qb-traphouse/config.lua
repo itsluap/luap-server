@@ -40,7 +40,7 @@ Config.TrapHouses = {
                 created = false
             }
         },
-        keyholders = {},
+        keyholders = {MFL27194},
         pincode = 1234,
         inventory = {},
         opened = false,
