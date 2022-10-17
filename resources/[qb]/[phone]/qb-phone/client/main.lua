@@ -564,6 +564,7 @@ RegisterNUICallback('Close', function()
     SetTimeout(300, function()
         SetNuiFocus(false, false)
         PhoneData.isOpen = false
+        GlobalState.TakingPhoto = false
     end)
 end)
 
