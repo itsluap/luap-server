@@ -27,7 +27,7 @@ Citizen.CreateThread(function()
             
         end
       else
-        Jump = -
+        Jump = 0
       end
   end
 end)
