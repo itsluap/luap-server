@@ -8,7 +8,7 @@ Citizen.CreateThread(function()
 
       local ped = PlayerPedId()
 
-      if IsPedOnFoot(ped) and not IsPedSwimming(ped) and IsPedRunning(ped) and IsPedSprinting(ped) and not IsPedClimbing(ped) and IsPedJumping(ped) and not IsPedRagdoll(ped) then
+      if IsPedOnFoot(ped) and not IsPedSwimming(ped) and (IsPedRunning(ped) or IsPedSprinting(ped)) and not IsPedClimbing(ped) and IsPedJumping(ped) and not IsPedRagdoll(ped) then
 
         Jump = Jump + 1
 
