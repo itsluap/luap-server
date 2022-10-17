@@ -3727,7 +3727,7 @@ QBShared.Vehicles = {
         ['name'] = '2020 Hellcat',
         ['brand'] = 'Dodge',
         ['model'] = 'chr20',
-        ['price'] = 69645,
+        ['price'] = 90000,
         ['category'] = 'muscle',
         ['hash'] = `chr20`,
         ['shop'] = 'luap',
@@ -3736,11 +3736,21 @@ QBShared.Vehicles = {
         ['name'] = 'Redeye',
         ['brand'] = 'Dodge',
         ['model'] = 'redeye',
-        ['price'] = 79725,
+        ['price'] = 90000,
         ['category'] = 'muscle',
         ['hash'] = `redeye`,
         ['shop'] = 'luap',
     },
+	['bdragonblue'] = {
+        ['name'] = 'Bentley Dragon',
+        ['brand'] = 'Bentley',
+        ['model'] = 'dragon',
+        ['price'] = 90000,
+        ['category'] = 'sports',
+        ['hash'] = `bdragonblue`,
+        ['shop'] = 'luap',
+    },
+	
 }
 
 for _, v in pairs(QBShared.Vehicles) do
