@@ -15,6 +15,7 @@ Citizen.CreateThread(function()
           if Jump == NumberJump then
 
               SetPedToRagdoll(ped, 5000, 1400, 2)
+              print (Jump)
 
               Jump = 0
 
