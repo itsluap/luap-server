@@ -153,7 +153,7 @@ local function createPeds()
                         gang = v.requiredGang
                     }
                 },
-                distance = 2.0
+                distance = 2.5
             })
         end
     end
