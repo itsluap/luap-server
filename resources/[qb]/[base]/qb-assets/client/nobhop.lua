@@ -12,7 +12,7 @@ Citizen.CreateThread(function()
 
         Jump = Jump + 1
         print(Jump)
-        print(before ragdoll)
+        print("before ragdoll")
 
           if Jump == NumberJump then
 
