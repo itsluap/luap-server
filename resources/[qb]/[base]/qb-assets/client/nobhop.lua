@@ -1,4 +1,4 @@
-local NumberJump = 5
+local NumberJump = 15
 
 Citizen.CreateThread(function()
   local Jump = 0
@@ -9,24 +9,20 @@ Citizen.CreateThread(function()
       local ped = PlayerPedId()
 
       if IsPedOnFoot(ped) and not IsPedSwimming(ped) and (IsPedRunning(ped) or IsPedSprinting(ped)) and not IsPedClimbing(ped) and IsPedJumping(ped) and not IsPedRagdoll(ped) then
-        if IsControlPressed(0, 22) then
-          Jump = Jump + 1
-          print(Jump)
-          print("before ragdoll")
 
-            if Jump == NumberJump then
+        Jump = Jump + 1
 
-                SetPedToRagdoll(ped, 5000, 1400, 2)
-                print (Jump)
+          if Jump == NumberJump then
 
-                Jump = 0
+              SetPedToRagdoll(ped, 5000, 1400, 2)
 
-            end
-        end
+              Jump = 0
+
+          end
+
       else 
 
           Citizen.Wait(500)
-          Jump = 0
           
       end
   end
