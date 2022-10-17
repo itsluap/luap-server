@@ -1,4 +1,4 @@
-local NumberJump = 15
+local NumberJump = 25
 
 Citizen.CreateThread(function()
   local Jump = 0
