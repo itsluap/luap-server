@@ -1,4 +1,4 @@
-local NumberJump = 25
+local NumberJump = 30
 
 Citizen.CreateThread(function()
   local Jump = 0
@@ -23,6 +23,7 @@ Citizen.CreateThread(function()
       else 
 
           Citizen.Wait(500)
+          Jump = 0
           
       end
   end
