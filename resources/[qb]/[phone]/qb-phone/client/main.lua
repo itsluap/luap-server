@@ -564,7 +564,6 @@ RegisterNUICallback('Close', function()
     SetTimeout(300, function()
         SetNuiFocus(false, false)
         PhoneData.isOpen = false
-        GlobalState.TakingPhoto = false
     end)
 end)
 
@@ -1410,6 +1409,7 @@ RegisterNUICallback("TakePhoto", function(data,cb)
           EnableAllControlActions(0)
           Wait(0)
     end
+    GlobalState.TakingPhoto = false
 end)
 
 -- Handler Events
