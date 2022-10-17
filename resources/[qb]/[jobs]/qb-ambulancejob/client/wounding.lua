@@ -36,30 +36,29 @@ end
 
 RegisterNetEvent('hospital:client:UseIfaks', function()
     local ped = PlayerPedId()
-    QBCore.Functions.Progressbar("use_bandage", Lang:t('progress.ifaks'), 3000, false, true, {
+    QBCore.Functions.Progressbar("use_bandage", Lang:t('progress.ifaks'), 5000, false, true, {
         disableMovement = false,
         disableCarMovement = false,
 		disableMouse = false,
 		disableCombat = true,
     }, {
-		animDict = "mp_suicide",
-		anim = "pill",
+		animDict = "anim@amb@business@weed@weed_inspecting_high_dry@",
+		anim = "weed_inspecting_high_base_inspector",
 		flags = 49,
     }, {}, {}, function() -- Done
-        StopAnimTask(ped, "mp_suicide", "pill", 1.0)
-        TriggerServerEvent("hospital:server:removeIfaks")
-        TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["ifaks"], "remove")
+        StopAnimTask(ped, "anim@amb@business@weed@weed_inspecting_high_dry@", "weed_inspecting_high_base_inspector", 1.0)
+        --TriggerServerEvent("hospital:server:removeIfaks")
+        --TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["ifaks"], "remove")
         TriggerServerEvent('hud:server:RelieveStress', math.random(12, 24))
-        SetEntityHealth(ped, GetEntityHealth(ped) + 10)
+        SetEntityMaxHealth(player, 200)
+        SetEntityHealth(player, 200)
         onPainKillers = true
         if painkillerAmount < 3 then
             painkillerAmount = painkillerAmount + 1
         end
-        if math.random(1, 100) < 50 then
-            RemoveBleed(1)
-        end
+        RemoveBleed(1)
     end, function() -- Cancel
-        StopAnimTask(ped, "mp_suicide", "pill", 1.0)
+        StopAnimTask(ped, "anim@amb@business@weed@weed_inspecting_high_dry@", "weed_inspecting_high_base_inspector", 1.0)
         QBCore.Functions.Notify(Lang:t('error.canceled'), "error")
     end)
 end)

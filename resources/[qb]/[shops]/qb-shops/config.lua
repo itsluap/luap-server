@@ -307,7 +307,7 @@ Config.Products = {
             slot = 1,
         },
         [2] = {
-            name = "jerry_can",
+            name = "diving_fill",
             price = 200,
             amount = 50,
             info = {},
