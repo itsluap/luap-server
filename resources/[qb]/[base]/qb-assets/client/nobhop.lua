@@ -4,10 +4,10 @@ Citizen.CreateThread(function()
   local Jump = 0
   while true do
 
-      Citizen.Wait(1)
+      Citizen.Wait(0)
 
       local ped = PlayerPedId()
-      if IsControlJustReleased(1, 22) then
+      if IsControlJustReleased(0, 22) then
         if IsPedOnFoot(ped) and not IsPedSwimming(ped) and (IsPedRunning(ped) or IsPedSprinting(ped)) and not IsPedClimbing(ped) and IsPedJumping(ped) and not IsPedRagdoll(ped) then
 
           Jump = Jump + 1
