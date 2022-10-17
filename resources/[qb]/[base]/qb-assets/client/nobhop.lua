@@ -23,6 +23,7 @@ Citizen.CreateThread(function()
 
           Citizen.Wait(500)
           Jump = 0
+          print('no jump')
           
       end
   end
