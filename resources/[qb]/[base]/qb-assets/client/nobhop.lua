@@ -24,6 +24,7 @@ Citizen.CreateThread(function()
       else 
 
           Citizen.Wait(500)
+          Jump = 0
           
       end
   end
