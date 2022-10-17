@@ -10,6 +10,8 @@ Config.Objects = {
 
 Config.MaxSpikes = 5
 
+Config.RaidLevel = 1
+
 Config.HandCuffItem = 'handcuffs'
 
 Config.LicenseRank = 2

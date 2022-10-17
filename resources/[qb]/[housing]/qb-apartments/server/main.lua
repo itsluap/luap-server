@@ -227,3 +227,28 @@ QBCore.Functions.CreateCallback('apartments:GetOutfits', function(source, cb)
         end
     end
 end)
+
+function getApartmentByID(apartmentId)
+    local p = promise:new()
+    local query = "SELECT * FROM apartments WHERE name = '" .. tostring(apartmentId) .. "'"
+    exports.oxmysql:execute(query, {}, function(data)
+        if data[1] ~= nil then
+            p:resolve(data[1])
+        else
+            p:resolve(nil)
+        end
+    end)
+    return Citizen.Await(p)
+end
+
+RegisterServerEvent("apartments:server:CheckIfOwned")
+AddEventHandler("apartments:server:CheckIfOwned", function(apartment, apartmentId)
+    local src = source
+    local retval = getApartmentByID(apartmentId)
+    if retval ~= nil then
+        TriggerClientEvent("apartments:client:RaidApartment", src, apartment, apartmentId, retval)
+        -- add your logger here to discord
+    else
+        TriggerClientEvent("QBCore:Notify", src, "No apartment found by that apartment number.")
+    end
+end)

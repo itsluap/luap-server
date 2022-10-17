@@ -21,7 +21,7 @@ To Do:
     -
     - check if burgershot has boss management
     - check shops around whole city
-    - make sure all vehicles handle decent (not crazy fast or good)
+    - make sure all vehicles handle decent (not crazy fast or too good)
     - make sure all clothes added work correctly
     - make sure addon vehicles are not oversized
     -

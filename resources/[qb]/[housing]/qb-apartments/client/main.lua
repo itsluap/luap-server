@@ -611,3 +611,57 @@ CreateThread(function ()
         Wait(sleep)
     end
 end)
+
+Citizen.CreateThread(function()
+    for k,v in pairs(Apartments.Locations) do
+        exports['qb-target']:AddBoxZone('ApartmentRaid-'..k, vector3(v.coords.enter.x, v.coords.enter.y, v.coords.enter.z), 2.0, 2.0, {
+        name='ApartmentRaid-'..k,
+        heading=v.coords.enter.h,
+        debugPoly=false,
+        minZ=v.coords.enter.z - 3.0,
+        maxZ=v.coords.enter.z + 3.0,
+    }, {
+    options = {
+    {
+        type = "",
+        event = "",
+        icon = "fa fa-th-large",
+        label = "Raid Stash",
+        job = "police",
+        action = function(entity)
+        TriggerEvent("qbcore-apartments:client:TriggerMenu", v.name)
+    end,
+    canInteract = function(entity)
+    return exports['police']:CanRaid()
+    end
+    }
+    },
+    distance = 1.5,
+    })
+    end
+end)
+
+RegisterNetEvent("apartments:client:RaidApartment")
+AddEventHandler("apartments:client:RaidApartment", function(apartment, apartmentId, retval)
+    EnterApartment(apartment, apartmentId)
+end)
+
+RegisterNetEvent("qbcore-apartments:client:TriggerMenu")
+AddEventHandler("qbcore-apartments:client:TriggerMenu", function(name)
+    local getInput = exports['qb-input']:ShowInput({
+    header = "Raid Apartment",
+    submitText = "Raid Apartment",
+    inputs = {
+    {
+    text = "Apartment Number",
+    name = "apartment_number",
+    type = "text",
+    isRequired = true
+    },
+    }
+    })
+
+    if getInput ~= nil then
+    TriggerServerEvent("apartments:server:CheckIfOwned", name, getInput.apartment_number)
+    end
+end)
