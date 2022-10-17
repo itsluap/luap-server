@@ -28,8 +28,7 @@ CreateThread(function()
         end
 
         ---------------------------------
-        local cameranumber = 3, 4
-        if IsAimCamActive() and GetFollowPedCamViewMode() ~= cameranumber then
+        if IsAimCamActive() and GetFollowPedCamViewMode() ~= 4 and not GlobalState.TakingPhoto then
             SendNUIMessage({
                 action = "togglexhair",
                 show = true,

@@ -1,3 +1,4 @@
+GlobalState.TakingPhoto = false
 local QBCore = exports['qb-core']:GetCoreObject()
 local PlayerJob = {}
 local patt = "[?!@#]"
@@ -1368,6 +1369,7 @@ RegisterNUICallback("TakePhoto", function(data,cb)
     CreateMobilePhone(1)
     CellCamActivate(true, true)
     takePhoto = true
+    GlobalState.TakingPhoto = true
     while takePhoto do
         if IsControlJustPressed(1, 27) then
             frontCam = not frontCam
