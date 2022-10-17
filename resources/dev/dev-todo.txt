@@ -8,7 +8,6 @@ To Do:
     - finish rewriting boosting script
     - finish updating item animations - (updated item animations to show props - added qb-assets) !!! CAN DO AT WORK
     - vehicle shop (go through vehicles, check prices, only basic cars available at pdm) - teach yourself how car handling works
-    - repair kit for everyone (only fixes engine) (have to be outside vehicle) !!! CAN DO AT WORK
     - apartments cant be raided - make apartments raidable -  ake stormram unlock doors in qb-doorlock (for mlos)
     - ps-drugsproccessing: needs drug effects(core-drugs) and add to corner selling, add ps-buffs after that
     - 
