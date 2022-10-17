@@ -1,3 +1,4 @@
+--[[
 local NumberJump = 4
 
 Citizen.CreateThread(function()
@@ -29,3 +30,4 @@ Citizen.CreateThread(function()
       end
   end
 end)
+]]--
