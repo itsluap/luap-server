@@ -10,7 +10,7 @@ Crypto = {
     },
 
     Labels = {
-        ["qbit"] = "Qbit"
+        ["qbit"] = "Bitcoin"
     },
 
     Exchange = {
