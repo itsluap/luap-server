@@ -958,7 +958,7 @@ Config.Locations = {
     -- Weedshop Locations
     ["weedshop"] = {
         ["label"] = "Smoke On The Water",
-        ["coords"] = vector4(-1171.31, -1570.89, 4.66, 130.03),
+        ["coords"] = vector4(-1168.82, -1572.97, 4.66, 126.31),
         ["ped"] = 'a_m_y_hippy_01',
         ["scenario"] = "WORLD_HUMAN_AA_SMOKE",
         ["radius"] = 3.5,
