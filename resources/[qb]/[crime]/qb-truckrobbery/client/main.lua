@@ -64,7 +64,7 @@ Citizen.CreateThread(function()
                 SetBlockingOfNonTemporaryEvents(dealer, true)
                 TaskStartScenarioInPlace(dealer, "WORLD_HUMAN_AA_SMOKE", 0, false)
             end
-            DrawMarker(25, MissionMarker.x, MissionMarker.y, MissionMarker.z - 0.90, 0, 0, 0, 0, 0, 0, 1.301, 1.3001, 1.3001, 0, 205, 250, 200, 0, 0, 0, 0)
+            DrawMarker(25, MissionMarker.x, MissionMarker.y, MissionMarker.z - 0.90, 0, 0, 0, 0, 0, 0, 1.301, 1.3001, 1.3001, 0, 205, 250, 255, 255, 255, 0, 0)
         else
             Citizen.Wait(1500)
         end

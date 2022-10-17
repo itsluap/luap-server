@@ -522,7 +522,7 @@ CreateThread(function()
                     local vehDist = #(pos - vector3(Config.Location.x, Config.Location.y, Config.Location.z))
                     if vehDist < 30 then
                         inRange = true
-                        DrawMarker(2, Config.Location.x, Config.Location.y, Config.Location.z, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.3, 0.5, 0.2, 200, 0, 0, 222, false, false, false, true, false, false, false)
+                        DrawMarker(2, Config.Location.x, Config.Location.y, Config.Location.z, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.3, 0.5, 0.2, 255, 255, 255, 222, false, false, false, true, false, false, false)
                         if vehDist < 1.5 then
                             if whitelistedVehicle() then
                                 DrawText3D(Config.Location.x, Config.Location.y, Config.Location.z + 0.3, Lang:t("info.vehicle_parking"))
