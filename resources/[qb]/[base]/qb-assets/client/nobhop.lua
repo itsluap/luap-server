@@ -7,24 +7,25 @@ Citizen.CreateThread(function()
       Citizen.Wait(1)
 
       local ped = PlayerPedId()
+      if IsControlJustReleased(0, 22) then
+        if IsPedOnFoot(ped) and not IsPedSwimming(ped) and (IsPedRunning(ped) or IsPedSprinting(ped)) and not IsPedClimbing(ped) and IsPedJumping(ped) and not IsPedRagdoll(ped) then
 
-      if IsPedOnFoot(ped) and not IsPedSwimming(ped) and (IsPedRunning(ped) or IsPedSprinting(ped)) and not IsPedClimbing(ped) and IsPedJumping(ped) and not IsPedRagdoll(ped) then
+          Jump = Jump + 1
 
-        Jump = Jump + 1
+            if Jump == NumberJump then
 
-          if Jump == NumberJump then
+                SetPedToRagdoll(ped, 5000, 1400, 2)
 
-              SetPedToRagdoll(ped, 5000, 1400, 2)
+                Jump = 0
 
-              Jump = 0
+            end
 
-          end
+        else 
 
-      else 
-
-          Citizen.Wait(500)
-          Jump = 0
-          
+            Citizen.Wait(500)
+            Jump = 0
+            
+        end
       end
   end
 end)
