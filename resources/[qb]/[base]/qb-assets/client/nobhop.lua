@@ -11,6 +11,8 @@ Citizen.CreateThread(function()
       if IsPedOnFoot(ped) and not IsPedSwimming(ped) and (IsPedRunning(ped) or IsPedSprinting(ped)) and not IsPedClimbing(ped) and IsPedJumping(ped) and not IsPedRagdoll(ped) then
 
         Jump = Jump + 1
+        print(Jump)
+        print(before ragdoll)
 
           if Jump == NumberJump then
 
