@@ -2,7 +2,7 @@ Config = {}
 Config.UsingTarget = GetConvar('UseTarget', 'false') == 'true'
 Config.Commission = 0.10 -- Percent that goes to sales person from a full car sale 10%
 Config.FinanceCommission = 0.05 -- Percent that goes to sales person from a finance sale 5%
-Config.FinanceZone = vector3(-29.53, -1103.67, 26.42)-- Where the finance menu is located
+Config.FinanceZone = vector3(-28.11, -1108.57, 27.27)-- Where the finance menu is located
 Config.PaymentWarning = 10 -- time in minutes that player has to make payment before repo
 Config.PaymentInterval = 24 -- time in hours between payment being due
 Config.MinimumDown = 10 -- minimum percentage allowed down
@@ -45,17 +45,17 @@ Config.Shops = {
         },
         ['TestDriveTimeLimit'] = 0.5, -- Time in minutes until the vehicle gets deleted
         ['Location'] = vector3(-45.67, -1098.34, 26.42), -- Blip Location
-        ['ReturnLocation'] = vector3(-44.74, -1082.58, 26.68), -- Location to return vehicle, only enables if the vehicleshop has a job owned
+        ['ReturnLocation'] = vector3(-9.57, -1095.69, 27.02), -- Location to return vehicle, only enables if the vehicleshop has a job owned
         ['VehicleSpawn'] = vector4(-56.79, -1109.85, 26.43, 71.5), -- Spawn location when vehicle is bought
         ['TestDriveSpawn'] = vector4(-56.79, -1109.85, 26.43, 71.5), -- Spawn location for test drive
         ['ShowroomVehicles'] = {
             [1] = {
-                coords = vector4(-48.27, -1101.86, 25.44, 294.5),
+                coords = vector4(-54.81, -1096.74, 27.3, 198.86),
                 defaultVehicle = 'kanjosj',
                 chosenVehicle = 'kanjosj'
             },
             [2] = {
-                coords = vector4(-48.41, -1093.25, 26.42, 128.05),
+                coords = vector4(-36.93, -1093.18, 27.3, 192.57),
                 defaultVehicle = 'buffalo2',
                 chosenVehicle = 'buffalo2'
             }
