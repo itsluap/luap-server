@@ -73,7 +73,7 @@ Config.Shops = {
                 vector2(109.02114105225, -144.88461303711)
             },
             ['minZ'] = 54.490036010742,
-            ['maxZ'] = 60.946025848389
+            ['maxZ'] = 60.946025848389,
             ['size'] = 2.75 -- size of the vehicles zones
         },
         ['Job'] = 'cardealer', -- Name of job or none
