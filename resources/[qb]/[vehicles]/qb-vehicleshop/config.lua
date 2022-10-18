@@ -107,12 +107,12 @@ Config.Shops = {
                 chosenVehicle = 'ghoulcharger'
             },
             [4] = {
-                coords = vector4(118.24, -154.17, 69.76, 6.59),
+                coords = vector4(118.24, -154.17, 70.76, 6.59),
                 defaultVehicle = 'bati',
                 chosenVehicle = 'bati'
             },
             [5] = {
-                coords = vector4(113.73, -146.36, 69.76, 187.41),
+                coords = vector4(113.73, -146.36, 70.76, 187.41),
                 defaultVehicle = 'carbonrs',
                 chosenVehicle = 'carbonrs'
             },
