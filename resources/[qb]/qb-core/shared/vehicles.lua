@@ -3744,7 +3744,7 @@ QBShared.Vehicles = {
 	['bdragonblue'] = {
         ['name'] = 'Bentley Dragon',
         ['brand'] = 'Bentley',
-        ['model'] = 'dragon',
+        ['model'] = 'bdragonblue',
         ['price'] = 90000,
         ['category'] = 'sports',
         ['hash'] = `bdragonblue`,
@@ -3756,7 +3756,7 @@ QBShared.Vehicles = {
 	['ghoulcharger'] = {
         ['name'] = 'Ghoul Charger',
         ['brand'] = 'Dodge',
-        ['model'] = 'charger',
+        ['model'] = 'ghoulcharger',
         ['price'] = 120000,
         ['category'] = 'muscle',
         ['hash'] = `ghoulcharger`,
@@ -3765,7 +3765,7 @@ QBShared.Vehicles = {
 	['amgone'] = {
         ['name'] = 'AMG One',
         ['brand'] = 'Mercedes',
-        ['model'] = 'amg',
+        ['model'] = 'amgone',
         ['price'] = 120000,
         ['category'] = 'super',
         ['hash'] = `amgone`,
@@ -3774,13 +3774,12 @@ QBShared.Vehicles = {
 	['rmodlfa'] = {
         ['name'] = 'Lexus LFA',
         ['brand'] = 'Lexus',
-        ['model'] = 'lfa',
+        ['model'] = 'rmodlfa',
         ['price'] = 120000,
         ['category'] = 'super',
         ['hash'] = `rmodlfa`,
         ['shop'] = 'luxury',
     },
-}
 }
 
 for _, v in pairs(QBShared.Vehicles) do
