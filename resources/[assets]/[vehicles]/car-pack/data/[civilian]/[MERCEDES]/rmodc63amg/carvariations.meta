@@ -3,7 +3,7 @@
 <CVehicleModelInfoVariation>
   <variationData>
 	<Item>
-      <modelName>rmodc63amg</modelName>
+      <modelName>rmodamgc63</modelName>
       <colors>
         <Item>
           <indices content="char_array">
@@ -25,7 +25,7 @@
         </Item> 
       </colors>
       <kits>
-        <Item>9367_rmodc63amg_modkit</Item>
+        <Item>11255_rmodamgc63_modkit</Item>
       </kits>
       <windowsWithExposedEdges />
       <plateProbabilities>
@@ -36,8 +36,8 @@
           </Item>
         </Probabilities>
       </plateProbabilities>
-      <lightSettings value="9367" />
-      <sirenSettings value="0" />
+      <lightSettings value="11255" />
+      <sirenSettings value="456486" />
     </Item>
   </variationData>
 </CVehicleModelInfoVariation>

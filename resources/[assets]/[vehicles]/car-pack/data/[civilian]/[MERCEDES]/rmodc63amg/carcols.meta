@@ -2,10 +2,61 @@
 <CVehicleModelInfoVarGlobal>    
   <Kits>
    <Item>
-      <kitName>9367_rmodc63amg_modkit</kitName>
-      <id value="9367" />	 	  
+      <kitName>11255_rmodamgc63_modkit</kitName>
+      <id value="11255" />	 	  
       <kitType>MKT_SPECIAL</kitType>
       <visibleMods>
+	  	<Item>
+          <modelName>amg63_wing_1</modelName>
+          <modShopLabel>amg63_wing_1</modShopLabel>
+          <linkedModels />
+		  <turnOffBones>
+		  <Item>boot</Item>
+		  </turnOffBones>
+          <type>VMT_SPOILER</type>
+          <bone>boot</bone>
+          <collisionBone>boot</collisionBone>
+          <cameraPos>VMCP_DEFAULT</cameraPos>
+          <audioApply value="1.000000" />
+          <weight value="0" />
+          <turnOffExtra value="false" />
+          <disableBonnetCamera value="false" />
+          <allowBonnetSlide value="true" />
+        </Item>
+	  	<Item>
+          <modelName>amg63_wing_2</modelName>
+          <modShopLabel>amg63_wing_2</modShopLabel>
+          <linkedModels />
+		  <turnOffBones>
+		  <Item>boot</Item>
+		  </turnOffBones>
+          <type>VMT_SPOILER</type>
+          <bone>boot</bone>
+          <collisionBone>boot</collisionBone>
+          <cameraPos>VMCP_DEFAULT</cameraPos>
+          <audioApply value="1.000000" />
+          <weight value="0" />
+          <turnOffExtra value="false" />
+          <disableBonnetCamera value="false" />
+          <allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+          <modelName>amg63_wing_3</modelName>
+          <modShopLabel>amg63_wing_3</modShopLabel>
+          <linkedModels />
+		  <turnOffBones>
+		  <Item>boot</Item>
+		  </turnOffBones>
+          <type>VMT_SPOILER</type>
+          <bone>boot</bone>
+          <collisionBone>boot</collisionBone>
+          <cameraPos>VMCP_DEFAULT</cameraPos>
+          <audioApply value="1.000000" />
+          <weight value="0" />
+          <turnOffExtra value="false" />
+          <disableBonnetCamera value="false" />
+          <allowBonnetSlide value="true" />
+        </Item>
       </visibleMods>
       <linkMods />
       <statMods>
@@ -479,7 +530,7 @@
   </Kits>
       <Lights>
       <Item>
-      <id value="9367" />
+      <id value="11255" />
       <indicator>
         <intensity value="0.375000" />
         <falloffMax value="2.500000" />
@@ -608,7 +659,7 @@
         <zBias value="0.250000" />
         <pullCoronaIn value="false" />
       </reversingLightCorona>
-      <name>rmodc63amg</name>
+      <name>rmodgtr</name>
     </Item>
     </Lights>
 </CVehicleModelInfoVarGlobal>

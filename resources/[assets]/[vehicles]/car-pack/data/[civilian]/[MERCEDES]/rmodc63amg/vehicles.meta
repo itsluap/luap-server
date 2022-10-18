@@ -4,10 +4,10 @@
   <residentAnims />
   <InitDatas>
     <Item>
-      <modelName>rmodc63amg</modelName>
-      <txdName>rmodc63amg</txdName>
-      <handlingId>rmodc63amg</handlingId>
-      <gameName>rmodc63amg</gameName>
+      <modelName>rmodamgc63</modelName>
+      <txdName>rmodamgc63</txdName>
+      <handlingId>rmodamgc63</handlingId>
+      <gameName>rmodamgc63</gameName>
       <vehicleMakeName>Mercedes-AMG</vehicleMakeName>
       <expressionDictName>null</expressionDictName>
       <expressionName>null</expressionName>
@@ -15,7 +15,7 @@
       <animConvRoofName>null</animConvRoofName>
       <animConvRoofWindowsAffected />
       <ptfxAssetName>null</ptfxAssetName>
-      <audioNameHash>xa21</audioNameHash>
+      <audioNameHash>monster</audioNameHash>
       <layout>LAYOUT_LOW</layout>
       <coverBoundOffsets>PROTO_COVER_OFFSET_INFO</coverBoundOffsets>
       <explosionInfo>EXPLOSION_INFO_DEFAULT</explosionInfo>
@@ -63,10 +63,10 @@
       <steerWheelMult value="1.000000" />
       <HDTextureDist value="5.000000" />
       <lodDistances content="float_array">
-        120.000000	
-        120.000000	
-        120.000000	
-        120.000000	
+        140.000000	
+        140.000000	
+        140.000000	
+        140.000000	
         350.000000	
         350.000000
       </lodDistances>
@@ -80,7 +80,7 @@
       <frequency value="30" />
       <swankness>SWANKNESS_5</swankness>
       <maxNum value="4" />
-      <flags>FLAG_SPORTS FLAG_RICH_CAR FLAG_HAS_LIVERY FLAG_RECESSED_HEADLIGHT_CORONAS FLAG_NO_BROKEN_DOWN_SCENARIO FLAG_COUNT_AS_FACEBOOK_DRIVEN FLAG_EXTRAS_STRONG</flags>
+      <flags>FLAG_SPORTS FLAG_RICH_CAR FLAG_RECESSED_HEADLIGHT_CORONAS FLAG_NO_BROKEN_DOWN_SCENARIO FLAG_COUNT_AS_FACEBOOK_DRIVEN FLAG_HAS_GULL_WING_DOORS FLAG_EXTRAS_STRONG</flags>
       <type>VEHICLE_TYPE_CAR</type>
       <plateType>VPT_BACK_PLATES</plateType>
       <dashboardType>VDT_GENTAXI</dashboardType>
@@ -116,7 +116,7 @@
   <txdRelationships>
     <Item>
 	  <parent>vehicles_poltax_interior</parent>
-      <child>rmodc63amg</child>
+      <child>rmodamgc63</child>
     </Item>
   </txdRelationships>
 
