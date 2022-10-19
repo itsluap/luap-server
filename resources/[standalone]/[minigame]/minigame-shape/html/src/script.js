@@ -14,11 +14,11 @@ async function start(){
 
     // mock loading screen
     setInformationText('ESTABLISHING CONNECTION')
-    await delay(0.8)
-    setInformationText('DOING SOME HACKERMANS STUFF...')
-    await delay(1)
-    setInformationText('ACCESS CODE FLAGGED; REQUIRES HUMAN CAPTCHA INPUT..')
-    await delay(0.8)
+    await delay(10)
+    setInformationText('DOING SOME HACKER STUFF..')
+    await delay(8)
+    setInformationText('SECURITY CODE ERROR; NEEDS HUMAN CAPTCHA TEST..')
+    await delay(3)
 
     // hide text and show squares
     $('#text-container').classList.toggle('hidden')
@@ -41,25 +41,31 @@ async function start(){
     $('#text-container').classList.remove('hidden')
     
     // display result
-    setInformationText((result) ? 'the system has been bypassed.' : "The system didn't accept your answers")
-    
+    setInformationText((result) ? 'The security system is disabled!' : "The system did not accept your answer..")
     if(!result) {
     	$('.spy-icon').src = 'assets/failed.png'
-    	$('#answer-reveal').textContent = answer
-        await delay(5)
+        await delay(3)
+    	setTimeout(function () {
+            fetch('http://minigame-shape/callback', {
+                method: 'POST', 
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    success: false
+                }) 
+            });
+        	$(".bg").classList.add('hidden');
+    	}, 5000);
+    } else {
+        await delay(3)
+        fetch('http://minigame-shape/callback', {
+            method: 'POST', 
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                success: true
+            }) 
+        });
+        $(".bg").classList.add('hidden');
     }
-
-    fetch('http://minigame-fleeca/callback', {
-        method: 'POST', 
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            success: false
-        }) 
-      });
-
-    $(".bg").classList.add('hidden');
-
-    $('#submitted-reveal').textContent = (result) ? 'Good job, indeed the' : ((submitted == null) ?  "The time ran out," : `You wrote "${submitted || ' '}", the`)
 }
 
 

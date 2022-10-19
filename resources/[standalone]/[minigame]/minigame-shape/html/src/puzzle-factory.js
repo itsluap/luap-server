@@ -13,6 +13,7 @@ const COLORS = {
     'green' : '#46A04F',
     'purple' : '#A43AB5',
 }
+
 const QUESTIONS = {
     'background color' : (d) => d.colors['background'],
     'text background color' : (d) => d.colors['text'],
@@ -73,6 +74,6 @@ export function generateQuestionAndAnswer(nums, puzzles){
     // this is confusing as hell, but works somehow
     const question =  `${firstQuestion} (${nums[positionOne]}) AND ${secondQuestion} (${nums[positionTwo]})`
     const answer = QUESTIONS[firstQuestion](puzzles[positionOne]) + ' ' + QUESTIONS[secondQuestion](puzzles[positionTwo])
-
+    console.log('Jah dat denk ik niet')
     return [question, answer]
 }

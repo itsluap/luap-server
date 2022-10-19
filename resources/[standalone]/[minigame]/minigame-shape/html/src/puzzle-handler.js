@@ -5,7 +5,7 @@ import { getPuzzleSvg } from './svg-factory.js'
 const progressBar = $('.answer-progress-bar')
 const inputElement = $('.answer-input')
 
-let puzzleTime = 7
+let puzzleTime = 15.0
 let puzzleAmount = 4
 
 // handles generating puzzle and returning result
@@ -26,7 +26,6 @@ export async function doPuzzle(){
       
     // generate numbers and display
     const nums = shuffleArray([...Array(puzzleAmount)].map((v, i) => i+1))
-    console.log(nums)
     await displayNumbers(nums)
 
     const metronome = playSound('assets/metronome.mp3')
@@ -54,7 +53,6 @@ export async function doPuzzle(){
     $('.answer-question').textContent = question.toUpperCase()
     
     // for learning purposes
-    console.log(answer)
 
     return new Promise(async (resolve) => {
 
