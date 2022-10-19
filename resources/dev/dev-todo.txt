@@ -4,6 +4,7 @@
 To Do:
     - find someone else to help out and test stuff with - give mlo/money as reward
     - search whole server for siren = 0
+    - add durability to ifak
     - bypass qb-spawn for characters that arent new? - file needed to do this is encrypted
     - make lockpicking car doors medium difficulty - ask lin and icey about this
     - stripclub script from dream (or try to find online) - working on converting
