@@ -274,6 +274,7 @@ RegisterNetEvent('electronickit:UseElectronickit', function()
                                     success = true
                                     OnHackDone(success)
                                 end
+                            end)
                             if copsCalled or not Config.SmallBanks[closestBank]["alarm"] then return end
                             TriggerServerEvent("qb-bankrobbery:server:callCops", "small", closestBank, pos)
                             copsCalled = true
