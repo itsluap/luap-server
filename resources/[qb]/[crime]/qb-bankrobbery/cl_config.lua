@@ -21,6 +21,7 @@ end
 --- @return nil
 function Config.OnHackDone(success, bank)
     TriggerEvent('mhacking:hide')
+    TriggerEvent('close:fleecaminigame')
     if not success then return end
     TriggerServerEvent('qb-bankrobbery:server:setBankState', bank)
 end

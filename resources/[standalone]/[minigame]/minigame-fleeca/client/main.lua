@@ -3,10 +3,14 @@ AddEventHandler('open:fleecaminigame', function(callback)
     openHack()
 end)
 
-AddEventHandler('fleeca:success', function(data, cb)
+AddEventHandler('success:fleecaminigame', function(data, cb)
     closeHack()
     Callbackk(data.success)
     cb('ok')
+end)
+
+AddEventHandler('close:fleecaminigame', function()
+    closeHack()
 end)
 
 --[[
