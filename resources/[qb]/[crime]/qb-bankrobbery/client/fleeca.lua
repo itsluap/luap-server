@@ -267,8 +267,9 @@ RegisterNetEvent('electronickit:UseElectronickit', function()
                         }, {}, {}, {}, function() -- Done
                             StopAnimTask(ped, "anim@gangops@facility@servers@", "hotwire", 1.0)
                             TriggerServerEvent('qb-bankrobbery:server:removeElectronicKit')
-                            TriggerEvent("mhacking:show")
-                            TriggerEvent("mhacking:start", math.random(6, 7), math.random(12, 15), OnHackDone)
+                            --TriggerEvent("mhacking:show")
+                            --TriggerEvent("mhacking:start", math.random(6, 7), math.random(12, 15), OnHackDone)
+                            TriggerEvent("open:fleecaminigame", OnHackDone)
                             if copsCalled or not Config.SmallBanks[closestBank]["alarm"] then return end
                             TriggerServerEvent("qb-bankrobbery:server:callCops", "small", closestBank, pos)
                             copsCalled = true
