@@ -269,10 +269,7 @@ RegisterNetEvent('electronickit:UseElectronickit', function()
                             TriggerServerEvent('qb-bankrobbery:server:removeElectronicKit')
                             --TriggerEvent("mhacking:show")
                             --TriggerEvent("mhacking:start", math.random(6, 7), math.random(12, 15), OnHackDone)
-                            exports['minigame-shape']:StartShapeGame(function(Outcome)
-                                if Outcome then
-                                    OnHackDone
-                                end
+                            exports['minigame-shape']:StartShapeGame(function(OnHackDone)
                             if copsCalled or not Config.SmallBanks[closestBank]["alarm"] then return end
                             TriggerServerEvent("qb-bankrobbery:server:callCops", "small", closestBank, pos)
                             copsCalled = true
