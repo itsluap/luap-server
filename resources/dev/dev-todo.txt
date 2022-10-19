@@ -2,14 +2,14 @@
 
 
 To Do:
-    - vehicle handing is basically fucked like always - will pay for something nopixel like
+    - find someone else to help out and test stuff with - give mlo/money as reward
+    - search whole server for siren = 0
     - bypass qb-spawn for characters that arent new? - file needed to do this is encrypted
     - make lockpicking car doors medium difficulty - ask lin and icey about this
     - stripclub script from dream (or try to find online) - working on converting
     - finish rewriting boosting script - should only need a few touch ups
     - finish updating item animations - (updated item animations to show props - added qb-assets) !!! CAN DO AT WORK
     - vehicle shop (go through vehicles, check prices, only basic cars available at pdm)
-    - apartments cant be raided - make apartments raidable -  ake stormram unlock doors in qb-doorlock (for mlos)
     - ps-drugsproccessing: needs drug effects(core-drugs) and add to corner selling, add ps-buffs after that
     - rewrite heist/robbery scripts with ps-ui / think about other ways to implement ps-ui
     - 
@@ -21,7 +21,7 @@ To Do:
     -
     - check if burgershot has boss management
     - check shops around whole city
-    - make sure all vehicles handle decent (not crazy fast or too good)
+    -
     - make sure all clothes added work correctly
     - make sure addon vehicles are not oversized
     -

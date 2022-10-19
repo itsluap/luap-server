@@ -5,11 +5,13 @@ Necessities:
     - Police: cuffing, dragging, seating, jailing, mdt, dispatch, armory, mlos, better cars
     - EMS   : calls from downed players, heal players, revive players, body bag, stretcher, airmed, better ambulance
     - test all criminal activities and all civilian jobs
+    -
+    - vehicle handing is basically fucked like always - will pay for something nopixel like
+    - apartments should be raidable now
 
 Bugs:
-    - players flicker invisible inside mlos
+    - players flicker invisible inside mlos - ask in gabz support chat about this
     - cant clear calls from dispatch in mdt
-    - floating lights at pillbox - need to buy from gabz
 
 Notes:
     - the "press E to open" menu is - exports['qb-core']:DrawText(text, 'left') and to hide - exports['qb-core']:HideText()
