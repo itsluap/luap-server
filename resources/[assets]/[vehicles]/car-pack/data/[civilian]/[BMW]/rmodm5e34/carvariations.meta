@@ -25,7 +25,7 @@
         </Item> 
       </colors>
       <kits>
-        <Item>15684_rmodm5e34_modkit</Item>
+        <Item>13746_rmodm5e34_modkit</Item>
       </kits>
       <windowsWithExposedEdges />
       <plateProbabilities>
@@ -36,8 +36,8 @@
           </Item>
         </Probabilities>
       </plateProbabilities>
-      <lightSettings value="15684" />
-      <sirenSettings value="020733" />
+      <lightSettings value="13746" />
+      <sirenSettings value="13746" />
     </Item>
   </variationData>
 </CVehicleModelInfoVariation>
