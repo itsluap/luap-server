@@ -345,7 +345,7 @@ RegisterNetEvent('ps-fuel:client:RefuelVehicle', function(refillCost)
 	else
 		if inGasStation then
 			--print("in gas station")
-			print(isCloseVeh())
+			--print(isCloseVeh())
 			if isCloseVeh() then
 				if QBCore.Functions.GetPlayerData().money['cash'] <= refillCost then
 					QBCore.Functions.Notify(Lang:t("notify.no_money"), "error")
