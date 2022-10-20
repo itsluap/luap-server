@@ -285,6 +285,7 @@ AddEventHandler('weapons:client:SetCurrentWeapon', function(data, bool)
 end)
 
 RegisterNetEvent('ps-fuel:client:RefuelVehicle', function(refillCost)
+	print("start of refuel event")
 	local gasProp = 0
 	local gasNozzle = "prop_cs_fuel_nozle"
 	local ped = PlayerPedId()
@@ -343,6 +344,7 @@ RegisterNetEvent('ps-fuel:client:RefuelVehicle', function(refillCost)
 		end
 	else
 		if inGasStation then
+			print("in gas station")
 			if isCloseVeh() then
 				if QBCore.Functions.GetPlayerData().money['cash'] <= refillCost then
 					QBCore.Functions.Notify(Lang:t("notify.no_money"), "error")
