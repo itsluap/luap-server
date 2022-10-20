@@ -267,7 +267,7 @@
         </Item>
       </colors>
       <kits>
-        <Item>959_pts21_modkit</Item>
+        <Item>19456_pts21_modkit</Item>
       </kits>
       <windowsWithExposedEdges />
       <plateProbabilities>
@@ -278,7 +278,7 @@
           </Item>
         </Probabilities>
       </plateProbabilities>
-      <lightSettings value="0" />
+      <lightSettings value="19456" />
       <sirenSettings value="795976" />
     </Item>
   </variationData>

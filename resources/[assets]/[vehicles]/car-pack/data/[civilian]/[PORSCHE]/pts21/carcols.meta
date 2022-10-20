@@ -2,8 +2,8 @@
 <CVehicleModelInfoVarGlobal>    
   <Kits>
     <Item>
-      <kitName>959_pts21_modkit</kitName>
-      <id value="959" />	 	  
+      <kitName>19456_pts21_modkit</kitName>
+      <id value="19456" />	 	  
       <kitType>MKT_SPECIAL</kitType>
       <visibleMods />
       <linkMods />
@@ -485,7 +485,7 @@
   </Kits>
   <Lights>
     <Item>
-      <id value="98" />
+      <id value="19456" />
       <indicator>
         <intensity value="0.375000" />
         <falloffMax value="2.500000" />
