@@ -37,7 +37,7 @@
         </Probabilities>
       </plateProbabilities>
       <lightSettings value="0" />
-      <sirenSettings value="0" />
+      <sirenSettings value="540170" />
     </Item>
 	<Item>
       <modelName>chr20</modelName>
@@ -74,7 +74,7 @@
         </Probabilities>
       </plateProbabilities>
       <lightSettings value="0" />
-      <sirenSettings value="0" />
+      <sirenSettings value="540170" />
     </Item>
   </variationData>
 </CVehicleModelInfoVariation>

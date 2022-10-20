@@ -301,7 +301,7 @@
         </Probabilities>
       </plateProbabilities>
       <lightSettings value="2" />
-      <sirenSettings value="0" />
+      <sirenSettings value="794581" />
     </Item>
   <Item>
       <modelName>tampa4</modelName>
@@ -602,7 +602,7 @@
         </Probabilities>
       </plateProbabilities>
       <lightSettings value="2" />
-      <sirenSettings value="0" />
+      <sirenSettings value="998207" />
     </Item>
   </variationData>
 </CVehicleModelInfoVariation>

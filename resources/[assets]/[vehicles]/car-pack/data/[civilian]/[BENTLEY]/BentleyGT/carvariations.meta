@@ -168,7 +168,7 @@
         <Probabilities />
       </plateProbabilities>
       <lightSettings value="1" />
-      <sirenSettings value="0" />
+      <sirenSettings value="270781" />
     </Item>
 		<Item>
       <modelName>CONTSS18C</modelName>
@@ -326,7 +326,7 @@
         <Probabilities />
       </plateProbabilities>
       <lightSettings value="1" />
-      <sirenSettings value="0" />
+      <sirenSettings value="788293" />
     </Item>
 
 
