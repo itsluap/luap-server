@@ -2,7 +2,7 @@
 <CVehicleModelInfoVarGlobal>    
   <Lights>
 	<Item>
-      <id value="8769" />
+      <id value="12857" />
       <indicator>
         <intensity value="0.375000" />
         <falloffMax value="2.500000" />
