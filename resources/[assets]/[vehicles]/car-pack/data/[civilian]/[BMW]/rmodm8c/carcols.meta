@@ -3,7 +3,7 @@
   <Kits>
    <Item>
       <kitName>1456_rmodm8c_modkit</kitName>
-      <id value="19746" />	 	  
+      <id value="4653" />	 	  
       <kitType>MKT_SPECIAL</kitType>
       <visibleMods>
 	  	  	<Item>
@@ -556,7 +556,7 @@
   </Kits>
       <Lights>
       <Item>
-      <id value="19746" />
+      <id value="4653" />
       <indicator>
         <intensity value="0.375000" />
         <falloffMax value="2.500000" />
