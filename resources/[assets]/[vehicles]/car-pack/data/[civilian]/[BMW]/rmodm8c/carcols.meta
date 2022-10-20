@@ -2,8 +2,8 @@
 <CVehicleModelInfoVarGlobal>    
   <Kits>
    <Item>
-      <kitName>9332_rmodm8c_modkit</kitName>
-      <id value="9332" />	 	  
+      <kitName>1456_rmodm8c_modkit</kitName>
+      <id value="16876" />	 	  
       <kitType>MKT_SPECIAL</kitType>
       <visibleMods>
 	  	  	<Item>
@@ -556,7 +556,7 @@
   </Kits>
       <Lights>
       <Item>
-      <id value="9332" />
+      <id value="16876" />
       <indicator>
         <intensity value="0.375000" />
         <falloffMax value="2.500000" />
