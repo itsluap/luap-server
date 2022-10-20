@@ -646,7 +646,7 @@
         <zBias value="0.250000" />
         <pullCoronaIn value="false" />
       </reversingLightCorona>
-      <name>rmodm8c</name>
+      <name>rmodr8c</name>
     </Item>
     </Lights>
 </CVehicleModelInfoVarGlobal>
