@@ -1,10 +1,9 @@
 Config = {}
 
 -- The distance at which NPCs will be spawned/despawned
-Config.SpawnDistance = 400
 
 Config.Peds = {
-	
+
 	-- PANTHER AT CAYO PIERCO
 	{
 		model = 'a_c_panther',
