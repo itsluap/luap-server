@@ -732,6 +732,8 @@ Config.Locations = {
         ["products"] = Config.Products["masker"],
         ["showblip"] = true,
         ["blipsprite"] = 362
+        ["blipscale"] = 0.6,
+        ["blipcolor"] = 0
     },
     -- 24/7 Locations
     ["247supermarket"] = {
