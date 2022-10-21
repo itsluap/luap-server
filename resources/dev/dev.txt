@@ -4,7 +4,6 @@ Necessities:
     - vehicle handing is basically fucked like always - will pay for something nopixel like
 
 Testing:
-    - test all criminal activities and all civilian jobs
     - test okokContract
     - apartments should be raidable now
     - see if panicbutton is played to everyone, should only be heard by police
@@ -33,12 +32,6 @@ Final (Ready to Launch):
     - create new user guide - create some faqs - get discord ready
     - create website - needs forums, applications, and tebex store
     - 
-
-
-
-
-
-
 
 Other:
     -
