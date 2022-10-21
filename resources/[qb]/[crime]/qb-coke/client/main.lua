@@ -150,7 +150,7 @@ function PlaneSpawn()
         Citizen.Wait(0)
     end
 
-    airplane = CreateVehicle(planehash, location.parking.x, location.parking.y, location.parking.z, 113, true, false)
+    airplane = CreateVehicle(planehash, location.parking.x, location.parking.y, location.parking.z, 45, true, false)
     local plt = GetVehicleNumberPlateText(airplane)
 	SetVehicleHasBeenOwnedByPlayer(airplane,true)
 	
