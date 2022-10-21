@@ -62,7 +62,7 @@ Config.PistolShop = {
             type = "item",
             slot = 3,
         },
-        [3] = {
+        [4] = {
             name = "weapon_appistol",
             price = 2200,
             amount = 100,
