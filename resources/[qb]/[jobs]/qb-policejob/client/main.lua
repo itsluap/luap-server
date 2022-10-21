@@ -231,4 +231,4 @@ exports("CanRaid", function()
     return retval
 end)
 
-exports['police']:CanRaid()
+exports['qb-policejob']:CanRaid()
