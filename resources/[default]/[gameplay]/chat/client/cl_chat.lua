@@ -171,7 +171,7 @@ AddEventHandler('onClientResourceStart', function(resName)
 
   refreshCommands()
   refreshThemes()
-  chatLoaded = true
+  --chatLoaded = true
 end)
 
 AddEventHandler('onClientResourceStop', function(resName)
