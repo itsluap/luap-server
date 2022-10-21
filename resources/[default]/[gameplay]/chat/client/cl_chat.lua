@@ -223,7 +223,7 @@ Citizen.CreateThread(function()
       local shouldBeHidden = false
 
       if IsScreenFadedOut() or IsPauseMenuActive() then
-        shouldBeHidden = true
+        --shouldBeHidden = true
       end
 
       --if IsControlPressed(0, 19) then
