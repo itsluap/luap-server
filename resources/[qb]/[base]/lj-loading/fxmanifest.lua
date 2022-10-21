@@ -14,3 +14,5 @@ files {
 loadscreen {
 	'ui.html'
 }
+
+loadscreen_manual_shutdown 'yes'
