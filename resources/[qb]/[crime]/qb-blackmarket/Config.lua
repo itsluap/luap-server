@@ -180,7 +180,7 @@ Config.AssaultWeaponsShop = {
             slot = 1,
         },
         [4] = {
-            name = "weapon_bulluprifle",
+            name = "weapon_bullpuprifle",
             price = 6200,
             amount = 100,
             info = { quality = 100, },
