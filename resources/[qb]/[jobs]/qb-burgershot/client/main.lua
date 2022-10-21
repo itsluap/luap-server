@@ -529,8 +529,8 @@ end)
 
 RegisterNetEvent('qb-burgershot:client:call:intercom')
 AddEventHandler('qb-burgershot:client:call:intercom', function()
-    if Framework.Functions.GetPlayerData().job.name =='burgershot' and Framework.Functions.GetPlayerData().job.onduty then
-        Framework.Functions.Notify('Someone is at the drive thru', 'info', 7000)
+    if QBCore.Functions.GetPlayerData().job.name =='burgershot' and QBCore.Functions.GetPlayerData().job.onduty then
+        QBCore.Functions.Notify('Someone is at the drive thru', 'info', 7000)
         PlaySoundFrontend( -1, "Beep_Green", "DLC_HEIST_HACKING_SNAKE_SOUNDS", 1)
     end
 end)
