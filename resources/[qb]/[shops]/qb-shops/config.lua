@@ -724,16 +724,12 @@ Config.Locations = {
     -- Mask Shop
     ["masker"] = {
         ["label"] = "Mask shop",
-        ["coords"] = {
-            [1] = vector4(-1262.12, -1424.61, 4.37, 122.66)
-        },
-        ["ped"] = {
-            ["model"] = 'u_m_y_pogo_01'
-        },
-        ["radius"] = 4.5,
+        ["coords"] = vector4(-1262.12, -1424.61, 4.37, 122.66)
+        ["ped"] = 'a_f_y_hipster_02',
+        ["radius"] = 3.5,
         ["products"] = Config.Products["masker"],
-        ["showblip"] = false,
-        ["blipsprite"] = 84
+        ["showblip"] = true,
+        ["blipsprite"] = 362
     },
     -- 24/7 Locations
     ["247supermarket"] = {
