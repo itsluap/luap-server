@@ -2,6 +2,7 @@ local chatInputActive = false
 local chatInputActivating = false
 local chatHidden = true
 local chatLoaded = false
+local hidchat = false
 
 RegisterNetEvent('chatMessage')
 RegisterNetEvent('chat:addTemplate')
@@ -225,10 +226,16 @@ Citizen.CreateThread(function()
       end
 
       if IsControlPressed(0, 19) then
-        SendNUIMessage({
-          type = 'ON_SCREEN_STATE_CHANGE',
-          shouldHide = true
-        })
+        if not hidchat then
+          SendNUIMessage({
+            type = 'ON_SCREEN_STATE_CHANGE',
+            shouldHide = true
+          })
+        else
+          hidchat = true
+        end
+        Citizen.Wait(3000)
+        hidchat = true
       end
 
       if (shouldBeHidden and not chatHidden) or (not shouldBeHidden and chatHidden) then
