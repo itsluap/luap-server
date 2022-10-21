@@ -212,7 +212,7 @@ RegisterNetEvent('qb-vehiclekeys:client:GiveKeys', function(id)
                 else -- Give keys to closest player
                     GiveKeys(GetPlayerServerId(QBCore.Functions.GetClosestPlayer()), targetPlate)
                 end
-
+                print(QBCore.Functions.GetClosestPlayer())
                 if QBCore.Functions.GetClosestPlayer() == nil then
                     QBCore.Functions.Notify("No one nearby", 'error')
                 end
