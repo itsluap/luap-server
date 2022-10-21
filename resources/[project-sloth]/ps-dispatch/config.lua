@@ -43,7 +43,7 @@ Citizen.CreateThread(function()
 
     -- if notLoaded then
         for k, v in pairs(Config.Enable) do
-            print(k, v, json.encode(v))
+            --print(k, v, json.encode(v))
             if Config.Enable[k] ~= false then
                 Config[k] = {}
                 Config.Timer[k] = 0 -- Default to 0 seconds
