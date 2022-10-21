@@ -16,7 +16,7 @@ local function SetDisplay(bool)
     choosingSpawn = bool
     SetNuiFocus(bool, bool)
     SendNUIMessage({
-        type = "ui",
+        action = "showUi",
         status = bool
     })
 end
@@ -59,12 +59,15 @@ RegisterNetEvent('qb-spawn:client:setupSpawns', function(cData, new, apps)
                 action = "setupLocations",
                 locations = QB.Spawns,
                 houses = myHouses,
+                isNew = new
             })
         end, cData.citizenid)
+    
     elseif new then
         SendNUIMessage({
             action = "setupAppartements",
             locations = apps,
+            isNew = new
         })
     end
 end)
@@ -74,7 +77,7 @@ end)
 RegisterNUICallback("exit", function(_, cb)
     SetNuiFocus(false, false)
     SendNUIMessage({
-        type = "ui",
+        action = "showUi",
         status = false
     })
     choosingSpawn = false
@@ -161,27 +164,7 @@ RegisterNUICallback('spawnplayer', function(data, cb)
     local ped = PlayerPedId()
     local PlayerData = QBCore.Functions.GetPlayerData()
     local insideMeta = PlayerData.metadata["inside"]
-    if type == "house" then
-        PreSpawnPlayer()
-        TriggerEvent('qb-houses:client:enterOwnedHouse', location)
-        TriggerServerEvent('QBCore:Server:OnPlayerLoaded')
-        TriggerEvent('QBCore:Client:OnPlayerLoaded')
-        TriggerServerEvent('qb-houses:server:SetInsideMeta', 0, false)
-        TriggerServerEvent('qb-apartments:server:SetInsideMeta', 0, 0, false)
-        PostSpawnPlayer()
-    elseif type == "normal" then
-        local pos = QB.Spawns[location].coords
-        PreSpawnPlayer()
-        SetEntityCoords(ped, pos.x, pos.y, pos.z)
-        TriggerServerEvent('QBCore:Server:OnPlayerLoaded')
-        TriggerEvent('QBCore:Client:OnPlayerLoaded')
-        TriggerServerEvent('qb-houses:server:SetInsideMeta', 0, false)
-        TriggerServerEvent('qb-apartments:server:SetInsideMeta', 0, 0, false)
-        Wait(500)
-        SetEntityCoords(ped, pos.x, pos.y, pos.z)
-        SetEntityHeading(ped, pos.w)
-        PostSpawnPlayer()
-    else
+    if type == "current" then
         PreSpawnPlayer()
         QBCore.Functions.GetPlayerData(function(pd)
             ped = PlayerPedId()
@@ -200,6 +183,26 @@ RegisterNUICallback('spawnplayer', function(data, cb)
         end
         TriggerServerEvent('QBCore:Server:OnPlayerLoaded')
         TriggerEvent('QBCore:Client:OnPlayerLoaded')
+        PostSpawnPlayer()
+    elseif type == "house" then
+        PreSpawnPlayer()
+        TriggerEvent('qb-houses:client:enterOwnedHouse', location)
+        TriggerServerEvent('QBCore:Server:OnPlayerLoaded')
+        TriggerEvent('QBCore:Client:OnPlayerLoaded')
+        TriggerServerEvent('qb-houses:server:SetInsideMeta', 0, false)
+        TriggerServerEvent('qb-apartments:server:SetInsideMeta', 0, 0, false)
+        PostSpawnPlayer()
+    elseif type == "normal" then
+        local pos = QB.Spawns[location].coords
+        PreSpawnPlayer()
+        SetEntityCoords(ped, pos.x, pos.y, pos.z)
+        TriggerServerEvent('QBCore:Server:OnPlayerLoaded')
+        TriggerEvent('QBCore:Client:OnPlayerLoaded')
+        TriggerServerEvent('qb-houses:server:SetInsideMeta', 0, false)
+        TriggerServerEvent('qb-apartments:server:SetInsideMeta', 0, 0, false)
+        Wait(500)
+        SetEntityCoords(ped, pos.x, pos.y, pos.z)
+        SetEntityHeading(ped, pos.w)
         PostSpawnPlayer()
     end
     cb('ok')
