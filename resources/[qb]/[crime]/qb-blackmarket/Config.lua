@@ -24,10 +24,10 @@ Config.Icons = {
 }
 
 Config.Text = {
-    TargetLabel = "BlackMarket Seller",
-    PedHeader = "BlackMarket Dealer",
+    TargetLabel = "Blackmarket Dealer",
+    PedHeader = "Blackmarket Dealer",
     Pistols = "Pistols",
-    SubMachineGuns = "SubMachine Guns",
+    SubMachineGuns = "Submachine Guns",
     Shotguns = "Shotguns",
     AssaultWeapons = "Assault Rifles",
     Miscellanceous = "Miscellanceous",
@@ -35,7 +35,7 @@ Config.Text = {
 }
 
 Config.PistolShop = {
-    label = "Black Market Pistols",
+    label = "Blackmarket Pistols",
     slots = 10,
     items = {
         [1] = {
@@ -90,7 +90,7 @@ Config.PistolShop = {
 }
 
 Config.SubMachineGunShop = {
-    label = "Black Market SubMachine Guns",
+    label = "Blackmarket Submachine Guns",
     slots = 10,
     items = {
         [1] = {
@@ -145,7 +145,7 @@ Config.SubMachineGunShop = {
 }
 
 Config.ShotGunShop = {
-    label = "Black Market ShotGuns",
+    label = "Blackmarket Shotguns",
     slots = 10,
     items = {
         [1] = {
@@ -200,7 +200,7 @@ Config.ShotGunShop = {
 }
 
 Config.AssaultWeaponsShop = {
-    label = "Black Market Assault Weapon Shop",
+    label = "Blackmarket Assault Rifles",
     slots = 10,
     items = {
         [1] = {
@@ -255,7 +255,7 @@ Config.AssaultWeaponsShop = {
 }
 
 Config.MiscellanceousShop = {
-    label = "Black Market Miscellanceous Shop",
+    label = "Blackmarket Miscellanceous",
     slots = 10,
     items = {
         [1] = {
