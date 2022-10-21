@@ -3,7 +3,7 @@ Config = {}
 Config.UseBlip = true                      -- [true to enable the blip | false disables the blip]
 
 Config.Location = {
-    Coords = vector4(5220.28, -5394.15, 67.48, 277.48),
+    Coords = vector4(5220.28, -5394.15, 66.48, 277.48),
     ModelName = "g_m_y_mexgoon_03",
     ModelHash = 0x964D12DC,
     --SetBlipSprite = 303,
