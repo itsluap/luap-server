@@ -690,7 +690,6 @@ AddEventHandler("boosting:ContractDone" , function()
     TriggerServerEvent('boosting:finished')
 	local niceprice = VehiclePrice * Config['General']["BNErewardmultiplier"]
     BNEBoosting['functions'].AddBne(niceprice)
-    print(nice)
     table.remove(Contracts , startedcontractid)
     started = false
     SetEntityAsMissionEntity(Vehicle,true,true)

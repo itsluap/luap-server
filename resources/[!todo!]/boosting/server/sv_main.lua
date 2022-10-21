@@ -160,9 +160,9 @@ AddEventHandler("boosting:joinQueue", function()
     local result = SQL('SELECT * FROM boost_queue WHERE identifier = ?', {cid})
     if result[1] == nil then
       SQL("INSERT INTO boost_queue (identifier, pSrc) VALUES (@cid, @pSrc)", {['@cid'] = cid, ['@pSrc'] = pSrc })
-	  print("added" .. " " .. "CID: " .. cid .. " " .."ID:".. pSrc .. " " .. "to boosting queue") 
+	  --print("added" .. " " .. "CID: " .. cid .. " " .."ID:".. pSrc .. " " .. "to boosting queue") 
     else
-      print(cid.." already in queue")
+      --print(cid.." already in queue")
     end 
   end
 end)
@@ -177,7 +177,7 @@ AddEventHandler('boosting:leaveQueue', function()
     local result = SQL('SELECT * FROM boost_queue WHERE identifier = ?', {cid})
     if result[1] ~= nil then
       SQL("DELETE FROM boost_queue WHERE `identifier` = @cid", {['@cid'] = cid})
-      print("removed" .. " " .. "CID: " .. cid .. " " .."ID:".. pSrc .. " " .. "from boosting queue") 
+      --print("removed" .. " " .. "CID: " .. cid .. " " .."ID:".. pSrc .. " " .. "from boosting queue") 
     end
   end
 end)
