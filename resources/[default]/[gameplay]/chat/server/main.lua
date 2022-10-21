@@ -1,7 +1,5 @@
--- StarBlazt Chat
-
+ESX = nil
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-
 
 function getIdentity(source)
 	local identifier = GetPlayerIdentifiers(source)[1]
@@ -25,8 +23,6 @@ function getIdentity(source)
 	end
 end
 
-
-
 AddEventHandler("chatMessage", function(source, color, message)
     local src = source
     args = stringsplit(message, " ")
@@ -46,7 +42,6 @@ AddEventHandler('chat:server:ServerPSA', function(message)
     CancelEvent()
 end)
 
-
 RegisterServerEvent('911')
 AddEventHandler('911', function(source, caller, msg)
     local name = getIdentity(source)
@@ -60,7 +55,6 @@ AddEventHandler('311', function(source, caller, msg)
     fal = name.firstname  .. '  ' .. name.lastname
     TriggerClientEvent('chat:EmergencySend311', -1, source, fal, msg)
 end)
-
 
 RegisterServerEvent('911r')
 AddEventHandler('911r', function(target, source, msg)
@@ -110,7 +104,6 @@ AddEventHandler('chat:server:311r', function(target, caller, msg)
     CancelEvent()
 end)
 
-
 RegisterServerEvent('chat:server:311source')
 AddEventHandler('chat:server:311source', function(source, caller, msg)
     local name = getIdentity(source)
@@ -121,9 +114,6 @@ AddEventHandler('chat:server:311source', function(source, caller, msg)
     })
     CancelEvent()
 end)
-
-
-
 
 function stringsplit(inputstr, sep)
 	if sep == nil then

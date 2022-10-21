@@ -1,8 +1,13 @@
-resource_manifest_version '44febabe-d386-4d18-afbe-5e627f4af937'
+fx_version 'adamant'
+
+game 'gta5'
+
+description 'Custom Chat'
 
 ui_page 'html/index.html'
 
 files {
+
   'html/index.html',
   'html/css/index.css',
   'html/js/config.default.js',
@@ -24,13 +29,17 @@ files {
 }
 
 client_scripts {
+  'client/barbaronnhamelech.lua',
   'client/cl_chat.lua',
+  'client/bb_c.lua',
 }
 
 server_scripts {
   '@mysql-async/lib/MySQL.lua',
   'server/utils.lua',
+  'config.lua',
   'server/commands.lua',
+  'server/bb_s.lua',
   'server/sv_chat.lua',
   'server/main.lua',
 }
