@@ -634,7 +634,7 @@ Citizen.CreateThread(function()
         TriggerEvent("qbcore-apartments:client:TriggerMenu", v.name)
     end,
     canInteract = function(entity)
-    return exports['police']:CanRaid()
+    return exports['qb-policejob']:CanRaid()
     end
     }
     },
