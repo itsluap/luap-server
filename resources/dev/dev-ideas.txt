@@ -4,4 +4,3 @@
 Ideas:
     - give lockpicks durability?
     - ps-ui, gang influence areas
-    - gun crafting and blackmarket

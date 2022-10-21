@@ -3,7 +3,7 @@ local QBCore = exports['qb-core']:GetCoreObject()
 Citizen.CreateThread(function() 
     while true do
 		Citizen.Wait(30 * 60000)
-		print('Coke Table')
+		--print('Coke Table')
 		TriggerServerEvent('coke:updateTable', false)
 	end
 end)
@@ -116,7 +116,6 @@ function main()
 	blip1 = AddBlipForCoord(location.fuel.x,location.fuel.y,location.fuel.z)
 	SetBlipRoute(blip1, true)
 	enroute = true
-	print('en')
 	Citizen.CreateThread(function()
 		while enroute do
 			sleep = 5	
