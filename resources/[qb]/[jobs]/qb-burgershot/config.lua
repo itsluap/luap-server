@@ -4,52 +4,10 @@ Config.GaragePedLocations = {
     {coords = vector4(-1163.45, -897.02, 14.04, 82.15)},
 }
 
---if u are not using qb-target uncomment this.
-
--- Config.Locations = {
---     ["duty"] = {
---         [1] = vector4(0 , 0 , 0, 0),
---     },    
---     ["tray1"] = {
---         [1] = vector4(0 , 0 , 0, 0),
---     },
---     ["tray2"] = {
---         [1] = vector4(0 , 0 , 0, 0),
---     },
---     ["tray3"] = {
---         [1] = vector4(0 , 0 , 0, 0),
---     },  
---     ["pattycooker"] = {
---         [1] = vector4(0 , 0 , 0, 0),
---         [2] = vector4(0 , 0 , 0, 0),
---     }, 
---     ["fryer"] = {
---         [1] = vector4(0 , 0 , 0, 0),
---     }, 
---     ["drinks"] = {
---         [1] = vector4(0 , 0 , 0, 0),
---         [2] = vector4(0 , 0 , 0, 0),
---     },   
---     ["fridge"] = {
---         [1] = vector4(0 , 0 , 0, 0),
---     },      
---     ["storage"] = {
---         [1] = vector4(0 , 0 , 0, 0),
---     },
---     ["craftburger"] = {
---         [1] = vector4(0 , 0 , 0, 0),
---     },    
---     ["cashregister"] = {
---         [1] = vector4(0 , 0 , 0, 0),
---         [2] = vector4(0 , 0 , 0, 0),
---         [3] = vector4(0 , 0 , 0, 0),
---         [4] = vector4(0 , 0 , 0, 0),
---     },   
---     ["garage"] = {
---         [1] = vector4(0 , 0 , 0, 0),
---     }, 
---  }
-
+Config.Intercom = {
+    ['Worker'] = vector3(-1192.00, -906.65, 14.09),
+    ['Customer'] = vector3(-1204.79, -899.01, 13.30),
+}
 
 Config.Items = {
 label = "Shop",
