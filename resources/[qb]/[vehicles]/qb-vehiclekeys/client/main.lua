@@ -198,6 +198,7 @@ end)
 RegisterNetEvent('qb-vehiclekeys:client:GiveKeys', function(id)
     print("starting give keys")
     local targetVehicle = GetVehicle()
+    print(targetVehicle)
 
     if targetVehicle then
         local targetPlate = QBCore.Functions.GetPlate(targetVehicle)
