@@ -72,6 +72,33 @@ RegisterNetEvent('qb-spawn:client:setupSpawns', function(cData, new, apps)
     end
 end)
 
+RegisterNetEvent('qb-spawn:client:luap:spawn', function()
+    local location = tostring(data.spawnloc)
+    local type = tostring(data.typeLoc)
+    local ped = PlayerPedId()
+    local PlayerData = QBCore.Functions.GetPlayerData()
+    local insideMeta = PlayerData.metadata["inside"]
+    PreSpawnPlayer()
+    QBCore.Functions.GetPlayerData(function(pd)
+        ped = PlayerPedId()
+        SetEntityCoords(ped, pd.position.x, pd.position.y, pd.position.z)
+        SetEntityHeading(ped, pd.position.a)
+        FreezeEntityPosition(ped, false)
+    end)
+
+    if insideMeta.house ~= nil then
+        local houseId = insideMeta.house
+        TriggerEvent('qb-houses:client:LastLocationHouse', houseId)
+    elseif insideMeta.apartment.apartmentType ~= nil or insideMeta.apartment.apartmentId ~= nil then
+        local apartmentType = insideMeta.apartment.apartmentType
+        local apartmentId = insideMeta.apartment.apartmentId
+        TriggerEvent('qb-apartments:client:LastLocationHouse', apartmentType, apartmentId)
+    end
+    TriggerServerEvent('QBCore:Server:OnPlayerLoaded')
+    TriggerEvent('QBCore:Client:OnPlayerLoaded')
+    PostSpawnPlayer()
+end)
+
 -- NUI Callbacks
 
 RegisterNUICallback("exit", function(_, cb)
