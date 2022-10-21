@@ -73,8 +73,6 @@ RegisterNetEvent('qb-spawn:client:setupSpawns', function(cData, new, apps)
 end)
 
 RegisterNetEvent('qb-spawn:client:luap:spawn', function()
-    local location = tostring(data.spawnloc)
-    local type = tostring(data.typeLoc)
     local ped = PlayerPedId()
     local PlayerData = QBCore.Functions.GetPlayerData()
     local insideMeta = PlayerData.metadata["inside"]
