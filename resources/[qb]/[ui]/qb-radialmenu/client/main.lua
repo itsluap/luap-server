@@ -93,7 +93,15 @@ local function SetupVehicleMenu()
                 type = 'client',
                 event = 'vehcontrol:openExternal',
                 shouldClose = true
-            }
+        }
+        VehicleMenu.items[#VehicleMenu.items+1] =  {
+            id = 'vehicle-keys',
+            title = 'Give Keys',
+            icon = 'key',
+            type = 'client',
+            event = 'qb-vehiclekeys:client:GiveKeys',
+            shouldClose = true
+        }
 
         if Config.EnableExtraMenu then VehicleMenu.items[#VehicleMenu.items+1] = Config.VehicleExtras end
         
