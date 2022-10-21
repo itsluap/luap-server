@@ -19,7 +19,7 @@ RegisterNetEvent('masks:client:terror', function(itemName)
         end)
     elseif wearing then
         TriggerEvent('animations:client:EmoteCommandStart', {"adjusttie"})
-        QBCore.Functions.Progressbar("chain_misc", "Putting mask off..", 3000, false, true, {
+        QBCore.Functions.Progressbar("chain_misc", "Taking mask off..", 3000, false, true, {
             disableMovement = false,
             disableCarMovement = false,
             disableMouse = false,
@@ -50,7 +50,7 @@ RegisterNetEvent('masks:client:hockeymask', function(itemName)
         end)
     elseif wearing then
         TriggerEvent('animations:client:EmoteCommandStart', {"adjusttie"})
-        QBCore.Functions.Progressbar("chain_misc", "Putting mask off..", 3000, false, true, {
+        QBCore.Functions.Progressbar("chain_misc", "Taking mask off..", 3000, false, true, {
             disableMovement = false,
             disableCarMovement = false,
             disableMouse = false,
@@ -81,7 +81,7 @@ RegisterNetEvent('masks:client:blackbandana', function(itemName)
         end)
     elseif wearing then
         TriggerEvent('animations:client:EmoteCommandStart', {"adjusttie"})
-        QBCore.Functions.Progressbar("chain_misc", "Putting mask off..", 3000, false, true, {
+        QBCore.Functions.Progressbar("chain_misc", "Taking mask off..", 3000, false, true, {
             disableMovement = false,
             disableCarMovement = false,
             disableMouse = false,
@@ -112,7 +112,7 @@ RegisterNetEvent('masks:client:tshirtmask', function(itemName)
         end)
     elseif wearing then
         TriggerEvent('animations:client:EmoteCommandStart', {"adjusttie"})
-        QBCore.Functions.Progressbar("chain_misc", "Putting mask off..", 3000, false, true, {
+        QBCore.Functions.Progressbar("chain_misc", "Taking mask off..", 3000, false, true, {
             disableMovement = false,
             disableCarMovement = false,
             disableMouse = false,
@@ -143,7 +143,7 @@ RegisterNetEvent('masks:client:scarecrowmask', function(itemName)
         end)
     elseif wearing then
         TriggerEvent('animations:client:EmoteCommandStart', {"adjusttie"})
-        QBCore.Functions.Progressbar("chain_misc", "Putting mask off..", 3000, false, true, {
+        QBCore.Functions.Progressbar("chain_misc", "Taking mask off..", 3000, false, true, {
             disableMovement = false,
             disableCarMovement = false,
             disableMouse = false,
@@ -174,7 +174,7 @@ RegisterNetEvent('masks:client:scarf', function(itemName)
         end)
     elseif wearing then
         TriggerEvent('animations:client:EmoteCommandStart', {"adjusttie"})
-        QBCore.Functions.Progressbar("chain_misc", "Putting mask off..", 3000, false, true, {
+        QBCore.Functions.Progressbar("chain_misc", "Taking mask off..", 3000, false, true, {
             disableMovement = false,
             disableCarMovement = false,
             disableMouse = false,
@@ -205,7 +205,7 @@ RegisterNetEvent('masks:client:monkeymask', function(itemName)
         end)
     elseif wearing then
         TriggerEvent('animations:client:EmoteCommandStart', {"adjusttie"})
-        QBCore.Functions.Progressbar("chain_misc", "Putting mask off..", 3000, false, true, {
+        QBCore.Functions.Progressbar("chain_misc", "Taking mask off..", 3000, false, true, {
             disableMovement = false,
             disableCarMovement = false,
             disableMouse = false,
@@ -236,7 +236,7 @@ RegisterNetEvent('masks:client:skullmask', function(itemName)
         end)
     elseif wearing then
         TriggerEvent('animations:client:EmoteCommandStart', {"adjusttie"})
-        QBCore.Functions.Progressbar("chain_misc", "Putting mask off..", 3000, false, true, {
+        QBCore.Functions.Progressbar("chain_misc", "Taking mask off..", 3000, false, true, {
             disableMovement = false,
             disableCarMovement = false,
             disableMouse = false,
@@ -268,7 +268,7 @@ RegisterNetEvent('masks:client:terrorwit', function(itemName)
         end)
     elseif wearing then
         TriggerEvent('animations:client:EmoteCommandStart', {"adjusttie"})
-        QBCore.Functions.Progressbar("chain_misc", "Putting mask off..", 3000, false, true, {
+        QBCore.Functions.Progressbar("chain_misc", "Taking mask off..", 3000, false, true, {
             disableMovement = false,
             disableCarMovement = false,
             disableMouse = false,
@@ -300,7 +300,7 @@ RegisterNetEvent('masks:client:feest', function(itemName)
         end)
     elseif wearing then
         TriggerEvent('animations:client:EmoteCommandStart', {"adjusttie"})
-        QBCore.Functions.Progressbar("chain_misc", "Putting mask off..", 3000, false, true, {
+        QBCore.Functions.Progressbar("chain_misc", "Taking mask off..", 3000, false, true, {
             disableMovement = false,
             disableCarMovement = false,
             disableMouse = false,
@@ -332,7 +332,7 @@ RegisterNetEvent('masks:client:noselong', function(itemName)
         end)
     elseif wearing then
         TriggerEvent('animations:client:EmoteCommandStart', {"adjusttie"})
-        QBCore.Functions.Progressbar("chain_misc", "Putting mask off..", 3000, false, true, {
+        QBCore.Functions.Progressbar("chain_misc", "Taking mask off..", 3000, false, true, {
             disableMovement = false,
             disableCarMovement = false,
             disableMouse = false,
@@ -364,7 +364,7 @@ RegisterNetEvent('masks:client:blauw', function(itemName)
         end)
     elseif wearing then
         TriggerEvent('animations:client:EmoteCommandStart', {"adjusttie"})
-        QBCore.Functions.Progressbar("chain_misc", "Putting mask off..", 3000, false, true, {
+        QBCore.Functions.Progressbar("chain_misc", "Taking mask off..", 3000, false, true, {
             disableMovement = false,
             disableCarMovement = false,
             disableMouse = false,
@@ -396,7 +396,7 @@ RegisterNetEvent('masks:client:skullzwart', function(itemName)
         end)
     elseif wearing then
         TriggerEvent('animations:client:EmoteCommandStart', {"adjusttie"})
-        QBCore.Functions.Progressbar("chain_misc", "Putting mask off..", 3000, false, true, {
+        QBCore.Functions.Progressbar("chain_misc", "Taking mask off..", 3000, false, true, {
             disableMovement = false,
             disableCarMovement = false,
             disableMouse = false,
@@ -428,7 +428,7 @@ RegisterNetEvent('masks:client:silver', function(itemName)
         end)
     elseif wearing then
         TriggerEvent('animations:client:EmoteCommandStart', {"adjusttie"})
-        QBCore.Functions.Progressbar("chain_misc", "Putting mask off..", 3000, false, true, {
+        QBCore.Functions.Progressbar("chain_misc", "Taking mask off..", 3000, false, true, {
             disableMovement = false,
             disableCarMovement = false,
             disableMouse = false,
@@ -460,7 +460,7 @@ RegisterNetEvent('masks:client:zwart1', function(itemName)
         end)
     elseif wearing then
         TriggerEvent('animations:client:EmoteCommandStart', {"adjusttie"})
-        QBCore.Functions.Progressbar("chain_misc", "Putting mask off..", 3000, false, true, {
+        QBCore.Functions.Progressbar("chain_misc", "Taking mask off..", 3000, false, true, {
             disableMovement = false,
             disableCarMovement = false,
             disableMouse = false,
@@ -492,7 +492,7 @@ RegisterNetEvent('masks:client:zwart2', function(itemName)
         end)
     elseif wearing then
         TriggerEvent('animations:client:EmoteCommandStart', {"adjusttie"})
-        QBCore.Functions.Progressbar("chain_misc", "Putting mask off..", 3000, false, true, {
+        QBCore.Functions.Progressbar("chain_misc", "Taking mask off..", 3000, false, true, {
             disableMovement = false,
             disableCarMovement = false,
             disableMouse = false,
@@ -524,7 +524,7 @@ RegisterNetEvent('masks:client:please', function(itemName)
         end)
     elseif wearing then
         TriggerEvent('animations:client:EmoteCommandStart', {"adjusttie"})
-        QBCore.Functions.Progressbar("chain_misc", "Putting mask off..", 3000, false, true, {
+        QBCore.Functions.Progressbar("chain_misc", "Taking mask off..", 3000, false, true, {
             disableMovement = false,
             disableCarMovement = false,
             disableMouse = false,
@@ -556,7 +556,7 @@ RegisterNetEvent('masks:client:sok', function(itemName)
         end)
     elseif wearing then
         TriggerEvent('animations:client:EmoteCommandStart', {"adjusttie"})
-        QBCore.Functions.Progressbar("chain_misc", "Putting mask off..", 3000, false, true, {
+        QBCore.Functions.Progressbar("chain_misc", "Taking mask off..", 3000, false, true, {
             disableMovement = false,
             disableCarMovement = false,
             disableMouse = false,
@@ -588,7 +588,7 @@ RegisterNetEvent('masks:client:zak', function(itemName)
         end)
     elseif wearing then
         TriggerEvent('animations:client:EmoteCommandStart', {"adjusttie"})
-        QBCore.Functions.Progressbar("chain_misc", "Putting mask off..", 3000, false, true, {
+        QBCore.Functions.Progressbar("chain_misc", "Taking mask off..", 3000, false, true, {
             disableMovement = false,
             disableCarMovement = false,
             disableMouse = false,
@@ -620,7 +620,7 @@ RegisterNetEvent('masks:client:groen', function(itemName)
         end)
     elseif wearing then
         TriggerEvent('animations:client:EmoteCommandStart', {"adjusttie"})
-        QBCore.Functions.Progressbar("chain_misc", "Putting mask off..", 3000, false, true, {
+        QBCore.Functions.Progressbar("chain_misc", "Taking mask off..", 3000, false, true, {
             disableMovement = false,
             disableCarMovement = false,
             disableMouse = false,
@@ -652,7 +652,7 @@ RegisterNetEvent('masks:client:bandanab', function(itemName)
         end)
     elseif wearing then
         TriggerEvent('animations:client:EmoteCommandStart', {"adjusttie"})
-        QBCore.Functions.Progressbar("chain_misc", "Putting mask off..", 3000, false, true, {
+        QBCore.Functions.Progressbar("chain_misc", "Taking mask off..", 3000, false, true, {
             disableMovement = false,
             disableCarMovement = false,
             disableMouse = false,
@@ -684,7 +684,7 @@ RegisterNetEvent('masks:client:bivak1', function(itemName)
         end)
     elseif wearing then
         TriggerEvent('animations:client:EmoteCommandStart', {"adjusttie"})
-        QBCore.Functions.Progressbar("chain_misc", "Putting mask off..", 3000, false, true, {
+        QBCore.Functions.Progressbar("chain_misc", "Taking mask off..", 3000, false, true, {
             disableMovement = false,
             disableCarMovement = false,
             disableMouse = false,
@@ -716,7 +716,7 @@ RegisterNetEvent('masks:client:roodc', function(itemName)
         end)
     elseif wearing then
         TriggerEvent('animations:client:EmoteCommandStart', {"adjusttie"})
-        QBCore.Functions.Progressbar("chain_misc", "Putting mask off..", 3000, false, true, {
+        QBCore.Functions.Progressbar("chain_misc", "Taking mask off..", 3000, false, true, {
             disableMovement = false,
             disableCarMovement = false,
             disableMouse = false,
@@ -748,7 +748,7 @@ RegisterNetEvent('masks:client:clown', function(itemName)
         end)
     elseif wearing then
         TriggerEvent('animations:client:EmoteCommandStart', {"adjusttie"})
-        QBCore.Functions.Progressbar("chain_misc", "Putting mask off..", 3000, false, true, {
+        QBCore.Functions.Progressbar("chain_misc", "Taking mask off..", 3000, false, true, {
             disableMovement = false,
             disableCarMovement = false,
             disableMouse = false,
@@ -780,7 +780,7 @@ RegisterNetEvent('masks:client:gorilla', function(itemName)
         end)
     elseif wearing then
         TriggerEvent('animations:client:EmoteCommandStart', {"adjusttie"})
-        QBCore.Functions.Progressbar("chain_misc", "Putting mask off..", 3000, false, true, {
+        QBCore.Functions.Progressbar("chain_misc", "Taking mask off..", 3000, false, true, {
             disableMovement = false,
             disableCarMovement = false,
             disableMouse = false,
@@ -812,7 +812,7 @@ RegisterNetEvent('masks:client:paard', function(itemName)
         end)
     elseif wearing then
         TriggerEvent('animations:client:EmoteCommandStart', {"adjusttie"})
-        QBCore.Functions.Progressbar("chain_misc", "Putting mask off..", 3000, false, true, {
+        QBCore.Functions.Progressbar("chain_misc", "Taking mask off..", 3000, false, true, {
             disableMovement = false,
             disableCarMovement = false,
             disableMouse = false,
@@ -844,7 +844,7 @@ RegisterNetEvent('masks:client:paardu', function(itemName)
         end)
     elseif wearing then
         TriggerEvent('animations:client:EmoteCommandStart', {"adjusttie"})
-        QBCore.Functions.Progressbar("chain_misc", "Putting mask off..", 3000, false, true, {
+        QBCore.Functions.Progressbar("chain_misc", "Taking mask off..", 3000, false, true, {
             disableMovement = false,
             disableCarMovement = false,
             disableMouse = false,
@@ -876,7 +876,7 @@ RegisterNetEvent('masks:client:skullr', function(itemName)
         end)
     elseif wearing then
         TriggerEvent('animations:client:EmoteCommandStart', {"adjusttie"})
-        QBCore.Functions.Progressbar("chain_misc", "Putting mask off..", 3000, false, true, {
+        QBCore.Functions.Progressbar("chain_misc", "Taking mask off..", 3000, false, true, {
             disableMovement = false,
             disableCarMovement = false,
             disableMouse = false,
@@ -908,7 +908,7 @@ RegisterNetEvent('masks:client:masker3', function(itemName)
         end)
     elseif wearing then
         TriggerEvent('animations:client:EmoteCommandStart', {"adjusttie"})
-        QBCore.Functions.Progressbar("chain_misc", "Putting mask off..", 3000, false, true, {
+        QBCore.Functions.Progressbar("chain_misc", "Taking mask off..", 3000, false, true, {
             disableMovement = false,
             disableCarMovement = false,
             disableMouse = false,
@@ -940,7 +940,7 @@ RegisterNetEvent('masks:client:helm1', function(itemName)
         end)
     elseif wearing then
         TriggerEvent('animations:client:EmoteCommandStart', {"adjusttie"})
-        QBCore.Functions.Progressbar("chain_misc", "Putting helmet off..", 3000, false, true, {
+        QBCore.Functions.Progressbar("chain_misc", "Taking helmet off..", 3000, false, true, {
             disableMovement = false,
             disableCarMovement = false,
             disableMouse = false,
@@ -972,7 +972,7 @@ RegisterNetEvent('masks:client:helm2', function(itemName)
         end)
     elseif wearing then
         TriggerEvent('animations:client:EmoteCommandStart', {"adjusttie"})
-        QBCore.Functions.Progressbar("chain_misc", "Putting helmet off..", 3000, false, true, {
+        QBCore.Functions.Progressbar("chain_misc", "Taking helmet off..", 3000, false, true, {
             disableMovement = false,
             disableCarMovement = false,
             disableMouse = false,
@@ -1004,7 +1004,7 @@ RegisterNetEvent('masks:client:helm3', function(itemName)
         end)
     elseif wearing then
         TriggerEvent('animations:client:EmoteCommandStart', {"adjusttie"})
-        QBCore.Functions.Progressbar("chain_misc", "Putting helmet off..", 3000, false, true, {
+        QBCore.Functions.Progressbar("chain_misc", "Taking helmet off..", 3000, false, true, {
             disableMovement = false,
             disableCarMovement = false,
             disableMouse = false,
@@ -1036,7 +1036,7 @@ RegisterNetEvent('masks:client:helm4', function(itemName)
         end)
     elseif wearing then
         TriggerEvent('animations:client:EmoteCommandStart', {"adjusttie"})
-        QBCore.Functions.Progressbar("chain_misc", "Putting helmet off..", 3000, false, true, {
+        QBCore.Functions.Progressbar("chain_misc", "Taking helmet off..", 3000, false, true, {
             disableMovement = false,
             disableCarMovement = false,
             disableMouse = false,
@@ -1068,7 +1068,7 @@ RegisterNetEvent('masks:client:helm5', function(itemName)
         end)
     elseif wearing then
         TriggerEvent('animations:client:EmoteCommandStart', {"adjusttie"})
-        QBCore.Functions.Progressbar("chain_misc", "Putting helmet off..", 3000, false, true, {
+        QBCore.Functions.Progressbar("chain_misc", "Taking helmet off..", 3000, false, true, {
             disableMovement = false,
             disableCarMovement = false,
             disableMouse = false,
@@ -1100,7 +1100,7 @@ RegisterNetEvent('masks:client:helm6', function(itemName)
         end)
     elseif wearing then
         TriggerEvent('animations:client:EmoteCommandStart', {"adjusttie"})
-        QBCore.Functions.Progressbar("chain_misc", "Putting helmet off..", 3000, false, true, {
+        QBCore.Functions.Progressbar("chain_misc", "Taking helmet off..", 3000, false, true, {
             disableMovement = false,
             disableCarMovement = false,
             disableMouse = false,
@@ -1132,7 +1132,7 @@ RegisterNetEvent('masks:client:helm7', function(itemName)
         end)
     elseif wearing then
         TriggerEvent('animations:client:EmoteCommandStart', {"adjusttie"})
-        QBCore.Functions.Progressbar("chain_misc", "Putting helmet off..", 3000, false, true, {
+        QBCore.Functions.Progressbar("chain_misc", "Taking helmet off..", 3000, false, true, {
             disableMovement = false,
             disableCarMovement = false,
             disableMouse = false,
@@ -1165,7 +1165,7 @@ RegisterNetEvent('masks:client:helm8', function(itemName)
         end)
     elseif wearing then
         TriggerEvent('animations:client:EmoteCommandStart', {"adjusttie"})
-        QBCore.Functions.Progressbar("chain_misc", "Putting helmet off..", 3000, false, true, {
+        QBCore.Functions.Progressbar("chain_misc", "Taking helmet off..", 3000, false, true, {
             disableMovement = false,
             disableCarMovement = false,
             disableMouse = false,
