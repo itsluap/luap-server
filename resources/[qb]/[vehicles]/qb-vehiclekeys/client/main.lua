@@ -196,26 +196,24 @@ RegisterNetEvent('qb-vehiclekeys:client:ToggleEngine', function()
 end)
 
 RegisterNetEvent('qb-vehiclekeys:client:GiveKeys', function(id)
-    print("starting give keys")
     local targetVehicle = GetVehicle()
-    print(targetVehicle)
 
     if targetVehicle then
         local targetPlate = QBCore.Functions.GetPlate(targetVehicle)
         if HasKeys(targetPlate) then
             if id and type(id) == "number" then -- Give keys to specific ID
                 GiveKeys(id, targetPlate)
-            elseif targetVehicle then
+            else
                 if IsPedSittingInVehicle(PlayerPedId(), targetVehicle) then -- Give keys to everyone in vehicle
                     local otherOccupants = GetOtherPlayersInVehicle(targetVehicle)
                     for p=1,#otherOccupants do
                         TriggerServerEvent('qb-vehiclekeys:server:GiveVehicleKeys', GetPlayerServerId(NetworkGetPlayerIndexFromPed(otherOccupants[p])), targetPlate)
                     end
-                else -- Give keys to closest player
+                elseif QBCore.Functions.GetClosestPlayer() ~= nil then  -- Give keys to closest player
                     GiveKeys(GetPlayerServerId(QBCore.Functions.GetClosestPlayer()), targetPlate)
+                else
+                    QBCore.Functions.Notify(Lang:t("notify.llpp"), 'error')
                 end
-            else
-                QBCore.Functions.Notify(Lang:t("notify.llpp"), 'error')
             end
         else
             QBCore.Functions.Notify(Lang:t("notify.ydhk"), 'error')
