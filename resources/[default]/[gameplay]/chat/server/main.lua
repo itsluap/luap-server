@@ -1,6 +1,6 @@
 
 
-local QBCore = exports['qb-core']:GetCoreObject()
+--local QBCore = exports['qb-core']:GetCoreObject()
 
 
 function getIdentity(source)
