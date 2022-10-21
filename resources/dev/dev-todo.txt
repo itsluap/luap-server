@@ -3,19 +3,15 @@
 
 To Do:
     - vehicle shop (add vehicles to qbcore)
-    - test okokContract
-    - see if panicbutton is played to everyone, should only be heard by police
     - check if burgershot has boss management
     - check shops around whole city
     -
     - make sure all clothes added work correctly
     - make sure addon vehicles are not oversized
     -
-    -
-    - test all criminal activities and all civilian jobs
-    -
 
 In Script:
+    - discord webhooks
     - add durability to ifak
     - redo all heists
     - add bowling script

@@ -1,13 +1,13 @@
 
-    - find someone else to help out and test stuff with - give mlo/money as reward
-
 Necessities:
-    - Police: cuffing, dragging, seating, jailing, mdt, dispatch, armory, mlos, better cars
-    - EMS   : calls from downed players, heal players, revive players, body bag, stretcher, airmed, better ambulance
-    - test all criminal activities and all civilian jobs
-    -
+    - find someone else to help out and test stuff with - give mlo/money as reward
     - vehicle handing is basically fucked like always - will pay for something nopixel like
+
+Testing:
+    - test all criminal activities and all civilian jobs
+    - test okokContract
     - apartments should be raidable now
+    - see if panicbutton is played to everyone, should only be heard by police
 
 Bugs:
     - players flicker invisible inside mlos - ask in gabz support chat about this
@@ -23,9 +23,15 @@ Notes:
     - can use ifak to heal self
 
 
+
+
+
+
+
+
+
 Other:
     -
-    - discord webhooks !!! CAN DO AT WORK
     - steal players from other servers (give out a beta test reward) NEED A LOYAL TEAM - reach out to old fivem friends
     -
     -
