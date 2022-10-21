@@ -26,6 +26,7 @@ client_scripts {
 	'scripts/cp_config.lua', -- Both Islands visible in game, however opposite island gets concealed (ENABLED BY DEFAULT, Island hangar won't work otherwise)
 	'scripts/zones.lua', -- Displays all map zones, fixing the bug of showing North Yankton, and instead showing Cayo Perico
 	--'scripts/peds_config.lua', -- Invincible peds that appear on the island, ie merryweather
+	'scripts/main_peds.lua', -- Don't touch
 	'scripts/static_emitters.lua' -- Disables static emitters from Arena Wars location near North Yankton / Cayo Perico
 	
 	
