@@ -196,7 +196,7 @@ Config.MiscellanceousShop = {
     items = {
         [1] = {
             name = "armor",
-            price = 2500,
+            price = 1700,
             amount = 100,
             info = { quality = 100, },
             type = "item",
@@ -204,7 +204,7 @@ Config.MiscellanceousShop = {
         },
         [2] = {
             name = "heavyarmor",
-            price = 5000,
+            price = 2500,
             amount = 100,
             info = { quality = 100, },
             type = "item",
@@ -212,7 +212,7 @@ Config.MiscellanceousShop = {
         },
         [3] = {
             name = "labkey",
-            price = 20000,
+            price = 9000,
             amount = 100,
             info = { quality = 100, },
             type = "item",
@@ -220,7 +220,7 @@ Config.MiscellanceousShop = {
         },
         [4] = {
             name = "trojan_usb",
-            price = 15000,
+            price = 9000,
             amount = 100,
             info = { quality = 100, },
             type = "item",
@@ -228,7 +228,7 @@ Config.MiscellanceousShop = {
         },
         [5] = {
             name = "thermite",
-            price = 15000,
+            price = 7000,
             amount = 100,
             info = { quality = 100, },
             type = "item",
@@ -236,7 +236,7 @@ Config.MiscellanceousShop = {
         },
         [6] = {
             name = "drill",
-            price = 7500,
+            price = 7000,
             amount = 100,
             info = { quality = 100, },
             type = "item",
@@ -244,7 +244,7 @@ Config.MiscellanceousShop = {
         },
         [7] = {
             name = "advancedlockpick",
-            price = 3500,
+            price = 1750,
             amount = 100,
             info = { quality = 100, },
             type = "item",
@@ -252,7 +252,7 @@ Config.MiscellanceousShop = {
         },
         [8] = {
             name = "gatecrack",
-            price = 15000,
+            price = 9000,
             amount = 100,
             info = { quality = 100, },
             type = "item",
@@ -268,7 +268,7 @@ Config.MiscellanceousShop = {
         },
         [10] = {
             name = "rifle_ammo",
-            price = 1500,
+            price = 150,
             amount = 100,
             info = { quality = 100, },
             type = "item",
