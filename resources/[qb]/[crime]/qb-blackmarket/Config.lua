@@ -163,7 +163,7 @@ Config.AssaultWeaponsShop = {
             type = "item",
             slot = 3,
         },
-        [1] = {
+        [2] = {
             name = "weapon_assaultrifle",
             price = 4800,
             amount = 100,
@@ -171,7 +171,7 @@ Config.AssaultWeaponsShop = {
             type = "item",
             slot = 2,
         },
-        [4] = {
+        [3] = {
             name = "weapon_compactrifle",
             price = 3700,
             amount = 100,
@@ -179,7 +179,7 @@ Config.AssaultWeaponsShop = {
             type = "item",
             slot = 1,
         },
-        [5] = {
+        [4] = {
             name = "weapon_bulluprifle",
             price = 6200,
             amount = 100,
