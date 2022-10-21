@@ -206,6 +206,7 @@ RegisterNetEvent('qb-vehiclekeys:client:GiveKeys', function(id)
             else
                 if IsPedSittingInVehicle(PlayerPedId(), targetVehicle) then -- Give keys to everyone in vehicle
                     local otherOccupants = GetOtherPlayersInVehicle(targetVehicle)
+                    print(otherOccupants)
                     if otherOccupants == nil then
                         QBCore.Functions.Notify(Lang:t("notify.llpp"), 'error')
                     end
