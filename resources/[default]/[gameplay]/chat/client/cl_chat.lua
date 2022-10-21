@@ -225,7 +225,7 @@ Citizen.CreateThread(function()
         shouldBeHidden = true
       end
 
-      if IsControlJustReleased(0, 19) then
+      if IsControlPressed(0, 19) then
         shouldBeHidden = true
       end
 
