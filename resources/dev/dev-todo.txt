@@ -2,26 +2,9 @@
 
 
 To Do:
-    - find someone else to help out and test stuff with - give mlo/money as reward
-    - search whole server for siren = 0
-    - add durability to ifak
-    - make paleto bank robbery better, check pacific bank
-    - bowling script
-    - bypass qb-spawn for characters that arent new? - file needed to do this is encrypted
-    - make lockpicking car doors medium difficulty - ask lin and icey about this
-    - stripclub script from dream (or try to find online) - working on converting
-    - finish rewriting boosting script - should only need a few touch ups
-    - finish updating item animations - (updated item animations to show props - added qb-assets) !!! CAN DO AT WORK
-    - vehicle shop (go through vehicles, check prices, only basic cars available at pdm)
-    - ps-drugsproccessing: needs drug effects(core-drugs) and add to corner selling, add ps-buffs after that
-    - rewrite heist/robbery scripts with ps-ui / think about other ways to implement ps-ui
-    - 
-    -
-    - check sheriff clothing - works but doesnt show up in qb-clothing
+    - vehicle shop (add vehicles to qbcore)
     - test okokContract
     - see if panicbutton is played to everyone, should only be heard by police
-    -
-    -
     - check if burgershot has boss management
     - check shops around whole city
     -
@@ -31,13 +14,14 @@ To Do:
     -
     - test all criminal activities and all civilian jobs
     -
-    -
-    - discord webhooks !!! CAN DO AT WORK
-    - steal players from other servers (give out a beta test reward) NEED A LOYAL TEAM - reach out to old fivem friends
-    -
-    -
-    - create new user guide - create some faqs - get discord ready !!! CAN DO AT WORK
-    - create website - needs forums, applications, and tebex store !!! CAN DO AT WORK
-    -
-    -
-    - go through and remove unneeded commands (search all server files)
+
+In Script:
+    - add durability to ifak
+    - redo all heists
+    - add bowling script
+    - lock picking car doors - check this, see if it needs to be harder or easier
+    - test boosting script / make sure boosting classes arent fucked
+    - core-drugs (steal code for drug effects) (add drugs to corning selling) (add drugs to ps-buffs)
+    - stripclub script from dream (work on rewriting this)
+    - update item animations (added qb-assets from dream to do this)
+

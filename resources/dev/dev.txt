@@ -1,5 +1,5 @@
 
-
+    - find someone else to help out and test stuff with - give mlo/money as reward
 
 Necessities:
     - Police: cuffing, dragging, seating, jailing, mdt, dispatch, armory, mlos, better cars
@@ -21,3 +21,16 @@ Notes:
     - /grantlicense (for weapon license and driver license) (police command)
     - can exchange cryptosticks at lesters
     - can use ifak to heal self
+
+
+Other:
+    -
+    - discord webhooks !!! CAN DO AT WORK
+    - steal players from other servers (give out a beta test reward) NEED A LOYAL TEAM - reach out to old fivem friends
+    -
+    -
+    - create new user guide - create some faqs - get discord ready !!! CAN DO AT WORK
+    - create website - needs forums, applications, and tebex store !!! CAN DO AT WORK
+    -
+    -
+    - go through and remove unneeded commands (search all server files)
