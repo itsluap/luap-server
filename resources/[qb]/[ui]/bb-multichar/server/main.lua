@@ -7,7 +7,7 @@ function L2_1()
   L1_2 = 1500
   L0_2(L1_2)
   L0_2 = print
-  L1_2 = "^5[barbaroNNs Multichar] ^7Loaded successfully"
+  L1_2 = "^5Multicharacter ^7 - Loaded successfully"
   L0_2(L1_2)
 end
 L1_1(L2_1)
