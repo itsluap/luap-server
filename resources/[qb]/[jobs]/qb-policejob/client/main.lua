@@ -222,8 +222,6 @@ CreateThread(function()
     end
 end)
 
-exports['police']:CanRaid()
-
 exports("CanRaid", function()
     local retval = false
     local PlayerData = QBCore.Functions.GetPlayerData()
@@ -232,3 +230,5 @@ exports("CanRaid", function()
     end
     return retval
 end)
+
+exports['police']:CanRaid()
