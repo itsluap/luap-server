@@ -1,15 +1,30 @@
 -------------------------------------------------------------------- CREATE PEDS -------------------------------------------------------------------
+IslandPeds = {
+	{
+		model = 'a_c_panther',
+		animation = {
+			dict = 'creatures@cougar@amb@world_cougar_rest@base',
+			name = 'base'
+		},
+
+		locations = {
+
+			{ x = 4982.1074,  y = -5765.036, z = 19.94, heading = 128.0382 }	-- PANTHER AT CAYO PIERCO
+
+		}
+	},
+}
 
 
 function IsNearby(playerCoords, pedCoords)
-	return #(playerCoords - vector3(pedCoords.x, pedCoords.y, pedCoords.z)) <= Config.SpawnDistance
+	return #(playerCoords - vector3(pedCoords.x, pedCoords.y, pedCoords.z)) <= 400
 end
 
 Citizen.CreateThread(function()
 	while true do
 		local playerCoords = GetEntityCoords(PlayerPedId())
 
-		for _, pedGroup in ipairs(Config.Peds) do
+		for _, pedGroup in ipairs(IslandPeds) do
 			for _, location in ipairs(pedGroup.locations) do
 				local nearby = IsNearby(playerCoords, location)
 				local spawned = location.handle and DoesEntityExist(location.handle)
@@ -94,7 +109,7 @@ end)
 
 AddEventHandler('onResourceStop', function(resourceName)
 	if GetCurrentResourceName() == resourceName then
-		for _, pedGroup in ipairs(Config.Peds) do
+		for _, pedGroup in ipairs(IslandPeds) do
 			for _, location in ipairs(pedGroup.locations) do
 				if DoesEntityExist(location.handle) then
 					DeletePed(location.handle)
