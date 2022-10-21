@@ -168,7 +168,7 @@ function PlaneSpawn()
 	
     while true do
     	Citizen.Wait(1)
-    	 DrawText3D(2131.38, 4807.92, 41.2, 116.93, "Cocaine Plane.")
+    	 DrawText3D(2131.38, 4807.92, 41.2, "Coke Plane")
 		 if #(GetEntityCoords(PlayerPedId()) - vector3(location.parking.x, location.parking.y, location.parking.z)) < 8.0 then
     	 	return
     	 end
