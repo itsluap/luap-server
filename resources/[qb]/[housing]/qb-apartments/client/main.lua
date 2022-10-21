@@ -452,8 +452,9 @@ RegisterNetEvent('apartments:client:setupSpawnUI', function(cData)
                 TriggerEvent('qb-spawn:client:setupSpawns', cData, true, Apartments.Locations)
                 TriggerEvent('qb-spawn:client:openUI', true)
             else
-                TriggerEvent('qb-spawn:client:setupSpawns', cData, false, nil)
-                TriggerEvent('qb-spawn:client:openUI', true)
+                --TriggerEvent('qb-spawn:client:setupSpawns', cData, false, nil)
+                --TriggerEvent('qb-spawn:client:openUI', true)
+                TriggerEvent('qb-spawn:client:luap:spawn')
             end
         end
     end, cData.citizenid)
