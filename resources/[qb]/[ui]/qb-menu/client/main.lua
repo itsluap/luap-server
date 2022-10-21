@@ -64,7 +64,7 @@ RegisterCommand('+playerfocus', function()
     end
 end)
 
-RegisterKeyMapping('+playerFocus', 'Give Menu Focus', 'keyboard', 'LMENU')
+RegisterKeyMapping('+playerFocus', 'Give Menu Focus', 'mouse_button', 'MOUSE_RIGHT')
 
 exports('openMenu', openMenu)
 exports('closeMenu', closeMenu)
