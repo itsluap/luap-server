@@ -196,6 +196,7 @@ RegisterNetEvent('qb-vehiclekeys:client:ToggleEngine', function()
 end)
 
 RegisterNetEvent('qb-vehiclekeys:client:GiveKeys', function(id)
+    print("starting give keys")
     local targetVehicle = GetVehicle()
 
     if targetVehicle then
