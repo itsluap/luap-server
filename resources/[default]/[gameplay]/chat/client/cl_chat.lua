@@ -2,7 +2,6 @@ local chatInputActive = false
 local chatInputActivating = false
 local chatHidden = true
 local chatLoaded = false
-local hidchat = false
 
 RegisterNetEvent('chatMessage')
 RegisterNetEvent('chat:addTemplate')
@@ -172,7 +171,6 @@ AddEventHandler('onClientResourceStart', function(resName)
 
   refreshCommands()
   refreshThemes()
-  --chatLoaded = true
 end)
 
 AddEventHandler('onClientResourceStop', function(resName)
@@ -225,10 +223,6 @@ Citizen.CreateThread(function()
       if IsScreenFadedOut() or IsPauseMenuActive() then
         shouldBeHidden = true
       end
-
-      --if IsControlPressed(0, 19) then
-      --  shouldBeHidden = true
-      --end
 
       if (shouldBeHidden and not chatHidden) or (not shouldBeHidden and chatHidden) then
         chatHidden = shouldBeHidden
