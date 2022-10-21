@@ -220,6 +220,7 @@ Citizen.CreateThread(function()
     end
 
     if chatLoaded then
+      print("chatloaded")
       local shouldBeHidden = false
 
       if IsScreenFadedOut() or IsPauseMenuActive() then
