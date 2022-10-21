@@ -215,4 +215,9 @@ QBCore.Functions.CreateUseableItem("helm8", function(source, item)
     TriggerClientEvent("masks:client:helm8", src, item.name)
 end)
 
+QBCore.Functions.CreateUseableItem("blauw", function(source, item)
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    TriggerClientEvent("masks:client:blauw", src, item.name)
+end)
 
