@@ -224,6 +224,13 @@ Citizen.CreateThread(function()
         shouldBeHidden = true
       end
 
+      if IsControlPressed(0, 19) then
+        SendNUIMessage({
+          type = 'ON_SCREEN_STATE_CHANGE',
+          shouldHide = true
+        })
+      end
+
       if (shouldBeHidden and not chatHidden) or (not shouldBeHidden and chatHidden) then
         chatHidden = shouldBeHidden
 
