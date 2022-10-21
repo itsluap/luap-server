@@ -8,7 +8,7 @@ To Do:
     -
     - make sure all clothes added work correctly
     - make sure addon vehicles are not oversized
-    -
+    - make sure weight system makes sense
 
 In Script:
     - discord webhooks

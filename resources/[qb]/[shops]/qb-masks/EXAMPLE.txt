@@ -1,0 +1,89 @@
+Example to adding more masks 
+
+In qb-core/shared/items.lua add this
+
+['']  					= {['name'] = '', 			['label'] = '',		['weight'] = 1,  		['type'] = 'item',  	['image'] = 'mask.png',  			['unique'] = true,  	['useable'] = true,  	['shouldClose'] = true,  	['combinable'] = nil, 	['description'] = ''},
+
+
+in qb-masks/client.lua add this
+
+RegisterNetEvent('masks:client:*event_name_here*', function(itemName)
+    if not wearing then
+        TriggerEvent('animations:client:EmoteCommandStart', {"adjusttie"})
+        QBCore.Functions.Progressbar("chain_misc", "Putting on mask..", 3000, false, true, {
+        
+            disableMovement = false,
+            disableCarMovement = false,
+            disableMouse = false,
+            disableCombat = true,
+        }, {}, {}, {}, function() -- Done
+            SetPedComponentVariation(ped, 1, 54, 0) --- [1 is for the mask Do not touch] the 54 is for number of the mask and 0 is for number texture
+            wearing = true
+            
+            TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+        end)
+    else
+        TriggerEvent('animations:client:EmoteCommandStart', {"adjusttie"})
+        QBCore.Functions.Progressbar("chain_misc", "Taking off mask..", 3000, false, true, {
+            disableMovement = false,
+            disableCarMovement = false,
+            disableMouse = false,
+            disableCombat = true,
+        }, {}, {}, {}, function() -- Done
+            SetPedComponentVariation(ped, 1, 0, 0)
+            wearing = false
+            
+            TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+        end)
+    end
+end)
+
+
+in qb-masks/server.lua add this
+QBCore.Functions.CreateUseableItem("*item_name_here*", function(source, item)
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    TriggerClientEvent("masks:client:*name_of_event_here*", src, item.name)
+end)
+
+----Example to adding more helmet
+
+ 
+RegisterNetEvent('masks:client:*event_name_here*', function(itemName)
+    if not wearing then
+        TriggerEvent('animations:client:EmoteCommandStart', {"adjusttie"})
+        QBCore.Functions.Progressbar("chain_misc", "Putting helmet on..", 3000, false, true, {
+        
+            disableMovement = false,
+            disableCarMovement = false,
+            disableMouse = false,
+            disableCombat = true,
+        }, {}, {}, {}, function() -- Done
+            SetPedPropIndex(ped, 0, 1, 0) --- [0 is for the helm prop Do not touch] the 1 is for number of the helm and 0 is for number texture
+            wearing = true
+            
+            TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+        end)
+    else
+        TriggerEvent('animations:client:EmoteCommandStart', {"adjusttie"})
+        QBCore.Functions.Progressbar("chain_misc", "Taking helmet off..", 3000, false, true, {
+            disableMovement = false,
+            disableCarMovement = false,
+            disableMouse = false,
+            disableCombat = true,
+        }, {}, {}, {}, function() -- Done
+            SetPedPropIndex(ped, 0, 11, 0) [Do not touch]
+            wearing = false
+            
+            TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+        end)
+    end
+end)
+
+
+in qb-masks/server.lua add this
+QBCore.Functions.CreateUseableItem("*helm1*", function(source, item)
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    TriggerClientEvent("masks:client:*name_of_event_here*", src, item.name)
+end)
