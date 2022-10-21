@@ -171,7 +171,6 @@ AddEventHandler('onClientResourceStart', function(resName)
 
   refreshCommands()
   refreshThemes()
-  --chatLoaded = true
 end)
 
 AddEventHandler('onClientResourceStop', function(resName)
@@ -222,10 +221,6 @@ Citizen.CreateThread(function()
       local shouldBeHidden = false
 
       if IsScreenFadedOut() or IsPauseMenuActive() then
-        shouldBeHidden = true
-      end
-
-      if IsControlPressed(0, 19) or IsControlJustReleased(0, 19) then
         shouldBeHidden = true
       end
 
