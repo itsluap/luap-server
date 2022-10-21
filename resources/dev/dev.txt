@@ -22,7 +22,17 @@ Notes:
     - can exchange cryptosticks at lesters
     - can use ifak to heal self
 
-
+Final (Ready to Launch):
+    - make sure all scripts are updated (qbcore and project sloth)
+    - cars should be 100% (no light bugs) (no oversized textures) (no crazy handling)
+    - clothing should be 100% (no glitched out clothing) (should be in qb-clothing)
+    - mlos should be 100% (no bad collisions) (no player flickering) (locks on buildings needed)
+    - items should be 100% (correct items in animations) (drug/alcohol effects) (health,thirst,stress)
+    - all jobs need a final test (police, ems, civilian)
+    - all criminal activities need a final test
+    - create new user guide - create some faqs - get discord ready
+    - create website - needs forums, applications, and tebex store
+    - 
 
 
 
@@ -33,10 +43,4 @@ Notes:
 Other:
     -
     - steal players from other servers (give out a beta test reward) NEED A LOYAL TEAM - reach out to old fivem friends
-    -
-    -
-    - create new user guide - create some faqs - get discord ready !!! CAN DO AT WORK
-    - create website - needs forums, applications, and tebex store !!! CAN DO AT WORK
-    -
-    -
     - go through and remove unneeded commands (search all server files)
