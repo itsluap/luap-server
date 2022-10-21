@@ -1,10 +1,10 @@
-local TRClassicBlackMarketPed
+local QBClassicBlackMarketPed
 
 -- Remove ped model on resource stop.
 
 local function RemoveTRPed()
-    if DoesEntityExist(TRClassicBlackMarketPed) then
-        DeletePed(TRClassicBlackMarketPed)
+    if DoesEntityExist(QBClassicBlackMarketPed) then
+        DeletePed(QBClassicBlackMarketPed)
     end
 end
 
@@ -31,22 +31,22 @@ CreateThread(function()
     local Coords = Config.Location.Coords
     local PedHash = Config.Location.ModelHash
     local PedModel = Config.Location.ModelName
-    if not DoesEntityExist(TRClassicBlackMarketPed) then
+    if not DoesEntityExist(QBClassicBlackMarketPed) then
         RequestModel( GetHashKey(PedModel) )
         while ( not HasModelLoaded( GetHashKey(PedModel) ) ) do
             Wait(1)
         end
-        TRClassicBlackMarketPed = CreatePed(1, PedHash, Coords, false, true)
-        FreezeEntityPosition(TRClassicBlackMarketPed, true)
-        SetEntityInvincible(TRClassicBlackMarketPed, true)
-        SetBlockingOfNonTemporaryEvents(TRClassicBlackMarketPed, true)
+        QBClassicBlackMarketPed = CreatePed(1, PedHash, Coords, false, true)
+        FreezeEntityPosition(QBClassicBlackMarketPed, true)
+        SetEntityInvincible(QBClassicBlackMarketPed, true)
+        SetBlockingOfNonTemporaryEvents(QBClassicBlackMarketPed, true)
     end
-    exports['qb-target']:AddTargetEntity(TRClassicBlackMarketPed, {
+    exports['qb-target']:AddTargetEntity(QBClassicBlackMarketPed, {
         options = {
             {
                 num = 1,
                 type = "client",
-                event = "tr-blackmarket:OpenShop",
+                event = "qb-blackmarket:OpenShop",
                 label = Config.Text["TargetLabel"],
                 icon = Config.Icons["Eyeicon"],
             }
@@ -57,7 +57,7 @@ end)
 
 -- qb-menu
 
-RegisterNetEvent('tr-blackmarket:OpenShop', function()
+RegisterNetEvent('qb-blackmarket:OpenShop', function()
     local BlackMarket = {
         {
             header = Config.Text['PedHeader'],
@@ -68,35 +68,35 @@ RegisterNetEvent('tr-blackmarket:OpenShop', function()
             header = Config.Text['Pistols'],
             icon = Config.Icons['Pistol'],
             params = {
-                event = "tr-blackmarket:PistolShop",
+                event = "qb-blackmarket:PistolShop",
             }
         },
         {
             header = Config.Text['SubMachineGuns'],
             icon = Config.Icons['SubMachineGuns'],
             params = {
-                event = "tr-blackmarket:SubMachineGunsShop",
+                event = "qb-blackmarket:SubMachineGunsShop",
             }
         },
         {
             header = Config.Text['Shotguns'],
             icon = Config.Icons['Shotguns'],
             params = {
-                event = "tr-blackmarket:ShotGunsShop",
+                event = "qb-blackmarket:ShotGunsShop",
             }
         },
         {
             header = Config.Text['AssaultWeapons'],
             icon = Config.Icons['AssaultWeapons'],
             params = {
-                event = "tr-blackmarket:AssaultWeaponsShop",
+                event = "qb-blackmarket:AssaultWeaponsShop",
             }
         },
         {
             header = Config.Text['Miscellanceous'],
             icon = Config.Icons['Miscellanceous'],
             params = {
-                event = "tr-blackmarket:MiscellanceousShop",
+                event = "qb-blackmarket:MiscellanceousShop",
             }
         },
     }
@@ -104,22 +104,22 @@ RegisterNetEvent('tr-blackmarket:OpenShop', function()
 end)
 
 -- BlackMarket Shop Event
-RegisterNetEvent("tr-blackmarket:PistolShop", function()
+RegisterNetEvent("qb-blackmarket:PistolShop", function()
 	TriggerServerEvent("inventory:server:OpenInventory", "shop", "market", Config.PistolShop)
 end)
 
-RegisterNetEvent("tr-blackmarket:SubMachineGunsShop", function()
+RegisterNetEvent("qb-blackmarket:SubMachineGunsShop", function()
 	TriggerServerEvent("inventory:server:OpenInventory", "shop", "market", Config.SubMachineGunShop)
 end)
 
-RegisterNetEvent("tr-blackmarket:ShotGunsShop", function()
+RegisterNetEvent("qb-blackmarket:ShotGunsShop", function()
 	TriggerServerEvent("inventory:server:OpenInventory", "shop", "market", Config.ShotGunShop)
 end)
 
-RegisterNetEvent("tr-blackmarket:AssaultWeaponsShop", function()
+RegisterNetEvent("qb-blackmarket:AssaultWeaponsShop", function()
 	TriggerServerEvent("inventory:server:OpenInventory", "shop", "market", Config.AssaultWeaponsShop)
 end)
 
-RegisterNetEvent("tr-blackmarket:MiscellanceousShop", function()
+RegisterNetEvent("qb-blackmarket:MiscellanceousShop", function()
 	TriggerServerEvent("inventory:server:OpenInventory", "shop", "market", Config.MiscellanceousShop)
 end)
