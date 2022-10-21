@@ -220,16 +220,15 @@ Citizen.CreateThread(function()
     end
 
     if chatLoaded then
-      print("chatloaded")
       local shouldBeHidden = false
 
       if IsScreenFadedOut() or IsPauseMenuActive() then
         shouldBeHidden = true
       end
 
-      if IsControlPressed(0, 19) then
-        shouldBeHidden = true
-      end
+      --if IsControlPressed(0, 19) then
+      --  shouldBeHidden = true
+      --end
 
       if (shouldBeHidden and not chatHidden) or (not shouldBeHidden and chatHidden) then
         chatHidden = shouldBeHidden
