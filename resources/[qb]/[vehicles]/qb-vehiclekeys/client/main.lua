@@ -202,22 +202,20 @@ RegisterNetEvent('qb-vehiclekeys:client:GiveKeys', function(id)
         local targetPlate = QBCore.Functions.GetPlate(targetVehicle)
         if HasKeys(targetPlate) then
             if id and type(id) == "number" then -- Give keys to specific ID
-                print("doing this 1")
                 GiveKeys(id, targetPlate)
             else
-                print("doing this 2")
                 if IsPedSittingInVehicle(PlayerPedId(), targetVehicle) then -- Give keys to everyone in vehicle
-                    print("doing this 1-1")
                     local otherOccupants = GetOtherPlayersInVehicle(targetVehicle)
                     for p=1,#otherOccupants do
                         TriggerServerEvent('qb-vehiclekeys:server:GiveVehicleKeys', GetPlayerServerId(NetworkGetPlayerIndexFromPed(otherOccupants[p])), targetPlate)
                     end
+                    if otherOccupants == nil then
+                        QBCore.Functions.Notify(Lang:t("notify.llpp"), 'error')
+                    end
                 elseif QBCore.Functions.GetClosestPlayer() ~= nil then  -- Give keys to closest player
-                    print("doing this 1-2")
                     GiveKeys(GetPlayerServerId(QBCore.Functions.GetClosestPlayer()), targetPlate)
                 else
-                    print("doing this 1-3")
-                    QBCore.Functions.Notify(Lang:t("notify.llpp"), 'error')
+                    QBCore.Functions.Notify(Lang:t("notify.nonear"), 'error')
                 end
             end
         else
