@@ -1,4 +1,4 @@
-TriggerServerEvent("dp:CheckVersion")
+
 
 rightPosition = {x = 1450, y = 100}
 leftPosition = {x = 0, y = 100}
