@@ -215,7 +215,7 @@ RegisterNetEvent('qb-vehiclekeys:client:GiveKeys', function(id)
                     GiveKeys(GetPlayerServerId(QBCore.Functions.GetClosestPlayer()), targetPlate)
                 end
             else
-                QBCore.Functions.Notify("No one nearby", 'error')
+                QBCore.Functions.Notify(Lang:t("notify.llpp"), 'error') llpp
             end
         else
             QBCore.Functions.Notify(Lang:t("notify.ydhk"), 'error')

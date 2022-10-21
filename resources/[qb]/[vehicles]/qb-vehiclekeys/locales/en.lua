@@ -1,6 +1,7 @@
 local Translations = {
     notify = {
         ydhk = 'You don\'t have keys to this vehicle.',
+        llpp = 'No one nearby.',
         nonear = 'There is nobody nearby to hand keys to',
         vlock = 'Vehicle locked!',
         vunlock = 'Vehicle unlocked!',
