@@ -16,7 +16,7 @@
       <animConvRoofWindowsAffected />
       <ptfxAssetName>null</ptfxAssetName>
       <audioNameHash>TEZERACT</audioNameHash>
-      <layout>LAYOUT_LOW_RACER_FORMULA5</layout>
+      <layout>LAYOUT_LOW</layout>
       <coverBoundOffsets>FORMULA_COVER_OFFSET_INFO</coverBoundOffsets>
       <explosionInfo>EXPLOSION_INFO_DEFAULT</explosionInfo>
       <scenarioLayout />
