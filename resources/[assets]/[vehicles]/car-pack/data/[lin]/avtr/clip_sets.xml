@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fwClipSetManager>
+  <clipSets>	
+	<Item type="fwClipSet" key="clipset@anim@veh@low_racer5@front@ds@base">
+      <fallbackId>clipset@veh@low@ds@base</fallbackId>
+      <clipDictionaryName>anim@veh@low_racer5@front@ds@base</clipDictionaryName>
+      <clipItems />
+      <moveNetworkFlags />
+    </Item>
+  </clipSets>
+  <clipDictionaryMetadatas>
+  </clipDictionaryMetadatas>
+</fwClipSetManager>
