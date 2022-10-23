@@ -58,7 +58,7 @@ CreateThread(function()
                         TriggerServerEvent('qb-vehiclekeys:server:setVehLockState', NetworkGetNetworkIdFromEntity(entering), 2)
                     else
                         TriggerServerEvent('qb-vehiclekeys:server:setVehLockState', NetworkGetNetworkIdFromEntity(entering), 1)
-                        TriggerServerEvent('qb-vehiclekeys:server:AcquireVehicleKeys', plate)
+                        --TriggerServerEvent('qb-vehiclekeys:server:AcquireVehicleKeys', plate)
 
                         --Make passengers flee
                         local pedsInVehicle = GetPedsInVehicle(entering)
