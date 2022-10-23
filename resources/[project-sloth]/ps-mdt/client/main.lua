@@ -3,7 +3,7 @@ local PlayerData = {}
 local CurrentCops = 0
 local isOpen = false
 local callSign = ""
-local tablet = 0
+local tabletObj = nil
 local tabletDict = "amb@code_human_in_bus_passenger_idles@female@tablet@base"
 local tabletAnim = "base"
 local tabletProp = `prop_cs_tablet`
@@ -17,16 +17,11 @@ CreateThread(function()
     end
 end)
 
--- (add server wide support for multiple jobs) --
+
 -- Events from qbcore
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
     PlayerData = QBCore.Functions.GetPlayerData()
     callSign = PlayerData.metadata.callsign
-    local Player = QBCore.Functions.GetPlayerData()
-    local job = Player.job.name
-    if AllowedJob(job) then
-        TriggerServerEvent('luap:isLEO')
-    end
 end)
 
 RegisterNetEvent('QBCore:Client:OnPlayerUnload', function()
@@ -36,11 +31,6 @@ end)
 
 RegisterNetEvent('QBCore:Client:OnJobUpdate', function(JobInfo)
     PlayerData.job = JobInfo
-    local Player = QBCore.Functions.GetPlayerData()
-    local job = Player.job.name
-    if AllowedJob(job) then
-        TriggerServerEvent('luap:isLEO')
-    end
 end)
 
 RegisterNetEvent('QBCore:Client:OnGangUpdate', function(GangInfo)
@@ -66,6 +56,14 @@ AddEventHandler('onResourceStart', function(resourceName)
     Wait(150)
     PlayerData = QBCore.Functions.GetPlayerData()
     callSign = PlayerData.metadata.callsign
+end)
+
+AddEventHandler('onResourceStop', function(resourceName)
+	if (GetCurrentResourceName() ~= resourceName) then return end
+    ClearPedSecondaryTask(PlayerPedId())
+    SetEntityAsMissionEntity(tabletObj)
+    DetachEntity(tabletObj, true, false)
+    DeleteObject(tabletObj)
 end)
 
 --====================================================================================
@@ -102,7 +100,7 @@ local function doAnimation()
     while not HasModelLoaded(tabletProp) do Citizen.Wait(100) end
 
     local plyPed = PlayerPedId()
-    local tabletObj = CreateObject(tabletProp, 0.0, 0.0, 0.0, true, true, false)
+    tabletObj = CreateObject(tabletProp, 0.0, 0.0, 0.0, true, true, false)
     local tabletBoneIndex = GetPedBoneIndex(plyPed, tabletBone)
 
     AttachEntityToEntity(tabletObj, plyPed, tabletBoneIndex, tabletOffset.x, tabletOffset.y, tabletOffset.z, tabletRot.x, tabletRot.y, tabletRot.z, true, false, false, false, 2, true)
