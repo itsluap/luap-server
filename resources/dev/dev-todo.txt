@@ -9,6 +9,9 @@ To Do:
     - make sure all clothes added work correctly
     - make sure addon vehicles are not oversized
     - make sure weight system makes sense
+    -
+    - setup tebex
+    - setup forums
 
 In Script:
     - discord webhooks
