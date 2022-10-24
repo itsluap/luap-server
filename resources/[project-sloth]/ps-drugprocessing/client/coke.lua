@@ -241,13 +241,12 @@ RegisterNetEvent('ps-drugprocessing:ProcessCocaPowder', function()
 				bakingsoda = Config.CokeProcessing.BakingSoda,
 				finescale = 1
 			}
+			
 			QBCore.Functions.TriggerCallback('ps-drugprocessing:validate_items', function(result)
 				if result.ret then
 					CutCokePowder()
 				else
-					print(result)
-					QBCore.Functions.Notify(Lang:t("error.no_item", {value = result.item}, {item = result.item}))
-					------------------------- items required minus items player has
+					QBCore.Functions.Notify(Lang:t("error.no_item", {item = result.item}))
 				end
 			end, check)
 		else
@@ -371,4 +370,15 @@ CreateThread(function()
             inCokeField = false
         end
     end)
+end)
+
+CreateThread(function()
+	local coords = GetEntityCoords(PlayerPedId(source))
+	if #(coords-Config.CircleZones.CokePowder.coords) < 5 then
+		exports['ps-ui']:StatusShow("Cocaine Cutting", {
+			"Required Items: 1x Fine Scale, 5x Baking Soda, 10x Cocaine",
+		})
+	else
+		exports['ps-ui']:StatusHide()
+	end
 end)
