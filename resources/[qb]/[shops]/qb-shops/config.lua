@@ -731,7 +731,7 @@ Config.Locations = {
         ["targetLabel"] = "Open Shop",
         ["products"] = Config.Products["masker"],
         ["showblip"] = true,
-        ["blipsprite"] = 362
+        ["blipsprite"] = 362,
         ["blipscale"] = 0.6,
         ["blipcolor"] = 0
     },
