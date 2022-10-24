@@ -6,8 +6,23 @@ local ParachuteEquiped = false
 local currentVest = nil
 local currentVestTexture = nil
 local healing = false
+local DRUNK_ANIM_SET = "move_m@drunk@verydrunk"
+local DRUNK_DRIVING_EFFECTS = {
+    1, -- brake
+    7, --turn left + accelerate
+    8, -- turn right + accelerate
+    23, -- accelerate
+    4, -- turn left 90 + braking
+    5, -- turn right 90 + braking
+}
 
 -- Functions
+
+local function getRandomDrunkCarTask()
+    math.randomseed(GetGameTimer())
+
+    return DRUNK_DRIVING_EFFECTS[math.random(#DRUNK_DRIVING_EFFECTS)]
+end
 
 local function loadAnimDict(dict)
     if HasAnimDictLoaded(dict) then return end
