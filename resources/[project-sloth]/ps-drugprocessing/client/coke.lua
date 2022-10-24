@@ -371,7 +371,7 @@ CreateThread(function()
         end
     end)
 end)
-
+--[[
 Citizen.CreateThread(function()
 	local coords = GetEntityCoords(PlayerPedId(source))
 	local nearcoke = false
@@ -385,3 +385,4 @@ Citizen.CreateThread(function()
 		end
 	end
 end)
+]]--
