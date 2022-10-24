@@ -372,7 +372,7 @@ CreateThread(function()
     end)
 end)
 
-CreateThread(function()
+Citizen.CreateThread(function()
 	local coords = GetEntityCoords(PlayerPedId(source))
 	local nearcoke = false
 	while true do
