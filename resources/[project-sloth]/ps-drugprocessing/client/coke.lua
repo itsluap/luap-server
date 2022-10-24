@@ -376,7 +376,7 @@ Citizen.CreateThread(function()
 	local coords = GetEntityCoords(PlayerPedId(source))
 	local nearcoke = false
 	while true do
-		if #(coords-Config.CircleZones.CokePowder.coords) < 5 then
+		if #(coords-Config.CircleZones.CokePowder.coords) < 3 then
 			exports['ps-ui']:StatusShow("Cocaine Cutting", {
 				"Required Items: 1x Fine Scale, 5x Baking Soda, 10x Cocaine",
 			})
