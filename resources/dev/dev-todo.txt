@@ -10,8 +10,8 @@ To Do:
     - make sure addon vehicles are not oversized
     - make sure weight system makes sense
     -
-    - setup tebex
-    - setup forums
+    - setup tebex -- can come after launch
+    - setup forums -- can come after launch
 
 In Script:
     - discord webhooks
@@ -25,3 +25,20 @@ In Script:
     - stripclub script from dream (work on rewriting this)
     - update item animations (added qb-assets from dream to do this)
 
+Testing:
+    - test okokContract
+    - apartments should be raidable now
+    - see if panicbutton is played to everyone, should only be heard by police
+    - vehicle handing is basically fucked like always - will pay for something nopixel like
+
+Final (Ready to Launch):
+    - make sure all scripts are updated (qbcore and project sloth)
+    - cars should be 100% (no light bugs) (no oversized textures) (no crazy handling)
+    - clothing should be 100% (no glitched out clothing) (should be in qb-clothing)
+    - mlos should be 100% (no bad collisions) (no player flickering) (locks on buildings needed)
+    - items should be 100% (correct items in animations) (drug/alcohol effects) (health,thirst,stress)
+    - all jobs need a final test (police, ems, civilian)
+    - all criminal activities need a final test
+    - create new user guide - create some faqs - get discord ready
+    - create website - needs forums, applications, and tebex store
+    - 
