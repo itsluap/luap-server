@@ -380,7 +380,7 @@ Citizen.CreateThread(function()
 			exports['ps-ui']:StatusShow("Cocaine Cutting", {
 				"Required Items: 1x Fine Scale, 5x Baking Soda, 10x Cocaine",
 			})
-		else
+		elseif #(coords-Config.CircleZones.CokePowder.coords) > 6 then
 			exports['ps-ui']:StatusHide()
 		end
 	end
