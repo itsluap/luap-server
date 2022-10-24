@@ -98,3 +98,19 @@ QBCore.Functions.CreateCallback('ps-drugprocessing:validate_items', function(sou
 	hasItems.item = table.concat(hasItems.items, ", ")
 	cb(hasItems)
 end)
+
+-- Work in Progress -- 
+--[[
+QBCore.Functions.CreateCallback('ps-drugprocessing:number_items', function(source, cb)
+   local src = source
+   local Player = QBCore.Functions.GetPlayer(src)
+   local items = 
+   local getitems = Player.Functions.GetItemByName(items)
+
+
+   if Player.PlayerData.Items ~= nil then
+	if getitems ~= nil then
+		if getitems.amount < 
+
+end)
+]]--
