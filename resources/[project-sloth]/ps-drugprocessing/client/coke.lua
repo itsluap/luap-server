@@ -5,6 +5,12 @@ local isPickingUp, isProcessing, inCokeField = false, false, false
 local nearcoke = false
 isLoggedIn = false
 
+RegisterNetEvent('QBCore:Client:OnPlayerLoaded')
+AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
+	isLoggedIn = true
+end)
+
+
 local function LoadAnimationDict(dict)
     RequestAnimDict(dict)
     while not HasAnimDictLoaded(dict) do
@@ -374,19 +380,13 @@ CreateThread(function()
     end)
 end)
 
-RegisterNetEvent('QBCore:Client:OnPlayerLoaded')
-AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
-	isLoggedIn = true
-end)
-
-
 Citizen.CreateThread(function()
 	local PlayerCoords = GetEntityCoords(GetPlayerPed(-1))
-	local Distance = #(PlayerCoords - Config.CircleZones.CokePowder.coords)
+	local Distance = #(PlayerCoords - vector3(1092.16, -3195.88, -38.2))
 	while true do
 		Citizen.Wait(4)
 		if isLoggedIn then
-			if Distance < 3 then
+			if Distance < 5 then
 				exports['ps-ui']:StatusShow("Cocaine Cutting", {
 					"Required Items: 1x Fine Scale, 5x Baking Soda, 10x Cocaine",
 				})
