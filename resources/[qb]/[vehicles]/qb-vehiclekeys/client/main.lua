@@ -402,8 +402,8 @@ function LockpickDoor(isAdvanced)
     exports['ps-ui']:Circle(function(success)
     if success then
         lockpickFinish(success)
-        TaskPlayAnim(ped, "veh@break_in@0h@p_m_one@", "low_force_entry_ds", 3.0, 3.0, -1, 16, 0, 0, 0, 0)
-	    else
+        TaskPlayAnim(ped, "veh@break_in@0h@p_m_one@", "low_force_entry_ds", 3.0, 3.0, 3000, 16, 0, 0, 0, 0)
+	else
         TriggerServerEvent('hud:server:GainStress', math.random(1, 4))
         QBCore.Functions.Notify("You failed lock-pick the vehicle !", "error")
 	    end
