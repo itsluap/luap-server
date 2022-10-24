@@ -22,6 +22,11 @@ end)
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
     PlayerData = QBCore.Functions.GetPlayerData()
     callSign = PlayerData.metadata.callsign
+    local Player = QBCore.Functions.GetPlayerData()
+    local job = Player.job.name
+    if AllowedJob(job) then
+        TriggerServerEvent('luap:isLEO')
+    end
 end)
 
 RegisterNetEvent('QBCore:Client:OnPlayerUnload', function()
@@ -31,6 +36,11 @@ end)
 
 RegisterNetEvent('QBCore:Client:OnJobUpdate', function(JobInfo)
     PlayerData.job = JobInfo
+    local Player = QBCore.Functions.GetPlayerData()
+    local job = Player.job.name
+    if AllowedJob(job) then
+        TriggerServerEvent('luap:isLEO')
+    end
 end)
 
 RegisterNetEvent('QBCore:Client:OnGangUpdate', function(GangInfo)

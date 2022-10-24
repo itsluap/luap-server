@@ -18,6 +18,7 @@ In Script:
     - add durability to ifak
     - redo all heists
     - add bowling script
+    - add multijob script
     - add better mechanic script (possibly tuner shop script thats bookmarked)
     - lock picking car doors - check this, see if it needs to be harder or easier
     - test boosting script / make sure boosting classes arent fucked
