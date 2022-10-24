@@ -404,8 +404,9 @@ function LockpickDoor(isAdvanced)
         TaskPlayAnim(ped, "veh@break_in@0h@p_m_one@", "low_force_entry_ds", 3.0, 3.0, 3000, 16, 0, 0, 0, 0)
         lockpickFinish(success)
 	else
+        TaskPlayAnim(ped, "veh@break_in@0h@p_m_one@", "low_force_entry_ds", 3.0, 3.0, 3000, 16, 0, 0, 0, 0)
         TriggerServerEvent('hud:server:GainStress', math.random(1, 4))
-        QBCore.Functions.Notify("You failed lock-pick the vehicle !", "error")
+        QBCore.Functions.Notify("You failed to lockpick the vehicle!", "error")
 	    end
     end, 4, 8) -- NumberOfCircles, MS
 end
