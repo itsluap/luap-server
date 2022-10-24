@@ -1,9 +1,14 @@
 local QBCore = exports['qb-core']:GetCoreObject()
+isLoggedIn = false
 local spawnedCocaLeaf = 0
 local CocaPlants = {}
 local isPickingUp, isProcessing, inCokeField = false, false, false
 local nearcoke = false
 
+RegisterNetEvent('QBCore:Client:OnPlayerLoaded')
+AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
+	isLoggedIn = true
+end)
 
 local function LoadAnimationDict(dict)
     RequestAnimDict(dict)
@@ -375,14 +380,28 @@ CreateThread(function()
 end)
 
 Citizen.CreateThread(function()
-	local coords = GetEntityCoords(PlayerPedId())
-	while true do
-		if #(coords-Config.CircleZones.CokePowder.coords) < 5 then
-			exports['ps-ui']:StatusShow("Cocaine Cutting", {
-				"Required Items: 1x Fine Scale, 5x Baking Soda, 10x Cocaine",
-			})
-		else
-			exports['ps-ui']:StatusHide()
-		end
-	end
+    while true do
+        Citizen.Wait(4)
+        if isLoggedIn then
+            local NearAnything = false
+            local PlayerCoords = GetEntityCoords(GetPlayerPed(-1))
+			local Distance = #(PlayerCoords - Config.CircleZones.CokePowder.coords)
+			if Distance < 5 then
+				NearAnything = true
+				if not ShowingInteraction then
+					ShowingInteraction = true
+					exports['ps-ui']:StatusShow("Cocaine Cutting", {
+						"Required Items: 1x Fine Scale, 5x Baking Soda, 10x Cocaine",
+					})
+				end
+			end
+            if not NearAnything then
+                if ShowingInteraction then
+                    ShowingInteraction = false
+                    exports['ps-ui']:StatusHide()
+                end
+                Citizen.Wait(1000)
+            end
+        end
+    end
 end)
