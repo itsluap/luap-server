@@ -1,9 +1,5 @@
 Config = {}
 
-Config.Status = {
-    ['Coke'] = vector3(-1192.00, -906.65, 14.09),
-}
-
 Config.Delays = {
 	WeedProcessing = 1000 * 10,
 	MethProcessing = 1000 * 10,

@@ -172,8 +172,8 @@ Config.DeliveryItems = {
     },
     [2] = {
         ["item"] = "coke_brick",
-        ["minrep"] = 0,
-        ['payout'] = 1200
+        ["minrep"] = 10,
+        ['payout'] = 4200
     },
 }
 
