@@ -389,6 +389,10 @@ Citizen.CreateThread(function()
 				exports['ps-ui']:StatusHide()
 				ShowingInteraction = false
 			end
+		elseif ShowingInteraction then
+			if #(coords-Config.CircleZones.CokePowder.coords) > 6 then
+				exports['ps-ui']:StatusHide()
+			end
 		end
 	end
 end)
