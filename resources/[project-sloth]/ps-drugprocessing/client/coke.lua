@@ -245,7 +245,7 @@ RegisterNetEvent('ps-drugprocessing:ProcessCocaPowder', function()
 				if result.ret then
 					CutCokePowder()
 				else
-					print(result.ret)
+					print(result)
 					QBCore.Functions.Notify(Lang:t("error.no_item", {value = result.item}, {item = result.item}))
 					------------------------- items required minus items player has
 				end
