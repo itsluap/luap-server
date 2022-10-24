@@ -154,6 +154,10 @@ QBCore.Functions.CreateUseableItem("meth", function(source)
     TriggerClientEvent("consumables:client:meth", source)
 end)
 
+QBCore.Functions.CreateUseableItem("heroin", function(source)
+    TriggerClientEvent("consumables:client:heroin", source)
+end)
+
 ----------- / Tools
 
 QBCore.Functions.CreateUseableItem("armor", function(source)
@@ -267,6 +271,14 @@ RegisterNetEvent('consumables:server:useMeth', function()
     if not Player then return end
 
     Player.Functions.RemoveItem('meth', 1)
+end)
+
+RegisterNetEvent('consumables:server:useHeroin', function()
+    local Player = QBCore.Functions.GetPlayer(source)
+
+    if not Player then return end
+
+    Player.Functions.RemoveItem('heroin', 1)
 end)
 
 RegisterNetEvent('consumables:server:useOxy', function()

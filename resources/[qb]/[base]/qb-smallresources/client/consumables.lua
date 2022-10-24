@@ -81,6 +81,30 @@ local function MethBagEffect()
     SetRunSprintMultiplierForPlayer(PlayerId(), 1.0)
 end
 
+local function HeroinEffect()
+    local playerPed = GetPlayerPed(-1)
+    local playerPed = PlayerPedId()
+    Citizen.Wait(1000)
+    ClearPedTasksImmediately(playerPed)
+    SetTimecycleModifier("spectator3")
+    SetPedMotionBlur(playerPed, true)
+    SetPedMovementClipset(playerPed, "move_m@hobo@a", true)
+    SetPedIsDrunk(playerPed, true)
+    AnimpostfxPlay("HeistCelebPass", 10000001, true)
+    ShakeGameplayCam("DRUNK_SHAKE", 3.0)
+--vvvvvvvvvvvvvvvv
+    Citizen.Wait(80000)
+--^^^^^^^^^^^^^^^^
+--Time of effect
+--  after wait stop all effects
+    SetPedIsDrunk(GetPlayerPed(-1), false)		
+    SetPedMotionBlur(playerPed, false)
+    ResetPedMovementClipset(GetPlayerPed(-1))
+    AnimpostfxStopAll()
+    ShakeGameplayCam("DRUNK_SHAKE", 0.0)
+    SetTimecycleModifierStrength(0.0)
+end
+
 local function EcstasyEffect()
     local startStamina = 30
     SetFlash(0, 0, 500, 7000, 500)
@@ -388,6 +412,29 @@ RegisterNetEvent('consumables:client:meth', function()
         MethBagEffect()
     end, function() -- Cancel
         StopAnimTask(PlayerPedId(), "switch@trevor@trev_smoking_meth", "trev_smoking_meth_loop", 1.0)
+        QBCore.Functions.Notify("Canceled..", "error")
+	end)
+end)
+
+RegisterNetEvent('consumables:client:heroin', function()
+    QBCore.Functions.Progressbar("shoot_heroin", "Shooting Up", 1500, false, true, {
+        disableMovement = false,
+        disableCarMovement = false,
+        disableMouse = false,
+        disableCombat = true,
+    }, {
+        animDict = "move_m@hobo@a",
+        anim = "WORLD_HUMAN_SMOKING_POT",
+        flags = 49,
+    }, {}, {}, function() -- Done
+        StopAnimTask(PlayerPedId(), "move_m@hobo@a", "WORLD_HUMAN_SMOKING_POT", 1.0)
+        TriggerServerEvent("consumables:server:useHeroin")
+        TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["heroin"], "remove")
+        TriggerEvent("evidence:client:SetStatus", "widepupils", 300)
+		--TriggerEvent("evidence:client:SetStatus", "agitated", 300)
+        HeroinEffect()
+    end, function() -- Cancel
+        StopAnimTask(PlayerPedId(), "move_m@hobo@a", "WORLD_HUMAN_SMOKING_POT", 1.0)
         QBCore.Functions.Notify("Canceled..", "error")
 	end)
 end)
