@@ -407,7 +407,7 @@ function LockpickDoor(isAdvanced)
         TriggerServerEvent('hud:server:GainStress', math.random(1, 4))
         QBCore.Functions.Notify("You failed lock-pick the vehicle !", "error")
 	    end
-    end, 2, 20) -- NumberOfCircles, MS
+    end, 3, 10) -- NumberOfCircles, MS
 end
 
 function lockpickFinish(success)
