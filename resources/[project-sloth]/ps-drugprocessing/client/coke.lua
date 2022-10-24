@@ -376,15 +376,18 @@ end)
 
 Citizen.CreateThread(function()
 	local coords = GetEntityCoords(PlayerPedId())
+	local ShowingInteraction = false
 	while true do
 		Citizen.Wait(4)
-		if GlobalState.CokeLoggedIn then
+		if not ShowingInteraction then
 			if #(coords-Config.CircleZones.CokePowder.coords) < 5 then
 				exports['ps-ui']:StatusShow("Cocaine Cutting", {
 					"Required Items: 1x Fine Scale, 5x Baking Soda, 10x Cocaine",
 				})
+				ShowingInteraction = true
 			else
 				exports['ps-ui']:StatusHide()
+				ShowingInteraction = false
 			end
 		end
 	end
