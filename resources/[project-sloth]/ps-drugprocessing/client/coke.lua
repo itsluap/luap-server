@@ -375,19 +375,20 @@ end)
 CreateThread(function()
 	local coords = GetEntityCoords(PlayerPedId(source))
 	local nearcoke = false
+	while true do
+		if #(coords-Config.CircleZones.CokePowder.coords) < 5 then
+			nearcoke = true
+		else
+			nearcoke = false
+		end
 
-	if #(coords-Config.CircleZones.CokePowder.coords) < 5 then
-		nearcoke = true
-	else
-		nearcoke = false
+		if nearcoke then
+			exports['ps-ui']:StatusShow("Cocaine Cutting", {
+				"Required Items: 1x Fine Scale, 5x Baking Soda, 10x Cocaine",
+			})
+		else
+			exports['ps-ui']:StatusHide()
+		end
+		if nearcoke == false then exports['ps-ui']:StatusHide() end
 	end
-
-	if nearcoke then
-		exports['ps-ui']:StatusShow("Cocaine Cutting", {
-			"Required Items: 1x Fine Scale, 5x Baking Soda, 10x Cocaine",
-		})
-	else
-		exports['ps-ui']:StatusHide()
-	end
-	if nearcoke == false then exports['ps-ui']:StatusHide() end
 end)
