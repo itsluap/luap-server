@@ -20,7 +20,6 @@ In Script:
     - add bowling script
     - add multijob script
     - add better mechanic script (possibly tuner shop script thats bookmarked)
-    - lock picking car doors - check this, see if it needs to be harder or easier
     - test boosting script / make sure boosting classes arent fucked
     - core-drugs (steal code for drug effects) (add drugs to corning selling) (add drugs to ps-buffs)
     - stripclub script from dream (work on rewriting this)
