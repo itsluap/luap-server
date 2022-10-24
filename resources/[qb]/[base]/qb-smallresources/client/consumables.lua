@@ -152,8 +152,7 @@ function Effectlsd()
 end
 
 local function DrunkEffect() -- From txadmin
-    print("doing drunk effect")
-    local playerPed = PlayerPedId()
+    local ped = PlayerPedId()
     local isDrunk = true
 
     RequestAnimSet(DRUNK_ANIM_SET)
@@ -161,19 +160,19 @@ local function DrunkEffect() -- From txadmin
         Wait(5)
     end
 
-    SetPedMovementClipset(playerPed, DRUNK_ANIM_SET)
+    SetPedMovementClipset(ped, DRUNK_ANIM_SET)
     ShakeGameplayCam("DRUNK_SHAKE", 3.0)
-    SetPedIsDrunk(playerPed, true)
+    SetPedIsDrunk(ped, true)
     SetTransitionTimecycleModifier("spectator5", 10.00)
 
     CreateThread(function()
         while isDrunk do
-            local vehPedIsIn = GetVehiclePedIsIn(playerPed)
-            local isPedInVehicleAndDriving = (vehPedIsIn ~= 0) and (GetPedInVehicleSeat(vehPedIsIn, -1) == playerPed)
+            local vehPedIsIn = GetVehiclePedIsIn(ped)
+            local isPedInVehicleAndDriving = (vehPedIsIn ~= 0) and (GetPedInVehicleSeat(vehPedIsIn, -1) == ped)
 
             if isPedInVehicleAndDriving then
                 local randomTask = getRandomDrunkCarTask()
-                TaskVehicleTempAction(playerPed, vehPedIsIn, randomTask, 500)
+                TaskVehicleTempAction(ped, vehPedIsIn, randomTask, 500)
             end
 
             Wait(5000)
