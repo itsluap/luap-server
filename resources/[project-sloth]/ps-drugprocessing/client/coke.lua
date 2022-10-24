@@ -375,12 +375,11 @@ CreateThread(function()
 end)
 
 Citizen.CreateThread(function()
-	local PlayerCoords = GetEntityCoords(GetPlayerPed(-1))
-	local Distance = #(PlayerCoords - vector3(1092.22, -3195.7, -37.79))
+	local coords = GetEntityCoords(PlayerPedId())
 	while true do
 		Citizen.Wait(4)
 		if GlobalState.CokeLoggedIn then
-			if Distance < 8 then
+			if #(coords-Config.CircleZones.CokePowder.coords) < 5 then
 				exports['ps-ui']:StatusShow("Cocaine Cutting", {
 					"Required Items: 1x Fine Scale, 5x Baking Soda, 10x Cocaine",
 				})
