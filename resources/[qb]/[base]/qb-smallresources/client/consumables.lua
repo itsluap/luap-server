@@ -152,6 +152,7 @@ function Effectlsd()
 end
 
 local function DrunkEffect() -- From txadmin
+    print("doing drunk effect")
     local playerPed = PlayerPedId()
     local isDrunk = true
 
