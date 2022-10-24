@@ -384,7 +384,7 @@ Citizen.CreateThread(function()
 					"Required Items: 1x Fine Scale, 5x Baking Soda, 10x Cocaine",
 				})
 			else
-				--exports['ps-ui']:StatusHide()
+				exports['ps-ui']:StatusHide()
 			end
 		end
 	end
