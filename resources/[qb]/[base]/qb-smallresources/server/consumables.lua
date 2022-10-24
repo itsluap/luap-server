@@ -142,6 +142,10 @@ QBCore.Functions.CreateUseableItem("xtcbaggy", function(source, _)
     TriggerClientEvent("consumables:client:EcstasyBaggy", source)
 end)
 
+QBCore.Functions.CreateUseableItem("lsd", function(source, _)
+    TriggerClientEvent("consumables:client:lsd", source)
+end)
+
 QBCore.Functions.CreateUseableItem("oxy", function(source)
     TriggerClientEvent("consumables:client:oxy", source)
 end)
@@ -280,6 +284,15 @@ RegisterNetEvent('consumables:server:useXTCBaggy', function()
 
     Player.Functions.RemoveItem('xtcbaggy', 1)
 end)
+
+RegisterNetEvent('consumables:server:uselsd', function()
+    local Player = QBCore.Functions.GetPlayer(source)
+
+    if not Player then return end
+
+    Player.Functions.RemoveItem('lsd', 1)
+end)
+
 
 RegisterNetEvent('consumables:server:useCrackBaggy', function()
     local Player = QBCore.Functions.GetPlayer(source)

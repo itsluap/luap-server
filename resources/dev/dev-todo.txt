@@ -21,7 +21,7 @@ In Script:
     - add multijob script
     - add better mechanic script (possibly tuner shop script thats bookmarked)
     - test boosting script / make sure boosting classes arent fucked
-    - core-drugs (steal code for drug effects) (add drugs to corning selling) (add drugs to ps-buffs)
+    - (add drugs to corning selling) (add drugs to ps-buffs)
     - stripclub script from dream (work on rewriting this)
     - update item animations (added qb-assets from dream to do this)
 
