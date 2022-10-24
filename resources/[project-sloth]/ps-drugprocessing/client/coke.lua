@@ -386,15 +386,13 @@ Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(4)
 		if isLoggedIn then
-			if Distance < 3 then
+			if Distance < 5 then
 				exports['ps-ui']:StatusShow("Cocaine Cutting", {
 					"Required Items: 1x Fine Scale, 5x Baking Soda, 10x Cocaine",
 				})
 			else
-				exports['ps-ui']:StatusHide()
+				--exports['ps-ui']:StatusHide()
 			end
-		else
-			exports['ps-ui']:StatusHide()
 		end
 	end
 end)
