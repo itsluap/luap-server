@@ -376,6 +376,7 @@ CreateThread(function()
 	local coords = GetEntityCoords(PlayerPedId(source))
 	local nearcoke = false
 	while true do
+		Citizen.Wait(10)
 		if #(coords-Config.CircleZones.CokePowder.coords) < 5 then
 			nearcoke = true
 		else
