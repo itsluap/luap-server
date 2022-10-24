@@ -71,7 +71,7 @@ Config.Locations = { -- Edit the various interaction points for players or creat
         [5] = {coords = vector4(314.58, -584.07, 44.2, 339.08), taken = false, model = 1631638868},
         [6] = {coords = vector4(319.26, -581.12, 44.2, 155.82), taken = false, model = 1631638868},
         [7] = {coords = vector4(317.76, -585.46, 44.2, 339.55), taken = false, model = 1631638868},
-        [8] = {coords = vector4(311.18, -582.94, 44.2, 339.64), taken = false, model = 1631638868d},
+        [8] = {coords = vector4(311.18, -582.94, 44.2, 339.64), taken = false, model = 1631638868},
 	--- paleto
 	    [9] = {coords = vector4(-252.43, 6312.25, 32.34, 313.48), taken = false, model = 2117668672},
         [10] = {coords = vector4(-247.04, 6317.95, 32.34, 134.64), taken = false, model = 2117668672},
