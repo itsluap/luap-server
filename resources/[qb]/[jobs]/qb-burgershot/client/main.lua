@@ -30,6 +30,7 @@ AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
         end
     end)
 	isLoggedIn = true
+	GlobalState.CokeLoggedIn = true
 end)
 
 RegisterNetEvent('QBCore:Client:OnJobUpdate')
