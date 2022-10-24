@@ -24,7 +24,7 @@ RegisterNetEvent('hospital:server:SendToBed', function(bedId, isRevive)
 	TriggerClientEvent('hospital:client:SendToBed', src, bedId, Config.Locations["beds"][bedId], isRevive)
 	TriggerClientEvent('hospital:client:SetBed', -1, bedId, true)
 	Player.Functions.RemoveMoney("bank", Config.BillCost , "respawned-at-hospital")
-		exports['Renewed-Banking']:addAccountMoneyy("ambulance", Config.BillCost)
+		exports['Renewed-Banking']:addAccountMoney("ambulance", Config.BillCost)
 	TriggerClientEvent('hospital:client:SendBillEmail', src, Config.BillCost)
 end)
 
