@@ -20,6 +20,7 @@ Notes:
     - /grantlicense (for weapon license and driver license) (police command)
     - can exchange cryptosticks at lesters
     - can use ifak to heal self
+    - drug effects are in qb-smallresources (consumables)
 
 Final (Ready to Launch):
     - make sure all scripts are updated (qbcore and project sloth)

@@ -151,6 +151,42 @@ function Effectlsd()
   DoLsd(60000);
 end
 
+local function DrunkEffect() -- From txadmin
+    local playerPed = PlayerPedId()
+    local isDrunk = true
+
+    RequestAnimSet(DRUNK_ANIM_SET)
+    while not HasAnimSetLoaded(DRUNK_ANIM_SET) do
+        Wait(5)
+    end
+
+    SetPedMovementClipset(playerPed, DRUNK_ANIM_SET)
+    ShakeGameplayCam("DRUNK_SHAKE", 3.0)
+    SetPedIsDrunk(playerPed, true)
+    SetTransitionTimecycleModifier("spectator5", 10.00)
+
+    CreateThread(function()
+        while isDrunk do
+            local vehPedIsIn = GetVehiclePedIsIn(playerPed)
+            local isPedInVehicleAndDriving = (vehPedIsIn ~= 0) and (GetPedInVehicleSeat(vehPedIsIn, -1) == playerPed)
+
+            if isPedInVehicleAndDriving then
+                local randomTask = getRandomDrunkCarTask()
+                TaskVehicleTempAction(playerPed, vehPedIsIn, randomTask, 500)
+            end
+
+            Wait(5000)
+        end
+    end)
+
+    Wait(60000)
+    isDrunk = false
+    SetTransitionTimecycleModifier("default", 10.00)
+    StopGameplayCamShaking(true)
+    ResetPedMovementClipset(playerPed)
+    RemoveAnimSet(DRUNK_ANIM_SET)
+end
+
 -- Events
 
 RegisterNetEvent('consumables:client:Eat', function(itemName)
@@ -200,8 +236,8 @@ RegisterNetEvent('consumables:client:DrinkAlcohol', function(itemName)
             TriggerEvent("evidence:client:SetStatus", "alcohol", 200)
         elseif alcoholCount >= 4 then
             TriggerEvent("evidence:client:SetStatus", "heavyalcohol", 200)
+            DrunkEffect()
         end
-
     end, function() -- Cancel
         TriggerEvent('animations:client:EmoteCommandStart', {"c"})
         QBCore.Functions.Notify("Cancelled..", "error")
