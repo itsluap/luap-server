@@ -1206,14 +1206,14 @@ CreateThread(function()
 				CreateThread(EnableTarget)
 			end
 		end, false)
-		RegisterKeyMapping("playerTarget", "Toggle targeting", "keyboard", Config.OpenKey)
+		RegisterKeyMapping("playerTarget", "Toggle Third Eye", "keyboard", Config.OpenKey)
 		TriggerEvent('chat:removeSuggestion', '/playerTarget')
 	else
 		RegisterCommand('+playerTarget', function()
 			CreateThread(EnableTarget)
 		end, false)
 		RegisterCommand('-playerTarget', DisableTarget, false)
-		RegisterKeyMapping("+playerTarget", "Enable targeting", "keyboard", Config.OpenKey)
+		RegisterKeyMapping("+playerTarget", "Enable Third Eye", "keyboard", Config.OpenKey)
 		TriggerEvent('chat:removeSuggestion', '/+playerTarget')
 		TriggerEvent('chat:removeSuggestion', '/-playerTarget')
 	end
