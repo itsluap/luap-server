@@ -227,7 +227,7 @@ local function DrunkEffect() -- From txadmin
 end
 
 -- Events
-
+--[[
 RegisterNetEvent('consumables:client:Eat', function(itemName)
     TriggerEvent('animations:client:EmoteCommandStart', {"eat"})
     QBCore.Functions.Progressbar("eat_something", "Eating..", 5000, false, true, {
@@ -240,6 +240,35 @@ RegisterNetEvent('consumables:client:Eat', function(itemName)
         TriggerEvent('animations:client:EmoteCommandStart', {"c"})
         TriggerServerEvent("consumables:server:addHunger", QBCore.Functions.GetPlayerData().metadata["hunger"] + ConsumablesEat[itemName])
         TriggerServerEvent('hud:server:RelieveStress', math.random(2, 4))
+    end)
+end)
+]]--
+
+-- testing new eat event --
+RegisterNetEvent('qb-items:client:eat')
+AddEventHandler('qb-items:client:eat', function(ItemName, PropName)
+    exports['qb-assets']:AddProp(PropName)
+    --TriggerEvent('lj-inventory:client:set:busy', true)
+    exports['qb-assets']:RequestAnimationDict("mp_player_inteat@burger")
+    TaskPlayAnim(PlayerPedId(), 'mp_player_inteat@burger', 'mp_player_int_eat_burger', 8.0, 1.0, -1, 49, 0, 0, 0, 0)
+    QBCore.Functions.Progressbar("eat", "Eating..", 7000, false, true, {
+        disableMovement = false,
+        disableCarMovement = false,
+        disableMouse = false,
+        disableCombat = true,
+        }, {}, {}, {}, function() -- Done
+            exports['qb-assets']:RemoveProp()
+            --TriggerEvent('lj-inventory:client:set:busy', false)
+            TriggerServerEvent('hud:server:RelieveStress', math.random(2, 3))
+            TriggerServerEvent('QBCore:Server:RemoveItem', ItemName, 1)
+            StopAnimTask(PlayerPedId(), 'mp_player_inteat@burger', 'mp_player_int_eat_burger', 1.0)
+            TriggerEvent("lj-inventory:client:ItemBox", QBCore.Shared.Items[ItemName], "remove")
+            TriggerServerEvent("consumables:server:addHunger", QBCore.Functions.GetPlayerData().metadata["hunger"] + ConsumablesEat[itemName])
+        end, function()
+        exports['qb-assets']:RemoveProp()
+        --TriggerEvent('lj-inventory:client:set:busy', false)
+        --QBCore.Functions.Notify("Cancelled..", "error")
+        StopAnimTask(PlayerPedId(), 'mp_player_inteat@burger', 'mp_player_int_eat_burger', 1.0)
     end)
 end)
 
@@ -285,6 +314,7 @@ end)
 
 RegisterNetEvent('consumables:client:Cokebaggy', function()
     local ped = PlayerPedId()
+    exports['qb-assets']AddProp('CrackPipe')
     QBCore.Functions.Progressbar("snort_coke", "Quick sniff..", math.random(5000, 8000), false, true, {
         disableMovement = false,
         disableCarMovement = false,
@@ -295,6 +325,7 @@ RegisterNetEvent('consumables:client:Cokebaggy', function()
         anim = "trev_smoking_meth_loop",
         flags = 49,
     }, {}, {}, function() -- Done
+        exports['qb-assets']:RemoveProp()
         StopAnimTask(ped, "switch@trevor@trev_smoking_meth", "trev_smoking_meth_loop", 1.0)
         TriggerServerEvent("consumables:server:useCokeBaggy")
         TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["cokebaggy"], "remove")
