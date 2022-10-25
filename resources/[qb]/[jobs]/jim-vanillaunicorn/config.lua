@@ -119,4 +119,39 @@ Crafting = {
 	},
 }
 
+-- stage effects update --
+
+Config.CurrentEffect = {}
+
+Config.EffectsMenu = {
+    [1] = {['Name'] = 'Firework',           ['Desc'] = 'Turn on the fireworks effect.',         ['Dict'] = 'proj_xmas_firework',  ['Effect'] = 'scr_firework_xmas_ring_burst_rgw',  ['Event'] = 'dream-stripclub:server:set:effect'},
+    [2] = {['Name'] = 'Star Fountain',      ['Desc'] = 'Turn on the star fountain effect.',     ['Dict'] = 'scr_indep_fireworks', ['Effect'] = 'scr_indep_firework_fountain',       ['Event'] = 'dream-stripclub:server:set:effect'},
+    [3] = {['Name'] = 'Water Fountain',     ['Desc'] = 'Turn on the water fountain effect.',    ['Dict'] = 'scr_carwash',         ['Effect'] = 'ent_amb_car_wash_jet',              ['Event'] = 'dream-stripclub:server:set:effect'},
+    [4] = {['Name'] = 'Fire Fountain',      ['Desc'] = 'Turn on the fire fountain effect.',     ['Dict'] = 'core',                ['Effect'] = 'ent_amb_fbi_fire_beam',             ['Event'] = 'dream-stripclub:server:set:effect'},
+}
+
+Config.Effects = {
+    ['scr_indep_firework_fountain'] = {
+        [1] = {['Coords'] = {['X'] = 109.59, ['Y'] = -1290.86, ['Z'] = 28.41}},
+        [2] = {['Coords'] = {['X'] = 107.85, ['Y'] = -1287.83, ['Z'] = 28.41}},
+        [3] = {['Coords'] = {['X'] = 101.44, ['Y'] = -1288.69, ['Z'] = 28.41}},
+        [4] = {['Coords'] = {['X'] = 105.62, ['Y'] = -1295.97, ['Z'] = 28.41}},
+    },
+    ['ent_amb_car_wash_jet'] = {
+        [1] = {['Coords'] = {['X'] = 109.59, ['Y'] = -1290.86, ['Z'] = 28.41}},
+        [2] = {['Coords'] = {['X'] = 107.85, ['Y'] = -1287.83, ['Z'] = 28.41}},
+        [3] = {['Coords'] = {['X'] = 101.44, ['Y'] = -1288.69, ['Z'] = 28.41}},
+        [4] = {['Coords'] = {['X'] = 105.62, ['Y'] = -1295.97, ['Z'] = 28.41}},
+    },
+    ['ent_amb_fbi_fire_beam'] = {
+        [1] = {['Coords'] = {['X'] = 109.59, ['Y'] = -1290.86, ['Z'] = 28.71}},
+        [2] = {['Coords'] = {['X'] = 107.85, ['Y'] = -1287.83, ['Z'] = 28.71}},
+        [3] = {['Coords'] = {['X'] = 101.44, ['Y'] = -1288.69, ['Z'] = 28.71}},
+        [4] = {['Coords'] = {['X'] = 105.62, ['Y'] = -1295.97, ['Z'] = 28.71}},
+    },
+    ['scr_firework_xmas_ring_burst_rgw'] = {
+        [1] = {['Coords'] = {['X'] = 104.65, ['Y'] = -1291.79, ['Z'] = 27.41}},
+    },
+}
+
 Loc = {}

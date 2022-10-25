@@ -167,3 +167,18 @@ AddEventHandler('onResourceStop', function(resource) if resource ~= GetCurrentRe
 		end
 	end
 end)
+
+-- stage effects update --
+
+RegisterServerEvent('qb-stripclub:server:set:effect')
+AddEventHandler('qb-stripclub:server:set:effect', function(data)
+    Config.CurrentEffect = {['Dict'] = data['Dict'], ['Effect'] = data['Effect']}
+    TriggerClientEvent('qb-stripclub:client:sync:config', -1, Config)
+end)
+
+RegisterServerEvent('qb-stripclub:server:close:effect')
+AddEventHandler('qb-stripclub:server:close:effect', function()
+    Config.CurrentEffect = {['Dict'] = nil, ['Effect'] = nil}
+    TriggerClientEvent('qb-stripclub:client:stop:effects', -1)
+    TriggerClientEvent('qb-stripclub:client:sync:config', -1, Config)
+end)

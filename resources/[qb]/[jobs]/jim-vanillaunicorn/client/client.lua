@@ -18,8 +18,15 @@ RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
     QBCore.Functions.GetPlayerData(function(PlayerData)
         PlayerJob = PlayerData.job
         if PlayerData.job.onduty then if PlayerData.job.name == "vanilla" then TriggerServerEvent("QBCore:ToggleDuty") end end
+		isLoggedIn = true
     end)
 end)
+
+RegisterNetEvent('QBCore:Client:OnPlayerUnload')
+AddEventHandler('QBCore:Client:OnPlayerUnload', function()
+    isLoggedIn = false
+end)
+
 
 RegisterNetEvent('QBCore:Client:OnJobUpdate', function(JobInfo) PlayerJob = JobInfo onDuty = PlayerJob.onduty end)
 RegisterNetEvent('QBCore:Client:SetDuty', function(duty) onDuty = duty end)
@@ -215,6 +222,8 @@ CreateThread(function()
 		CreateModelHide(vector3(130.97, -1282.67, 30.35), 1.5, 1753238891, true)
 
 		CreateModelHide(vector3(129.5, -1279.94, 30.33), 1.5, 1340914825, true)
+		ClearAreaOfPeds(111.16, -1287.64, 28.26, 100, 1)
+
 		--ADD JOB RELATED PROPS
 
 		if not Props["tray"] then Props["tray"] = makeProp({prop = `v_res_r_silvrtray`, coords = vector4(128.16, -1283.47, 30.29, 120.0)}, 1, 0) end
@@ -499,4 +508,71 @@ end)
 AddEventHandler('onResourceStop', function(r) if r ~= GetCurrentResourceName() then return end
 	for k in pairs(Targets) do exports['qb-target']:RemoveZone(k) end
 	for k in pairs(Props) do DeleteEntity(Props[k]) end
+end)
+
+-- stage effect update --
+
+RegisterNetEvent('qb-stripclub:client:sync:config')
+AddEventHandler('qb-stripclub:client:sync:config', function(ConfigData)
+    Config = ConfigData
+end)
+
+Citizen.CreateThread(function()
+    while true do
+        Citizen.Wait(4)
+        if isLoggedIn then
+            local PlayerCoords = GetEntityCoords(GetPlayerPed(-1))
+            ColorR, ColorG, ColorB = math.random(1,255), math.random(1,255), math.random(1,255)
+            local Distance = GetDistanceBetweenCoords(PlayerCoords.x, PlayerCoords.y, PlayerCoords.z, Config.Location['StripClub']['X'], Config.Location['StripClub']['Y'], Config.Location['StripClub']['Z'], true)
+            if Distance < 19.0 then
+                Config.InsideUnicorn = true
+                CheckEffect()
+            else
+                Config.InsideUnicorn = false
+            end
+            Citizen.Wait(750)
+        end
+    end
+end)
+
+function CheckEffect()
+    if Config.CurrentEffect['Effect'] ~= nil then
+        local Data = Config.Effects[Config.CurrentEffect['Effect']]
+        for k, v in pairs(Data) do
+            RequestNamedPtfxAsset(Config.CurrentEffect['Dict'])
+            UseParticleFxAssetNextCall(Config.CurrentEffect['Dict'])
+            while not HasNamedPtfxAssetLoaded(Config.CurrentEffect['Dict']) do
+                Wait(100)
+            end
+            Particle = StartParticleFxLoopedAtCoord(Config.CurrentEffect['Effect'], v['Coords']['X'], v['Coords']['Y'], v['Coords']['Z'], 0.0, 0.0, 0.0, 0.5, 0, 0, 0)
+            table.insert(ActiveParticles, Particle)
+        end
+    end
+end
+
+RegisterNetEvent('qb-stripclub:client:open:effect:panel')
+AddEventHandler('qb-stripclub:client:open:effect:panel', function()
+    local MenuItems = {}
+    for k, v in pairs(Config.EffectsMenu) do
+      local NewData = {}
+      NewData['Title'] = v['Name']
+      NewData['Desc'] = v['Desc']
+      NewData['Data'] = {['Event'] = v['Event'], ['Type'] = 'Server', ['Dict'] = v['Dict'], ['Effect'] = v['Effect']}
+      table.insert(MenuItems, NewData)
+    end
+    local ExtraData = {['Title'] = 'Stop Effects', ['Desc'] = 'Turn off all effects.', ['Data'] = {['Event'] = 'qb-stripclub:server:close:effect', ['Type'] = 'Server'}}
+    table.insert(MenuItems, ExtraData)
+    Citizen.SetTimeout(100, function()
+        local Data = {['Title'] = 'Stripclub Effects', ['MainMenuItems'] = MenuItems}
+        QBCore.Functions.OpenMenu(Data)
+    end)
+end)
+
+RegisterNetEvent('qb-stripclub:client:stop:effects')
+AddEventHandler('qb-stripclub:client:stop:effects', function()
+    for k, v in pairs(ActiveParticles) do
+        StopParticleFxLooped(v, 0)
+        RemoveParticleFx(v, 0)
+    end
+    ActiveParticles = {}
 end)
