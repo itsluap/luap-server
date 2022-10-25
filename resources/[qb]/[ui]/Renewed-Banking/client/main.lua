@@ -24,7 +24,7 @@ local function openBankUI(isAtm)
         end
         SetTimeout(1000, function()
             SendNUIMessage({
-                print("sent nui")
+                print("sent nui"),
                 action = "setVisible",
                 status = isVisible,
                 accounts = result,
