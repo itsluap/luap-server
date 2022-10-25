@@ -19,6 +19,6 @@ Config.BoxZones = {
                 job = "vanilla",
             },
         },
-        distance = 2.5
+        distance = 3
     },
 }
