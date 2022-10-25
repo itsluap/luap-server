@@ -8,6 +8,8 @@ local Props = {}
 local Targets = {}
 local Blips = {}
 
+local ActiveParticles = {}
+
 local function jobCheck()
 	canDo = true
 	if not onDuty then triggerNotify(nil, Loc[Config.Lan].error["not_cloked_in"], 'error') canDo = false end
