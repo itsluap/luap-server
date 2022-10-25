@@ -1,3 +1,5 @@
+--[[
+	
 local QBCore = exports['qb-core']:GetCoreObject()
 
 local Strepper = {}
@@ -81,3 +83,5 @@ AddEventHandler('onResourceStop', function(r) if r ~= GetCurrentResourceName() t
 	for k in pairs(Targets) do exports["qb-target"]:RemoveZone(k) end
 	for _, v in pairs(Strepper) do DeleteEntity(v) end
 end)
+
+]]--
