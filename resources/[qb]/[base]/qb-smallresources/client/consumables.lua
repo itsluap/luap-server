@@ -220,9 +220,10 @@ local function DrunkEffect() -- From txadmin
 
     Wait(60000)
     isDrunk = false
+    SetPedIsDrunk(GetPlayerPed(-1), false)	
     SetTransitionTimecycleModifier("default", 10.00)
     StopGameplayCamShaking(true)
-    ResetPedMovementClipset(playerPed)
+    ResetPedMovementClipset(GetPlayerPed(-1))
     RemoveAnimSet(DRUNK_ANIM_SET)
 end
 
