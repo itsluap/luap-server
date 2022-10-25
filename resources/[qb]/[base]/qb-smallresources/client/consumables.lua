@@ -244,7 +244,6 @@ RegisterNetEvent('consumables:client:Eat', function(itemName)
 end)
 ]]--
 
--- testing new eat event --
 RegisterNetEvent('consumables:client:Eat', function(itemName, PropName)
     exports['qb-assets']:AddProp(PropName)
     --TriggerEvent('lj-inventory:client:set:busy', true)
@@ -271,6 +270,7 @@ RegisterNetEvent('consumables:client:Eat', function(itemName, PropName)
     end)
 end)
 
+--[[
 RegisterNetEvent('consumables:client:Drink', function(itemName)
     TriggerEvent('animations:client:EmoteCommandStart', {"drink"})
     QBCore.Functions.Progressbar("drink_something", "Drinking..", 5000, false, true, {
@@ -282,6 +282,32 @@ RegisterNetEvent('consumables:client:Drink', function(itemName)
         TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items[itemName], "remove")
         TriggerEvent('animations:client:EmoteCommandStart', {"c"})
         TriggerServerEvent("consumables:server:addThirst", QBCore.Functions.GetPlayerData().metadata["thirst"] + ConsumablesDrink[itemName])
+    end)
+end)
+]]--
+
+RegisterNetEvent('consumables:client:Drink', function(itemName, PropName)
+    exports['qb-assets']:AddProp(PropName)
+    --TriggerEvent('lj-inventory:client:set:busy', true)
+    exports['qb-assets']:RequestAnimationDict("amb@world_human_drinking@coffee@male@idle_a")
+    TaskPlayAnim(PlayerPedId(), 'amb@world_human_drinking@coffee@male@idle_a', "idle_c", 8.0, 1.0, -1, 49, 0, 0, 0, 0)
+    QBCore.Functions.Progressbar("drink", "Drinking..", 7000, false, true, {
+        disableMovement = false,
+        disableCarMovement = false,
+        disableMouse = false,
+        disableCombat = true,
+        }, {}, {}, {}, function() -- Done
+            exports['qb-assets']:RemoveProp()
+            --TriggerEvent('lj-inventory:client:set:busy', false)
+            TriggerServerEvent('QBCore:Server:RemoveItem', ItemName, 1)
+            TriggerEvent("lj-inventory:client:ItemBox", QBCore.Shared.Items[ItemName], "remove")
+            StopAnimTask(PlayerPedId(), 'amb@world_human_drinking@coffee@male@idle_a', "idle_c", 1.0)
+            TriggerServerEvent("QBCore:Server:SetMetaData", "thirst", QBCore.Functions.GetPlayerData().metadata["thirst"] + math.random(20, 35))
+        end, function()
+        exports['qb-assets']:RemoveProp()
+        --TriggerEvent('lj-inventory:client:set:busy', false)
+        --QBCore.Functions.Notify("Cancelled..", "error")
+        StopAnimTask(PlayerPedId(), 'amb@world_human_drinking@coffee@male@idle_a', "idle_c", 1.0)
     end)
 end)
 
