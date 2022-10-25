@@ -566,8 +566,8 @@ AddEventHandler('qb-stripclub:client:open:effect:panel', function()
 				isServer = true,
                 event = 'qb-stripclub:server:set:effect',
                 args = {
-					Dict   = 'proj_xmas_firework'
-		    		Effect = 'scr_firework_xmas_ring_burst_rgw'
+					Dict   = 'proj_xmas_firework',
+		    		Effect = 'scr_firework_xmas_ring_burst_rgw',
                 }
             }
         },  
@@ -581,8 +581,8 @@ AddEventHandler('qb-stripclub:client:open:effect:panel', function()
                 isServer = true, -- optional, specify event type
                 event = 'qb-stripclub:server:set:effect',
                 args = {
-                    Dict   = 'scr_indep_fireworks'
-		    		Effect = 'scr_indep_firework_fountain'
+                    Dict   = 'scr_indep_fireworks',
+		    		Effect = 'scr_indep_firework_fountain',
                 }
             }
         },
@@ -594,8 +594,8 @@ AddEventHandler('qb-stripclub:client:open:effect:panel', function()
                 isServer = true, -- optional, specify event type
                 event = 'qb-stripclub:server:set:effect',
                 args = {
-                    Dict   = 'scr_carwash'
-		    		Effect = 'ent_amb_car_wash_jet'
+                    Dict   = 'scr_carwash',
+		    		Effect = 'ent_amb_car_wash_jet',
                 }
             }
         },
@@ -607,8 +607,8 @@ AddEventHandler('qb-stripclub:client:open:effect:panel', function()
                 isServer = true, -- optional, specify event type
                 event = 'qb-stripclub:server:set:effect',
                 args = {
-                    Dict   = 'core'
-		    		Effect = 'ent_amb_fbi_fire_beam'
+                    Dict   = 'core',
+		    		Effect = 'ent_amb_fbi_fire_beam',
                 }
             }
         },
@@ -620,8 +620,8 @@ AddEventHandler('qb-stripclub:client:open:effect:panel', function()
                 isServer = true, -- optional, specify event type
                 event = 'qb-stripclub:server:close:effect',
                 args = {
-                    Dict   = 'core'
-		    		Effect = 'ent_amb_fbi_fire_beam'
+                    Dict   = 'core',
+		    		Effect = 'ent_amb_fbi_fire_beam',
                 }
             }
         },
