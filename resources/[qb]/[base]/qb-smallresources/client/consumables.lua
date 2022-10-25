@@ -246,7 +246,7 @@ end)
 
 -- testing new eat event --
 RegisterNetEvent('qb-items:client:eat')
-AddEventHandler('qb-items:client:eat', function(ItemName, PropName)
+AddEventHandler('qb-items:client:eat', function(itemName, PropName)
     exports['qb-assets']:AddProp(PropName)
     --TriggerEvent('lj-inventory:client:set:busy', true)
     exports['qb-assets']:RequestAnimationDict("mp_player_inteat@burger")
