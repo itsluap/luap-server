@@ -299,8 +299,8 @@ RegisterNetEvent('consumables:client:Drink', function(itemName, PropName)
         }, {}, {}, {}, function() -- Done
             exports['qb-assets']:RemoveProp()
             --TriggerEvent('lj-inventory:client:set:busy', false)
-            TriggerServerEvent('QBCore:Server:RemoveItem', ItemName, 1)
-            TriggerEvent("lj-inventory:client:ItemBox", QBCore.Shared.Items[ItemName], "remove")
+            TriggerServerEvent('QBCore:Server:RemoveItem', itemName, 1)
+            TriggerEvent("lj-inventory:client:ItemBox", QBCore.Shared.Items[itemName], "remove")
             StopAnimTask(PlayerPedId(), 'amb@world_human_drinking@coffee@male@idle_a', "idle_c", 1.0)
             TriggerServerEvent("QBCore:Server:SetMetaData", "thirst", QBCore.Functions.GetPlayerData().metadata["thirst"] + math.random(20, 35))
         end, function()
@@ -312,28 +312,36 @@ RegisterNetEvent('consumables:client:Drink', function(itemName, PropName)
 end)
 
 RegisterNetEvent('consumables:client:DrinkAlcohol', function(itemName)
-    TriggerEvent('animations:client:EmoteCommandStart', {"drink"})
-    QBCore.Functions.Progressbar("snort_coke", "Drinking liquor..", math.random(3000, 6000), false, true, {
+    exports['qb-assets']:AddProp(PropName)
+    --TriggerEvent('lj-inventory:client:set:busy', true)
+    exports['qb-assets']:RequestAnimationDict("amb@world_human_drinking@coffee@male@idle_a")
+    TaskPlayAnim(PlayerPedId(), 'amb@world_human_drinking@coffee@male@idle_a', "idle_c", 8.0, 1.0, -1, 49, 0, 0, 0, 0)
+    QBCore.Functions.Progressbar("snort_coke", "Drinking..", math.random(4000, 7000), false, true, {
         disableMovement = false,
         disableCarMovement = false,
         disableMouse = false,
         disableCombat = true,
-    }, {}, {}, {}, function() -- Done
-        TriggerEvent('animations:client:EmoteCommandStart', {"c"})
-        TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items[itemName], "remove")
-        TriggerServerEvent("consumables:server:drinkAlcohol", itemName)
-        TriggerServerEvent("consumables:server:addThirst", QBCore.Functions.GetPlayerData().metadata["thirst"] + ConsumablesAlcohol[itemName])
-        TriggerServerEvent('hud:server:RelieveStress', math.random(2, 4))
-        alcoholCount += 1
-        if alcoholCount > 1 and alcoholCount < 4 then
-            TriggerEvent("evidence:client:SetStatus", "alcohol", 200)
-        elseif alcoholCount >= 4 then
-            TriggerEvent("evidence:client:SetStatus", "heavyalcohol", 200)
-            DrunkEffect()
-        end
-    end, function() -- Cancel
-        TriggerEvent('animations:client:EmoteCommandStart', {"c"})
-        QBCore.Functions.Notify("Cancelled..", "error")
+        }, {}, {}, {}, function() -- Done
+                exports['qb-assets']:RemoveProp()
+                --TriggerEvent('lj-inventory:client:set:busy', false)
+                TriggerServerEvent('QBCore:Server:RemoveItem', itemName, 1)
+                TriggerEvent("lj-inventory:client:ItemBox", QBCore.Shared.Items[itemName], "remove")
+                StopAnimTask(PlayerPedId(), 'amb@world_human_drinking@coffee@male@idle_a', "idle_c", 1.0)
+                TriggerServerEvent("consumables:server:drinkAlcohol", itemName)
+                TriggerServerEvent("consumables:server:addThirst", QBCore.Functions.GetPlayerData().metadata["thirst"] + ConsumablesAlcohol[itemName])
+                TriggerServerEvent('hud:server:RelieveStress', math.random(2, 4))
+                alcoholCount += 1
+                if alcoholCount > 1 and alcoholCount < 4 then
+                    TriggerEvent("evidence:client:SetStatus", "alcohol", 200)
+                elseif alcoholCount >= 4 then
+                    TriggerEvent("evidence:client:SetStatus", "heavyalcohol", 200)
+                    DrunkEffect()
+                end
+        end, function() -- Cancel
+        exports['qb-assets']:RemoveProp()
+        --TriggerEvent('lj-inventory:client:set:busy', false)
+        --QBCore.Functions.Notify("Cancelled..", "error")
+        StopAnimTask(PlayerPedId(), 'amb@world_human_drinking@coffee@male@idle_a', "idle_c", 1.0)
     end)
 end)
 
