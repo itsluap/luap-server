@@ -576,3 +576,22 @@ AddEventHandler('qb-stripclub:client:stop:effects', function()
     end
     ActiveParticles = {}
 end)
+
+exports['qb-target']:AddBoxZone("stripEffects", vector3(121.55, -1282.97, 29.48), 0.2, 0.2, {
+	name = "stripEffects",
+	heading = 30.0,
+	debugPoly = false,
+	minZ = 29.58,
+	maxZ = 29.78,
+}, {
+	options = {
+		{
+            type = "client",
+			event = "qb-stripclub:client:open:effect:panel",
+			icon = "fas fa-hand-paper",
+			label = "Effects Dimmer",
+			job = "vanilla",
+		},
+	},
+	distance = 3.0
+})
