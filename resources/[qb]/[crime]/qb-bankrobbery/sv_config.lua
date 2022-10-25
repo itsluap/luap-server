@@ -14,7 +14,7 @@ function Config.OnRobberyStart(bankId)
     local bankName = type(bankId) == "number" and "bankrobbery" or bankId
     TriggerEvent('qb-scoreboard:server:SetActivityBusy', bankName, true)
     if bankName ~= "bankrobbery" then return end
-    TriggerEvent('qb-banking:server:SetBankClosed', bankId, true)
+    TriggerEvent('Renewed-Banking:server:SetBankClosed', bankId, true)
 end
 
 --- This is called whenever a bank robbery's timeout has ended
@@ -24,7 +24,7 @@ function Config.OnRobberyTimeoutEnd(bankId)
     local bankName = type(bankId) == "number" and "bankrobbery" or bankId
     TriggerEvent('qb-scoreboard:server:SetActivityBusy', bankName, false)
     if bankName ~= "bankrobbery" then return end
-    TriggerEvent('qb-banking:server:SetBankClosed', bankId, false)
+    TriggerEvent('Renewed-Banking:server:SetBankClosed', bankId, false)
 end
 
 --- This will be called once a blackout starts or ends
