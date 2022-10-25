@@ -552,20 +552,80 @@ end
 
 RegisterNetEvent('qb-stripclub:client:open:effect:panel')
 AddEventHandler('qb-stripclub:client:open:effect:panel', function()
-    local MenuItems = {}
-    for k, v in pairs(Config.EffectsMenu) do
-      local NewData = {}
-      NewData['Title'] = v['Name']
-      NewData['Desc'] = v['Desc']
-      NewData['Data'] = {['Event'] = v['Event'], ['Type'] = 'Server', ['Dict'] = v['Dict'], ['Effect'] = v['Effect']}
-      table.insert(MenuItems, NewData)
-    end
-    local ExtraData = {['Title'] = 'Stop Effects', ['Desc'] = 'Turn off all effects.', ['Data'] = {['Event'] = 'qb-stripclub:server:close:effect', ['Type'] = 'Server'}}
-    table.insert(MenuItems, ExtraData)
-    Citizen.SetTimeout(100, function()
-        local Data = {['Title'] = 'Stripclub Effects', ['MainMenuItems'] = MenuItems}
-		exports['qb-menu']:openMenu(Data)
-    end)
+    exports['qb-menu']:openMenu({
+        {
+            header = 'Stage Effects',
+            --icon = 'fas fa-code',
+            isMenuHeader = true, -- Set to true to make a nonclickable title
+        },
+        {
+            header = 'Firework',
+            txt = 'Turn on the fireworks effect.',
+            --icon = 'fas fa-code-merge',
+            params = {
+				isServer = true,
+                event = 'qb-stripclub:server:set:effect',
+                args = {
+					Dict   = 'proj_xmas_firework'
+		    		Effect = 'scr_firework_xmas_ring_burst_rgw'
+                }
+            }
+        },  
+        {
+            header = 'Star Fountain',
+            txt = 'Turn on the star fountain effect.',
+            --icon = 'fas fa-code-pull-request',
+            -- disabled = false, -- optional, non-clickable and grey scale
+            -- hidden = true, -- optional, hides the button completely
+            params = {
+                isServer = true, -- optional, specify event type
+                event = 'qb-stripclub:server:set:effect',
+                args = {
+                    Dict   = 'scr_indep_fireworks'
+		    		Effect = 'scr_indep_firework_fountain'
+                }
+            }
+        },
+		{
+            header = 'Water Fountain',
+            txt = 'Turn on the water fountain effect.',
+            --icon = 'fas fa-code-pull-request',
+            params = {
+                isServer = true, -- optional, specify event type
+                event = 'qb-stripclub:server:set:effect',
+                args = {
+                    Dict   = 'scr_carwash'
+		    		Effect = 'ent_amb_car_wash_jet'
+                }
+            }
+        },
+		{
+            header = 'Fire Fountain',
+            txt = 'Turn on the fire fountain effect.',
+            --icon = 'fas fa-code-pull-request',
+            params = {
+                isServer = true, -- optional, specify event type
+                event = 'qb-stripclub:server:set:effect',
+                args = {
+                    Dict   = 'core'
+		    		Effect = 'ent_amb_fbi_fire_beam'
+                }
+            }
+        },
+		{
+            header = 'Stop Effects',
+            txt = 'Turn off all effects.',
+            --icon = 'fas fa-code-pull-request',
+            params = {
+                isServer = true, -- optional, specify event type
+                event = 'qb-stripclub:server:close:effect',
+                args = {
+                    Dict   = 'core'
+		    		Effect = 'ent_amb_fbi_fire_beam'
+                }
+            }
+        },
+    })
 end)
 
 RegisterNetEvent('qb-stripclub:client:stop:effects')
@@ -589,7 +649,7 @@ exports['qb-target']:AddBoxZone("stripEffects", vector3(121.55, -1282.97, 29.48)
             type = "client",
 			event = "qb-stripclub:client:open:effect:panel",
 			icon = "fas fa-hand-paper",
-			label = "Effects Dimmer",
+			label = "Stage Effects",
 			job = "vanilla",
 		},
 	},
