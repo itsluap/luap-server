@@ -16,7 +16,6 @@ local function openBankUI(isAtm)
     SendNUIMessage({action = "setLoading", status = true})
     nuiHandler(true)
     QBCore.Functions.TriggerCallback('renewed-banking:server:initalizeBanking', function(result)
-        print("opening bank")
         if not result then
             nuiHandler(false)
             QBCore.Functions.Notify(Lang:t("notify.loading_failed"), 'error', 7500)
@@ -24,7 +23,6 @@ local function openBankUI(isAtm)
         end
         SetTimeout(1000, function()
             SendNUIMessage({
-                print("sent nui"),
                 action = "setVisible",
                 status = isVisible,
                 accounts = result,
