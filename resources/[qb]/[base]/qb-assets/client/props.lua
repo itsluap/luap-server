@@ -17,9 +17,9 @@ function RemoveProp()
   for k, v in pairs(AllProps) do
      NetworkRequestControlOfEntity(v)
      SetEntityAsMissionEntity(v, true, true)
-     DetachEntity(v, 1, 1)
      DeleteEntity(v)
      DeleteObject(v)
+     DetachEntity(v, 1, 1)
   end
     AllProps = {}
     HasProp = false
