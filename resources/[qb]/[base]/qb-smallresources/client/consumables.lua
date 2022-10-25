@@ -311,12 +311,12 @@ RegisterNetEvent('consumables:client:Drink', function(itemName, PropName)
     end)
 end)
 
-RegisterNetEvent('consumables:client:DrinkAlcohol', function(itemName)
+RegisterNetEvent('consumables:client:DrinkAlcohol', function(itemName, PropName)
     exports['qb-assets']:AddProp(PropName)
     --TriggerEvent('lj-inventory:client:set:busy', true)
     exports['qb-assets']:RequestAnimationDict("amb@world_human_drinking@coffee@male@idle_a")
     TaskPlayAnim(PlayerPedId(), 'amb@world_human_drinking@coffee@male@idle_a', "idle_c", 8.0, 1.0, -1, 49, 0, 0, 0, 0)
-    QBCore.Functions.Progressbar("snort_coke", "Drinking..", math.random(4000, 7000), false, true, {
+    QBCore.Functions.Progressbar("snort_coke", "Drinking..", math.random(9000, 12000), false, true, {
         disableMovement = false,
         disableCarMovement = false,
         disableMouse = false,

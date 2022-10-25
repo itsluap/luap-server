@@ -571,8 +571,8 @@ Config.PropList = {
     },
     ['beer'] = {
         ['name'] = 'Pisswasser',
-        ['prop'] = 'prop_beer_pissh',
-        ['hash'] = GetHashKey('prop_beer_pissh'),
+        ['prop'] = 'prop_amb_beer_bottle',
+        ['hash'] = GetHashKey('prop_amb_beer_bottle'),
         ['bone-index'] = {
             ['bone'] = 28422,
             ['X'] = 0.0,
