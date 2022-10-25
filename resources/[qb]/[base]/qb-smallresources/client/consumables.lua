@@ -260,9 +260,9 @@ AddEventHandler('qb-items:client:eat', function(itemName, PropName)
             exports['qb-assets']:RemoveProp()
             --TriggerEvent('lj-inventory:client:set:busy', false)
             TriggerServerEvent('hud:server:RelieveStress', math.random(2, 3))
-            TriggerServerEvent('QBCore:Server:RemoveItem', ItemName, 1)
+            TriggerServerEvent('QBCore:Server:RemoveItem', itemName, 1)
             StopAnimTask(PlayerPedId(), 'mp_player_inteat@burger', 'mp_player_int_eat_burger', 1.0)
-            TriggerEvent("lj-inventory:client:ItemBox", QBCore.Shared.Items[ItemName], "remove")
+            TriggerEvent("lj-inventory:client:ItemBox", QBCore.Shared.Items[itemName], "remove")
             TriggerServerEvent("consumables:server:addHunger", QBCore.Functions.GetPlayerData().metadata["hunger"] + ConsumablesEat[itemName])
         end, function()
         exports['qb-assets']:RemoveProp()
@@ -314,7 +314,7 @@ end)
 
 RegisterNetEvent('consumables:client:Cokebaggy', function()
     local ped = PlayerPedId()
-    exports['qb-assets']AddProp('CrackPipe')
+    exports['qb-assets']:AddProp('CrackPipe')
     QBCore.Functions.Progressbar("snort_coke", "Quick sniff..", math.random(5000, 8000), false, true, {
         disableMovement = false,
         disableCarMovement = false,
