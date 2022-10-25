@@ -12,6 +12,7 @@ To Do:
     -
     - setup tebex -- can come after launch
     - setup forums -- can come after launch
+    - banks are completely broke now?
 
 In Script:
     - discord webhooks
