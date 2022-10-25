@@ -121,6 +121,10 @@ Crafting = {
 
 -- stage effects update --
 
+Config.InsideUnicorn = false
+
+Config.Location = {['StripClub'] = {['X'] = 119.12, ['Y'] = -1289.86, ['Z'] = 28.26}}
+
 Config.CurrentEffect = {}
 
 Config.EffectsMenu = {
