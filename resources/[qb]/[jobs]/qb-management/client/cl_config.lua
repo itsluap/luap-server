@@ -22,6 +22,9 @@ Config.BossMenus = {
     ['mechanic'] = {
         vector3(-339.53, -156.44, 44.59),
     },
+    ['vanilla'] = {
+        vector3(95.36, -1293.61, 29.64),
+    },
 }
 
 Config.BossMenuZones = {

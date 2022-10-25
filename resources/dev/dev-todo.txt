@@ -21,9 +21,8 @@ In Script:
     - add multijob script
     - add better mechanic script (possibly tuner shop script thats bookmarked)
     - test boosting script / make sure boosting classes arent fucked
-    - (add drugs to corning selling) (add drugs to ps-buffs) (test all drugs make sure effects work) - fix heroin animation
-    - stripclub script from dream (work on rewriting this)
-    - update item animations (added qb-assets from dream to do this)
+    - (add drugs to ps-buffs) (test all drugs make sure effects work) - fix heroin animation
+    - steal stripclub effects from dream and integrate with another script
 
 Testing:
     - test okokContract

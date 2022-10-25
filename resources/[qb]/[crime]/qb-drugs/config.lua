@@ -113,6 +113,8 @@ Config.CornerSellingDrugsList = {
     "crack_baggy",
     "cokebaggy",
     "meth",
+    "heroin",
+    "lsd",
     "marijuana",
     
 }
