@@ -564,7 +564,7 @@ AddEventHandler('qb-stripclub:client:open:effect:panel', function()
     table.insert(MenuItems, ExtraData)
     Citizen.SetTimeout(100, function()
         local Data = {['Title'] = 'Stripclub Effects', ['MainMenuItems'] = MenuItems}
-        QBCore.Functions.OpenMenu(Data)
+		exports['qb-menu']:openMenu(Data)
     end)
 end)
 
