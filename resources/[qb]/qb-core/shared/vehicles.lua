@@ -3390,6 +3390,15 @@ QBShared.Vehicles = {
         ['hash'] = `chr20`,
         ['shop'] = 'luap',
     },
+	['ghoulcharger'] = {
+        ['name'] = 'Ghoul Charger',
+        ['brand'] = 'Dodge',
+        ['model'] = 'ghoulcharger',
+        ['price'] = 120000,
+        ['category'] = 'muscle',
+        ['hash'] = `ghoulcharger`,
+        ['shop'] = 'luap',
+    },
 	['redeye'] = {
         ['name'] = 'Redeye',
         ['brand'] = 'Dodge',
@@ -3410,16 +3419,6 @@ QBShared.Vehicles = {
     },
 	
 	-- luxury shop --
-
-	['ghoulcharger'] = {
-        ['name'] = 'Ghoul Charger',
-        ['brand'] = 'Dodge',
-        ['model'] = 'ghoulcharger',
-        ['price'] = 120000,
-        ['category'] = 'muscle',
-        ['hash'] = `ghoulcharger`,
-        ['shop'] = 'luxury',
-    },
 	['amgone'] = {
         ['name'] = 'AMG One',
         ['brand'] = 'Mercedes',
