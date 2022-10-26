@@ -88,7 +88,7 @@ function L1_1(A0_2, A1_2)
           L7_4.cash = L10_4
           L10_4 = L9_4.bank
           L7_4.bank = L10_4
-          L10_4 = L8_4.birthday
+          L10_4 = L8_4.birthdate
           L7_4.birth = L10_4
           L10_4 = json
           L10_4 = L10_4.decode
