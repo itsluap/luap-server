@@ -102,6 +102,7 @@ local recoils = {
 	[1834241177] = 2.4,			--['weapon_railgun']
 	[1672152130] = 0.0,			--['weapon_hominglauncher']
 	[125959754] = 0.5,			--['weapon_compactlauncher']
+	[GetHashKey("weapon_emplauncher")] = 0.5,			--['weapon_emplauncher']
 	[-1238556825] = 0.3,		--['weapon_rayminigun']
 
 	-- Throwables
