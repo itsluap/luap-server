@@ -27,3 +27,4 @@ Server Cost:
     - $12 for each user with @indigorp.net
     - $10 for dyno bot premium
     - $6  for ticket tool premium
+Total Cost: $156
