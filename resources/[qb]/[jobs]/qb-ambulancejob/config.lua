@@ -382,6 +382,10 @@ Config.Weapons = { -- Correspond weapon names to their class number
     [`WEAPON_SNSPISTOL`] = Config.WeaponClasses['SMALL_CALIBER'],
     [`WEAPON_SNSPISTOL_MK2`] = Config.WeaponClasses['SMALL_CALIBER'],
     [`WEAPON_VINTAGEPISTOL`] = Config.WeaponClasses['SMALL_CALIBER'],
+    [`WEAPON_GLOCK17`] = Config.WeaponClasses['SMALL_CALIBER'],
+    [`WEAPON_M9`] = Config.WeaponClasses['SMALL_CALIBER'],
+    [`WEAPON_M1911`] = Config.WeaponClasses['SMALL_CALIBER'],
+    [`WEAPON_FNX45`] = Config.WeaponClasses['SMALL_CALIBER'],
 
     --[[ Medium Caliber ]]--
     [`WEAPON_ADVANCEDRIFLE`] = Config.WeaponClasses['MEDIUM_CALIBER'],
@@ -402,6 +406,9 @@ Config.Weapons = { -- Correspond weapon names to their class number
     [`WEAPON_SMG_MK2`] = Config.WeaponClasses['MEDIUM_CALIBER'],
     [`WEAPON_SPECIALCARBINE`] = Config.WeaponClasses['MEDIUM_CALIBER'],
     [`WEAPON_SPECIALCARBINE_MK2`] = Config.WeaponClasses['MEDIUM_CALIBER'],
+    [`WEAPON_UZI`] = Config.WeaponClasses['MEDIUM_CALIBER'],
+    [`WEAPON_MAC10`] = Config.WeaponClasses['MEDIUM_CALIBER'],
+    [`WEAPON_MP9`] = Config.WeaponClasses['MEDIUM_CALIBER'],
 
     --[[ High Caliber ]]--
     [`WEAPON_ASSAULTRIFLE`] = Config.WeaponClasses['HIGH_CALIBER'],
@@ -417,6 +424,16 @@ Config.Weapons = { -- Correspond weapon names to their class number
     [`WEAPON_MUSKET`] = Config.WeaponClasses['HIGH_CALIBER'],
     [`WEAPON_RAILGUN`] = Config.WeaponClasses['HIGH_CALIBER'],
     [`WEAPON_HEAVYRIFLE`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_DE`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_M4`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_HK416`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_AR15`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_AK47`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_M70`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_SCARH`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_MK14`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_M110`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_HUNTINGRIFLE`] = Config.WeaponClasses['HIGH_CALIBER'],
 
     --[[ Shotguns ]]--
     [`WEAPON_ASSAULTSHOTGUN`] = Config.WeaponClasses['SHOTGUN'],
@@ -427,6 +444,8 @@ Config.Weapons = { -- Correspond weapon names to their class number
     [`WEAPON_PUMPSHOTGUN_MK2`] = Config.WeaponClasses['SHOTGUN'],
     [`WEAPON_SAWNOFFSHOTGUN`] = Config.WeaponClasses['SHOTGUN'],
     [`WEAPON_SWEEPERSHOTGUN`] = Config.WeaponClasses['SHOTGUN'],
+    [`WEAPON_REMINGTON`] = Config.WeaponClasses['SHOTGUN'],
+    [`WEAPON_MOSSBERG`] = Config.WeaponClasses['SHOTGUN'],
 
     --[[ Animals ]]--
     [`WEAPON_ANIMAL`] = Config.WeaponClasses['WILDLIFE'], -- Animal
@@ -441,6 +460,8 @@ Config.Weapons = { -- Correspond weapon names to their class number
     [`WEAPON_KNIFE`] = Config.WeaponClasses['CUTTING'],
     [`WEAPON_MACHETE`] = Config.WeaponClasses['CUTTING'],
     [`WEAPON_SWITCHBLADE`] = Config.WeaponClasses['CUTTING'],
+    [`WEAPON_SHIV`] = Config.WeaponClasses['CUTTING'],
+    [`WEAPON_KATANA`] = Config.WeaponClasses['CUTTING'],
 
     --[[ Light Impact ]]--
     [`WEAPON_KNUCKLE`] = Config.WeaponClasses['LIGHT_IMPACT'],
@@ -457,6 +478,7 @@ Config.Weapons = { -- Correspond weapon names to their class number
     [`WEAPON_WRENCH`] = Config.WeaponClasses['HEAVY_IMPACT'],
     [`WEAPON_RAMMED_BY_CAR`] = Config.WeaponClasses['HEAVY_IMPACT'],
     [`WEAPON_RUN_OVER_BY_CAR`] = Config.WeaponClasses['HEAVY_IMPACT'],
+    [`WEAPON_SLEDGEHAMMER`] = Config.WeaponClasses['HEAVY_IMPACT'],
 
     --[[ Explosives ]]--
     [`WEAPON_EXPLOSION`] = Config.WeaponClasses['EXPLOSIVE'],

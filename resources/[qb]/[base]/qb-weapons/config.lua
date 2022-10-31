@@ -136,6 +136,30 @@ Config.DurabilityMultiplier = {
 	['weapon_fireextinguisher'] 	= 0.15,
 	['weapon_hazardcan'] 			= 0.15,
     ['weapon_fertilizercan'] 		= 0.15,
+
+    -- Addon Weapons
+    ['weapon_ak47'] 			    = 0.15,
+    ['weapon_de'] 	                = 0.15,
+    ['weapon_fnx45'] 			    = 0.15,
+    ['weapon_glock17'] 		        = 0.15,
+    ['weapon_m4'] 			        = 0.15,
+    ['weapon_hk416'] 			    = 0.15,
+    ['weapon_mk14'] 			    = 0.15,
+    ['weapon_m110'] 			    = 0.15,
+    ['weapon_huntingrifle'] 	    = 0.20,
+    ['weapon_ar15'] 			    = 0.15,
+    ['weapon_m9'] 	                = 0.15,
+    ['weapon_m70'] 			        = 0.15,
+    ['weapon_m1911'] 		        = 0.15,
+    ['weapon_mac10'] 			    = 0.15,
+    ['weapon_uzi'] 	                = 0.15,
+    ['weapon_mp9'] 	                = 0.15,
+    ['weapon_mossberg'] 		    = 0.15,
+    ['weapon_remington'] 		    = 0.15,
+    ['weapon_scarh'] 			    = 0.15,
+    ['weapon_shiv'] 	            = 0.15,
+    ['weapon_katana'] 	            = 0.15,
+    ['weapon_sledgehammer'] 	    = 0.15,
 }
 
 Config.WeaponRepairPoints = {
@@ -893,6 +917,160 @@ WeaponAttachments = {
         ['luxuryfinish'] = {
             component = 'COMPONENT_MARKSMANRIFLE_VARMOD_LUXE',
             item = 'marksmanrifle_luxuryfinish',
+        },
+    },
+    -- Addon Weapons
+    ['WEAPON_M9'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_M9_CLIP_01',
+            item = 'pistol_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_M9_CLIP_02',
+            item = 'pistol_extendedclip',
+            type = 'clip',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_PI_SUPP_02',
+            item = 'pistol_suppressor',
+        },
+    },
+    ['WEAPON_M1911'] = {
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_PI_SUPP_02',
+            item = 'pistol_suppressor',
+        },
+    },
+    ['WEAPON_DE'] = {
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_PI_SUPP_02',
+            item = 'pistol_suppressor',
+        },
+    },
+    ['WEAPON_FNX45'] = {
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_PI_SUPP_02',
+            item = 'pistol_suppressor',
+        },
+    },
+    ['WEAPON_MP9'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_MP9_CLIP_01',
+            item = 'microsmg_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_MP9_CLIP_02',
+            item = 'microsmg_extendedclip',
+            type = 'clip',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'pistol_suppressor',
+        },
+        ['scope'] = {
+            component = 'COMPONENT_AT_SCOPE_MACRO',
+            item = 'microsmg_scope',
+        },
+    },
+    ['WEAPON_UZI'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_MICROSMG_CLIP_01',
+            item = 'microsmg_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_MICROSMG_CLIP_02',
+            item = 'microsmg_extendedclip',
+            type = 'clip',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'pistol_suppressor',
+        },
+    },
+    ['WEAPON_MAC10'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_MICROSMG_CLIP_01',
+            item = 'microsmg_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_MICROSMG_CLIP_02',
+            item = 'microsmg_extendedclip',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_PI_FLSH',
+            item = 'pistol_flashlight',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'pistol_suppressor',
+        },
+    },
+    ['WEAPON_AK47'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_AK47_CLIP_01',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_AK47_CLIP_02',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'rifle_suppressor',
+        },
+    },
+    ['WEAPON_M70'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_M70_CLIP_01',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP_02',
+            item = 'rifle_suppressor',
+        },
+    },
+    ['WEAPON_M110'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_M110_CLIP_01',
+            item = 'marksmanrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_M110_CLIP_02',
+            item = 'marksmanrifle_extendedclip',
+            type = 'clip',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP',
+            item = 'rifle_suppressor',
+        },
+    },
+    ['WEAPON_HK416'] = {
+        ['defaultclip'] = {
+            component = 'COMPONENT_HK416_CLIP_01',
+            item = 'carbinerifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'COMPONENT_HK416_CLIP_02',
+            item = 'carbinerifle_extendedclip',
+            type = 'clip',
+        },
+        ['flashlight'] = {
+            component = 'COMPONENT_AT_AR_FLSH',
+            item = 'rifle_flashlight',
+        },
+        ['suppressor'] = {
+            component = 'COMPONENT_AT_AR_SUPP',
+            item = 'rifle_suppressor',
         },
     },
 }
