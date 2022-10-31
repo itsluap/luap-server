@@ -9,6 +9,8 @@ files {
 
 files {
     'shellprops.ytyp'
+    'stream/bossroom/gta5.meta',
+    'stream/bossroom/water.xml'
 }
 
 data_file 'DLC_ITYP_REQUEST' 'shellprops.ytyp'
