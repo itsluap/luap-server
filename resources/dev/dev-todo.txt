@@ -2,6 +2,8 @@
 
 
 To Do:
+    - PD clothes is overlapped with clothingpack
+    -
     - vehicle shop (add vehicles to qbcore)
     - check if burgershot has boss management
     - check shops around whole city
