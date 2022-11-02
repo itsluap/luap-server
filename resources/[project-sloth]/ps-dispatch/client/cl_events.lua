@@ -42,7 +42,7 @@ local WeaponTable = {
     [317205821]   = "CLASS 2: Autoshotgun",
     [-1568386805] = "CLASS 5: GRENADE LAUNCHER",
     [-1312131151] = "CLASS 5: RPG",
-    [125959754]   = "CLASS 5: Compactlauncher"
+    [125959754]   = "CLASS 5: Compactlauncher",
     -- Addon Weapons
     [GetHashKey("weapon_ak47")] = "CLASS 3: AK-47",
     [GetHashKey("weapon_de")] = "CLASS 2: Desert Eagle",
@@ -62,7 +62,7 @@ local WeaponTable = {
     [GetHashKey("weapon_mp9")] = "CLASS 2: MP9",
     [GetHashKey("weapon_mossberg")] = "CLASS 2: Mossberg",
     [GetHashKey("weapon_remington")] = "CLASS 2: Remington",
-    [GetHashKey("weapon_scarh")] = "CLASS 3: Scar-H"
+    [GetHashKey("weapon_scarh")] = "CLASS 3: Scar-H",
 }
 local function VehicleTheft(vehicle)
     local vehdata = vehicleData(vehicle)
