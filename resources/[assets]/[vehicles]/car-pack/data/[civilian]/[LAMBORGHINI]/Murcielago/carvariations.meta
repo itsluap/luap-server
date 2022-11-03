@@ -228,7 +228,7 @@
         </Probabilities>
       </plateProbabilities>
       <lightSettings value="953" />
-      <sirenSettings value="981619" />
+      <sirenSettings value="0" />
     </Item>
 	<Item>
       <modelName>lwlp670</modelName>
@@ -494,7 +494,7 @@
         </Probabilities>
       </plateProbabilities>
       <lightSettings value="953" />
-      <sirenSettings value="289074" />
+      <sirenSettings value="0" />
     </Item>
   </variationData>
 </CVehicleModelInfoVariation>

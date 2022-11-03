@@ -37,7 +37,7 @@
         </Probabilities>
       </plateProbabilities>
       <lightSettings value="13456" />
-      <sirenSettings value="964560" />
+      <sirenSettings value="0" />
     </Item>
 	<Item>
       <modelName>rmoddarki82</modelName>
@@ -74,7 +74,7 @@
         </Probabilities>
       </plateProbabilities>
       <lightSettings value="12456" />
-      <sirenSettings value="960557" />
+      <sirenSettings value="0" />
     </Item>
   </variationData>
 </CVehicleModelInfoVariation>

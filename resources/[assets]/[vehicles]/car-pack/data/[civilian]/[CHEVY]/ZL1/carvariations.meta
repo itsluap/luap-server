@@ -73,7 +73,7 @@
         </Probabilities>
       </plateProbabilities>
       <lightSettings value="1" />
-      <sirenSettings value="341235" />
+      <sirenSettings value="0" />
     </Item>
   </variationData>
 </CVehicleModelInfoVariation>
