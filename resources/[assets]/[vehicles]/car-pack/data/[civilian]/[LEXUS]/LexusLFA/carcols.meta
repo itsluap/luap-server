@@ -4,7 +4,7 @@
   </Kits>
     <Lights>
 		<Item>
-      <id value="909"/>
+      <id value="787"/>
       <indicator>
         <intensity value="5.8000000"/>
         <falloffMax value="2.50000000"/>

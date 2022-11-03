@@ -669,7 +669,7 @@
   </Kits>
   <Lights>
     <Item>
-      <id value="1239" />	
+      <id value="756" />	
       <indicator>
         <intensity value="0.375000" />
         <falloffMax value="2.500000" />

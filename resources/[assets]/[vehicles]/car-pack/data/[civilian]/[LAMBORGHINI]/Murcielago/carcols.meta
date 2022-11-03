@@ -442,7 +442,7 @@
   </Kits>
   <Lights>
     <Item>
-      <id value="953" />	
+      <id value="780" />	
       <indicator>
         <intensity value="0.500000" />
         <falloffMax value="2.000000" />
