@@ -2,6 +2,7 @@
 Bugs:
     - players flicker invisible inside mlos - ask in gabz support chat about this
     - cant clear calls from dispatch in mdt
+    - realtors cant leave houses they made?
 
 Notes:
     - the "press E to open" menu is - exports['qb-core']:DrawText(text, 'left') and to hide - exports['qb-core']:HideText()
