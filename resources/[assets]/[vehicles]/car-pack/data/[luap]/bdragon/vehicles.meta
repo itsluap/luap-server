@@ -5,10 +5,10 @@
   <InitDatas>
     <!-- Vinny Car -->
 	<Item>
-      <modelName>bdragonblue</modelName>
-      <txdName>bdragonblue</txdName>
-      <handlingId>bdragonblue</handlingId>
-      <gameName>bdragonblue</gameName>
+      <modelName>bdragon</modelName>
+      <txdName>bdragon</txdName>
+      <handlingId>bdragon</handlingId>
+      <gameName>bdragon</gameName>
       <vehicleMakeName>Bentley</vehicleMakeName>
       <expressionDictName>null</expressionDictName>
       <expressionDictName>null</expressionDictName>
@@ -120,7 +120,7 @@
     <!-- Vinny Car -->
   <Item>
       <parent>vehicles_schaf_interior</parent>
-      <child>bdragonblue</child>
+      <child>bdragon</child>
     </Item>
   <!-- Heist Cars End -->
   </txdRelationships>

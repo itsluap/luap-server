@@ -4,7 +4,7 @@
   <variationData>
     <!-- Vinny Car -->
     <Item>
-      <modelName>bdragonblue</modelName>
+      <modelName>bdragon</modelName>
       <colors>
         <Item>
           <indices content="char_array">
@@ -152,7 +152,7 @@
         </Item>
       </colors>
       <kits>
-        <Item>6550_bdragonblue_modkit</Item>
+        <Item>6550_bdragon_modkit</Item>
       </kits>
       <windowsWithExposedEdges />
       <plateProbabilities>

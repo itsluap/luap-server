@@ -4,7 +4,7 @@
   <HandlingData>
     <!-- Vinny Car -->
      <Item type="CHandlingData">
-      <handlingName>bdragonblue</handlingName>
+      <handlingName>bdragon</handlingName>
       <fMass value="1900.000000" />
       <fInitialDragCoeff value="1.300000" />
       <fPercentSubmerged value="85.000000" />
