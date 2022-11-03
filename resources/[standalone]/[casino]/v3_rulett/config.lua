@@ -1,7 +1,7 @@
 Config = {}
 Config.TranslationSelected = 'en'
 
-Config.Debug = true -- enable debug messages in sv/cl console
+Config.Debug = false -- enable debug messages in sv/cl console
 Config.TestTicker = nil -- need for testing the numbers, you can change the fix roulette tick by /rultick [1-38]
 
 Config.RouletteStart = 40 -- how many seconds to start the rulett after you sit down
