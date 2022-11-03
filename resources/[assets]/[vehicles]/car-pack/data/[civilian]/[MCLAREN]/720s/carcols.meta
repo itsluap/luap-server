@@ -485,7 +485,7 @@
   </Kits>
   <Lights>
     <Item>
-      <id value="790" />
+      <id value="201" />
       <indicator>
         <intensity value="0.375000" />
         <falloffMax value="2.500000" />
@@ -623,7 +623,7 @@
       <name>policeoldd3</name>
     </Item>
     <Item>
-      <id value="790" />
+      <id value="201" />
       <indicator>
         <intensity value="0.375000" />
         <falloffMax value="2.500000" />
