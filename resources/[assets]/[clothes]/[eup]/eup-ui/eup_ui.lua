@@ -122,7 +122,7 @@ menuPool:RefreshIndex()
 
 RegisterCommand('eup', function()
 	local ped = PlayerPedId()
-	if GlobalState.isLEO = true then
+	if GlobalState.isLEO == true then
 		if GetEntityModel(ped) == GetHashKey("mp_m_freemode_01") then
 			mainMenuM:Visible(not mainMenuM:Visible())
 		elseif GetEntityModel(ped) == GetHashKey("mp_f_freemode_01") then
