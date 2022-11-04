@@ -493,12 +493,7 @@ else
                 elseif zoneName == 'barber' then
                     exports['qb-core']:DrawText('[E] - Barber', 'left')
                 elseif zoneName == 'tattoo' then
-                        exports['qb-core']:DrawText('[E] - Tattoo Shop', 'left')
-                        if IsControlJustPressed(0, 38) then
-                            TriggerEvent('luap:tattoos')
-                            exports['qb-core']:HideText()
-                        end
-                    break
+                    exports['qb-core']:DrawText('[E] - Tattoo Shop', 'left')
                 end
             else
                 inZone = false
@@ -562,6 +557,11 @@ else
                         openMenu({
                             {menu = "clothing", label = "Hair", selected = true},
                         })
+                    end
+                elseif zoneName == 'tattoo' then
+                    if IsControlJustReleased(0, 38) then
+                        customCamLocation = nil
+                        TriggerEvent('luap:tattoos')
                     end
                 else
                     if IsControlJustReleased(0, 38) then
