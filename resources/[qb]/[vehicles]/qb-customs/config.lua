@@ -9,7 +9,7 @@ Config.RepairPriceMultiplier = 1.0 -- Every player's vehicle damage (0-1000) is 
 Config.UseRadial = false -- Will use qb-radial menu for entering instead of press E
 Config.allowGovPlateIndex = false -- Setting this to true will allow all vehicles to purchase gov plate index "Blue on White #3" (only for emergency vehicles otherwise)
 
-Config.DisableWhenMechanicsOnline = false -- Disables customs completely if enough mechanics are online and on-duty
+Config.DisableWhenMechanicsOnline = true -- Disables customs completely if enough mechanics are online and on-duty
 Config.MinOnlineMechanics = 1 -- The amount of mechanics that have to be online and on-duty to disable customs (mechanics can still use them)
 Config.DisabledCategoriesMechanics = {
     repair = false,
