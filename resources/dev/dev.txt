@@ -7,10 +7,10 @@ Bugs:
 
 
 Notes:
-    - the "press E to open" menu is - exports['qb-core']:DrawText(text, 'left') and to hide - exports['qb-core']:HideText()
-    - ps-ui can be used instead of the above ^^^
     - server color ? 53B3CB blue \ 5500FF  indigo
-    - GlobalState.isLEO returns true if player has job from ps-mdt config.lua
+    - the "press E to open" menu is - exports['qb-core']:DrawText(text, 'left') and to hide - exports['qb-core']:HideText()
+    - ps-ui can be used instead of the above ^^^ -- did this
+    - GlobalState.isLEO returns true if player has job from ps-mdt config.lua, returns false if any other job
     - /grantlicense (for weapon license and driver license) (police command)
     - can exchange cryptosticks at lesters
     - can use ifak to heal self
