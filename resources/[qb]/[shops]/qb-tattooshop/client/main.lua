@@ -210,10 +210,15 @@ Citizen.CreateThread(function()
     
     while true do
         Citizen.Wait(0)
+        local NearAnything = false
+        local PlayerCoords = GetEntityCoords(GetPlayerPed(-1))
         local CanSleep = true
         if not IsMenuOpen() then
-            for _, interiorId in ipairs(Config.interiorIds) do
-                if GetInteriorFromEntity(PlayerPedId()) == interiorId then
+            local Distance = #(PlayerCoords - Config.Shops)
+            if Distance < 5 then
+                NearAnything = true
+                if not ShowingInteraction then
+                    ShowingInteraction = true
                     CanSleep = false
                     if not IsPedInAnyVehicle(PlayerPedId(), false) then
                         CreateScale("OpenShop")
@@ -223,6 +228,8 @@ Citizen.CreateThread(function()
                         end
                     end
                 end
+            else
+                ShowingInteraction = true
             end
         end
         
