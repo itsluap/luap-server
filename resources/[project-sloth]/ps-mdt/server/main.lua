@@ -34,6 +34,10 @@ RegisterServerEvent("luap:isLEO", function()
 	GlobalState.isLEO = true
 end)
 
+RegisterServerEvent("luap:isnotLEO", function()
+	GlobalState.isLEO = false
+end)
+
 -----------------------------------------------------------
 
 RegisterServerEvent("ps-mdt:dispatchStatus", function(bool)
