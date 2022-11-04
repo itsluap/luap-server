@@ -40,6 +40,8 @@ RegisterNetEvent('QBCore:Client:OnJobUpdate', function(JobInfo)
     local job = Player.job.name
     if AllowedJob(job) then
         TriggerServerEvent('luap:isLEO')
+    else
+        TriggerServerEvent('luap:isnotLEO')
     end
 end)
 
