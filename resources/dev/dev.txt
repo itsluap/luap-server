@@ -3,6 +3,8 @@ Bugs:
     - players flicker invisible inside mlos - ask in gabz support chat about this
     - cant clear calls from dispatch in mdt
     - realtors cant leave houses they made?
+    - need a new tattoo shop script - remove edit from qb-clothing
+
 
 Notes:
     - the "press E to open" menu is - exports['qb-core']:DrawText(text, 'left') and to hide - exports['qb-core']:HideText()
@@ -15,6 +17,7 @@ Notes:
     - drug effects are in qb-smallresources (consumables)
     - set light ids to unique id (cant be above 1013)
     - clothing pack tool to make one working clothing pack?
+    - clothing has to be for mp male or female
     - 
 
 Other:
