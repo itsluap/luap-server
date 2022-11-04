@@ -492,6 +492,12 @@ else
                     exports['qb-core']:DrawText('[E] - Clothing Shop', 'left')
                 elseif zoneName == 'barber' then
                     exports['qb-core']:DrawText('[E] - Barber', 'left')
+                elseif zoneName == 'tattoo' then
+                    exports['qb-core']:DrawText('[E] - Tattoo Shop', 'left')
+                    if IsControlJustPressed(0, 38) then
+                        TriggerEvent('luap:tattoos')
+                        exports['qb-core']:HideText()
+                    end
                 end
             else
                 inZone = false

@@ -532,7 +532,14 @@ Config.Stores = {
     [19] = {shopType = 'barber', coords = vector3(1931.5, 3729.7, 31.8), width = 2, length = 2},
     [20] = {shopType = 'barber', coords = vector3(1212.8, -472.9, 65.2), width = 2, length = 2},
     [21] = {shopType = 'barber', coords = vector3(-32.9, -152.3, 56.1), width = 2, length = 2},
-    [22] = {shopType = 'barber', coords = vector3(-278.1, 6228.5, 30.7), width = 2, length = 2}
+    [22] = {shopType = 'barber', coords = vector3(-278.1, 6228.5, 30.7), width = 2, length = 2},
+    [23] = {shopType = 'tattoo', coords = vector3(1322.6, -1651.9, 51.2), width = 2, length = 2},
+    [24] = {shopType = 'tattoo', coords = vector3(-1153.6, -1425.6, 4.9), width = 2, length = 2},
+    [25] = {shopType = 'tattoo', coords = vector3(322.1, 180.4, 103.5), width = 2, length = 2},
+    [26] = {shopType = 'tattoo', coords = vector3(-3170.0, 1075.0, 20.8), width = 2, length = 2},
+    [27] = {shopType = 'tattoo', coords = vector3(1864.6, 3747.7, 33.0), width = 2, length = 2},
+    [28] = {shopType = 'tattoo', coords = vector3(-293.7, 6200.0, 31.4), width = 2, length = 2},
+
 }
 
 -- set isGang to true if the requiredJob is a gang

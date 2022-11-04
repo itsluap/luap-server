@@ -197,6 +197,15 @@ function CreateScale(sType)
     end
 end
 
+RegisterNetEvent('luap:tattoos', function()
+    if not IsMenuOpen() then
+        CanSleep = false
+        if not IsPedInAnyVehicle(PlayerPedId(), false) then
+            OpenTattooShop()
+        end
+    end
+end)
+
 Citizen.CreateThread(function()
     JayMenu.CreateMenu("tattoo", "Tattoo Shop", function()
         return CloseTattooShop()
@@ -210,15 +219,12 @@ Citizen.CreateThread(function()
     
     while true do
         Citizen.Wait(0)
-        local NearAnything = false
-        local PlayerCoords = GetEntityCoords(GetPlayerPed(-1))
         local CanSleep = true
+
+        --[[
         if not IsMenuOpen() then
-            local Distance = #(PlayerCoords - Config.Shops)
-            if Distance < 5 then
-                NearAnything = true
-                if not ShowingInteraction then
-                    ShowingInteraction = true
+            for _, interiorId in ipairs(Config.interiorIds) do
+                if GetInteriorFromEntity(PlayerPedId()) == interiorId then
                     CanSleep = false
                     if not IsPedInAnyVehicle(PlayerPedId(), false) then
                         CreateScale("OpenShop")
@@ -228,10 +234,9 @@ Citizen.CreateThread(function()
                         end
                     end
                 end
-            else
-                ShowingInteraction = true
             end
         end
+        ]]--
         
         if IsMenuOpen() then
             DisableAllControlActions(0)
