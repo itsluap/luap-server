@@ -74,7 +74,7 @@ CreateThread(function()
                                     SetVehicleBoostActive(CurrentVehicle, 0)
                                     SetVehicleEnginePowerMultiplier(CurrentVehicle, LastEngineMultiplier)
                                     SetVehicleEngineTorqueMultiplier(CurrentVehicle, 1.0)
-                                    StopScreenEffect("RaceTurbo")
+                                    --StopScreenEffect("RaceTurbo")
                                     for index,_ in pairs(Fxs) do
                                         StopParticleFxLooped(Fxs[index], 1)
                                         TriggerServerEvent('nitrous:server:StopSync', trim(GetVehicleNumberPlateText(CurrentVehicle)))
@@ -97,7 +97,7 @@ CreateThread(function()
                                 TriggerServerEvent('nitrous:server:StopSync', trim(GetVehicleNumberPlateText(veh)))
                                 Fxs[index] = nil
                             end
-                            StopScreenEffect("RaceTurbo")
+                            --StopScreenEffect("RaceTurbo")
                             TriggerEvent('hud:client:UpdateNitrous', VehicleNitrous[Plate].hasnitro,  VehicleNitrous[Plate].level, false)
                             NitrousActivated = false
                         end
@@ -108,13 +108,13 @@ CreateThread(function()
                     TriggerEvent('hud:client:UpdateNitrous', false, nil, false)
                     nosupdated = true
                 end
-                StopScreenEffect("RaceTurbo")
+                --StopScreenEffect("RaceTurbo")
             end
         else
             if nosupdated then
                 nosupdated = false
             end
-            StopScreenEffect("RaceTurbo")
+            --StopScreenEffect("RaceTurbo")
             Wait(1500)
         end
         Wait(3)
@@ -151,7 +151,7 @@ CreateThread(function()
             if veh ~= 0 then
                 TriggerServerEvent('nitrous:server:SyncFlames', VehToNet(veh))
                 SetVehicleBoostActive(veh, 1)
-                StartScreenEffect("RaceTurbo", 0.0, 0)
+                --StartScreenEffect("RaceTurbo", 0.0, 0)
 
                 for _,bones in pairs(p_flame_location) do
                     if GetEntityBoneIndexByName(veh, bones) ~= -1 then
