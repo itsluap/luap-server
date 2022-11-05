@@ -186,7 +186,7 @@ CreateThread(function()
                 if veh ~= 0 then
                     if not isPurging then
                         SetVehicleNitroPurgeEnabled(veh, true)
-                        TriggerServerEvent('nitro:__sync', true, false)
+                        --TriggerServerEvent('nitro:__sync', true, false)
                     end
                 end
             end       
@@ -194,7 +194,7 @@ CreateThread(function()
             if veh ~= 0 then
                 if not isDriving then
                     SetVehicleNitroPurgeEnabled(veh, false)
-                    TriggerServerEvent('nitro:__sync', false, false, true)
+                    --TriggerServerEvent('nitro:__sync', false, false, true)
                 end
             end
         end
