@@ -225,6 +225,7 @@ RegisterNetEvent('nitrous:client:SyncFlames', function(netid, nosid)
             end
         end
     end
+    local vehicle = GetVehiclePedIsIn(PlayerPedId())
     SetVehicleNitroPurgeEnabled(vehicle, purgeEnabled)
 end)
 
