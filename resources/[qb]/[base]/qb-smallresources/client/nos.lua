@@ -262,6 +262,10 @@ function IsVehicleNitroPurgeEnabled(vehicle)
 end
 
 function SetVehicleNitroPurgeEnabled(vehicle, enabled)
+    if IsVehicleNitroPurgeEnabled(vehicle) == enabled then
+        return
+    end
+
     if enabled then
       local bone = GetEntityBoneIndexByName(vehicle, 'bonnet')
       local pos = GetWorldPositionOfEntityBone(vehicle, bone)
