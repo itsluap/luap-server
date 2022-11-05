@@ -66,8 +66,10 @@ CreateThread(function()
                         CreateThread(function()
                             while NitrousActivated do
                                 if VehicleNitrous[Plate].level - 1 ~= 0 then
-                                    TriggerServerEvent('nitrous:server:UpdateNitroLevel', Plate, (VehicleNitrous[Plate].level - 1))
-                                    TriggerEvent('hud:client:UpdateNitrous', VehicleNitrous[Plate].hasnitro,  VehicleNitrous[Plate].level, true)
+                                    if isDriving then
+                                        TriggerServerEvent('nitrous:server:UpdateNitroLevel', Plate, (VehicleNitrous[Plate].level - 1))
+                                        TriggerEvent('hud:client:UpdateNitrous', VehicleNitrous[Plate].hasnitro,  VehicleNitrous[Plate].level, true)
+                                    end
                                 else
                                     TriggerServerEvent('nitrous:server:UnloadNitrous', Plate)
                                     NitrousActivated = false
@@ -144,29 +146,43 @@ ParticleDict = "veh_xs_vehicle_mods"
 ParticleFx = "veh_nitrous"
 ParticleSize = 1.4
 
+local vehicles = {}
+local particles = {}
+
+local INPUT_VEH_ACCELERATE = 71
+
+local function IsDrivingControlPressed()
+    return IsControlPressed(0, INPUT_VEH_ACCELERATE)
+end
+
 CreateThread(function()
     while true do
         if NitrousActivated then
+            local isDriving = IsDrivingControlPressed()
             local veh = GetVehiclePedIsIn(PlayerPedId())
-            if veh ~= 0 then
-                TriggerServerEvent('nitrous:server:SyncFlames', VehToNet(veh))
-                SetVehicleBoostActive(veh, 1)
-                --StartScreenEffect("RaceTurbo", 0.0, 0)
+            if isDriving then
+                if veh ~= 0 then
+                    TriggerServerEvent('nitrous:server:SyncFlames', VehToNet(veh))
+                    SetVehicleBoostActive(veh, 1)
+                    --StartScreenEffect("RaceTurbo", 0.0, 0)
 
-                for _,bones in pairs(p_flame_location) do
-                    if GetEntityBoneIndexByName(veh, bones) ~= -1 then
-                        if Fxs[bones] == nil then
-                            RequestNamedPtfxAsset(ParticleDict)
-                            while not HasNamedPtfxAssetLoaded(ParticleDict) do
-                                Wait(0)
+                    for _,bones in pairs(p_flame_location) do
+                        if GetEntityBoneIndexByName(veh, bones) ~= -1 then
+                            if Fxs[bones] == nil then
+                                RequestNamedPtfxAsset(ParticleDict)
+                                while not HasNamedPtfxAssetLoaded(ParticleDict) do
+                                    Wait(0)
+                                end
+                                SetPtfxAssetNextCall(ParticleDict)
+                                UseParticleFxAssetNextCall(ParticleDict)
+                                Fxs[bones] = StartParticleFxLoopedOnEntityBone(ParticleFx, veh, 0.0, -0.02, 0.0, 180, 0.0, 0.0, GetEntityBoneIndexByName(veh, bones), ParticleSize, 0.0, 0.0, 0.0)
                             end
-                            SetPtfxAssetNextCall(ParticleDict)
-                            UseParticleFxAssetNextCall(ParticleDict)
-                            Fxs[bones] = StartParticleFxLoopedOnEntityBone(ParticleFx, veh, 0.0, -0.02, 0.0, 180, 0.0, 0.0, GetEntityBoneIndexByName(veh, bones), ParticleSize, 0.0, 0.0, 0.0)
                         end
                     end
                 end
-            end
+            else
+                SetVehicleNitroPurgeEnabled(vehicle, true)
+            end       
         end
         Wait(0)
     end
@@ -235,3 +251,37 @@ RegisterNetEvent('nitrous:client:UnloadNitrous', function(Plate)
         TriggerEvent('hud:client:UpdateNitrous', false, nil, false)
     end
 end)
+
+function SetVehicleNitroPurgeEnabled(vehicle, enabled)
+    if IsVehicleNitroPurgeEnabled(vehicle) == enabled then
+      return
+    end
+  
+    if enabled then
+      local bone = GetEntityBoneIndexByName(vehicle, 'bonnet')
+      local pos = GetWorldPositionOfEntityBone(vehicle, bone)
+      local off = GetOffsetFromEntityGivenWorldCoords(vehicle, pos.x, pos.y, pos.z)
+      local ptfxs = {}
+  
+      for i=0,3 do
+        local leftPurge = CreateVehiclePurgeSpray(vehicle, off.x - 0.5, off.y + 0.05, off.z, 40.0, -20.0, 0.0, 0.5)
+        local rightPurge = CreateVehiclePurgeSpray(vehicle, off.x + 0.5, off.y + 0.05, off.z, 40.0, 20.0, 0.0, 0.5)
+  
+        table.insert(ptfxs, leftPurge)
+        table.insert(ptfxs, rightPurge)
+      end
+  
+      vehicles[vehicle] = true
+      particles[vehicle] = ptfxs
+    else
+      if particles[vehicle] and #particles[vehicle] > 0 then
+        for _, particleId in ipairs(particles[vehicle]) do
+          StopParticleFxLooped(particleId)
+        end
+      end
+  
+      vehicles[vehicle] = nil
+      particles[vehicle] = nil
+    end
+  end
+  
