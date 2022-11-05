@@ -241,7 +241,7 @@ local function RegisterHouseExitZone(id)
     local aptcoords = vector3(house.coords['enter'].x - POIOffsets.exit.x, house.coords['enter'].y - POIOffsets.exit.y - 0.5, house.coords['enter'].z - Config.MinZOffset + POIOffsets.exit.z)
 
     if Config.Houses[id].tier ~= 1 then
-        print("apartment tier 1")
+        --print("apartment tier 1")
         local zone = BoxZone:Create(coords, 2, 1, {
             name = boxName,
             heading = 0.0,
@@ -260,6 +260,14 @@ local function RegisterHouseExitZone(id)
         })
     end
 
+    local aptzone = BoxZone:Create(aptcoords, 2, 1, {
+        name = boxName,
+        heading = 0.0,
+        debugPoly = false,
+        minZ = aptcoords.z - 2.0,
+        maxZ = aptcoords.z + 1.0,
+    })
+
     local zone = BoxZone:Create(aptcoords, 2, 1, {
         name = boxName,
         heading = 0.0,
@@ -276,7 +284,15 @@ local function RegisterHouseExitZone(id)
         end
     end)
 
-    Config.Targets[boxName] = {created = true, zone = zone}
+    aptzone:onPlayerInOut(function (isPointInside)
+        if isPointInside then
+            showExitHeaderMenu()
+        else
+            CloseMenuFull()
+        end
+    end)
+
+    Config.Targets[boxName] = {created = true, aptzone = aptzone}
 end
 
 local function RegisterHouseEntranceZone(id, house)
