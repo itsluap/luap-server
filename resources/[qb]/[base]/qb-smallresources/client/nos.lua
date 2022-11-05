@@ -181,7 +181,7 @@ CreateThread(function()
                         end
                     end
                 end
-            else
+            elseif not isDriving then
                 if veh ~= 0 then
                     if not isPurging then
                         SetVehicleNitroPurgeEnabled(veh, true)
