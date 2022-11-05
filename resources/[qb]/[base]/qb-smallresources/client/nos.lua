@@ -159,6 +159,7 @@ CreateThread(function()
     while true do
         if NitrousActivated then
             local isDriving = IsDrivingControlPressed()
+            local isPurging = IsVehicleNitroPurgeEnabled(vehicle)
             local veh = GetVehiclePedIsIn(PlayerPedId())
             if isDriving then
                 if veh ~= 0 then
@@ -182,7 +183,11 @@ CreateThread(function()
                 end
             else
                 if veh ~= 0 then
-                    SetVehicleNitroPurgeEnabled(veh, true)
+                    if not isPurging then
+                        SetVehicleNitroPurgeEnabled(veh, true)
+                    else
+                        SetVehicleNitroPurgeEnabled(veh, false) 
+                    end
                 end
             end       
         end
