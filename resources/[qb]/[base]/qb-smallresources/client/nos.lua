@@ -194,6 +194,7 @@ CreateThread(function()
             if veh ~= 0 then
                 if not isDriving then
                     SetVehicleNitroPurgeEnabled(veh, false)
+                    SetVehicleBoostActive(veh, 0)
                     --TriggerServerEvent('nitro:__sync', false, false, true)
                 end
             end
