@@ -731,12 +731,12 @@ Config.Products = {
     },
     ["digitalden"] = {
         [1] = {
-            name = 'phone',
-            price = 100,
+            name = 'fitbit',
+            price = 50,
             amount = 100,
             info = {},
             type = 'item',
-            slot = 3,
+            slot = 1,
         },
         [2] = {
             name = 'radio',
@@ -747,12 +747,12 @@ Config.Products = {
             slot = 2,
         },
         [3] = {
-            name = 'fitbit',
-            price = 50,
+            name = 'phone',
+            price = 200,
             amount = 100,
             info = {},
             type = 'item',
-            slot = 1,
+            slot = 3,
         },
         [4] = {
             name = 'pixellaptop',
