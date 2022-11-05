@@ -225,6 +225,7 @@ RegisterNetEvent('nitrous:client:SyncFlames', function(netid, nosid)
             end
         end
     end
+    SetVehicleNitroPurgeEnabled(vehicle, purgeEnabled)
 end)
 
 RegisterNetEvent('nitrous:client:StopSync', function(plate)
