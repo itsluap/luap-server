@@ -165,7 +165,7 @@ CreateThread(function()
                 SetVehicleNitroPurgeEnabled(veh, false)
                 if veh ~= 0 then
                     TriggerServerEvent('nitrous:server:SyncFlames', VehToNet(veh))
-                    SetVehicleBoostActive(veh, 1)
+                    --SetVehicleBoostActive(veh, 1)
                     --StartScreenEffect("RaceTurbo", 0.0, 0)
 
                     for _,bones in pairs(p_flame_location) do
@@ -186,6 +186,7 @@ CreateThread(function()
                 if veh ~= 0 then
                     if not isPurging then
                         SetVehicleNitroPurgeEnabled(veh, true)
+                        SetVehicleBoostActive(veh, 1)
                         --TriggerServerEvent('nitro:__sync', true, false)
                     end
                 end
@@ -194,7 +195,6 @@ CreateThread(function()
             if veh ~= 0 then
                 if not isDriving then
                     SetVehicleNitroPurgeEnabled(veh, false)
-                    SetVehicleBoostActive(veh, 0, 1)
                     --TriggerServerEvent('nitro:__sync', false, false, true)
                 end
             end
