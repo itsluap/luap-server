@@ -259,23 +259,7 @@ local function RegisterHouseExitZone(id)
             maxZ = aptcoords.z + 1.0,
         })
     end
-
-    local aptzone = BoxZone:Create(aptcoords, 2, 1, {
-        name = boxName,
-        heading = 0.0,
-        debugPoly = false,
-        minZ = aptcoords.z - 2.0,
-        maxZ = aptcoords.z + 1.0,
-    })
-
-    local zone = BoxZone:Create(coords, 2, 1, {
-        name = boxName,
-        heading = 0.0,
-        debugPoly = false,
-        minZ = coords.z - 2.0,
-        maxZ = coords.z + 1.0,
-    })
-
+    
     zone:onPlayerInOut(function (isPointInside)
         if isPointInside then
             showExitHeaderMenu()
