@@ -4,7 +4,6 @@ game 'gta5'
 description 'QB-SmallResources'
 version '1.1.0'
 
-shared_script 'config.lua'
 server_script 'server/*.lua'
 client_script 'client/*.lua'
 
@@ -23,6 +22,7 @@ files {
 }
 
 shared_scripts {
+	'config.lua',
     '@qb-core/shared/locale.lua',
     'locales/en.lua',
     'locales/*.lua',
