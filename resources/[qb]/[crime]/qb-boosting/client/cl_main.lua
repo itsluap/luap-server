@@ -362,6 +362,7 @@ AddEventHandler("boosting:DisplayUI" , function()
       URL =  BNEBoosting['functions'].GetCurrentBNE().back
     end
     SetNuiFocus(true ,true)
+    doAnimation()
     isOpen = true
 	Timehours = tostring(GetClockHours())
 	Timeminutes = tostring(GetClockMinutes())
