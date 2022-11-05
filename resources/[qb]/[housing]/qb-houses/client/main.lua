@@ -251,7 +251,7 @@ local function RegisterHouseExitZone(id)
         })
     else
         --print("apartment tier 1")
-        local zone = BoxZone:Create(aptcoords, 2, 1, {
+        local aptzone = BoxZone:Create(aptcoords, 2, 1, {
             name = boxName,
             heading = 0.0,
             debugPoly = false,
