@@ -190,7 +190,7 @@ CreateThread(function()
                     end
                 end
             end       
-        else
+        elseif not isDriving then
             SetVehicleNitroPurgeEnabled(veh, false)
             TriggerServerEvent('nitro:__sync', false, false, true)
         end
