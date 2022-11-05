@@ -524,7 +524,7 @@ Config.Stores = {
     [11] = {shopType = 'clothing', coords = vector3(1196.785, 2709.558, 37.222), width = 2, length = 2},
     [12] = {shopType = 'clothing', coords = vector3(-3171.453, 1043.857, 19.863), width = 2, length = 2},
     [13] = {shopType = 'clothing', coords = vector3(-1100.959, 2710.211, 18.107), width = 2, length = 2},
-    [14] = {shopType = 'clothing', coords = vector3(-1207.65, -1456.88, 4.3784737586975), width = 2, length = 2},
+    --[14] = {shopType = 'clothing', coords = vector3(-1207.65, -1456.88, 4.3784737586975), width = 2, length = 2},
     [15] = {shopType = 'clothing', coords = vector3(121.76, -224.6, 53.56), width = 2, length = 2},
     [16] = {shopType = 'barber', coords = vector3(-814.3, -183.8, 36.6), width = 2, length = 2},
     [17] = {shopType = 'barber', coords = vector3(136.8, -1708.4, 28.3), width = 2, length = 2},
