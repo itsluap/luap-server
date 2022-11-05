@@ -1316,8 +1316,8 @@ Config.Locations = {
 
     -- Weedshop Locations
     ["weedshop"] = {
-        ["label"] = "Smoke On The Water",
-        ["coords"] = vector4(-1168.82, -1572.97, 4.66, 126.31),
+        ["label"] = "LD Organics",
+        ["coords"] = vector4(-1249.22, -1449.52, 4.37, 51.39),
         ["ped"] = 'a_m_y_hippy_01',
         ["scenario"] = "WORLD_HUMAN_AA_SMOKE",
         ["radius"] = 3.5,
@@ -1326,7 +1326,7 @@ Config.Locations = {
         ["products"] = Config.Products["weedshop"],
         ["showblip"] = true,
         ["blipsprite"] = 140,
-        ["blipscale"] = 0.8,
+        ["blipscale"] = 0.6,
         ["blipcolor"] = 0
     },
 
