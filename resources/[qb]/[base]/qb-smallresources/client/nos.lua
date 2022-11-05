@@ -157,10 +157,10 @@ end
 
 CreateThread(function()
     while true do
+        local isDriving = IsDrivingControlPressed()
+        local isPurging = IsVehicleNitroPurgeEnabled(vehicle)
+        local veh = GetVehiclePedIsIn(PlayerPedId())
         if NitrousActivated then
-            local isDriving = IsDrivingControlPressed()
-            local isPurging = IsVehicleNitroPurgeEnabled(vehicle)
-            local veh = GetVehiclePedIsIn(PlayerPedId())
             if isDriving then
                 if veh ~= 0 then
                     TriggerServerEvent('nitrous:server:SyncFlames', VehToNet(veh))
