@@ -259,22 +259,24 @@ local function RegisterHouseExitZone(id)
             maxZ = aptcoords.z + 1.0,
         })
     end
-    
-    zone:onPlayerInOut(function (isPointInside)
-        if isPointInside then
-            showExitHeaderMenu()
-        else
-            CloseMenuFull()
-        end
-    end)
 
-    aptzone:onPlayerInOut(function (isPointInside)
-        if isPointInside then
-            showExitHeaderMenu()
-        else
-            CloseMenuFull()
-        end
-    end)
+    if Config.Houses[id].tier ~= 1 then
+        zone:onPlayerInOut(function (isPointInside)
+            if isPointInside then
+                showExitHeaderMenu()
+            else
+                CloseMenuFull()
+            end
+        end)
+    else
+        aptzone:onPlayerInOut(function (isPointInside)
+            if isPointInside then
+                showExitHeaderMenu()
+            else
+                CloseMenuFull()
+            end
+        end)
+    end
 
     Config.Targets[boxName] = {created = true, zone = zone}
     Config.Targets[boxName] = {created = true, aptzone = aptzone}
