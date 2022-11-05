@@ -260,6 +260,8 @@ local function RegisterHouseExitZone(id)
         })
     end
 
+    print("exit zone")
+
     if Config.Houses[id].tier ~= 1 then
         zone:onPlayerInOut(function (isPointInside)
             if isPointInside then
