@@ -72,3 +72,37 @@ QBCore.Functions.CreateCallback('smallresources:server:GetCurrentPlayers', funct
     end
     cb(TotalPlayers)
 end)
+
+-- adding nitrous because tuner chip was removed --
+
+QBCore.Functions.CreateUseableItem("nitrous", function(source)
+    TriggerClientEvent('smallresource:client:LoadNitrous', source)
+end)
+
+RegisterNetEvent('nitrous:server:LoadNitrous', function(Plate)
+    TriggerClientEvent('nitrous:client:LoadNitrous', -1, Plate)
+end)
+
+RegisterNetEvent('nitrous:server:SyncFlames', function(netId)
+    TriggerClientEvent('nitrous:client:SyncFlames', -1, netId, source)
+end)
+
+RegisterNetEvent('nitrous:server:UnloadNitrous', function(Plate)
+    TriggerClientEvent('nitrous:client:UnloadNitrous', -1, Plate)
+end)
+
+RegisterNetEvent('nitrous:server:UpdateNitroLevel', function(Plate, level)
+    TriggerClientEvent('nitrous:client:UpdateNitroLevel', -1, Plate, level)
+end)
+
+RegisterNetEvent('nitrous:server:StopSync', function(plate)
+    TriggerClientEvent('nitrous:client:StopSync', -1, plate)
+end)
+
+RegisterNetEvent('nitrous:server:removeItem', function()
+    local Player = QBCore.Functions.GetPlayer(source)
+
+    if not Player then return end
+
+    Player.Functions.RemoveItem('nitrous', 1)
+end)
