@@ -2,7 +2,6 @@
 Bugs:
     - players flicker invisible inside mlos - ask in gabz support chat about this
     - cant clear calls from dispatch in mdt
-    - realtors cant leave houses they made?
     - need a new tattoo shop script - remove edit from qb-clothing
 
 
