@@ -22,10 +22,16 @@ files {
 	'relationships.dat'
 }
 
+shared_scripts {
+    '@qb-core/shared/locale.lua',
+    'locales/en.lua',
+    'locales/*.lua',
+}
+
 exports {
 	'RequestAnimationDict',
 	'RequestModelHash',
-   }
+}
 
 lua54 'yes'
 use_experimental_fxv2_oal 'yes'
