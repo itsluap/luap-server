@@ -1055,7 +1055,6 @@ end)
 -- update to add animation while on laptop --
 
 function doAnimation()
-  print(isOpen)
   if not isOpen then return end
   -- Animation
   RequestAnimDict(tabletDict)
