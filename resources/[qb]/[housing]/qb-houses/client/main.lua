@@ -292,6 +292,7 @@ local function RegisterHouseExitZone(id)
         end
     end)
 
+    Config.Targets[boxName] = {created = true, zone = zone}
     Config.Targets[boxName] = {created = true, aptzone = aptzone}
 end
 
