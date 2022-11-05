@@ -162,6 +162,7 @@ CreateThread(function()
         local veh = GetVehiclePedIsIn(PlayerPedId())
         if NitrousActivated then
             if isDriving then
+                SetVehicleNitroPurgeEnabled(veh, false)
                 if veh ~= 0 then
                     TriggerServerEvent('nitrous:server:SyncFlames', VehToNet(veh))
                     SetVehicleBoostActive(veh, 1)
