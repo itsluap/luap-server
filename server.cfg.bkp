@@ -1,26 +1,23 @@
-#   ____  ____   _____               
-#  / __ \|  _ \ / ____|              
-# | |  | | |_) | |     ___  _ __ ___ 
-# | |  | |  _ <| |    / _ \| '__/ _ \
-# | |__| | |_) | |___| (_) | | |  __/
-#  \___\_\____/ \_____\___/|_|  \___|
-
 ## You CAN edit the following:
 endpoint_add_tcp "0.0.0.0:30120"
 endpoint_add_udp "0.0.0.0:30120"
-sv_maxclients 48
-set steam_webApiKey "none"
-sets tags "default, deployer, qbcore, qb-core"
+sv_maxclients 8
+set steam_webApiKey "AF94A1DB58A91D044F2A6A3E0C7A444D"
+sets tags "qbcore, roleplay, police, ems"
+## [txAdmin CFG validator]: onesync MUST only be set in the txAdmin settings page.
+# set onesync on
 
 ## You MAY edit the following:
 sv_licenseKey "cfxk_1jasI5Iq0ivSo4mQ6FsdF_MvJ84"
-sv_hostname "city built with QBCore Framework by JericoFx & Kakarot & Hamy!"
-sets sv_projectName "[QBCore Framework] city"
-sets sv_projectDesc "An advanced FiveM RP framework including jobs, gangs, housing & more!"
+sv_hostname "Indigo RP | 3.0"
+sets sv_projectName "Indigo 3.0"
+sets sv_projectDesc "Indigo RP | 3.0 | Custom Clothing, Jobs, Vehicles & More!" #  ^6
 sets locale "en-US" 
 load_server_icon myLogo.png
 set sv_enforceGameBuild 2699
-set mysql_connection_string "mysql://root@localhost/QBCoreFramework_313C4A?charset=utf8mb4"
+#set mysql_connection_string "mysql://root@localhost/QBCoreFramework_313C4A?charset=utf8mb4"
+set mysql_connection_string "user=root;password=Honda710;host=localhost;port=3306;database=indigo_db;charset=utf8mb4"
+sv_tebexSecret 9ece67381cffad8ef67ec7d10f20b2b0b41b86b6
 
 # Voice config
 setr voice_useNativeAudio true
@@ -34,7 +31,7 @@ setr voice_syncData 1
 setr qb_locale "en"
 
 # QBCore UseTarget
-setr UseTarget false
+setr UseTarget true
 
 # These resources will start by default.
 ensure mapmanager
@@ -46,16 +43,30 @@ ensure hardcap
 ensure baseevents
 
 # QBCore & Extra stuff
+ensure cfx-gabz-mapdata
+ensure cfx-gabz-scenarios
+ensure cfx-gabz-pdprops
+ensure cfx-gabz-247
 ensure qb-core
+ensure okokNotify
+ensure qb-phone
+ensure qb-weathersync
+ensure qb-assets
 ensure [qb]
+ensure bb-multichar
+ensure Renewed-Banking
+ensure [project-sloth]
 ensure [standalone]
 ensure [voice]
-ensure [defaultmaps]
+ensure [assets]
 
 ## Permissions ##
 add_ace group.admin command allow # allow all commands
 #add_principal identifier.{{principalMasterIdentifier}} qbcore.god <- doesn't exist yet, change the generated one below to qbcore.god
-add_principal identifier.fivem:2448277 group.admin #luap2
+add_principal identifier.fivem:2448277 qbcore.god #luap2
+add_principal identifier.discord:353767887305048064 group.admin #lin
+add_principal identifier.discord:406599443601817650 group.admin #mediumking
+add_principal identifier.discord:548070310734200832 group.admin #icey
 
 # Resources
 add_ace resource.qb-core command allow # Allow qb-core to execute commands
