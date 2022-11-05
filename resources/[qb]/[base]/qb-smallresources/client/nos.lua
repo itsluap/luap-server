@@ -1,3 +1,5 @@
+QBCore = exports['qb-core']:GetCoreObject()
+
 local NitrousActivated = false
 local NitrousBoost = 35.0
 local VehicleNitrous = {}
