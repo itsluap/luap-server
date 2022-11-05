@@ -22,7 +22,7 @@ local function NitroLoop(lastVehicle)
 
   if lastVehicle ~= 0 and lastVehicle ~= vehicle then
     SetVehicleNitroPurgeEnabled(lastVehicle, false)
-    TriggerServerEvent('nitro:__sync', false, false, true)
+    TriggerServerEvent('nitro:__sync', false, true)
   end
 
   if vehicle == 0 or driver ~= player then
@@ -46,17 +46,17 @@ local function NitroLoop(lastVehicle)
     if isDriving then
       if not isBoosting then
         SetVehicleNitroPurgeEnabled(vehicle, false)
-        TriggerServerEvent('nitro:__sync', true, false, false)
+        TriggerServerEvent('nitro:__sync', false, false)
       end
     else
       if not isPurging then
         SetVehicleNitroPurgeEnabled(vehicle, true)
-        TriggerServerEvent('nitro:__sync', false, true, false)
+        TriggerServerEvent('nitro:__sync', true, false)
       end
     end
   elseif isBoosting or isPurging then
     SetVehicleNitroPurgeEnabled(vehicle, false)
-    TriggerServerEvent('nitro:__sync', false, false, false)
+    TriggerServerEvent('nitro:__sync', false, false)
   end
 
   return vehicle
