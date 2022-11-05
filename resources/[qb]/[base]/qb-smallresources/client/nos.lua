@@ -158,7 +158,6 @@ end
 CreateThread(function()
     while true do
         if NitrousActivated then
-            return vehicles[vehicle] == true
             local isDriving = IsDrivingControlPressed()
             local veh = GetVehiclePedIsIn(PlayerPedId())
             if isDriving then
@@ -256,6 +255,10 @@ end)
 function CreateVehiclePurgeSpray(vehicle, xOffset, yOffset, zOffset, xRot, yRot, zRot, scale)
     UseParticleFxAssetNextCall('core')
     return StartParticleFxLoopedOnEntity('ent_sht_steam', vehicle, xOffset, yOffset, zOffset, xRot, yRot, zRot, scale, false, false, false)
+end
+
+function IsVehicleNitroPurgeEnabled(vehicle)
+    return vehicles[vehicle] == true
 end
 
 function SetVehicleNitroPurgeEnabled(vehicle, enabled)
