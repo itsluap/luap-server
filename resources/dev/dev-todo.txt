@@ -2,10 +2,8 @@
 
 
 To Do:
-    - PD clothes is overlapped with clothingpack
     - add oxy runs
-    -
-    - vehicle shop (add vehicles to qbcore)
+    - vehicle shop (add vehicles to qbcore) - after cars are good to go
     - check if burgershot has boss management
     - check shops around whole city
     -
@@ -17,7 +15,6 @@ To Do:
     - setup forums -- can come after launch
 
 In Script:
-    - discord webhooks
     - add durability to ifak
     - redo all heists
     - add bowling script
@@ -25,7 +22,6 @@ In Script:
     - add better mechanic script (possibly tuner shop script thats bookmarked)
     - test boosting script / make sure boosting classes arent fucked
     - (add drugs to ps-buffs) (test all drugs make sure effects work) - fix heroin animation
-    - steal stripclub effects from dream and integrate with another script
 
 Testing:
     - test okokContract
