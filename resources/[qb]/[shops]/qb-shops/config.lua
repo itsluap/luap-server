@@ -719,6 +719,40 @@ Config.Products = {
             slot = 37,
         },
     },
+    ["popspills"] = {
+        [1] = {
+            name = 'bandage',
+            price = 100,
+            amount = 100,
+            info = {},
+            type = 'item',
+            slot = 1,
+        },
+        [2] = {
+            name = 'painkillers',
+            price = 150,
+            amount = 100,
+            info = {},
+            type = 'item',
+            slot = 2,
+        },
+        [3] = {
+            name = 'firstaid',
+            price = 250,
+            amount = 100,
+            info = {},
+            type = 'item',
+            slot = 3,
+        },
+        [4] = {
+            name = 'walkstick',
+            price = 100,
+            amount = 100,
+            info = {},
+            type = 'item',
+            slot = 4,
+        },
+    },
 }
 Config.Locations = {
     -- Mask Shop
@@ -732,6 +766,19 @@ Config.Locations = {
         ["products"] = Config.Products["masker"],
         ["showblip"] = true,
         ["blipsprite"] = 362,
+        ["blipscale"] = 0.6,
+        ["blipcolor"] = 0
+    },
+    ["popspills"] = {
+        ["label"] = "Pops Pills",
+        ["coords"] = vector4(-1255.43, -1434.5, 4.37, 131.97),
+        ["ped"] = 'a_f_y_business_02',
+        ["radius"] = 3.5,
+        ["targetIcon"] = "fas fa-shopping-basket",
+        ["targetLabel"] = "Open Shop",
+        ["products"] = Config.Products["popspills"],
+        ["showblip"] = true,
+        ["blipsprite"] = 51,
         ["blipscale"] = 0.6,
         ["blipcolor"] = 0
     },
