@@ -12,9 +12,6 @@ Config['General'] = {
 	["BNErewardmultiplier"] = math.random(12, 15) / 10,
 }
 
-
-
-
 Config['CoreSettings'] = {
     ["QBCORE"] = {
         ["Version"] = "new", -- new = using export | old = using events
@@ -24,7 +21,6 @@ Config['CoreSettings'] = {
 
     }
 }
-
 
 Config['Utils'] = {
     ["Rewards"] = {
@@ -80,10 +76,6 @@ Config['Utils'] = {
         --["CopNotifyLength"] = 5000, -- Time in (ms) of the police Notify length
     },
 }
-
-
-
-
 
 -------------- SERVER FUNCTIONS --------------
 AddVehicle = function(data)
@@ -333,9 +325,6 @@ Config.CitizenNames =  {
     [100] = {name = "Jenna Anderson"},
 }
 
-
-
-
 --------------BLIPS----------------- DON4T TOUCH ANY OF THESE UNLESS YOU KNOW WHAT YOU ARE DOING
 local Circle
 
@@ -425,7 +414,8 @@ end
 
 
 ShowNotification = function(msg, type)
-    exports['mythic_notify']:SendAlert(type, msg)
+    QBCore.Functions.Notify(msg, type, 5000)
+    --exports['mythic_notify']:SendAlert(type, msg)
 	--exports['co_notify']:SendNotify('boosting', type, msg)
 end
 
