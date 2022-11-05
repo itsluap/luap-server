@@ -185,11 +185,11 @@ CreateThread(function()
                 if veh ~= 0 then
                     if not isPurging then
                         SetVehicleNitroPurgeEnabled(veh, true)
-                    else
-                        SetVehicleNitroPurgeEnabled(veh, false) 
                     end
                 end
             end       
+        else
+            SetVehicleNitroPurgeEnabled(veh, false)
         end
         Wait(0)
     end
