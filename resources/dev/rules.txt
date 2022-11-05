@@ -38,6 +38,7 @@ In-Game Information:
     - Random Death Match (RDM) & Vehicle Death Match (VDM):
         - Attacking another player/group without any story/roleplay leading up to it.
         - Attacking another player/group using a vehicle with the intent to kill / knock them down without vailid reasoning or initiation.
+            - Speed (100 +) attacking other vehicles (Ramming)
 
     - New Life Rule (NLR):
         - If your are downed and respawn at the hospital your character forgets the immediate events leading up to being downed in the current scenario. You may not respawn if you've been advised that police or EMS is on the way to the scene.
