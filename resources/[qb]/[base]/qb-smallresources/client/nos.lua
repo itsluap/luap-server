@@ -158,6 +158,7 @@ end
 CreateThread(function()
     while true do
         if NitrousActivated then
+            return vehicles[vehicle] == true
             local isDriving = IsDrivingControlPressed()
             local veh = GetVehiclePedIsIn(PlayerPedId())
             if isDriving then
