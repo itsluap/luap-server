@@ -260,25 +260,37 @@ local function RegisterHouseExitZone(id)
         })
     end
 
-    print("exit zone")
+    local zone = BoxZone:Create(coords, 2, 1, {
+        name = boxName,
+        heading = 0.0,
+        debugPoly = false,
+        minZ = coords.z - 2.0,
+        maxZ = coords.z + 1.0,
+    })
 
-    if Config.Houses[id].tier ~= 1 then
-        zone:onPlayerInOut(function (isPointInside)
-            if isPointInside then
-                showExitHeaderMenu()
-            else
-                CloseMenuFull()
-            end
-        end)
-    else
-        aptzone:onPlayerInOut(function (isPointInside)
-            if isPointInside then
-                showExitHeaderMenu()
-            else
-                CloseMenuFull()
-            end
-        end)
-    end
+    local aptzone = BoxZone:Create(aptcoords, 2, 1, {
+        name = boxName,
+        heading = 0.0,
+        debugPoly = false,
+        minZ = aptcoords.z - 2.0,
+        maxZ = aptcoords.z + 1.0,
+    })
+
+    zone:onPlayerInOut(function (isPointInside)
+        if isPointInside then
+            showExitHeaderMenu()
+        else
+            CloseMenuFull()
+        end
+    end)
+
+    aptzone:onPlayerInOut(function (isPointInside)
+        if isPointInside then
+            showExitHeaderMenu()
+        else
+            CloseMenuFull()
+        end
+    end)
 
     Config.Targets[boxName] = {created = true, zone = zone}
     Config.Targets[boxName] = {created = true, aptzone = aptzone}
