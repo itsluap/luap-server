@@ -1054,7 +1054,7 @@ end)
 
 -- update to add animation while on laptop --
 
-local function doAnimation()
+function doAnimation()
   if not isOpen then return end
   -- Animation
   RequestAnimDict(tabletDict)
