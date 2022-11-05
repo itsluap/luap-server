@@ -38,7 +38,6 @@ local function NitroLoop(lastVehicle)
   local isEnabled = IsNitroControlPressed()
   local isDriving = IsDrivingControlPressed()
   local isRunning = GetIsVehicleEngineRunning(vehicle)
-  local isBoosting = IsVehicleNitroBoostEnabled(vehicle)
   local isPurging = IsVehicleNitroPurgeEnabled(vehicle)
   local isFueled = GetNitroFuelLevel(vehicle) > 0
 
