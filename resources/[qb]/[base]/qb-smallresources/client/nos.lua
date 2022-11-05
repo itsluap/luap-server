@@ -181,6 +181,7 @@ CreateThread(function()
                     end
                 end
             else
+                local vehicle = GetVehiclePedIsIn(player, lastVehicle)
                 SetVehicleNitroPurgeEnabled(vehicle, true)
             end       
         end
