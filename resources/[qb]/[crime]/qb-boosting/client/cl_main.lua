@@ -343,6 +343,7 @@ local NuiLoaded = false
 
 RegisterNetEvent("boosting:DisplayUI")
 AddEventHandler("boosting:DisplayUI" , function()
+  isOpen = true
 
   if NuiLoaded then      
     for k,v in ipairs(Contracts) do
@@ -363,7 +364,6 @@ AddEventHandler("boosting:DisplayUI" , function()
     end
     SetNuiFocus(true ,true)
     doAnimation()
-    isOpen = true
 	Timehours = tostring(GetClockHours())
 	Timeminutes = tostring(GetClockMinutes())
 	if (#Timehours == 1) then
