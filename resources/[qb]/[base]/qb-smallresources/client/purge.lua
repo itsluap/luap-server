@@ -39,11 +39,10 @@ local function NitroLoop(lastVehicle)
   local isDriving = IsDrivingControlPressed()
   local isRunning = GetIsVehicleEngineRunning(vehicle)
   local isPurging = IsVehicleNitroPurgeEnabled(vehicle)
-  local isFueled = GetNitroFuelLevel(vehicle) > 0
 
   if isRunning and isEnabled and isFueled then
     if isDriving then
-      if not isBoosting then
+      if not isPurging then
         SetVehicleNitroPurgeEnabled(vehicle, false)
         TriggerServerEvent('nitro:__sync', false, false)
       end
@@ -53,7 +52,7 @@ local function NitroLoop(lastVehicle)
         TriggerServerEvent('nitro:__sync', true, false)
       end
     end
-  elseif isBoosting or isPurging then
+  elseif isPurging then
     SetVehicleNitroPurgeEnabled(vehicle, false)
     TriggerServerEvent('nitro:__sync', false, false)
   end
