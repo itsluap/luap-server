@@ -24,6 +24,14 @@ RegisterNetEvent('nitrous:server:StopSync', function(plate)
   TriggerClientEvent('nitrous:client:StopSync', -1, plate)
 end)
 
+RegisterNetEvent('nitrous:server:removeItem', function()
+  local Player = QBCore.Functions.GetPlayer(source)
+
+  if not Player then return end
+
+  Player.Functions.RemoveItem('nitrous', 1)
+end)
+
 RegisterNetEvent('nitro:__sync')
 AddEventHandler('nitro:__sync', function (purgeEnabled, lastVehicle)
   -- Fix for source reference being lost during loop below.
