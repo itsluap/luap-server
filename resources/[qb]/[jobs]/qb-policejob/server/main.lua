@@ -610,8 +610,8 @@ RegisterNetEvent('police:server:policeAlert', function(text)
             local alertData = {title = Lang:t('info.new_call'), coords = {x = coords.x, y = coords.y, z = coords.z}, description = text}
             TriggerClientEvent("qb-phone:client:addPoliceAlert", v.PlayerData.source, alertData)
             TriggerClientEvent('police:client:policeAlert', v.PlayerData.source, coords, text)
-            TriggerClientEvent('InteractSound_CL:PlayOnOne', src, 'panicbutton', 0.09)
-            TriggerClientEvent('InteractSound_CL:PlayWithinDistanceOS', 10, 'panicbutton', 0.09)
+            TriggerClientEvent('InteractSound_CL:PlayOnOne', v.PlayerData.source, 'panicbutton', 0.09)
+            TriggerClientEvent('InteractSound_CL:PlayWithinDistanceOS', -1, GetEntityCoords(GetPlayerPed(src)), 10, 'panicbutton', 0.09)
         end
     end
 end)
