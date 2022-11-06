@@ -1,7 +1,6 @@
 local INPUT_CHARACTER_WHEEL = 19
 local INPUT_VEH_ACCELERATE = 71
 local INPUT_VEH_DUCK = 21
-local vehicles = {}
 
 local function IsNitroControlPressed()
   if not IsInputDisabled(2) then
@@ -14,10 +13,6 @@ end
 
 local function IsDrivingControlPressed()
   return IsControlPressed(0, INPUT_VEH_ACCELERATE)
-end
-
-function IsVehicleNitroBoostEnabled(vehicle)
-  return vehicles[vehicle] == true
 end
 
 local function NitroLoop(lastVehicle)
@@ -45,18 +40,10 @@ local function NitroLoop(lastVehicle)
   local isEnabled = IsNitroControlPressed()
   local isDriving = IsDrivingControlPressed()
   local isRunning = GetIsVehicleEngineRunning(vehicle)
-  local isBoosting = IsVehicleNitroBoostEnabled(vehicle)
   local isPurging = IsVehicleNitroPurgeEnabled(vehicle)
 
   if isRunning and isEnabled then
     if isDriving then
-      if not isBoosting then
-        --SetVehicleNitroBoostEnabled(vehicle, true)
-        --SetVehicleLightTrailEnabled(vehicle, true)
-        SetVehicleNitroPurgeEnabled(vehicle, false)
-        TriggerServerEvent('nitro:__sync', false, false)
-      end
-    else
       if not isPurging then
         --SetVehicleNitroBoostEnabled(vehicle, false)
         --SetVehicleLightTrailEnabled(vehicle, false)
@@ -64,7 +51,7 @@ local function NitroLoop(lastVehicle)
         TriggerServerEvent('nitro:__sync', true, false)
       end
     end
-  elseif isBoosting or isPurging then
+  elseif isPurging then
     --SetVehicleNitroBoostEnabled(vehicle, false)
     --SetVehicleLightTrailEnabled(vehicle, false)
     SetVehicleNitroPurgeEnabled(vehicle, false)
