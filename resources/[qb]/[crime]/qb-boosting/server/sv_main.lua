@@ -185,13 +185,26 @@ AddEventHandler('boosting:alertcops', function(cx,cy,cz)
     end
 end)
 
+local function GeneratePlate()
+    local plate = QBCore.Shared.RandomInt(1) .. QBCore.Shared.RandomStr(2) .. QBCore.Shared.RandomInt(3) .. QBCore.Shared.RandomStr(2)
+    local result = MySQL.scalar.await('SELECT plate FROM player_vehicles WHERE plate = ?', {plate})
+    if result then
+        return GeneratePlate()
+    else
+        return plate:upper()
+    end
+end
+
 RegisterServerEvent('boosting:AddVehicle')
 AddEventHandler('boosting:AddVehicle', function(model, plate, vehicleProps)
     local src = source
     local pData = QBCore.Functions.GetPlayer(src)
+    local cid = pData.PlayerData.citizenid
+    local plate = GeneratePlate()
+
     VehicleData = {
         steam = pData.PlayerData.steam,
-        license = pData.PlayerData.license,
+        --license = pData.PlayerData.license,
         citizenid = pData.PlayerData.citizenid,
         vehicle = model,
         hash = GetHashKey(vehicle),
@@ -199,7 +212,19 @@ AddEventHandler('boosting:AddVehicle', function(model, plate, vehicleProps)
         vehicleplate = plate,
         vehiclestate = 1,
     }
+
     AddVehicle(VehicleData)
+    
+    SQL('INSERT INTO player_vehicles (license, citizenid, vehicle, hash, mods, plate, garage, state) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', {
+        pData.PlayerData.license,
+        cid,
+        vehicle,
+        GetHashKey(vehicle),
+        '{}',
+        plate,
+        'pillboxgarage',
+        0
+    })
 end)
 
 RegisterServerEvent('boosting:removeblip')
