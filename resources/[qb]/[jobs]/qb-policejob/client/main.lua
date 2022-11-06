@@ -202,7 +202,7 @@ end)
 
 RegisterNetEvent('police:client:SendPoliceEmergencyAlert', function()
     local Player = QBCore.Functions.GetPlayerData()
-    TriggerServerEvent('InteractSound_SV:PlayOnAll', 'panicbutton', 0.09)
+    --TriggerServerEvent('InteractSound_SV:PlayOnAll', 'panicbutton', 0.09)
     exports['ps-dispatch']:OfficerDown()
     TriggerServerEvent('police:server:policeAlert', Lang:t('info.officer_down', {lastname = Player.charinfo.lastname, callsign = Player.metadata.callsign}))
     TriggerServerEvent('hospital:server:ambulanceAlert', Lang:t('info.officer_down', {lastname = Player.charinfo.lastname, callsign = Player.metadata.callsign}))
