@@ -9,9 +9,7 @@ local tabletBone = 60309
 local tabletOffset = vector3(0.03, 0.002, -0.0)
 local tabletRot = vector3(10.0, 160.0, 0.0)
 
-if QBCore == nil then
-    QBCore = exports['qb-core']:GetCoreObject()
-end
+QBCore = exports['qb-core']:GetCoreObject()
 ----------------------------------------------------------------------------------------------------------------------------
 
 local authorized = false

@@ -50,7 +50,7 @@ Config['Utils'] = {
     },
     ["Blips"] = {
         ["BlipUpdateTime"] = 3000, -- Time in (ms) of the police blip update 1000 = 1 second
-        ["DisableTrackingOnDCB"] = false, -- This will disable the police tracking on D , C , B vehicle classes (Turn to false to disable this option)
+        ["DisableTrackingOnDCB"] = true, -- This will disable the police tracking on D , C , B vehicle classes (Turn to false to disable this option)
     },
     ["Notifications"] = {
         ["NotEnoughBNE"] = "Not enough BNE", 
