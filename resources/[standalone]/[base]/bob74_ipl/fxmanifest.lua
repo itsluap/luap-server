@@ -128,5 +128,3 @@ client_scripts {
     , "gta_mpsum2/vehicle_warehouse.lua"
     , "gta_mpsum2/warehouse.lua"
 }
-
-this_is_a_map 'yes'
