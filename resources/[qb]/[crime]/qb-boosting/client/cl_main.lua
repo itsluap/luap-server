@@ -270,6 +270,7 @@ end)
 
 RegisterNUICallback('vin', function(data)
   SetNuiFocus(false ,false)
+  isOpen = false
   if(tonumber(BNEBoosting['functions'].GetCurrentBNE().bne) >= tonumber(Config['Utils']["VIN"]["BNEPrice"])) then
     Contracts[data.id].started = true
     BNEBoosting['functions'].RemoveBNE(Config['Utils']["VIN"]["BNEPrice"])
