@@ -51,6 +51,9 @@ function SetVehicleNitroPurgeEnabled(vehicle, enabled)
     local off = GetOffsetFromEntityGivenWorldCoords(vehicle, pos.x, pos.y, pos.z)
     local ptfxs = {}
 
+    RequestAmbientAudioBank("CARWASH_SOUNDS", 0)
+		PlaySoundFromEntity(soundId, "SPRAY", vehicle, "CARWASH_SOUNDS", 1, 0)
+
     for i=0,3 do
       local leftPurge = CreateVehiclePurgeSpray(vehicle, off.x - 0.5, off.y + 0.05, off.z, 40.0, -20.0, 0.0, 0.5)
       local rightPurge = CreateVehiclePurgeSpray(vehicle, off.x + 0.5, off.y + 0.05, off.z, 40.0, 20.0, 0.0, 0.5)
