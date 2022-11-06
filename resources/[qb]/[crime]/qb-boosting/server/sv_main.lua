@@ -1,7 +1,5 @@
 
-local QBCore = nil
-
-QBCore = Config['CoreSettings']["QBCORE"]["Export"]
+local QBCore = exports['qb-core']:GetCoreObject()
 
 SQL = function(query, parameters, cb)
     local res = nil

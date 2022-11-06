@@ -9,7 +9,7 @@ local tabletBone = 60309
 local tabletOffset = vector3(0.03, 0.002, -0.0)
 local tabletRot = vector3(10.0, 160.0, 0.0)
 
-QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 ----------------------------------------------------------------------------------------------------------------------------
 
 local authorized = false
@@ -138,7 +138,7 @@ AddEventHandler('boosting:CreateContract' , function(shit)
       local class = data.type
       if(HasItem('pixellaptop') == true) then
         if Config['General']["UseNotificationsInsteadOfEmails"] then
-          QBCore.Functions.Notify("You have recieved a "..class.. " Boosting...", "success", 3500)   
+          ShowNotification("You have recieved a "..class.. " Boosting...", "success")   
         else
           RevievedOfferEmail(data.owner, data.type)
         end
@@ -271,7 +271,7 @@ RegisterNUICallback('vin', function(data)
     BNEBoosting['functions'].RemoveBNE(Config['Utils']["VIN"]["BNEPrice"])
     TriggerEvent("boosting:StartContract" , data.id , true)
   else
-    QBCore.Functions.Notify(Config['Utils']["Notifications"]["NotEnoughBNE"], "error", 3500)    
+    ShowNotification(Config['Utils']["Notifications"]["NotEnoughBNE"], "error")    
   end
 end)
 
@@ -288,7 +288,7 @@ AddEventHandler("boosting:DisablerUsed" , function()
   if OnTheDropoffWay then
     local Class = Contracts[startedcontractid].type 
     if (Config['Utils']["Contracts"]["DisableTrackingOnDCB"]) and (Class == "D" or Class == "C" or Class == "B") then
-      QBCore.Functions.Notify(Config['Utils']["Notifications"]["NoTrackerOnThisVehicle"], "error", 3500)    
+      ShowNotification(Config['Utils']["Notifications"]["NoTrackerOnThisVehicle"], "error")    
     elseif(vinstarted == false) then
       if(DisablerTimes < 4) then
         DisablerUsed = true
@@ -298,12 +298,12 @@ AddEventHandler("boosting:DisablerUsed" , function()
             DisablerTimes = DisablerTimes + 1
             CallingCops = false
             TriggerServerEvent("boosting:removeblip")
-            QBCore.Functions.Notify(Config['Utils']["Notifications"]["TrackerRemoved"], "success", 3500)    
+            ShowNotification(Config['Utils']["Notifications"]["TrackerRemoved"], "success")    
           elseif(DisablerTimes < 3) then
             Config['Utils']["Blips"]["BlipUpdateTime"] = 7000
             DisablerTimes = DisablerTimes + 1
             TriggerServerEvent("boosting:SetBlipTime")
-            QBCore.Functions.Notify(Config['Utils']["Notifications"]["SuccessHack"], "success", 3500)    
+            ShowNotification(Config['Utils']["Notifications"]["SuccessHack"], "success")    
           end
        
          
@@ -318,21 +318,21 @@ AddEventHandler("boosting:DisablerUsed" , function()
         Config['Utils']["Blips"]["BlipUpdateTime"] = Config['Utils']["Blips"]["BlipUpdateTime"] + 5000
         --DisablerTimes = DisablerTimes + 1
         TriggerServerEvent("boosting:SetBlipTime")
-        QBCore.Functions.Notify(Config['Utils']["Notifications"]["SuccessHack"], "success", 3500)    
+        ShowNotification(Config['Utils']["Notifications"]["SuccessHack"], "success", 3500)    
       end
     else
       if(DisablerTimes == 5) then
         CallingCops = false
         TriggerServerEvent("boosting:removeblip")
         CanUseComputer = true
-        QBCore.Functions.Notify(Config['Utils']["Notifications"]["TrackerRemovedVINMission"]["VINMission"], "success", 3500)    
+        ShowNotification(Config['Utils']["Notifications"]["TrackerRemovedVINMission"]["VINMission"], "success", 3500)    
         if not MainThreadStarted then
           MainThread()
         end
       end
     end
   else
-   QBCore.Functions.Notify(Config['Utils']["Notifications"]["NoMissionDetected"], "error", 3500)    
+   ShowNotification(Config['Utils']["Notifications"]["NoMissionDetected"], "error")    
   end
 end
 end)
@@ -377,7 +377,7 @@ AddEventHandler("boosting:DisplayUI" , function()
     timetosend = realtimehours..":"..realtimeminutes
     SendNUIMessage({show = 'true' , logo = Config['Utils']["Laptop"]["LogoUrl"] , background = URL, time = timetosend, BNE = BNEBoosting['functions'].GetCurrentBNE().bne , defaultback = "images/background.png"})
   else
-    QBCore.Functions.Notify(Config['Utils']["Notifications"]["UiStillLoadingMsg"], "error", 3500)    
+    ShowNotification(Config['Utils']["Notifications"]["UiStillLoadingMsg"], "error")    
     Citizen.Wait(3000)
     NuiLoaded = true
   end
@@ -693,7 +693,7 @@ end)
 RegisterNetEvent("boosting:ContractDone")
 AddEventHandler("boosting:ContractDone" , function()
   if CompletedTask then
-    QBCore.Functions.Notify(Config['Utils']["Notifications"]["DropOffMsg"], "success", 3500)    
+    ShowNotification(Config['Utils']["Notifications"]["DropOffMsg"], "success")    
     TriggerServerEvent("boosting:removeblip")
     Citizen.Wait(math.random(25000,35000))
     TriggerServerEvent('boosting:finished')
@@ -890,7 +890,7 @@ local ScratchAnim = "car_bomb_mechanic"
 local function AddVehicleToGarage()
   local EntityModel = GetEntityModel(Vehicle)
   local DiplayName = GetDisplayNameFromVehicleModel(EntityModel)
-  QBCore.Functions.Notify("Vin scratch complete!", "success", 3500)   
+  ShowNotification("Vin scratch complete!", "success")   
   local vehicleProps = QBCore.Functions.GetVehicleProperties(Vehicle)	
   TriggerServerEvent('boosting:AddVehicle',string.lower(DiplayName) ,Contracts[startedcontractid].plate, vehicleProps)
   vinstarted = false
@@ -915,10 +915,10 @@ AddEventHandler("boosting:client:UseComputer" , function()
         TriggerEvent('boosting:client:2ndUseComputer')
       end, function() -- Cancel
         StopAnimTask(PlayerPedId(), ScratchAnimDict, "exit", 1.0)
-        QBCore.Functions.Notify("Failed!", "error", 3500)
+        ShowNotification("Failed!", "error")
     end)
   else
-    QBCore.Functions.Notify("Can't use this now!", "error", 3500)
+    ShowNotification("Can't use this now!", "error")
   end
 end)
 
@@ -935,11 +935,11 @@ AddEventHandler("boosting:client:2ndUseComputer" , function()
       flags = 16,
     }, {}, {}, function() -- Done
       CanScratchVehicle = true
-      QBCore.Functions.Notify(Config['Utils']["Notifications"]["FinishComputer"], "success" , 3500)
+      ShowNotification(Config['Utils']["Notifications"]["FinishComputer"], "success" )
       CanUseComputer = false
     end, function() -- Cancel
       StopAnimTask(PlayerPedId(), ScratchAnimDict, "exit", 1.0)
-      QBCore.Functions.Notify("Failed!", "error", 3500)
+      ShowNotification("Failed!", "error")
   end) 
 end)
 
@@ -957,12 +957,12 @@ AddEventHandler("boosting:client:ScratchVehicle" , function()
     }, {}, {}, function() -- Done
       StopAnimTask(PlayerPedId(), ScratchAnimDict, "exit", 1.0)
       AddVehicleToGarage()
-      QBCore.Functions.Notify(Config['Utils']["Notifications"]["VehicleAdded"], "success", 3500)
+      ShowNotification(Config['Utils']["Notifications"]["VehicleAdded"], "success")
       DeleteBlip()
       CallingCops = false
     end, function() -- Cancel
       StopAnimTask(PlayerPedId(), ScratchAnimDict, "exit", 1.0)
-      QBCore.Functions.Notify("Failed!", "error", 3500)
+      ShowNotification("Failed!", "error")
   end)
   NotifySent = false
 end)
