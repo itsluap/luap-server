@@ -18,11 +18,11 @@ Franklin = {
             Franklin.Style.Clear(false)
 
             if style ~= "" then
-                SetIplPropState(Franklin.interiorId, settled, true, refresh)
+                SetIplPropState(Franklin.interiorId, unpacking, true, refresh)
             else
                 if refresh then
                     --RefreshInterior(Franklin.interiorId)
-                    SetIplPropState(Franklin.interiorId, settled, true, refresh)
+                    SetIplPropState(Franklin.interiorId, unpacking, true, refresh)
                 end
             end
         end,
