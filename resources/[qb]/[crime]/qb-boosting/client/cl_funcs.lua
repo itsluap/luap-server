@@ -4,7 +4,6 @@ local QBCore = exports['qb-core']:GetCoreObject()
 
 BNEBoosting = {}
 
-
 BNEBoosting['functions'] = {
     GetCurrentBNE = function()
         QBCore.Functions.TriggerCallback('boosting:getCurrentBNE', function(amount)

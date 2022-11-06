@@ -248,6 +248,7 @@ RegisterNUICallback('dick', function(data)
     else
      ShowNotification("Not enough BNE",'error')
      SetNuiFocus(false ,false)
+     isOpen = false
     end  
    end)
 	end
