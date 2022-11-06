@@ -1,6 +1,7 @@
 local INPUT_CHARACTER_WHEEL = 19
 local INPUT_VEH_ACCELERATE = 71
 local INPUT_VEH_DUCK = 21
+local vehicles = {}
 
 local function IsNitroControlPressed()
   if not IsInputDisabled(2) then
