@@ -13,7 +13,7 @@ Citizen.CreateThread(function()
     FranklinAunt.LoadDefault()
 
     -- Franklin
-    Franklin.LoadDefault()
+    --Franklin.LoadDefault()
 
     -- Floyd: -1150.703, -1520.713, 10.633
     Floyd.LoadDefault()
