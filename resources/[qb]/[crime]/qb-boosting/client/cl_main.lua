@@ -234,6 +234,7 @@ RegisterNUICallback('dick', function(data)
       TriggerEvent("boosting:StartContract" , data.id)
       Contracts[data.id].started = true
       SetNuiFocus(false ,false)
+      isOpen = false
     else
       QBCore.Functions.TriggerCallback('boosting:server:GetActivity', function(result)
 	  if(tonumber(BNEBoosting['functions'].GetCurrentBNE().bne) >= tonumber(data.price)) then
@@ -241,9 +242,11 @@ RegisterNUICallback('dick', function(data)
           TriggerEvent("boosting:StartContract" , data.id)
           Contracts[data.id].started = true
           SetNuiFocus(false ,false)
+          isOpen = false
         else
           TriggerEvent("DoLongHudText","Not enough police",2)
           SetNuiFocus(false ,false)
+          isOpen = false
         end
     else
      ShowNotification("Not enough BNE",'error')
