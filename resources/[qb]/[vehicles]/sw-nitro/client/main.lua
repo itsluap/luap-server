@@ -1,6 +1,6 @@
-local INPUT_CHARACTER_WHEEL = 36
+local INPUT_CHARACTER_WHEEL = 19
 local INPUT_VEH_ACCELERATE = 71
-local INPUT_VEH_DUCK = 21
+local INPUT_VEH_DUCK = 73
 
 local function IsNitroControlPressed()
   if not IsInputDisabled(2) then
@@ -21,10 +21,10 @@ local function NitroLoop(lastVehicle)
   local driver = GetPedInVehicleSeat(vehicle, -1)
 
   if lastVehicle ~= 0 and lastVehicle ~= vehicle then
-    --SetVehicleNitroBoostEnabled(lastVehicle, false)
-    --SetVehicleLightTrailEnabled(lastVehicle, false)
+    SetVehicleNitroBoostEnabled(lastVehicle, false)
+    SetVehicleLightTrailEnabled(lastVehicle, false)
     SetVehicleNitroPurgeEnabled(lastVehicle, false)
-    TriggerServerEvent('nitro:__sync', false, true)
+    TriggerServerEvent('nitro:__sync', false, false, true)
   end
 
   if vehicle == 0 or driver ~= player then
@@ -33,29 +33,38 @@ local function NitroLoop(lastVehicle)
 
   local model = GetEntityModel(vehicle)
 
-  if not IsThisModelACar(model) then
+  if not IsThisModelACar(model) or IsVehicleElectric(vehicle) then
     return 0
   end
 
   local isEnabled = IsNitroControlPressed()
   local isDriving = IsDrivingControlPressed()
   local isRunning = GetIsVehicleEngineRunning(vehicle)
+  local isBoosting = IsVehicleNitroBoostEnabled(vehicle)
   local isPurging = IsVehicleNitroPurgeEnabled(vehicle)
+  local isFueled = GetNitroFuelLevel(vehicle) > 0
 
-  if isRunning and isEnabled then
-    if not isDriving then
+  if isRunning and isEnabled and isFueled then
+    if isDriving then
+      if not isBoosting then
+        SetVehicleNitroBoostEnabled(vehicle, true)
+        SetVehicleLightTrailEnabled(vehicle, true)
+        SetVehicleNitroPurgeEnabled(vehicle, false)
+        TriggerServerEvent('nitro:__sync', true, false, false)
+      end
+    else
       if not isPurging then
-        --SetVehicleNitroBoostEnabled(vehicle, false)
-        --SetVehicleLightTrailEnabled(vehicle, false)
+        SetVehicleNitroBoostEnabled(vehicle, false)
+        SetVehicleLightTrailEnabled(vehicle, false)
         SetVehicleNitroPurgeEnabled(vehicle, true)
-        TriggerServerEvent('nitro:__sync', true, false)
+        TriggerServerEvent('nitro:__sync', false, true, false)
       end
     end
-  elseif isPurging then
-    --SetVehicleNitroBoostEnabled(vehicle, false)
-    --SetVehicleLightTrailEnabled(vehicle, false)
+  elseif isBoosting or isPurging then
+    SetVehicleNitroBoostEnabled(vehicle, false)
+    SetVehicleLightTrailEnabled(vehicle, false)
     SetVehicleNitroPurgeEnabled(vehicle, false)
-    TriggerServerEvent('nitro:__sync', false, false)
+    TriggerServerEvent('nitro:__sync', false, false, false)
   end
 
   return vehicle
@@ -71,7 +80,7 @@ Citizen.CreateThread(function ()
 end)
 
 RegisterNetEvent('nitro:__update')
-AddEventHandler('nitro:__update', function (playerServerId, purgeEnabled, lastVehicle)
+AddEventHandler('nitro:__update', function (playerServerId, boostEnabled, purgeEnabled, lastVehicle)
   local playerId = GetPlayerFromServerId(playerServerId)
 
   -- Sometimes, the source player is disconnected from our session. If we don't
@@ -99,5 +108,7 @@ AddEventHandler('nitro:__update', function (playerServerId, purgeEnabled, lastVe
   local vehicle = GetVehiclePedIsIn(player, lastVehicle)
   local driver = GetPedInVehicleSeat(vehicle, -1)
 
+  SetVehicleNitroBoostEnabled(vehicle, boostEnabled)
+  SetVehicleLightTrailEnabled(vehicle, boostEnabled)
   SetVehicleNitroPurgeEnabled(vehicle, purgeEnabled)
 end)
