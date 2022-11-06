@@ -43,7 +43,7 @@ local function NitroLoop(lastVehicle)
   local isPurging = IsVehicleNitroPurgeEnabled(vehicle)
 
   if isRunning and isEnabled then
-    if isDriving then
+    if not isDriving then
       if not isPurging then
         --SetVehicleNitroBoostEnabled(vehicle, false)
         --SetVehicleLightTrailEnabled(vehicle, false)
