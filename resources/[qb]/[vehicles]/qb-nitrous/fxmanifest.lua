@@ -12,3 +12,10 @@ client_script 'client/purge.lua'
 client_script 'client/main.lua'
 
 server_script 'server/main.lua'
+
+shared_scripts {
+    '@qb-core/shared/locale.lua',
+    'locales/en.lua',
+    'locales/*.lua',
+}
+
