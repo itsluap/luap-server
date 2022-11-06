@@ -45,22 +45,22 @@ local function NitroLoop(lastVehicle)
   if isRunning and isEnabled then
     if isDriving then
       if not isBoosting then
-        SetVehicleNitroBoostEnabled(vehicle, true)
-        SetVehicleLightTrailEnabled(vehicle, true)
+        --SetVehicleNitroBoostEnabled(vehicle, true)
+        --SetVehicleLightTrailEnabled(vehicle, true)
         SetVehicleNitroPurgeEnabled(vehicle, false)
         TriggerServerEvent('nitro:__sync', false, false)
       end
     else
       if not isPurging then
-        SetVehicleNitroBoostEnabled(vehicle, false)
-        SetVehicleLightTrailEnabled(vehicle, false)
+        --SetVehicleNitroBoostEnabled(vehicle, false)
+        --SetVehicleLightTrailEnabled(vehicle, false)
         SetVehicleNitroPurgeEnabled(vehicle, true)
         TriggerServerEvent('nitro:__sync', true, false)
       end
     end
   elseif isPurging then
-    SetVehicleNitroBoostEnabled(vehicle, false)
-    SetVehicleLightTrailEnabled(vehicle, false)
+    --SetVehicleNitroBoostEnabled(vehicle, false)
+    --SetVehicleLightTrailEnabled(vehicle, false)
     SetVehicleNitroPurgeEnabled(vehicle, false)
     TriggerServerEvent('nitro:__sync', false, false)
   end
