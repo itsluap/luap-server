@@ -1,9 +1,4 @@
 local QBCore = exports['qb-core']:GetCoreObject()
-local VehicleNitrous = {}
-
-QBCore.Functions.CreateCallback('nos:GetNosLoadedVehs', function(_, cb)
-  cb(VehicleNitrous)
-end)
 
 QBCore.Functions.CreateUseableItem("nitrous", function(source)
   TriggerClientEvent('smallresource:client:LoadNitrous', source)
