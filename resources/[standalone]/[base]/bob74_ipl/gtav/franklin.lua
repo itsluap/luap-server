@@ -61,7 +61,7 @@ Franklin = {
     },
 
     LoadDefault = function()
-        Franklin.Style.Set(Franklin.Style.settled)
+        Franklin.Style.Set(Franklin.Style.empty)
         Franklin.GlassDoor.Set(Franklin.GlassDoor.opened)
         Franklin.Details.Enable(Franklin.Details.flyer, false)
         Franklin.Details.Enable(Franklin.Details.tux, false)
