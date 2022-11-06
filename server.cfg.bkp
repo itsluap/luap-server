@@ -48,7 +48,6 @@ ensure cfx-gabz-scenarios
 ensure cfx-gabz-pdprops
 ensure cfx-gabz-247
 ensure qb-core
-ensure okokNotify
 ensure qb-phone
 ensure qb-weathersync
 ensure qb-assets
