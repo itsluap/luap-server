@@ -323,14 +323,16 @@ AddEventHandler("boosting:DisablerUsed" , function()
         Config['Utils']["Blips"]["BlipUpdateTime"] = Config['Utils']["Blips"]["BlipUpdateTime"] + 5000
         --DisablerTimes = DisablerTimes + 1
         TriggerServerEvent("boosting:SetBlipTime")
-        ShowNotification("Success", "success", 3500)    
+        ShowNotification("Success", "success")    
       end
     else
       if(DisablerTimes == 5) then
         CallingCops = false
         TriggerServerEvent("boosting:removeblip")
         CanUseComputer = true
-        ShowNotification("Tracker removed, head to the scratch location", "success", 3500)    
+        ShowNotification("Tracker removed, head to the scratch location", "success")
+        SetNewWaypoint(Config['Utils']["VIN"]["VinLocations"].x, Config['Utils']["VIN"]["VinLocations"].y)  
+          
         if not MainThreadStarted then
           MainThread()
         end
@@ -1011,7 +1013,7 @@ function MainThread()
     if CanUseComputer then
       Citizen.Wait(1)
       local pos = GetEntityCoords(PlayerPedId())
-      if (#(pos - vector3(Config['Utils']["VIN"]["VinLocations"].x, Config['Utils']["VIN"]["VinLocations"].y, Config['Utils']["VIN"]["VinLocations"].z)) < 10000.0) then
+      if (#(pos - vector3(Config['Utils']["VIN"]["VinLocations"].x, Config['Utils']["VIN"]["VinLocations"].y, Config['Utils']["VIN"]["VinLocations"].z)) < 350.0) then
         DrawMarker(2, Config['Utils']["VIN"]["VinLocations"].x, Config['Utils']["VIN"]["VinLocations"].y, Config['Utils']["VIN"]["VinLocations"].z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 200, 200, 200, 222, false, false, false, true, false, false, false)
         MainThreadStarted = true
         if (#(pos - vector3(Config['Utils']["VIN"]["VinLocations"].x, Config['Utils']["VIN"]["VinLocations"].y, Config['Utils']["VIN"]["VinLocations"].z)) < 1.5) then
