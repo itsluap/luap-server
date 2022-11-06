@@ -146,6 +146,10 @@ ParticleDict = "veh_xs_vehicle_mods"
 ParticleFx = "veh_nitrous"
 ParticleSize = 1.4
 
+local function IsDrivingControlPressed()
+    return IsControlPressed(0, 71)
+end
+
 CreateThread(function()
     while true do
         local isDriving = IsDrivingControlPressed()
