@@ -27,7 +27,7 @@ Config['Utils'] = {
     ["Rewards"] = {
         ["Type"] = "money", -- reward type item or money
         ["RewardItemName"] = "markedbills", -- this will be the reward item name (no need to config if you are using an money as a reward)
-        ["RewardMoneyAmount"] = "0", -- this will be the amount the player recieves when he finish the mission (no need to config if you are using an item as a reward)
+        ["RewardMoneyAmount"] = "5000", -- this will be the amount the player recieves when he finish the mission (no need to config if you are using an item as a reward)
         ["RewardAccount"] = "cash", -- this can be only ywo values (no need to config if you are using an item as a reward)
     },
     ["Contracts"] = {
