@@ -35,6 +35,7 @@
 
 local vehicles = {}
 local particles = {}
+local soundId = GetSoundId()
 
 function IsVehicleNitroPurgeEnabled(vehicle)
   return vehicles[vehicle] == true
@@ -73,5 +74,6 @@ function SetVehicleNitroPurgeEnabled(vehicle, enabled)
 
     vehicles[vehicle] = nil
     particles[vehicle] = nil
+    StopSound(soundId)
   end
 end
