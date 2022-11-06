@@ -21,7 +21,7 @@ Franklin = {
                 SetIplPropState(Franklin.interiorId, settled, true, refresh)
             else
                 if refresh then
-                    RefreshInterior(Franklin.interiorId)
+                    --RefreshInterior(Franklin.interiorId)
                     SetIplPropState(Franklin.interiorId, settled, true, refresh)
                 end
             end
