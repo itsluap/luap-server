@@ -58,13 +58,12 @@ Config['Utils'] = {
         ["NoTrackerOnThisVehicle"] = "Seems like this vehicle doesn't have a tracker on", 
         ["TrackerRemoved"] = "Tracker removed",
         ["TrackerRemovedVINMission"] = "Tracker removed, head to the scratch location", 
-        ["TrackerRemoved"] = "Tracker removed", 
         ["FinishComputer"] = "Head to the vehicle and scratch off the vin!",
         ["VehicleAdded"] = "Vehicle added to your garage!",
         ["DropOffMsg"] = "Get out of the car and leave the area , you will get your money soon", 
         ["UiStillLoadingMsg"] = "Please wait 3 senconds the nui is loading", 
         ["SuccessHack"] = "Success" ,
-        ["NoMissionDetected"] = "No ongoing mission detected",
+        ["NoMissionDetected"] = "No ongoing boost detected",
     },
     ["Commands"] = {
         ["boosting_test"] = "boostingtest", -- This Command will send you a test contract for testing purposes leave as nil to disable

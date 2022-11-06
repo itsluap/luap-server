@@ -276,7 +276,7 @@ RegisterNUICallback('vin', function(data)
     BNEBoosting['functions'].RemoveBNE(Config['Utils']["VIN"]["BNEPrice"])
     TriggerEvent("boosting:StartContract" , data.id , true)
   else
-    ShowNotification(Config['Utils']["Notifications"]["NotEnoughBNE"], "error")    
+    ShowNotification("Not enough BNE", "error")    
   end
 end)
 
@@ -293,7 +293,7 @@ AddEventHandler("boosting:DisablerUsed" , function()
   if OnTheDropoffWay then
     local Class = Contracts[startedcontractid].type 
     if (Config['Utils']["Contracts"]["DisableTrackingOnDCB"]) and (Class == "D" or Class == "C" or Class == "B") then
-      ShowNotification(Config['Utils']["Notifications"]["NoTrackerOnThisVehicle"], "error")    
+      ShowNotification("Seems like this vehicle doesn't have a tracker on", "error")    
     elseif(vinstarted == false) then
       if(DisablerTimes < 4) then
         DisablerUsed = true
@@ -303,12 +303,12 @@ AddEventHandler("boosting:DisablerUsed" , function()
             DisablerTimes = DisablerTimes + 1
             CallingCops = false
             TriggerServerEvent("boosting:removeblip")
-            ShowNotification(Config['Utils']["Notifications"]["TrackerRemoved"], "success")    
+            ShowNotification("Tracker removed", "success")    
           elseif(DisablerTimes < 3) then
             Config['Utils']["Blips"]["BlipUpdateTime"] = 7000
             DisablerTimes = DisablerTimes + 1
             TriggerServerEvent("boosting:SetBlipTime")
-            ShowNotification(Config['Utils']["Notifications"]["SuccessHack"], "success")    
+            ShowNotification("Success", "success")    
           end
        
          
@@ -323,21 +323,21 @@ AddEventHandler("boosting:DisablerUsed" , function()
         Config['Utils']["Blips"]["BlipUpdateTime"] = Config['Utils']["Blips"]["BlipUpdateTime"] + 5000
         --DisablerTimes = DisablerTimes + 1
         TriggerServerEvent("boosting:SetBlipTime")
-        ShowNotification(Config['Utils']["Notifications"]["SuccessHack"], "success", 3500)    
+        ShowNotification("Success", "success", 3500)    
       end
     else
       if(DisablerTimes == 5) then
         CallingCops = false
         TriggerServerEvent("boosting:removeblip")
         CanUseComputer = true
-        ShowNotification(Config['Utils']["Notifications"]["TrackerRemovedVINMission"]["VINMission"], "success", 3500)    
+        ShowNotification("Tracker removed, head to the scratch location", "success", 3500)    
         if not MainThreadStarted then
           MainThread()
         end
       end
     end
   else
-   ShowNotification(Config['Utils']["Notifications"]["NoMissionDetected"], "error")    
+   ShowNotification("No ongoing boost detected", "error")    
   end
 end
 end)
@@ -382,7 +382,7 @@ AddEventHandler("boosting:DisplayUI" , function()
     timetosend = realtimehours..":"..realtimeminutes
     SendNUIMessage({show = 'true' , logo = Config['Utils']["Laptop"]["LogoUrl"] , background = URL, time = timetosend, BNE = BNEBoosting['functions'].GetCurrentBNE().bne , defaultback = "images/background.png"})
   else
-    ShowNotification(Config['Utils']["Notifications"]["UiStillLoadingMsg"], "error")    
+    ShowNotification("Please wait 3 senconds the nui is loading", "error")    
     Citizen.Wait(3000)
     NuiLoaded = true
   end
@@ -698,7 +698,7 @@ end)
 RegisterNetEvent("boosting:ContractDone")
 AddEventHandler("boosting:ContractDone" , function()
   if CompletedTask then
-    ShowNotification(Config['Utils']["Notifications"]["DropOffMsg"], "success")    
+    ShowNotification("Get out of the car and leave the area , you will get your money soon", "success")    
     TriggerServerEvent("boosting:removeblip")
     Citizen.Wait(math.random(25000,35000))
     TriggerServerEvent('boosting:finished')
@@ -940,7 +940,7 @@ AddEventHandler("boosting:client:2ndUseComputer" , function()
       flags = 16,
     }, {}, {}, function() -- Done
       CanScratchVehicle = true
-      ShowNotification(Config['Utils']["Notifications"]["FinishComputer"], "success" )
+      ShowNotification("Head to the vehicle and scratch off the vin!", "success" )
       CanUseComputer = false
     end, function() -- Cancel
       StopAnimTask(PlayerPedId(), ScratchAnimDict, "exit", 1.0)
@@ -962,7 +962,7 @@ AddEventHandler("boosting:client:ScratchVehicle" , function()
     }, {}, {}, function() -- Done
       StopAnimTask(PlayerPedId(), ScratchAnimDict, "exit", 1.0)
       AddVehicleToGarage()
-      ShowNotification(Config['Utils']["Notifications"]["VehicleAdded"], "success")
+      ShowNotification("Vehicle added to your garage!", "success")
       DeleteBlip()
       CallingCops = false
     end, function() -- Cancel
@@ -1011,7 +1011,7 @@ function MainThread()
     if CanUseComputer then
       Citizen.Wait(1)
       local pos = GetEntityCoords(PlayerPedId())
-      if (#(pos - vector3(Config['Utils']["VIN"]["VinLocations"].x, Config['Utils']["VIN"]["VinLocations"].y, Config['Utils']["VIN"]["VinLocations"].z)) < 10.0) then
+      if (#(pos - vector3(Config['Utils']["VIN"]["VinLocations"].x, Config['Utils']["VIN"]["VinLocations"].y, Config['Utils']["VIN"]["VinLocations"].z)) < 10000.0) then
         DrawMarker(2, Config['Utils']["VIN"]["VinLocations"].x, Config['Utils']["VIN"]["VinLocations"].y, Config['Utils']["VIN"]["VinLocations"].z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 200, 200, 200, 222, false, false, false, true, false, false, false)
         MainThreadStarted = true
         if (#(pos - vector3(Config['Utils']["VIN"]["VinLocations"].x, Config['Utils']["VIN"]["VinLocations"].y, Config['Utils']["VIN"]["VinLocations"].z)) < 1.5) then
