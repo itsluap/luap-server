@@ -18,11 +18,10 @@ Franklin = {
             Franklin.Style.Clear(false)
 
             if style ~= "" then
-                SetIplPropState(Franklin.interiorId, unpacking, true, refresh)
+                SetIplPropState(Franklin.interiorId, style, true, refresh)
             else
                 if refresh then
-                    --RefreshInterior(Franklin.interiorId)
-                    SetIplPropState(Franklin.interiorId, unpacking, true, refresh)
+                    RefreshInterior(Franklin.interiorId)
                 end
             end
         end,
@@ -62,7 +61,7 @@ Franklin = {
     },
 
     LoadDefault = function()
-        Franklin.Style.Set(Franklin.Style.empty)
+        Franklin.Style.Set(Franklin.Style.unpacking)
         Franklin.GlassDoor.Set(Franklin.GlassDoor.opened)
         Franklin.Details.Enable(Franklin.Details.flyer, false)
         Franklin.Details.Enable(Franklin.Details.tux, false)
