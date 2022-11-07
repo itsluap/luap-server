@@ -94,6 +94,13 @@ classBoost = {
 ]]
 
 vehicleBoost = {
+    -- import vehicles --
+    chr20 = {
+        maxSpeed = -1, 
+        torque = 0,
+        power = 0
+    },
+    --
     adder = {
         maxSpeed = 250, 
         torque = 1.7,
