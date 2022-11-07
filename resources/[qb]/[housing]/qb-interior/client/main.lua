@@ -42,11 +42,11 @@ local function CreateApartmentFurnished(spawn)
     while not IsScreenFadedOut() do
         Wait(10)
     end
-	RequestModel(`gabz_pinkcage_shell`)
-	while not HasModelLoaded(`gabz_pinkcage_shell`) do
+	RequestModel(`npapartment`)
+	while not HasModelLoaded(`npapartment`) do
 	    Wait(3)
 	end
-	local house = CreateObject(`gabz_pinkcage_shell`, spawn.x, spawn.y, spawn.z, false, false, false)
+	local house = CreateObject(`npapartment`, spawn.x, spawn.y, spawn.z, false, false, false)
     FreezeEntityPosition(house, true)
     objects[#objects+1] = house
 	TeleportToInterior(spawn.x - 3.32, spawn.y - 3.69, spawn.z + 1.2, POIOffsets.exit.h)
@@ -69,11 +69,11 @@ local function CreateApartmentShell(spawn)
     while not IsScreenFadedOut() do
         Wait(10)
     end
-	RequestModel(`gabz_pinkcage_shell`)
-	while not HasModelLoaded(`gabz_pinkcage_shell`) do
+	RequestModel(`npapartment`)
+	while not HasModelLoaded(`npapartment`) do
 	    Wait(1000)
 	end
-	local house = CreateObject(`gabz_pinkcage_shell`, spawn.x, spawn.y, spawn.z, false, false, false)
+	local house = CreateObject(`npapartment`, spawn.x, spawn.y, spawn.z, false, false, false)
     FreezeEntityPosition(house, true)
 	objects[#objects+1] = house
 	TeleportToInterior(spawn.x - 3.32, spawn.y - 3.69, spawn.z + 1.2, POIOffsets.exit.h)
