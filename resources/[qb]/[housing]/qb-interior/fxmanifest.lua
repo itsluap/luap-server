@@ -13,9 +13,9 @@ client_scripts {
 }
 
 files {
-	'gabz_timecycle_mods_1.xml',
+	--'gabz_timecycle_mods_1.xml',
 	'starter_shells_k4mb1.ytyp',
-	--'stream/gabz_pinkcage.ytyp',
+	'stream/npapartment.ytyp',
 	-- 'stream/ClassicHouseShells/shellpropsv19.ytyp',
 	-- 'stream/DeluxeHousingShells/shellpropsv2.ytyp',
 	-- 'stream/FurnishedHousingShells/shellpropsv11.ytyp',
@@ -40,7 +40,7 @@ files {
 -- Default (included)
 --data_file 'TIMECYCLEMOD_FILE' 'gabz_timecycle_mods_1.xml'
 data_file 'DLC_ITYP_REQUEST' 'starter_shells_k4mb1.ytyp'
---data_file 'DLC_ITYP_REQUEST' 'stream/gabz_pinkcage.ytyp'
+data_file 'DLC_ITYP_REQUEST' 'stream/npapartment.ytyp'
 -- Classic
 -- data_file 'DLC_ITYP_REQUEST' 'stream/ClassicHouseShells/shellpropsv19.ytyp'
 -- -- Deluxe
