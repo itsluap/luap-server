@@ -97,8 +97,8 @@ vehicleBoost = {
     -- import vehicles --
     chr20 = {
         maxSpeed = -1, 
-        torque = 0,
-        power = 0
+        torque = 1.0,
+        power = 0.0
     },
     --
     adder = {
