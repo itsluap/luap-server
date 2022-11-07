@@ -1,4 +1,4 @@
-RegisterMaxSpeed_EVENT = true
+RegisterMaxSpeed_EVENT = false
 
 classBoost = {
     --[[
@@ -15,7 +15,7 @@ classBoost = {
             =0.0 - Default power
             >0.0 - Increased power
             value - is between -50.0 and 50.0 in normal scripts (but you can do more)
-    ]]
+    
     [7] = {
         maxSpeed = 200, 
         torque = 1.0,
@@ -61,6 +61,7 @@ classBoost = {
         torque = 1.0,
         power = 0.0
     },
+    ]]--
 }
 
 --[[
