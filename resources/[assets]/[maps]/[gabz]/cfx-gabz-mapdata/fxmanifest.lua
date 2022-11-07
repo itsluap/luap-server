@@ -17,7 +17,7 @@ files {
     'doortuning.ymt',
     'gabz_timecycle_mods1.xml',
     'gabz_mix.dat15.rel',
-    'gabz_game.dat151.rel',
+    'gabz_game.dat151.rel'
 }
 
 data_file 'TIMECYCLEMOD_FILE' 'gabz_timecycle_mods1.xml'

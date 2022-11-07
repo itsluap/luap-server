@@ -1663,6 +1663,14 @@
       <TuningName>DefaultStandardLatchShut</TuningName>
     </Item>
     <Item>
+      <ModelName>gabz_pinkcage_doors_front</ModelName>
+      <TuningName>DefaultStandardLatchShut</TuningName>
+    </Item>
+    <Item>
+      <ModelName>gabz_pinkcage_doors_toilet</ModelName>
+      <TuningName>DefaultStandardLatchShut</TuningName>
+    </Item>
+    <Item>
       <ModelName>sm_pizzeria_back_door</ModelName>
       <TuningName>DefaultStandardLatchShut</TuningName>
     </Item>
