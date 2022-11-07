@@ -15,53 +15,52 @@ classBoost = {
             =0.0 - Default power
             >0.0 - Increased power
             value - is between -50.0 and 50.0 in normal scripts (but you can do more)
-    
+    ]]
     [7] = {
-        maxSpeed = 200, 
+        maxSpeed = 500, 
         torque = 1.0,
         power = 0.0
     },
     [18] = {
-        maxSpeed = 200, 
+        maxSpeed = 500, 
         torque = 1.0,
         power = 0.0
     },
     [6] = {
-        maxSpeed = 200,
+        maxSpeed = 500,
         torque = 1.0,
         power = 0.0
     },
     [3] = {
-        maxSpeed = 200,
+        maxSpeed = 500,
         torque = 1.0,
         power = 0.0
     },
     [5] = {
-        maxSpeed = 200,
+        maxSpeed = 500,
         torque = 1.0,
         power = 0.0
     },
     [4] = {
-        maxSpeed = 200,
+        maxSpeed = 500,
         torque = 1.0,
         power = 0.0
     },
     [8] = {
-        maxSpeed = 200,
+        maxSpeed = 500,
         torque = 1.0,
         power = 0.0
     },
     [1] = {
-        maxSpeed = 200,
+        maxSpeed = 500,
         torque = 1.0,
         power = 0.0
     },
     others = {
-        maxSpeed = 200,
+        maxSpeed = 500,
         torque = 1.0,
         power = 0.0
     },
-    ]]--
 }
 
 --[[
@@ -97,7 +96,7 @@ classBoost = {
 vehicleBoost = {
     -- import vehicles --
     chr20 = {
-        maxSpeed = -1, 
+        maxSpeed = 500, 
         torque = 1.0,
         power = 0.0
     },
