@@ -18,13 +18,11 @@ files {
     'gabz_timecycle_mods1.xml',
     'gabz_mix.dat15.rel',
     'gabz_game.dat151.rel',
-    --"interiorproxies.meta"
 }
 
 data_file 'TIMECYCLEMOD_FILE' 'gabz_timecycle_mods1.xml'
 data_file 'AUDIO_DYNAMIXDATA' 'gabz_mix.dat'
 data_file 'AUDIO_GAMEDATA' 'gabz_game.dat'
---data_file 'INTERIOR_PROXY_ORDER_FILE' 'interiorproxies.meta'
 
 client_script {
     'gabz_entityset_mods1.lua',
