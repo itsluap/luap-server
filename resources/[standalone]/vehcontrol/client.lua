@@ -15,8 +15,7 @@ Citizen.CreateThread(function()
 				if IsPedInAnyVehicle(playerPed, false) and IsControlPressed(2, 75) and not IsEntityDead(playerPed) then
 					SetVehicleEngineOn(vehicle, true, true, false)
 					TaskLeaveVehicle(playerPed, vehicle, 0)
-				else
-					
+				end	
 			end
 		end
 		if IsPedInAnyVehicle(PlayerPedId(), false) then
