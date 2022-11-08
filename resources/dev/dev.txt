@@ -1,6 +1,6 @@
 
 Bugs:
-    - players flicker invisible inside mlos - ask in gabz support chat about this
+    - players flickering in mlos - fixed 
     - cant clear calls from dispatch in mdt
     - need a new tattoo shop script - remove edit from qb-clothing
 
