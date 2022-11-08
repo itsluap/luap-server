@@ -222,12 +222,25 @@ QBCore.Commands.Add('setjob', Lang:t("command.setjob.help"), { { name = Lang:t("
     local Player = QBCore.Functions.GetPlayer(tonumber(args[1]))
     if Player then
         Player.Functions.SetJob(tostring(args[2]), tonumber(args[3]))
+        exports['qb-phone']:hireUser(tostring(args[2]), Player.PlayerData.citizenid, tonumber(args[3]))
     else
         TriggerClientEvent('QBCore:Notify', source, Lang:t('error.not_online'), 'error')
     end
     if tostring(args[2]) ~= "police" or tostring(args[2]) ~= "sheriff" or tostring(args[2]) ~= "trooper" then
         GlobalState.isLEO = false
     end      
+end, 'admin')
+
+QBCore.Commands.Add('removejob', 'Removes A Players Job (Admin Only)', { { name = 'id', help = 'Player ID' }, { name = 'job', help = 'Job name' } }, true, function(source, args)
+    local Player = QBCore.Functions.GetPlayer(tonumber(args[1]))
+    if Player then
+        if Player.PlayerData.job.name == tostring(args[2]) then
+            Player.Functions.SetJob("unemployed", 0)
+        end
+        exports['qb-phone']:fireUser(tostring(args[2]), Player.PlayerData.citizenid)
+    else
+        TriggerClientEvent('QBCore:Notify', source, Lang:t('error.not_online'), 'error')
+    end
 end, 'admin')
 
 -- Gang
