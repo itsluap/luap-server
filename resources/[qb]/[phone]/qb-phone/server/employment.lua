@@ -22,7 +22,7 @@ local function getMyJobs(cid)
     return jobs, employees
 end
 
-local FirstStart = true
+local FirstStart = false
 
 CreateThread(function()
     ---- Convertion Tool I guess LOL ----
