@@ -218,7 +218,7 @@ QBCore.Commands.Add('job', Lang:t("command.job.help"), {}, false, function(sourc
     TriggerClientEvent('QBCore:Notify', source, Lang:t('info.job_info', {value = PlayerJob.label, value2 = PlayerJob.grade.name, value3 = PlayerJob.onduty}))
 end, 'user')
 
-QBCore.Commands.Add('setjob', Lang:t("command.setjob.help"), { { name = Lang:t("command.setjob.params.id.name"), help = Lang:t("command.setjob.params.id.help") }, { name = Lang:t("command.setjob.params.job.name"), help = Lang:t("command.setjob.params.job.help") }, { name = Lang:t("command.setjob.params.grade.name"), help = Lang:t("command.setjob.params.grade.help") } }, true, function(source, args)
+QBCore.Commands.Add('setjob', 'Set A Players Job (Admin Only)', { { name = 'id', help = 'Player ID' }, { name = 'job', help = 'Job name' }, { name = 'grade', help = 'Grade' } }, true, function(source, args)
     local Player = QBCore.Functions.GetPlayer(tonumber(args[1]))
     if Player then
         Player.Functions.SetJob(tostring(args[2]), tonumber(args[3]))
@@ -226,9 +226,11 @@ QBCore.Commands.Add('setjob', Lang:t("command.setjob.help"), { { name = Lang:t("
     else
         TriggerClientEvent('QBCore:Notify', source, Lang:t('error.not_online'), 'error')
     end
+
     if tostring(args[2]) ~= "police" or tostring(args[2]) ~= "sheriff" or tostring(args[2]) ~= "trooper" then
         GlobalState.isLEO = false
-    end      
+    end 
+
 end, 'admin')
 
 QBCore.Commands.Add('removejob', 'Removes A Players Job (Admin Only)', { { name = 'id', help = 'Player ID' }, { name = 'job', help = 'Job name' } }, true, function(source, args)
@@ -241,6 +243,11 @@ QBCore.Commands.Add('removejob', 'Removes A Players Job (Admin Only)', { { name 
     else
         TriggerClientEvent('QBCore:Notify', source, Lang:t('error.not_online'), 'error')
     end
+
+    if tostring(args[2]) ~= "police" or tostring(args[2]) ~= "sheriff" or tostring(args[2]) ~= "trooper" then
+        GlobalState.isLEO = false
+    end 
+
 end, 'admin')
 
 -- Gang

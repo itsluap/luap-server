@@ -107,7 +107,6 @@ RegisterNetEvent('qb-cityhall:server:ApplyJob', function(job, cityhallCoords)
     exports['qb-phone']:hireUser(job, Player.PlayerData.citizenid, 0)
     TriggerClientEvent('QBCore:Notify', src, Lang:t('info.new_job', {job = JobInfo.label}))
 end)
-
 RegisterNetEvent('qb-cityhall:server:getIDs', giveStarterItems)
 
 -- Commands
