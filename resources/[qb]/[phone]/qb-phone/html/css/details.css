@@ -6,6 +6,11 @@
     width: 100%;
     overflow: hidden;
     background: #242833;
+    -moz-user-select: -moz-text;
+    -khtml-user-select: text;
+    -webkit-user-select: text;
+    -o-user-select: text;
+    user-select: text;
 }
 
 .details-header {
@@ -51,18 +56,12 @@
     display: none;
 }
 
-
-
-
-
-
-
 .details-money-types{
     display: inline-block;
     position: relative;
     width: 100%;
     color: whitesmoke;
-    font-size: 2vh;
+    font-size: 1.8vh;
 }
 
 .details-moneys-body-main{
@@ -70,6 +69,10 @@
     width: 100%;
     margin-left: 3%;
     margin-bottom: 2%;
+    max-width: 90%;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
 }
 
 .details-icon-class{

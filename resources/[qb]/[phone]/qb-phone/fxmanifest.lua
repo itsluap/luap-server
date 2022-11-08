@@ -1,8 +1,8 @@
 fx_version 'cerulean'
 game 'gta5'
 
-author 'Booya#0001'
-description 'Edits and additionals with Jerzy#9709\'s assistance. Original inspiration and editing from amir_expert#1911'
+author 'FjamZoo#0001 & MannyOnBrazzers#6826'
+description 'A No Pixel inspired edit of QBCore\'s Phone. Released By RenewedScripts'
 version 'Release'
 
 ui_page 'html/index.html'
@@ -14,13 +14,12 @@ shared_scripts {
 }
 
 client_scripts {
-    'client/main.lua',
-    'client/animation.lua'
+    'client/*.lua',
 }
 
 server_scripts {
-    'server/main.lua',
-    '@oxmysql/lib/MySQL.lua'
+    '@oxmysql/lib/MySQL.lua',
+    'server/*.lua',
 }
 
 files {
@@ -37,4 +36,4 @@ files {
 
 lua54 'yes'
 
-dependency '/assetpacks'
+dependency 'qb-target'

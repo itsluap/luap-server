@@ -4,7 +4,7 @@ var PlayerIDOf = null
 
 function LoadCasinoJob(){
     var PlayerJob = QB.Phone.Data.PlayerData.job.name;
-    if (PlayerJob == "casino"){
+    if (PlayerJob == "pilot"){
         $(".casino-dashboard-boss").css({"display":"block"});
         $("#casino-Winer-this").css({"display":"block"});
     } else {

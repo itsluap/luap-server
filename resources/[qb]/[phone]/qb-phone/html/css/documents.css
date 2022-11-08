@@ -36,17 +36,67 @@
 .documents-list {
     position: absolute;
     width: 90%;
-    height: 80%;
+    height: 70%;
     margin: 0 auto;
     left: 0;
     right: 0;
-    bottom: 3%;
+    bottom: 0.3%;
     border-radius: .5vh;
     overflow-y: scroll;
 }
 
 .documents-list::-webkit-scrollbar {
     display: none;
+}
+
+.documents-test {
+    position: relative;
+    width: 86%;
+    height: 3.5vh;
+    margin-left: 7%;
+    margin-bottom: 7px;
+    color: white;
+    background-color: rgb(44, 70, 95);
+    transition: all 0.15s ease 0s;
+    box-shadow: rgba(0, 0, 0, 0.557) 0rem 0rem 0.1rem 0.01rem;
+    border-radius: 3px 3px 0px 0px;
+    border-bottom: 0.1vh solid rgba(245, 245, 245, 0.68);
+}
+
+.documents-title-title {
+    position: relative;
+    top: 1.0vh;
+    left: 1vh;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2vh;
+    color: white;
+    max-width: 17vh;
+}
+
+.documents-title-icon {
+    position: relative;
+    top: -1.2vh;
+    left: 18.5vh;
+    font-size: 1.6vh;
+    color: white;
+    max-width: 17vh;
+}
+
+.documents-title-icon:hover{
+    color: rgb(187, 187, 187);
+}
+
+.documents-title-icon-registration {
+    position: relative;
+    top: -1.2vh;
+    left: 18.5vh;
+    font-size: 1.6vh;
+    color: white;
+    max-width: 17vh;
+}
+
+.documents-title-icon-registration:hover{
+    color: rgb(187, 187, 187);
 }
 
 .documents-tupe-text-btn{
@@ -56,7 +106,7 @@
     display: inline;
     border-radius: 4px;
     top: 77%;
-    left: 91%;
+    left: 88%;
 }
 .documents-tupe-text-btn:hover{
     color: rgb(187, 187, 187);
@@ -102,20 +152,19 @@
 
 #documents-textarea-new {
     border: none;
-    height: 40vh;
+    height: 39vh;
     margin: 0 auto;
     left: 0;
     right: 0;
     outline: none;
     resize: none;
     transition: border-bottom 0.1s ease-in-out;
-    padding: 0.87vh;
+    padding: 0vh;
     font-size: 1.4vh;
-    top: 12vh;
+    margin-top: -2%;
     width: 90%;
     margin-left: 5%;
     background: none;
-    border-bottom: .1vh solid #f5f5f5ad;
     color: #cacaca;
     font-size: 1.75vh;
 }
@@ -151,19 +200,79 @@
     background-color: #0d1218c0;
 }
 
+.documents-input-title-name {
+    display: block;
+    position: absolute;
+    background: none;
+    border: none;
+    background: none;
+    top: 10.1vh;
+    width: 79%;
+    margin: 0 auto;
+    left: 13.5%;
+    right: 0;
+    opacity: 1;
+    height: 3.4vh;
+    /* border-radius: 1vh; */
+    border-bottom: .1vh solid #f5f5f5ad;
+    /* box-shadow: 0 0 .2vh 0 rgba(0, 0, 0, 0.281); */
+    /* font-family: 'Poppins', sans-serif; */
+    outline: none;
+    text-indent: 3.2vh;
+    z-index: 100;
+    color: whitesmoke;
+}
 
+#documents-search {
+    display: block;
+    position: absolute;
+    background: none;
+    border: none;
+    background: none;
+    top: 6.9vh;
+    width: 90%;
+    margin: 0 auto;
+    left: 0%;
+    right: 0;
+    opacity: 1;
+    height: 2.5vh;
+    /* border-radius: 1vh; */
+    border-bottom: .1vh solid #f5f5f5ad;
+    /* box-shadow: 0 0 .2vh 0 rgba(0, 0, 0, 0.281); */
+    /* font-family: 'Poppins', sans-serif; */
+    outline: none;
+    text-indent: 2.5vh;
+    z-index: 100;
+    color: whitesmoke;
+}
+#documents-search-icon {
+    position: absolute;
+    top: 7.5vh;
+    left: 1.3vh;
+    font-size: 1.4vh;
+    color: #FFFFFF;
+}
+#documents-search-text {
+    position: absolute;
+    top: 4.7vh;
+    left: 1.3vh;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2vh;
+    color: #FFFFFF;
+}
 
+/* Main Drop Down for Documents/ Licenses/ & Registrations */
 
 .documents-dropdown {
     position: relative;
-    width: 22vh;
+    width: 90%;
     display: inline-block;
     border-bottom: 0.1vh solid rgba(245, 245, 245, 0.68);
     transition: all .5s ease;
     font-size: 14px;
     text-align: left;
-    top: 68%;
-    left: 3%;
+    top: 190%;
+    left: 5.2%;
     color: whitesmoke;
     background-color: none;
     outline: none;
@@ -249,4 +358,132 @@
 }
 .documents-body-btn-two:hover{
     color: #c27e47;
+}
+
+.documents-body-btn-three{
+    color: #d9d9d9;
+    margin-left: 60%;
+    transition: 0.2s;
+}
+.documents-body-btn-three:hover{
+    color: #d9d9d9;
+}
+
+.documents-extras-button{
+    color: #ffffff;
+    margin-top: 5.0vh;
+    margin-left: 90%;
+    font-size: 2.0vh;
+    transition: 0.2s;
+}
+.documents-extras-button:hover{
+    color: #d9d9d9;
+}
+
+.documents-extras-button-registration{
+    color: #ffffff;
+    margin-top: 5.0vh;
+    margin-left: 90%;
+    font-size: 2.0vh;
+    transition: 0.2s;
+}
+.documents-extras-button-registration:hover{
+    color: #d9d9d9;
+}
+
+.documents-input-tags{
+    position: absolute;
+    top: 10.4vh;
+    left: 4.5vh;
+    font-size: 1.5vh;
+    color: #d9d9d9;
+}
+
+.documents-input-title-list{
+    position: absolute;
+    top: 8.0vh;
+    left: 4.5vh;
+    font-size: 1.2vh;
+    color: #d9d9d9;
+}
+
+.documents-input-back{
+    position: absolute;
+    top: 9.0vh;
+    left: 1.5vh;
+    font-size: 2.2vh;
+    color: #d9d9d9;
+}
+.documents-input-back:hover{
+    color: #d9d9d9;
+}
+
+.documents-extra-buttons {
+    display: none;
+    position: absolute;
+    top: 3.6vh;
+    right: -10vh;
+}
+
+.documents-extra-button {
+    background: none;
+    border: none;
+    color: white;
+    width: 2.5vh;
+    height: 3.5vh;
+    border-radius: 1vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4vh;
+    z-index: 100;
+    top: 1.3vh;
+    left: .8vh;
+    float: left;
+    margin-right: 1vh;
+    position: relative;
+    text-align: center;
+    transition: .1s linear;
+}
+
+.documents-extra-button-registration:hover {
+    color: #d9d9d9;
+}
+
+.documents-extra-button-registration > i {
+    line-height: 3.5vh;
+    font-size: 1.5vh;
+}
+
+.documents-extra-buttons-registration {
+    display: none;
+    position: absolute;
+    top: 3.6vh;
+    right: -10vh;
+}
+
+.documents-extra-button-registration {
+    background: none;
+    border: none;
+    color: white;
+    width: 2.5vh;
+    height: 3.5vh;
+    border-radius: 1vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4vh;
+    z-index: 100;
+    top: 1.3vh;
+    left: .8vh;
+    float: left;
+    margin-right: 1vh;
+    position: relative;
+    text-align: center;
+    transition: .1s linear;
+}
+
+.documents-extra-button-registration:hover {
+    color: #d9d9d9;
+}
+
+.documents-extra-button-registration > i {
+    line-height: 3.5vh;
+    font-size: 1.5vh;
 }

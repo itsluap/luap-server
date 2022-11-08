@@ -1,12 +1,44 @@
 Config = Config or {}
+
+-- Configs for Payment and Banking
+
+Config.RenewedBanking = true -- Either put this to true or false if you use Renewed Banking or not
+Config.RenewedFinances = false -- Either put this to true or false if you use Renewed Finances or not
+Config.RenewedCameras = false -- Either put this to true or false if you use Renewed Cameras or not
+
 Config.BillingCommissions = { -- This is a percentage (0.10) == 10%
     mechanic = 0.10
 }
-Config.Linux = false -- True if linux
-Config.TweetDuration = 24 -- How many hours to load tweets (12 will load the past 12 hours of tweets)
-Config.RepeatTimeout = 2000
+
+-- Web hook for camera ( NOT GO PRO )
+Config.Webhook = ''
+
+-- Item name for pings app ( Having a VPN sends an anonymous ping, else sends the players name)
+Config.VPNItem = 'vpn'
+
+-- The garage the vehicle goes to when you sell a car to a player
+Config.SellGarage = 'altastreet'
+
+-- How Long Does The Player Have To Accept The Ping - This Is In Seconds
+Config.Timeout = 30
+
+-- How Long Does The Blip Remain On The Map - This Is In Seconds
+Config.BlipDuration = 30
+
+-- Blip Settings - Find Info @ https://wiki.gtanet.work/index.php?title=Blips
+Config.BlipColor = 4
+Config.BlipIcon = 280
+Config.BlipScale = 0.75
+
+Config.TweetDuration = 8 -- How many hours to load tweets (12 will load the past 12 hours of tweets)
+Config.MailDuration = 72 -- How many hours to load Mails (72 will load the past 72 hours of Mails)
+
+
+Config.RepeatTimeout = 4000
 Config.CallRepeats = 10
-Config.OpenPhone = 244
+Config.AllowWalking = false -- Allow walking and driving with phone out
+
+
 Config.PhoneApplications = {
     ["details"] = {
         app = "details",
@@ -19,6 +51,19 @@ Config.PhoneApplications = {
         job = false,
         blockedjobs = {},
         slot = 1,
+        Alerts = 0,
+    },
+    ["contacts"] = {
+        app = "contacts",
+        color = "#345b7a",
+        color2 = "#122445",
+        icon = "fas fa-phone-volume",
+        tooltipText = "Contacts",
+        tooltipPos = "top",
+        style = "font-size: 3.3vh";
+        job = false,
+        blockedjobs = {},
+        slot = 2,
         Alerts = 0,
     },
     ["phone"] = {
@@ -45,19 +90,6 @@ Config.PhoneApplications = {
         job = false,
         blockedjobs = {},
         slot = 4,
-        Alerts = 0,
-    },
-    ["settings"] = {
-        app = "settings",
-        color = "#636e72",
-        color2 = "#4c5558",
-        icon = "fas fa-cog",
-        tooltipText = "Settings",
-        tooltipPos = "top",
-        style = "padding-right: .08vh; font-size: 3.3vh";
-        job = false,
-        blockedjobs = {},
-        slot = 2,
         Alerts = 0,
     },
     ["ping"] = {
@@ -149,7 +181,7 @@ Config.PhoneApplications = {
         color = "#f15ac1",
         color2 = "#aa4edd",
         icon = "fas fa-sticky-note",
-        tooltipText = "Notepad",
+        tooltipText = "Documents",
         style = "font-size: 3.3vh";
         job = false,
         blockedjobs = {},
@@ -214,12 +246,12 @@ Config.PhoneApplications = {
         slot = 17,
         Alerts = 0,
     },
-    ["lawyers"] = {
-        app = "lawyers",
-        color = "#26d4ce",
-        color2 = "#1e9c98",
+    ["taxi"] = {
+        app = "taxi",
+        color = "#c6c900",
+        color2 = "#abad00",
         icon = "fas fa-briefcase",
-        tooltipText = "Services",
+        tooltipText = "Taxi",
         tooltipPos = "bottom",
         style = "font-size: 3vh";
         job = false,
@@ -232,7 +264,7 @@ Config.PhoneApplications = {
         color = "#000100",
         color2 = "#000100",
         icon = "fas fa-gem",
-        tooltipText = "Casino",
+        tooltipText = "Betting",
         tooltipPos = "bottom",
         style = "font-size: 2.7vh";
         job = false,
@@ -266,18 +298,6 @@ Config.PhoneApplications = {
         slot = 21,
         Alerts = 0,
     },
-    ["bank"] = {
-        app = "bank",
-        color = "#9c88ff",
-        color2 = "#8070d5",
-        icon = "fas fa-file-contract",
-        tooltipText = "Invoices",
-        style = "font-size: 2.7vh";
-        job = false,
-        blockedjobs = {},
-        slot = 22,
-        Alerts = 0,
-    },
     ["racing"] = {
         app = "racing",
         color = "#353b48",
@@ -287,89 +307,127 @@ Config.PhoneApplications = {
         style = "font-size: 3vh";
         job = false,
         blockedjobs = {},
+        slot = 22,
+        Alerts = 0,
+    },
+    ["bank"] = {
+        app = "bank",
+        color = "#9c88ff",
+        color2 = "#8070d5",
+        icon = "fas fa-file-contract",
+        tooltipText = "Invoices",
+        style = "font-size: 2.7vh";
+        job = false,
+        blockedjobs = {},
         slot = 23,
         Alerts = 0,
     },
-
-
-
-
-
-
-    -- ["mybank"] = {
-    --     app = "mybank",
-    --     color = "#a9fd78",
-    --     color2 = "#86c95f",
-    --     icon = "fas fa-dollar-sign",
-    --     tooltipText = "My Bank",
-    --     style = "color: black; font-size: 2.7vh";
-    --     job = false,
-    --     blockedjobs = {},
-    --     slot = 20,
-    --     Alerts = 0,
-    -- },
-    -- ["camera"] = {
-    --     app = "camera",
-    --     color = "#AC1D2C",
-    --     color2 = "#25d366",
-    --     icon = "fas fa-camera",
-    --     tooltipText = "Camera",
-    --     tooltipPos = "bottom",
-    --     job = false,
-    --     blockedjobs = {},
-    --     slot = 15,
-    --     Alerts = 0,
-    -- },
-}
-Config.MaxSlots = 28
-
-Config.StoreApps = {
-    ["territory"] = {
-        app = "territory",
-        color = "#353b48",
-        icon = "fas fa-globe-europe",
-        tooltipText = "Territorium",
-        tooltipPos = "right",
-        style = "";
+    ["gopro"] = {
+        app = "gopro",
+        color = "#008FFF",
+        color2 = "#008FFF",
+        icon = "fas fa-camera",
+        tooltipText = "camera",
+        tooltipPos = "top",
+        style = "padding-right: .08vh; font-size: 3.3vh";
         job = false,
         blockedjobs = {},
-        slot = 17,
+        slot = 24,
         Alerts = 0,
-        password = true,
-        creator = "QBCore",
-        title = "Territory",
+    },
+    ["group-chats"] = {
+        app = "group-chats",
+        color = "#7289da",
+        color2 = "#7289da",
+        icon = "fab fa-discord",
+        tooltipText = "Discord",
+        tooltipPos = "top",
+        style = "padding-right: .08vh; font-size: 3.3vh";
+        job = false,
+        blockedjobs = {},
+        slot = 25,
+        Alerts = 0,
+    },
+    ["meos"] = {
+        app = "meos",
+        color = "#004682",
+        color2 = "#00325c",
+        icon = "fas fa-ad",
+        tooltipText = "MDT",
+        job = "police",
+        blockedjobs = {},
+        slot = 26,
+        Alerts = 0,
     },
 }
+
+Config.MaxSlots = 28
 
 Config.JobCenter = {
     [1] = {
-        job = "trucker",
-        label = "Trucker",
-        Coords = {141.18, -3204.59},
+        job = "unemployed",
+        label = "Unemployment",
+        Coords = {},
     },
     [2] = {
-        job = "taxi",
-        label = "Taxi Driver",
-        Coords = {909.49, -177.24},
+        job = "garbage",
+        label = "Garbage",
+        Coords = {-344.76, -1564.34},
     },
     [3] = {
-        job = "tow",
-        label = "Towing",
-        Coords = {489.67, -1331.82},
+        job = "taxi",
+        label = "Taxi Driver",
+        Coords = {909.11, -174.59},
     },
     [4] = {
-        job = "reporter",
-        label = "News Reporter",
-        Coords = {-552.29, -925.59},
+        job = "amazon",
+        label = "Amazon Driver",
+        Coords = {-1071.08, -2004.0},
     },
     [5] = {
-        job = "garbage",
-        label = "Trash Collector",
-        Coords = {-313.85, -1522.82},
+        job = "trucker",
+        label = "Truck Driver",
+        Coords = {925.83, -1560.23},
     },
-    [6] = {
-        job = "bus",
-        label = "Bus Driver",
-        Coords = {462.22, -641.15},
+}
+
+Config.TaxiJob = {
+    {
+        Job = "taxi",
+    },
+}
+
+Config.CryptoCoins = {
+    {
+        label = 'Shungite', -- label name
+        abbrev = 'SHUNG', -- abbreviation
+        icon = 'fas fa-caret-square-up', -- icon
+        metadata = 'shung', -- meta data name
+        value = 50, -- price of coin
+        purchase = true -- TRUE ( crypto is purchaseable in the phone) FALSE ( crypto is not purchaseable and only exchangeable )
+    },
+    {
+        label = 'Guinea',
+        abbrev = 'GNE',
+        icon = 'fas fa-horse-head',
+        metadata = 'gne',
+        value = 100,
+        purchase = false
+    },
+    {
+        label = 'X Coin',
+        abbrev = 'XNXX',
+        icon = 'fas fa-times',
+        metadata = 'xcoin',
+        value = 75,
+        purchase = true
+    },
+    {
+        label = 'LME',
+        abbrev = 'LME',
+        icon = 'fas fa-lemon',
+        metadata = 'lme',
+        value = 150,
+        purchase = false
     },
 }

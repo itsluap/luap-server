@@ -1,233 +1,268 @@
-![grab-landing-page](https://itzlarsen.xyz/uploads/images/u9m4xRqQkvQf3L7F4UFeJdxrw.gif)
+# Installation steps
 
-# qb-phone
-Phone for QB-Core Framework. Edited for a NP-Style look with a few extra things, This file has been edited with the changes noted
+## General Setup
+General setup is quite easy, delete your OLD qb-phone
+if you server havent been running previously then go ahead and run the provided SQL file in your database.
 
-# NOTE
-NP does NOT have a suggested contact feature, therefore the tab for that in the Phone app has been removed. You can use /p# to show your number in chat in a small radius around you, or manually input the contacts.
+If your server has been running qb-phone previously please update your sql while being carefull and take a backup so you have no data lost.
 
-# Known Issues
-if you call from a payphone without a cell phone there is no way to hang up the call. The other person has to hang up the call. After they do that then the phone UI is stuck on your screen
+After the SQL setup you can now drop the resource into your server and start it up while you conduct the next steps.
 
-# License
+## Employment setup
+Setting up employment and multijob can be quite tricky so make sure to reread this if you have any issues...
+If you already have a multijob system and you do not wish to use this then you can skip this step.
 
-    QBCore Framework
-    Copyright (C) 2021 Joshua Eger
 
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
+1. Head over to qb-phone/server/employment.lua and change local FirstStart from false to true like shown below
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <https://www.gnu.org/licenses/>
-
-## Dependencies
-- [qb-core](https://github.com/QBCore-framework/qb-core)
-- [qb-policejob](https://github.com/QBCore-framework/qb-policejob) - MEOS, handcuff check etc. 
-- [qb-crypto](https://github.com/QBCore-framework/qb-crypto) - Crypto currency trading 
-- [qb-lapraces](https://github.com/QBCore-framework/qb-lapraces) - Creating routes and racing 
-- [qb-houses](https://github.com/QBCore-framework/qb-houses) - House and Key Management App
-- [qb-garages](https://github.com/QBCore-framework/qb-garages) - For Garage App
-- [qb-banking](https://github.com/QBCore-framework/qb-banking) - For Banking App
-- [screenshot-basic](https://github.com/citizenfx/screenshot-basic) - For Taking Photos
-- A Webhook for hosting photos (Discord or Imgur can provide this)
-- Some sort of help app for your Help icon to function, just place your event for opening it in client.lua line 2403 
+```lua
+    local FirstStart = true
 ```
-RegisterNUICallback('openHelp', function()  
-    TriggerEvent('eventgoeshere')  <---------
+
+2. Start the script and make sure it's fully done, it can take a while depending on your current playerbase (ensure qb-phone in console or f8)
+
+3. Head over to qb-phone/server/employment.lua again and change the FirstStart to false
+
+Like so:
+```lua
+    local FirstStart = false
+```
+
+4. Headover to your qb-core/server/commands.lua and find the follow command 'setjob'
+
+replace the commands with the code below:
+```lua
+QBCore.Commands.Add('setjob', 'Set A Players Job (Admin Only)', { { name = 'id', help = 'Player ID' }, { name = 'job', help = 'Job name' }, { name = 'grade', help = 'Grade' } }, true, function(source, args)
+    local Player = QBCore.Functions.GetPlayer(tonumber(args[1]))
+    if Player then
+        Player.Functions.SetJob(tostring(args[2]), tonumber(args[3]))
+        exports['qb-phone']:hireUser(tostring(args[2]), Player.PlayerData.citizenid, tonumber(args[3]))
+    else
+        TriggerClientEvent('QBCore:Notify', source, Lang:t('error.not_online'), 'error')
+    end
+end, 'admin')
+```
+
+5. Now below that add the new command called 'removejob' like shown below
+
+```lua
+QBCore.Commands.Add('removejob', 'Removes A Players Job (Admin Only)', { { name = 'id', help = 'Player ID' }, { name = 'job', help = 'Job name' } }, true, function(source, args)
+    local Player = QBCore.Functions.GetPlayer(tonumber(args[1]))
+    if Player then
+        if Player.PlayerData.job.name == tostring(args[2]) then
+            Player.Functions.SetJob("unemployed", 0)
+        end
+        exports['qb-phone']:fireUser(tostring(args[2]), Player.PlayerData.citizenid)
+    else
+        TriggerClientEvent('QBCore:Notify', source, Lang:t('error.not_online'), 'error')
+    end
+end, 'admin')
+```
+
+6. If you use qb-cityhall then u have to Find ApplyJob in qb-cityhall/server/main.lua and replace with this one
+
+```lua
+RegisterNetEvent('qb-cityhall:server:ApplyJob', function(job, cityhallCoords)
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    if not Player then return end
+    local ped = GetPlayerPed(src)
+    local pedCoords = GetEntityCoords(ped)
+    local JobInfo = QBCore.Shared.Jobs[job]
+    if #(pedCoords - cityhallCoords) >= 20.0 or not availableJobs[job] then
+        return DropPlayer(source, "Attempted exploit abuse")
+    end
+    Player.Functions.SetJob(job, 0)
+    exports['qb-phone']:hireUser(job, Player.PlayerData.citizenid, 0)
+TriggerClientEvent('QBCore:Notify', src, Lang:t('info.new_job', {job = JobInfo.label}))
 end)
 ```
 
+7. Restart your server fully to get the new commands working and also to get the phone fully working.
 
-## Screenshots
-![Home](https://cdn.discordapp.com/attachments/951493035173244999/951493181550243900/Screenshot_20.png)
-![Messages](https://cdn.discordapp.com/attachments/951493035173244999/951493291243880499/Screenshot_21.png)
-![Phone](https://cdn.discordapp.com/attachments/951493035173244999/951493463659122688/Screenshot_22.png)
-![Settings](https://cdn.discordapp.com/attachments/951493035173244999/951493587072319498/Screenshot_23.png)
-![MEOS](https://cdn.discordapp.com/attachments/951493035173244999/951495644563005470/Screenshot_35.png)
-![Vehicles](https://cdn.discordapp.com/attachments/951493035173244999/951493876777103440/Screenshot_24.png)
-![Email](https://cdn.discordapp.com/attachments/951493035173244999/951494010764140544/Screenshot_25.png)
-![Advertisements](https://cdn.discordapp.com/attachments/951493035173244999/951494113788821624/Screenshot_26.png)
-![Houses](https://cdn.discordapp.com/attachments/951493035173244999/951494238183505920/Screenshot_27.png)
-![Services](https://cdn.discordapp.com/attachments/951493035173244999/951495770249502760/Screenshot_36.png)
-![Racing](https://cdn.discordapp.com/attachments/951493035173244999/951495869289615400/Screenshot_37.png)
-![Crypto](https://cdn.discordapp.com/attachments/951493035173244999/951494393397927956/Screenshot_28.png)
-![Debt](https://cdn.discordapp.com/attachments/951493035173244999/951494527049433178/Screenshot_29.png)
-![Wenmo](https://cdn.discordapp.com/attachments/951493035173244999/951494642019471370/Screenshot_30.png)
-![Invoices](https://cdn.discordapp.com/attachments/951493035173244999/951494745648148560/Screenshot_31.png)
-![Casino](https://cdn.discordapp.com/attachments/951493035173244999/951494899994329088/Screenshot_32.png)
-![News](https://cdn.discordapp.com/attachments/951493035173244999/951495036351180860/Screenshot_33.png)
-![Notepad](https://cdn.discordapp.com/attachments/951493035173244999/951495531153195038/Screenshot_34.png)
-![Details](https://cdn.discordapp.com/attachments/951493035173244999/951496024885719111/Screenshot_38.png)
-![JobCenter](https://cdn.discordapp.com/attachments/951493035173244999/951496191202451586/Screenshot_39.png)
-![Employment](https://cdn.discordapp.com/attachments/951493035173244999/951496402008158328/Screenshot_40.png)
-![Calculator](https://cdn.discordapp.com/attachments/951493035173244999/951496520073621544/Screenshot_41.png)
 
-## Features
-- Garages app to see your vehicle details
-- Mails to inform the player
-- Debt app for player invoices, Wenmo for quick bank transfers, Invoice app for legal invoices
-- Racing app to create races
-- MEOS app for police to search
-- House app for house details and management
-- Casino app for players to make bets and possibly multiply money
-- News app for news postings
-- Details tab for some player information at the palm of your hand
-- Tweets save to database for recall on restarts, edit how long they stay in config
-- Notepad app to make and save notes
-- Calculator app
-- Job Center and Employment apps just like the NoPickle
+It should now look like this
 
-## Installation
-### Manual
-- Download the script and put it in the `[qb]` directory.
-- Import `qb-phone.sql` in your database
-- Add a third paramater in your Functions.AddMoney and Functions.RemoveMoney which will be a reaosn for your "Wenmo" app to show why you sent or received money. To do this you search all of your files for these 2 functions and add a reason to it.. Ex: 
-```
-Player.Functions.AddMoney('bank', payment)
-```
-would then be
-```
- Player.Functions.AddMoney('bank', payment, "paycheck")
- ```
-- Add the following code to your server.cfg/resouces.cfg
-```
-ensure qb-core
-ensure screenshot-basic
-ensure qb-phone
-ensure qb-policejob
-ensure qb-crypto
-ensure qb-lapraces
-ensure qb-houses
-ensure qb-garages
-ensure qb-banking
+![QBCore Commands](https://i.gyazo.com/beb2bd18c02088c184e5e381a9f4962a.png)
+
+
+## Crypto Setup
+
+1. Head over to your qb-core/server/Player.lua
+2. Paste the below code into your metadata if you dont know what is metadata it looks something like this: PlayerData.metadata['inside']
+
+Code to be pasted
+```lua
+    PlayerData.metadata['crypto'] = PlayerData.metadata['crypto'] or {
+        ["shung"] = 0,
+        ["gne"] = 0,
+        ["xcoin"] = 0,
+        ["lme"] = 0
+    }
 ```
 
-## Setup Webhook in `server/main.lua` for photos
-Set the following variable to your webhook (For example, a Discord channel or Imgur webhook)
-### To use Discord:
-- Right click on a channel dedicated for photos
-- Click Edit Channel
-- Click Integrations
-- Click View Webhooks
-- Click New Webhook
-- Confirm channel
-- Click Copy Webhook URL
-- Paste into `WebHook` in `server/main.lua`
-```
-local WebHook = ""
-```
-## To fixed undefined reason in Wenmo
-- Go to qb-core/server/player.lua
-- Replace this
-```
-    self.Functions.AddMoney = function(moneytype, amount, reason)
-        reason = reason or 'unknown'
-        local moneytype = moneytype:lower()
-        local amount = tonumber(amount)
-        if amount < 0 then
-            return
-        end
-        if self.PlayerData.money[moneytype] then
-            self.PlayerData.money[moneytype] = self.PlayerData.money[moneytype] + amount
-            self.Functions.UpdatePlayerData()
-            if amount > 100000 then
-                TriggerEvent('qb-log:server:CreateLog', 'playermoney', 'AddMoney', 'lightgreen', '**' .. GetPlayerName(self.PlayerData.source) .. ' (citizenid: ' .. self.PlayerData.citizenid .. ' | id: ' .. self.PlayerData.source .. ')** $' .. amount .. ' (' .. moneytype .. ') added, new ' .. moneytype .. ' balance: ' .. self.PlayerData.money[moneytype], true)
-            else
-                TriggerEvent('qb-log:server:CreateLog', 'playermoney', 'AddMoney', 'lightgreen', '**' .. GetPlayerName(self.PlayerData.source) .. ' (citizenid: ' .. self.PlayerData.citizenid .. ' | id: ' .. self.PlayerData.source .. ')** $' .. amount .. ' (' .. moneytype .. ') added, new ' .. moneytype .. ' balance: ' .. self.PlayerData.money[moneytype])
-            end
-            TriggerClientEvent('hud:client:OnMoneyChange', self.PlayerData.source, moneytype, amount, false)
-            return true
-        end
-        return false
-    end
-    self.Functions.RemoveMoney = function(moneytype, amount, reason)
-        reason = reason or 'unknown'
-        local moneytype = moneytype:lower()
-        local amount = tonumber(amount)
-        if amount < 0 then
-            return
-        end
-        if self.PlayerData.money[moneytype] then
-            for _, mtype in pairs(QBCore.Config.Money.DontAllowMinus) do
-                if mtype == moneytype then
-                    if self.PlayerData.money[moneytype] - amount < 0 then
-                        return false
-                    end
-                end
-            end
-            self.PlayerData.money[moneytype] = self.PlayerData.money[moneytype] - amount
-            self.Functions.UpdatePlayerData()
-            if amount > 100000 then
-                TriggerEvent('qb-log:server:CreateLog', 'playermoney', 'RemoveMoney', 'red', '**' .. GetPlayerName(self.PlayerData.source) .. ' (citizenid: ' .. self.PlayerData.citizenid .. ' | id: ' .. self.PlayerData.source .. ')** $' .. amount .. ' (' .. moneytype .. ') removed, new ' .. moneytype .. ' balance: ' .. self.PlayerData.money[moneytype], true)
-            else
-                TriggerEvent('qb-log:server:CreateLog', 'playermoney', 'RemoveMoney', 'red', '**' .. GetPlayerName(self.PlayerData.source) .. ' (citizenid: ' .. self.PlayerData.citizenid .. ' | id: ' .. self.PlayerData.source .. ')** $' .. amount .. ' (' .. moneytype .. ') removed, new ' .. moneytype .. ' balance: ' .. self.PlayerData.money[moneytype])
-            end
-            TriggerClientEvent('hud:client:OnMoneyChange', self.PlayerData.source, moneytype, amount, true)
-            if moneytype == 'bank' then
-                TriggerClientEvent('qb-phone:client:RemoveBankMoney', self.PlayerData.source, amount)
-            end
-            return true
-        end
-        return false
-    end
-```
-- To this
-```
-    self.Functions.AddMoney = function(moneytype, amount, reason)
-        reason = reason or 'unknown'
-        local moneytype = moneytype:lower()
-        local amount = tonumber(amount)
-        if amount < 0 then
-            return
-        end
-        if self.PlayerData.money[moneytype] then
-            self.PlayerData.money[moneytype] = self.PlayerData.money[moneytype] + amount
-            self.Functions.UpdatePlayerData()
-            if amount > 100000 then
-                TriggerEvent('qb-log:server:CreateLog', 'playermoney', 'AddMoney', 'lightgreen', '**' .. GetPlayerName(self.PlayerData.source) .. ' (citizenid: ' .. self.PlayerData.citizenid .. ' | id: ' .. self.PlayerData.source .. ')** $' .. amount .. ' (' .. moneytype .. ') added, new ' .. moneytype .. ' balance: ' .. self.PlayerData.money[moneytype], true)
-            else
-                TriggerEvent('qb-log:server:CreateLog', 'playermoney', 'AddMoney', 'lightgreen', '**' .. GetPlayerName(self.PlayerData.source) .. ' (citizenid: ' .. self.PlayerData.citizenid .. ' | id: ' .. self.PlayerData.source .. ')** $' .. amount .. ' (' .. moneytype .. ') added, new ' .. moneytype .. ' balance: ' .. self.PlayerData.money[moneytype])
-            end
-            TriggerClientEvent('hud:client:OnMoneyChange', self.PlayerData.source, moneytype, amount, false, reason)
-            return true
-        end
-        return false
-    end
-    self.Functions.RemoveMoney = function(moneytype, amount, reason)
-        reason = reason or 'unknown'
-        local moneytype = moneytype:lower()
-        local amount = tonumber(amount)
-        if amount < 0 then
-            return
-        end
-        if self.PlayerData.money[moneytype] then
-            for _, mtype in pairs(QBCore.Config.Money.DontAllowMinus) do
-                if mtype == moneytype then
-                    if self.PlayerData.money[moneytype] - amount < 0 then
-                        return false
-                    end
-                end
-            end
-            self.PlayerData.money[moneytype] = self.PlayerData.money[moneytype] - amount
-            self.Functions.UpdatePlayerData()
-            if amount > 100000 then
-                TriggerEvent('qb-log:server:CreateLog', 'playermoney', 'RemoveMoney', 'red', '**' .. GetPlayerName(self.PlayerData.source) .. ' (citizenid: ' .. self.PlayerData.citizenid .. ' | id: ' .. self.PlayerData.source .. ')** $' .. amount .. ' (' .. moneytype .. ') removed, new ' .. moneytype .. ' balance: ' .. self.PlayerData.money[moneytype], true)
-            else
-                TriggerEvent('qb-log:server:CreateLog', 'playermoney', 'RemoveMoney', 'red', '**' .. GetPlayerName(self.PlayerData.source) .. ' (citizenid: ' .. self.PlayerData.citizenid .. ' | id: ' .. self.PlayerData.source .. ')** $' .. amount .. ' (' .. moneytype .. ') removed, new ' .. moneytype .. ' balance: ' .. self.PlayerData.money[moneytype])
-            end
-            TriggerClientEvent('hud:client:OnMoneyChange', self.PlayerData.source, moneytype, amount, true, reason)
-            if moneytype == 'bank' then
-                TriggerClientEvent('qb-phone:client:RemoveBankMoney', self.PlayerData.source, amount)
-            end
-            return true
-        end
-        return false
-    end
-```
+It should now all look like this:
+
+![Metadata Table](https://i.gyazo.com/5422c6ebd1ede57ab523f2e1e07218c4.png)
+
+
+This is pretty much everything to do with setting up the phone. If you encounter any issues please open a issue tab here on Github and I will try to fix them asap.
+
+
+# Contributors
+
+## Main Contributors
+<details>
+    <summary><b>FjamZoo</b></summary>
+        <p>
+            <a href="https://github.com/FjamZoo">
+                <img alt="GitHub" src="https://logos-world.net/wp-content/uploads/2020/11/GitHub-Emblem.png"
+                width="150" height="70">
+            </a>
+        </p>
+        <p>
+            <a href="https://discord.gg/AS2Y8TWejt">
+                <img alt="GitHub" src="https://logos-download.com/wp-content/uploads/2021/01/Discord_Logo_full.png"
+                width="150" height="55">
+            </a>
+        </p>
+        <p>
+            <a href="https://ko-fi.com/FjamZoo">
+                <img alt="GitHub" src="https://uploads-ssl.webflow.com/5c14e387dab576fe667689cf/61e11149b3af2ee970bb8ead_Ko-fi_logo.png"
+                width="150" height="55">
+            </a>
+        </p>
+</details>
+
+<details>
+    <summary><b>MannyOnBrazzers</b></summary>
+        <p>
+            <a href="https://github.com/MannyOnBrazzers">
+                <img alt="GitHub" src="https://logos-world.net/wp-content/uploads/2020/11/GitHub-Emblem.png"
+                width="150" height="70">
+            </a>
+        </p>
+        <p>
+            <a href="https://discord.gg/puWUx5FsAv">
+                <img alt="GitHub" src="https://logos-download.com/wp-content/uploads/2021/01/Discord_Logo_full.png"
+                width="150" height="55">
+            </a>
+        </p>
+        <p>
+            <a href="https://ko-fi.com/mannyonbrazzers">
+                <img alt="GitHub" src="https://uploads-ssl.webflow.com/5c14e387dab576fe667689cf/61e11149b3af2ee970bb8ead_Ko-fi_logo.png"
+                width="150" height="55">
+            </a>
+        </p>
+</details>
+
+### Other Contributors
+
+<details>
+    <summary><b>uShifty</b></summary>
+        <p>
+            <a href="https://github.com/uShifty">
+                <img alt="GitHub" src="https://logos-world.net/wp-content/uploads/2020/11/GitHub-Emblem.png"
+                width="150" height="70">
+            </a>
+        </p>
+        <p>
+            <a href="https://discord.gg/AS2Y8TWejt">
+                <img alt="GitHub" src="https://logos-download.com/wp-content/uploads/2021/01/Discord_Logo_full.png"
+                width="150" height="55">
+            </a>
+        </p>
+</details>
+
+<details>
+    <summary><b>iLLeniumStudios</b></summary>
+        <p>
+            <a href="https://github.com/iLLeniumStudios">
+                <img alt="GitHub" src="https://logos-world.net/wp-content/uploads/2020/11/GitHub-Emblem.png"
+                width="150" height="70">
+            </a>
+        </p>
+        <p>
+            <a href="https://discord.illenium.dev/">
+                <img alt="GitHub" src="https://logos-download.com/wp-content/uploads/2021/01/Discord_Logo_full.png"
+                width="150" height="55">
+            </a>
+        </p>
+</details>
+
+<details>
+    <summary><b>ChatDisabled</b></summary>
+        <p>
+            <a href="https://github.com/ChatDisabled">
+                <img alt="GitHub" src="https://logos-world.net/wp-content/uploads/2020/11/GitHub-Emblem.png"
+                width="150" height="70">
+            </a>
+        </p>
+</details>
+
+<details>
+    <summary><b>Devyn</b></summary>
+        <p>Thanks to devyn for allowing us to use his original Group Backend code for the phone.</p>
+        <p>
+            <a href="https://github.com/darktrovx">
+                <img alt="GitHub" src="https://logos-world.net/wp-content/uploads/2020/11/GitHub-Emblem.png"
+                width="150" height="70">
+            </a>
+        </p>
+</details>
+
+<details>
+    <summary><b>ST4LTH</b></summary>
+        <p>
+            <a href="https://github.com/ST4LTH">
+                <img alt="GitHub" src="https://logos-world.net/wp-content/uploads/2020/11/GitHub-Emblem.png"
+                width="150" height="70">
+            </a>
+        </p>
+</details>
+
+### Other Other Contributors
+
+<details>
+    <summary><b>DevTheBully</b></summary>
+        <p>
+            <a href="https://github.com/DevTheBully">
+                <img alt="GitHub" src="https://logos-world.net/wp-content/uploads/2020/11/GitHub-Emblem.png"
+                width="150" height="70">
+            </a>
+        </p>
+</details>
+
+<details>
+    <summary><b>JonasDev99</b></summary>
+        <p>
+            <a href="https://github.com/JonasDev99">
+                <img alt="GitHub" src="https://logos-world.net/wp-content/uploads/2020/11/GitHub-Emblem.png"
+                width="150" height="70">
+            </a>
+        </p>
+</details>
+
+
+#### Other Other Other Contributors
+
+<details>
+    <summary><b>QBCore</b></summary>
+        <p>Made the original phone ages ago and it was ok ish so shoutout to them IG</p>
+</details>
+
+<details>
+    <summary><b>Kakarot</b></summary>
+        <p>He cured my boredom over at twitch.tv/kakarotqb</p>
+</details>
+
+<details>
+    <summary><b>amir_expert</b></summary>
+        <p>Sold a $50 CSS and JS edit pretty poggers</p>
+</details>
+
+<details>
+    <summary><b>Booya</b></summary>
+        <p>Reuploaded a $50 CSS and JS edit even more poggers</p>
+</details>
+

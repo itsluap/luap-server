@@ -1,134 +1,317 @@
-var JoinPass = null;
-var JoinID = null;
+var dropdownOpen = false
+var cid = ''
+var job = ''
+var grade = ''
 
-function LoadEmploymentApp(){
-    $.post('https://qb-phone/GetGroupsApp', JSON.stringify({}), function(Data){
-        AddDIV(Data)
+var onDuty = true
+var currentJob = ''
+
+// Hiring & Changing Role var
+var gradeLevel = ''
+
+// Right now only the first search bar works, then breaks when you click into a job and back out. Second page doesn't work at all. SHIT DEV
+$(document).ready(function(){
+    $("#employment-search").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $(".employment-list").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+        });
     });
-}
-
-$(document).on('click', '.empolyment-btn-create-group', function(e){
-    e.preventDefault();
-    ClearInputNew()
-    $('#employment-box-new-dashboard').fadeIn(350);
-});
-
-$(document).on('click', '#employment-sbmit-for-create-group', function(e){
-    e.preventDefault();
-    var Name = $(".employment-input-group-name").val();
-    var pass = $(".employment-input-password").val();
-    var pass2 = $(".employment-input-password2").val();
-    if (Name != "" && pass != "" && pass2 != ""){
-        if(pass == pass2){
-            $.post('https://qb-phone/employment_CreateJobGroup', JSON.stringify({
-                name: Name,
-                pass: pass,
-            }));
-
-            $('#employment-box-new-dashboard').fadeOut(350);
-        }else{
-            QB.Phone.Notifications.Add("fas fa-exclamation-circle", "System", "The password entered is incorrect")
-        }
-    }else{
-        QB.Phone.Notifications.Add("fas fa-exclamation-circle", "System", "Fields are incorrect")
-    }
 });
 
 $(document).ready(function(){
-    window.addEventListener('message', function(event) {
-        switch(event.data.action) {
-            case "GroupAddDIV":
-                AddDIV(event.data.datas)
-            break;
-        }
-    })
-});
-
-function AddDIV(data){
-    var CSN = QB.Phone.Data.PlayerData.citizenid;
-    $(".employment-list").html("");
-    if(JSON.stringify(data) != "[]"){
-        for (const [k, v] of Object.entries(data)) {
-            var AddOption
-            if (v.CSN == CSN){
-                AddOption = '<div class="employment-div-job-group"><div class="employment-div-job-group-image"><i class="fas fa-users"></i></div><div class="employment-div-job-group-body-main">'+(v.GName).toUpperCase()+'<i id="employment-block-grouped" data-id="'+v.CSN+'" data-pass="'+v.GPass+'" class="fas fa-sign-in-alt"></i><div class="employment-option-class-body"><i id="employment-list-group" data-id="'+v.CSN+'" style="padding-right: 5%;" class="fas fa-list-ul"></i><i id="employment-delete-group" data-delete="'+v.CSN+'" class="fas fa-trash-alt"></i><i style="padding-left: 5%;padding-right: 5%;" class="fas fa-user-friends"> '+v.Users+'</i></div></div></div>'
-            }else{
-                AddOption = '<div class="employment-div-job-group"><div class="employment-div-job-group-image"><i class="fas fa-users"></i></div><div class="employment-div-job-group-body-main">'+(v.GName).toUpperCase()+'<i id="employment-join-grouped" data-id="'+v.CSN+'" data-pass="'+v.GPass+'" class="fas fa-sign-in-alt"></i><div class="employment-option-class-body"><i style="padding-left: 5%;padding-right: 5%;" class="fas fa-user-friends"> '+v.Users+'</i></div></div></div>'
-                for (const [ke, ve] of Object.entries(v.UserName)) {
-                    if(ve == CSN){
-                        AddOption = '<div class="employment-div-job-group"><div class="employment-div-job-group-image"><i class="fas fa-users"></i></div><div class="employment-div-job-group-body-main">'+(v.GName).toUpperCase()+'<i id="employment-leave-grouped" data-id="'+v.CSN+'" data-pass="'+v.GPass+'" class="fas fa-sign-out-alt" style="transform: rotate(180deg);"></i><div class="employment-option-class-body"><i style="padding-left: 5%;padding-right: 5%;" class="fas fa-user-friends"> '+v.Users+'</i></div></div></div>'
-                    }
-                }
-            }
-
-            $('.employment-list').append(AddOption);
-        }
-    }else{
-        $(".employment-list").html("");
-        var AddOption = '<div class="casino-text-clear">No Group</div>'
-
-        $('.employment-list').append(AddOption);
-    }
-}
-
-$(document).on('click', '#employment-delete-group', function(e){
-    e.preventDefault();
-    var Delete = $(this).data('delete')
-    $.post('https://qb-phone/employment_DeleteGroup', JSON.stringify({
-        delete: Delete,
-    }));
-});
-
-$(document).on('click', '#employment-join-grouped', function(e){
-    e.preventDefault();
-    JoinPass = $(this).data('pass')
-    JoinID = $(this).data('id')
-    ClearInputNew()
-    $('#employment-box-new-join').fadeIn(350);
-});
-
-$(document).on('click', '#employment-sbmit-for-join-group', function(e){
-    e.preventDefault();
-    var EnterPass = $(".employment-input-join-password").val();
-    if(EnterPass == JoinPass){
-        var CSN = QB.Phone.Data.PlayerData.citizenid;
-        $.post('https://qb-phone/employment_JoinTheGroup', JSON.stringify({
-            PCSN: CSN,
-            id: JoinID,
-        }));
-        ClearInputNew()
-    $('#employment-box-new-join').fadeOut(350);
-    }
-});
-
-$(document).on('click', '#employment-list-group', function(e){
-    e.preventDefault();
-    var id = $(this).data('id')
-    $.post('https://qb-phone/employment_CheckPlayerNames', JSON.stringify({
-        id: id,
-        }), function(Data){
-           ClearInputNew()
-           $('#employment-box-new-player-name').fadeIn(350);
-           $("#phone-new-box-main-playername").html("");
-            for (const [k, v] of Object.entries(Data)) {
-                var AddOption = '<div class="casino-text-clear">'+v+'</div>'
-
-                $('#phone-new-box-main-playername').append(AddOption);
-            }
-
-           var AddOption2 = '<p> </p>'+
-           '<div class="phone-new-box-btn box-new-red" id="box-new-cancel">Cancel</div>'
-
-           $('#phone-new-box-main-playername').append(AddOption2);
+    $("#employment-job-search").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $(".employment-job-list").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+        });
     });
 });
 
-$(document).on('click', '#employment-leave-grouped', function(e){
+function ConfirmationFrame() {
+    $('.spinner-input-frame').css("display", "flex");
+    setTimeout(function () {
+        $('.spinner-input-frame').css("display", "none");
+        $('.checkmark-input-frame').css("display", "flex");
+        setTimeout(function () {
+            $('.checkmark-input-frame').css("display", "none");
+        }, 2000)
+    }, 1000)
+}
+
+function LoadEmploymentApp(data){
+    var jobs = data;
+    $(".employment-lists").html("");
+    for (const [k, v] of Object.entries(jobs)) {
+        var AddOption = '<div class="employment-list" data-job="'+k+'" data-grade="'+v.grade+'"><span class="employment-icon"><i class="fas fa-business-time"></i></span> <span class="employment-label">'+QB.Phone.Data.PhoneJobs[k].label+'</span> <span class="employment-grade">'+QB.Phone.Data.PhoneJobs[k].grades[v.grade].name+'</span>' +
+        '</div>';
+
+        $('.employment-lists').append(AddOption);
+    }
+};
+
+function changePage(){
+    $(".employment-header").html("");
+
+    // Sets back to original header
+    var HeaderOption = '<span id="employment-search-text">Search</span>'+
+    '<i class="fas fa-search" id="employment-search-icon"></i>'+
+    '<input type="text" id="employment-search" placeholder="" spellcheck="false">'
+
+    $('.employment-header').append(HeaderOption); // Creates the original header
+    // Load Home Page
+    $.post('https://qb-phone/GetJobs', JSON.stringify({}), function(data){
+        LoadEmploymentApp(data)
+    });
+}
+
+$(document).on('click', '.employment-list', function(e){
     e.preventDefault();
-    var CSN = QB.Phone.Data.PlayerData.citizenid;
-    var id = $(this).data('id')
-    $.post('https://qb-phone/employment_leave_grouped', JSON.stringify({
-        id: id,
-        csn: CSN,
+    job = $(this).data('job'); // Job Name
+    grade = $(this).data('grade'); // Job Grade Level
+    $(".employment-lists").html(""); // Resets the old screen
+    $(".grade-dropdown-menu").html("");
+
+    // Fade out the old header to create the new header
+    $(".employment-header").html("");
+
+    $.post('https://qb-phone/GetEmployees', JSON.stringify({job: job}), function(data){
+        for (const [k, v] of Object.entries(data)) {
+            var icon
+
+            if (QB.Phone.Data.PhoneJobs[job].grades[v.grade].isboss) {
+                icon = "fas fa-user-secret"
+            } else {
+                icon = "fas fa-user"
+            }
+
+            if (QB.Phone.Data.PhoneJobs[job].grades[grade].isboss){
+                var AddOption = '<div class="employment-job-list" data-csn='+v.cid+' data-job='+job+'><span class="employment-job-icon"><i class="'+icon+'"></i></span>' +
+                '<span class="employment-label">'+v.name+'</span> <span class="employment-grade">'+QB.Phone.Data.PhoneJobs[job].grades[v.grade].name+'</span>'+
+                '<div class="employment-action-buttons">' +
+                    '<i class="fas fa-hand-holding-usd" id="employment-pay-employee" data-toggle="tooltip" title="Pay"></i>' +
+                    '<i class="fas fa-user-alt-slash" id="employment-remove-employee" data-toggle="tooltip" title="Remove Employee"></i>' +
+                    '<i class="fas fa-users" id="employment-changerole" data-toggle="tooltip" title="Change Role"></i>' +
+                '</div></div>';
+            }else{
+                var AddOption = '<div class="employment-job-list" data-csn='+v.cid+' data-job='+job+'><span class="employment-job-icon"><i class="'+icon+'"></i></span>' +
+                '<span class="employment-label">'+v.name+'</span> <span class="employment-grade">'+QB.Phone.Data.PhoneJobs[job].grades[v.grade].name+'</span></div>';
+            }
+            $('.employment-lists').append(AddOption); // Creates the new screen
+        }
+
+        // Drop Down Data
+
+        for (const [k, v] of Object.entries(QB.Phone.Data.PhoneJobs[job].grades)) {
+
+            var element = '<li data-gradelevel="'+k+'">'+v.name+'</li>';
+            $(".grade-dropdown-menu").append(element);
+        }
+    });
+
+    // Creates the new header
+    var HeaderOption = '<span id="employment-job-search-text">Search</span>' +
+    '<i class="fas fa-chevron-left" id="employment-job-back-icon"></i>' +
+    '<i class="fas fa-search" id="employment-job-search-icon"></i>' +
+    '<i class="fas fa-ellipsis-v" id="employment-job-extras-icon"></i>' +
+    '<input type="text" id="employment-job-search" placeholder="" spellcheck="false">'
+
+    $('.employment-header').append(HeaderOption); // Creates the new header
+});
+
+$(document).on('click', '#employment-job-back-icon', function(e){
+    e.preventDefault();
+    changePage()
+});
+
+$(document).on('click', '#employment-job-extras-icon', function(e){
+    e.preventDefault();
+    $('#employment-dropdown').html('')
+    dropdownOpen = true
+
+    $.post('https://qb-phone/dutyStatus', JSON.stringify({}), function(data) {
+        currentJob = data["job"]
+        if (data["duty"]) {
+            onDuty = true
+        } else {
+            onDuty = false
+        }
+    });
+
+    if (QB.Phone.Data.PhoneJobs[job].grades[grade].isboss){
+        if (onDuty && currentJob == job) {
+            var AddOption = `<div class="list-content" id='clock-in' ><i class="fas fa-clock"></i>Go Off Duty</div>
+            <div class="list-content" id='hire-fucker' ><i class="fas fa-user-plus"></i>Hire</div>
+            <div class="list-content" id='charge-mf'><i class="fas fa-credit-card"></i>Charge Customer</div>`
+        } else {
+            var AddOption = `<div class="list-content" id='clock-in' ><i class="fas fa-clock"></i>Go On Duty</div>
+            <div class="list-content" id='hire-fucker' ><i class="fas fa-user-plus"></i>Hire</div>
+            <div class="list-content" id='charge-mf'><i class="fas fa-credit-card"></i>Charge Customer</div>`
+        }
+    }else{
+        if (onDuty && currentJob == job) {
+            var AddOption = `<div class="list-content" id='clock-in' ><i class="fas fa-clock"></i>Go Off Duty</div>
+            <div class="list-content" id='charge-mf'><i class="fas fa-credit-card"></i>Charge Customer</div>`
+        } else {
+            var AddOption = `<div class="list-content" id='clock-in' ><i class="fas fa-clock"></i>Go On Duty</div>
+            <div class="list-content" id='charge-mf'><i class="fas fa-credit-card"></i>Charge Customer</div>`
+        }
+    }
+    $('#employment-dropdown').append(AddOption);
+    $('#employment-dropdown').fadeIn(350);
+});
+
+// Drop Down Menu Options
+
+function closeDropDown(){
+    dropdownOpen = false
+    $('.phone-dropdown-menu').fadeOut(350);
+}
+
+$(document).on('click', '#clock-in', function(e){
+    e.preventDefault();
+
+    $.post('https://qb-phone/ClockIn', JSON.stringify({
+        job: job
     }));
+    closeDropDown()
+});
+
+$(document).on('click', '#hire-fucker', function(e){
+    e.preventDefault();
+    console.log(job)
+    $('#hire-worker-menu').fadeIn(350);
+    closeDropDown()
+});
+
+$(document).on('click', '#hire-worker-submit', function(e){
+    var stateid = $(".hire-worker-stateid").val();
+    var grade = gradeLevel
+    if(stateid != "" && grade != ""){
+        setTimeout(function(){
+            ConfirmationFrame()
+        }, 150);
+        $.post('https://qb-phone/HireFucker', JSON.stringify({
+            stateid: stateid,
+            grade: grade,
+            job: job,
+        }));
+    }
+    ClearInputNew()
+    $('#hire-worker-menu').fadeOut(350);
+    $(".hire-worker-stateid").val(''); // Resets amount input
+});
+
+$(document).on('click', '#charge-mf', function(e){
+    e.preventDefault();
+    console.log(job)
+    $('#employment-chargemf-menu').fadeIn(350);
+    closeDropDown()
+});
+
+$(document).on('click', '#employment-chargemf-submit', function(e){
+    var stateid = $(".employment-chargemf-stateid").val();
+    var amount = $(".employment-chargemf-amount").val();
+    var note = $(".employment-chargemf-note").val();
+    if(stateid != "" && amount != "" && note != ""){
+        setTimeout(function(){
+            ConfirmationFrame()
+        }, 150);
+        $.post('https://qb-phone/ChargeMF', JSON.stringify({
+            stateid: stateid,
+            amount: amount,
+            note: note,
+            job: job,
+        }));
+    }
+    ClearInputNew()
+    $('#employment-chargemf-menu').fadeOut(350);
+    $(".employment-chargemf-stateid").val(''); // Resets input
+    $(".employment-chargemf-amount").val(''); // Resets input
+    $(".employment-chargemf-note").val(''); // Resets input
+});
+
+// Main Employee Buttons
+
+$(document).on('click', '#employment-pay-employee', function(e){
+    e.preventDefault();
+    cid = $(this).parent().parent().data('csn');
+    job = $(this).parent().parent().data('job');
+    $('#pay-employee-menu').fadeIn(350);
+});
+
+$(document).on('click', '#send-employee-payment', function(e){
+    var amount = $(".pay-employee-amount").val();
+    var note = $(".pay-employee-note").val();
+    if(amount != "" && note != ""){
+        setTimeout(function(){
+            ConfirmationFrame()
+        }, 150);
+        $.post('https://qb-phone/SendEmployeePayment', JSON.stringify({
+            cid: cid,
+            job: job,
+            amount: amount,
+            note: note,
+        }));
+    }
+    ClearInputNew()
+    $('#pay-employee-menu').fadeOut(350);
+    $(".pay-employee-amount").val(''); // Resets amount input
+    $(".pay-employee-note").val(''); // Resets amount input
+});
+
+$(document).on('click', '#employment-remove-employee', function(e){
+    e.preventDefault();
+    cid = $(this).parent().parent().data('csn');
+    job = $(this).parent().parent().data('job');
+    setTimeout(function(){
+        ConfirmationFrame()
+    }, 150);
+    $.post('https://qb-phone/RemoveEmployee', JSON.stringify({
+        cid: cid,
+        job: job,
+    }));
+});
+
+$(document).on('click', '#employment-changerole', function(e){
+    e.preventDefault();
+    cid = $(this).parent().parent().data('csn');
+    $('#employment-changerole-menu').fadeIn(350);
+});
+
+$(document).on('click', '#employment-changerole-submit', function(e){
+    var grade = gradeLevel
+    if(grade != ""){
+        setTimeout(function(){
+            ConfirmationFrame()
+        }, 150);
+        $.post('https://qb-phone/ChangeRole', JSON.stringify({
+            cid: cid,
+            grade: grade,
+            job: job
+        }));
+    }
+    ClearInputNew()
+    $('#employment-changerole-menu').fadeOut(350);
+});
+
+/* Dropdown Menu */
+
+$('.grade-dropdown').click(function () {
+    $(this).attr('tabindex', 1).focus();
+    $(this).toggleClass('active');
+    $(this).find('.grade-dropdown-menu').slideToggle(300);
+});
+
+$('.grade-dropdown').focusout(function () {
+    $(this).removeClass('active');
+    $(this).find('.grade-dropdown-menu').slideUp(300);
+});
+
+$(document).on('click', '.grade-dropdown .grade-dropdown-menu li', function(e) {
+    console.log($(this).data('gradelevel'))
+    gradeLevel = $(this).data('gradelevel')
+
+    $(this).parents('.grade-dropdown').find('span').text($(this).text());
+    $(this).parents('.grade-dropdown').find('input').attr('value', $(this).data('gradelevel'));
 });
