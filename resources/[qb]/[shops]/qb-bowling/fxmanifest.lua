@@ -18,4 +18,3 @@ ui_page ('ui/index.html')
 files {
   'ui/*'
 }
-
