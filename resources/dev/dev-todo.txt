@@ -15,7 +15,7 @@ To Do:
     - setup forums -- can come after launch
 
 In Script:
-    - add durability to ifak
+    - add durability to ifak - not native, need to write this
     - redo all heists
     - add bowling script
     - add multijob script
