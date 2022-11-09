@@ -10,6 +10,7 @@ files {
     'stream/bossroom/gta5.meta',
     'stream/bossroom/water.xml',
     "nutt_timecycle_mods_1.xml",
+    "gardoor_game.dat151.rel",
     "interiorproxies.meta"
 }
 
@@ -22,6 +23,8 @@ data_file 'DLC_ITYP_REQUEST' 'stream/vg_jdm_props.ytyp'
 data_file 'DLC_ITYP_REQUEST' 'stream/patoche_shop_list.ytyp'
 
 data_file 'TIMECYCLEMOD_FILE' 'nutt_timecycle_mods_1.xml'
+
+data_file "AUDIO_GAMEDATA" "gardoor_game.dat"
 
 data_file 'INTERIOR_PROXY_ORDER_FILE' 'interiorproxies.meta'
 
