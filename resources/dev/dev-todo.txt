@@ -7,6 +7,7 @@ To Do:
     - check if burgershot has boss management
     - check how player owned businesses are going to work
     - check shops around whole city
+    - gun stays in hand when phone is pulled out
     -
     - make sure all clothes added work correctly
     - make sure addon vehicles are not oversized
