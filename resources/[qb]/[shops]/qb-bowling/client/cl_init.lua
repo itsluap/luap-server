@@ -26,7 +26,7 @@ Citizen.CreateThread(function()
     for k, v in pairs(lanes) do
         if (not v.enabled) then goto continueBox end
 
-        exports["bt-polyzone"]:AddBoxZone("bp-bowling:lane_"..k, v.pos, 1.8, 2.0, {
+        exports["PolyZone"]:AddBoxZone("bp-bowling:lane_"..k, v.pos, 1.8, 2.0, {
             heading=0,
             minZ=23.85,
             maxZ=27.85
@@ -35,7 +35,7 @@ Citizen.CreateThread(function()
         ::continueBox::
     end
   
-    exports["bt-polyzone"]:AddBoxZone("bowling_alley", vector3(743.95, -774.54, 26.34), 16.8, 30.4, {
+    exports["PolyZone"]:AddBoxZone("bowling_alley", vector3(743.95, -774.54, 26.34), 16.8, 30.4, {
         heading=0.0,
         minZ=23.85,
         maxZ=28.85
@@ -70,7 +70,7 @@ Citizen.CreateThread(function()
 	SetBlockingOfNonTemporaryEvents(created_ped, true)
 
 
-    exports['bt-target']:AddTargetModel(GetHashKey(data.model), {
+    exports['qb-target']:AddTargetModel(GetHashKey(data.model), {
         options = {
             {
                 event = 'bp-bowling:client:openMenu',
@@ -110,7 +110,7 @@ AddEventHandler('bp-bowling:client:openMenu' , function()
     local menuOptions = {}
     for itemId, item in pairs(options) do
 
-        TriggerEvent('nh-context:sendMenu', {
+        TriggerEvent('qb-menu:sendMenu', {
             {
                 id = itemId,
                 header = item.name,
@@ -136,7 +136,7 @@ AddEventHandler('bp-bowling:openMenu2' , function(data)
             if(lanes[k].enabled == false) then
                 return
             end
-            TriggerEvent('nh-context:sendMenu', {
+            TriggerEvent('qb-menu:sendMenu', {
             {
                 id = k,
                 header = "Lane #"..k,
@@ -161,7 +161,7 @@ local sheesh = false
 function shit(k,v) 
     Citizen.CreateThread(function()
         while sheesh == true do
-            exports['bt-target']:AddBoxZone("bp-bowling:lane_"..k, v.pos, 1.8, 2.0, {
+            exports['qb-target']:AddBoxZone("bp-bowling:lane_"..k, v.pos, 1.8, 2.0, {
             
                 name = "bp-bowling:lane_"..k,
                 heading = 0.0,
@@ -336,12 +336,12 @@ AddEventHandler('onResourceStop', function(resourceName)
     drawStatusHUD(false)
 end)
 
-AddEventHandler("bt-polyzone:enter", function(zone, data)
+AddEventHandler("PolyZone:enter", function(zone, data)
     if zone ~= "bowling_alley" then return end
     inBowlingZone = true
 end)
 
-AddEventHandler("bt-polyzone:exit", function(zone, data)
+AddEventHandler("PolyZone:exit", function(zone, data)
     if zone ~= "bowling_alley" then return end
 
     inBowlingZone = false
