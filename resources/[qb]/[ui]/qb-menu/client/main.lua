@@ -1,9 +1,11 @@
 local headerShown = false
+local inMenu = false
 
 local function openMenu(data)
     if not data then return end
     SetNuiFocus(true, true)
     headerShown = false
+    inMenu = true
     SendNUIMessage({
         action = 'OPEN_MENU',
         data = data
@@ -12,6 +14,7 @@ end
 
 local function closeMenu()
     headerShown = false
+    inMenu = false
     SetNuiFocus(false)
     SendNUIMessage({
         action = 'CLOSE_MENU'
@@ -55,11 +58,12 @@ end)
 
 RegisterNUICallback('closeMenu', function()
     headerShown = false
+    inMenu = false
     SetNuiFocus(false)
 end)
 
 RegisterCommand('+playerfocus', function()
-    if headerShown then
+    if inMenu then
         SetNuiFocus(true, true)
     end
 end)
