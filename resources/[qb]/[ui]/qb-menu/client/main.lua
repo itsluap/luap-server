@@ -62,7 +62,7 @@ RegisterNUICallback('closeMenu', function()
     SetNuiFocus(false)
 end)
 
-RegisterCommand('+playerfocus', function()
+RegisterCommand('playerfocus', function()
     --[[
     SetNuiFocus(false)
     if inMenu then
@@ -74,7 +74,7 @@ RegisterCommand('+playerfocus', function()
     ]]--
 end)
 
-RegisterKeyMapping('+playerFocus', 'Give Menu Focus', 'mouse_button', 'MOUSE_RIGHT')
+RegisterKeyMapping('playerFocus', 'Give Menu Focus', 'mouse_button', 'MOUSE_RIGHT')
 
 exports('openMenu', openMenu)
 exports('closeMenu', closeMenu)
