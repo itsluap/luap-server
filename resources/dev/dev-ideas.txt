@@ -4,3 +4,6 @@
 Ideas:
     - give lockpicks durability?
     - ps-ui, gang influence areas
+    - add durability to ifak - not native, need to write this
+    - add drug buffs / ps-buffs
+    - cant clear calls from dispatch in mdt / write this myself or add as suggestion in ps discord

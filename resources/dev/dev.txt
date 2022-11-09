@@ -1,10 +1,4 @@
 
-Bugs:
-    - players flicker invisible inside mlos - fixed
-    - cant clear calls from dispatch in mdt
-    - need a new tattoo shop script - remove edit from qb-clothing
-
-
 Notes:
     - server color ? 53B3CB blue \ 5500FF  indigo
     - the "press E to open" menu is - exports['qb-core']:DrawText(text, 'left') and to hide - exports['qb-core']:HideText()
@@ -20,9 +14,9 @@ Notes:
     - 
 
 Other:
-    -
     - steal players from other servers (give out a beta test reward) NEED A LOYAL TEAM - reach out to old fivem friends
     - go through and remove unneeded commands (search all server files)
+    -
 
 
 Server Cost:
@@ -33,4 +27,5 @@ Server Cost:
     - $12 for each user with @indigorp.net
     - $10 for dyno bot premium
     - $6  for ticket tool premium
+    -
 Total Cost: $156

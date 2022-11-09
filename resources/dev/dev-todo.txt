@@ -10,26 +10,26 @@ To Do:
     - make sure all clothes added work correctly
     - make sure addon vehicles are not oversized
     - make sure weight system makes sense
-    -
-    - setup tebex -- can come after launch
-    - setup forums -- can come after launch
 
 In Script:
-    - add durability to ifak - not native, need to write this
     - redo all heists
     - add bowling script
     - add multijob script
     - add better mechanic script (possibly tuner shop script thats bookmarked)
-    - test boosting script / make sure boosting classes arent fucked
-    - (add drugs to ps-buffs) (test all drugs make sure effects work) - fix heroin animation
+    - test boosting script / make sure boosting classes arent fucked / or find better boosting script
+    - fix heroin animation
 
 Testing:
     - test okokContract
     - apartments should be raidable now
-    - see if panicbutton is played to everyone, should only be heard by police
     - vehicle handing is basically fucked like always - will pay for something nopixel like
 
+
+
+
 Final (Ready to Launch):
+    - setup tebex -- can come after launch
+    - setup forums -- can come after launch
     - make sure all scripts are updated (qbcore and project sloth)
     - cars should be 100% (no light bugs) (no oversized textures) (no crazy handling)
     - clothing should be 100% (no glitched out clothing) (should be in qb-clothing)
@@ -39,4 +39,3 @@ Final (Ready to Launch):
     - all criminal activities need a final test
     - create new user guide - create some faqs - get discord ready
     - create website - needs forums, applications, and tebex store
-    - 
