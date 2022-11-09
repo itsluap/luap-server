@@ -64,8 +64,12 @@ end)
 
 RegisterCommand('+playerfocus', function()
     if inMenu then
-        SetNuiFocus(true, true)
-        print('nuifocus = true')
+        if headerShown then
+            SetNuiFocus(true, true)
+            print('nuifocus = true')
+        end
+    else
+        SetNuiFocus(false)
     end
 end)
 
