@@ -46,7 +46,7 @@ ensure cfx-gabz-scenarios       #*THIS RESOURCE IS OPTIONAL, IT REMOVES CONFLICT
 ensure cfx-gabz-pdprops         #*THIS RESOURCE IS REQUIRED IF YOU USE ANY PD. IT MUST BE START BEFORE PD'S*
 ensure cfx-gabz-247             #*THIS RESOURCE IS MANDATORY IF YOU USE [CFX-GABZ-OTTOS]*
 ensure cfx-gabz-altruists
-ensure cfx-gabz-ammunation
+#ensure cfx-gabz-ammunation
 ensure cfx-gabz-arcade
 ensure cfx-gabz-aztecas
 ensure cfx-gabz-ballas
@@ -57,11 +57,11 @@ ensure cfx-gabz-binco
 ensure cfx-gabz-bobcat
 ensure cfx-gabz-bowling
 ensure cfx-gabz-carmeet
-ensure cfx-gabz-casino
+#ensure cfx-gabz-casino
 ensure cfx-gabz-catcafe
-ensure cfx-gabz-davispd         #*THIS RESOURCE REQUIRES [CFX-GABZ-PDPROPS] TO WORK PROPERLY*
+#ensure cfx-gabz-davispd         #*THIS RESOURCE REQUIRES [CFX-GABZ-PDPROPS] TO WORK PROPERLY*
 ensure cfx-gabz-diner
-ensure cfx-gabz-esbltd
+#ensure cfx-gabz-esbltd
 ensure cfx-gabz-families
 ensure cfx-gabz-firedept
 ensure cfx-gabz-fleeca
@@ -71,7 +71,7 @@ ensure cfx-gabz-hayes
 ensure cfx-gabz-hub            #*READ BELOW*!
 ensure cfx-gabz-import
 #ensure cfx-gabz-impound        #*READ BELOW*!
-ensure cfx-gabz-lamesapd        #*THIS RESOURCE REQUIRES [CFX-GABZ-PDPROPS] TO WORK PROPERLY*
+#ensure cfx-gabz-lamesapd        #*THIS RESOURCE REQUIRES [CFX-GABZ-PDPROPS] TO WORK PROPERLY*
 ensure cfx-gabz-lost
 ensure cfx-gabz-lostsc
 ensure cfx-gabz-lscustoms
