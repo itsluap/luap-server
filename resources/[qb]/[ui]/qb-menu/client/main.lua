@@ -71,6 +71,7 @@ RegisterCommand('+playerfocus', function()
     else
         SetNuiFocus(false)
     end
+    print(inMenu)
 end)
 
 RegisterKeyMapping('+playerFocus', 'Give Menu Focus', 'mouse_button', 'MOUSE_RIGHT')
