@@ -63,15 +63,13 @@ RegisterNUICallback('closeMenu', function()
 end)
 
 RegisterCommand('+playerfocus', function()
+    SetNuiFocus(false)
     if inMenu then
         if headerShown then
             SetNuiFocus(true, true)
             print('nuifocus = true')
         end
-    else
-        SetNuiFocus(false)
     end
-    print(inMenu)
 end)
 
 RegisterKeyMapping('+playerFocus', 'Give Menu Focus', 'mouse_button', 'MOUSE_RIGHT')
