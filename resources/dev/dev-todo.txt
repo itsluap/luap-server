@@ -5,6 +5,7 @@ To Do:
     - add oxy runs
     - vehicle shop (add vehicles to qbcore) - after cars are good to go
     - check if burgershot has boss management
+    - check how player owned businesses are going to work
     - check shops around whole city
     -
     - make sure all clothes added work correctly
