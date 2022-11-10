@@ -55,6 +55,7 @@ Vehicle Classes:
 Config = Config or {}
 
 Config.Locations = {
+    --[[
     ['Innocence'] = {
         settings = {
             label = 'Bennys Motorworks',
@@ -391,4 +392,5 @@ Config.Locations = {
             { coords = vector3(340.38, -570.8, 28.8), length = 8.8, width = 4.2, heading = 340.0, minZ = 27.5, maxZ = 31.5 },
         }
     },
+    ]]--
 }
