@@ -622,7 +622,7 @@ RegisterNetEvent('jim-mechanic:client:SyncFlame', function(netid, enable)
 		Wait(10) 
 		SetVehicleBoostActive(NetToVeh(netid), 1)
 	end
-	else SetVehicleBoostActive(NetToVeh(netid), 0) end
+	else SetVehicleBoostActive(NetToVeh(netid), 0) Fxs[bones] = nil end
 end)
 --Exhaust Fires
 function CreateVehicleExhaustBackfire(vehicle)
