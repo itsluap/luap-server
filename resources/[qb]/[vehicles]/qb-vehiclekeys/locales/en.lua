@@ -1,6 +1,7 @@
 local Translations = {
     notify = {
         ydhk = 'You don\'t have keys to this vehicle.',
+        llpp = 'No one is in the car with you.',
         nonear = 'There is nobody nearby to hand keys to',
         vlock = 'Vehicle locked!',
         vunlock = 'Vehicle unlocked!',
@@ -17,7 +18,7 @@ local Translations = {
         acjack = 'Attempting Carjacking...',
     },
     info = {
-        skeys = '~g~[H]~w~ - Search for Keys',
+        skeys = '~g~[H]~w~ - Hotwire',
         tlock = 'Toggle Vehicle Locks',
         palert = 'Vehicle theft in progress. Type: ',
         engine = 'Toggle Engine',
@@ -40,7 +41,7 @@ local Translations = {
 
 }
 
-Lang = Lang or Locale:new({
+Lang = Locale:new({
     phrases = Translations,
     warnOnMissing = true
 })
