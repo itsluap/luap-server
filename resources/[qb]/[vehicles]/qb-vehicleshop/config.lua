@@ -52,13 +52,13 @@ Config.Shops = {
         ['ShowroomVehicles'] = {
             [1] = {
                 coords = vector4(-54.81, -1096.74, 27.3, 198.86),
-                defaultVehicle = 'kanjosj',
-                chosenVehicle = 'kanjosj'
+                defaultVehicle = 'sultan3',
+                chosenVehicle = 'sultan3'
             },
             [2] = {
                 coords = vector4(-36.93, -1093.18, 27.3, 192.57),
-                defaultVehicle = 'buffalo2',
-                chosenVehicle = 'buffalo2'
+                defaultVehicle = 'dominator7',
+                chosenVehicle = 'dominator7'
             }
         },
     },
