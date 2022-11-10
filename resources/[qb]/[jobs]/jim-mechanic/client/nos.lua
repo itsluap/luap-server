@@ -593,7 +593,7 @@ function SetNitroBoostScreenEffectsEnabled(enabled)
 		StopScreenEffect('RaceTurbo')
 		StartScreenEffect('RaceTurbo', 0, false)
 		SetTimecycleModifier('rply_motionblur')
-		ShakeGameplayCam('SKY_DIVING_SHAKE', 0.25)
+		--ShakeGameplayCam('SKY_DIVING_SHAKE', 0.25)
 	else
 		StopGameplayCamShaking(true)
 		SetTransitionTimecycleModifier('default', 0.35)

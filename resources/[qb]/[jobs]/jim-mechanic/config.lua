@@ -28,7 +28,7 @@ Config = {
 	CosmeticRemoval = true, -- If "true" items will be removed on successful application of a mod
 							-- If "false" items will not be removed on use.
 
-	ShowOdo = true, -- Wether the distance is showed in car by default
+	ShowOdo = false, -- Wether the distance is showed in car by default
 	OdoLocation  = "bottom-right", 	-- Where the Odometer will show,
 									-- "left", "right", "top", "top-left", "top-right", "bottom", "bottom-left", "bottom-right"
 	-- Player vehicle repair config
@@ -37,21 +37,21 @@ Config = {
 									-- Set this to false if you want it to "ManualRepairCost" to be the max and cost is calculated by damage
 
 	ManualRepairBased = true, -- Set this to true if you want to set the repair cost to be based on QBCore.Shared.Vehicle costs(overrides the cost setting above)
-	ManualRepairPercent = 5,	-- Set this to the percent of the vehicle price (Only works if ManualRepairBased is true)
+	ManualRepairPercent = 10,	-- Set this to the percent of the vehicle price (Only works if ManualRepairBased is true)
 								-- Default is 5% because $200,000 would be $10,000 max to repair by this system
 								-- 5% of a $10,000 car would be $500
 
-	repairEngine = true, -- Set this to true if automated repairs also repair engine (not just body)
+	repairEngine = false, -- Set this to true if automated repairs also repair engine (not just body)
 	repairExtras = false, -- Set this to true for automated repairs to also repair extra damages (if mechanicjob is available and repairEngine is true)
 
-	requireDutyCheck = false, -- if set to true, the repair bench will only be usable if there are no mechanics in the server ON DUTY
+	requireDutyCheck = true, -- if set to true, the repair bench will only be usable if there are no mechanics in the server ON DUTY
 	dutyMessage = "There is a Mechanic on duty!", -- This is the notification that pops up when a person tries to repair when a mechanic is on duty, choose what you want for it.
 
 	repairAnimate = true, -- Better than staring at a progress bar, "damaged" parts will be removed and replaced. Making it look more authentic
 	repairSpeed = 1500, -- The time between each task while using repairAnimate. 1500 Seems to be a reasonable time for it
 
 	-- NOS STUFF
-	NosRefillCharge = 1000, -- amount in dollars required to refill a nos can
+	NosRefillCharge = 1200, -- amount in dollars required to refill a nos can
 
 	NosTopSpeed = 55.0, -- Enabling this adds a multiplier to the top speed of the vehicle
 						-- Set this to "-1.0" to disable this
@@ -59,11 +59,11 @@ Config = {
 	NosBoostPower = { -- NOS boost acceleration power
 		10.0, -- Level 1
 		30.0, -- Level 2
-		50.0, -- Level 3
+		38.0, -- Level 3
 	},
 
 	NosBindings = {
-		36, -- Switch mode button - Default: 36 "LEFT CTRL"
+		81, -- Switch mode button - Default: 36 "LEFT CTRL" changed to PERIOD
 		21, -- Activate NOS/Purge - Default: 21 "LEFT SHIFT"
 		10, -- Boost/Purge UP - Default: 10 "PAGE UP"
 		11, -- Boost/Purge Down - Default: 11 "PAGE DOWN"
@@ -71,8 +71,8 @@ Config = {
 
 	NitrousUseRate = 0.4, -- How fast the nitrous drains (halved for level1, doubled for level3)
 
-	NitrousCoolDown = 7000, -- 7000 = 7 Seconds, set to 0 to disable
-	CooldownConfirm = true, -- Will play a confirmation beep when cooldown is done
+	NitrousCoolDown = 0, -- 7000 = 7 Seconds, set to 0 to disable
+	CooldownConfirm = false, -- Will play a confirmation beep when cooldown is done
 
 	nosDamage = false, -- This enables NOS causing damage to engine while boosting
 	boostExplode = true, -- If boosting too long at level 3 boost, tank will explode.
@@ -123,7 +123,7 @@ Config = {
 	MaxDuctEngine = 450.0, -- 450.0 is 45% health, this will be the max amount that it can be repaired to
 	DuctAmountEngine = 100.0, -- Repairs the engine by 10% each use
 
-	DuctTapeBody = true,  --Enable if you want duct tape to repair body at the same time as engine
+	DuctTapeBody = false,  --Enable if you want duct tape to repair body at the same time as engine
 	MaxDuctBody = 450.0,
 	DuctAmountBody = 100.0, -- Repairs the engine by 10% each use
 
