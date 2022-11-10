@@ -557,6 +557,8 @@ function StopVehicleLightTrail(ptfx, duration)
 	end)
 end
 
+local Fxs = {}
+
 p_flame_location = {
 	"exhaust",
 	"exhaust_2",
@@ -581,10 +583,10 @@ ParticleFx = "veh_nitrous"
 ParticleSize = 1.4
 
 RegisterNetEvent('jim-mechanic:client:SyncFlame', function(netid, enable)
-	local veh = GetVehiclePedIsIn(PlayerPedId())
 	if not LocalPlayer.state.isLoggedIn then return end
 	if #(GetEntityCoords(NetToVeh(netid)) - GetEntityCoords(PlayerPedId())) >= 200 then return end
 	if enable then
+		local veh = GetVehiclePedIsIn(PlayerPedId())
 		if boostLevel == 1 then	CreateVehicleExhaustBackfire(NetToVeh(netid)) end
 		if boostLevel == 2 then
 			RequestNamedPtfxAsset("veh_xs_vehicle_mods") while not HasNamedPtfxAssetLoaded("veh_xs_vehicle_mods") do Wait(0) end
