@@ -26,16 +26,11 @@ local CanScratchVehicle = false
 local MainThreadStarted = false
 local URL = "images/background.png"
 
-
-OnTheDropoffWay = false
+GlobalState.OnTheDropoffWay = false
 CompletedTask = false
 DropblipCreated = false
 CallingCops = false
 Contracts = {}
-
-
-
-
 
 AddEventHandler("onClientResourceStart", function(resource)
   if (resource == GetCurrentResourceName()) then
@@ -43,8 +38,6 @@ AddEventHandler("onClientResourceStart", function(resource)
     return TriggerServerEvent("boosting:loadNUI")
   end
 end)
-
-
 
 local function getField(field , vehicle)
   return GetVehicleHandlingFloat(vehicle, 'CHandlingData', field)
@@ -96,13 +89,10 @@ function CreateVeh(model , coord, id)
     return ({c = vehClass , v = GetVehicleNumberPlateText(Vehicle) , vehicleshit = Vehicle})
 end
 
-
 RegisterNetEvent('boosting:ReceiveContract')
 AddEventHandler('boosting:ReceiveContract' , function(contract)
      table.insert(Contracts, contract)
 end)
-
-
 
 RegisterNetEvent('boosting:CreateContract')
 AddEventHandler('boosting:CreateContract' , function(shit)
@@ -149,8 +139,6 @@ AddEventHandler('boosting:CreateContract' , function(shit)
   DeleteVehicle(response.vehicleshit)
 end)
 
-
-
 RegisterNetEvent("boosting:StartContract")
 AddEventHandler("boosting:StartContract" , function(id , vin)
   for k,v in ipairs(Contracts) do
@@ -172,7 +160,6 @@ AddEventHandler("boosting:StartContract" , function(id , vin)
       end
   end
 end)
-
 
 RegisterNetEvent("boosting:DeleteContract")
 AddEventHandler("boosting:DeleteContract" , function(id)
@@ -257,7 +244,6 @@ RegisterNUICallback('dick', function(data)
 	end
 end)
 
-
 RegisterNUICallback('decline', function(data)
   TriggerEvent("boosting:DeleteContract" , data.id)
   -- SetNuiFocus(false ,false)
@@ -280,17 +266,14 @@ RegisterNUICallback('vin', function(data)
   end
 end)
 
-
-
 RegisterNUICallback('updateurl' , function(data)
   URL = data.url
   BNEBoosting['functions'].SetBackground(data.url)
 end)
 
-
 RegisterNetEvent("boosting:DisablerUsed")
 AddEventHandler("boosting:DisablerUsed" , function()
-  if OnTheDropoffWay then
+  if GlobalState.OnTheDropoffWay then
     local Class = Contracts[startedcontractid].type 
     if (Config['Utils']["Contracts"]["DisableTrackingOnDCB"]) and (Class == "D" or Class == "C" or Class == "B") then
       ShowNotification("Seems like this vehicle doesn't have a tracker on", "error")    
@@ -389,8 +372,6 @@ AddEventHandler("boosting:DisplayUI" , function()
     NuiLoaded = true
   end
 end)
-
-
 
 local colorNames = {
   ['0'] = "Metallic Black",
@@ -561,7 +542,6 @@ function getStreetandZone(coords)
 	return playerStreetsLocation
 end
 
-
 NotifySent = false
 
 Citizen.CreateThread(function()
@@ -577,7 +557,8 @@ Citizen.CreateThread(function()
           local Driver = GetPedInVehicleSeat(PedVehicle, -1)
           if Driver == PlayerPed then
             if not(DropblipCreated) then
-              OnTheDropoffWay = true
+              --GlobalState.OnTheDropoffWay = true
+              TriggerServerEvent('boosting:server:setonthedropoffway')
               DropblipCreated = true
               local Class = Contracts[startedcontractid].type 
               if (Config['Utils']["Contracts"]["DisableTrackingOnDCB"]) and (Class == "D" or Class == "C" or Class == "B") then
@@ -640,8 +621,6 @@ Citizen.CreateThread(function()
   end
 end)
 
-
-
 -- Citizen.CreateThread(function()
   -- while true do
     -- Citizen.Wait(Config['Utils']["Contracts"]["TimeBetweenContracts"])
@@ -657,12 +636,9 @@ end)
   -- end
 -- end)
 
-
-
-
 Citizen.CreateThread(function()
   while true do
-    if OnTheDropoffWay then
+    if GlobalState.OnTheDropoffWay then
       Citizen.Wait(1000)
       local coordA = GetEntityCoords(PlayerPedId())
       local veh = GetVehiclePedIsIn(GetPlayerPed(PlayerId()) , false)
@@ -676,10 +652,10 @@ Citizen.CreateThread(function()
             CompletedTask = true
             Citizen.Wait(300)
             DeleteBlip()
-            if OnTheDropoffWay then
+            if GlobalState.OnTheDropoffWay then
               TriggerEvent('boosting:ContractDone')
             end
-            OnTheDropoffWay = false
+            GlobalState.OnTheDropoffWay = false
             DisablerTimes = 0
           end
         end
@@ -704,7 +680,7 @@ AddEventHandler("boosting:ContractDone" , function()
     TriggerServerEvent("boosting:removeblip")
     Citizen.Wait(math.random(25000,35000))
     TriggerServerEvent('boosting:finished')
-	local niceprice = VehiclePrice * Config['General']["BNErewardmultiplier"]
+	  local niceprice = VehiclePrice * Config['General']["BNErewardmultiplier"]
     BNEBoosting['functions'].AddBne(niceprice)
     table.remove(Contracts , startedcontractid)
     started = false
@@ -716,7 +692,6 @@ AddEventHandler("boosting:ContractDone" , function()
     NotifySent= false
   end
 end)
-
 
 --- HAS ITEM CHECK
 
@@ -732,7 +707,6 @@ end
 ---------------- Cop Blip Thingy ------------------
 
 local copblip
-
 
 Citizen.CreateThread(function()
   while true do
@@ -781,15 +755,10 @@ AddEventHandler('boosting:setBlipTime', function()
   Config['Utils']["Blips"]["BlipUpdateTime"] = 7000
 end)
 
-
-
-
 RegisterNetEvent("boosting:StartUI")
 AddEventHandler("boosting:StartUI"  , function()
   NuiLoaded = true
 end)
-
-
 
 --------- EMIAL ---------------
 function CreateListEmail()
@@ -820,7 +789,6 @@ function RevievedOfferEmail(owner, class)
 end
 -------------------------------
 
-
 ---------- COMMAND --------------
 Citizen.CreateThread(function()
   if Config['Utils']["Commands"]["boosting_test"] ~= 'nil' then
@@ -843,8 +811,6 @@ Citizen.CreateThread(function()
   end
 end)
 -------------------------------
-
-
 
 Citizen.CreateThread(function()
   if Config['Utils']["Commands"]["get_vehicle_class"] ~= 'nil' then
@@ -886,10 +852,7 @@ Citizen.CreateThread(function()
   end
 end)
 
-
 ---------------------- VIN SCRATCH ------------------------
-
-
 
 local ScratchAnimDict = "mp_car_bomb"
 local ScratchAnim = "car_bomb_mechanic"
@@ -1050,7 +1013,6 @@ function getVehicleInDirection(coordFrom, coordTo)
 
   return vehicle ~= nil and vehicle or 0
 end
-
 
 RegisterNetEvent('boosting:client:synccontracts')
 AddEventHandler('boosting:client:synccontracts', function()

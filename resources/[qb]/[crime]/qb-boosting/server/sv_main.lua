@@ -261,7 +261,7 @@ AddEventHandler('boosting:finished' , function()
         ply.Functions.AddItem(Config['Utils']["Rewards"]["RewardItemName"], 1, false, info)
         TriggerClientEvent("inventory:client:ItemBox", src, QBCore.Shared.Items[Config['Utils']["Rewards"]["RewardItemName"]], "add")
     elseif Config['Utils']["Rewards"]["Type"] == 'money' then
-        ply.Functions.AddMoney("bank",Config['Utils']["Rewards"]["RewardMoneyAmount"],"boosting-payment")
+        ply.Functions.AddMoney(Config['Utils']["Rewards"]["RewardAccount"],Config['Utils']["Rewards"]["RewardMoneyAmount"],"boosting-payment")
     end
 end)
 
@@ -281,6 +281,11 @@ end)
 RegisterNetEvent('boosting:useddisabler')
 AddEventHandler('boosting:useddisabler' , function()
     TriggerClientEvent("boosting:DisablerUsed", source)
+end)
+
+RegisterNetEvent('boosting:server:setonthedropoffway')
+AddEventHandler('boosting:server:setonthedropoffway' , function()
+    GlobalState.OnTheDropoffWay = true
 end)
 
 QBCore.Functions.CreateUseableItem("disabler", function(source, item)

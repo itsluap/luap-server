@@ -26,7 +26,7 @@ Config['CoreSettings'] = {
 Config['Utils'] = {
     ["Rewards"] = {
         ["Type"] = "money", -- reward type item or money
-        ["RewardItemName"] = "markedbills", -- this will be the reward item name (no need to config if you are using an money as a reward)
+        ["RewardItemName"] = "", -- this will be the reward item name (no need to config if you are using an money as a reward)
         ["RewardMoneyAmount"] = "5000", -- this will be the amount the player recieves when he finish the mission (no need to config if you are using an item as a reward)
         ["RewardAccount"] = "cash", -- this can be only ywo values (no need to config if you are using an item as a reward)
     },
@@ -35,19 +35,19 @@ Config['Utils'] = {
         ["ContractChance"] = 60, -- This is the luck percentage of getting a contract
     },
     ["VIN"] = {
-        ["BNEPrice"] = 350, -- Price (BNE) for start a vin scratch
-        ["AmountBneAfterDropOff"] = 50, 
+        ["BNEPrice"] = 100, -- Price (BNE) for start a vin scratch
+        --["AmountBneAfterDropOff"] = 50,   -- unused
         ["VinLocations"] = {x = 472.08, y = -1310.73, z = 29.22}, -- laptop coords
         ["ForceVin"] = true, -- this will force vin contract optiion on any created contract turn to false to use days instead
         ["VinDays"] = 7, -- amount of days between vin contracts , (irl days) 
     },
     ["ClassPrices"] = {
-        ['X'] = "35",
-        ['A'] = "30",
-        ['B'] = "25",
-        ['C'] = "20",
-        ['D'] = "15",
-        ['M'] = "10",
+        ['X'] = "18",
+        ['A'] = "15",
+        ['B'] = "13",
+        ['C'] = "10",
+        ['D'] = "8",
+        ['M'] = "5",
     },
     ["Blips"] = {
         ["BlipUpdateTime"] = 3000, -- Time in (ms) of the police blip update 1000 = 1 second
