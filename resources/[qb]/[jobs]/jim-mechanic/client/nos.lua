@@ -556,6 +556,30 @@ function StopVehicleLightTrail(ptfx, duration)
 		StopParticleFxLooped(ptfx)
 	end)
 end
+
+p_flame_location = {
+	"exhaust",
+	"exhaust_2",
+	"exhaust_3",
+	"exhaust_4",
+	"exhaust_5",
+	"exhaust_6",
+	"exhaust_7",
+	"exhaust_8",
+	"exhaust_9",
+	"exhaust_10",
+	"exhaust_11",
+	"exhaust_12",
+	"exhaust_13",
+	"exhaust_14",
+	"exhaust_15",
+	"exhaust_16",
+}
+
+ParticleDict = "veh_xs_vehicle_mods"
+ParticleFx = "veh_nitrous"
+ParticleSize = 1.4
+
 RegisterNetEvent('jim-mechanic:client:SyncFlame', function(netid, enable)
 	if not LocalPlayer.state.isLoggedIn then return end
 	if #(GetEntityCoords(NetToVeh(netid)) - GetEntityCoords(PlayerPedId())) >= 200 then return end
@@ -566,7 +590,22 @@ RegisterNetEvent('jim-mechanic:client:SyncFlame', function(netid, enable)
 			SetVehicleNitroEnabled(NetToVeh(netid), true)
 		end
 		if boostLevel == 3 then RequestNamedPtfxAsset("veh_xs_vehicle_mods") while not HasNamedPtfxAssetLoaded("veh_xs_vehicle_mods") do Wait(0) end
-		SetVehicleNitroEnabled(NetToVeh(netid), true) Wait(10) SetVehicleBoostActive(NetToVeh(netid), 1)
+		--SetVehicleNitroEnabled(NetToVeh(netid), true) 
+		for _,bones in pairs(p_flame_location) do
+			if GetEntityBoneIndexByName(veh, bones) ~= -1 then
+				if Fxs[bones] == nil then
+					RequestNamedPtfxAsset(ParticleDict)
+					while not HasNamedPtfxAssetLoaded(ParticleDict) do
+						Wait(0)
+					end
+					SetPtfxAssetNextCall(ParticleDict)
+					UseParticleFxAssetNextCall(ParticleDict)
+					Fxs[bones] = StartParticleFxLoopedOnEntityBone(ParticleFx, veh, 0.0, -0.02, 0.0, 180, 0.0, 0.0, GetEntityBoneIndexByName(veh, bones), ParticleSize, 0.0, 0.0, 0.0)
+				end
+			end
+		end
+		Wait(10) 
+		SetVehicleBoostActive(NetToVeh(netid), 1)
 	end
 	else SetVehicleNitroEnabled(NetToVeh(netid), false) SetVehicleBoostActive(NetToVeh(netid), 0) end
 end)
