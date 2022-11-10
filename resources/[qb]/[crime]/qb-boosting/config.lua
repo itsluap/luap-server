@@ -1,6 +1,12 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 Config = {}
 
+Config.PedLocations = {
+    [1] =  { ['x'] = 0,['y'] = 0,['z'] = 0},
+	[2] =  { ['x'] = 0,['y'] = 0,['z'] = 0},
+	[3] =  { ['x'] = 0,['y'] = 0,['z'] = 0},
+}
+
 Config['General'] = {
     ["License"] = "lol", --- your license here
     ["Core"] = "QBCORE", -- This can be ESX , QBCORE , NPBASE
@@ -146,7 +152,6 @@ Config.Vehicles = {
     [44] = {vehicle = "Dilettante"},
 }
 
-
 -----     DROP OFF LOCATIONS        -------
 Config.BoostingDropOff = {
 	[1] =  { ['x'] = 196.87251281738,['y'] = -156.60850524902,['z'] = 56.786975860596},
@@ -217,8 +222,6 @@ Config.VehicleCoords = {
     [59] = {x = 78.38569, y = -198.4182, z = 55.79539, h = 70.1377},
     [60] = {x = -30.09893, y = -89.37914, z = 56.8136, h = 340.32879},
 }
-
-
 
 -----     YOU CAN MESS AROUND WITH THESE NAMES CUZ WHY NOT  -------
 
@@ -328,7 +331,6 @@ Config.CitizenNames =  {
 --------------BLIPS----------------- DON4T TOUCH ANY OF THESE UNLESS YOU KNOW WHAT YOU ARE DOING
 local Circle
 
-
 function CreateBlip(v)
     Circle = Citizen.InvokeNative(0x46818D79B1F7499A,v.x + math.random(0.0,150.0), v.y + math.random(0.0,80.0), v.z + math.random(0.0,5.0) , 300.0) -- you can use a higher number for a bigger zone
     SetBlipHighDetail(Circle, true)
@@ -341,14 +343,12 @@ function DeleteCircle()
         RemoveBlip(Circle)
     end
 end
-  
 
 function DeleteBlip()
 	if DoesBlipExist(blip) then
 		RemoveBlip(blip)
 	end
 end
-
 
 function CreateDropPoint()
     DeleteBlip()
@@ -380,7 +380,6 @@ function CreateCopBlip(cx,cy,cz)
     PulseBlip(copblip)
 end
 
-
 function CreateScratchPoint()
     DeleteBlip()
     if vinstarted then
@@ -394,7 +393,6 @@ function CreateScratchPoint()
     EndTextCommandSetBlipName(blip)
     DropblipCreated = true
 end
-
 
 function DrawText3D2(x, y, z, text)
     local onScreen,_x,_y=World3dToScreen2d(x, y, z)
@@ -412,13 +410,11 @@ function DrawText3D2(x, y, z, text)
     DrawRect(_x,_y+0.0125, 0.015+ factor, 0.03, 41, 11, 41, 90)
 end
 
-
 ShowNotification = function(msg, type)
     QBCore.Functions.Notify(msg, type, 5000)
     --exports['mythic_notify']:SendAlert(type, msg)
 	--exports['co_notify']:SendNotify('boosting', type, msg)
 end
-
 
 function LoadDict(dict)
     RequestAnimDict(dict)

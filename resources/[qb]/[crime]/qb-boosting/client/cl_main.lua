@@ -87,6 +87,15 @@ function CreateVeh(model , coord, id)
     end
 
     return ({c = vehClass , v = GetVehicleNumberPlateText(Vehicle) , vehicleshit = Vehicle})
+    HostilePeds()
+end
+
+function HostilePeds()
+    Ped = 'a_m_m_mexlabor_01'
+    targetPlayer = PlayerPedId()
+    hostilePed1 = CreatePed(0, Ped, Config.PedLocations.x, Config.PedLocations.y, Config.PedLocations.z, 0, true, true) -- see if its possible to use vehicle coords spawns minus x amount to spawn peds 
+    hostilePed2 = CreatePed(0, Ped, Config.PedLocations.x, Config.PedLocations.y, Config.PedLocations.z, 0, true, true) -- same thing as above but minus a different amount
+    TaskCombatPed(hostilePed, targetPlayer, 0, 16)
 end
 
 RegisterNetEvent('boosting:ReceiveContract')
@@ -98,7 +107,7 @@ RegisterNetEvent('boosting:CreateContract')
 AddEventHandler('boosting:CreateContract' , function(shit)
   local num = math.random(#Config.Vehicles)
   local dick = Config.Vehicles[num].vehicle
-  local coord = Config.VehicleCoords[math.random(#Config.VehicleCoords)]
+  local coord = Config.VehicleCoords[math.random(#Config.VehicleCoords)] -- this chooses the numbered location in config // vehcordnumber
   local owner = Config.CitizenNames[math.random(#Config.CitizenNames)].name  
   local response = CreateVeh(dick , vector3(0.0,0.0,0.0))
   

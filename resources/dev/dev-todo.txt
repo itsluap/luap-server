@@ -2,6 +2,7 @@
 
 
 To Do:
+    - get help with coords for hostile peds for boosting ('A' and 'S' class only)
     - add oxy runs
     - vehicle shop (add vehicles to qbcore) - after cars are good to go
     - check if burgershot has boss management
