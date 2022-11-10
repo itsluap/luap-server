@@ -586,8 +586,19 @@ RegisterNetEvent('jim-mechanic:client:SyncFlame', function(netid, enable)
 	if enable then
 		if boostLevel == 1 then	CreateVehicleExhaustBackfire(NetToVeh(netid)) end
 		if boostLevel == 2 then
-			RequestNamedPtfxAsset("veh_xs_vehicle_mods") while not HasNamedPtfxAssetLoaded("veh_xs_vehicle_mods") do Wait(0) end
-			SetVehicleNitroEnabled(NetToVeh(netid), true)
+			for _,bones in pairs(p_flame_location) do
+				if GetEntityBoneIndexByName(veh, bones) ~= -1 then
+					if Fxs[bones] == nil then
+						RequestNamedPtfxAsset(ParticleDict)
+						while not HasNamedPtfxAssetLoaded(ParticleDict) do
+							Wait(0)
+						end
+						SetPtfxAssetNextCall(ParticleDict)
+						UseParticleFxAssetNextCall(ParticleDict)
+						Fxs[bones] = StartParticleFxLoopedOnEntityBone(ParticleFx, veh, 0.0, -0.02, 0.0, 180, 0.0, 0.0, GetEntityBoneIndexByName(veh, bones), ParticleSize, 0.0, 0.0, 0.0)
+					end
+				end
+			end
 		end
 		if boostLevel == 3 then RequestNamedPtfxAsset("veh_xs_vehicle_mods") while not HasNamedPtfxAssetLoaded("veh_xs_vehicle_mods") do Wait(0) end
 		--SetVehicleNitroEnabled(NetToVeh(netid), true) 
@@ -606,8 +617,10 @@ RegisterNetEvent('jim-mechanic:client:SyncFlame', function(netid, enable)
 		end
 		Wait(10) 
 		SetVehicleBoostActive(NetToVeh(netid), 1)
+	else 
+		--SetVehicleNitroEnabled(NetToVeh(netid), false) 
+		SetVehicleBoostActive(NetToVeh(netid), 0) 
 	end
-	else SetVehicleNitroEnabled(NetToVeh(netid), false) SetVehicleBoostActive(NetToVeh(netid), 0) end
 end)
 --Exhaust Fires
 function CreateVehicleExhaustBackfire(vehicle)
