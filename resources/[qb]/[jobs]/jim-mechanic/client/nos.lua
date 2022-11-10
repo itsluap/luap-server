@@ -617,6 +617,7 @@ RegisterNetEvent('jim-mechanic:client:SyncFlame', function(netid, enable)
 		end
 		Wait(10) 
 		SetVehicleBoostActive(NetToVeh(netid), 1)
+	end
 	else 
 		--SetVehicleNitroEnabled(NetToVeh(netid), false) 
 		SetVehicleBoostActive(NetToVeh(netid), 0) 
