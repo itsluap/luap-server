@@ -581,6 +581,7 @@ ParticleFx = "veh_nitrous"
 ParticleSize = 1.4
 
 RegisterNetEvent('jim-mechanic:client:SyncFlame', function(netid, enable)
+	local veh = GetVehiclePedIsIn(PlayerPedId())
 	if not LocalPlayer.state.isLoggedIn then return end
 	if #(GetEntityCoords(NetToVeh(netid)) - GetEntityCoords(PlayerPedId())) >= 200 then return end
 	if enable then
