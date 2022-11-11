@@ -106,6 +106,7 @@ local function drawStatusHUD(state, pValues)
     
     SendNUIMessage({show = state , t = title , v = values})
 end
+
 RegisterNetEvent('bp-bowling:client:openMenu')
 AddEventHandler('bp-bowling:client:openMenu' , function()
     local options = Config.BowlingVendor
@@ -113,18 +114,16 @@ AddEventHandler('bp-bowling:client:openMenu' , function()
     local menuOptions = {}
     for itemId, item in pairs(options) do
 
-        TriggerEvent('qb-menu:sendMenu', {
-            {
-                id = itemId,
-                header = item.name,
-                txt = "Price "..item.price.."$",
-                params = {
-                    event = "bp-bowling:openMenu2",
-                    args = {
-                        data = itemId,
-                    }
+        openMenu({
+            id = itemId,
+            header = item.name,
+            txt = "Price "..item.price.."$",
+            params = {
+                event = "bp-bowling:openMenu2",
+                args = {
+                    data = itemId,
                 }
-            },
+            }
         })
         
     end
@@ -139,18 +138,18 @@ AddEventHandler('bp-bowling:openMenu2' , function(data)
             if(lanes[k].enabled == false) then
                 return
             end
-            TriggerEvent('qb-menu:sendMenu', {
-            {
-                id = k,
-                header = "Lane #"..k,
-                txt = "",
-                params = {
-                    event = "bp-bowling:bowlingPurchase",
-                    args = {
-                        key = k
+            openMenu({
+                {
+                    id = k,
+                    header = "Lane #"..k,
+                    txt = "",
+                    params = {
+                        event = "bp-bowling:bowlingPurchase",
+                        args = {
+                            key = k
+                        }
                     }
-                }
-            },
+                },
             })
         
         end
