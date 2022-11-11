@@ -1,3 +1,5 @@
+local QBCore = exports['qb-core']:GetCoreObject()
+
 local hasActivePins = false
 local currentLane = 0
 local totalThrown = 0
@@ -17,10 +19,6 @@ local function canUseLane(pLaneId)
     return shit
 
 end
-
-
-QBCore = nil
-TriggerEvent('QBCore:GetObject', function(obj) QBCore = obj end)
 
 Citizen.CreateThread(function()
     for k, v in pairs(lanes) do
