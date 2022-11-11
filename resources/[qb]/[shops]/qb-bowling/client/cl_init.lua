@@ -48,6 +48,13 @@ Citizen.CreateThread(function()
         debugPoly = false,
         minZ=23.85,
         maxZ=28.85
+    }, {
+        options = {
+            {
+                --
+            },
+        },
+    --distance = 2.5
     })
 
     local data = {
