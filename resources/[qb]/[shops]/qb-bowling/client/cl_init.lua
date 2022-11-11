@@ -23,10 +23,11 @@ QBCore = nil
 TriggerEvent('QBCore:GetObject', function(obj) QBCore = obj end)
 
 Citizen.CreateThread(function()
+    --[[
     for k, v in pairs(lanes) do
         if (not v.enabled) then goto continueBox end
 
-        --[[   unused?
+           unused?
 
         exports["qb-target"]:AddBoxZone("bp-bowling:lane_"..k, v.pos, 1.8, 2.0, {
             name="bp-bowling:lane_"..k,
