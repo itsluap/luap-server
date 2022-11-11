@@ -27,7 +27,7 @@ Citizen.CreateThread(function()
     for k, v in pairs(lanes) do
         if (not v.enabled) then goto continueBox end
 
-        local BoxZone = BoxZone:Create(v.pos, 1.8, 2.0, {
+        local laneZone = BoxZone:Create(v.pos, 1.8, 2.0, {
             name="bp-bowling:lane_"..k,
             heading=0,
             minZ=23.85,
@@ -39,7 +39,7 @@ Citizen.CreateThread(function()
         ::continueBox::
     end
 
-    local BoxZone2 = BoxZone:Create(vector3(743.95, -774.54, 26.34), 16.8, 30.4, {
+    local alleyZone = BoxZone:Create(vector3(743.95, -774.54, 26.34), 16.8, 30.4, {
         name="bowling_alley",
         heading=0.0,
         minZ=23.85,
