@@ -114,7 +114,7 @@ AddEventHandler('bp-bowling:client:openMenu' , function()
     local menuOptions = {}
     for itemId, item in pairs(options) do
 
-        openMenu({
+        exports['qb-menu']:openMenu({
             id = itemId,
             header = item.name,
             txt = "Price "..item.price.."$",
@@ -138,7 +138,7 @@ AddEventHandler('bp-bowling:openMenu2' , function(data)
             if(lanes[k].enabled == false) then
                 return
             end
-            openMenu({
+            exports['qb-menu']:openMenu({
                 {
                     id = k,
                     header = "Lane #"..k,
