@@ -29,9 +29,9 @@
 
 <body>
     <div id="target-wrapper">
-        <q-icon id="target-eye" :name="CurrentIcon" v-show="Show" :style="TargetEyeStyleObject"></q-icon>
+        <img :src="CurrentIcon" id="target-eye" v-show="Show"></img> <!-- All that's different here is I'm redirecting CurrentIcon with source image to javascript -->
         <div id="target-label-wrapper">
-            <div id="target-label"></div>
+            <div id="target-label" v-html="TargetHTML"></div>
         </div>
     </div>
 </body>
