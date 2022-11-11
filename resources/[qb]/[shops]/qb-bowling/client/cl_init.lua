@@ -27,20 +27,24 @@ Citizen.CreateThread(function()
     for k, v in pairs(lanes) do
         if (not v.enabled) then goto continueBox end
 
-        --[[
-        exports["PolyZone"]:AddBoxZone("bp-bowling:lane_"..k, v.pos, 1.8, 2.0, {
+        BoxZone:Create(v.pos, 1.8, 2.0, {
+            name="bp-bowling:lane_"..k,
             heading=0,
             minZ=23.85,
             maxZ=27.85
+            debugPoly = false
         })
-        ]]--
+        
+
         ::continueBox::
     end
-  
-    exports["PolyZone"]:AddBoxZone("bowling_alley", vector3(743.95, -774.54, 26.34), 16.8, 30.4, {
+
+    BoxZone:Create(vector3(743.95, -774.54, 26.34), 16.8, 30.4, {
+        name="bowling_alley",
         heading=0.0,
         minZ=23.85,
         maxZ=28.85
+        debugPoly = false
     })
 
     local data = {
@@ -338,12 +342,12 @@ AddEventHandler('onResourceStop', function(resourceName)
     drawStatusHUD(false)
 end)
 
-AddEventHandler("PolyZone:enter", function(zone, data)
+RegisterNetEvent("ps-zones:enter", function(zone, data)
     if zone ~= "bowling_alley" then return end
     inBowlingZone = true
 end)
 
-AddEventHandler("PolyZone:exit", function(zone, data)
+RegisterNetEvent("ps-zones:leave", function(zone, data)
     if zone ~= "bowling_alley" then return end
 
     inBowlingZone = false
