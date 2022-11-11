@@ -1,3 +1,4 @@
+--[[
 local function getDirVecFromHead(h, p)
     h = h - 270
     return vector3(math.cos(math.rad(h))*math.cos(math.rad(p)), math.sin(math.rad(h))*math.cos(math.rad(p)), math.sin(math.rad(p)))
@@ -254,3 +255,4 @@ exports('createPins', createPins)
 exports('getPinsDowned', getPinsDowned)
 exports('removeBowlingBall', removeBowlingBall)
 exports('removePins', removePins)
+]]--
