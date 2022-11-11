@@ -118,7 +118,7 @@ end)
 -- Threads
 
 CreateThread(function()
-    local bankCardBZone = (Config.BigBanks["pacific"]["coords"][1], 1.0, 1.0, {
+    local bankCardBZone = BoxZone:Create(Config.BigBanks["pacific"]["coords"][1], 1.0, 1.0, {
         name = 'pacific_coords_bankcardb',
         heading = Config.BigBanks["pacific"]["heading"].closed,
         minZ = Config.BigBanks["pacific"]["coords"][1].z - 1,
@@ -137,7 +137,7 @@ CreateThread(function()
             }, false)
         end
     end)
-    local electronickitZone = (Config.BigBanks["pacific"]["coords"][2], 1.0, 1.0, {
+    local electronickitZone = BoxZone:Create(Config.BigBanks["pacific"]["coords"][2], 1.0, 1.0, {
         name = 'pacific_coords_electronickit',
         heading = Config.BigBanks["pacific"]["heading"].closed,
         minZ = Config.BigBanks["pacific"]["coords"][2].z - 1,
@@ -158,7 +158,7 @@ CreateThread(function()
             }, false)
         end
     end)
-    local thermite1Zone = (Config.BigBanks["pacific"]["thermite"][1]["coords"], 1.0, 1.0, {
+    local thermite1Zone = BoxZone:Create(Config.BigBanks["pacific"]["thermite"][1]["coords"], 1.0, 1.0, {
         name = 'pacific_coords_thermite_1',
         heading = Config.BigBanks["pacific"]["heading"].closed,
         minZ = Config.BigBanks["pacific"]["thermite"][1]["coords"].z - 1,
@@ -180,7 +180,7 @@ CreateThread(function()
             end
         end
     end)
-    local thermite2Zone = (Config.BigBanks["pacific"]["thermite"][2]["coords"], 1.0, 1.0, {
+    local thermite2Zone = BoxZone:Create(Config.BigBanks["pacific"]["thermite"][2]["coords"], 1.0, 1.0, {
         name = 'pacific_coords_thermite_2',
         heading = Config.BigBanks["pacific"]["heading"].closed,
         minZ = Config.BigBanks["pacific"]["thermite"][2]["coords"].z - 1,
@@ -226,7 +226,7 @@ CreateThread(function()
                 distance = 1.5
             })
         else
-            local lockerZone = (Config.BigBanks["pacific"]["lockers"][k]["coords"], 1.0, 1.0, {
+            local lockerZone = BoxZone:Create(Config.BigBanks["pacific"]["lockers"][k]["coords"], 1.0, 1.0, {
                 name = 'pacific_coords_locker_'..k,
                 heading = Config.BigBanks["pacific"]["heading"].closed,
                 minZ = Config.BigBanks["pacific"]["lockers"][k]["coords"].z - 1,
