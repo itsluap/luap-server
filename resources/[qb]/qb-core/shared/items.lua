@@ -674,4 +674,30 @@ QBShared.Items = {
 	["delivery-box"] 			     = {["name"] = "delivery-box",				    ["label"] = "Delivery Package",			["weight"] = 50000,    	["type"] = "item",		["image"] = "delivery-box.png",         ["unique"] = true,		["useable"] = false,	    ["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "",								["created"] = nil, 		["decay"] = 1.0 },
 
 	-- bowling --
+	["bowlingball"] = {
+		["name"] = "bowlingball", 			 	
+		["label"] = "Bowling Ball", 	    
+		["weight"] = 150, 		
+		["type"] = "item", 		
+		["expire"] = 999,		
+		["image"] = "bowlingball.png", 	    	
+		["unique"] = false,   	
+		["useable"] = true, 	
+		["shouldClose"] = true,    
+		["combinable"] = nil,   
+		["description"] = "Magic"
+	},
+	["bowlingreceipt"] = {
+		["name"] = "bowlingreceipt", 			 	
+		["label"] = "Bowling Recepit", 	    
+		["weight"] = 150, 		
+		["type"] = "item", 		
+		["expire"] = 999,		
+		["image"] = "bowlingreceipt.png", 	    	
+		["unique"] = false,   	
+		["useable"] = true, 	
+		["shouldClose"] = true,    
+		["combinable"] = nil,   
+		["description"] = "Magic"
+	},
 }
