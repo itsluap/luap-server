@@ -103,7 +103,7 @@ Citizen.CreateThread(function()
         spawnNow = true,
         name = 'casino',
         model = 'ig_tomcasino', 
-        coords = vector4(935.8339, 47.1804, 81.09579, 153.8499), 
+        coords = vector4(1117.23, 220.0, -49.44, 85.35), 
         minusOne = true,
         freeze = true, 
         invincible = true, 
