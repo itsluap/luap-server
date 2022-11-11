@@ -1,4 +1,5 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+QBCore = nil
+TriggerEvent('QBCore:GetObject', function(obj) QBCore = obj end)
 
 QBCore.Functions.CreateUseableItem("bowlingball", function(source, item)
     local Player = QBCore.Functions.GetPlayer(source)

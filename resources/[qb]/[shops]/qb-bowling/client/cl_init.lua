@@ -1,5 +1,3 @@
-local QBCore = exports['qb-core']:GetCoreObject()
-
 local hasActivePins = false
 local currentLane = 0
 local totalThrown = 0
@@ -20,28 +18,27 @@ local function canUseLane(pLaneId)
 
 end
 
-Citizen.CreateThread(function()
 
+QBCore = nil
+TriggerEvent('QBCore:GetObject', function(obj) QBCore = obj end)
+
+Citizen.CreateThread(function()
     for k, v in pairs(lanes) do
         if (not v.enabled) then goto continueBox end
 
-        local laneZone = BoxZone:Create(v.pos, 1.8, 2.0, {
-            name="bp-bowling:lane_"..k,
+        exports["bt-polyzone"]:AddBoxZone("bp-bowling:lane_"..k, v.pos, 1.8, 2.0, {
             heading=0,
             minZ=23.85,
-            maxZ=27.85,
-            debugPoly = false
+            maxZ=27.85
         })
 
         ::continueBox::
     end
-
-    local alleyZone = BoxZone:Create(vector3(743.95, -774.54, 26.34), 16.8, 30.4, {
-        name="bowling_alley",
+  
+    exports["bt-polyzone"]:AddBoxZone("bowling_alley", vector3(743.95, -774.54, 26.34), 16.8, 30.4, {
         heading=0.0,
         minZ=23.85,
-        maxZ=28.85,
-        debugPoly = false
+        maxZ=28.85
     })
 
     local data = {
@@ -71,9 +68,11 @@ Citizen.CreateThread(function()
 	FreezeEntityPosition(created_ped, true)
 	SetEntityInvincible(created_ped, true)
 	SetBlockingOfNonTemporaryEvents(created_ped, true)
+    local BowlingPed = {
+        GetHashKey("a_m_o_salton_01"),
+    }
 
-
-    exports['qb-target']:AddTargetModel(GetHashKey(data.model), {
+    exports['bt-target']:AddTargetModel(BowlingPed, {
         options = {
             {
                 event = 'bp-bowling:client:openMenu',
@@ -81,6 +80,7 @@ Citizen.CreateThread(function()
                 label = 'View Store'
             }
         },
+        job = {"all"},
         distance = 1.5
     })
    
@@ -106,15 +106,16 @@ local function drawStatusHUD(state, pValues)
     
     SendNUIMessage({show = state , t = title , v = values})
 end
-
 RegisterNetEvent('bp-bowling:client:openMenu')
 AddEventHandler('bp-bowling:client:openMenu' , function()
     local options = Config.BowlingVendor
     local data = {}
     local menuOptions = {}
-    for itemId, item in pairs(options) do
+    local uNwinDTestMenu = { }
 
-        exports['qb-menu']:openMenu({
+
+    for itemId, item in pairs(options) do
+        uNwinDTestMenu[#uNwinDTestMenu+1] = {
             id = itemId,
             header = item.name,
             txt = "Price "..item.price.."$",
@@ -124,9 +125,9 @@ AddEventHandler('bp-bowling:client:openMenu' , function()
                     data = itemId,
                 }
             }
-        })
-        
+        }
     end
+    exports['qb-menu']:openMenu(uNwinDTestMenu)
 end)
 
 
@@ -138,8 +139,11 @@ AddEventHandler('bp-bowling:openMenu2' , function(data)
             if(lanes[k].enabled == false) then
                 return
             end
-            exports['qb-menu']:openMenu({
-                {
+
+            local uNwinDTestMenu2 = { }
+
+            for k, v in ipairs(lanes) do
+                uNwinDTestMenu2[#uNwinDTestMenu2+1] = {
                     id = k,
                     header = "Lane #"..k,
                     txt = "",
@@ -149,9 +153,9 @@ AddEventHandler('bp-bowling:openMenu2' , function(data)
                             key = k
                         }
                     }
-                },
-            })
-        
+                }
+            end
+            exports['qb-menu']:openMenu(uNwinDTestMenu2)
         end
 
     else
@@ -163,7 +167,7 @@ local sheesh = false
 function shit(k,v) 
     Citizen.CreateThread(function()
         while sheesh == true do
-            exports['qb-target']:AddBoxZone("bp-bowling:lane_"..k, v.pos, 1.8, 2.0, {
+            exports['bt-target']:AddBoxZone("bp-bowling:lane_"..k, v.pos, 1.8, 2.0, {
             
                 name = "bp-bowling:lane_"..k,
                 heading = 0.0,
@@ -176,9 +180,10 @@ function shit(k,v)
                         event = 'bp-bowling:setupPins',
                         icon = 'fas fa-arrow-circle-down',
                         label = 'Setup Pins',
-                        args = { v = k }
+                        parms = { v = k }
                     }
                 },
+                job = {"all"},
                 distance = 2.0
             })
             sheesh = false
@@ -218,7 +223,7 @@ AddEventHandler("bp-bowling:bowlingPurchase", function(data)
 end)
 
 AddEventHandler('bp-bowling:setupPins', function(pParameters)
-    local lane = pParameters.args.v
+    local lane = pParameters.v
     if (not lanes[lane]) then return end
     if (hasActivePins) then return end
     hasActivePins = true
@@ -286,7 +291,7 @@ AddEventHandler('bp-bowling:client:itemused' , function()
     if (IsPedInAnyVehicle(PlayerPedId(), true)) then return end
 
     -- Cooldown
-    if (canUseBall()) then return end
+    if not (canUseBall()) then return end
     startBowling(false, function(ballObject)
         lastBall = GetGameTimer()
         
@@ -338,12 +343,12 @@ AddEventHandler('onResourceStop', function(resourceName)
     drawStatusHUD(false)
 end)
 
-RegisterNetEvent("ps-zones:enter", function(zone, data)
+AddEventHandler("bt-polyzone:enter", function(zone, data)
     if zone ~= "bowling_alley" then return end
     inBowlingZone = true
 end)
 
-RegisterNetEvent("ps-zones:leave", function(zone, data)
+AddEventHandler("bt-polyzone:exit", function(zone, data)
     if zone ~= "bowling_alley" then return end
 
     inBowlingZone = false

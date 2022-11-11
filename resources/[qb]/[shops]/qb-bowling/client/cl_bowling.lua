@@ -234,6 +234,10 @@ function removeDownedPins()
 end
 
 AddEventHandler('onResourceStop', function(resourceName)
+    if (GetCurrentResourceName() ~= resourceName) then
+      return
+    end
+
     if (DoesEntityExist(ballObject)) then
         DeleteEntity(ballObject)
     end

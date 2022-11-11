@@ -672,4 +672,6 @@ QBShared.Items = {
 	-- deliveries --
 
 	["delivery-box"] 			     = {["name"] = "delivery-box",				    ["label"] = "Delivery Package",			["weight"] = 50000,    	["type"] = "item",		["image"] = "delivery-box.png",         ["unique"] = true,		["useable"] = false,	    ["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "",								["created"] = nil, 		["decay"] = 1.0 },
+
+	-- bowling --
 }
