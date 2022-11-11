@@ -3,6 +3,8 @@ games { 'gta5' }
 
 client_scripts {
   'client/cl_*.lua',
+  '@PolyZone/client.lua',
+  '@PolyZone/BoxZone.lua',
 }
 
 shared_script {
@@ -18,3 +20,5 @@ ui_page ('ui/index.html')
 files {
   'ui/*'
 }
+
+dependency 'PolyZone'
