@@ -2,35 +2,35 @@ Config = Config or {}
 Config.UseMethCooldown = true -- true/false
 Config.CoolDown = 10 --- Cooldown until can start next run default is 10 minutes
 Config.CopNeeded = 0 -- Cops needed to do the runs
-Config.PoliceJobName = 'police'
+Config.PoliceJobName = 'police', 'sheriff', 'trooper'
 Config.Dispatch = 'ps-dispatch'  -- ps-dispatch / cd-dispatch  (type of dispatch you use)
 Config.PedHash = `g_m_y_lost_02` -- Ped model of the starting ped
 Config.PedPos = vector4(923.02, -1304.02, 26.07, 215.21) -- Starting ped location
 Config.Notify = 'phone' -- can be phone/qb (this is what notifications you want to use for the run)
 Config.Phone = 'qb' -- qb / gks / qs
-Config.MinRep = 3 -- Rep given at the end ( this is a random between Config.MinRep and Config.MaxRep)
-Config.MaxRep = 5
+Config.MinRep = 5 -- Rep given at the end ( this is a random between Config.MinRep and Config.MaxRep)
+Config.MaxRep = 8
 Config.LevelRep = 100-- Amount of reputation needed to get higher rewards etc
 Config.StartItem = 'meth'-- Item needed to start the runs
 Config.UseItemsStacked = true -- have the items you put in the start ped inventory stackeds
 Config.Caseitem = 'methcase'
-Config.RequiredAmount = 20 -- Amount of the starting item you need
+Config.RequiredAmount = 5 -- Amount of the starting item you need
 ----Low Rep Settings----
 Config.LowRepItem = 'floor-cleaner'
 Config.MinMethPayoutLowRep = 25000
 Config.MaxMethPayoutLowRep = 50000
-Config.LowRepPedHealth = 200
-Config.LowRepPedArmor = 100
+Config.LowRepPedHealth = 175
+Config.LowRepPedArmor = 50
 Config.LowRepPedAccuracy = 45
 Config.LowRepPedWeapon = `WEAPON_PISTOL`
 ----End of Low Rep Settings----
 
 ----High Rep Settings----
 Config.HighRepItem = 'methcontainer'
-Config.MinMethPayoutHighRep = 250000
-Config.MaxMethPayoutHighRep = 500000
+Config.MinMethPayoutHighRep = 100000
+Config.MaxMethPayoutHighRep = 250000
 Config.HighRepPedHealth = 200
-Config.HighRepPedArmor = 350
+Config.HighRepPedArmor = 75
 Config.HighRepPedAccuracy = 80
 Config.HighRepPedWeapon = `WEAPON_SMG`
 ----End of Hugh Rep Settings----
@@ -52,8 +52,7 @@ Config.VehicleNames = {
     `kuruma2`,
     `cog552`,
     `paragon2`,
-    `schafter6`,
-    `xls2`
+    `schafter6`
 }
 ----End of Meth Vehicle Settings----
 

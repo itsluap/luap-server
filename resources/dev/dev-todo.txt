@@ -13,6 +13,7 @@ To Do:
     - make sure all clothes added work correctly
     - make sure addon vehicles are not oversized
     - make sure weight system makes sense
+    - make sure criminal activities require police online
 
 In Script:
     - redo all heists
