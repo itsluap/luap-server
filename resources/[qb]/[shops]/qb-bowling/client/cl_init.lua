@@ -33,12 +33,6 @@ Citizen.CreateThread(function()
             debugPoly = false
         })
 
-        local zone1 = BoxZone:Create(vector3(500, 500, 100), 3.0, 5.0, {
-            name = "test",
-            debugPoly = false
-        })
-        
-
         ::continueBox::
     end
 
