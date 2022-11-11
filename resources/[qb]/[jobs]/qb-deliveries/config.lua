@@ -2,7 +2,7 @@ Config = Config or {}
 
 Config.Phone = 'qb' -- qb / gks phone that you use for the phone notifications
 
-Config.JobNeeded = true -- if you need a specific job to do the deliveries true/false
+Config.JobNeeded = false -- if you need a specific job to do the deliveries true/false
 Config.JobName = 'delivery' -- Job needed to do the deliveries if the config above is set to true
 Config.JobPed = 's_m_m_ups_01' -- Model of the starting ped
 Config.JobPedLocation = vector4(-429.53, -2786.3, 6.0, 53.77) -- Where the starting ped is
@@ -26,7 +26,7 @@ Config.ReturnBlipSpriteScale = 0.62
 Config.ReturnBlipRoute = true
 Config.ReturnBlipRouteColour = 32
 --
-Config.FuelScript = 'LegacyFuel' -- ps-fuel/lj-fuel/LegacyFuel Change to the fuel system you use here
+Config.FuelScript = 'ps-fuel' -- ps-fuel/lj-fuel/LegacyFuel Change to the fuel system you use here
 Config.VehicleSpawn = vector4(-445.69, -2789.91, 5.39, 43.89) -- Spot the vehicle spawns
 
 Config.VehicleReturnCoords = vector4(-454.36, -2799.81, 5.39, 44.51) -- area where to return vehicle

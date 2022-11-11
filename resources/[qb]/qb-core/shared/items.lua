@@ -662,4 +662,14 @@ QBShared.Items = {
 
 	["internals"] 					 = {["name"] = "internals", 				["label"] = "Internal Cosmetics", 		["weight"] = 0, 		["type"] = "item", 		["image"] = "internals.png", 			["unique"] = true, 		["useable"] = true, 	["shouldClose"] = true,   ["combinable"] = nil,   ["description"] = ""},
 	["externals"] 					 = {["name"] = "externals", 				["label"] = "Exterior Cosmetics", 		["weight"] = 0, 		["type"] = "item", 		["image"] = "mirror.png", 				["unique"] = true, 		["useable"] = true, 	["shouldClose"] = true,   ["combinable"] = nil,   ["description"] = ""},
+
+	-- methruns --
+
+	["methcontainer"] 			     = {["name"] = "methcontainer",				    ["label"] = "Meth Container",			["weight"] = 9500,    	["type"] = "item",		["image"] = "methcontainer.png",        ["unique"] = true,		["useable"] = false,	    ["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Container full of white powder"},
+	["methcase"] 			     	 = {["name"] = "methcase",				    	["label"] = "Shiny Case",			   	["weight"] = 4500,    	["type"] = "item",		["image"] = "securitycase.png",         ["unique"] = true,		["useable"] = true,	    	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Briefcase full of money"},
+    ["floor-cleaner"] 			     = {["name"] = "floor-cleaner",				    ["label"] = "Floor Cleaner",			["weight"] = 1000,    	["type"] = "item",		["image"] = "floorcleaner.png",   		["unique"] = true,		["useable"] = false,	    ["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "",   ["created"] = nil, 	["decay"] = 0.0	},
+
+	-- deliveries --
+
+	["delivery-box"] 			     = {["name"] = "delivery-box",				    ["label"] = "Delivery Package",			["weight"] = 50000,    	["type"] = "item",		["image"] = "delivery-box.png",         ["unique"] = true,		["useable"] = false,	    ["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "",								["created"] = nil, 		["decay"] = 1.0 },
 }

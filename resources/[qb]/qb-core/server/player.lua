@@ -103,6 +103,8 @@ function QBCore.Player.CheckPlayerData(source, PlayerData)
     PlayerData.metadata['commandbinds'] = PlayerData.metadata['commandbinds'] or {}
     PlayerData.metadata['bloodtype'] = PlayerData.metadata['bloodtype'] or QBCore.Config.Player.Bloodtypes[math.random(1, #QBCore.Config.Player.Bloodtypes)]
     PlayerData.metadata['dealerrep'] = PlayerData.metadata['dealerrep'] or 0
+    PlayerData.metadata['methruns'] = PlayerData.metadata['methruns'] or 0
+    PlayerData.metadata['deliveries'] = PlayerData.metadata['deliveries'] or 0
     PlayerData.metadata['craftingrep'] = PlayerData.metadata['craftingrep'] or 0
     PlayerData.metadata['attachmentcraftingrep'] = PlayerData.metadata['attachmentcraftingrep'] or 0
     PlayerData.metadata['currentapartment'] = PlayerData.metadata['currentapartment'] or nil
