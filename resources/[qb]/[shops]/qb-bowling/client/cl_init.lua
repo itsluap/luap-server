@@ -31,7 +31,7 @@ Citizen.CreateThread(function()
             name="bp-bowling:lane_"..k,
             heading=0,
             minZ=23.85,
-            maxZ=27.85
+            maxZ=27.85,
             debugPoly = false
         })
         
@@ -43,7 +43,7 @@ Citizen.CreateThread(function()
         name="bowling_alley",
         heading=0.0,
         minZ=23.85,
-        maxZ=28.85
+        maxZ=28.85,
         debugPoly = false
     })
 
