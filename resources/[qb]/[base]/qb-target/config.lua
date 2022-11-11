@@ -1,5 +1,0 @@
-Config = {}
-
-Config.BoxZones = {
-    
-}
