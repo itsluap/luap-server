@@ -26,7 +26,8 @@ Citizen.CreateThread(function()
     for k, v in pairs(lanes) do
         if (not v.enabled) then goto continueBox end
 
-        exports["bt-polyzone"]:AddBoxZone("bp-bowling:lane_"..k, v.pos, 1.8, 2.0, {
+        BoxZone:Create(v.pos, 1.8, 2.0, {
+            name="bp-bowling:lane_"..k,
             heading=0,
             minZ=23.85,
             maxZ=27.85
@@ -35,7 +36,8 @@ Citizen.CreateThread(function()
         ::continueBox::
     end
   
-    exports["bt-polyzone"]:AddBoxZone("bowling_alley", vector3(743.95, -774.54, 26.34), 16.8, 30.4, {
+    BoxZone:Create(vector3(743.95, -774.54, 26.34), 16.8, 30.4, {
+        name="bowling_alley",
         heading=0.0,
         minZ=23.85,
         maxZ=28.85
@@ -72,7 +74,7 @@ Citizen.CreateThread(function()
         GetHashKey("a_m_o_salton_01"),
     }
 
-    exports['bt-target']:AddTargetModel(BowlingPed, {
+    exports['qb-target']:AddTargetModel(BowlingPed, {
         options = {
             {
                 event = 'bp-bowling:client:openMenu',
@@ -167,7 +169,7 @@ local sheesh = false
 function shit(k,v) 
     Citizen.CreateThread(function()
         while sheesh == true do
-            exports['bt-target']:AddBoxZone("bp-bowling:lane_"..k, v.pos, 1.8, 2.0, {
+            exports['qb-target']:AddBoxZone("bp-bowling:lane_"..k, v.pos, 1.8, 2.0, {
             
                 name = "bp-bowling:lane_"..k,
                 heading = 0.0,
@@ -343,12 +345,12 @@ AddEventHandler('onResourceStop', function(resourceName)
     drawStatusHUD(false)
 end)
 
-AddEventHandler("bt-polyzone:enter", function(zone, data)
+AddEventHandler("ps-zones:enter", function(zone, data)
     if zone ~= "bowling_alley" then return end
     inBowlingZone = true
 end)
 
-AddEventHandler("bt-polyzone:exit", function(zone, data)
+AddEventHandler("ps-zones:leave", function(zone, data)
     if zone ~= "bowling_alley" then return end
 
     inBowlingZone = false
