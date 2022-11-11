@@ -23,40 +23,24 @@ QBCore = nil
 TriggerEvent('QBCore:GetObject', function(obj) QBCore = obj end)
 
 Citizen.CreateThread(function()
+
     for k, v in pairs(lanes) do
         if (not v.enabled) then goto continueBox end
 
-        exports["qb-target"]:AddBoxZone("bp-bowling:lane_"..k, v.pos, 1.8, 2.0, {
-            name="bp-bowling:lane_"..k,
+        --[[
+        exports["PolyZone"]:AddBoxZone("bp-bowling:lane_"..k, v.pos, 1.8, 2.0, {
             heading=0,
-            debugPoly = false,
             minZ=23.85,
             maxZ=27.85
-        }, {
-            options = {
-                {
-                    --
-                },
-            },
-        --distance = 2.5
         })
-
+        ]]--
         ::continueBox::
     end
   
-    exports["qb-target"]:AddBoxZone("bowling_alley", vector3(743.95, -774.54, 26.34), 16.8, 30.4, {
-        name="bowling_alley",
+    exports["PolyZone"]:AddBoxZone("bowling_alley", vector3(743.95, -774.54, 26.34), 16.8, 30.4, {
         heading=0.0,
-        debugPoly = false,
         minZ=23.85,
         maxZ=28.85
-    }, {
-        options = {
-            {
-                --
-            },
-        },
-    --distance = 2.5
     })
 
     local data = {
