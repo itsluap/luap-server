@@ -439,7 +439,7 @@ end)
 
 CreateThread(function()
     for i = 1, #Config.SmallBanks do
-        local bankZone = BoxZone:Create(Config.SmallBanks[i]["coords"], 1.0, 1.0, {
+        local bankZone = s"], 1.0, 1.0, {
             name = 'fleeca_'..i..'_coords_electronickit',
             heading = Config.SmallBanks[i]["coords"].closed,
             minZ = Config.SmallBanks[i]["coords"].z - 1,
@@ -484,7 +484,7 @@ CreateThread(function()
                     distance = 1.5
                 })
             else
-                local lockerZone = BoxZone:Create(Config.SmallBanks[i]["lockers"][k]["coords"], 1.0, 1.0, {
+                local lockerZone = rs"][k]["coords"], 1.0, 1.0, {
                     name = 'fleeca_'..i..'_coords_locker_'..k,
                     heading = Config.SmallBanks[i]["heading"].closed,
                     minZ = Config.SmallBanks[i]["lockers"][k]["coords"].z - 1,

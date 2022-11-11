@@ -1,3 +1,5 @@
+local QBCore = exports['qb-core']:GetCoreObject()
+
 local hasActivePins = false
 local currentLane = 0
 local totalThrown = 0
@@ -18,10 +20,6 @@ local function canUseLane(pLaneId)
 
 end
 
-
-QBCore = nil
-TriggerEvent('QBCore:GetObject', function(obj) QBCore = obj end)
-
 Citizen.CreateThread(function()
 
     for k, v in pairs(lanes) do
@@ -32,6 +30,11 @@ Citizen.CreateThread(function()
             heading=0,
             minZ=23.85,
             maxZ=27.85,
+            debugPoly = false
+        })
+
+        local zone1 = BoxZone:Create(vector3(500, 500, 100), 3.0, 5.0, {
+            name = "test",
             debugPoly = false
         })
         
