@@ -90,11 +90,12 @@ function CreateVeh(model , coord, id)
     HostilePeds()
 end
 
+-- trying to create hostile peds around the boosted vehicle spawn --
 function HostilePeds()
     Ped = 'a_m_m_mexlabor_01'
     targetPlayer = PlayerPedId()
-    hostilePed1 = CreatePed(0, Ped, Config.PedLocations.x, Config.PedLocations.y, Config.PedLocations.z, 0, true, true) -- see if its possible to use vehicle coords spawns minus x amount to spawn peds 
-    hostilePed2 = CreatePed(0, Ped, Config.PedLocations.x, Config.PedLocations.y, Config.PedLocations.z, 0, true, true) -- same thing as above but minus a different amount
+    hostilePed1 = CreatePed(0, Ped, Contracts[data.coords].x - 5, Contracts[data.coords].y, Contracts[data.coords].z, 0, true, true) -- see if its possible to use vehicle coords spawns minus x amount to spawn peds 
+    hostilePed2 = CreatePed(0, Ped, Contracts[data.coords].x, Contracts[data.coords].y - 5, Contracts[data.coords].z, 0, true, true) -- same thing as above but minus a different amount
     TaskCombatPed(hostilePed, targetPlayer, 0, 16)
 end
 
