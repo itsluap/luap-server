@@ -116,9 +116,12 @@ const Targeting = Vue.createApp({
         },
 
         FoundTarget(item) {
-            if (item.data) this.CurrentIcon = item.data;
-            else this.CurrentIcon = this.StandardEyeIcon;
-            this.TargetEyeStyleObject.color = this.SuccessIcon;
+            if (item.data) {
+                this.CurrentIcon = item.data;
+            } else {
+                this.CurrentIcon = this.SuccessIcon;
+            }
+            this.TargetEyeStyleObject.color = this.SuccessColor;
         },
 
         ValidTarget(item) {
