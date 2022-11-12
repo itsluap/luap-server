@@ -14,6 +14,7 @@ To Do:
     - make sure addon vehicles are not oversized
     - make sure weight system makes sense
     - make sure criminal activities require police online
+    - fork branches of scripts so they update themselves
 
 In Script:
     - redo all heists
