@@ -15,6 +15,7 @@ To Do:
     - make sure weight system makes sense
     - make sure criminal activities require police online
     - fork branches of scripts so they update themselves
+    - when server goes live create devloper branch of luap-server
 
 In Script:
     - redo all heists
