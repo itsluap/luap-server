@@ -87,7 +87,7 @@ function CreateVeh(model , coord, id)
     end
 
     return ({c = vehClass , v = GetVehicleNumberPlateText(Vehicle) , vehicleshit = Vehicle})
-    HostilePeds()
+    --HostilePeds()
 end
 
 -- trying to create hostile peds around the boosted vehicle spawn --
