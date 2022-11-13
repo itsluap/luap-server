@@ -62,25 +62,29 @@ Config.DoorList = {
 	},
 	--door2 for pacific opened with thermite right near the vault door
 	{
-		objName = 'hei_v_ilev_bk_safegate_pris',
-		objCoords  = vec3(252.98, 220.65, 101.8),
-		textCoords = vec3(252.98, 220.65, 101.8),
-		authorizedJobs = { 'police' },
-		objYaw = 160.0,
+		authorizedJobs = { ['police'] = 0 },
+		doorType = 'door',
+		objCoords = vec3(250.564209, 233.399384, 97.317978),
+		objName = 409280169,
+		doorLabel = 'thermite 2',
+		doorRate = 1.0,
+		fixText = false,
+		distance = 2,
+		objYaw = 340.00024414062,
 		locked = true,
-		pickable = false,
-		distance = 2.0
 	},
 	-- door3 for pacific opened with thermite after passing the door near vault
 	{
-		objName = 'hei_v_ilev_bk_safegate_pris',
-		objCoords  = vec3(261.68, 215.62, 101.81),
-		textCoords = vec3(261.68, 215.62, 101.81),
-		authorizedJobs = { 'police' },
-		objYaw = -110.0,
-		locked = true,
-		pickable = false,
-		distance = 2.0
+		authorizedJobs = { ['police'] = 0 },
+		doorType = 'door',
+		objCoords = vec3(244.558014, 216.897278, 97.317978),
+		objName = 409280169,
+		doorLabel = 'thermite 1',
+		doorRate = 1.0,
+		fixText = false,
+		distance = 2,
+		objYaw = 340.00024414062,
+    	locked = true,
 	},
 	-- Paleto Door 1 opened with security card A
 	{
