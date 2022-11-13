@@ -50,19 +50,16 @@ Config.DoorList['configname-identifier'] = {
 
 Config.DoorStates = {}
 Config.DoorList = {
-	
+	-- Paleto Door 1 opened with security card B
 	{
-		doors = {
-			{objName = 1109357065, objYaw = 250.00028991699, objCoords = vec3(272.472107, 214.907272, 110.280518)},
-			{objName = 1109357065, objYaw = 70.000213623047, objCoords = vec3(273.183899, 216.862823, 110.280518)}
-		},
-		doorRate = 1.0,
-		pickable = true,
+		objName = 'hei_v_ilev_bk_gate2_pris',
+		objCoords  = vec3(261.83, 221.39, 106.41),
+		textCoords = vec3(261.83, 221.39, 106.41),
+		authorizedJobs = { 'police' },
+		objYaw = -110.0,
 		locked = true,
-		authorizedJobs = { ['police'] = 0 },
-		doorType = 'double',
-		doorLabel = 'officedoors',
-		distance = 2,
+		pickable = false,
+		distance = 2.0,
 	},
 	--door2 for pacific opened with thermite right near the vault door
 	{
