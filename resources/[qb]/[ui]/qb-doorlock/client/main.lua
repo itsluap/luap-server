@@ -295,37 +295,6 @@ local function updateDoors(specificDoor)
     lastCoords = playerCoords
 end
 
-local function lockpickFinish(success)
-	if success then
-		QBCore.Functions.Notify(Lang:t("success.lockpick_success"), 'success', 2500)
-		if closestDoor.data.coords then
-			TaskTurnPedToFaceCoord(playerPed, closestDoor.data.doors[1].objCoords.x, closestDoor.data.doors[1].objCoords.y, closestDoor.data.doors[1].objCoords.z, 0)
-		else
-			TaskTurnPedToFaceCoord(playerPed, closestDoor.data.objCoords.x, closestDoor.data.objCoords.y, closestDoor.data.objCoords.z, 0)
-		end
-		Wait(300)
-		local count = 0
-		while GetIsTaskActive(playerPed, 225) do
-			Wait(10)
-			if count == 150 then break end
-			count += 1
-		end
-		Wait(1800)
-		TriggerServerEvent('qb-doorlock:server:updateState', closestDoor.id, false, false, true, false) -- Broadcast new state of the door to everyone
-	else
-		QBCore.Functions.Notify(Lang:t("error.lockpick_fail"), 'error', 2500)
-		if math.random(1,100) <= 17 then
-			if usingAdvanced then
-				TriggerServerEvent("qb-doorlock:server:removeLockpick", "advancedlockpick")
-				TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items["advancedlockpick"], "remove")
-			else
-				TriggerServerEvent("qb-doorlock:server:removeLockpick", "lockpick")
-				TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items["lockpick"], "remove")
-			end
-		end
-	end
-end
-
 local function isAuthorized(door)
 	if door.allAuthorized then return true end
 
@@ -486,7 +455,37 @@ end)
 RegisterNetEvent('lockpicks:UseLockpick', function(isAdvanced)
 	if not closestDoor.data or not next(closestDoor.data) or PlayerData.metadata['isdead'] or PlayerData.metadata['ishandcuffed'] or (not closestDoor.data.pickable and not closestDoor.data.lockpick) or not closestDoor.data.locked then return end
 	usingAdvanced = isAdvanced
-	TriggerEvent('qb-lockpick:client:openLockpick', lockpickFinish)
+	--TriggerEvent('qb-lockpick:client:openLockpick', lockpickFinish)
+	exports['ps-ui']:Circle(function(success)
+		if success then
+			QBCore.Functions.Notify(Lang:t("success.lockpick_success"), 'success', 2500)
+			if closestDoor.data.coords then
+				TaskTurnPedToFaceCoord(playerPed, closestDoor.data.doors[1].objCoords.x, closestDoor.data.doors[1].objCoords.y, closestDoor.data.doors[1].objCoords.z, 0)
+			else
+				TaskTurnPedToFaceCoord(playerPed, closestDoor.data.objCoords.x, closestDoor.data.objCoords.y, closestDoor.data.objCoords.z, 0)
+			end
+			Wait(300)
+			local count = 0
+			while GetIsTaskActive(playerPed, 225) do
+				Wait(10)
+				if count == 150 then break end
+				count += 1
+			end
+			Wait(1800)
+			TriggerServerEvent('qb-doorlock:server:updateState', closestDoor.id, false, false, true, false) -- Broadcast new state of the door to everyone
+		else
+			QBCore.Functions.Notify(Lang:t("error.lockpick_fail"), 'error', 2500)
+			if math.random(1,100) <= 17 then
+				if usingAdvanced then
+					TriggerServerEvent("qb-doorlock:server:removeLockpick", "advancedlockpick")
+					TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items["advancedlockpick"], "remove")
+				else
+					TriggerServerEvent("qb-doorlock:server:removeLockpick", "lockpick")
+					TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items["lockpick"], "remove")
+				end
+			end
+		end
+	end, 2, 20) -- NumberOfCircles, MS
 end)
 
 RegisterNetEvent('qb-doorlock:client:addNewDoor', function()
