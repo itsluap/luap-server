@@ -58,7 +58,7 @@ Config.DoorList = {
 		objYaw = -110.0,
 		locked = true,
 		pickable = false,
-		distance = 2.5,
+		distance = 2.0,
 	},
 	--door2 for pacific opened with thermite right near the vault door
 	{
@@ -69,7 +69,7 @@ Config.DoorList = {
 		objYaw = 160.0,
 		locked = true,
 		pickable = false,
-		distance = 2.5
+		distance = 2.0
 	},
 	-- door3 for pacific opened with thermite after passing the door near vault
 	{
@@ -80,7 +80,7 @@ Config.DoorList = {
 		objYaw = -110.0,
 		locked = true,
 		pickable = false,
-		distance = 2.5
+		distance = 2.0
 	},
 	-- Paleto Door 1 opened with security card A
 	{
@@ -91,7 +91,7 @@ Config.DoorList = {
 		authorizedJobs = { 'police' },
 		locked = true,
 		pickable = false,
-		distance = 2.5
+		distance = 2.0
 	},
 	-- Paleto Door 2 opened with thermite
 	{
@@ -102,7 +102,7 @@ Config.DoorList = {
 		authorizedJobs = { 'police' },
 		locked = true,
 		pickable = false,
-		distance = 2.5
+		distance = 2.0
 	},
 	-- First Pacific Door opened with lockpick
 	{
@@ -113,7 +113,7 @@ Config.DoorList = {
 		objYaw = -20.0,
 		locked = true,
 		pickable = true,
-		distance = 2.5
+		distance = 2.0
 	},
 	-- Second Pacific Door opened with lockpick
 	{
@@ -124,7 +124,7 @@ Config.DoorList = {
 		objYaw = -20.0,
 		locked = true,
 		pickable = true,
-		distance = 2.5
+		distance = 2.0
 	},
 	-- Fleeca Door opened with lockpick
 	{
@@ -134,7 +134,7 @@ Config.DoorList = {
 		authorizedJobs = { 'police' },
 		locked = true,
 		pickable = true,
-		distance = 2.5
+		distance = 2.0
 	},
 	-- Fleeca Door opened with lockpick
 	{
@@ -144,7 +144,7 @@ Config.DoorList = {
 		authorizedJobs = { 'police' },
 		locked = true,
 		pickable = true,
-		distance = 2.5
+		distance = 2.0
 	},
 	-- Fleeca Door opened with lockpick
 	{
@@ -154,7 +154,7 @@ Config.DoorList = {
 		authorizedJobs = { 'police' },
 		locked = true,
 		pickable = true,
-		distance = 2.5
+		distance = 2.0
 	},
 	-- Fleeca Door opened with lockpick
 	{
@@ -164,7 +164,7 @@ Config.DoorList = {
 		authorizedJobs = { 'police' },
 		locked = true,
 		pickable = true,
-		distance = 2.5
+		distance = 2.0
 	},
 	-- Fleeca Door opened with lockpick
 	{
@@ -174,6 +174,6 @@ Config.DoorList = {
 		authorizedJobs = { 'police' },
 		locked = true,
 		pickable = true,
-		distance = 2.5
+		distance = 2.0
 	},
 }
