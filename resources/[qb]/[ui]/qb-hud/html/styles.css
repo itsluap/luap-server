@@ -3,7 +3,6 @@
 
 /* Menu */
 div#openmenu { display: none; position: absolute; width: 50%; top: 45%; left: 50%; transform: translate(-50%,-50%); }
-.brand-logo { width: 25%; } /* when using an svg all you need to change is the width and it will resize it */
 
 /* Menu tab & panel styles */
 .text-tabcolor { color: rgb(255, 255, 255)!important; }
