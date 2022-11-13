@@ -27,7 +27,7 @@ AddEventHandler("luap-scoreboard:AddPlayer", function()
 end)
 
 function ST.Scoreboard.AddAllPlayers(self)
-    local xPlayers   = QBCore.Functions.GetQBPlayers()
+    local xPlayers   = QBCore.Functions.GetPlayers()
 
     for i=1, #xPlayers, 1 do
         
