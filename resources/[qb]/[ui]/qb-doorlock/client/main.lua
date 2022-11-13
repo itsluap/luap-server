@@ -485,7 +485,7 @@ RegisterNetEvent('lockpicks:UseLockpick', function(isAdvanced)
 				end
 			end
 		end
-	end, 3, 10) -- NumberOfCircles, MS
+	end, 5, 10) -- NumberOfCircles, MS
 end)
 
 RegisterNetEvent('qb-doorlock:client:addNewDoor', function()
