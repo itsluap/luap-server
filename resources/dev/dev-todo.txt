@@ -18,13 +18,16 @@ To Do:
     - when server goes live create devloper branch of luap-server
 
 In Script:
-    - redo all heists
     - add bowling script
     - add multijob script
     - add better mechanic script (possibly tuner shop script thats bookmarked)
     - test boosting script / make sure boosting classes arent fucked / or find better boosting script
     - fix heroin animation
 
+HEISTS:
+    - Fleeca: where to get electronickit and trojan_usb, (good to go)
+    -
+    -
 Testing:
     - test okokContract
     - apartments should be raidable now

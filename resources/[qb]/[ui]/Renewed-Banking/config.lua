@@ -8,7 +8,7 @@ config = {
     peds = {
         [1] = {
             model = 'u_m_m_bankman',
-            coords = vector4(241.44, 227.19, 106.29, 170.43)
+            coords = vector4(262.12, 226.36, 106.28, 159.5)
         },
         [2] = {
             model = 'ig_barry',
