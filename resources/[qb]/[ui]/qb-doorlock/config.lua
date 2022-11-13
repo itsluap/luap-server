@@ -50,7 +50,7 @@ Config.DoorList['configname-identifier'] = {
 
 Config.DoorStates = {}
 Config.DoorList = {
-	-- Paleto Door 1 opened with security card B
+	-- Pacific Door 1 opened with security card B
 	{
 		doorRate = 1.0,
 		doorLabel = 'card_b',
