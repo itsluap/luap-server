@@ -470,8 +470,8 @@ Config.BigBanks = {
         ["alarm"] = true,
         ["object"] = 961976194,
         ["heading"] = {
-            closed = 160.00001,
-            open = 70.00001
+            closed = 70.00001,
+            open = 150.00001
         },
         ["thermite"] = {
             [1] = {
