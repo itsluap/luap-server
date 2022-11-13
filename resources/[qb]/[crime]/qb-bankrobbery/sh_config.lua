@@ -489,52 +489,52 @@ Config.BigBanks = {
         ["isOpened"] = false,
         ["lockers"] = {
             [1] = {
-                ["coords"] = vector3(258.57, 218.36, 101.68),
+                ["coords"] = vector3(241.44, 210.16, 97.12),
                 ["isBusy"] = false,
                 ["isOpened"] = false
             },
             [2] = {
-                ["coords"] = vector3(260.82, 217.62, 101.68),
+                ["coords"] = vector3(240.24, 212.95, 97.12),
                 ["isBusy"] = false,
                 ["isOpened"] = false
             },
             [3] = {
-                ["coords"] = vector3(259.33, 213.76, 101.68),
+                ["coords"] = vector3(241.11, 215.37, 97.12),
                 ["isBusy"] = false,
                 ["isOpened"] = false
             },
             [4] = {
-                ["coords"] = vector3(257.09, 214.55, 101.68),
+                ["coords"] = vector3(244.13, 211.69, 97.12),
                 ["isBusy"] = false,
                 ["isOpened"] = false
             },
             [5] = {
-                ["coords"] = vector3(263.7, 216.48, 101.68),
+                ["coords"] = vector3(244.93, 213.79, 97.12),
                 ["isBusy"] = false,
                 ["isOpened"] = false
             },
             [6] = {
-                ["coords"] = vector3(265.81, 215.81, 101.68),
+                ["coords"] = vector3(252.5, 240.48, 97.12),
                 ["isBusy"] = false,
                 ["isOpened"] = false
             },
             [7] = {
-                ["coords"] = vector3(266.43, 214.37, 101.68),
+                ["coords"] = vector3(253.69, 237.87, 97.12),
                 ["isBusy"] = false,
                 ["isOpened"] = false
             },
             [8] = {
-                ["coords"] = vector3(265.71, 212.49, 101.68),
+                ["coords"] = vector3(252.85, 235.75, 97.12),
                 ["isBusy"] = false,
                 ["isOpened"] = false
             },
             [9] = {
-                ["coords"] = vector3(264.24, 211.92, 101.68),
+                ["coords"] = vector3(249.78, 239.05, 97.12),
                 ["isBusy"] = false,
                 ["isOpened"] = false
             },
             [10] = {
-                ["coords"] = vector3(262.21, 212.67, 101.68),
+                ["coords"] = vector3(248.84, 236.67, 97.12),
                 ["isBusy"] = false,
                 ["isOpened"] = false
             }

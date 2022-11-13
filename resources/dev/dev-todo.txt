@@ -26,7 +26,7 @@ In Script:
 
 HEISTS:
     - Fleeca: where to get electronickit and trojan_usb, (good to go)
-    -
+    - Pacific: 
     -
 Testing:
     - test okokContract
