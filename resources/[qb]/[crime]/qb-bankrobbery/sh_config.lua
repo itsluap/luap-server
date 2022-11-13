@@ -464,8 +464,8 @@ Config.BigBanks = {
     ["pacific"] = {
         ["label"] = "Pacific Standard",
         ["coords"] = {
-            [1] = vector3(261.95, 223.11, 106.28),
-            [2] = vector3(253.25, 228.44, 101.68)
+            [1] = vector3(267.11, 214.07, 106.28),
+            [2] = vector3(236.69, 231.63, 97.12)
         },
         ["alarm"] = true,
         ["object"] = 961976194,
@@ -475,12 +475,12 @@ Config.BigBanks = {
         },
         ["thermite"] = {
             [1] = {
-                ["coords"] = vector3(252.55, 221.15, 101.68),
+                ["coords"] = vector3(272.15, 220.61, 97.12),
                 ["isOpened"] = false,
                 ["doorId"] = 2
             },
             [2] = {
-                ["coords"] = vector3(261.15, 215.21, 101.68),
+                ["coords"] = vector3(269.25, 212.74, 97.12),
                 ["isOpened"] = false,
                 ["doorId"] = 3
             }
