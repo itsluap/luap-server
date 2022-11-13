@@ -237,7 +237,7 @@ end)
 
 RegisterNetEvent('kevin-deliveries:CreateZone', function ()
     exports["ps-zones"]:CreateBoxZone("RoadRunner-TruckReturnZone", Config.VehicleSpawn, 30.0, 30.0, {
-        debugPoly = true,
+        debugPoly = false,
         heading = Config.VehicleSpawn.w,
         minZ = Config.VehicleSpawn.z - 1,
         maxZ = Config.VehicleSpawn.z + 5,
