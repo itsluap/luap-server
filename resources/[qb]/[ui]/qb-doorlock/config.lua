@@ -62,7 +62,6 @@ Config.DoorList = {
 		objCoords = vec3(272.642151, 219.898712, 97.317978),
 		doorType = 'door',
 		objYaw = 340.00024414062,
-}
 	},
 	--door2 for pacific opened with thermite right near the vault door
 	{
