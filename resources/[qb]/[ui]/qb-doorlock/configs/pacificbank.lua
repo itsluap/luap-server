@@ -89,31 +89,3 @@ Config.DoorList['pacificbank-6'] = {
     objYaw = 160.00022888184,
     locked = true,
 }
-
--- 7 created by luap
-Config.DoorList['pacificbank-7'] = {
-    authorizedJobs = { ['police'] = 0 },
-    doorType = 'door',
-    objCoords = vec3(244.558014, 216.897278, 97.317978),
-    objName = 409280169,
-    doorLabel = 'thermite 1',
-    doorRate = 1.0,
-    fixText = false,
-    distance = 2,
-    objYaw = 340.00024414062,
-    locked = true,
-}
-
--- 8 created by luap
-Config.DoorList['pacificbank-8'] = {
-    authorizedJobs = { ['police'] = 0 },
-    doorType = 'door',
-    objCoords = vec3(250.564209, 233.399384, 97.317978),
-    objName = 409280169,
-    doorLabel = 'thermite 2',
-    doorRate = 1.0,
-    fixText = false,
-    distance = 2,
-    objYaw = 340.00024414062,
-    locked = true,
-}
