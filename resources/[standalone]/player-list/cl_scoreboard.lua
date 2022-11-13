@@ -87,7 +87,7 @@ Citizen.CreateThread(function()
             local playerId = GetPlayerFromServerId(v.src)
 
             if NetworkIsPlayerActive(playerId) or GetPlayerPed(playerId) == GetPlayerPed(-1) then
-                if WarMenu.MenuButton("[" .. v.src .. "] " .. v.comid .. " ", "options") then ST._Scoreboard.SelectedPlayer = v end
+                if WarMenu.MenuButton("[" .. v.src .. "] " .. v.steamid .. " ", "options") then ST._Scoreboard.SelectedPlayer = v end
             else
                 if WarMenu.MenuButton("[" .. v.src .. "] - instanced?", "options", {r = 255, g = 0, b = 0, a = 255}) then ST._Scoreboard.SelectedPlayer = v end
             end
