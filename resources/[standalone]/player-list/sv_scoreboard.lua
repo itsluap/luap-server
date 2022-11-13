@@ -1,4 +1,4 @@
-local Framework = exports['dream-core']:GetCoreObject() 
+local QBCore = exports['qb-core']:GetCoreObject() 
 
 local ST = ST or {}
 ST.Scoreboard = {}
@@ -7,13 +7,13 @@ ST._Scoreboard.PlayersS = {}
 ST._Scoreboard.RecentS = {}
 
 
-Framework.Functions.CreateCallback('shitidk', function(source, cb)
-    local group = Framework.Functions.GetPermission(source)
+QBCore.Functions.CreateCallback('shitidk', function(source, cb)
+    local group = QBCore.Functions.GetPermission(source)
     cb(group)
 end)
 
-RegisterServerEvent('dream-score:AddPlayer')
-AddEventHandler("dream-score:AddPlayer", function()
+RegisterServerEvent('qb-score:AddPlayer')
+AddEventHandler("qb-score:AddPlayer", function()
 
     local identifiers, steamIdentifier = GetPlayerIdentifiers(source)
     for _, v in pairs(identifiers) do
@@ -28,12 +28,12 @@ AddEventHandler("dream-score:AddPlayer", function()
     local scomid = steamIdentifier:gsub("steam:", "")
     local data = { src = source, steamid = stid, comid = scomid, name = ply }
 
-    TriggerClientEvent("dream-score:AddPlayer", -1, data )
+    TriggerClientEvent("qb-score:AddPlayer", -1, data )
     ST.Scoreboard.AddAllPlayers()
 end)
 
 function ST.Scoreboard.AddAllPlayers(self)
-    local xPlayers   = Framework.Functions.GetPlayers()
+    local xPlayers   = QBCore.Functions.GetPlayers()
 
     for i=1, #xPlayers, 1 do
         
@@ -50,7 +50,7 @@ function ST.Scoreboard.AddAllPlayers(self)
         local scomid = steamIdentifier:gsub("steam:", "")
         local data = { src = xPlayers[i], steamid = stid, comid = scomid, name = ply }
 
-        TriggerClientEvent("dream-score:AddAllPlayers", source, data, recentData)
+        TriggerClientEvent("qb-score:AddAllPlayers", source, data, recentData)
 
     end
 end
@@ -74,9 +74,9 @@ AddEventHandler("playerDropped", function()
     local plyid = source
     local data = { src = source, steamid = stid, comid = scomid, name = ply }
 
-    TriggerClientEvent("dream-score:RemovePlayer", -1, data )
+    TriggerClientEvent("qb-score:RemovePlayer", -1, data )
     Wait(600000)
-    TriggerClientEvent("dream-score:RemoveRecent", -1, plyid)
+    TriggerClientEvent("qb-score:RemoveRecent", -1, plyid)
 end)
 
 --[[ function ST.Scoreboard.RemovePlayerS(self, data)

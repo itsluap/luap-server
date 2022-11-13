@@ -1,4 +1,4 @@
-local Framework = exports['dream-core']:GetCoreObject() 
+local QBCore = exports['qb-core']:GetCoreObject() 
 
 local group = "user"
 RegisterNetEvent('es_admin:setGroup')
@@ -6,14 +6,14 @@ AddEventHandler('es_admin:setGroup', function(g)
 	group = g
 end)
 
-RegisterNetEvent("Framework:Client:OnPlayerLoaded")
-AddEventHandler("Framework:Client:OnPlayerLoaded", function()
-    TriggerServerEvent("dream-score:AddPlayer")
+RegisterNetEvent("QBCore:Client:OnPlayerLoaded")
+AddEventHandler("QBCore:Client:OnPlayerLoaded", function()
+    TriggerServerEvent("qb-score:AddPlayer")
 end)
 
-RegisterNetEvent('Framework:Client:OnJobUpdate')
-AddEventHandler('Framework:Client:OnJobUpdate', function(JobInfo)
-    Framework.Functions.TriggerCallback('shitidk', function(g)
+RegisterNetEvent('QBCore:Client:OnJobUpdate')
+AddEventHandler('QBCore:Client:OnJobUpdate', function(JobInfo)
+    QBCore.Functions.TriggerCallback('shitidk', function(g)
         group = g
     end)
 end)
@@ -194,35 +194,35 @@ Citizen.CreateThread(function()
         if IsControlPressed(0, 303) then
             if not IsAnyMenuOpen() then
                 ST.Scoreboard.Menu:Open()
-                TriggerEvent('animations:client:EmoteCommandStart', {"think"})
+                --TriggerEvent('animations:client:EmoteCommandStart', {"think"})
             end
         else
             if IsAnyMenuOpen() then
                 ST.Scoreboard.Menu:Close()
-                TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+                --TriggerEvent('animations:client:EmoteCommandStart', {"c"})
             end
             Citizen.Wait(100)
         end
     end
 end)
 
-RegisterNetEvent("dream-score:RemovePlayer")
-AddEventHandler("dream-score:RemovePlayer", function(data)
+RegisterNetEvent("qb-score:RemovePlayer")
+AddEventHandler("qb-score:RemovePlayer", function(data)
     ST.Scoreboard:RemovePlayer(data)
 end)
 
-RegisterNetEvent("dream-score:AddPlayer")
-AddEventHandler("dream-score:AddPlayer", function(data)
+RegisterNetEvent("qb-score:AddPlayer")
+AddEventHandler("qb-score:AddPlayer", function(data)
     ST.Scoreboard:AddPlayer(data)
 end)
 
-RegisterNetEvent("dream-score:RemoveRecent")
-AddEventHandler("dream-score:RemoveRecent", function(src)
+RegisterNetEvent("qb-score:RemoveRecent")
+AddEventHandler("qb-score:RemoveRecent", function(src)
     ST.Scoreboard:RemoveRecent(src)
 end)
 
-RegisterNetEvent("dream-score:AddAllPlayers")
-AddEventHandler("dream-score:AddAllPlayers", function(data, recentData)
+RegisterNetEvent("qb-score:AddAllPlayers")
+AddEventHandler("qb-score:AddAllPlayers", function(data, recentData)
     ST.Scoreboard:AddAllPlayers(data, recentData)
 end)
 
