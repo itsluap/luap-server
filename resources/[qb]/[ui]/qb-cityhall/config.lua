@@ -4,7 +4,7 @@ Config.UseTarget = GetConvar('UseTarget', 'false') == 'true' -- Use qb-target in
 
 Config.Cityhalls = {
     { -- Cityhall 1
-        coords = vector3(-1291.91, -572.52, 30.57),
+        coords = vector3(-542.82, -198.42, 38.24),
         showBlip = true,
         blipData = {
             sprite = 487,

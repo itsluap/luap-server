@@ -322,6 +322,7 @@ Config.PhoneApplications = {
         slot = 23,
         Alerts = 0,
     },
+    --[[
     ["gopro"] = {
         app = "gopro",
         color = "#008FFF",
@@ -359,6 +360,7 @@ Config.PhoneApplications = {
         slot = 26,
         Alerts = 0,
     },
+    ]]--
 }
 
 Config.MaxSlots = 28
