@@ -623,6 +623,9 @@ Citizen.CreateThread(function()
                 ShowNotification("Head to the scratch location", "success")
                 ShownNotification = true
                 SetNewWaypoint(Config['Utils']["VIN"]["VinLocations"].x, Config['Utils']["VIN"]["VinLocations"].y)
+                if not MainThreadStarted then
+                  MainThread()
+                end
               end
             else
               local primary, secondary = GetVehicleColours(veh)
