@@ -36,6 +36,28 @@ body {
     
 }
 
+.cityhall-identity-page {
+    display: none;
+    position: relative;
+    height: 40vh;
+    width: 80vh;
+    margin: 0 auto;
+    top: 10vh;
+    border-radius: 1vh;
+    /*background: rgba(37, 37, 37, 0.418)*/
+}
+
+.cityhall-job-page {
+    display: none;
+    position: relative;
+    height: 40vh;
+    width: 80vh;
+    margin: 0 auto;
+    top: 10vh;
+    border-radius: 1vh;
+    /*background: rgba(37, 37, 37, 0.418);*/
+}
+
 .cityhall-option-block {
     position: relative;
     width: 30vh;
