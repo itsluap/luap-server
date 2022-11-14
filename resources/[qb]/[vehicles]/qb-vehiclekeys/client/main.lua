@@ -409,15 +409,24 @@ function LockpickDoor(isAdvanced)
     exports['ps-ui']:Circle(function(success)
     if success then
         TaskPlayAnim(ped, "veh@break_in@0h@p_m_one@", "low_force_entry_ds", 3.0, 3.0, 3000, 16, 0, 0, 0, 0)
-        lockpickFinish(success)
+        TriggerServerEvent('hud:server:GainStress', math.random(1, 4))
+        lastPickedVehicle = vehicle
+        if GetPedInVehicleSeat(vehicle, -1) == PlayerPedId() then
+            TriggerServerEvent('qb-vehiclekeys:server:AcquireVehicleKeys', QBCore.Functions.GetPlate(vehicle))
+        else
+            QBCore.Functions.Notify(Lang:t("notify.vlockpick"), 'success')
+            TriggerServerEvent('qb-vehiclekeys:server:setVehLockState', NetworkGetNetworkIdFromEntity(vehicle), 1)
+        end
 	else
         TaskPlayAnim(ped, "veh@break_in@0h@p_m_one@", "low_force_entry_ds", 3.0, 3.0, 3000, 16, 0, 0, 0, 0)
         TriggerServerEvent('hud:server:GainStress', math.random(1, 4))
         QBCore.Functions.Notify("You failed to lockpick the vehicle!", "error")
+        AttemptPoliceAlert("steal")
 	    end
     end, 4, 8) -- NumberOfCircles, MS
 end
 
+--[[
 function LockpickFinishCallback(success)
     local vehicle = QBCore.Functions.GetClosestVehicle()
 
@@ -448,6 +457,7 @@ function LockpickFinishCallback(success)
         end
     end
 end
+]]--
 
 function Hotwire(vehicle, plate)
     local hotwireTime = math.random(Config.minHotwireTime, Config.maxHotwireTime)
