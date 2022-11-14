@@ -332,7 +332,7 @@ AddEventHandler("boosting:DisablerUsed" , function()
       end
     end
   else
-   ShowNotification("No ongoing boost detected", "error")    
+   ShowNotification("This vehicle doesn't have a tracker", "error")    
   end
 end
 end)
