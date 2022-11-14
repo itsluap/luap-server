@@ -15,8 +15,8 @@ body {
     position: relative;
     background-position: center center;
     backface-visibility: hidden;
-    width: 50vh;
-    height: 35vh;
+    width: 100vh;
+    height: 70vh;
     margin: 0 auto;
     top: 15vh;
     background-size: cover;
@@ -27,8 +27,8 @@ body {
 
 .cityhall-option-blocks {
     position: relative;
-    height: 5vh;
-    width: 20;
+    height: 33vh;
+    width: 65vh;
     margin: 0 auto;
     top: 13vh;
     border-radius: 1vh;
@@ -39,8 +39,8 @@ body {
 .cityhall-identity-page {
     display: none;
     position: relative;
-    height: 20vh;
-    width: 40vh;
+    height: 40vh;
+    width: 80vh;
     margin: 0 auto;
     top: 10vh;
     border-radius: 1vh;
@@ -50,8 +50,8 @@ body {
 .cityhall-job-page {
     display: none;
     position: relative;
-    height: 20vh;
-    width: 40vh;
+    height: 40vh;
+    width: 80vh;
     margin: 0 auto;
     top: 10vh;
     border-radius: 1vh;
@@ -60,8 +60,8 @@ body {
 
 .cityhall-option-block {
     position: relative;
-    width: 15vh;
-    height: 15vh;
+    width: 30vh;
+    height: 30vh;
     display: inline-block;
     margin-right: 2vh;
     margin-bottom: 2vh;
