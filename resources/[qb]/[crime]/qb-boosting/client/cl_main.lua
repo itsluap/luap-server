@@ -571,6 +571,7 @@ Citizen.CreateThread(function()
               CreateDropPoint()
               DropblipCreated = true
               DeleteCircle()
+              --GlobalState.OnTheDropoffWay = true
               OnTheDropoffWay = true
               TriggerServerEvent('boosting:server:setonthedropoffway')
               local Class = Contracts[startedcontractid].type 
