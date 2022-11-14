@@ -566,10 +566,9 @@ Citizen.CreateThread(function()
           local PedVehicle = GetVehiclePedIsIn(PlayerPed)
           local Driver = GetPedInVehicleSeat(PedVehicle, -1)
           if Driver == PlayerPed then
-            if not(DropblipCreated) then
+            if not DropblipCreated then
               --GlobalState.OnTheDropoffWay = true
               TriggerServerEvent('boosting:server:setonthedropoffway')
-              DropblipCreated = true
               local Class = Contracts[startedcontractid].type 
               if (Config['Utils']["Contracts"]["DisableTrackingOnDCB"]) and (Class == "D" or Class == "C" or Class == "B") then
                 CallingCops = false
@@ -587,6 +586,7 @@ Citizen.CreateThread(function()
                 end
               end
               CreateDropPoint()
+              DropblipCreated = true
               DeleteCircle()
             end
           end

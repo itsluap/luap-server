@@ -154,7 +154,7 @@ Config.Vehicles = {
 
 -----     DROP OFF LOCATIONS        -------
 Config.BoostingDropOff = {
-	[1] =  { ['x'] = 196.87251281738,['y'] = -156.60850524902,['z'] = 56.786975860596},
+	[1] =  { ['x'] = 196.87251281738,['y'] = -156.60850524902,['z'] = 56.786975860596}, 196.87251281738, -156.60850524902, 56.786975860596
 	[2] =  { ['x'] = -1286.9621582031,['y'] = -274.47973632813,['z'] = 38.724918365479},
 	[3] =  { ['x'] = -1330.8432617188,['y'] = -1034.8623046875,['z'] = 7.518029212951},
 }
@@ -354,7 +354,7 @@ function CreateDropPoint()
     DeleteBlip()
     rnd = math.random(1,#Config.BoostingDropOff)
     if OnTheDropoffWay then
-    blip = AddBlipForCoord(Config.BoostingDropOff[rnd]["x"],Config.BoostingDropOff[rnd]["y"],Config.BoostingDropOff[rnd]["z"])
+        blip = AddBlipForCoord(Config.BoostingDropOff[rnd]["x"],Config.BoostingDropOff[rnd]["y"],Config.BoostingDropOff[rnd]["z"])
     end
     SetBlipSprite(blip, 514)
     SetBlipScale(blip, 0.7)

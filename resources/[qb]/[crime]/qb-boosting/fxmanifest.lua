@@ -2,13 +2,15 @@ fx_version 'cerulean'
 games { 'gta5' }
 
 client_scripts {
-  'config.lua',
   'client/cl_*.lua',
   --'@unwind-rpc/client/cl_main.lua',
 }
 
-server_scripts {
+shared_scripts {
   'config.lua',
+}
+
+server_scripts {
   'server/sv_*.lua',
   --'@unwind-rpc/server/sv_main.lua',
 }
