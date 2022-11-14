@@ -618,6 +618,8 @@ Citizen.CreateThread(function()
             local Class = Contracts[startedcontractid].type 
             if (Config['Utils']["Contracts"]["DisableTrackingOnDCB"]) and (Class == "D" or Class == "C" or Class == "B") then
               CallingCops = false
+              SetNewWaypoint(Config['Utils']["VIN"]["VinLocations"].x, Config['Utils']["VIN"]["VinLocations"].y)
+              CanUseComputer = true
             else
               local primary, secondary = GetVehicleColours(veh)
                 primary = colorNames[tostring(primary)]
@@ -631,6 +633,7 @@ Citizen.CreateThread(function()
                 end
             end
             DeleteCircle()
+            end
           end
         end
       end
