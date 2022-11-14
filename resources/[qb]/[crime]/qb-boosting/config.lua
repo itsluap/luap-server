@@ -353,7 +353,7 @@ end
 function CreateDropPoint()
     DeleteBlip()
     rnd = math.random(1,#Config.BoostingDropOff)
-    if OnTheDropoffWay then
+    if GlobalState.OnTheDropoffWay then
         blip = AddBlipForCoord(Config.BoostingDropOff[rnd]["x"],Config.BoostingDropOff[rnd]["y"],Config.BoostingDropOff[rnd]["z"])
     end
     SetBlipSprite(blip, 514)
