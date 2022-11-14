@@ -85,9 +85,7 @@ Config['Utils'] = {
 
 -------------- SERVER FUNCTIONS --------------
 AddVehicle = function(data)
-    if Config['General']["Core"] == "QBCORE" then
-        SQL('INSERT INTO player_vehicles (steam, citizenid, vehicle, hash, mods, plate, state) VALUES (?, ?, ?, ?, ?, ?, ?)',{data.steam, data.cid, data.vehicle, data.hash, data.vehicleMods, data.vehicleplate, data.vehiclestate})
-    end
+    SQL('INSERT INTO player_vehicles (steam, citizenid, vehicle, hash, mods, plate, state) VALUES (?, ?, ?, ?, ?, ?, ?)',{data.steam, data.cid, data.vehicle, data.hash, data.vehicleMods, data.vehicleplate, data.vehiclestate})
 end
 
 AddBNE = function(cid, pBne, amount)
