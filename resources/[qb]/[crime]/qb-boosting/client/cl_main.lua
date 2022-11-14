@@ -619,6 +619,7 @@ Citizen.CreateThread(function()
             if (Config['Utils']["Contracts"]["DisableTrackingOnDCB"]) and (Class == "D" or Class == "C" or Class == "B") then
               CallingCops = false
               CanUseComputer = true
+              ShowNotification("Head to the scratch location", "success")
               SetNewWaypoint(Config['Utils']["VIN"]["VinLocations"].x, Config['Utils']["VIN"]["VinLocations"].y)
             else
               local primary, secondary = GetVehicleColours(veh)
