@@ -15,8 +15,8 @@ body {
     position: relative;
     background-position: center center;
     backface-visibility: hidden;
-    width: 100vh;
-    height: 70vh;
+    width: 50vh;
+    height: 35vh;
     margin: 0 auto;
     top: 15vh;
     background-size: cover;
