@@ -216,6 +216,27 @@ RegisterNetEvent('QBCore:Player:SetPlayerData', function(val)
     PlayerData = val
 end)
 
+RegisterNetEvent('qb-menu:client:cityhall', function(data)
+    openMenu({
+        {
+            header = 'City Hall',
+            isMenuHeader = true 
+        },
+        {
+            header = 'Identity',
+            params = {
+                event = 'qb-menu:client:identitymenu'
+            }
+        },
+        {
+            header = 'Employment',
+            params = {
+                event = 'qb-menu:client:employmentmenu'
+            }
+        },
+    })
+end)
+
 RegisterNetEvent('qb-cityhall:client:getIds', function()
     TriggerServerEvent('qb-cityhall:server:getIDs')
 end)
