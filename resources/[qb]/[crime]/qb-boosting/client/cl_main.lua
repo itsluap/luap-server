@@ -567,6 +567,10 @@ Citizen.CreateThread(function()
           local Driver = GetPedInVehicleSeat(PedVehicle, -1)
           if Driver == PlayerPed then
             if not DropblipCreated then
+              print('creating drop point')
+              CreateDropPoint()
+              DropblipCreated = true
+              DeleteCircle()
               --GlobalState.OnTheDropoffWay = true
               TriggerServerEvent('boosting:server:setonthedropoffway')
               local Class = Contracts[startedcontractid].type 
@@ -585,9 +589,6 @@ Citizen.CreateThread(function()
                   NotifySent = true
                 end
               end
-              CreateDropPoint()
-              DropblipCreated = true
-              DeleteCircle()
             end
           end
         end
