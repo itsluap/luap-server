@@ -571,7 +571,7 @@ Citizen.CreateThread(function()
               CreateDropPoint()
               DropblipCreated = true
               DeleteCircle()
-              --GlobalState.OnTheDropoffWay = true
+              OnTheDropoffWay = true
               TriggerServerEvent('boosting:server:setonthedropoffway')
               local Class = Contracts[startedcontractid].type 
               if (Config['Utils']["Contracts"]["DisableTrackingOnDCB"]) and (Class == "D" or Class == "C" or Class == "B") then
@@ -588,6 +588,9 @@ Citizen.CreateThread(function()
                   CallingCops = true
                   NotifySent = true
                 end
+                print('creating drop point')
+                CreateDropPoint()
+                DropblipCreated = true
               end
             end
           end
