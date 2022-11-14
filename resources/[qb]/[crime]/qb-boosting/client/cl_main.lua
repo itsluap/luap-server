@@ -109,7 +109,10 @@ AddEventHandler('boosting:CreateContract' , function(shit)
   local num = math.random(#Config.Vehicles)
   local dick = Config.Vehicles[num].vehicle
   local coord = Config.VehicleCoords[math.random(#Config.VehicleCoords)] -- this chooses the numbered location in config // vehcordnumber
-  local owner = Config.CitizenNames[math.random(#Config.CitizenNames)].name or "Drew Parks" 
+  local owner = Config.CitizenNames[math.random(#Config.CitizenNames)].name 
+  if owner == nil then
+    owner = "Drew Parks"
+  end
   local response = CreateVeh(dick , vector3(0.0,0.0,0.0))
   
   VehiclePrice = Config['Utils']["ClassPrices"][response.c]
