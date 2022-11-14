@@ -342,28 +342,24 @@ end)
 RegisterNetEvent("qb-burgershot:SoftDrink")
 AddEventHandler("qb-burgershot:SoftDrink", function()
     if onDuty then
-    QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
-        if HasItem then
-           MakeSoftDrink()
-        else
-            QBCore.Functions.Notify("You don't have any soda syrup..", "error")
-        end
-      end, 'burger-sodasyrup')
-    else
-        QBCore.Functions.Notify("You must be Clocked into work", "error")
-    end
+		if QBCore.Functions.HasItem('burger-sodasyrup') then
+			MakeSoftDrink()
+		else
+			QBCore.Functions.Notify("You don't have any soda syrup..", "error")
+		end
+	else
+		QBCore.Functions.Notify("You must be Clocked into work", "error")
+	end
 end)
 
 RegisterNetEvent("qb-burgershot:mShake")
 AddEventHandler("qb-burgershot:mShake", function()
     if onDuty then
-    QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
-        if HasItem then
+		if QBCore.Functions.HasItem('burger-mshakeformula') then
            MakeMShake()
         else
             QBCore.Functions.Notify("You don't have any Milkshake Formula..", "error")
         end
-      end, 'burger-mshakeformula')
     else
         QBCore.Functions.Notify("You must be Clocked into work", "error")
     end
@@ -372,13 +368,11 @@ end)
 RegisterNetEvent("qb-burgershot:Fries")
 AddEventHandler("qb-burgershot:Fries", function()
     if onDuty then
-    QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
-        if HasItem then
+		if QBCore.Functions.HasItem('burger-potato') then
            MakeFries()
         else
             QBCore.Functions.Notify("You don't have any potatoes..", "error")
         end
-      end, 'burger-potato')
     else
         QBCore.Functions.Notify("You must be Clocked into work", "error")
     end
@@ -388,13 +382,11 @@ end)
 RegisterNetEvent("qb-burgershot:PattyFry")
 AddEventHandler("qb-burgershot:PattyFry", function()
     if onDuty then
-    QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
-        if HasItem then
+		if QBCore.Functions.HasItem('burger-raw') then
            MakePatty()
         else
             QBCore.Functions.Notify("You don't have any raw patties..", "error")
         end
-      end, 'burger-raw')
     else
         QBCore.Functions.Notify("You must be Clocked into work", "error")
     end

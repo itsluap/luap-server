@@ -329,14 +329,12 @@ Citizen.CreateThread(function()
 			DrawText3D(process.x, process.y, process.z, 'Press [ E ] to begin breaking down the cocaine')
 			if IsControlJustPressed(1, 51) then		
 				isProcessing = true
-				QBCore.Functions.TriggerCallback('QBCore:HasItem', function(result)
-					if result then
-						processing()
-					else
-						QBCore.Functions.Notify("You need coke brick to do this", "error")
-						isProcessing = false
-					end
-				end, 'coke_small_brick')
+				if QBCore.Functions.HasItem('coke_small_brick') then
+					processing()
+				else 
+					QBCore.Functions.Notify("You need coke brick to do this", "error")
+					isProcessing = false
+				end
 			end
 		else
 			sleep = 1500
