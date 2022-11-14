@@ -290,7 +290,7 @@ AddEventHandler("boosting:DisablerUsed" , function()
     elseif(vinstarted == false) then
       if(DisablerTimes < 4) then
         DisablerUsed = true
-        local minigame = exports['hackingminigame']:Open()   
+        local minigame = exports['ps-ui']:Scrambler(function(success) if success then DisablerTimes = DisablerTimes + 1 TriggerClientEvent('qb-phone:client:CustomNotification', "Tracking Disabler", DisablerTimes..' / '..'5', 'fas fa-code', '#ff3636', 15000) else print("fail") end end, "numeric", 30, 0)  
         if(minigame == true and DisablerTimes < 4) then
           if(DisablerTimes == 3) then
             DisablerTimes = DisablerTimes + 1
@@ -311,7 +311,7 @@ AddEventHandler("boosting:DisablerUsed" , function()
   else if vinstarted == true then
     if(DisablerTimes < 5) then
       DisablerUsed = true
-      local minigame = exports['ps-ui']:Scrambler(function(success) if success then print("success") DisablerTimes = DisablerTimes + 1 print(DisablerTimes) else print("fail") end end, "numeric", 30, 0)  
+      local minigame = exports['ps-ui']:Scrambler(function(success) if success then DisablerTimes = DisablerTimes + 1 TriggerClientEvent('qb-phone:client:CustomNotification', "Tracking Disabler", DisablerTimes..' / '..'5', 'fas fa-code', '#ff3636', 15000) else print("fail") end end, "greek", 30, 0)  
       if(minigame == true) then
         Config['Utils']["Blips"]["BlipUpdateTime"] = Config['Utils']["Blips"]["BlipUpdateTime"] + 5000
         --DisablerTimes = DisablerTimes + 1

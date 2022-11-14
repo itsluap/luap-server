@@ -370,8 +370,8 @@ RegisterServerEvent("boosting:CallCopsNotify" , function(plate , model , color ,
                 {
                     {icon = "car", info = model},
                     {icon = "fa-map-pin", info = streetLabel},
-        {icon = "fa-map-pin", info = plate},
-        {icon = "fa-map-pin", info = color}
+                    {icon = "fa-map-pin", info = plate},
+                    {icon = "fa-map-pin", info = color}
 
                 },
                 {PlayerCoords[1], PlayerCoords[2], PlayerCoords[3]},
@@ -384,3 +384,4 @@ RegisterServerEvent("boosting:CallCopsNotify" , function(plate , model , color ,
         end
     end
 end)
+
