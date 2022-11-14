@@ -8,7 +8,7 @@ body {
 
 .container {
     display: none;
-    height: 80vh;
+    height: 100vh;
 }
 
 .cityhall-main-container{
@@ -16,7 +16,7 @@ body {
     background-position: center center;
     backface-visibility: hidden;
     width: 80vh;
-    height: 50vh;
+    height: 40vh;
     margin: 0 auto;
     top: 20vh;
     background-size: cover;
