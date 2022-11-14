@@ -18,7 +18,7 @@ body {
     width: 80vh;
     height: 45vh;
     margin: 0 auto;
-    top: 30vh;
+    top: 20vh;
     background-size: cover;
     background-color: rgba(23, 23, 23, 80%);
     border-radius: 4vh;
@@ -30,7 +30,7 @@ body {
     height: 33vh;
     width: 65vh;
     margin: 0 auto;
-    top: 13vh;
+    top: 10vh;
     border-radius: 1vh;
     /*background: rgba(37, 37, 37, 0.418)*/
     
