@@ -11,7 +11,7 @@ local tabletRot = vector3(10.0, 160.0, 0.0)
 
 local QBCore = exports['qb-core']:GetCoreObject()
 ----------------------------------------------------------------------------------------------------------------------------
-
+local ShownNotification = false
 local authorized = false
 local gay = nil
 local DisablerUsed = false
@@ -617,10 +617,13 @@ Citizen.CreateThread(function()
           if Driver == PlayerPed then
             local Class = Contracts[startedcontractid].type 
             if (Config['Utils']["Contracts"]["DisableTrackingOnDCB"]) and (Class == "D" or Class == "C" or Class == "B") then
-              CallingCops = false
-              CanUseComputer = true
-              ShowNotification("Head to the scratch location", "success")
-              SetNewWaypoint(Config['Utils']["VIN"]["VinLocations"].x, Config['Utils']["VIN"]["VinLocations"].y)
+              if not ShownNotification then
+                CallingCops = false
+                CanUseComputer = true
+                ShowNotification("Head to the scratch location", "success")
+                ShownNotification = true
+                SetNewWaypoint(Config['Utils']["VIN"]["VinLocations"].x, Config['Utils']["VIN"]["VinLocations"].y)
+              end
             else
               local primary, secondary = GetVehicleColours(veh)
                 primary = colorNames[tostring(primary)]
