@@ -37,6 +37,7 @@ Config['Utils'] = {
         ["RewardAccount"] = "cash", -- this can be only ywo values (no need to config if you are using an item as a reward)
     },
     ["Contracts"] = {
+        ["DisableTrackingOnDCB"] = true, -- This will disable the police tracking on D , C , B vehicle classes (Turn to false to disable this option)
         ["TimeBetweenContracts"] = 300000, -- Time in (ms) between contract creations
         ["ContractChance"] = 60, -- This is the luck percentage of getting a contract
     },
@@ -57,7 +58,6 @@ Config['Utils'] = {
     },
     ["Blips"] = {
         ["BlipUpdateTime"] = 3000, -- Time in (ms) of the police blip update 1000 = 1 second
-        ["DisableTrackingOnDCB"] = true, -- This will disable the police tracking on D , C , B vehicle classes (Turn to false to disable this option)
     },
     ["Notifications"] = {
         ["NotEnoughBNE"] = "Not enough BNE", 
