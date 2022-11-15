@@ -206,14 +206,16 @@ AddEventHandler('boosting:AddVehicle', function(model, plate, vehicleProps)
         citizenid = pData.PlayerData.citizenid,
         vehicle = model,
         hash = GetHashKey(vehicle),
-        vehicleMods = vehicleMods,
+        vehicleMods = vehicleProps,
         vehicleplate = plate,
         vehiclestate = 1,
     }
 
-    AddVehicle(VehicleData)
+    --AddVehicle(VehicleData)
+   SQL('INSERT INTO player_vehicles (steam, citizenid, vehicle, hash, mods, plate, state) VALUES (?, ?, ?, ?, ?, ?, ?)',{VehicleData.steam, VehicleData.cid, VehicleData.vehicle, VehicleData.hash, VehicleData.vehicleMods, VehicleData.vehicleplate, 'pillboxgarage', VehicleData.vehiclestate})
     
-    SQL('INSERT INTO player_vehicles (license, citizenid, vehicle, hash, mods, plate, garage, state) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', {
+    --[[
+    MySQL.insert('INSERT INTO player_vehicles (license, citizenid, vehicle, hash, mods, plate, garage, state) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', {
         pData.PlayerData.license,
         cid,
         vehicle,
@@ -223,6 +225,7 @@ AddEventHandler('boosting:AddVehicle', function(model, plate, vehicleProps)
         'pillboxgarage',
         0
     })
+    ]]
 end)
 
 RegisterServerEvent('boosting:removeblip')

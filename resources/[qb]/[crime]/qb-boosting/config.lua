@@ -85,7 +85,7 @@ Config['Utils'] = {
 
 -------------- SERVER FUNCTIONS --------------
 AddVehicle = function(data)
-    SQL('INSERT INTO player_vehicles (steam, citizenid, vehicle, hash, mods, plate, state) VALUES (?, ?, ?, ?, ?, ?, ?)',{data.steam, data.cid, data.vehicle, data.hash, data.vehicleMods, data.vehicleplate, data.vehiclestate})
+    MySQL.insert('INSERT INTO player_vehicles (steam, citizenid, vehicle, hash, mods, plate, state) VALUES (?, ?, ?, ?, ?, ?, ?)',{data.steam, data.cid, data.vehicle, data.hash, data.vehicleMods, data.vehicleplate, data.vehiclestate})
 end
 
 AddBNE = function(cid, pBne, amount)
