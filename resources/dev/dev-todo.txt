@@ -10,6 +10,7 @@ To Do:
     - check shops around whole city
     - gun stays in hand when phone is pulled out
     -
+    - loading screen on the same level as nyc server
     - make sure all clothes added work correctly
     - make sure addon vehicles are not oversized
     - make sure weight system makes sense
