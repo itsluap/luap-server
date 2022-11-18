@@ -212,6 +212,13 @@ Config.CarItems = {
         type = "item",
         slot = 3,
     },
+    [4] = {
+        name = "advancedrepairkit",
+        amount = 1,
+        info = {},
+        type = "item",
+        slot = 4,
+    },
 }
 
 Config.Items = {
@@ -401,7 +408,7 @@ Config.Items = {
             authorizedJobGrades = {0, 1, 2, 3, 4}
         },
         [18] = {
-            name = "radio",
+            name = "heavyarmor",
             price = 0,
             amount = 50,
             info = {},
@@ -410,14 +417,14 @@ Config.Items = {
             authorizedJobGrades = {0, 1, 2, 3, 4}
         },
         [19] = {
-            name = "heavyarmor",
+            name = "radio",
             price = 0,
             amount = 50,
             info = {},
             type = "item",
             slot = 19,
             authorizedJobGrades = {0, 1, 2, 3, 4}
-        }
+        },
     }
 }
 
