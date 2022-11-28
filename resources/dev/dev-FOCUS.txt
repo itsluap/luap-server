@@ -6,7 +6,7 @@
 -- no broken headlights or taillights allowed (can be worked on in dev server)
 -- no oversized vehicles (fix textures)
 -- mechanic shops and car dealerships 100% good to go
-
+-- Boosting: wait for better boosting script OR try to keep building my own
 
 
 
