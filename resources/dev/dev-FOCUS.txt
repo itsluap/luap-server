@@ -1,0 +1,17 @@
+
+|| VEHICLES ||
+
+-- choose which cars to put in server for launch (keep every car in dev server)
+-- make sure handling is balanced and good for racing and pd chases (can be worked on in dev server)
+-- no broken headlights or taillights allowed (can be worked on in dev server)
+-- no oversized vehicles (fix textures)
+-- mechanic shops and car dealerships 100% good to go
+
+
+
+
+
+|| CLOTHING ||
+
+-- no broken clothing
+-- 
