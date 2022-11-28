@@ -120,6 +120,44 @@ Config.Shops = {
             },
         }
     }, -- Add your next table under this comma
+    ['tuner'] = {
+        ['Type'] = 'managed', -- meaning a real player has to sell the car
+        ['Zone'] = {
+            ['Shape'] = {
+                vector2(109.75644683838, -156.68780517578),
+                vector2(117.62004852295, -159.63610839844),
+                vector2(145.22314453125, -169.30331420898),
+                vector2(158.52130126953, -133.08631896973),
+                vector2(118.07675933838, -119.62038421631),
+                vector2(109.02114105225, -144.88461303711)
+            },
+            ['minZ'] = 53.68,
+            ['maxZ'] = 68.68,
+            ['size'] = 2.75 -- size of the vehicles zones
+        },
+        ['Job'] = 'tuner', -- Name of job or none
+        ['ShopLabel'] = 'Tuner Shop',
+        ['showBlip'] = false, -- true or false
+        ['blipSprite'] = 326, -- Blip sprite
+        ['blipColor'] = 3, -- Blip color
+        ['Categories'] = {
+            ['imports'] = 'Imports',
+            --['super'] = 'Super',
+            --['sports'] = 'Sports'
+        },
+        ['TestDriveTimeLimit'] = 0.5,
+        ['Location'] = vector3(135.64, -3029.98, 6.52),
+        ['ReturnLocation'] = vector3(162.48, -3047.35, 5.43),
+        ['VehicleSpawn'] = vector4(138.1, -3044.76, 6.52, 270.02),
+        ['TestDriveSpawn'] = vector3(151.37, -2982.71, 5.44), -- Spawn location for test drive
+        ['ShowroomVehicles'] = {
+            [1] = {
+                coords = vector4(124.22, -3023.0, 7.04, 266.47),
+                defaultVehicle = 'devilz',
+                chosenVehicle = 'devilz'
+            },
+        }
+    }, -- Add your next table under this comma
     ['boats'] = {
         ['Type'] = 'free-use', -- no player interaction is required to purchase a vehicle
         ['Zone'] = {
