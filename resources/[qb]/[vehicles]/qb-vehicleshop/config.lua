@@ -139,7 +139,7 @@ Config.Shops = {
         ['blipSprite'] = 326, -- Blip sprite
         ['blipColor'] = 3, -- Blip color
         ['Categories'] = {
-            ['imports'] = 'Imports',
+            ['tuner'] = 'Tuner',
             --['super'] = 'Super',
             --['sports'] = 'Sports'
         },
