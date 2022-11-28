@@ -3316,7 +3316,7 @@ QBShared.Vehicles = {
         ['category'] = 'sports',
         ['hash'] = `bdragonblue`,
         ['shop'] = 'luap',
-    }
+    },
 	['m3e36'] = {
         ['name'] = 'M3 E36',
         ['brand'] = 'BMW',
@@ -3956,6 +3956,7 @@ QBShared.Vehicles = {
         ['hash'] = `nis180`,
         ['shop'] = 'tuner',
     },
+
 }
 
 for _, v in pairs(QBShared.Vehicles) do
