@@ -3308,6 +3308,15 @@ QBShared.Vehicles = {
         ['hash'] = `redeye`,
         ['shop'] = 'luap',
     },
+	['drer36'] = {
+        ['name'] = 'R36 GTR',
+        ['brand'] = 'Nissan',
+        ['model'] = 'drer36',
+        ['price'] = 1000000,
+        ['category'] = 'muscle',
+        ['hash'] = `drer36`,
+        ['shop'] = 'luap',
+    },
 	['bdragon'] = {
         ['name'] = 'Bentley Dragon',
         ['brand'] = 'Bentley',
