@@ -8,6 +8,8 @@
 -- mechanic shops and car dealerships 100% good to go
 -- Boosting: wait for better boosting script OR try to keep building my own
 
+-- find a car that has no coronas and use the id for other cars 
+
 
 
 
