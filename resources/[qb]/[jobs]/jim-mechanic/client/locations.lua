@@ -45,6 +45,7 @@ Config.Locations = {
 		discordcolour = 16711680,
 		discordimg = "https://static.wikia.nocookie.net/gtawiki/images/b/be/BennysOriginalMotorWorks-GTAO-Logo.png",
 	},
+	--[[
 	-- ALTA STREET BENNYS --
 	{	job = "mechanic",
 		zones = {
@@ -164,6 +165,7 @@ Config.Locations = {
 		discordcolour = 23552,
 		discordimg = "https://static.wikia.nocookie.net/gtawiki/images/4/40/Beeker%27s_logo_GTA_V.png",
 	},
+	]]--
 	-- GABZ LS TUNER SHOP --
 	{	job = "tuner",
 		zones = {
@@ -188,6 +190,7 @@ Config.Locations = {
 		discordcolour = 2571775,
 		discordimg = "https://static.wikia.nocookie.net/gtawiki/images/f/f2/GTAV-LSCustoms-Logo.png",
 	},
+	--[[
 	-- AIRPORT LS CUSTOMS --
 	{	job = "mechanic",
 		zones = {
@@ -273,8 +276,9 @@ Config.Locations = {
 		discordcolour = 2571775,
 		discordimg = "https://static.wikia.nocookie.net/gtawiki/images/f/f2/GTAV-LSCustoms-Logo.png",
 	},
+	]]--
 	-- OTTOS AUTOS --
-    {	job = "mechanic",
+    {	job = "ottos",
 		zones = {
 			vector2(824.64721679688, -802.48284912109),
 			vector2(838.40698242188, -802.47802734375),
@@ -296,6 +300,7 @@ Config.Locations = {
 		discordcolour = 16711680,
 		discordimg = "https://i.imgur.com/74UVnCb.jpeg",
 	},
+	--[[
 	-- HAYES AUTOS --
 	{    job = "mechanic",
 		zones = {
@@ -319,6 +324,7 @@ Config.Locations = {
 		discordcolour = 39135,
 		discordimg = "https://static.wikia.nocookie.net/gtawiki/images/0/0c/HayesAutoBodyShop-GTAV-Logo.png",
 	},
+	]]--
 }
 
 local till = {}
