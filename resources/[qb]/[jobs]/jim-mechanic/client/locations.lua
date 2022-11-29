@@ -500,7 +500,7 @@ RegisterNetEvent('jim-mechanic:Crafting', function(data)
 						setheader = "<img src=nui://"..Config.img..QBCore.Shared.Items[k].image.." width=30px onerror='this.onerror=null; this.remove();'> "..QBCore.Shared.Items[tostring(k)].label
 						if data.craftable[i]["amount"] then setheader = setheader.." x"..data.craftable[i]["amount"] end
 						for l, b in pairs(data.craftable[i][tostring(k)]) do
-							if b == 1 then number = "x1" else number = " x"..b end
+							if b == 1 then number = " x1" else number = " x"..b end
 							text = text.."- "..QBCore.Shared.Items[l].label..number.."<br>"
 							settext = text
 						end
