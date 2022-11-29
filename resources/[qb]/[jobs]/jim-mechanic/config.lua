@@ -18,7 +18,7 @@ Config = {
 	Crafting = true, -- Set true to turn on crafting features
 	StashCraft = false,  -- Set true to grab materials from mechaincs stash for crafting
 	PreviewPhone = true, -- Enable this is preview menu generates an email, False if you want to give an item
-	PreviewJob = false, -- Enable this if you want /preview to require a Job Role
+	PreviewJob = true, -- Enable this if you want /preview to require a Job Role
 	PreviewLocation = false, -- Enable this if you want to lock /preview to a job location (ignored if LocationRequired is false)
 
 	PhoneMail = "qb", 	-- If PreviewPhone is true, change this to choose the correct phone system
@@ -129,7 +129,7 @@ Config = {
 
 	RemoveDuctTape = true, --If Enabled it will remove 1 duct after use. If false it will be constantly reusable
 
-	JobRoles = { "mechanic", }, -- These are the job roles who can use items if RequiresJob is enabled.
+	JobRoles = { "mechanic", "tuner", "ottos", }, -- These are the job roles who can use items if RequiresJob is enabled.
 								-- Add your extra job roles here or just leave as "mechanic"
 	--Example--
 	--JobRoles = { "mechanic", "tuner" }
