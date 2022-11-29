@@ -91,11 +91,11 @@ RegisterNetEvent('electronickit:UseElectronickit', function()
                                 if Outcome then
                                     success = true
                                     OnHackPacificDone(success)
+                                    TriggerServerEvent('pacificheist:server:vaultLoop') -- heist update -- 
                                 end
                             end)
                             if copsCalled or not Config.BigBanks["pacific"]["alarm"] then return end
                             TriggerServerEvent("qb-bankrobbery:server:callCops", "pacific", 0, pos)
-                            TriggerServerEvent('pacificheist:server:vaultLoop') -- heist update -- 
                             copsCalled = true
                         end, function() -- Cancel
                             StopAnimTask(ped, "anim@gangops@facility@servers@", "hotwire", 1.0)
