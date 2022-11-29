@@ -156,6 +156,43 @@ Config.Shops = {
             },
         }
     }, -- Add your next table under this comma
+    ['ottos'] = {
+        ['Type'] = 'managed', -- meaning a real player has to sell the car
+        ['Zone'] = {
+            ['Shape'] = {
+                vector2(811.25445556641, -803.59100341797),
+                vector2(794.06103515625, -804.32342529297),
+                vector2(794.92523193359, -832.53021240234),
+                vector2(810.78930664062, -832.33093261719)
+            },
+            ['minZ'] = 26.185426712036,
+            ['maxZ'] = 37.086387634277,
+            ['size'] = 2.75 -- size of the vehicles zones
+        },
+        ['Job'] = 'ottos', -- Name of job or none
+        ['ShopLabel'] = 'Ottos Autos',
+        ['showBlip'] = false, -- true or false
+        ['blipSprite'] = 326, -- Blip sprite
+        ['blipColor'] = 3, -- Blip color
+        ['Categories'] = {
+            ['tuner'] = 'Tuner',
+            ['imports'] = 'Imports',
+            ['super'] = 'Super',
+            ['sports'] = 'Sports'
+        },
+        ['TestDriveTimeLimit'] = 0.5,
+        ['Location'] = vector3(801.33, -827.84, 27.43),
+        ['ReturnLocation'] = vector3(809.37, -829.78, 26.15),
+        ['VehicleSpawn'] = vector4(833.6, -788.31, 26.29, 117.9),
+        ['TestDriveSpawn'] = vector3(789.6, -818.87, 26.12), -- Spawn location for test drive
+        ['ShowroomVehicles'] = {
+            [1] = {
+                coords = vector4(808.23, -811.91, 26.18, 88.19),
+                defaultVehicle = 'r33hr',
+                chosenVehicle = 'r33hr'
+            },
+        }
+    }, -- Add your next table under this comma
     ['boats'] = {
         ['Type'] = 'free-use', -- no player interaction is required to purchase a vehicle
         ['Zone'] = {

@@ -3904,7 +3904,7 @@ QBShared.Vehicles = {
         ['shop'] = 'luxury',
     },
 	['rmoddarki8'] = {
-        ['name'] = 'I8',
+        ['name'] = 'BMW I8',
         ['brand'] = 'BMW',
         ['model'] = 'rmoddarki8',
         ['price'] = 120000,
