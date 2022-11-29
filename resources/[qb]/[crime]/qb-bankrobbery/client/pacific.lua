@@ -10,7 +10,7 @@ local copsCalled = false
 --- @return nil
 local function OnHackPacificDone(success)
     Config.OnHackDone(success, "pacific")
-    TriggerServerEvent('pacificheist:server:vaultLoop') -- heist update -- 
+    HackingCompleted(true) -- heist update -- 
 end
 
 --- This will load an animation dictionary so you can play an animation in that dictionary
@@ -94,6 +94,9 @@ RegisterNetEvent('electronickit:UseElectronickit', function()
                                     OnHackPacificDone(success)
                                 end
                             end)
+                            if hackStatus then 
+                                TriggerServerEvent('pacificheist:server:vaultLoop')
+                            end
                             if copsCalled or not Config.BigBanks["pacific"]["alarm"] then return end
                             TriggerServerEvent("qb-bankrobbery:server:callCops", "pacific", 0, pos)
                             copsCalled = true
@@ -274,6 +277,11 @@ end)
 
 -- grabbing cash -- 
 
+function HackingCompleted(status)
+    -- hackFinished = true
+    hackStatus = status
+end
+
 function Grab(index)
     busy = true
     robber = true
@@ -365,6 +373,10 @@ AddEventHandler('pacificheist:client:vaultLoop', function()
             local ped = PlayerPedId()
             local pedCo = GetEntityCoords(ped)
             local stackDist = #(pedCo - Config['PacificSetup']['mainStack']['pos'])
+
+            if stackDist >= 150.0 then
+                break
+            end
 
             if stackDist <= 1.5 and not Config['PacificSetup']['mainStack']['taken'] then
                 ShowHelpNotification(Strings['grab'])
