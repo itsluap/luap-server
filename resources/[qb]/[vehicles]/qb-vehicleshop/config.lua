@@ -32,7 +32,7 @@ Config.Shops = {
         ['blipSprite'] = 326, -- Blip sprite
         ['blipColor'] = 3, -- Blip color
         ['Categories'] = {-- Categories available to browse
-            ['imports'] = 'Imports',
+            ['pimports'] = 'Imports',
             ['sportsclassics'] = 'Sports Classics',
             ['sedans'] = 'Sedans',
             ['coupes'] = 'Coupes',
@@ -52,13 +52,13 @@ Config.Shops = {
         ['ShowroomVehicles'] = {
             [1] = {
                 coords = vector4(-54.81, -1096.74, 27.3, 198.86),
-                defaultVehicle = 'sultan3',
-                chosenVehicle = 'sultan3'
+                defaultVehicle = 'mgt',
+                chosenVehicle = 'mgt'
             },
             [2] = {
                 coords = vector4(-36.93, -1093.18, 27.3, 192.57),
-                defaultVehicle = 'dominator7',
-                chosenVehicle = 'dominator7'
+                defaultVehicle = 'camry18',
+                chosenVehicle = 'camry18'
             }
         },
     },
