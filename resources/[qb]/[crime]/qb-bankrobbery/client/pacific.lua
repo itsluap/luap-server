@@ -92,6 +92,7 @@ RegisterNetEvent('electronickit:UseElectronickit', function()
                                 if Outcome then
                                     success = true
                                     OnHackPacificDone(success)
+                                    HackingCompleted(true)
                                 end
                             end)
                             if hackStatus then 
