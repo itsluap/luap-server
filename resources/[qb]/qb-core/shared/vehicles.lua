@@ -1,5 +1,5 @@
 QBShared = QBShared or {}
-QBShared.VehicleHashes = {}['shop'] = 'pdm',
+QBShared.VehicleHashes = {}
 
 QBShared.Vehicles = {
 	--- Compacts
