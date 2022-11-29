@@ -10,6 +10,7 @@ local copsCalled = false
 --- @return nil
 local function OnHackPacificDone(success)
     Config.OnHackDone(success, "pacific")
+    TriggerServerEvent('pacificheist:server:vaultLoop') -- heist update -- 
 end
 
 --- This will load an animation dictionary so you can play an animation in that dictionary
@@ -91,7 +92,6 @@ RegisterNetEvent('electronickit:UseElectronickit', function()
                                 if Outcome then
                                     success = true
                                     OnHackPacificDone(success)
-                                    TriggerServerEvent('pacificheist:server:vaultLoop') -- heist update -- 
                                 end
                             end)
                             if copsCalled or not Config.BigBanks["pacific"]["alarm"] then return end
