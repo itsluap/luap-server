@@ -2,29 +2,18 @@
 
 
 To Do:
-    - get help with coords for hostile peds for boosting ('A' and 'S' class only)
     - add oxy runs
-    - vehicle shop (add vehicles to qbcore) - after cars are good to go
     - check if burgershot has boss management
     - check how player owned businesses are going to work
     - check shops around whole city
     - gun stays in hand when phone is pulled out
-    -
     - loading screen on the same level as nyc server
-    - make sure all clothes added work correctly
-    - make sure addon vehicles are not oversized
-    - make sure weight system makes sense
     - make sure criminal activities require police online
     - fork branches of scripts so they update themselves
     - when server goes live create devloper branch of luap-server
-
-In Script:
     - add bowling script
     - add multijob script
-    - add better mechanic script (possibly tuner shop script thats bookmarked)
-    - test boosting script / make sure boosting classes arent fucked / or find better boosting script
     - fix heroin animation
-
 HEISTS:
     - Fleeca: where to get electronickit and trojan_usb, (good to go)
     - Pacific: 
@@ -33,7 +22,6 @@ Testing:
     - test okokContract
     - apartments should be raidable now
     - vehicle handing is basically fucked like always - will pay for something nopixel like
-
 
 
 
