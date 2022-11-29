@@ -95,7 +95,8 @@ RegisterNetEvent('electronickit:UseElectronickit', function()
                                     HackingCompleted(true)
                                 end
                             end)
-                            if hackStatus then 
+                            if hackStatus then
+                                print(hackStatus)
                                 TriggerServerEvent('pacificheist:server:vaultLoop')
                             end
                             if copsCalled or not Config.BigBanks["pacific"]["alarm"] then return end
@@ -123,7 +124,6 @@ end)
 -- Threads
 
 CreateThread(function()
-    -- put trigger here
     local bankCardBZone = BoxZone:Create(Config.BigBanks["pacific"]["coords"][1], 1.0, 1.0, {
         name = 'pacific_coords_bankcardb',
         heading = Config.BigBanks["pacific"]["heading"].closed,
