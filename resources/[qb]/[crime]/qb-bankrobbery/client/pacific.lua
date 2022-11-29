@@ -127,6 +127,7 @@ AddEventHandler('pacificheist:client:resetHeist', function()
     Config['PacificSetup']['mainStack']['taken'] = false
     ClearArea(253.154, 228.344, 101.683, 100.0)
 end)
+--------------------------------------------------------------------------------------------
 
 -- Functions
 
