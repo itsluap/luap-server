@@ -290,6 +290,7 @@ AddEventHandler('qb-bankrobbery:server:setTimeout', function()
             for k in pairs(Config.BigBanks["pacific"]["lockers"]) do
                 Config.BigBanks["pacific"]["lockers"][k]["isBusy"] = false
                 Config.BigBanks["pacific"]["lockers"][k]["isOpened"] = false
+                TriggerClientEvent("pacificheist:client:resetHeist")
             end
             for k in pairs(Config.BigBanks["paleto"]["lockers"]) do
                 Config.BigBanks["paleto"]["lockers"][k]["isBusy"] = false
@@ -442,4 +443,73 @@ QBCore.Functions.CreateUseableItem("electronickit", function(source)
     local Player = QBCore.Functions.GetPlayer(source)
     if not Player or not Player.Functions.GetItemByName('electronickit') then return end
     TriggerClientEvent("electronickit:UseElectronickit", source)
+end)
+
+RegisterServerEvent('pacificheist:server:objectSync')
+AddEventHandler('pacificheist:server:objectSync', function(e)
+    TriggerClientEvent('pacificheist:client:objectSync', -1, e)
+end)
+
+RegisterServerEvent('pacificheist:server:vaultSync')
+AddEventHandler('pacificheist:server:vaultSync', function(action, index)
+    TriggerClientEvent('pacificheist:client:vaultSync', -1, action, index)
+end)
+
+RegisterServerEvent('pacificheist:server:vaultLoop')
+AddEventHandler('pacificheist:server:vaultLoop', function()
+    TriggerClientEvent('pacificheist:client:vaultLoop', -1)
+end)
+
+RegisterServerEvent('pacificheist:server:extendedSync')
+AddEventHandler('pacificheist:server:extendedSync', function(action, index)
+    TriggerClientEvent('pacificheist:client:extendedSync', -1, action, index)
+end)
+
+RegisterServerEvent('pacificheist:server:rewardItem')
+AddEventHandler('pacificheist:server:rewardItem', function(item, count, type)
+    local src = source
+    local player = QBCore.Functions.GetPlayer(src)
+    local whitelistItems = {}
+
+    if player then
+        if type == 'money' then
+            local sourcePed = GetPlayerPed(src)
+            local sourceCoords = GetEntityCoords(sourcePed)
+            local dist = #(sourceCoords - vector3(256.764, 241.272, 101.693))
+            if dist > 200.0 then
+                TriggerClientEvent('QBCore:Notify', src, "Add money exploit playerID: " .. src .. 'name: ' .. player.PlayerData.name, "error")
+            else
+                if Config['PacificHeist']['black_money'] then
+                    player.Functions.AddItem('bands', count)
+					TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['bands'], "add")
+                else
+                    player.Functions.AddMoney('cash',count,'pacific')
+                end
+            end
+        else
+            for k, v in pairs(Config['PacificHeist']['rewardItems']) do
+                whitelistItems[v['itemName']] = true
+            end
+
+            for k, v in pairs(Config['PacificSetup']['glassCutting']['rewards']) do
+                whitelistItems[v['item']] = true
+            end
+
+            for k, v in pairs(Config['PacificSetup']['painting']) do
+                whitelistItems[v['rewardItem']] = true
+            end
+
+            if whitelistItems[item] then
+                if count then 
+                    player.Functions.AddItem(item, count)
+					TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item], "add")
+                else
+                    player.Functions.AddItem(item, 1)
+					TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item], "add")
+                end
+            else
+                TriggerClientEvent('QBCore:Notify', src, "Add item exploit playerID: " .. src .. 'name: ' .. player.PlayerData.name, "error")
+            end
+        end
+    end
 end)
