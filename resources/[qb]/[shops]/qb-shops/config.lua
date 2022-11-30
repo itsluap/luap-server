@@ -360,7 +360,7 @@ Config.Products = {
             --requiredJob = { "mechanic", "police" }
         },
         [4] = {
-            name = "weapon_pistol",
+            name = "weapon_m9",
             price = 2500,
             amount = 5,
             info = {},
@@ -369,7 +369,7 @@ Config.Products = {
             requiresLicense = true
         },
         [5] = {
-            name = "weapon_snspistol",
+            name = "weapon_fnx45",
             price = 1500,
             amount = 5,
             info = {},
