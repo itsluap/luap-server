@@ -9,10 +9,8 @@ To Do:
     - gun stays in hand when phone is pulled out
     - loading screen on the same level as nyc server
     - make sure criminal activities require police online
-    - fork branches of scripts so they update themselves
-    - when server goes live create devloper branch of luap-server
     - add bowling script
-    - add multijob script
+    - add multijob script (phone does this for now)
     - fix heroin animation
 HEISTS:
     - Fleeca: where to get electronickit and trojan_usb, (good to go)
@@ -28,6 +26,8 @@ Testing:
 Final (Ready to Launch):
     - setup tebex -- can come after launch
     - setup forums -- can come after launch
+    - fork branches of scripts so they update themselves
+    - when server goes live create devloper branch of luap-server
     - make sure all scripts are updated (qbcore and project sloth)
     - cars should be 100% (no light bugs) (no oversized textures) (no crazy handling)
     - clothing should be 100% (no glitched out clothing) (should be in qb-clothing)
