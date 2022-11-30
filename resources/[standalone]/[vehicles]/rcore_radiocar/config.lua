@@ -75,10 +75,10 @@ Config.CommandLabel = "radiocar"
 Config.KeyForRadio = "U"
 
 -- Distance playing from car
-Config.DistancePlaying = 4.0
+Config.DistancePlaying = 7.0
 
 -- Distance playing from car if windows are closed / or if he has open any door
-Config.DistancePlayingWindowsOpen  = 10.0
+Config.DistancePlayingWindowsOpen  = 13.0
 
 --  if the engine is off the music will be disabled until the engine is on
 Config.DisableMusicAfterEngineIsOFF = false
