@@ -81,7 +81,7 @@ Config.DistancePlaying = 7.0
 Config.DistancePlayingWindowsOpen  = 12.0
 
 --  if the engine is off the music will be disabled until the engine is on
-Config.DisableMusicAfterEngineIsOFF = false
+Config.DisableMusicAfterEngineIsOFF = true
 
 -- Only owner of the car can play a music from the vehicle.
 Config.OnlyOwnerOfTheCar = false
