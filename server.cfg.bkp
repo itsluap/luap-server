@@ -103,6 +103,7 @@ ensure cfx-gabz-vagos
 ensure cfx-gabz-vbmarket
 ensure cfx-gabz-vu
 ensure cfx-gabz-yachts
+ensure cfx-gabz-mba
 ensure [assets]
 ##########################
 ensure qb-core
