@@ -191,7 +191,7 @@ Citizen.CreateThread(function()
 
     while true do
         Citizen.Wait(0)
-        if IsControlPressed(0, 303) then
+        if IsControlPressed(0, 311) then
             if not IsAnyMenuOpen() then
                 ST.Scoreboard.Menu:Open()
                 --TriggerEvent('animations:client:EmoteCommandStart', {"think"})
