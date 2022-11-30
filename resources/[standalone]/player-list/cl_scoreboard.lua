@@ -286,7 +286,7 @@ end) ]]
 
 Citizen.CreateThread(function()
     while true do
-        if IsControlPressed(0, 303) then
+        if IsControlPressed(0, 311) then
 
             for i=0,255 do
                 N_0x31698aa80e0223f8(i)
