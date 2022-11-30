@@ -88,7 +88,7 @@ end)
 
 QBCore.Commands.Add("tow", Lang:t("info.tow"), {}, false, function(source)
     local Player = QBCore.Functions.GetPlayer(source)
-    if Player.PlayerData.job.name == "tow"  or Player.PlayerData.job.name == "mechanic" then
+    if Player.PlayerData.job.name == "tow"  or Player.PlayerData.job.name == "mechanic" or Player.PlayerData.job.name == "tuner" or Player.PlayerData.job.name == "ottos" then
         TriggerClientEvent("qb-tow:client:TowVehicle", source)
     end
 end)
