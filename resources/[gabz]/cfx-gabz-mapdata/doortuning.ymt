@@ -1938,5 +1938,21 @@
       <ModelName>gabz_pillbox_entrancedoor_r</ModelName>
       <TuningName>SlidingHorizontalExtendedRange</TuningName>
     </Item>
+    <Item>
+      <ModelName>gabz_mba_main_door_l</ModelName>
+      <TuningName>DefaultStandardLatchShut</TuningName>
+    </Item>
+    <Item>
+      <ModelName>gabz_mba_main_door_r</ModelName>
+      <TuningName>DefaultStandardLatchShut</TuningName>
+    </Item>
+    <Item>
+      <ModelName>gabz_mba_mma_doors</ModelName>
+      <TuningName>DefaultStandardLatchShut</TuningName>
+    </Item>
+    <Item>
+      <ModelName>gabz_mba_door_01</ModelName>
+      <TuningName>DefaultStandardLatchShut</TuningName>
+    </Item>
   </ModelToTuneMapping>
 </CDoorTuningFile>

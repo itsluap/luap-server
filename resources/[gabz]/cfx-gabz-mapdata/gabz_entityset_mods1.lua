@@ -298,6 +298,102 @@ local interiors = {
             { name = 'room05_cashtrolley', enable = true }, -- bags and cash trolleys
         }
     },
+    {
+        ipl = 'gabz_mba_milo_', --enable all of the entitySets below if you want BASKETBALL
+        coords = { x = -324.22030000, y = -1968.49300000, z = 20.60336000 },
+        entitySets = {
+            --{ name = 'mba_tribune', enable = true },
+            --{ name = 'mba_tarps', enable = true },
+            --{ name = 'mba_basketball', enable = true },
+            --{ name = 'mba_jumbotron', enable = true },
+        }
+    },
+    {
+        ipl = 'gabz_mba_milo_', --enable all of the entitySets below if you want DERBY
+        coords = { x = -324.22030000, y = -1968.49300000, z = 20.60336000 },
+        entitySets = {
+            --{ name = 'mba_cover', enable = true },
+            --{ name = 'mba_terrain', enable = true },
+            --{ name = 'mba_derby', enable = true },
+            --{ name = 'mba_ring_of_fire', enable = true },
+        }
+    },
+    {
+        ipl = 'gabz_mba_milo_', --enable all of the entitySets below if you want PAINTBALL
+        coords = { x = -324.22030000, y = -1968.49300000, z = 20.60336000 },
+        entitySets = {
+            --{ name = 'mba_tribune', enable = true },
+            --{ name = 'mba_chairs', enable = true },
+            --{ name = 'mba_paintball', enable = true },
+            --{ name = 'mba_jumbotron', enable = true },
+        }
+    },
+    {
+        ipl = 'gabz_mba_milo_', --enable all of the entitySets below if you want CONCERT
+        coords = { x = -324.22030000, y = -1968.49300000, z = 20.60336000 },
+        entitySets = {
+            --{ name = 'mba_tribune', enable = true },
+            --{ name = 'mba_tarps', enable = true },
+            --{ name = 'mba_backstage', enable = true },
+            --{ name = 'mba_concert', enable = true },
+            --{ name = 'mba_jumbotron', enable = true },
+        }
+    },
+    {
+        ipl = 'gabz_mba_milo_', --enable all of the entitySets below if you want FASHION
+        coords = { x = -324.22030000, y = -1968.49300000, z = 20.60336000 },
+        entitySets = {
+            --{ name = 'mba_tribune', enable = true },
+            --{ name = 'mba_tarps', enable = true },
+            --{ name = 'mba_backstage', enable = true },
+            --{ name = 'mba_fashion', enable = true },
+            --{ name = 'mba_jumbotron', enable = true },
+        }
+    },
+    {
+        ipl = 'gabz_mba_milo_', --enable all of the entitySets below if you want FAME OR SHAME
+        coords = { x = -324.22030000, y = -1968.49300000, z = 20.60336000 },
+        entitySets = {
+            --{ name = 'mba_tribune', enable = true },
+            --{ name = 'mba_tarps', enable = true },
+            --{ name = 'mba_backstage', enable = true },
+            --{ name = 'mba_fameorshame', enable = true },
+            --{ name = 'mba_jumbotron', enable = true },
+        }
+    },
+    {
+        ipl = 'gabz_mba_milo_', --enable all of the entitySets below if you want WRESTLING
+        coords = { x = -324.22030000, y = -1968.49300000, z = 20.60336000 },
+        entitySets = {
+            --{ name = 'mba_tribune', enable = true },
+            --{ name = 'mba_tarps', enable = true },
+            --{ name = 'mba_fighting', enable = true },
+            --{ name = 'mba_wrestling', enable = true },
+            --{ name = 'mba_jumbotron', enable = true },
+        }
+    },
+    {
+        ipl = 'gabz_mba_milo_', --enable all of the entitySets below if you want MMA
+        coords = { x = -324.22030000, y = -1968.49300000, z = 20.60336000 },
+        entitySets = {
+            { name = 'mba_tribune', enable = true },
+            { name = 'mba_tarps', enable = true },
+            { name = 'mba_fighting', enable = true },
+            { name = 'mba_mma', enable = true },
+            { name = 'mba_jumbotron', enable = true },
+        }
+    },
+    {
+        ipl = 'gabz_mba_milo_', --enable all of the entitySets below if you want BOXING
+        coords = { x = -324.22030000, y = -1968.49300000, z = 20.60336000 },
+        entitySets = {
+            --{ name = 'mba_tribune', enable = true },
+            --{ name = 'mba_tarps', enable = true },
+            --{ name = 'mba_fighting', enable = true },
+            --{ name = 'mba_boxing', enable = true },
+            --{ name = 'mba_jumbotron', enable = true },
+        }
+    },
 }
 
 CreateThread(function()
