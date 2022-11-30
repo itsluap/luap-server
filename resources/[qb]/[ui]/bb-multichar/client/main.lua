@@ -25,6 +25,10 @@ CreateThread(function()
 	end
 end)
 
+RegisterNetEvent('bb-multichar:logout', function()
+    createPeds()
+end)
+
 function createPeds()
     local ped = PlayerPedId()
 
