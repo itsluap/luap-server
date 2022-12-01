@@ -1,0 +1,18 @@
+~ - cycle proximity chat range
+F1 - Radial Menu
+F6 - Stance Menu (make rules for this)
+TAB - Open Inventory
+M - Open Phone
+L ALT - Open Third Eye
+I - Open Hud Settings
+Z - See Hotbar Items
+B - Point finger
+X - Hands Up
+K - Player List / ID's
+L - Lock/Unlock Vehicle
+
+
+In Vehicle:
+G - Engine On/Off
+B - Seatbelt
+U - Open Car Radio
