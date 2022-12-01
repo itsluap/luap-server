@@ -283,9 +283,9 @@ QBShared.Jobs = {
             },
         },
 	},
-    ['autoex'] = {
+    ['autoexotics'] = {
 		label = 'Auto Exotics',
-        type = "autoex",
+        type = "mechanic",
 		defaultDuty = true,
 		offDutyPay = false,
 		grades = {

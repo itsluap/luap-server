@@ -208,7 +208,7 @@ Config.Shops = {
             ['maxZ'] = 64.994766235352,
             ['size'] = 2.75 -- size of the vehicles zones
         },
-        ['Job'] = 'autoex', -- Name of job or none
+        ['Job'] = 'autoexotics', -- Name of job or none
         ['ShopLabel'] = 'Auto Exotics',
         ['showBlip'] = false, -- true or false
         ['blipSprite'] = 326, -- Blip sprite

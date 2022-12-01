@@ -300,7 +300,7 @@ Config.Locations = {
 		discordcolour = 16711680,
 		discordimg = "https://i.imgur.com/74UVnCb.jpeg",
 	},
-    {	job = "autoex",
+    {	job = "autoexotics",
 		zones = {
 			vector2(551.99578857422, -202.51519775391),
 			vector2(540.40252685547, -202.64002990723),
