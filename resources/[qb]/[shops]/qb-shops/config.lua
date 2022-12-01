@@ -747,21 +747,31 @@ Config.Products = {
             slot = 2,
         },
         [3] = {
-            name = 'phone',
-            price = 200,
+            name = 'burner_phone',
+            price = 150,
             amount = 100,
             info = {},
             type = 'item',
             slot = 3,
         },
         [4] = {
-            name = 'pixellaptop',
-            price = 2200,
+            name = 'phone',
+            price = 200,
             amount = 100,
             info = {},
             type = 'item',
             slot = 4,
         },
+        --[[
+        [5] = {
+            name = 'pixellaptop',
+            price = 2200,
+            amount = 100,
+            info = {},
+            type = 'item',
+            slot = 5,
+        },
+        ]]--
     },
 }
 Config.Locations = {

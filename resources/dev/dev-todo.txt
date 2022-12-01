@@ -7,7 +7,6 @@ To Do:
     - check how player owned businesses are going to work
     - check shops around whole city
     - gun stays in hand when phone is pulled out
-    - loading screen on the same level as nyc server
     - make sure criminal activities require police online
     - add bowling script
     - fix heroin animation
@@ -22,6 +21,8 @@ Testing:
 
 
 Final (Ready to Launch):
+    - add better admin menu (waiting for projectsloth release)
+    - add boosting script (waiting for kevinscripts release)
     - add bowling script (waiting for gabz release)
     - setup tebex -- can come after launch
     - setup forums -- can come after launch
