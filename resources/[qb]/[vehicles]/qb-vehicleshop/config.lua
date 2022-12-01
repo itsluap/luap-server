@@ -193,6 +193,45 @@ Config.Shops = {
             },
         }
     }, -- Add your next table under this comma
+    ['autoex'] = {
+        ['Type'] = 'managed', -- meaning a real player has to sell the car
+        ['Zone'] = {
+            ['Shape'] = {
+                vector2(551.99578857422, -202.51519775391),
+                vector2(540.40252685547, -202.64002990723),
+                vector2(540.92193603516, -171.86445617676),
+                vector2(527.34820556641, -172.54428100586),
+                vector2(527.21807861328, -165.61836242676),
+                vector2(551.93090820312, -165.4040222168)
+            },
+            ['minZ'] = 50.669570922852,
+            ['maxZ'] = 64.994766235352
+            ['size'] = 2.75 -- size of the vehicles zones
+        },
+        ['Job'] = 'autoex', -- Name of job or none
+        ['ShopLabel'] = 'Auto Exotics',
+        ['showBlip'] = false, -- true or false
+        ['blipSprite'] = 326, -- Blip sprite
+        ['blipColor'] = 3, -- Blip color
+        ['Categories'] = {
+            ['super'] = 'Super',
+            ['sports'] = 'Sports',
+            ['tuner'] = 'Tuner',
+            ['imports'] = 'Imports',
+        },
+        ['TestDriveTimeLimit'] = 0.5,
+        ['Location'] = vector3(545.48, -182.68, 54.49),
+        ['ReturnLocation'] = vector3(543.19, -208.2, 53.87),
+        ['VehicleSpawn'] = vector4(543.19, -208.2, 53.87, 176.31),
+        ['TestDriveSpawn'] = vector3(521.57, -169.8, 55.22), -- Spawn location for test drive
+        ['ShowroomVehicles'] = {
+            [1] = {
+                coords = vector4(529.33, -174.65, 54.47, 178.84),
+                defaultVehicle = 'a80tbk',
+                chosenVehicle = 'a80tbk'
+            },
+        }
+    }, -- Add your next table under this comma
     ['boats'] = {
         ['Type'] = 'free-use', -- no player interaction is required to purchase a vehicle
         ['Zone'] = {
