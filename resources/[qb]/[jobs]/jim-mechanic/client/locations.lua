@@ -314,7 +314,7 @@ Config.Locations = {
 		crafting = { { coords = vector3(542.89, -185.52, 55.46), w = 1.4, d = 2.2, heading = 90.0 }, },
 		clockin = { { coords = vector3(551.76, -182.65, 56.02), heading = 197.67, }, },
 		garage = { spawn = vector4(542.54, -223.95, 50.98, 137.42),
-					out = vector4(551.53, -202.83, 54.46, 1.27),
+					out = vector4(551.53, -202.83, 54.46, 180),
 					list = { "towtruck", "panto", "slamtruck", "cheburek", "utillitruck3" } },
 		payments = { coords = vector3(551.19, -189.36, 54.49), heading = 271, img = "<center><p><img src=https://i.imgur.com/74UVnCb.jpeg width=150px></p>" },
 		blip = vector3(831.03, -813.01, 26.33),
