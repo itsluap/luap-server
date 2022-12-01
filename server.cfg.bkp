@@ -1,16 +1,16 @@
 ## You CAN edit the following:
 endpoint_add_tcp "0.0.0.0:30120"
 endpoint_add_udp "0.0.0.0:30120"
-sv_maxclients 8
+sv_maxclients 80
 set steam_webApiKey "AF94A1DB58A91D044F2A6A3E0C7A444D"
 sets tags "qbcore, roleplay, police, ems"
 #set onesync on
 
 ## You MAY edit the following:
 sv_licenseKey "cfxk_1jasI5Iq0ivSo4mQ6FsdF_MvJ84"
-sv_hostname "Indigo RP | 3.0"
-sets sv_projectName "Indigo 3.0"
-sets sv_projectDesc "Indigo RP | 3.0 | Custom Clothing, Jobs, Vehicles & More!" #  ^6
+sv_hostname "^6Indigo RP | 3.0 | Serious RP"
+sets sv_projectName "^6Indigo 3.0"
+sets sv_projectDesc "Indigo RP / 3.0 / Custom Clothing, Jobs, Vehicles & More!"
 sets locale "en-US" 
 load_server_icon myLogo.png
 #set sv_enforceGameBuild 2545
