@@ -205,7 +205,7 @@ Config.Shops = {
                 vector2(551.93090820312, -165.4040222168)
             },
             ['minZ'] = 50.669570922852,
-            ['maxZ'] = 64.994766235352
+            ['maxZ'] = 64.994766235352,
             ['size'] = 2.75 -- size of the vehicles zones
         },
         ['Job'] = 'autoex', -- Name of job or none
