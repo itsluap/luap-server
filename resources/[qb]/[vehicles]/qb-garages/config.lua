@@ -1551,6 +1551,29 @@ Garages = {
         },
         debug = false
     },
+    ['autoexparking'] = {
+        ['Zone'] = {
+            ['Shape'] = { --polygon that surrounds the parking area
+            vector2(555.26477050781, -147.35466003418),
+            vector2(525.82434082031, -147.46705627441),
+            vector2(531.52099609375, -133.16366577148),
+            vector2(555.12957763672, -133.20603942871)
+            },
+            ['minZ'] = 57.709419250488,  -- min height of the parking zone
+            ['maxZ'] = 61.724880218506,  -- max height of the parking zone
+        },
+        label = 'Auto Exotic Parking',
+        type = 'public',
+        vehicleCategories = {'car', 'motorcycle', 'other'},
+        drawText = 'Parking',
+        ["ParkingSpots"] = {
+            vector4(540.91, -136.1, 59.47, 180),
+            vector4(544.78, -135.99, 59.37, 180),
+            vector4(549.06, -135.99, 59.37, 180),
+            vector4(553.04, -136.43, 59.32, 180),
+        },
+        debug = false
+    },
     ['pdfront'] = {
         ['Zone'] = {
             ['Shape'] = { --polygon that surrounds the parking area
