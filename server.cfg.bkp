@@ -9,7 +9,7 @@ sets tags "qbcore, roleplay, police, ems"
 ## You MAY edit the following:
 sv_licenseKey "cfxk_1jasI5Iq0ivSo4mQ6FsdF_MvJ84"
 sv_hostname "^6Indigo RP | 3.0 | Serious RP"
-sets sv_projectName "^6Indigo 3.0"
+sets sv_projectName "^4Indigo 3.0"
 sets sv_projectDesc "Indigo RP / 3.0 / Custom Clothing, Jobs, Vehicles & More!"
 sets locale "en-US" 
 load_server_icon myLogo.png
