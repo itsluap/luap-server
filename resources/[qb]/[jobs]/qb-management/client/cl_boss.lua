@@ -172,7 +172,10 @@ RegisterNetEvent('qb-bossmenu:client:ManageEmployee', function(data)
         params = {
             isServer = true,
             event = "qb-bossmenu:server:FireEmployee",
-            args = data.player.empSource
+            args = { 
+                target = data.player.empSource,
+                job = data.work.name
+        }
         }
     }
     EmployeeMenu[#EmployeeMenu + 1] = {
