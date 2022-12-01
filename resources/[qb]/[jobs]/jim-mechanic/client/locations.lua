@@ -292,7 +292,7 @@ Config.Locations = {
 		garage = { spawn = vector4(826.59, -793.63, 26.21, 84.34),
 					out = vector4(824.3, -801.2, 26.37, 0.65),
 					list = { "towtruck", "panto", "slamtruck", "cheburek", "utillitruck3" } },
-					payments = { coords = vector3(833.96, -826.79, 26.13), heading = 0.35, img = "<center><p><img src=https://i.imgur.com/74UVnCb.jpeg width=150px></p>" },
+		payments = { coords = vector3(833.96, -826.79, 26.13), heading = 0.35, img = "<center><p><img src=https://i.imgur.com/74UVnCb.jpeg width=150px></p>" },
 		blip = vector3(831.03, -813.01, 26.33),
 		bliplabel = "Otto's Autos",
 		blipcolor = 50,
