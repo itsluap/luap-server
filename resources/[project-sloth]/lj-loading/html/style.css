@@ -18,12 +18,12 @@ body {
 
 .loadbar {
     position: absolute;
-    top: 96%;
+    top: 94%;
     left: 50%;
     width: 20%;
     height: 1.5vh;
     transform: translate(-50%,-50%);
-    background-color: #1b1845;
+    background-color: #2e2e2e;
     border-radius: 4px;
     z-index: 9999;
 }
@@ -40,7 +40,7 @@ body {
 
 .print {
     position: absolute;
-    top: 97.7%;
+    top: 96%;
     left: 50%;
     transform: translate(-50%,-50%);
     font-family: 'Source Sans Pro', sans-serif;
