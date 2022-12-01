@@ -8,17 +8,17 @@ body {
 
 .logo {
     position: absolute;
-    top: 40%;
-    left: 50%;
+    top: 95%;
+    left: 5.5%;
     transform: translate(-50%,-50%);
-    width: 455px;
-    height: 231px;
+    width: 205px;
+    height: 88px;
     z-index: 9999;
 }
 
 .loadbar {
     position: absolute;
-    top: 55%;
+    top: 96%;
     left: 50%;
     width: 20%;
     height: 1.5vh;
@@ -40,7 +40,7 @@ body {
 
 .print {
     position: absolute;
-    top: 80%;
+    top: 97.7%;
     left: 50%;
     transform: translate(-50%,-50%);
     font-family: 'Source Sans Pro', sans-serif;
