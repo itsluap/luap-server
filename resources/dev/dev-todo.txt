@@ -10,7 +10,6 @@ To Do:
     - loading screen on the same level as nyc server
     - make sure criminal activities require police online
     - add bowling script
-    - add multijob script (phone does this for now)
     - fix heroin animation
 HEISTS:
     - Fleeca: where to get electronickit and trojan_usb, (good to go)
@@ -19,21 +18,15 @@ HEISTS:
 Testing:
     - test okokContract
     - apartments should be raidable now
-    - vehicle handing is basically fucked like always - will pay for something nopixel like
 
 
 
 Final (Ready to Launch):
+    - add bowling script (waiting for gabz release)
     - setup tebex -- can come after launch
     - setup forums -- can come after launch
     - fork branches of scripts so they update themselves
     - when server goes live create devloper branch of luap-server
     - make sure all scripts are updated (qbcore and project sloth)
-    - cars should be 100% (no light bugs) (no oversized textures) (no crazy handling)
-    - clothing should be 100% (no glitched out clothing) (should be in qb-clothing)
-    - mlos should be 100% (no bad collisions) (no player flickering) (locks on buildings needed)
-    - items should be 100% (correct items in animations) (drug/alcohol effects) (health,thirst,stress)
-    - all jobs need a final test (police, ems, civilian)
-    - all criminal activities need a final test
-    - create new user guide - create some faqs - get discord ready
+    - create new user guide - create control list - get discord ready
     - create website - needs forums, applications, and tebex store
