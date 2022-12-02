@@ -6,14 +6,14 @@ To Do:
     - check how player owned businesses are going to work
     - check shops around whole city
     - gun stays in hand when phone is pulled out
-    - make sure criminal activities require police online
+    - make sure criminal activities require police online (test all crime activities before this)
     - fix heroin animation
+    - put in OkOkContract before launch
 HEISTS:
     - Fleeca: where to get electronickit and trojan_usb, (good to go)
     - Pacific: 
     -
 Testing:
-    - test okokContract
     - apartments should be raidable now
 
 
