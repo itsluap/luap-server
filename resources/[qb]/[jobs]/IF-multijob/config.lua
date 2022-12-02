@@ -34,19 +34,18 @@ function ShowNotification(msg, type)
     local IFCore = exports[Config.Core]:GetCoreObject() -- dont change IFCore as it will break the script
     IFCore.Functions.Notify(msg, type) -- -- dont change IFCore as it will break the script
     
-    -- exports['okokNotify']:Alert("MultiJob", msg, 5000, type) 
+    --exports['okokNotify']:Alert("MultiJob", msg, 5000, type) 
     -- you can change that to your own CLIENT SIDE (can be export)
 end
 
 function ShowNotificationServer(source, msg, type)
-   -- TriggerClientEvent('okokNotify:Alert', source, "MultiJob", msg, 5000, type)
+   --TriggerClientEvent('okokNotify:Alert', source, "MultiJob", msg, 5000, type)
    TriggerClientEvent('QBCore:Notify', source, msg, type)
 -- you can change that to your own CLIENT SIDE (can't be export)
 end
 
 
 function DrawUI(text)
-    exports['okokTextUI']:Open(text, 'darkblue', 'left')
     exports['ps-ui']:DisplayText(text, "primary")
     -- you can change that to your own CLIENT SIDE (can be export)
 end
@@ -77,6 +76,6 @@ Config.DefaultIcon = "fas fa-briefcase" -- The default icon shown if the job isn
 
 Config.BlackListedJobs = { --jobs that will not be automatically added to the multijob menu
     'unemployed',
-    'examplejob2'
+    --'examplejob2'
 }
 
