@@ -2,6 +2,7 @@
 
 
 To Do:
+    - lower stress gain from speeding
     - check if burgershot has boss management
     - check how player owned businesses are going to work
     - check shops around whole city
@@ -19,6 +20,7 @@ Testing:
 
 
 Final (Ready to Launch):
+    - UPGRADE ACTUAL SERVER ON LAUNCH
     - add better admin menu (waiting for projectsloth release)
     - add boosting script (waiting for kevinscripts release)
     - add bowling script (waiting for gabz release)
