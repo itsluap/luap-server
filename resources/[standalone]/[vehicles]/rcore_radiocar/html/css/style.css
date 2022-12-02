@@ -69,11 +69,11 @@ body{
 }
 
 #playSong i:hover{
-	color: #ff7878;
+	color: #53B3CB;
 }
 
 #playSong:hover{
-	color: #ff7878;
+	color: #53B3CB;
 	cursor: pointer;
 }
 
@@ -226,7 +226,7 @@ i.far.fa-trash-alt.active {
 }
 
 .music i:hover{
-	color: #ff7878;
+	color: #53B3CB;
 	cursor: pointer;
 }
 
@@ -264,12 +264,12 @@ i.far.fa-trash-alt.active {
 
 .box:hover{
 	/* background: url(./img/menu_activate.png) repeat; */
-	color: #ff7878;
+	color: #53B3CB;
 	cursor: pointer;
 }
 
 .box:hover i{
-	color: #ff7878;
+	color: #53B3CB;
 	cursor: pointer;
 }
 

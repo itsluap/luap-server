@@ -2,13 +2,11 @@
 
 
 To Do:
-    - add oxy runs
     - check if burgershot has boss management
     - check how player owned businesses are going to work
     - check shops around whole city
     - gun stays in hand when phone is pulled out
     - make sure criminal activities require police online
-    - add bowling script
     - fix heroin animation
 HEISTS:
     - Fleeca: where to get electronickit and trojan_usb, (good to go)

@@ -15,7 +15,7 @@
 
 
 || CLOTHING ||
-
+-- START WORKING ON THIS
 -- no broken clothing
 -- no 100k clothing but some gang clothing
 -- male AND female clothing
