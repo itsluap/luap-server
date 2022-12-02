@@ -2,7 +2,6 @@
 
 
 To Do:
-    - lower stress gain from speeding
     - check if burgershot has boss management
     - check how player owned businesses are going to work
     - check shops around whole city
