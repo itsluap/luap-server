@@ -283,7 +283,7 @@ QBShared.Jobs = {
             },
         },
 	},
-    ['autoexotics'] = {
+    ['autoex'] = {
 		label = 'Auto Exotics',
         type = "mechanic",
 		defaultDuty = true,
