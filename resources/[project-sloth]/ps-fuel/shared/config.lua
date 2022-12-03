@@ -9,7 +9,7 @@ Config.canCost = 50 -- buy jerry can price
 Config.refuelCost = 50 -- refueling jerry can price
 Config.GlobalTax = 15.0
 
-Config.fuelPrice = 2.0 -- fuel price in litres I guess
+Config.fuelPrice = 5.0 -- fuel price in litres I guess
 
 Config.FuelDecor = "_FUEL_LEVEL" -- don't touch
 
