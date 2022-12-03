@@ -25,6 +25,9 @@ Config.BossMenus = {
     ['vanilla'] = {
         vector3(95.36, -1293.61, 29.64),
     },
+    ['burgershot'] = {
+        vector3(-1177.87, -896.27, 15.09),
+    },
 }
 
 Config.BossMenuZones = {
