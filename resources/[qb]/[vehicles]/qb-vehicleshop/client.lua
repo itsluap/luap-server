@@ -393,6 +393,7 @@ function Init()
                 SetVehicleDirtLevel(veh, 0.0)
                 SetVehicleDoorsLocked(veh, 3)
                 SetEntityHeading(veh, Config.Shops[k]["ShowroomVehicles"][i].coords.w)
+                Citizen.Wait(5000)
                 FreezeEntityPosition(veh, true)
                 SetVehicleNumberPlateText(veh, 'BUY ME')
                 if Config.UsingTarget then createVehZones(k, veh) end
