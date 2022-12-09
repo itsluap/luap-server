@@ -193,6 +193,19 @@ end, 'admin')
 
 -- Money
 
+QBCore.Commands.Add('giveall', "Give an Item to all.", {{ name = 'item', help = 'Name of the item.' },{ name = 'amount', help = 'Number of item to give.' }}, true, function(source, args)
+    local src = source
+    local itemName = tostring(args[1])
+    local itemAmount = tonumber(args[2])
+    for _, Player in pairs(QBCore.Functions.GetQBPlayers()) do
+        if Player then
+            Player.Functions.AddItem(itemName, itemAmount)
+            TriggerClientEvent('QBCore:Notify', Player.PlayerData.source, "You received "..itemAmount.." "..QBCore.Shared.Items[itemName].label.." from the Sky.", "success")
+            TriggerClientEvent('inventory:client:ItemBox', Player.PlayerData.source, QBCore.Shared.Items[itemName], "add", itemAmount)     
+        end
+    end
+end, "god")
+
 QBCore.Commands.Add('givemoney', Lang:t("command.givemoney.help"), { { name = Lang:t("command.givemoney.params.id.name"), help = Lang:t("command.givemoney.params.id.help") }, { name = Lang:t("command.givemoney.params.moneytype.name"), help = Lang:t("command.givemoney.params.moneytype.help") }, { name = Lang:t("command.givemoney.params.amount.name"), help = Lang:t("command.givemoney.params.amount.help") } }, true, function(source, args)
     local Player = QBCore.Functions.GetPlayer(tonumber(args[1]))
     if Player then
