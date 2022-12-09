@@ -45,10 +45,10 @@ CreateThread(function()
 		"petroltank",
 		"petroltank_l",
 		"petroltank_r",
-		"wheel_rf",
+		--"wheel_rf",
 		"wheel_rr",
 		"wheel_lr",
-		"petrolcap ",
+		"petrolcap",
 		"seat_dside_r",
 		--"engine",
 	}
