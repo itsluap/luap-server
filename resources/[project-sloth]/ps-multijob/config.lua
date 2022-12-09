@@ -13,6 +13,9 @@ Config.WhitelistJobs = {
 	["police"] = true,
 	["ambulance"] = true,
 	["mechanic"] = true,
+	["ottos"] = true,
+	["tuner"] = true,
+	["autoex"] = true,
 	["judge"] = true,
 	["lawyer"] = true,
 }
