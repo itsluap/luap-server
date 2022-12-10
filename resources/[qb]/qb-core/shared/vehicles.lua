@@ -4829,16 +4829,7 @@ QBShared.Vehicles = {
     },
 	['vettehachi'] = {
         ['name'] = 'Hachi Corvette',
-        ['brand'] = 'BMW',
-        ['model'] = 'vettehachi',
-        ['price'] = 120000,
-        ['category'] = 'tuner',
-        ['hash'] = `vettehachi`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
-    },
-	['vettehachi'] = {
-        ['name'] = 'Hachi Corvette',
-        ['brand'] = 'BMW',
+        ['brand'] = 'Chevy',
         ['model'] = 'vettehachi',
         ['price'] = 120000,
         ['category'] = 'tuner',
@@ -4847,16 +4838,7 @@ QBShared.Vehicles = {
     },
 	['r34rdsmonster'] = {
         ['name'] = 'R34 RDS Monster',
-        ['brand'] = 'BMW',
-        ['model'] = 'r34rdsmonster',
-        ['price'] = 120000,
-        ['category'] = 'tuner',
-        ['hash'] = `r34rdsmonster`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
-    },
-	['r34rdsmonster'] = {
-        ['name'] = 'R34 RDS Monster',
-        ['brand'] = 'BMW',
+        ['brand'] = 'Nissan',
         ['model'] = 'r34rdsmonster',
         ['price'] = 120000,
         ['category'] = 'tuner',
