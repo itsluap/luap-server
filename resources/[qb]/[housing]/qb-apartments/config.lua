@@ -2,6 +2,7 @@ Apartments = {}
 Apartments.Starting = true
 Apartments.SpawnOffset = 30
 Apartments.Locations = {
+    --[[
     ["apartment1"] = {
         name = "apartment1",
         label = "Alta Street",
@@ -19,6 +20,7 @@ Apartments.Locations = {
             created = false
         }
     },
+    ]]--
     ["apartment2"] = {
         name = "apartment2",
         label = "Integrity Way",
