@@ -316,7 +316,6 @@ Config.Items = {
             slot = 7,
             authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}
         },
-        
         [8] = {
             name = "weapon_nightstick",
             price = 0,
@@ -324,7 +323,7 @@ Config.Items = {
             info = {},
             type = "weapon",
             slot = 8,
-            authorizedJobGrades = {0, 1, 2, 3, 4}
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}
         },
         [9] = {
             name = "pistol_ammo",
@@ -333,7 +332,7 @@ Config.Items = {
             info = {},
             type = "item",
             slot = 9,
-            authorizedJobGrades = {0, 1, 2, 3, 4}
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}
         },
         [10] = {
             name = "smg_ammo",
@@ -342,7 +341,7 @@ Config.Items = {
             info = {},
             type = "item",
             slot = 10,
-            authorizedJobGrades = {0, 1, 2, 3, 4}
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}
         },
         [11] = {
             name = "shotgun_ammo",
@@ -351,7 +350,7 @@ Config.Items = {
             info = {},
             type = "item",
             slot = 11,
-            authorizedJobGrades = {0, 1, 2, 3, 4}
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}
         },
         [12] = {
             name = "rifle_ammo",
@@ -360,7 +359,7 @@ Config.Items = {
             info = {},
             type = "item",
             slot = 12,
-            authorizedJobGrades = {0, 1, 2, 3, 4}
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}
         },
         [13] = {
             name = "handcuffs",
@@ -369,7 +368,7 @@ Config.Items = {
             info = {},
             type = "item",
             slot = 13,
-            authorizedJobGrades = {0, 1, 2, 3, 4}
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}
         },
         [14] = {
             name = "weapon_flashlight",
@@ -378,7 +377,7 @@ Config.Items = {
             info = {},
             type = "weapon",
             slot = 14,
-            authorizedJobGrades = {0, 1, 2, 3, 4}
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}
         },
         [15] = {
             name = "empty_evidence_bag",
@@ -387,7 +386,7 @@ Config.Items = {
             info = {},
             type = "item",
             slot = 15,
-            authorizedJobGrades = {0, 1, 2, 3, 4}
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}
         },
         [16] = {
             name = "police_stormram",
@@ -396,7 +395,7 @@ Config.Items = {
             info = {},
             type = "item",
             slot = 16,
-            authorizedJobGrades = {0, 1, 2, 3, 4}
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}
         },
         [17] = {
             name = "armor",
@@ -405,7 +404,7 @@ Config.Items = {
             info = {},
             type = "item",
             slot = 17,
-            authorizedJobGrades = {0, 1, 2, 3, 4}
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}
         },
         [18] = {
             name = "heavyarmor",
@@ -414,7 +413,7 @@ Config.Items = {
             info = {},
             type = "item",
             slot = 18,
-            authorizedJobGrades = {0, 1, 2, 3, 4}
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}
         },
         [19] = {
             name = "radio",
@@ -423,7 +422,7 @@ Config.Items = {
             info = {},
             type = "item",
             slot = 19,
-            authorizedJobGrades = {0, 1, 2, 3, 4}
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}
         },
     }
 }
@@ -432,17 +431,17 @@ Config.VehicleSettings = {
     ["n11vic"] = { --- Model name
         ["extras"] = {
             ["1"] = true, -- on/off
-            ["2"] = false,
-            ["3"] = true,
-            ["4"] = false,
+            --["2"] = false,
+            --["3"] = true,
+            --["4"] = false,
             ["5"] = true,
-            ["6"] = true,
-            ["7"] = true,
-            ["8"] = false,
-            ["9"] = false,
-            ["10"] = false,
-            ["11"] = false,
-            ["12"] = true,
+            --["6"] = true,
+            --["7"] = true,
+            ["8"] = true,
+            --["9"] = false,
+            --["10"] = false,
+            ["11"] = true,
+            --["12"] = true,
         },
 		["livery"] = 3,
     },
