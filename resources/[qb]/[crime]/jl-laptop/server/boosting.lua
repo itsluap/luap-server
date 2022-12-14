@@ -834,7 +834,7 @@ CreateThread(function()
                         if v.skipped >= 25 or (v.skipped >= math.random(2, 7) and ContractChance >= 0.75) then
                             generateContract(v.src)
                         else
-                            -- v.skipped += 1
+                            v.skipped += 1
                         end
                     elseif #currentContracts[k] >= Config.Boosting.MaxBoosts then
                         v.active = false
