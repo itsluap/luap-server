@@ -1,5 +1,7 @@
 outfits = json.decode(LoadResourceFile(GetCurrentResourceName(), GetResourceMetadata(GetCurrentResourceName(), 'uniform_file')))
 
+local QBCore = exports['qb-core']:GetCoreObject()
+
 local function convertInput(input)
 	local t1 = tonumber(string.split(input, ":")[1])-1
 	local t2 = tonumber(string.split(input, ":")[2])-1
