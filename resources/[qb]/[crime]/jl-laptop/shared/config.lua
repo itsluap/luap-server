@@ -3,7 +3,7 @@ Config = {}
 Config.Inventory = "lj-inventory"
 Config.LaptopDevice = "pixellaptop"
 
-Config.RenewedPhone = false
+Config.RenewedPhone = true
 
 Config.Linux = false
 
