@@ -443,7 +443,7 @@ RegisterNetEvent('jl-laptop:client:HackCar', function()
                         pushingP:resolve(cb)
                     end, psUI[math.random(1, #psUI)], 30, 0)
                     local success = Citizen.Await(pushingP)
-                
+                    hackTries += 1
                     -- TriggerServerEvent('jl-laptop:server:SyncPlates', success)
                     -- currentHacking = false
                 elseif hackTries >= 3 then
