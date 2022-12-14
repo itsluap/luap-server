@@ -40,6 +40,7 @@ Config.Apps = {
         item = {},
         default = true
     },
+    --[[
     ['bennys'] = {
         app = 'bennys',
         name = "Bennys Shop",
@@ -53,6 +54,7 @@ Config.Apps = {
         item = {},
         default = true
     },
+    ]]--
     ['darkweb'] = {
         app = 'darkweb',
         name = "Unknown",
@@ -63,7 +65,7 @@ Config.Apps = {
         job = {},
         bannedJobs = { "police" },
         gang = {},
-        item = { "vpn" },
+        item = { "laptop_dongle_b" },
         default = false
     }
 }
