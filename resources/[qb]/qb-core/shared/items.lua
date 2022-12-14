@@ -424,7 +424,7 @@ QBShared.Items = {
 
 	-- Boosting
 	['pixellaptop'] 				 = {['name'] = 'pixellaptop', 					['label'] = 'Personal Laptop', 					['weight'] = 2000, 		['type'] = 'item', 		['image'] = 'laptop.png', 			['unique'] = true, 		['useable'] = true,  	['shouldClose'] = true, 	['combinable'] = nil,  ['description'] = 'Boosting Laptop'}, 
-	['laptop_dongle_b'] 			 = {['name'] = 'laptop_dongle', 				['label'] = 'Laptop Dongle', 					['weight'] = 500, 		['type'] = 'item', 		['image'] = 'laptop_dongle.png', 	['unique'] = true, 		['useable'] = false,  	['shouldClose'] = false, 	['combinable'] = nil,  ['description'] = 'Laptop Dongle'}, 
+	['laptop_dongle_b'] 			 = {['name'] = 'laptop_dongle_b', 				['label'] = 'Laptop Dongle', 					['weight'] = 500, 		['type'] = 'item', 		['image'] = 'laptop_dongle.png', 	['unique'] = true, 		['useable'] = false,  	['shouldClose'] = false, 	['combinable'] = nil,  ['description'] = 'Laptop Dongle'}, 
 	-- ['disabler'] 					 = {['name'] = 'disabler', 						['label'] = 'Tracking Disabler', 				['weight'] = 500, 		['type'] = 'item', 		['image'] = 'electronickit.png', 				['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true, 	['combinable'] = nil,  ['description'] = 'for the boosting contracts'},
 
 	-- Burger Shot
