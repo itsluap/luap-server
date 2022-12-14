@@ -9,7 +9,8 @@ Config.Linux = false
 
 Config.PoliceJobs = {
     "police",
-    "bcso"
+    "sheriff",
+    "trooper"
 }
 
 Config.Apps = {
@@ -23,7 +24,7 @@ Config.Apps = {
         job = {}, -- Must be a table
         bannedJobs = { "police" }, -- Must be a table { 'police' }
         gang = {}, -- Must be a table { 'ballas' }
-        item = { "vpn" }, -- Must be a table { 'vpn' }
+        item = { "laptop_dongle" }, -- Must be a table { 'vpn' }
         default = false -- if true, it will be added by default, ignoring all the previously set parameters
     },
     ['setting'] = {
