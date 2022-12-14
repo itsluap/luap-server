@@ -24,7 +24,7 @@ Config.Apps = {
         job = {}, -- Must be a table
         bannedJobs = { "police" }, -- Must be a table { 'police' }
         gang = {}, -- Must be a table { 'ballas' }
-        item = { "laptop_dongle" }, -- Must be a table { 'vpn' }
+        item = { "laptop_dongle_b" }, -- Must be a table { 'vpn' }
         default = false -- if true, it will be added by default, ignoring all the previously set parameters
     },
     ['setting'] = {
