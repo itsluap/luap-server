@@ -317,7 +317,7 @@ Config.Locations = {
 					out = vector4(551.53, -202.83, 54.46, 180),
 					list = { "towtruck", "panto", "slamtruck", "cheburek", "utillitruck3" } },
 		payments = { coords = vector3(551.19, -189.36, 54.49), heading = 271, img = "<center><p><img src=https://i.imgur.com/74UVnCb.jpeg width=150px></p>" },
-		blip = vector3(831.03, -813.01, 26.33),
+		blip = vector3(540.48, -172.23, 54.48),
 		bliplabel = "Auto Exotics",
 		blipcolor = 3,
 		discordlink = "",
