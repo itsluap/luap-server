@@ -14,6 +14,11 @@ Notes:
     - clothing has to be for mp male or female
     - 
 
+For Vehicles From Hashiyara:
+    - L3 cars are S+
+    - L2 cars are S 
+    - L1 cars are A+
+
 Other:
     - steal players from other servers (give out a beta test reward) NEED A LOYAL TEAM - reach out to old fivem friends
     - go through and remove unneeded commands (search all server files)
