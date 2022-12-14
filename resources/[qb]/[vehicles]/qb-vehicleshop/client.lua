@@ -387,18 +387,20 @@ function Init()
                     Wait(0)
                 end
                 local veh = CreateVehicle(model, Config.Shops[k]["ShowroomVehicles"][i].coords.x, Config.Shops[k]["ShowroomVehicles"][i].coords.y, Config.Shops[k]["ShowroomVehicles"][i].coords.z, false, false)
-                SetModelAsNoLongerNeeded(model)
                 SetVehicleOnGroundProperly(veh)
+                SetModelAsNoLongerNeeded(model)
                 SetEntityInvincible(veh, true)
                 SetVehicleDirtLevel(veh, 0.0)
                 SetVehicleDoorsLocked(veh, 3)
                 SetEntityHeading(veh, Config.Shops[k]["ShowroomVehicles"][i].coords.w)
-                Citizen.Wait(5000)
+                Citizen.Wait(2000)
                 FreezeEntityPosition(veh, true)
                 SetVehicleNumberPlateText(veh, 'BUY ME')
                 if Config.UsingTarget then createVehZones(k, veh) end
+                SetVehicleOnGroundProperly(veh)
             end
             if not Config.UsingTarget then createVehZones(k) end
+            SetVehicleOnGroundProperly(veh)
         end
     end)
 end
