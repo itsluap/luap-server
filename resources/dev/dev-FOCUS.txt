@@ -29,3 +29,55 @@
 
 
 || UPDATE ALL SCRIPTS BEFORE LAUNCH ||
+
+
+
+CAR CLASSES:
+
+- Acura NSX (NC1) - Level 3
+- Alfa Romeo 155 Q4 - Level 2
+- Alfa 4C - Level 1
+- AMG GT Black Series - Level 3
+- C63 AMG (W204) - Level 2
+- Mercedes 300 SEL (RED PIG) - Level 1
+- Audi R8 - Level 3
+- Audi S1 HR - Level 2
+- Audi RS2 Avant - Level 2
+- Audi RS4 - Level 2
+- Audi RS4 Avant - Level 2
+- Audi TT - Level 1
+- BMW M3 Razor - Level 3
+- BMW 850i - Level 2
+- BMW M3 E30 - Level 2
+- BMW M3 E36 - Level 2
+- BMW M5 E60 - Level 2
+- BMW M3 E90 - Level 2
+- BMW M4 HR - Level 2
+- BMW Z4 M - Level 1
+- Vette HR - Level 3
+- FD Viper - Level D (Drift?)
+- Ferrari 458 Italia - Level 3
+- Ferrari 488 GTB - Level 3
+- Ferrari 612 Scaglietti - Level 3
+- Ferrari F8 HR Special - Level 3
+- Ferrari F40 - Level 3
+- Ferrari Testarossa - Level 3
+- Ferrari Testarossa 512 TR - Level 3
+- Ford GT - Level 3
+- Focus RS 2009 - Level 2
+- RS Cosworth - Level 1
+- Amuse S2000 - Level 3
+- Civic FK8 HR - level 2
+- Honda NSX R - Level 2
+- S2000 AP2 - Level 2
+- Civic Type-R EK9 - Level 1
+- Integra Type-R DC2 - Level 1
+- Honda CRX - Level 1
+- Jaguar XE SV - Level 3
+- Huracan HR - Level 3
+- Murcielago LP 670 - Level 3
+- Diablo GTR - Level 3
+- Countach - Level 3
+- Lexus LFA KS - Level 3
+- Lexus IS300 - Level 2
+- Lexus LC 500 - Level 2
