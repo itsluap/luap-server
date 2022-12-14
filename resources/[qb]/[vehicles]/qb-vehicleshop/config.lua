@@ -24,7 +24,7 @@ Config.Shops = {
             },
             ['minZ'] = 25.0, -- min height of the shop zone
             ['maxZ'] = 28.0, -- max height of the shop zone
-            ['size'] = 2.75 -- size of the vehicles zones
+            ['size'] = 3.10 -- size of the vehicles zones
         },
         ['Job'] = 'none', -- Name of job or none
         ['ShopLabel'] = 'Premium Deluxe Motorsport', -- Blip name
@@ -75,7 +75,7 @@ Config.Shops = {
             },
             ['minZ'] = 53.68,
             ['maxZ'] = 68.68,
-            ['size'] = 2.75 -- size of the vehicles zones
+            ['size'] = 3.10 -- size of the vehicles zones
         },
         ['Job'] = 'cardealer', -- Name of job or none
         ['ShopLabel'] = 'Luxury Vehicle Shop',
@@ -131,7 +131,7 @@ Config.Shops = {
             },
             ['minZ'] = 7.0408926010132,
             ['maxZ'] = 25.392038345337,
-            ['size'] = 2.75 -- size of the vehicles zones
+            ['size'] = 3.10 -- size of the vehicles zones
         },
         ['Job'] = 'tuner', -- Name of job or none
         ['ShopLabel'] = 'Tuner Shop',
@@ -167,7 +167,7 @@ Config.Shops = {
             },
             ['minZ'] = 26.185426712036,
             ['maxZ'] = 37.086387634277,
-            ['size'] = 2.75 -- size of the vehicles zones
+            ['size'] = 3.10 -- size of the vehicles zones
         },
         ['Job'] = 'ottos', -- Name of job or none
         ['ShopLabel'] = 'Ottos Autos',
@@ -206,7 +206,7 @@ Config.Shops = {
             },
             ['minZ'] = 50.669570922852,
             ['maxZ'] = 64.994766235352,
-            ['size'] = 2.75 -- size of the vehicles zones
+            ['size'] = 3.10 -- size of the vehicles zones
         },
         ['Job'] = 'autoex', -- Name of job or none
         ['ShopLabel'] = 'Auto Exotics',
