@@ -81,3 +81,89 @@ CAR CLASSES:
 - Lexus LFA KS - Level 3
 - Lexus IS300 - Level 2
 - Lexus LC 500 - Level 2
+- RX7 Spirit R (FD3S) - Level 2
+- RX7 Veilside - Level 2
+- RX8 Hachi - Level 2
+- RX8 Spirit R - Level 2
+- MX-5 Miata - Level 1
+- RX7 (FC3S) - Level 1
+- Speed 3 - Level 1
+- 720s - Level 3 
+- Benz 190E Evo - Level 2
+- Benz SL63 - Level 2
+- Eclipse GSX - Level 2
+- Galant VR4 - Level 2
+- Evo 3 - Level 2
+- Evo 6 - Level 2
+- Evo 9 - Level 3
+- Evo 10 - Level 3
+- S15 Liberty Walk - Level X
+- S15 FD - Level D
+- S13 Laurel - Level D
+- 240SX Dai - Level D 
+- S14 Boss - Level D 
+- S15 Yokia - Level D 
+- Skyline Badass R34 - Level D
+- Z32 Midnight - L3
+- R33 Midnight - L3 
+- R34 Midnight - L3 
+- R35 - L3
+- S30 Devil Z - L3
+- Cedric Y33 - L2
+- Cefiro A31 - L2
+- 300ZX Z32 - L2
+- 350z - L2
+- S14 - L2
+- S15 - L2
+- R32 - L2 
+- R33 - L2 
+- R33 HR - L2
+- ECR33 - L2
+- R34 - L2
+- ER34 - L2
+- 180sx - L1
+- Sleighty - L1
+- S13 - L1
+- 2000 GT - L1
+- 2000 GTR - L1
+- S30 - L1
+- S130 ABR - L1
+- C210 - L1
+- Skyline GTS-R - L1
+- 911 GT3 - L3
+- 911 GT3 (oldnew) - L3
+- 911 Terrortarga - L3
+- Porsche 930 - L3
+- Porsche 959 - L3
+- Porsche Cayman GT4 - Level 2
+- Porsche 928 Midnight - Level 1
+- Subaru 22B STI - Level 2
+- Subaru Impreza 04 - Level 2
+- Subaru Impreza 06 - Level 2
+- Subaru Impreza 08 - Level 2
+- Supra Midnight - Level 3
+- Supra Top Secret - Level 3
+- Aristo JZS147 - Level 2
+- Aristo JZS161 - Level 2
+- Celsior UCF10 - Level 2
+- Celsior UCF21 - Level 2
+- Celsior UCF30 - Level 2
+- Cresta 81 - Level 2
+- Creata 90 - Level 2
+- Crown S210 - Level 2
+- Chaser JZX100 - Level 2
+- Chaser JZX90 - level 2
+- Mark 2 JZX100 - Level 2
+- GT86 - Level 2 
+- Celica GT4 - Level 2 
+- Sorarer - Level 2 
+- Supra JZA70 - Level 2
+- AE86 Time Attack - Level 2
+- Supra JZA80 - Level 2
+- Soarer GZ20 - Level 1
+- AE86 Trueno - Level 1
+- AE86 Levin - Level 1
+- MR2 GT - Level 1
+- Celica GT - Level 1
+- Volkswagen Golf R32 - Level 1
+- 
