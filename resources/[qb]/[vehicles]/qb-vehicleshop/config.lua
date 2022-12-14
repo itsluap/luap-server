@@ -9,6 +9,7 @@ Config.MinimumDown = 10 -- minimum percentage allowed down
 Config.MaximumPayments = 24 -- maximum payments allowed
 Config.PreventFinanceSelling = true -- allow/prevent players from using /transfervehicle if financed
 Config.Shops = {
+    --[[
     ['pdm'] = {
         ['Type'] = 'free-use', -- no player interaction is required to purchase a car
         ['Zone'] = {
@@ -59,6 +60,74 @@ Config.Shops = {
                 coords = vector4(-36.93, -1093.18, 27.3, 192.57),
                 defaultVehicle = 'camry18',
                 chosenVehicle = 'camry18'
+            }
+        },
+    },
+    ]]--
+    ['pdm'] = {
+        ['Type'] = 'free-use', -- no player interaction is required to purchase a car
+        ['Zone'] = {
+            ['Shape'] = {--polygon that surrounds the shop
+            vector2(-15.33, -1120.12),
+            vector2(-65.21, -1122.72),
+            vector2(-70.56, -1116.94),
+            vector2(-53.42, -1069.42),
+            vector2(-21.28, -1081.18),
+            vector2(-19.59, -1075.18),
+            vector2(-1.61, -1081.6)
+            },
+            ['minZ'] = 25.0, -- min height of the shop zone
+            ['maxZ'] = 28.0, -- max height of the shop zone
+            ['size'] = 3.10 -- size of the vehicles zones
+        },
+        ['Job'] = 'none', -- Name of job or none
+        ['ShopLabel'] = 'Premium Deluxe Motorsport', -- Blip name
+        ['showBlip'] = true, -- true or false
+        ['blipSprite'] = 326, -- Blip sprite
+        ['blipColor'] = 3, -- Blip color
+        ['Categories'] = {-- Categories available to browse
+            ['pimports'] = 'Imports',
+            ['sportsclassics'] = 'Sports Classics',
+            ['sedans'] = 'Sedans',
+            ['coupes'] = 'Coupes',
+            ['suvs'] = 'SUVs',
+            ['offroad'] = 'Offroad',
+            ['muscle'] = 'Muscle',
+            ['compacts'] = 'Compacts',
+            ['motorcycles'] = 'Motorcycles',
+            ['vans'] = 'Vans',
+            ['cycles'] = 'Bicycles'
+        },
+        ['TestDriveTimeLimit'] = 0.5, -- Time in minutes until the vehicle gets deleted
+        ['Location'] = vector3(-44.49, -1096.38, 27.27), -- Blip Location
+        ['ReturnLocation'] = vector3(-30.92, -1081.93, 27.04), -- Location to return vehicle, only enables if the vehicleshop has a job owned
+        ['VehicleSpawn'] = vector4(-54.23, -1109.55, 26.67, 76.7), -- Spawn location when vehicle is bought
+        ['TestDriveSpawn'] = vector4(-54.23, -1109.55, 26.67, 76.7), -- Spawn location for test drive
+        ['ShowroomVehicles'] = {
+            [1] = {
+                coords = vector4(-37.27, -1093.05, 26.3, 114.0), -- where the vehicle will spawn on display
+                defaultVehicle = 'adder', -- Default display vehicle
+                chosenVehicle = 'adder', -- Same as default but is dynamically changed when swapping vehicles
+            },
+            [2] = {
+                coords = vector4(-50.03, -1083.83, 26.3, 148.41),
+                defaultVehicle = 'schafter2',
+                chosenVehicle = 'schafter2'
+            },
+            [3] = {
+                coords = vector4(-47.61, -1092.15, 26.3, 188.34),
+                defaultVehicle = 'comet2',
+                chosenVehicle = 'comet2'
+            },
+            [4] = {
+                coords = vector4(-42.19, -1101.35, 26.3, 284.51),
+                defaultVehicle = 'vigero',
+                chosenVehicle = 'vigero'
+            },
+            [5] = {
+                coords = vector4(-54.48, -1096.71, 26.3, 293.13),
+                defaultVehicle = 't20',
+                chosenVehicle = 't20'
             }
         },
     },
