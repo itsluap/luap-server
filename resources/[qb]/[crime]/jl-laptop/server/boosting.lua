@@ -834,7 +834,7 @@ CreateThread(function()
                         -- Otherwise we say if they been in queue longer than 2-7 skips and their chance is higher than 0.75 (meaning 25% chance) we will reward them with a contract
                         if v.skipped <= 25 --[[or (v.skipped >= math.random(2, 7) and ContractChance >= 0.75)--]] then
                             v.skipped += 1
-                        elseif v.skipped >= 26 or (v.skipped >= math.random(2, 7) and ContractChance >= 0.75) then
+                        elseif v.skipped >= 26 then
                             generateContract(v.src)
                         end
                     elseif #currentContracts[k] >= Config.Boosting.MaxBoosts then
