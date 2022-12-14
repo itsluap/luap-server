@@ -3465,13 +3465,13 @@ QBShared.Vehicles = {
 		['hash'] = `mgt`,
 		['shop'] = 'pdm',
 	},
-	['nixpycharger21'] = {
-		['name'] = '2021 Charger',
+	['rakchr'] = {
+		['name'] = '2015 Charger SE',
 		['brand'] = 'Dodge',
-		['model'] = 'nixpycharger21',
+		['model'] = 'rakchr',
 		['price'] = 31000,
 		['category'] = 'pimports',
-		['hash'] = `nixpycharger21`,
+		['hash'] = `rakchr`,
 		['shop'] = 'pdm',
 	},
 	['68dart'] = {
