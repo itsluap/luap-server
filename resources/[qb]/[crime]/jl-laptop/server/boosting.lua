@@ -367,7 +367,7 @@ RegisterNetEvent('jl-laptop:server:SyncPlates', function(success)
     if success then
         if state.boostHacks - 1 >= 1 then
             Notify(src, Lang:t('boosting.success.tracker_off', { tracker_left = newThing, time = randomSeconds }),
-                'success', 7500)
+            'success', 7500)
         end
 
         local newAmount = Config.Boosting.Debug and 0 or state.boostHacks - 1
