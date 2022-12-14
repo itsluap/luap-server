@@ -314,7 +314,7 @@
             </div>
             <div class="boost-name">{contract.owner}</div>
             <div class="boost-car">{Truncate(contract.carName)}</div>
-            <div class="boost-reward">Buy In: <b>{contract.cost} GNE</b></div>
+            <div class="boost-reward">Buy In: <b>{contract.cost} LME</b></div>
             <div class="expires">
               Expires: <b
                 >{moment(contract.expire).endOf("hour").from(currentDate)}</b

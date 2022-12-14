@@ -214,7 +214,7 @@ QBCore.Functions.CreateCallback('jl-laptop:server:CanStartBoosting', function(so
 
     if currentRuns[CID] then return cb("running") end
     if not currentContracts[CID][id] then return cb("notfound") end
-    if Config.RenewedPhone and not exports['qb-phone']:hasEnough(src, "gne", currentContracts[CID][id].cost) then
+    if Config.RenewedPhone and not exports['qb-phone']:hasEnough(src, "lme", currentContracts[CID][id].cost) then
         return cb("notenough")
     elseif not Config.RenewedPhone and Player.PlayerData.money.crypto < currentContracts[CID][id].cost then
         return cb("notenough")
@@ -245,7 +245,7 @@ QBCore.Functions.CreateCallback('jl-laptop:server:CanStartBoosting', function(so
         if SpawnCar(src) then
 
             if Config.RenewedPhone then
-                exports['qb-phone']:RemoveCrypto(src, "gne", currentContracts[CID][id].cost)
+                exports['qb-phone']:RemoveCrypto(src, "lme", currentContracts[CID][id].cost)
             else
                 if not
                     Player.Functions.RemoveMoney("crypto", currentContracts[CID][id].cost,
@@ -498,7 +498,7 @@ RegisterNetEvent('jl-laptop:server:finishBoost', function(netId, isvin)
         end
         local reward = math.ceil(currentRuns[CID].cost * math.random(2, 3))
         if Config.RenewedPhone then
-            exports['qb-phone']:AddCrypto(src, "gne", reward)
+            exports['qb-phone']:AddCrypto(src, "lme", reward)
         else
             Player.Functions.AddMoney("crypto", reward, Lang:t('boosting.info.rewardboost'))
         end
