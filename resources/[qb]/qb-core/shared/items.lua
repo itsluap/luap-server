@@ -423,7 +423,7 @@ QBShared.Items = {
 	['printerdocument'] 			 = {['name'] = 'printerdocument', 				['label'] = 'Document', 				['weight'] = 500, 		['type'] = 'item', 		['image'] = 'printerdocument.png', 		['unique'] = true, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'A nice document'},
 
 	-- Boosting
-	['pixellaptop'] 				 = {['name'] = 'pixellaptop', 					['label'] = 'Boosting Laptop', 				['weight'] = 2000, 		['type'] = 'item', 		['image'] = 'laptop.png', 			['unique'] = true, 		['useable'] = true,  	['shouldClose'] = true, 	['combinable'] = nil,  ['description'] = 'Boosting Laptop'}, 
+	['pixellaptop'] 				 = {['name'] = 'pixellaptop', 					['label'] = 'Personal Laptop', 					['weight'] = 2000, 		['type'] = 'item', 		['image'] = 'laptop.png', 			['unique'] = true, 		['useable'] = true,  	['shouldClose'] = true, 	['combinable'] = nil,  ['description'] = 'Boosting Laptop'}, 
 	['disabler'] 					 = {['name'] = 'disabler', 						['label'] = 'Tracking Disabler', 				['weight'] = 500, 		['type'] = 'item', 		['image'] = 'electronickit.png', 				['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true, 	['combinable'] = nil,  ['description'] = 'for the boosting contracts'},
 
 	-- Burger Shot

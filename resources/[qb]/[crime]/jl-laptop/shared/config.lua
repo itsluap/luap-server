@@ -1,7 +1,7 @@
 Config = {}
 
 Config.Inventory = "qb-inventory"
-Config.LaptopDevice = "laptop"
+Config.LaptopDevice = "pixellaptop"
 
 Config.RenewedPhone = false
 
