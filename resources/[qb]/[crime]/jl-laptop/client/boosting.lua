@@ -435,21 +435,15 @@ RegisterNetEvent('jl-laptop:client:HackCar', function()
         if IsPedInAnyVehicle(ped, false) then
             local car = GetVehiclePedIsIn(ped, false)
             local State = Entity(car).state.Boosting
-            local hackTries = 0
             if State and State.boostHacks > 0 and not State.boostCooldown then
-                if hackTries <= 0 then
-                    local pushingP = promise.new()
-                    exports['ps-ui']:Scrambler(function(cb)
-                        pushingP:resolve(cb)
-                    end, psUI[math.random(1, #psUI)], 30, 0)
-                    local success = Citizen.Await(pushingP)
-                    hackTries += 1
-                    -- TriggerServerEvent('jl-laptop:server:SyncPlates', success)
-                    -- currentHacking = false
-                elseif hackTries >= 3 then
-                    TriggerServerEvent('jl-laptop:server:SyncPlates', success)
-                    currentHacking = false
-                end
+                local pushingP = promise.new()
+                exports['ps-ui']:Scrambler(function(cb)
+                    pushingP:resolve(cb)
+                end, psUI[math.random(1, #psUI)], 30, 0)
+                local success = Citizen.Await(pushingP)
+
+                TriggerServerEvent('jl-laptop:server:SyncPlates', success)
+                currentHacking = false
             else
                 Notify(Lang:t("boosting.error.no_tracker"), 'error', 7500)
                 currentHacking = false
