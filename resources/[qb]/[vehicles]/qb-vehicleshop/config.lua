@@ -202,7 +202,7 @@ Config.Shops = {
                 vector2(170.58726501465, -3019.7094726562)
             },
             ['minZ'] = 5.0,
-            ['maxZ'] = 10.0,
+            ['maxZ'] = 8.0,
             ['size'] = 3.10, -- size of the vehicles zones
         },
         ['Job'] = 'tuner', -- Name of job or none
@@ -240,8 +240,8 @@ Config.Shops = {
                 vector2(850.13079833984, -813.33471679688),
                 vector2(841.1630859375, -795.37799072266)
             },
-            ['minZ'] = 22.0,
-            ['maxZ'] = 28.0,
+            ['minZ'] = 24.0,
+            ['maxZ'] = 27.0,
             ['size'] = 3.10, -- size of the vehicles zones
         },
         ['Job'] = 'ottos', -- Name of job or none
@@ -282,8 +282,8 @@ Config.Shops = {
                 vector2(554.72772216797, -207.07929992676),
                 vector2(555.02447509766, -164.50259399414)
             },
-            ['minZ'] = 51.0,
-            ['maxZ'] = 56.0,
+            ['minZ'] = 52.0,
+            ['maxZ'] = 55.0,
             ['size'] = 3.10, -- size of the vehicles zones
         },
         ['Job'] = 'autoex', -- Name of job or none
