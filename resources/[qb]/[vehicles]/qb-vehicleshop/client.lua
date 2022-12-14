@@ -209,7 +209,8 @@ function createFreeUseShop(shopShape, name)
     local zone = PolyZone:Create(shopShape, {
         name = name,
         minZ = shopShape.minZ,
-        maxZ = shopShape.maxZ
+        maxZ = shopShape.maxZ,
+        debugPoly = true
     })
 
     zone:onPlayerInOut(function(isPointInside)
@@ -279,7 +280,8 @@ function createManagedShop(shopShape, name)
     local zone = PolyZone:Create(shopShape, {
         name = name,
         minZ = shopShape.minZ,
-        maxZ = shopShape.maxZ
+        maxZ = shopShape.maxZ,
+        debugPoly = true
     })
 
     zone:onPlayerInOut(function(isPointInside)

@@ -78,7 +78,7 @@ Config.Shops = {
             },
             ['minZ'] = 25.0, -- min height of the shop zone
             ['maxZ'] = 28.0, -- max height of the shop zone
-            ['size'] = 3.10 -- size of the vehicles zones
+            ['size'] = 3.10, -- size of the vehicles zones
         },
         ['Job'] = 'none', -- Name of job or none
         ['ShopLabel'] = 'Premium Deluxe Motorsport', -- Blip name
@@ -106,28 +106,28 @@ Config.Shops = {
         ['ShowroomVehicles'] = {
             [1] = {
                 coords = vector4(-37.27, -1093.05, 26.3, 114.0), -- where the vehicle will spawn on display
-                defaultVehicle = 'adder', -- Default display vehicle
-                chosenVehicle = 'adder', -- Same as default but is dynamically changed when swapping vehicles
+                defaultVehicle = 'gs350', -- Default display vehicle
+                chosenVehicle = 'gs350', -- Same as default but is dynamically changed when swapping vehicles
             },
             [2] = {
                 coords = vector4(-50.03, -1083.83, 26.3, 148.41),
-                defaultVehicle = 'schafter2',
-                chosenVehicle = 'schafter2'
+                defaultVehicle = 'rogue20',
+                chosenVehicle = 'rogue20'
             },
             [3] = {
                 coords = vector4(-47.61, -1092.15, 26.3, 188.34),
-                defaultVehicle = 'comet2',
-                chosenVehicle = 'comet2'
+                defaultVehicle = 'camry18',
+                chosenVehicle = 'camry18'
             },
             [4] = {
                 coords = vector4(-42.19, -1101.35, 26.3, 284.51),
-                defaultVehicle = 'vigero',
-                chosenVehicle = 'vigero'
+                defaultVehicle = 'golfmk6',
+                chosenVehicle = 'golfmk6'
             },
             [5] = {
                 coords = vector4(-54.48, -1096.71, 26.3, 293.13),
-                defaultVehicle = 't20',
-                chosenVehicle = 't20'
+                defaultVehicle = 'mgt',
+                chosenVehicle = 'mgt'
             }
         },
     },
@@ -144,7 +144,7 @@ Config.Shops = {
             },
             ['minZ'] = 53.68,
             ['maxZ'] = 68.68,
-            ['size'] = 3.10 -- size of the vehicles zones
+            ['size'] = 3.10, -- size of the vehicles zones
         },
         ['Job'] = 'cardealer', -- Name of job or none
         ['ShopLabel'] = 'Luxury Vehicle Shop',
@@ -193,14 +193,17 @@ Config.Shops = {
         ['Type'] = 'managed', -- meaning a real player has to sell the car
         ['Zone'] = {
             ['Shape'] = {
-                vector2(155.59687805176, -3005.9916992188),
-                vector2(153.72784423828, -3060.9196777344),
-                vector2(119.30592346191, -3061.1154785156),
-                vector2(118.74111175537, -3006.5832519531)
+                vector2(168.02301025391, -2986.8251953125),
+                vector2(117.77265167236, -2986.6220703125),
+                vector2(117.36042785645, -3063.1667480469),
+                vector2(158.59242248535, -3063.7145996094),
+                vector2(159.15975952148, -3039.626953125),
+                vector2(170.44087219238, -3039.0419921875),
+                vector2(170.58726501465, -3019.7094726562)
             },
-            ['minZ'] = 7.0408926010132,
-            ['maxZ'] = 25.392038345337,
-            ['size'] = 3.10 -- size of the vehicles zones
+            ['minZ'] = 5.0,
+            ['maxZ'] = 10.0,
+            ['size'] = 3.10, -- size of the vehicles zones
         },
         ['Job'] = 'tuner', -- Name of job or none
         ['ShopLabel'] = 'Tuner Shop',
@@ -229,14 +232,17 @@ Config.Shops = {
         ['Type'] = 'managed', -- meaning a real player has to sell the car
         ['Zone'] = {
             ['Shape'] = {
-                vector2(811.25445556641, -803.59100341797),
-                vector2(794.06103515625, -804.32342529297),
-                vector2(794.92523193359, -832.53021240234),
-                vector2(810.78930664062, -832.33093261719)
+                vector2(794.24993896484, -795.49542236328),
+                vector2(794.23571777344, -832.99835205078),
+                vector2(843.94378662109, -832.90350341797),
+                vector2(849.31280517578, -830.26507568359),
+                vector2(851.01434326172, -816.85656738281),
+                vector2(850.13079833984, -813.33471679688),
+                vector2(841.1630859375, -795.37799072266)
             },
-            ['minZ'] = 26.185426712036,
-            ['maxZ'] = 37.086387634277,
-            ['size'] = 3.10 -- size of the vehicles zones
+            ['minZ'] = 22.0,
+            ['maxZ'] = 28.0,
+            ['size'] = 3.10, -- size of the vehicles zones
         },
         ['Job'] = 'ottos', -- Name of job or none
         ['ShopLabel'] = 'Ottos Autos',
@@ -257,8 +263,8 @@ Config.Shops = {
         ['ShowroomVehicles'] = {
             [1] = {
                 coords = vector4(808.23, -811.91, 26.18, 88.19),
-                defaultVehicle = 'r33hr',
-                chosenVehicle = 'r33hr'
+                defaultVehicle = 'daisx',
+                chosenVehicle = 'daisx'
             },
         }
     }, -- Add your next table under this comma
@@ -275,7 +281,7 @@ Config.Shops = {
             },
             ['minZ'] = 50.669570922852,
             ['maxZ'] = 64.994766235352,
-            ['size'] = 3.10 -- size of the vehicles zones
+            ['size'] = 3.10, -- size of the vehicles zones
         },
         ['Job'] = 'autoex', -- Name of job or none
         ['ShopLabel'] = 'Auto Exotics',
