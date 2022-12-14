@@ -11,6 +11,7 @@ QBShared.Vehicles = {
 		['category'] = 'compacts',
 		['hash'] = `asbo`,
 		['shop'] = 'pdm',
+		['tier'] = 'D',
 	},
 	['blista'] = {
 		['name'] = 'Blista',
@@ -20,6 +21,7 @@ QBShared.Vehicles = {
 		['category'] = 'compacts',
 		['hash'] = `blista`,
 		['shop'] = 'pdm',
+		['tier'] = 'D',
 	},
 	['brioso'] = {
 		['name'] = 'Brioso R/A',
@@ -56,6 +58,7 @@ QBShared.Vehicles = {
 		['category'] = 'compacts',
 		['hash'] = `kanjo`,
 		['shop'] = 'pdm',
+		['tier'] = 'D',
 	},
 	['issi2'] = {
 		['name'] = 'Issi',
@@ -119,6 +122,7 @@ QBShared.Vehicles = {
 		['category'] = 'compacts',
 		['hash'] = `weevil`,
 		['shop'] = 'pdm',
+		['tier'] = 'D',
 	},
 	--- Coupes
 	['cogcabrio'] = {
@@ -789,6 +793,7 @@ QBShared.Vehicles = {
 		['category'] = 'muscle',
 		['hash'] = `coquette3`,
 		['shop'] = 'pdm',
+		['tier'] = 'C',
 	},
 	['deviant'] = {							--DLC
 		['name'] = 'Deviant',
@@ -834,6 +839,7 @@ QBShared.Vehicles = {
 		['category'] = 'muscle',
 		['hash'] = `dominator7`,
 		['shop'] = 'pdm',
+		['tier'] = 'A',
 	},
 	['dominator8'] = {							--DLC +set sv_enforceGameBuild 2372
 		['name'] = 'Dominator GTT',
@@ -861,6 +867,7 @@ QBShared.Vehicles = {
 		['category'] = 'muscle',
 		['hash'] = `dukes3`,
 		['shop'] = 'pdm',
+		['tier'] = 'C',
 	},
 	['faction'] = {
 		['name'] = 'Faction',
@@ -1140,6 +1147,7 @@ QBShared.Vehicles = {
 		['category'] = 'muscle',
 		['hash'] = `tulip`,
 		['shop'] = 'pdm',
+		['tier'] = 'C',
 	},
 	['vamos'] = {							--DLC
 		['name'] = 'Vamos',
@@ -2016,7 +2024,8 @@ QBShared.Vehicles = {
 		['price'] = 145000,
 		['category'] = 'sports',
 		['hash'] = `elegy`,
-		['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+		['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',},
+		['tier'] = 'A',
 	},
 	['elegy2'] = {
 		['name'] = 'Elegy RH8',
@@ -2061,7 +2070,8 @@ QBShared.Vehicles = {
 		['price'] = 55000,
 		['category'] = 'sports',
 		['hash'] = `komoda`,
-		['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+		['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',},
+		['tier'] = 'A',
 	},
 	['italigto'] = {							--DLC
 		['name'] = 'Itali GTO',
@@ -3298,6 +3308,7 @@ QBShared.Vehicles = {
 		['category'] = 'pimports',
 		['hash'] = `golfmk6`,
 		['shop'] = 'pdm',
+		['tier'] = 'B',
 	},
 	['sienna'] = {
 		['name'] = 'Sienna',
@@ -3397,6 +3408,7 @@ QBShared.Vehicles = {
 		['category'] = 'pimports',
 		['hash'] = `accord20`,
 		['shop'] = 'pdm',
+		['tier'] = 'B',
 	},
 	['taki428'] = {
 		['name'] = '1969 GT500',
@@ -3442,6 +3454,7 @@ QBShared.Vehicles = {
 		['category'] = 'pimports',
 		['hash'] = `mustang65`,
 		['shop'] = 'pdm',
+		['tier'] = 'C',
 	},
 	['mgt'] = {
 		['name'] = '2018 Mustang',
@@ -3478,6 +3491,7 @@ QBShared.Vehicles = {
 		['category'] = 'pimports',
 		['hash'] = `69charger`,
 		['shop'] = 'pdm',
+		['tier'] = 'C',
 	},
 	['czr1'] = {
 		['name'] = '2019 CZR1',
@@ -4213,7 +4227,8 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `nis15`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',},
+		['tier'] = 'S',
     },
 	['m3e30'] = {
         ['name'] = 'M3 E30',
@@ -4726,7 +4741,9 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `nis13`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',},
+		['tier'] = 'A+',
+		
     },
 	['nisr32'] = {
         ['name'] = 'R32 Skyline',
