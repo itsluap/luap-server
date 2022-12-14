@@ -4206,6 +4206,15 @@ QBShared.Vehicles = {
         ['hash'] = `nis14`,
         ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
     },
+	['nis15'] = {
+        ['name'] = 'S15',
+        ['brand'] = 'Nissan',
+        ['model'] = 'nis15',
+        ['price'] = 120000,
+        ['category'] = 'tuner',
+        ['hash'] = `nis15`,
+        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+    },
 	['m3e30'] = {
         ['name'] = 'M3 E30',
         ['brand'] = 'BMW',
