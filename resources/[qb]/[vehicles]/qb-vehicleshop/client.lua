@@ -210,7 +210,7 @@ function createFreeUseShop(shopShape, name)
         name = name,
         minZ = shopShape.minZ,
         maxZ = shopShape.maxZ,
-        debugPoly = true
+        debugPoly = false,
     })
 
     zone:onPlayerInOut(function(isPointInside)
@@ -281,7 +281,7 @@ function createManagedShop(shopShape, name)
         name = name,
         minZ = shopShape.minZ,
         maxZ = shopShape.maxZ,
-        debugPoly = true
+        debugPoly = false,
     })
 
     zone:onPlayerInOut(function(isPointInside)
@@ -399,10 +399,8 @@ function Init()
                 FreezeEntityPosition(veh, true)
                 SetVehicleNumberPlateText(veh, 'BUY ME')
                 if Config.UsingTarget then createVehZones(k, veh) end
-                SetVehicleOnGroundProperly(veh)
             end
             if not Config.UsingTarget then createVehZones(k) end
-            SetVehicleOnGroundProperly(veh)
         end
     end)
 end
