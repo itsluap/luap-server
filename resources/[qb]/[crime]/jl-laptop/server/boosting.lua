@@ -46,7 +46,7 @@ local function Notify(src, text, type, time)
             Lang:t('boosting.info.phonenotify'),
             text,
             "fas fa-user-secret",
-            "#00008B",
+            "#ffffff",
             time
         )
     elseif Config.Boosting.Notifications == "npwd" then
