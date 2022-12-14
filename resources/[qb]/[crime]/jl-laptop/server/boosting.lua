@@ -828,15 +828,13 @@ CreateThread(function()
                         local ContractChance = math.random()
                         if Config.Boosting.Debug then
                             print(v.skipped)
-                            --print("crazy numbers")
                         end
                         -- If skipped is bigger or equal to 25 we give player a contract for waiting
                         -- Otherwise we say if they been in queue longer than 2-7 skips and their chance is higher than 0.75 (meaning 25% chance) we will reward them with a contract
-                        if v.skipped <= 25 --[[or (v.skipped >= math.random(2, 7) and ContractChance >= 0.75)--]] then
+                        if v.skipped >= 25 or (v.skipped >= math.random(2, 7) and ContractChance >= 0.75) then
+                            generateContract(v.src)
+                        else
                             -- v.skipped += 1
-                            generateContract(v.src)
-                        elseif v.skipped >= 26 then
-                            generateContract(v.src)
                         end
                     elseif #currentContracts[k] >= Config.Boosting.MaxBoosts then
                         v.active = false
