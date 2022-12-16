@@ -27,13 +27,46 @@
 -- 
 
 
-
+|| FINISH HEISTS ||
 || WEIGHT SYSTEM ||
 || DEFAULT KEYBINDS FOR EVERYTHING NEED TO MAKE SENSE AND NOT BE DOUBLED UP ||
 || FIGURE OUT WHERE RANDOM ARMOR IS COMING FROM ||
 
 
 || UPDATE ALL SCRIPTS BEFORE LAUNCH ||
+
+
+
+
+To Do:
+    - check if burgershot has boss management
+    - check how player owned businesses are going to work
+    - check shops around whole city
+    - gun stays in hand when phone is pulled out
+    - make sure criminal activities require police online (test all crime activities before this)
+    - fix heroin animation
+    - put in OkOkContract before launch
+HEISTS:
+    - Fleeca: where to get electronickit and trojan_usb, (good to go)
+    - Pacific: 
+    -
+Testing:
+    - apartments should be raidable now
+
+
+
+Final (Ready to Launch):
+    - UPGRADE ACTUAL SERVER ON LAUNCH
+    - add better admin menu (waiting for projectsloth release)
+    - add boosting script (waiting for kevinscripts release)
+    - add bowling script (waiting for gabz release)
+    - setup tebex -- can come after launch
+    - setup forums -- can come after launch
+    - fork branches of scripts so they update themselves
+    - when server goes live create devloper branch of luap-server
+    - make sure all scripts are updated (qbcore and project sloth)
+    - create new user guide - create control list - get discord ready
+    - create website - needs forums, applications, and tebex store
 
 
 
