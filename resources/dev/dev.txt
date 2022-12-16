@@ -41,8 +41,6 @@ Total Cost: $156
 
 
 
-
-
 Ideas:
     - give lockpicks durability?
     - ps-ui, gang influence areas

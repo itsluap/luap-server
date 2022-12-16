@@ -5,6 +5,7 @@
 -- make sure handling is balanced and good for racing and pd chases (updates can be worked on in dev server after launch)
 -- no broken headlights or taillights allowed (can launch with some broken headlights) (can be worked on in dev server after launch)
 -- no oversized vehicles (fix textures for every car)
+-- check how vehicle impounding works for police (dv'd cars go to impound but phone wont show that)
 -- mechanic shops and car dealerships 100% good to go (no bugs / everything working / prices)
 ===
 -- find a car that has no coronas and use the id for other cars (id 999 works for this) (use 1249 instead)
