@@ -10,6 +10,8 @@
 ===
 -- find a car that has no coronas and use the id for other cars (id 999 works for this) (use 1249 instead)
 -- some headlights are uneven (not crazy important)
+-- find a car that has perfect headlights (need 2 / one for white lights / one for yellow lights) and make it its own resource and start it before normal car pack
+-- ^^ then make all cars follow the respective light id (white or yellow) ^^
 ===
 
 
