@@ -19,13 +19,18 @@
 -- no broken clothing
 -- no 100k clothing but some gang clothing
 -- male AND female clothing
+-- only way to do clothing: rebuild in dutycloth (need to go through every single ydd in 'clothingpack' to check for textures, heels, hats)
+-- ^^ make sure to check for skin data ^^
+-- ^^ check for bugs / crashes ^^ remove broken / duplicate files ^^
+-- ^^ delete un-needed police clothing if possible ^^
+-- ^^ double check okayed files for heels and skin data ^^
 -- 
 
 
 
 || WEIGHT SYSTEM ||
 || DEFAULT KEYBINDS FOR EVERYTHING NEED TO MAKE SENSE AND NOT BE DOUBLED UP ||
-
+|| FIGURE OUT WHERE RANDOM ARMOR IS COMING FROM ||
 
 
 || UPDATE ALL SCRIPTS BEFORE LAUNCH ||
