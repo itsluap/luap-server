@@ -1,15 +1,15 @@
 
 || VEHICLES ||
 
--- choose which cars to put in server for launch (keep every car in dev server)
--- make sure handling is balanced and good for racing and pd chases (can be worked on in dev server)
--- no broken headlights or taillights allowed (can be worked on in dev server)
--- no oversized vehicles (fix textures)
--- mechanic shops and car dealerships 100% good to go
--- Boosting: wait for better boosting script OR try to keep building my own
-
+-- choose which cars to put in server for launch (make sure to clean out cars not being used) (keep every car in dev server)
+-- make sure handling is balanced and good for racing and pd chases (updates can be worked on in dev server after launch)
+-- no broken headlights or taillights allowed (can launch with some broken headlights) (can be worked on in dev server after launch)
+-- no oversized vehicles (fix textures for every car)
+-- mechanic shops and car dealerships 100% good to go (no bugs / everything working / prices)
+===
 -- find a car that has no coronas and use the id for other cars (id 999 works for this) (use 1249 instead)
 -- some headlights are uneven (not crazy important)
+===
 
 
 
@@ -26,12 +26,12 @@
 -- ^^ double check okayed files for heels and skin data ^^
 -- 
 
-
+===
 || FINISH HEISTS ||
 || WEIGHT SYSTEM ||
 || DEFAULT KEYBINDS FOR EVERYTHING NEED TO MAKE SENSE AND NOT BE DOUBLED UP ||
 || FIGURE OUT WHERE RANDOM ARMOR IS COMING FROM ||
-
+===
 
 || UPDATE ALL SCRIPTS BEFORE LAUNCH ||
 
