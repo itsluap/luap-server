@@ -19,6 +19,9 @@ For Vehicles From Hashiyara:
     - L2 cars are S 
     - L1 cars are A+
 
+Gangs:
+    - Families
+
 Other:
     - steal players from other servers (give out a beta test reward) NEED A LOYAL TEAM - reach out to old fivem friends
     - go through and remove unneeded commands (search all server files)
@@ -35,3 +38,12 @@ Server Cost:
     - $6  for ticket tool premium
     -
 Total Cost: $156
+
+
+
+Ideas:
+    - give lockpicks durability?
+    - ps-ui, gang influence areas
+    - add durability to ifak - not native, need to write this
+    - add drug buffs / ps-buffs
+    - cant clear calls from dispatch in mdt / write this myself or add as suggestion in ps discord

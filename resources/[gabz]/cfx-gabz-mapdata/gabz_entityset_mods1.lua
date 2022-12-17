@@ -302,10 +302,10 @@ local interiors = {
         ipl = 'gabz_mba_milo_', --enable all of the entitySets below if you want BASKETBALL
         coords = { x = -324.22030000, y = -1968.49300000, z = 20.60336000 },
         entitySets = {
-            --{ name = 'mba_tribune', enable = true },
-            --{ name = 'mba_tarps', enable = true },
-            --{ name = 'mba_basketball', enable = true },
-            --{ name = 'mba_jumbotron', enable = true },
+            { name = 'mba_tribune', enable = true },
+            { name = 'mba_tarps', enable = true },
+            { name = 'mba_basketball', enable = true },
+            { name = 'mba_jumbotron', enable = true },
         }
     },
     {
@@ -376,11 +376,11 @@ local interiors = {
         ipl = 'gabz_mba_milo_', --enable all of the entitySets below if you want MMA
         coords = { x = -324.22030000, y = -1968.49300000, z = 20.60336000 },
         entitySets = {
-            { name = 'mba_tribune', enable = true },
-            { name = 'mba_tarps', enable = true },
-            { name = 'mba_fighting', enable = true },
-            { name = 'mba_mma', enable = true },
-            { name = 'mba_jumbotron', enable = true },
+            --{ name = 'mba_tribune', enable = true },
+            --{ name = 'mba_tarps', enable = true },
+            --{ name = 'mba_fighting', enable = true },
+            --{ name = 'mba_mma', enable = true },
+            --{ name = 'mba_jumbotron', enable = true },
         }
     },
     {
