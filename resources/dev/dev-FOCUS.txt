@@ -1,4 +1,12 @@
 
+|| PRIORITY ||
+-- finish clothing
+-- finish vehicle handling
+-- finish heists / crime
+-- start figuring out how businesses / government agencies are going to operate
+
+
+
 || VEHICLES ||
 
 -- choose which cars to put in server for launch (make sure to clean out cars not being used) (keep every car in dev server)
