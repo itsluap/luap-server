@@ -3625,6 +3625,15 @@ QBShared.Vehicles = {
         ['hash'] = `manssupersnake`,
         ['shop'] = 'luap',
     },
+	['cz4a'] = {
+        ['name'] = 'Evo X',
+        ['brand'] = 'Mitsubishi',
+        ['model'] = 'cz4a',
+        ['price'] = 1000000,
+        ['category'] = 'muscle',
+        ['hash'] = `cz4a`,
+        ['shop'] = 'luap',
+    },
 
 	----------------------------------------
 	
