@@ -4,26 +4,21 @@
 -- finish vehicle handling
 -- finish heists / crime
 -- start figuring out how businesses / government agencies are going to operate
-
-
+====
 
 || VEHICLES ||
-
 -- choose which cars to put in server for launch (make sure to clean out cars not being used) (keep every car in dev server)
 -- make sure handling is balanced and good for racing and pd chases (updates can be worked on in dev server after launch)
 -- no broken headlights or taillights allowed (can launch with some broken headlights) (can be worked on in dev server after launch)
 -- no oversized vehicles (fix textures for every car)
 -- check how vehicle impounding works for police (dv'd cars go to impound but phone wont show that)
 -- mechanic shops and car dealerships 100% good to go (no bugs / everything working / prices)
-===
+====
 -- find a car that has no coronas and use the id for other cars (id 999 works for this) (use 1249 instead)
 -- some headlights are uneven (not crazy important)
 -- find a car that has perfect headlights (need 2 / one for white lights / one for yellow lights) and make it its own resource and start it before normal car pack
 -- ^^ then make all cars follow the respective light id (white or yellow) ^^
-===
-
-
-
+====
 
 || CLOTHING ||
 -- START WORKING ON THIS
@@ -36,18 +31,15 @@
 -- ^^ delete un-needed police clothing if possible ^^
 -- ^^ double check okayed files for heels and skin data ^^
 -- 
-
-===
+====
 || FINISH HEISTS ||
 || WEIGHT SYSTEM ||
 || DEFAULT KEYBINDS FOR EVERYTHING NEED TO MAKE SENSE AND NOT BE DOUBLED UP ||
 || FIGURE OUT WHERE RANDOM ARMOR IS COMING FROM ||
-===
-
+====
 || UPDATE ALL SCRIPTS BEFORE LAUNCH ||
-
-
-
+|| MAKE SURE DISCORD BOTS ARE WORKING BEFORE LAUNCH ||
+====
 
 To Do:
     - check if burgershot has boss management
@@ -63,8 +55,6 @@ HEISTS:
     -
 Testing:
     - apartments should be raidable now
-
-
 
 Final (Ready to Launch):
     - UPGRADE ACTUAL SERVER ON LAUNCH
