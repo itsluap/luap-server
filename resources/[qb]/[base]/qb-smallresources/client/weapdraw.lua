@@ -193,9 +193,7 @@ CreateThread(function()
 					HolsterVariant == 68 or
 					HolsterVariant == 71 or
 					HolsterVariant == 119 then
-					yesHolster = true 
-				else
-					yesHolster = false 
+					yesHolster = true
 				end
 				if yesHolster then
 					WearingHolster = true
