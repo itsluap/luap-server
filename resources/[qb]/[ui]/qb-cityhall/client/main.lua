@@ -196,6 +196,7 @@ local function deletePeds()
             DeletePed(current.pedHandle)
         end
     end
+    pedsSpawned = false
 end
 
 -- Events
@@ -214,27 +215,6 @@ end)
 
 RegisterNetEvent('QBCore:Player:SetPlayerData', function(val)
     PlayerData = val
-end)
-
-RegisterNetEvent('qb-menu:client:cityhall', function(data)
-    openMenu({
-        {
-            header = 'City Hall',
-            isMenuHeader = true 
-        },
-        {
-            header = 'Identity',
-            params = {
-                event = 'qb-menu:client:identitymenu'
-            }
-        },
-        {
-            header = 'Employment',
-            params = {
-                event = 'qb-menu:client:employmentmenu'
-            }
-        },
-    })
 end)
 
 RegisterNetEvent('qb-cityhall:client:getIds', function()
@@ -272,6 +252,7 @@ end)
 
 RegisterNUICallback('requestId', function(id, cb)
     local license = Config.Cityhalls[closestCityhall].licenses[id.type]
+    local cost = Config.Cityhalls[closestCityhall].licenses[id.type]
     if inRangeCityhall and license and id.cost == license.cost then
         TriggerServerEvent('qb-cityhall:server:requestId', id.type, closestCityhall)
         QBCore.Functions.Notify(('You have received your %s for $%s'):format(license.label, id.cost), 'success', 3500)

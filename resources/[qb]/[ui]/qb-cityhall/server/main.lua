@@ -9,6 +9,19 @@ local availableJobs = {
     ["hotdog"] = "Hot Dog Stand"
 }
 
+-- Exports
+
+local function AddCityJob(jobName, label)
+    if availableJobs[jobName] ~= nil then
+        return false, "already added"
+    else
+        availableJobs[jobName] = label
+        return true, "success"
+    end
+end
+
+exports('AddCityJob', AddCityJob)
+
 -- Functions
 
 local function giveStarterItems()
@@ -104,9 +117,9 @@ RegisterNetEvent('qb-cityhall:server:ApplyJob', function(job, cityhallCoords)
         return DropPlayer(source, "Attempted exploit abuse")
     end
     Player.Functions.SetJob(job, 0)
-    exports['qb-phone']:hireUser(job, Player.PlayerData.citizenid, 0)
     TriggerClientEvent('QBCore:Notify', src, Lang:t('info.new_job', {job = JobInfo.label}))
 end)
+
 RegisterNetEvent('qb-cityhall:server:getIDs', giveStarterItems)
 
 -- Commands

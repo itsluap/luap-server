@@ -95,6 +95,7 @@ Stores = {
 			-- { name = "bprooftires", price = 200, amount = 50, info = {}, type = "item", },
 			{ name = "drifttires", price = 450, amount = 50, info = {}, type = "item", },
 			{ name = "nos", price = 1250, amount = 50, info = {}, type = "item", },
+			{ name = "harness", price = 150, amount = 100, info = {}, type = "item", },
 		},
 	},
 	StoreItems = {
