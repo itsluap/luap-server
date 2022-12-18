@@ -3630,11 +3630,29 @@ QBShared.Vehicles = {
         ['brand'] = 'Mitsubishi',
         ['model'] = 'cz4a',
         ['price'] = 1000000,
-        ['category'] = 'muscle',
+        ['category'] = 'sports',
         ['hash'] = `cz4a`,
         ['shop'] = 'luap',
     },
-
+	-- king -- 
+	['navigator'] = {
+        ['name'] = 'Navigator',
+        ['brand'] = 'Lincoln',
+        ['model'] = 'navigator',
+        ['price'] = 1000000,
+        ['category'] = 'sports',
+        ['hash'] = `navigator`,
+        ['shop'] = 'king',
+    },
+	['rmodf40'] = {
+        ['name'] = 'F40',
+        ['brand'] = 'Ferrari',
+        ['model'] = 'rmodf40',
+        ['price'] = 1000000,
+        ['category'] = 'sports',
+        ['hash'] = `rmodf40`,
+        ['shop'] = 'king',
+    },
 	----------------------------------------
 	
 	-- luxury shop --
