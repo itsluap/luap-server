@@ -175,6 +175,19 @@ Config.Teleports = {
             drawText = '[E] Take Elevator Up'
         },
     },
+    -- investment elevator
+    [4] = {
+        [1] = {
+            coords = vector4(-70.97, -801.12, 44.23, 338.38),
+            ["AllowVehicle"] = false,
+            drawText = '[E] Elevator to Investment Office'
+        },
+        [2] = {
+            coords = vector4(-75.63, -827.06, 243.39, 60.16),
+            ["AllowVehicle"] = false,
+            drawText = '[E] Elevator Down'
+        },
+    },
 }
 
 Config.CarWash = { -- carwash
