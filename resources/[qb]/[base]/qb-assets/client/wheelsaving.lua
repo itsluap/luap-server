@@ -2,7 +2,7 @@ Citizen.CreateThread(function()
     local angle = 0.0
     local speed = 0.0
     while true do
-        Citizen.Wait(0)
+        Citizen.Wait(100)
         local veh = GetVehiclePedIsUsing(PlayerPedId())
         if DoesEntityExist(veh) then
             local tangle = GetVehicleSteeringAngle(veh)
