@@ -3634,6 +3634,24 @@ QBShared.Vehicles = {
         ['hash'] = `cz4a`,
         ['shop'] = 'luap',
     },
+	['topfoil'] = {
+        ['name'] = 'Evo IX Topfoil',
+        ['brand'] = 'Mitsubishi',
+        ['model'] = 'topfoil',
+        ['price'] = 1000000,
+        ['category'] = 'sports',
+        ['hash'] = `topfoil`,
+        ['shop'] = 'luap',
+    },
+	['gr86'] = {
+        ['name'] = 'GR86',
+        ['brand'] = 'Toyota',
+        ['model'] = 'gr86',
+        ['price'] = 1000000,
+        ['category'] = 'sports',
+        ['hash'] = `gr86`,
+        ['shop'] = 'luap',
+    },
 	-- king -- 
 	['navigator'] = {
         ['name'] = 'Navigator',
@@ -3652,6 +3670,16 @@ QBShared.Vehicles = {
         ['category'] = 'sports',
         ['hash'] = `rmodf40`,
         ['shop'] = 'king',
+    },
+	-- icey --
+	['bentayaga'] = {
+        ['name'] = 'Bentayaga',
+        ['brand'] = 'Bentley',
+        ['model'] = 'bentayaga',
+        ['price'] = 1000000,
+        ['category'] = 'sports',
+        ['hash'] = `bentayaga`,
+        ['shop'] = 'icey',
     },
 	----------------------------------------
 	
