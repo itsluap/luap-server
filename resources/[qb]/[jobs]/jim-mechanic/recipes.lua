@@ -71,6 +71,7 @@ Stores = {
 			{ name = "tint_supplies", price = 100, amount = 50, info = {}, type = "item", },
 			{ name = "underglow_controller", price = 150, amount = 50, info = {}, type = "item", },
 			{ name = "cleaningkit", price = 50, amount = 100, info = {}, type = "item", },
+			{ name = "harness", price = 150, amount = 100, info = {}, type = "item", },
 		},
 	},
 	PerformItems = {
