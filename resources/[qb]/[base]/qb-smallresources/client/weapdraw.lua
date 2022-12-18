@@ -181,18 +181,30 @@ CreateThread(function()
 				local HolsterVariant = GetPedDrawableVariation(ped, 7)
 
 				if HolsterVariant == 1 or
+					HolsterVariant == 2 or
+					HolsterVariant == 3 or
+					HolsterVariant == 5 or
 					HolsterVariant == 6 or
 					HolsterVariant == 8 or
 					HolsterVariant == 9 or
 					HolsterVariant == 56 or
+					HolsterVariant == 57 or
 					HolsterVariant == 58 or
+					HolsterVariant == 59 or
 					HolsterVariant == 60 or
+					HolsterVariant == 61 or
 					HolsterVariant == 62 or
+					HolsterVariant == 63 or
 					HolsterVariant == 64 or
+					HolsterVariant == 65 or
 					HolsterVariant == 66 or
+					HolsterVariant == 67 or
 					HolsterVariant == 68 or
+					HolsterVariant == 69 or
 					HolsterVariant == 71 or
-					HolsterVariant == 119 then
+					HolsterVariant == 72 or
+					HolsterVariant == 119 or
+					HolsterVariant == 120 then
 					WearingHolster = true
 				else
 					WearingHolster = false
