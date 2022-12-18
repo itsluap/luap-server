@@ -177,7 +177,7 @@ CreateThread(function()
 				loadAnimDict("reaction@intimidation@cop@unarmed")
 				loadAnimDict("rcmjosh4")
 				loadAnimDict("weapons@pistol@")
-				local yesHolster = false
+				--local yesHolster = false
 				local HolsterVariant = GetPedDrawableVariation(ped, 7)
 
 				if HolsterVariant == 1 or
@@ -193,9 +193,6 @@ CreateThread(function()
 					HolsterVariant == 68 or
 					HolsterVariant == 71 or
 					HolsterVariant == 119 then
-					yesHolster = true
-				end
-				if yesHolster then
 					WearingHolster = true
 				else
 					WearingHolster = false
