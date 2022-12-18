@@ -52,12 +52,16 @@ end)
 -----------------------
 
 RegisterCommand('createscene', function()
-    OpenMenu()
-    TriggerServerEvent("InteractSound_SV:PlayOnSource", "monkeyopening", 0.05)
+    if QBCore.Functions.HasPermission(source, 'admin') then
+        OpenMenu()
+        TriggerServerEvent("InteractSound_SV:PlayOnSource", "monkeyopening", 0.05)
+    end
 end, false)
 
 RegisterCommand('deletescene', function()
-    ToggleDeletionLaser()
+    if QBCore.Functions.HasPermission(source, 'admin') then   
+        ToggleDeletionLaser()
+    end
 end, false)
 
 RegisterNUICallback('CloseMenu', function(_, cb)
