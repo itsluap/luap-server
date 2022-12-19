@@ -159,30 +159,20 @@ RegisterNetEvent('qb-bossmenu:server:GradeUpdate', function(data)
 end)
 
 -- Fire Employee
-RegisterNetEvent('qb-bossmenu:server:FireEmployee', function(data)
+RegisterNetEvent('qb-bossmenu:server:FireEmployee', function(target)
 	local src = source
 	local Player = QBCore.Functions.GetPlayer(src)
-	local Employee = QBCore.Functions.GetPlayerByCitizenId(data.target)
-   
-	
+	local Employee = QBCore.Functions.GetPlayerByCitizenId(target)
+
 	if not Player.PlayerData.job.isboss then ExploitBan(src, 'FireEmployee Exploiting') return end
 
 	if Employee then
-		if data.target ~= Player.PlayerData.citizenid then
+		if target ~= Player.PlayerData.citizenid then
 			if Employee.PlayerData.job.grade.level > Player.PlayerData.job.grade.level then TriggerClientEvent('QBCore:Notify', src, "You cannot fire this citizen!", "error") return end
 			if Employee.Functions.SetJob("unemployed", '0') then
 				TriggerEvent("qb-log:server:CreateLog", "bossmenu", "Job Fire", "red", Player.PlayerData.charinfo.firstname .. " " .. Player.PlayerData.charinfo.lastname .. ' successfully fired ' .. Employee.PlayerData.charinfo.firstname .. " " .. Employee.PlayerData.charinfo.lastname .. " (" .. Player.PlayerData.job.name .. ")", false)
 				TriggerClientEvent('QBCore:Notify', src, "Employee fired!", "success")
 				TriggerClientEvent('QBCore:Notify', Employee.PlayerData.source , "You have been fired! Good luck.", "error")
-				MySQL.query('DELETE FROM `player_jobs` WHERE `cid` = ? and `job` = ?', {data.target, data.job})
-				
-				local cid = Employee.PlayerData.citizenid
-				local results =  MySQL.Sync.fetchAll('SELECT * FROM player_jobs_num  WHERE cid = @id', {["@id"] = cid })
-				for i = 1, #results, 1 do resultss = results[i].jobs end 
-				MySQL.Async.insert('UPDATE player_jobs_num SET jobs = @jobs WHERE cid = @cid', {
-				["@jobs"] = resultss - 1,
-				["@cid"] = cid
-			   })
 			else
 				TriggerClientEvent('QBCore:Notify', src, "Error..", "error")
 			end
@@ -190,7 +180,7 @@ RegisterNetEvent('qb-bossmenu:server:FireEmployee', function(data)
 			TriggerClientEvent('QBCore:Notify', src, "You can\'t fire yourself", "error")
 		end
 	else
-		local player = MySQL.query.await('SELECT * FROM players WHERE citizenid = ?', { data.target })
+		local player = MySQL.query.await('SELECT * FROM players WHERE citizenid = ? LIMIT 1', { target })
 		if player[1] ~= nil then
 			Employee = player[1]
 			Employee.job = json.decode(Employee.job)
@@ -204,7 +194,7 @@ RegisterNetEvent('qb-bossmenu:server:FireEmployee', function(data)
 			job.grade = {}
 			job.grade.name = nil
 			job.grade.level = 0
-			MySQL.update('UPDATE players SET job = ? WHERE citizenid = ?', { json.encode(job), data.target })
+			MySQL.update('UPDATE players SET job = ? WHERE citizenid = ?', { json.encode(job), target })
 			TriggerClientEvent('QBCore:Notify', src, "Employee fired!", "success")
 			TriggerEvent("qb-log:server:CreateLog", "bossmenu", "Job Fire", "red", Player.PlayerData.charinfo.firstname .. " " .. Player.PlayerData.charinfo.lastname .. ' successfully fired ' .. Employee.PlayerData.charinfo.firstname .. " " .. Employee.PlayerData.charinfo.lastname .. " (" .. Player.PlayerData.job.name .. ")", false)
 		else
@@ -213,6 +203,7 @@ RegisterNetEvent('qb-bossmenu:server:FireEmployee', function(data)
 	end
 	TriggerClientEvent('qb-bossmenu:client:OpenMenu', src)
 end)
+
 
 -- Recruit Player
 RegisterNetEvent('qb-bossmenu:server:HireEmployee', function(recruit)
