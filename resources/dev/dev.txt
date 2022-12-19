@@ -11,7 +11,7 @@ Notes:
     - drug effects are in qb-smallresources (consumables)
     - set light ids to unique id (cant be above 1013)
     - clothing has to be for mp male or female (no franklin)
-    - 
+    - duct tape is the publics repair kit (repair kits are admin only)
 
 For Vehicles From Hashiyara:
     - L3 cars are S+
