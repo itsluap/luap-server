@@ -1574,6 +1574,29 @@ Garages = {
         },
         debug = false
     },
+    ['ottosparking'] = {
+        ['Zone'] = {
+            ['Shape'] = { --polygon that surrounds the parking area
+            vector2(828.15747070312, -784.51611328125),
+            vector2(834.92321777344, -797.42321777344),
+            vector2(840.84375, -794.63732910156),
+            vector2(834.34924316406, -781.75732421875)
+            },
+            ['minZ'] = 26.0,  -- min height of the parking zone
+            ['maxZ'] = 29.0,  -- max height of the parking zone
+        },
+        label = 'Otto\'s Auto Parking',
+        type = 'public',
+        vehicleCategories = {'car', 'motorcycle', 'other'},
+        drawText = 'Parking',
+        ["ParkingSpots"] = {
+            vector4(832.02, -785.34, 26.27, 115.0),
+            vector4(833.37, -788.34, 26.29, 116.96),
+            vector4(834.97, -791.28, 26.29, 110.62),
+            vector4(836.57, -794.34, 26.28, 114.73),
+        },
+        debug = false
+    },
     ['pdfront'] = {
         ['Zone'] = {
             ['Shape'] = { --polygon that surrounds the parking area
