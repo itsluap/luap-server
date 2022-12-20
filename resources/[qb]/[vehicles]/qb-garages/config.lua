@@ -1582,8 +1582,8 @@ Garages = {
             vector2(840.84375, -794.63732910156),
             vector2(834.34924316406, -781.75732421875)
             },
-            ['minZ'] = 26.0,  -- min height of the parking zone
-            ['maxZ'] = 29.0,  -- max height of the parking zone
+            ['minZ'] = 25.0,  -- min height of the parking zone
+            ['maxZ'] = 28.0,  -- max height of the parking zone
         },
         label = 'Otto\'s Auto Parking',
         type = 'public',
@@ -1594,6 +1594,32 @@ Garages = {
             vector4(833.37, -788.34, 26.29, 116.96),
             vector4(834.97, -791.28, 26.29, 110.62),
             vector4(836.57, -794.34, 26.28, 114.73),
+        },
+        debug = false
+    },
+    ['tunerparking'] = {
+        ['Zone'] = {
+            ['Shape'] = { --polygon that surrounds the parking area
+            vector2(158.95318603516, -2987.9284667969),
+            vector2(168.77340698242, -2987.7829589844),
+            vector2(168.78182983398, -3011.70703125),
+            vector2(159.05805969238, -3011.57421875)
+            },
+            ['minZ'] = 5.0,  -- min height of the parking zone
+            ['maxZ'] = 8.0,  -- max height of the parking zone
+        },
+        label = 'Tuner Shop Parking',
+        type = 'public',
+        vehicleCategories = {'car', 'motorcycle', 'other'},
+        drawText = 'Parking',
+        ["ParkingSpots"] = {
+            vector4(163.22, -3009.42, 5.94, 268.83),
+            vector4(163.22, -3006.22, 5.94, 269.99),
+            vector4(163.22, -3002.99, 5.94, 267.84),
+            vector4(163.22, -2996.33, 5.93, 268.68),
+            vector4(163.22, -2993.19, 5.94, 267.47),
+            vector4(163.22, -2989.94, 5.92, 267.49)
+
         },
         debug = false
     },
