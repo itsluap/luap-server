@@ -8,7 +8,6 @@
 
 || VEHICLES ||
 -- choose which cars to put in server for launch (make sure to clean out cars not being used) (keep every car in dev server)
--- make sure handling is balanced and good for racing and pd chases (updates can be worked on in dev server after launch)
 -- no broken headlights or taillights allowed (can launch with some broken headlights) (can be worked on in dev server after launch)
 -- no oversized vehicles (fix textures for every car)
 -- check how vehicle impounding works for police (dv'd cars go to impound but phone wont show that)
@@ -32,8 +31,8 @@
 -- ^^ double check okayed files for heels and skin data ^^
 -- 
 ====
-|| FINISH HEISTS ||
-|| WEIGHT SYSTEM ||
+|| FINISH HEISTS || BUY PACIFIC AND PALETO HEISTS ||
+|| WEIGHT SYSTEM || DOUBLE CHECK THIS ||
 || UPGRADE CASINO SCRIPT ||
 || DEFAULT KEYBINDS FOR EVERYTHING NEED TO MAKE SENSE AND NOT BE DOUBLED UP ||
 || FIGURE OUT WHERE RANDOM ARMOR IS COMING FROM ||
