@@ -36,7 +36,7 @@ config = {
         },
         [8] = {
             model = 'u_m_m_bankman',
-            coords = vector4(-112.22, 6471.01, 31.63, 134.18)
+            coords = vector4(-109.13, 6471.71, 31.63, 224.65)
         }
     }
 }
