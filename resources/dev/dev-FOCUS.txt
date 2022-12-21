@@ -10,7 +10,6 @@
 -- choose which cars to put in server for launch (make sure to clean out cars not being used) (keep every car in dev server)
 -- no broken headlights or taillights allowed (can launch with some broken headlights) (can be worked on in dev server after launch)
 -- no oversized vehicles (fix textures for every car)
--- check how vehicle impounding works for police (dv'd cars go to impound but phone wont show that)
 -- mechanic shops and car dealerships 100% good to go (no bugs / everything working / prices)
 ====
 -- find a car that has no coronas and use the id for other cars (id 999 works for this) (use 1249 instead)
@@ -20,10 +19,7 @@
 ====
 
 || CLOTHING ||
--- START WORKING ON THIS
 -- no broken clothing
--- no 100k clothing but some gang clothing
--- male AND female clothing
 -- only way to do clothing: rebuild in dutycloth (need to go through every single ydd in 'clothingpack' to check for textures, heels, hats)
 -- ^^ make sure to check for skin data ^^
 -- ^^ check for bugs / crashes ^^ remove broken / duplicate files ^^
@@ -44,11 +40,8 @@
 
 To Do:
     - check if burgershot has boss management
-    - check how player owned businesses are going to work
     - check shops around whole city
-    - gun stays in hand when phone is pulled out
     - make sure criminal activities require police online (test all crime activities before this)
-    - fix heroin animation
     - put in OkOkContract before launch
 HEISTS:
     - Fleeca: where to get electronickit and trojan_usb, (good to go)
@@ -56,6 +49,9 @@ HEISTS:
     -
 Testing:
     - apartments should be raidable now
+
+
+
 
 Final (Ready to Launch):
     - UPGRADE ACTUAL SERVER ON LAUNCH
@@ -69,6 +65,7 @@ Final (Ready to Launch):
     - make sure all scripts are updated (qbcore and project sloth)
     - create new user guide - create control list - get discord ready
     - create website - needs forums, applications, and tebex store
+    - fix heroin animation
 
 
 
