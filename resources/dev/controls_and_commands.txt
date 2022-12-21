@@ -1,3 +1,5 @@
+Controls:
+
 ~ - cycle proximity chat range
 F1 - Radial Menu
 F6 - Stance Menu (make rules for this)
@@ -16,3 +18,13 @@ In Vehicle:
 G - Engine On/Off
 B - Seatbelt
 U - Open Car Radio
+
+
+
+
+
+
+Commands:
+/grantlicense (for weapon license and driver license) (police command)
+/refreshskin (refresh skin to last outfit)
+/emotemenu (open emote menu)

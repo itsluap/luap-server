@@ -1,10 +1,9 @@
-
-|| PRIORITY ||
+WORKKKKKK:
 -- finish clothing
--- finish vehicle handling
 -- finish heists / crime
--- start figuring out how businesses / government agencies are going to operate
-====
+-- weight system
+-- test as much in server as possible
+
 
 || VEHICLES ||
 -- choose which cars to put in server for launch (make sure to clean out cars not being used) (keep every car in dev server)
@@ -28,7 +27,6 @@
 -- 
 ====
 || FINISH HEISTS || BUY PACIFIC AND PALETO HEISTS ||
-|| WEIGHT SYSTEM || DOUBLE CHECK THIS ||
 || UPGRADE CASINO SCRIPT ||
 || DEFAULT KEYBINDS FOR EVERYTHING NEED TO MAKE SENSE AND NOT BE DOUBLED UP ||
 || FIGURE OUT WHERE RANDOM ARMOR IS COMING FROM ||
@@ -50,22 +48,6 @@ HEISTS:
 Testing:
     - apartments should be raidable now
 
-
-
-
-Final (Ready to Launch):
-    - UPGRADE ACTUAL SERVER ON LAUNCH
-    - add better admin menu (waiting for projectsloth release)
-    - add boosting script (waiting for kevinscripts release)
-    - add bowling script (waiting for gabz release)
-    - setup tebex -- can come after launch
-    - setup forums -- can come after launch
-    - fork branches of scripts so they update themselves
-    - when server goes live create devloper branch of luap-server
-    - make sure all scripts are updated (qbcore and project sloth)
-    - create new user guide - create control list - get discord ready
-    - create website - needs forums, applications, and tebex store
-    - fix heroin animation
 
 
 
