@@ -3691,7 +3691,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `amgone`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['rmodlfa'] = {
         ['name'] = 'Lexus LFA',
@@ -3700,7 +3700,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `rmodlfa`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['ghoulcharger'] = {
         ['name'] = 'Ghoul Charger',
@@ -3709,7 +3709,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `ghoulcharger`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['dredurango'] = {
         ['name'] = 'SRT Durango',
@@ -3718,7 +3718,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `dredurango`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['lc100'] = {
         ['name'] = 'Land Cruiser',
@@ -3727,7 +3727,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `lc100`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['lp670'] = {
         ['name'] = 'LP670',
@@ -3736,7 +3736,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `lp670`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['rmodcamaro'] = {
         ['name'] = '2020 Camaro ZL1',
@@ -3745,7 +3745,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `rmodcamaro`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['forgt50020'] = {
         ['name'] = '2020 Shelby GT500',
@@ -3754,7 +3754,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `forgt50020`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['rmodmustang'] = {
         ['name'] = '2015 Mustang GT Widebody',
@@ -3763,7 +3763,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `rmodmustang`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['fxxkevo'] = {
         ['name'] = 'FXXK Evo',
@@ -3772,7 +3772,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `fxxkevo`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['rmodmk7'] = {
         ['name'] = 'Golf MK7',
@@ -3781,7 +3781,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `rmodmk7`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['tr22'] = {
         ['name'] = '2022 Roadster',
@@ -3790,7 +3790,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `tr22`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['teslax'] = {
         ['name'] = 'Model X',
@@ -3799,7 +3799,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `teslax`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['mbc63'] = {
         ['name'] = 'C63 AMG',
@@ -3808,7 +3808,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `mbc63`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['gxg63'] = {
         ['name'] = 'G63 AMG',
@@ -3817,7 +3817,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `gxg63`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['carsonsgls600'] = {
         ['name'] = 'GLS600',
@@ -3826,7 +3826,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `carsonsgls600`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['carsonsgls600'] = {
         ['name'] = 'GLS600',
@@ -3835,7 +3835,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `carsonsgls600`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['s63mansory18'] = {
         ['name'] = 'S63 Mansory',
@@ -3844,7 +3844,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `s63mansory18`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['rcf'] = {
         ['name'] = 'RCF',
@@ -3853,7 +3853,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `rcf`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['rcf'] = {
         ['name'] = 'RCF',
@@ -3862,7 +3862,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `rcf`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['carsons392scat'] = {
         ['name'] = 'Scatpack Challenger',
@@ -3871,7 +3871,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `carsons392scat`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['drescatpack'] = {
         ['name'] = 'Scatpack Charger',
@@ -3880,7 +3880,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `drescatpack`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['demon'] = {
         ['name'] = '2018 Demon',
@@ -3889,7 +3889,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `demon`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['gtam21'] = {
         ['name'] = '2021 Giulia',
@@ -3898,7 +3898,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `gtam21`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['audirs6tk'] = {
         ['name'] = '2014 RS6',
@@ -3907,7 +3907,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `audirs6tk`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['aventador'] = {
         ['name'] = 'Aventador',
@@ -3916,7 +3916,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `aventador`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['q60pbs'] = {
         ['name'] = 'Q60',
@@ -3925,7 +3925,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `q60pbs`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['xnsgt'] = {
         ['name'] = 'Venom GT',
@@ -3934,7 +3934,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `xnsgt`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['turbo33'] = {
         ['name'] = '33 Turbo',
@@ -3943,7 +3943,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `turbo33`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['turbo33'] = {
         ['name'] = '33 Turbo',
@@ -3952,7 +3952,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `turbo33`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['pts21'] = {
         ['name'] = '911 Turbo S',
@@ -3961,7 +3961,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `pts21`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['pts21'] = {
         ['name'] = '911 Turbo S',
@@ -3970,7 +3970,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `pts21`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['rmoddarki8'] = {
         ['name'] = 'BMW I8',
@@ -3979,7 +3979,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `rmoddarki8`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['rmodm8c'] = {
         ['name'] = 'I8',
@@ -3988,7 +3988,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `rmodm8c`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['m4comp'] = {
         ['name'] = 'M4 Competition',
@@ -3997,7 +3997,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `m4comp`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['rmode63s'] = {
         ['name'] = 'E63 S',
@@ -4006,7 +4006,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `rmode63s`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['carsonshellgtr'] = {
         ['name'] = 'Drag R34 Skyline',
@@ -4015,7 +4015,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `carsonshellgtr`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['drettgallardo2'] = {
         ['name'] = 'Drag Gallardo',
@@ -4024,7 +4024,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `drettgallardo2`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['mustanggtr3'] = {
         ['name'] = 'Drag Mustang',
@@ -4033,7 +4033,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `mustanggtr3`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['drecamaross1'] = {
         ['name'] = 'Drag Camaro',
@@ -4042,7 +4042,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `drecamaross1`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['rrst'] = {
         ['name'] = 'RR Startech',
@@ -4051,7 +4051,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `rrst`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['rmodrover'] = {
         ['name'] = 'Mansory Range Rover',
@@ -4060,7 +4060,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `rmodrover`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['rmodg65'] = {
         ['name'] = 'G65 AMG',
@@ -4069,7 +4069,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `rmodg65`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['rmodgt63'] = {
         ['name'] = 'GT63 AMG',
@@ -4078,7 +4078,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `rmodgt63`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['rmodc63amg'] = {
         ['name'] = 'C63 AMG Widebody',
@@ -4087,7 +4087,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `rmodc63amg`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 
 	
@@ -4102,7 +4102,7 @@ QBShared.Vehicles = {
         ['price'] = 150000,
         ['category'] = 'tuner',
         ['hash'] = `z32midnight`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['subisti08'] = {
         ['name'] = '2008 STI',
@@ -4111,7 +4111,7 @@ QBShared.Vehicles = {
         ['price'] = 135000,
         ['category'] = 'tuner',
         ['hash'] = `subisti08`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['subwrx'] = {
         ['name'] = 'WRX',
@@ -4120,7 +4120,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `subwrx`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['ttrs'] = {
         ['name'] = 'TT RS',
@@ -4129,7 +4129,7 @@ QBShared.Vehicles = {
         ['price'] = 115000,
         ['category'] = 'tuner',
         ['hash'] = `ttrs`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['topsecretsupra'] = {
         ['name'] = 'Top Secret Supra',
@@ -4138,7 +4138,7 @@ QBShared.Vehicles = {
         ['price'] = 160000,
         ['category'] = 'tuner',
         ['hash'] = `topsecretsupra`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['tbkr33'] = {
         ['name'] = 'Midnight R33',
@@ -4147,7 +4147,7 @@ QBShared.Vehicles = {
         ['price'] = 150000,
         ['category'] = 'tuner',
         ['hash'] = `tbkr33`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['a80'] = {
         ['name'] = 'Supra MK4',
@@ -4156,7 +4156,7 @@ QBShared.Vehicles = {
         ['price'] = 127000,
         ['category'] = 'tuner',
         ['hash'] = `a80`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['mz3'] = {
         ['name'] = 'Speed 3',
@@ -4165,7 +4165,7 @@ QBShared.Vehicles = {
         ['price'] = 115000,
         ['category'] = 'tuner',
         ['hash'] = `mz3`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['lexsc300'] = {
         ['name'] = 'SC 300',
@@ -4174,7 +4174,7 @@ QBShared.Vehicles = {
         ['price'] = 140000,
         ['category'] = 'tuner',
         ['hash'] = `lexsc300`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['ap2'] = {
         ['name'] = 'S2000',
@@ -4183,7 +4183,7 @@ QBShared.Vehicles = {
         ['price'] = 132000,
         ['category'] = 'tuner',
         ['hash'] = `ap2`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['devilz'] = {
         ['name'] = 'Fairlady Z',
@@ -4192,7 +4192,7 @@ QBShared.Vehicles = {
         ['price'] = 140000,
         ['category'] = 'tuner',
         ['hash'] = `devilz`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['s15yokoi'] = {
         ['name'] = 'S15 Yokoi',
@@ -4201,7 +4201,7 @@ QBShared.Vehicles = {
         ['price'] = 165000,
         ['category'] = 'tuner',
         ['hash'] = `s15yokoi`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['s15worthouse'] = {
         ['name'] = 'S15 Worthouse',
@@ -4210,7 +4210,7 @@ QBShared.Vehicles = {
         ['price'] = 170000,
         ['category'] = 'tuner',
         ['hash'] = `s15worthouse`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['s15lbwk'] = {
         ['name'] = 'S15 Liberty Walk',
@@ -4219,7 +4219,7 @@ QBShared.Vehicles = {
         ['price'] = 185000,
         ['category'] = 'tuner',
         ['hash'] = `s15lbwk`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['s14boss'] = {
         ['name'] = 'S14 Boss',
@@ -4228,7 +4228,7 @@ QBShared.Vehicles = {
         ['price'] = 145000,
         ['category'] = 'tuner',
         ['hash'] = `s14boss`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['r35'] = {
         ['name'] = 'R35 GTR',
@@ -4237,7 +4237,7 @@ QBShared.Vehicles = {
         ['price'] = 185000,
         ['category'] = 'tuner',
         ['hash'] = `r35`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['nisgtsrr31'] = {
         ['name'] = 'GTSR Skyline',
@@ -4246,7 +4246,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `nisgtsrr31`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['nisgtsrr31'] = {
         ['name'] = 'GTSR Skyline',
@@ -4255,7 +4255,7 @@ QBShared.Vehicles = {
         ['price'] = 165000,
         ['category'] = 'tuner',
         ['hash'] = `nisgtsrr31`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['nis14'] = {
         ['name'] = 'S14',
@@ -4264,7 +4264,7 @@ QBShared.Vehicles = {
         ['price'] = 137000,
         ['category'] = 'tuner',
         ['hash'] = `nis14`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['nis15'] = {
         ['name'] = 'S15',
@@ -4273,7 +4273,7 @@ QBShared.Vehicles = {
         ['price'] = 137000,
         ['category'] = 'tuner',
         ['hash'] = `nis15`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',},
+        ['shop'] = {'tuner', 'ottos',  'autoex',},
 		['tier'] = 'S',
     },
 	['m3e30'] = {
@@ -4283,7 +4283,7 @@ QBShared.Vehicles = {
         ['price'] = 132000,
         ['category'] = 'tuner',
         ['hash'] = `m3e30`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['toy86'] = {
         ['name'] = 'GT 86',
@@ -4292,7 +4292,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `toy86`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['gsx'] = {
         ['name'] = 'GSX',
@@ -4301,7 +4301,7 @@ QBShared.Vehicles = {
         ['price'] = 137000,
         ['category'] = 'tuner',
         ['hash'] = `gsx`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['gc10'] = {
         ['name'] = '2000 GT',
@@ -4310,7 +4310,7 @@ QBShared.Vehicles = {
         ['price'] = 155000,
         ['category'] = 'tuner',
         ['hash'] = `gc10`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['mitgalant92'] = {
         ['name'] = '1992 Galant',
@@ -4319,7 +4319,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `mitgalant92`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['fdviper'] = {
         ['name'] = 'FD Viper',
@@ -4328,7 +4328,7 @@ QBShared.Vehicles = {
         ['price'] = 215000,
         ['category'] = 'tuner',
         ['hash'] = `fdviper`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['fd'] = {
         ['name'] = 'RX7 FD',
@@ -4337,7 +4337,7 @@ QBShared.Vehicles = {
         ['price'] = 155000,
         ['category'] = 'tuner',
         ['hash'] = `fd`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['mfc'] = {
         ['name'] = 'RX7 FC',
@@ -4346,7 +4346,7 @@ QBShared.Vehicles = {
         ['price'] = 115000,
         ['category'] = 'tuner',
         ['hash'] = `mfc`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['f40'] = {
         ['name'] = 'F40',
@@ -4355,7 +4355,7 @@ QBShared.Vehicles = {
         ['price'] = 185000,
         ['category'] = 'tuner',
         ['hash'] = `f40`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['f512tr'] = {
         ['name'] = 'F512',
@@ -4364,7 +4364,7 @@ QBShared.Vehicles = {
         ['price'] = 205000,
         ['category'] = 'tuner',
         ['hash'] = `f512tr`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['f8hrs'] = {
         ['name'] = 'F8',
@@ -4373,7 +4373,7 @@ QBShared.Vehicles = {
         ['price'] = 225000,
         ['category'] = 'tuner',
         ['hash'] = `f8hrs`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['evo9'] = {
         ['name'] = 'Evo 9',
@@ -4382,7 +4382,7 @@ QBShared.Vehicles = {
         ['price'] = 135000,
         ['category'] = 'tuner',
         ['hash'] = `evo9`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['er34n'] = {
         ['name'] = 'ER34',
@@ -4391,7 +4391,7 @@ QBShared.Vehicles = {
         ['price'] = 142000,
         ['category'] = 'tuner',
         ['hash'] = `er34n`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['ek9'] = {
         ['name'] = 'EK9',
@@ -4400,7 +4400,7 @@ QBShared.Vehicles = {
         ['price'] = 110000,
         ['category'] = 'tuner',
         ['hash'] = `ek9`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['ecr33'] = {
         ['name'] = 'GTS25 Skyline',
@@ -4409,7 +4409,7 @@ QBShared.Vehicles = {
         ['price'] = 137000,
         ['category'] = 'tuner',
         ['hash'] = `ecr33`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['honcrx91'] = {
         ['name'] = '1991 CRX',
@@ -4418,7 +4418,7 @@ QBShared.Vehicles = {
         ['price'] = 117000,
         ['category'] = 'tuner',
         ['hash'] = `honcrx91`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['cresta90'] = {
         ['name'] = '1990 Cresta',
@@ -4427,7 +4427,7 @@ QBShared.Vehicles = {
         ['price'] = 142000,
         ['category'] = 'tuner',
         ['hash'] = `cresta90`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['cresta81'] = {
         ['name'] = '1981 Cresta',
@@ -4436,7 +4436,7 @@ QBShared.Vehicles = {
         ['price'] = 137000,
         ['category'] = 'tuner',
         ['hash'] = `cresta81`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['cp9a'] = {
         ['name'] = 'Evo 6',
@@ -4445,7 +4445,7 @@ QBShared.Vehicles = {
         ['price'] = 142000,
         ['category'] = 'tuner',
         ['hash'] = `cp9a`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['count5'] = {
         ['name'] = 'Countach',
@@ -4454,7 +4454,7 @@ QBShared.Vehicles = {
         ['price'] = 185000,
         ['category'] = 'tuner',
         ['hash'] = `count5`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['chaser90'] = {
         ['name'] = '1990 Chaser',
@@ -4463,7 +4463,7 @@ QBShared.Vehicles = {
         ['price'] = 132000,
         ['category'] = 'tuner',
         ['hash'] = `chaser90`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['celsiorucf30'] = {
         ['name'] = '2003 Celsior',
@@ -4472,7 +4472,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `celsiorucf30`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['celsiorucf21'] = {
         ['name'] = '1994 Celsior',
@@ -4481,7 +4481,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `celsiorucf21`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['celica'] = {
         ['name'] = 'Celica',
@@ -4490,7 +4490,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `celica`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['celica'] = {
         ['name'] = 'Celica',
@@ -4499,7 +4499,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `celica`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['c33s13'] = {
         ['name'] = 'C33 S13',
@@ -4508,7 +4508,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `c33s13`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['c33s13'] = {
         ['name'] = 'C33 S13',
@@ -4517,7 +4517,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `c33s13`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['bnr34'] = {
         ['name'] = 'R34 Skyline',
@@ -4526,7 +4526,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `bnr34`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['amuses2k'] = {
         ['name'] = 'Amuse S2000',
@@ -4535,7 +4535,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `amuses2k`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['amuses2k'] = {
         ['name'] = 'Amuse S2000',
@@ -4544,7 +4544,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `amuses2k`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['amgbs'] = {
         ['name'] = 'GT AMG',
@@ -4553,7 +4553,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `amgbs`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['altezza'] = {
         ['name'] = 'Altezza',
@@ -4562,7 +4562,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `altezza`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['ae86'] = {
         ['name'] = 'AE86',
@@ -4571,7 +4571,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `ae86`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['jza70'] = {
         ['name'] = 'JZA70 Supra',
@@ -4580,7 +4580,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `jza70`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['911r'] = {
         ['name'] = '911 GT3',
@@ -4589,7 +4589,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `911r`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['911r'] = {
         ['name'] = '911 GT3',
@@ -4598,7 +4598,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `911r`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['850'] = {
         ['name'] = '850 CSi',
@@ -4607,7 +4607,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `850`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['458it'] = {
         ['name'] = '458',
@@ -4616,7 +4616,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `458it`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['350zstardast'] = {
         ['name'] = 'Stardast 350z',
@@ -4625,7 +4625,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `350zstardast`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['350zstardast'] = {
         ['name'] = 'Stardast 350z',
@@ -4634,7 +4634,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `350zstardast`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['190e'] = {
         ['name'] = '190e',
@@ -4643,7 +4643,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `190e`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['nis180'] = {
         ['name'] = '180sx',
@@ -4652,7 +4652,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `nis180`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['daisx'] = {
         ['name'] = 'Discount Tire 180sx',
@@ -4661,7 +4661,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `daisx`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['350z'] = {
         ['name'] = '350z',
@@ -4670,7 +4670,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `350z`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['720s'] = {
         ['name'] = '720s',
@@ -4679,7 +4679,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `720s`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['720s'] = {
         ['name'] = '720s',
@@ -4688,7 +4688,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `720s`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['2000gtr'] = {
         ['name'] = '2000 GTR',
@@ -4697,7 +4697,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `2000gtr`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['a31'] = {
         ['name'] = 'A31',
@@ -4706,7 +4706,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `a31`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['ae86t'] = {
         ['name'] = 'AE86 Time Attack',
@@ -4715,7 +4715,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `ae86t`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['a80tbk'] = {
         ['name'] = 'MK4 Supra Midnight',
@@ -4724,7 +4724,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `a80tbk`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['amis300'] = {
         ['name'] = 'IS 300',
@@ -4733,7 +4733,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `amis300`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['c63w204'] = {
         ['name'] = 'C63',
@@ -4742,7 +4742,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `c63w204`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['evo3'] = {
         ['name'] = 'Evo 3',
@@ -4751,7 +4751,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `evo3`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['nis13'] = {
         ['name'] = 'S13',
@@ -4760,7 +4760,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `nis13`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',},
+        ['shop'] = {'tuner', 'ottos',  'autoex',},
 		['tier'] = 'A+',
 		
     },
@@ -4771,7 +4771,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `nisr32`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['nisr33'] = {
         ['name'] = 'R33 Skyline',
@@ -4780,7 +4780,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `nisr33`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['r33hr'] = {
         ['name'] = 'HR R33 Skyline',
@@ -4789,7 +4789,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `r33hr`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['skyr34'] = {
         ['name'] = 'R34 Skyline 2',
@@ -4798,7 +4798,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `skyr34`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['r34mn'] = {
         ['name'] = 'R34 Skyline Midnight',
@@ -4807,7 +4807,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `r34mn`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['nissil80'] = {
         ['name'] = 'Sleighty',
@@ -4816,7 +4816,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `nissil80`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['benzsl63'] = {
         ['name'] = 'SL63',
@@ -4825,7 +4825,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `benzsl63`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['toysupmk4'] = {
         ['name'] = 'MK4 Supra',
@@ -4834,7 +4834,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `toysupmk4`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['z32'] = {
         ['name'] = 'Z32',
@@ -4843,7 +4843,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `z32`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['nscw'] = {
         ['name'] = 'R34 Skyline CW',
@@ -4852,7 +4852,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `nscw`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['evovaris'] = {
         ['name'] = 'Varis EVO',
@@ -4861,7 +4861,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `evovaris`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['m4hr'] = {
         ['name'] = 'M4 HR',
@@ -4870,7 +4870,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `m4hr`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['vettehachi'] = {
         ['name'] = 'Hachi Corvette',
@@ -4879,7 +4879,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `vettehachi`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['r34rdsmonster'] = {
         ['name'] = 'R34 RDS Monster',
@@ -4888,7 +4888,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `r34rdsmonster`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['na6'] = {
         ['name'] = 'Miata',
@@ -4897,7 +4897,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `na6`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['mr2sw20'] = {
         ['name'] = 'MR2',
@@ -4906,7 +4906,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `mr2sw20`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['mk2100'] = {
         ['name'] = 'JZX100 MK2',
@@ -4915,7 +4915,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `mk2100`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['mk2100'] = {
         ['name'] = 'JZX100 MK2',
@@ -4924,7 +4924,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `mk2100`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['mazfd'] = {
         ['name'] = 'Tuner FD RX7',
@@ -4933,7 +4933,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `mazfd`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['lfahachi'] = {
         ['name'] = 'Hachi LFA',
@@ -4942,7 +4942,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `lfahachi`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['levin86'] = {
         ['name'] = 'Levin 86',
@@ -4951,7 +4951,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `levin86`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['lc500'] = {
         ['name'] = 'LC500',
@@ -4960,7 +4960,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `lc500`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['lc500'] = {
         ['name'] = 'LC500',
@@ -4969,7 +4969,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `lc500`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['jzs161'] = {
         ['name'] = 'GS340',
@@ -4978,7 +4978,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `jzs161`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['jzs147'] = {
         ['name'] = 'Aristo',
@@ -4987,7 +4987,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `jzs147`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['dc2'] = {
         ['name'] = 'Integra',
@@ -4996,7 +4996,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `dc2`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['sim22'] = {
         ['name'] = '22b',
@@ -5005,7 +5005,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `sim22`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['928gtsmn'] = {
         ['name'] = '928 Midnight',
@@ -5014,7 +5014,7 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `928gtsmn`,
-        ['shop'] = {'luxury', 'imports', 'tuner', 'ottos',  'autoex',}
+        ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 }
 
