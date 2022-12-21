@@ -7,11 +7,6 @@ Dev Notes:
     - set light ids to unique id (cant be above 1013) (for headlights)
     - clothing has to be for mp male or female (no franklin)
 
-For Vehicles From Hashiyara:
-    - L3 cars are S+
-    - L2 cars are S 
-    - L1 cars are A+
-
 Gangs:
     - Families
 
