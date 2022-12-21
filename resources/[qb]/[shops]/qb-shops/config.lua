@@ -10,7 +10,7 @@ Config.Products = {
     ["normal"] = {
         [1] = {
             name = "tosti",
-            price = 2,
+            price = 5,
             amount = 50,
             info = {},
             type = "item",
@@ -50,7 +50,7 @@ Config.Products = {
         },
         [6] = {
             name = "sandwich",
-            price = 2,
+            price = 5,
             amount = 50,
             info = {},
             type = "item",
@@ -82,7 +82,7 @@ Config.Products = {
         },
         [10] = {
             name = "bandage",
-            price = 100,
+            price = 50,
             amount = 50,
             info = {},
             type = "item",
@@ -90,7 +90,7 @@ Config.Products = {
         },
         [11] = {
             name = "lighter",
-            price = 2,
+            price = 4,
             amount = 50,
             info = {},
             type = "item",
@@ -98,7 +98,7 @@ Config.Products = {
         },
         [12] = {
             name = "rolling_paper",
-            price = 2,
+            price = 4,
             amount = 5000,
             info = {},
             type = "item",
@@ -182,52 +182,21 @@ Config.Products = {
             slot = 6,
         },
         [7] = {
-            name = "firework1",
-            price = 50,
-            amount = 50,
-            info = {},
-            type = "item",
-            slot = 7,
-        },
-        [8] = {
-            name = "firework2",
-            price = 50,
-            amount = 50,
-            info = {},
-            type = "item",
-            slot = 8,
-        },
-        [9] = {
-            name = "firework3",
-            price = 50,
-            amount = 50,
-            info = {},
-            type = "item",
-            slot = 9,
-        },
-        [10] = {
-            name = "firework4",
-            price = 50,
-            amount = 50,
-            info = {},
-            type = "item",
-            slot = 10,
-        },
-        [11] = {
             name = "cleaningkit",
             price = 150,
             amount = 150,
             info = {},
             type = "item",
-            slot = 11,
+            slot = 7,
+            requiredJob = { "mechanic" }
         },
-        [12] = {
+        [8] = {
             name = "advancedrepairkit",
             price = 500,
             amount = 50,
             info = {},
             type = "item",
-            slot = 12,
+            slot = 8,
             requiredJob = { "mechanic" }
         },
     },
