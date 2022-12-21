@@ -394,36 +394,40 @@ function IsBlacklistedWeapon()
 end
 
 function LockpickDoor(isAdvanced)
-    local ped = PlayerPedId()
-    local pos = GetEntityCoords(ped)
-    local vehicle = QBCore.Functions.GetClosestVehicle()
+    QBCore.Functions.TriggerCallback('qb-vehiclekeys:server:checkPlayerOwned', function(playerOwned)
+        if not playerOwned then
+            local ped = PlayerPedId()
+            local pos = GetEntityCoords(ped)
+            local vehicle = QBCore.Functions.GetClosestVehicle()
 
-    if vehicle == nil or vehicle == 0 then return end
-    if HasKeys(QBCore.Functions.GetPlate(vehicle)) then return end
-    if #(pos - GetEntityCoords(vehicle)) > 2.5 then return end
-    if GetVehicleDoorLockStatus(vehicle) <= 0 then return end
+            if vehicle == nil or vehicle == 0 then return end
+            if HasKeys(QBCore.Functions.GetPlate(vehicle)) then return end
+            if #(pos - GetEntityCoords(vehicle)) > 2.5 then return end
+            if GetVehicleDoorLockStatus(vehicle) <= 0 then return end
 
-    usingAdvanced = isAdvanced
-    loadAnimDict("veh@break_in@0h@p_m_one@")
-    TaskPlayAnim(ped, "veh@break_in@0h@p_m_one@", "low_force_entry_ds", 3.0, 3.0, -1, 16, 0, 0, 0, 0)
-    exports['ps-ui']:Circle(function(success)
-    if success then
-        TaskPlayAnim(ped, "veh@break_in@0h@p_m_one@", "low_force_entry_ds", 3.0, 3.0, 3000, 16, 0, 0, 0, 0)
-        TriggerServerEvent('hud:server:GainStress', math.random(1, 4))
-        lastPickedVehicle = vehicle
-        if GetPedInVehicleSeat(vehicle, -1) == PlayerPedId() then
-            TriggerServerEvent('qb-vehiclekeys:server:AcquireVehicleKeys', QBCore.Functions.GetPlate(vehicle))
-        else
-            QBCore.Functions.Notify(Lang:t("notify.vlockpick"), 'success')
-            TriggerServerEvent('qb-vehiclekeys:server:setVehLockState', NetworkGetNetworkIdFromEntity(vehicle), 1)
+            usingAdvanced = isAdvanced
+            loadAnimDict("veh@break_in@0h@p_m_one@")
+            TaskPlayAnim(ped, "veh@break_in@0h@p_m_one@", "low_force_entry_ds", 3.0, 3.0, -1, 16, 0, 0, 0, 0)
+            exports['ps-ui']:Circle(function(success)
+            if success then
+                TaskPlayAnim(ped, "veh@break_in@0h@p_m_one@", "low_force_entry_ds", 3.0, 3.0, 3000, 16, 0, 0, 0, 0)
+                TriggerServerEvent('hud:server:GainStress', math.random(1, 4))
+                lastPickedVehicle = vehicle
+                if GetPedInVehicleSeat(vehicle, -1) == PlayerPedId() then
+                    TriggerServerEvent('qb-vehiclekeys:server:AcquireVehicleKeys', QBCore.Functions.GetPlate(vehicle))
+                else
+                    QBCore.Functions.Notify(Lang:t("notify.vlockpick"), 'success')
+                    TriggerServerEvent('qb-vehiclekeys:server:setVehLockState', NetworkGetNetworkIdFromEntity(vehicle), 1)
+                end
+            else
+                TaskPlayAnim(ped, "veh@break_in@0h@p_m_one@", "low_force_entry_ds", 3.0, 3.0, 3000, 16, 0, 0, 0, 0)
+                TriggerServerEvent('hud:server:GainStress', math.random(1, 4))
+                QBCore.Functions.Notify("You failed to lockpick the vehicle!", "error")
+                AttemptPoliceAlert("steal")
+                end
+            end, 4, 8) -- NumberOfCircles, MS
         end
-	else
-        TaskPlayAnim(ped, "veh@break_in@0h@p_m_one@", "low_force_entry_ds", 3.0, 3.0, 3000, 16, 0, 0, 0, 0)
-        TriggerServerEvent('hud:server:GainStress', math.random(1, 4))
-        QBCore.Functions.Notify("You failed to lockpick the vehicle!", "error")
-        AttemptPoliceAlert("steal")
-	    end
-    end, 4, 8) -- NumberOfCircles, MS
+    end, plate)
 end
 
 --[[
