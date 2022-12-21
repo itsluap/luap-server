@@ -7,16 +7,6 @@ Dev Notes:
     - set light ids to unique id (cant be above 1013) (for headlights)
     - clothing has to be for mp male or female (no franklin)
 
-
-Notes:
-    - /grantlicense (for weapon license and driver license) (police command)
-    - can exchange cryptosticks at lesters
-    - can use ifak to heal self
-    - editor commands are: "record", "clip", "saveclip", "delclip", "editor"
-    - when police impound cars it is indefinite (dv'd cars go to impound but phone wont show that)
-    - walk out of car dealers for job to update (fixes dealer menu on cars)
-    - duct tape is the publics repair kit (repair kits are mechanic only)
-
 For Vehicles From Hashiyara:
     - L3 cars are S+
     - L2 cars are S 
@@ -30,6 +20,13 @@ Other:
     - go through and remove unneeded commands (search all server files)
     -
 
+Ideas:
+    - give lockpicks durability?
+    - ps-ui, gang influence areas
+    - OkOkContract for selling cars
+    - add durability to ifak - not native, need to write this
+    - add drug buffs / ps-buffs
+    - cant clear calls from dispatch in mdt / write this myself or add as suggestion in ps discord
 
 Server Cost:
     -
@@ -41,13 +38,3 @@ Server Cost:
     - $6  for ticket tool premium
     -
 Total Cost: $156
-
-
-
-Ideas:
-    - give lockpicks durability?
-    - ps-ui, gang influence areas
-    - OkOkContract for selling cars
-    - add durability to ifak - not native, need to write this
-    - add drug buffs / ps-buffs
-    - cant clear calls from dispatch in mdt / write this myself or add as suggestion in ps discord
