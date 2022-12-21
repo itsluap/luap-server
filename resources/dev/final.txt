@@ -11,3 +11,8 @@ Final (Ready to Launch):
     - create new user guide - create control list - get discord ready
     - create website - needs forums, applications, and tebex store
     - fix heroin animation
+
+
+|| UPDATE ALL SCRIPTS BEFORE LAUNCH ||
+|| MAKE SURE DISCORD BOTS ARE WORKING BEFORE LAUNCH ||
+|| UPGRADE SERVER BEFORE LAUNCH ~$150 ||

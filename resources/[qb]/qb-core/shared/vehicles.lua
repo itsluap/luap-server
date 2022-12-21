@@ -3348,7 +3348,7 @@ QBShared.Vehicles = {
 	},
 	['rogue20'] = {
 		['name'] = '2020 Rogue',
-		['brand'] = 'Pontiac',
+		['brand'] = 'Nissan',
 		['model'] = 'rogue20',
 		['price'] = 27000,
 		['category'] = 'pimports',
@@ -3702,15 +3702,6 @@ QBShared.Vehicles = {
         ['hash'] = `rmodlfa`,
         ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
-	['ghoulcharger'] = {
-        ['name'] = 'Ghoul Charger',
-        ['brand'] = 'Dodge',
-        ['model'] = 'ghoulcharger',
-        ['price'] = 120000,
-        ['category'] = 'imports',
-        ['hash'] = `ghoulcharger`,
-        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
-    },
 	['dredurango'] = {
         ['name'] = 'SRT Durango',
         ['brand'] = 'Dodge',
@@ -3855,15 +3846,6 @@ QBShared.Vehicles = {
         ['hash'] = `rcf`,
         ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
-	['rcf'] = {
-        ['name'] = 'RCF',
-        ['brand'] = 'Lexus',
-        ['model'] = 'rcf',
-        ['price'] = 120000,
-        ['category'] = 'imports',
-        ['hash'] = `rcf`,
-        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
-    },
 	['carsons392scat'] = {
         ['name'] = 'Scatpack Challenger',
         ['brand'] = 'Dodge',
@@ -3929,7 +3911,7 @@ QBShared.Vehicles = {
     },
 	['xnsgt'] = {
         ['name'] = 'Venom GT',
-        ['brand'] = 'Hennessy',
+        ['brand'] = 'Hennessey',
         ['model'] = 'xnsgt',
         ['price'] = 120000,
         ['category'] = 'imports',
@@ -3963,15 +3945,6 @@ QBShared.Vehicles = {
         ['hash'] = `pts21`,
         ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
-	['pts21'] = {
-        ['name'] = '911 Turbo S',
-        ['brand'] = 'Porsche',
-        ['model'] = 'pts21',
-        ['price'] = 120000,
-        ['category'] = 'imports',
-        ['hash'] = `pts21`,
-        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
-    },
 	['rmoddarki8'] = {
         ['name'] = 'BMW I8',
         ['brand'] = 'BMW',
@@ -3982,7 +3955,7 @@ QBShared.Vehicles = {
         ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['rmodm8c'] = {
-        ['name'] = 'I8',
+        ['name'] = 'M8 Competition',
         ['brand'] = 'BMW',
         ['model'] = 'rmodm8c',
         ['price'] = 120000,
@@ -4006,42 +3979,6 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'imports',
         ['hash'] = `rmode63s`,
-        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
-    },
-	['carsonshellgtr'] = {
-        ['name'] = 'Drag R34 Skyline',
-        ['brand'] = 'Nissan',
-        ['model'] = 'carsonshellgtr',
-        ['price'] = 120000,
-        ['category'] = 'imports',
-        ['hash'] = `carsonshellgtr`,
-        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
-    },
-	['drettgallardo2'] = {
-        ['name'] = 'Drag Gallardo',
-        ['brand'] = 'Lamborghini',
-        ['model'] = 'drettgallardo2',
-        ['price'] = 120000,
-        ['category'] = 'imports',
-        ['hash'] = `drettgallardo2`,
-        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
-    },
-	['mustanggtr3'] = {
-        ['name'] = 'Drag Mustang',
-        ['brand'] = 'Ford',
-        ['model'] = 'mustanggtr3',
-        ['price'] = 120000,
-        ['category'] = 'imports',
-        ['hash'] = `mustanggtr3`,
-        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
-    },
-	['drecamaross1'] = {
-        ['name'] = 'Drag Camaro',
-        ['brand'] = 'Chevy',
-        ['model'] = 'drecamaross1',
-        ['price'] = 120000,
-        ['category'] = 'imports',
-        ['hash'] = `drecamaross1`,
         ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 	['rrst'] = {

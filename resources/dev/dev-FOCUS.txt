@@ -15,7 +15,6 @@ WORKKKKKK:
 
 
 || VEHICLES ||
--- choose which cars to put in server for launch (make sure to clean out cars not being used) (keep every car in dev server)
 -- no broken headlights or taillights allowed (can launch with some broken headlights) (can be worked on in dev server after launch)
 -- no oversized vehicles (fix textures for every car)
 -- mechanic shops and car dealerships 100% good to go (no bugs / everything working / prices)
@@ -31,7 +30,6 @@ WORKKKKKK:
 -- only way to do clothing: rebuild in dutycloth (need to go through every single ydd in 'clothingpack' to check for textures, heels, hats)
 -- ^^ make sure to check for skin data ^^
 -- ^^ check for bugs / crashes ^^ remove broken / duplicate files ^^
--- ^^ delete un-needed police clothing if possible ^^
 -- ^^ double check okayed files for heels and skin data ^^
 -- 
 ====
@@ -39,10 +37,6 @@ WORKKKKKK:
 || UPGRADE CASINO SCRIPT ||
 || DEFAULT KEYBINDS FOR EVERYTHING NEED TO MAKE SENSE AND NOT BE DOUBLED UP ||
 || FIGURE OUT WHERE RANDOM ARMOR IS COMING FROM ||
-====
-|| UPDATE ALL SCRIPTS BEFORE LAUNCH ||
-|| MAKE SURE DISCORD BOTS ARE WORKING BEFORE LAUNCH ||
-|| UPGRADE SERVER BEFORE LAUNCH ~$150 ||
 ====
 
 To Do:
