@@ -5,6 +5,7 @@ TODO 12/21/22:
     4. fix website, make it mobile friendly, only has to direct to forums and discord 
     5. work on rules, take notes on keybinds and commands (build job guides)
     6. check economy IN-GAME, make sure prices make sense and arent to cheap (too expensive is okay)
+    
 
 WORKKKKKK:
 -- finish clothing
