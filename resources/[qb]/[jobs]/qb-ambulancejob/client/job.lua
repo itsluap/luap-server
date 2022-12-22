@@ -83,12 +83,15 @@ end)
 RegisterNetEvent('QBCore:Client:OnJobUpdate', function(JobInfo)
     PlayerJob = JobInfo
     if PlayerJob.name == 'ambulance' then
+        TriggerServerEvent('luap:isEMS')
         onDuty = PlayerJob.onduty
         if PlayerJob.onduty then
             TriggerServerEvent("hospital:server:AddDoctor", PlayerJob.name)
         else
             TriggerServerEvent("hospital:server:RemoveDoctor", PlayerJob.name)
         end
+    else 
+        TriggerServerEvent('luap:isnotEMS')
     end
 end)
 

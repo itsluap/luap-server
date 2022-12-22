@@ -7,6 +7,14 @@ local Doctors = {}
 
 -- Events
 
+RegisterServerEvent("luap:isEMS", function()
+	GlobalState.isEMS = true
+end)
+
+RegisterServerEvent("luap:isnotEMS", function()
+	GlobalState.isEMS = false
+end)
+
 -- Compatibility with txAdmin Menu's heal options.
 -- This is an admin only server side event that will pass the target player id or -1.
 AddEventHandler('txAdmin:events:healedPlayer', function(eventData)

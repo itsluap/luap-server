@@ -1,7 +1,5 @@
 outfits = json.decode(LoadResourceFile(GetCurrentResourceName(), GetResourceMetadata(GetCurrentResourceName(), 'uniform_file')))
 
-local QBCore = exports['qb-core']:GetCoreObject()
-
 local function convertInput(input)
 	local t1 = tonumber(string.split(input, ":")[1])-1
 	local t2 = tonumber(string.split(input, ":")[2])-1
@@ -124,9 +122,8 @@ menuPool:RefreshIndex()
 
 RegisterCommand('eup', function()
 	local ped = PlayerPedId()
-	local Player = QBCore.Functions.GetPlayerData()
     local job = Player.job.name
-	if GlobalState.isLEO == true or job == "ambulance" then
+	if GlobalState.isLEO == true or GlobalState.isEMS then
 		if GetEntityModel(ped) == GetHashKey("mp_m_freemode_01") then
 			mainMenuM:Visible(not mainMenuM:Visible())
 		elseif GetEntityModel(ped) == GetHashKey("mp_f_freemode_01") then
