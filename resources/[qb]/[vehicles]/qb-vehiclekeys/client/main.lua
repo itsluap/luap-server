@@ -170,6 +170,7 @@ RegisterNetEvent('QBCore:Client:OnPlayerUnload', function()
 end)
 
 RegisterNetEvent('qb-vehiclekeys:client:AddKeys', function(plate)
+    exports['ps-ui']:HideText()
     KeysList[plate] = true
 
     local ped = PlayerPedId()
