@@ -42,7 +42,8 @@ RegisterNetEvent('seatbelt:DoHarnessDamage', function(hp, data)
     if not Player then return end
 
     if hp == 0 then
-        Player.Functions.RemoveItem('harness', 1, data.slot)
+        --Player.Functions.RemoveItem('harness', 1, data.slot)
+        exports['lj-inventory']:RemoveItem('harness')
     else
         Player.PlayerData.items[data.slot].info.uses -= 1
         Player.Functions.SetInventory(Player.PlayerData.items)
@@ -56,7 +57,8 @@ RegisterNetEvent('smallresources:DoIfaksDamage', function(hp, data)
     if not Player then return end
 
     if hp == 0 then
-        Player.Functions.RemoveItem('ifaks', 1, data.slot)
+        --Player.Functions.RemoveItem('ifaks', 1, data.slot)
+        exports['lj-inventory']:RemoveItem('ifaks')
     else
         Player.PlayerData.items[data.slot].info.uses -= 1
         Player.Functions.SetInventory(Player.PlayerData.items)
