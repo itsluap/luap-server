@@ -64,6 +64,7 @@ RegisterNetEvent('hospital:client:UseIfaks', function(ItemData)
             painkillerAmount = painkillerAmount + 1
         end
         --
+        if ifaksHp == nil then ifaksHp = 3 end
         ifaksHp -= 1
         TriggerEvent('ifaks:update')
         TriggerServerEvent('smallresources:DoIfaksDamage', ifaksHp, ifaksData)
