@@ -10,6 +10,10 @@ Config.MaxDropViewDistance = 12.5 -- The distance in GTA Units that a drop can b
 Config.UseItemDrop = false -- This will enable item object to spawn on drops instead of markers
 Config.ItemDropObject = `sf_prop_sf_backpack_01a` -- if Config.UseItemDrop is true, this will be the prop that spawns for the item
 
+Config.DurableItems = {
+    "ifaks",
+}
+
 Config.VendingObjects = {
     "prop_vend_soda_01",
     "prop_vend_soda_02",
