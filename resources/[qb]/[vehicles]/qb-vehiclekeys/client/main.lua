@@ -93,12 +93,15 @@ CreateThread(function()
                     sleep = 0
 
                     local vehiclePos = GetOffsetFromEntityInWorldCoords(vehicle, 0.0, 1.0, 0.5)
-                    DrawText3D(vehiclePos.x, vehiclePos.y, vehiclePos.z, Lang:t("info.skeys"))
+                    -- DrawText3D(vehiclePos.x, vehiclePos.y, vehiclePos.z, Lang:t("info.skeys"))
+                    exports['ps-ui']:DisplayText(Lang:t("info.skeys"), "primary") -- Colors: primary, error, success, warning, info, mint
                     SetVehicleEngineOn(vehicle, false, false, true)
 
                     if IsControlJustPressed(0, 74) then
                         Hotwire(vehicle, plate)
                     end
+                else
+                    exports['ps-ui']:HideText()
                 end
             end
 
@@ -468,6 +471,7 @@ function Hotwire(vehicle, plate)
     local ped = PlayerPedId()
     IsHotwiring = true
 
+    SetVehicleEngineOn(vehicle, false, false, true) -- trying to keep engine off until hotwire is finished
     SetVehicleAlarm(vehicle, true)
     SetVehicleAlarmTimeLeft(vehicle, hotwireTime)
     exports['ps-ui']:Circle(function(success)
