@@ -94,7 +94,7 @@ CreateThread(function()
 
                     local vehiclePos = GetOffsetFromEntityInWorldCoords(vehicle, 0.0, 1.0, 0.5)
                     -- DrawText3D(vehiclePos.x, vehiclePos.y, vehiclePos.z, Lang:t("info.skeys"))
-                    exports['ps-ui']:DisplayText(Lang:t("info.skeys"), "primary") -- Colors: primary, error, success, warning, info, mint
+                    exports['ps-ui']:DisplayText("[H] Hotwire", "warning") -- Colors: primary, error, success, warning, info, mint
                     SetVehicleEngineOn(vehicle, false, false, true)
 
                     if IsControlJustPressed(0, 74) then
