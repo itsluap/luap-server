@@ -84,7 +84,7 @@ end)
 ------------------------------------------
 --====================================================================================\
 
-RegisterKeyMapping('mdt', 'Open Police MDT', 'keyboard', 'k')
+RegisterKeyMapping('mdt', 'Open Police MDT', 'keyboard', 'o')
 
 RegisterCommand('mdt', function()
     local plyPed = PlayerPedId()
