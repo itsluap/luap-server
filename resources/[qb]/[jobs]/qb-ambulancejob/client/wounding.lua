@@ -1,6 +1,8 @@
 local prevPos = nil
 onPainKillers = false
 local painkillerAmount = 0
+local ifaksHp = 3
+local ifaksData = {}
 
 -- Functions
 
@@ -34,8 +36,14 @@ end
 
 -- Events
 
-RegisterNetEvent('hospital:client:UseIfaks', function()
+RegisterNetEvent('ifaks:update', function(ifaksHp)
+    hp = ifaksHp
+)
+
+RegisterNetEvent('hospital:client:UseIfaks', function(ItemData)
     local ped = PlayerPedId()
+    ifaksHp = ItemData.info.uses
+    ifaksData = ItemData
     QBCore.Functions.Progressbar("use_bandage", Lang:t('progress.ifaks'), 8000, false, true, {
         disableMovement = false,
         disableCarMovement = false,
@@ -55,6 +63,11 @@ RegisterNetEvent('hospital:client:UseIfaks', function()
         if painkillerAmount < 3 then
             painkillerAmount = painkillerAmount + 1
         end
+        --
+        ifaksHp -= 1
+        TriggerEvent('ifaks:update')
+        TriggerServerEvent('smallresources:DoIfaksDamage', ifaksHp, ifaksData)
+        --
         RemoveBleed(1)
     end, function() -- Cancel
         StopAnimTask(ped, "anim@amb@business@weed@weed_inspecting_high_dry@", "weed_inspecting_high_base_inspector", 1.0)

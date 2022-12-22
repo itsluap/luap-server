@@ -49,6 +49,20 @@ RegisterNetEvent('seatbelt:DoHarnessDamage', function(hp, data)
     end
 end)
 
+RegisterNetEvent('smallresources:DoIfaksDamage', function(hp, data)
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+
+    if not Player then return end
+
+    if hp == 0 then
+        Player.Functions.RemoveItem('ifaks', 1, data.slot)
+    else
+        Player.PlayerData.items[data.slot].info.uses -= 1
+        Player.Functions.SetInventory(Player.PlayerData.items)
+    end
+end)
+
 RegisterNetEvent('qb-carwash:server:washCar', function()
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
