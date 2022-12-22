@@ -58,7 +58,7 @@ RegisterNetEvent('smallresources:DoIfaksDamage', function(hp, data)
 
     if hp == 0 then
         --Player.Functions.RemoveItem('ifaks', 1, data.slot)
-        exports['lj-inventory']:RemoveItem('ifaks', 1 , data.slot)
+        exports['qb-core']:RemoveItem('ifaks')
     else
         Player.PlayerData.items[data.slot].info.uses -= 1
         Player.Functions.SetInventory(Player.PlayerData.items)
