@@ -475,9 +475,10 @@ function Hotwire(vehicle, plate)
     SetVehicleAlarmTimeLeft(vehicle, hotwireTime)
     exports['ps-ui']:Circle(function(success)
     if success then
-        TriggerServerEvent('qb-vehiclekeys:server:AcquireVehicleKeys', plate)
+            TriggerServerEvent('qb-vehiclekeys:server:AcquireVehicleKeys', plate)
+            exports['ps-ui']:HideText()
         else
-        QBCore.Functions.Notify(Lang:t("notify.fvlockpick"), "error")
+            QBCore.Functions.Notify(Lang:t("notify.fvlockpick"), "error")
         end
     end, 5, 20) -- NumberOfCircles, MS
 
