@@ -38,7 +38,7 @@ end
 
 RegisterNetEvent('ifaks:update', function(ifaksHp)
     hp = ifaksHp
-)
+end)
 
 RegisterNetEvent('hospital:client:UseIfaks', function(ItemData)
     local ped = PlayerPedId()
