@@ -34,7 +34,6 @@ end)
 RegisterNetEvent('qb-vehiclekeys:server:AcquireVehicleKeys', function(plate)
     local src = source
     GiveKeys(src, plate)
-    exports['ps-ui']:HideText()
 end)
 
 RegisterNetEvent('qb-vehiclekeys:server:breakLockpick', function(itemName)
