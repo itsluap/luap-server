@@ -88,7 +88,6 @@ CreateThread(function()
                 sleep = 1000
                 local vehicle = GetVehiclePedIsIn(ped)
                 local plate = QBCore.Functions.GetPlate(vehicle)
-                Wait(1000)
                 if GetPedInVehicleSeat(vehicle, -1) == PlayerPedId() and not HasKeys(plate) and not isBlacklistedVehicle(vehicle) and not AreKeysJobShared(vehicle) then
                     sleep = 0
                     exports['ps-ui']:DisplayText("[H] Hotwire", "warning") -- Colors: primary, error, success, warning, info, mint
