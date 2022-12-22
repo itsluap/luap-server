@@ -471,6 +471,7 @@ function Hotwire(vehicle, plate)
     local ped = PlayerPedId()
     IsHotwiring = true
 
+    exports['ps-ui']:HideText()
     SetVehicleEngineOn(vehicle, false, false, true) -- trying to keep engine off until hotwire is finished
     SetVehicleAlarm(vehicle, true)
     SetVehicleAlarmTimeLeft(vehicle, hotwireTime)
