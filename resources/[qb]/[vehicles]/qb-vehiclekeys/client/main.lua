@@ -100,9 +100,9 @@ CreateThread(function()
                     if IsControlJustPressed(0, 74) then
                         Hotwire(vehicle, plate)
                     end
-                else
-                    exports['ps-ui']:HideText()
                 end
+            else 
+                exports['ps-ui']:HideText()
             end
 
             if Config.CarJackEnable and canCarjack then
