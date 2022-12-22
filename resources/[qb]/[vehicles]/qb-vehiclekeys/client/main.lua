@@ -476,7 +476,7 @@ function Hotwire(vehicle, plate)
     exports['ps-ui']:Circle(function(success)
     if success then
             TriggerServerEvent('qb-vehiclekeys:server:AcquireVehicleKeys', plate)
-            exports['ps-ui']:HideText()
+            Wait(1000)
         else
             QBCore.Functions.Notify(Lang:t("notify.fvlockpick"), "error")
         end
