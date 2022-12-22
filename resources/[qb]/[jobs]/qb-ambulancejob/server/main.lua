@@ -442,7 +442,7 @@ QBCore.Functions.CreateUseableItem("ifaks", function(source, item)
 	local src = source
 	local Player = QBCore.Functions.GetPlayer(src)
 	if Player.Functions.GetItemByName(item.name) ~= nil then
-		TriggerClientEvent("hospital:client:UseIfaks", src)
+		TriggerClientEvent("hospital:client:UseIfaks", src, item)
 	end
 end)
 
