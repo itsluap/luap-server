@@ -3,7 +3,7 @@ cfg = {}
 cfg.debug = false -- debug version to check some stuff [prints]
 cfg.framework = "qbcore" --esx,qbcore,vrp,vrpex,nunoradioman,standalone
 cfg.interaction = "qbtarget" --qbtarget,markermenu,gtav
-cfg.dispatch = "qbcore" --nunoradioman,ps_dispatch,cd_dispatch,core_dispatch
+cfg.dispatch = "ps_dispatch" --nunoradioman,ps_dispatch,cd_dispatch,core_dispatch
 
 cfg.police = {
 	groups = {"police", "sheriff", "trooper"}, -- police groups

@@ -187,7 +187,7 @@ local function SetupOptions(datatable, entity, distance, isZone)
 			sendData[slot].entity = entity
 			nuiData[slot] = {
 				icon = data.icon,
-				targeticon = data.targeticon,
+				--targeticon = data.targeticon,
 				label = data.label
 			}
 			if not isZone then
