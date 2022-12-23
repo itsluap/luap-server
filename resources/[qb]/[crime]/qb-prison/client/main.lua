@@ -803,7 +803,7 @@ RegisterNetEvent('qb-prison:client:slushy', function()
 				ClearPedTasks(PlayerPedId())
 			end)
 		elseif Config.SlushyMiniGame.QBLock.enabled then
-			local success = exports['qb-lock']:StartLockPickCircle(Config.SlushyMiniGame.QBLock.circles, Config.SlushyMiniGame.QBLock.time, success)
+			local success = exports['ps-ui']:Circle(Config.SlushyMiniGame.QBLock.circles, Config.SlushyMiniGame.QBLock.time, success)
 			if success then
 				-- TriggerServerEvent("InteractSound_SV:PlayOnSource", "pour-drink", 0.1)
 				TaskStartScenarioInPlace(ped, "WORLD_HUMAN_HANG_OUT_STREET", 0, true)
@@ -917,7 +917,7 @@ RegisterNetEvent('qb-prison:client:soda', function()
 				ClearPedTasks(PlayerPedId())
 			end)
 		elseif Config.SodaMiniGame.QBLock.enabled then
-			local success = exports['qb-lock']:StartLockPickCircle(Config.SodaMiniGame.QBLock.circles, Config.SodaMiniGame.QBLock.time, success)
+			local success = exports['ps-ui']:Circle(Config.SodaMiniGame.QBLock.circles, Config.SodaMiniGame.QBLock.time, success)
 			if success then
 				-- TriggerServerEvent("InteractSound_SV:PlayOnSource", "pour-drink", 0.1)
 				TaskStartScenarioInPlace(ped, "WORLD_HUMAN_HANG_OUT_STREET", 0, true)
