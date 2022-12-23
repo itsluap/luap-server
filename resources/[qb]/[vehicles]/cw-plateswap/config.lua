@@ -1,6 +1,6 @@
 Config = {}
 Config.Debug = false
-Config.LicensePlateItem = 'licenseplate'
+Config.LicensePlateItem = 'stolenplate'
 Config.InteractionItem = nil
 
 Config.Settings = {
