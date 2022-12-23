@@ -1,6 +1,6 @@
 Config = {
     -- Map
-    MapType = 5, -- 1: for DLCiplLoader, 2: Gabz Casino, 3: NoPixel Casino, 4: k4mb1 casino, 5: GTA:O Interior (rcore_casino_interior)
+    MapType = 2, -- 1: for DLCiplLoader, 2: Gabz Casino, 3: NoPixel Casino, 4: k4mb1 casino, 5: GTA:O Interior (rcore_casino_interior)
 
     --[[
     Gabz Casino
@@ -22,7 +22,7 @@ Config = {
     UseOnlyMoney = false, -- set to true if you wanna disable using casino chips and use money instead
     ExchangeRate = 1, -- set value of one casino chip, for example, set to 5, if 1 chip equals to 5$ (minimum: 0.1, rounded by 0.1, 0.5 or 1)
     ShowChipsHud = true, -- show/hide the chips hud on the top-right corner
-    ChipsInventoryItem = "casino_chips",
+    ChipsInventoryItem = "casinochips",
     UseBankMoney = false, -- cash or bank?
 
     -- Behave in casino?
