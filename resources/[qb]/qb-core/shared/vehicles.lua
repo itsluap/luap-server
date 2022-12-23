@@ -3652,6 +3652,15 @@ QBShared.Vehicles = {
         ['hash'] = `gr86`,
         ['shop'] = 'luap',
     },
+	['rmodm4gts'] = {
+        ['name'] = 'M4 GTS',
+        ['brand'] = 'BMW',
+        ['model'] = 'rmodm4gts',
+        ['price'] = 1000000,
+        ['category'] = 'sports',
+        ['hash'] = `rmodm4gts`,
+        ['shop'] = 'luap',
+    },
 	-- king -- 
 	['navigator'] = {
         ['name'] = 'Navigator',
