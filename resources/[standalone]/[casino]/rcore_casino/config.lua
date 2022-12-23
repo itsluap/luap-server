@@ -51,8 +51,8 @@ Config = {
     -- Roulette
     ROULETTE_JUNIOR_ENABLED = true, -- set if you want to have Roulette Junior (blue) table for newbies (low stakes)
     ROULETTE_JUNIOR_COORDS = {1004.790, 57.295, 68.432},
-    CASHIER_DAILY_BONUS = 1000, -- daily visitor bonus that players can request at the Cashier, set to 0 if you don't want any daily bonuses. def: 1000
-    CASHIER_VIP_PRICE = 50000, -- price of the VIP casino membership, def: 50000
+    CASHIER_DAILY_BONUS = 100, -- daily visitor bonus that players can request at the Cashier, set to 0 if you don't want any daily bonuses. def: 1000
+    CASHIER_VIP_PRICE = 20000, -- price of the VIP casino membership, def: 50000
     CASHIER_VIP_DURATION = (60 * 60 * 24) * 7, -- VIP for player resets after this time, def: 7 days
 
     -- Slots
@@ -158,7 +158,7 @@ Framework = {
     -- 2 = QBcore / custom
     -- for custom frameworks, also use option *2*, and rewrite all the qbcore functions
 
-    Active = 1,
+    Active = 2,
     -- Please follow the installation tutorial: --
     -- https://documentation.rcore.cz/paid-resources/rcore_casino
 
