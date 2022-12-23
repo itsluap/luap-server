@@ -710,24 +710,24 @@ QBCore.Commands.Add('givecash', Lang:t('command.givecash'), {{name = 'id', help 
                               else
                                   -- Return player cash
                                   xPlayer.Functions.AddMoney('cash', amount)
-                                  TriggerClientEvent('QBCore:Notify', src, Lang:t('error.not_give'), "error")
+                                  TriggerClientEvent('QBCore:Notify', src, "Error, did not give cash", "error")
                               end
                           else
-                              TriggerClientEvent('QBCore:Notify', src, Lang:t('error.not_enough'), "error")
+                              TriggerClientEvent('QBCore:Notify', src, "Not enough cash", "error")
                           end
                       else
-                          TriggerClientEvent('QBCore:Notify', src, Lang:t('error.invalid_amount'), "error")
+                          TriggerClientEvent('QBCore:Notify', src, "Invalid amount", "error")
                       end
                   else
-                      TriggerClientEvent('QBCore:Notify', src, Lang:t('error.too_far_away'), "error")
+                      TriggerClientEvent('QBCore:Notify', src, "Too far away", "error")
                   end
               else
-                  TriggerClientEvent('QBCore:Notify', src, Lang:t('error.dead'), "error")
+                  TriggerClientEvent('QBCore:Notify', src, "Person is dead", "error")
               end
           else
-              TriggerClientEvent('QBCore:Notify', src, Lang:t('error.wrong_id'), "error")
+              TriggerClientEvent('QBCore:Notify', src, "Incorrect ID", "error")
           end
       else
-          TriggerClientEvent('QBCore:Notify', src, Lang:t('error.givecash'), "error")
+          TriggerClientEvent('QBCore:Notify', src, "Error giving cash", "error")
       end
   end)
