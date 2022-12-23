@@ -30,7 +30,7 @@ Translations = {
     },
     command = {
         givecash = "Give cash to player."
-    }
+    },
     time = {
         weeks = "%{time} weeks ago",
         aweek = "A week ago",
@@ -108,7 +108,7 @@ Translations = {
         transfer_but = "Transfer",
     }
 }
-Lang = Locale:new({
+Lang = Lang or Locale:new({
     phrases = Translations,
     warnOnMissing = true
 })
