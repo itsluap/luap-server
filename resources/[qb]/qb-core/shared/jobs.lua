@@ -137,6 +137,25 @@ QBShared.Jobs = {
             },
         },
 	},
+    ['casino'] = {
+		label = 'Diamond Casino',
+		defaultDuty = true,
+		offDutyPay = true,
+		grades = {
+            ['0'] = {
+                name = 'Security',
+                payment = 150
+            },
+			['1'] = {
+                name = 'Manager',
+                payment = 250
+            },
+			['2'] = {
+                name = 'Owner',
+                payment = 500
+            },
+        },
+	},
      ['bus'] = {
 		label = 'Bus',
 		defaultDuty = true,
