@@ -158,18 +158,18 @@ local function createPeds()
         end
     end
 
-    local current = type(Config.SellCasinoChips.ped) == 'number' and Config.SellCasinoChips.ped or joaat(Config.SellCasinoChips.ped)
+    -- local current = type(Config.SellCasinoChips.ped) == 'number' and Config.SellCasinoChips.ped or joaat(Config.SellCasinoChips.ped)
 
-    RequestModel(current)
-    while not HasModelLoaded(current) do
-        Wait(0)
-    end
+    -- RequestModel(current)
+    -- while not HasModelLoaded(current) do
+        -- Wait(0)
+    -- end
 
-    ShopPed["casino"] = CreatePed(0, current, Config.SellCasinoChips.coords.x, Config.SellCasinoChips.coords.y, Config.SellCasinoChips.coords.z-1, Config.SellCasinoChips.coords.w, false, false)
-    FreezeEntityPosition(ShopPed["casino"], true)
-    SetEntityInvincible(ShopPed["casino"], true)
-    SetBlockingOfNonTemporaryEvents(ShopPed["casino"], true)
-
+    -- ShopPed["casino"] = CreatePed(0, current, Config.SellCasinoChips.coords.x, Config.SellCasinoChips.coords.y, Config.SellCasinoChips.coords.z-1, Config.SellCasinoChips.coords.w, false, false)
+    -- FreezeEntityPosition(ShopPed["casino"], true)
+    -- SetEntityInvincible(ShopPed["casino"], true)
+    -- SetBlockingOfNonTemporaryEvents(ShopPed["casino"], true)
+    --[[
     if Config.UseTarget then
         exports['qb-target']:AddTargetEntity(ShopPed["casino"], {
             options = {
@@ -184,7 +184,7 @@ local function createPeds()
             distance = 2.0
         })
     end
-
+    ]]--
     pedSpawned = true
 end
 
