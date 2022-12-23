@@ -18,10 +18,10 @@ client_scripts {
     '@PolyZone/BoxZone.lua',
     'cl_config.lua', -- Client config
     'client/fleeca.lua',
-    'client/pacific.lua',
+    --'client/pacific.lua',
     'client/powerstation.lua',
     'client/doors.lua',
-    'client/paleto.lua'
+    --'client/paleto.lua'
 }
 
 server_scripts {
