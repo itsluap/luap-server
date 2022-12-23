@@ -302,6 +302,9 @@ RegisterNetEvent('consumables:client:Drink', function(itemName, PropName)
             TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items[itemName], "remove")
             StopAnimTask(PlayerPedId(), 'amb@world_human_drinking@coffee@male@idle_a', "idle_c", 1.0)
             TriggerServerEvent("QBCore:Server:SetMetaData", "thirst", QBCore.Functions.GetPlayerData().metadata["thirst"] + math.random(20, 35))
+            if itemName == "slushy" then
+                exports['ps-buffs']:AddBuff("super-thirst", 25000)
+            end
         end, function()
         exports['qb-assets']:RemoveProp()
         --TriggerEvent('lj-inventory:client:set:busy', false)
