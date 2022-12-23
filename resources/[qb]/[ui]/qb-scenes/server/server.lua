@@ -85,3 +85,16 @@ RegisterNetEvent('qb-scenes:server:CreateScene', function(sceneData)
         UpdateAllScenes()
     end)
 end)
+
+-- commands --
+
+QBCore.Commands.Add('createscene','', {}, false, function(source)
+    local src = source
+    TriggerClientEvent('qb-scenes:createscene', src)
+end, 'admin')
+
+
+QBCore.Commands.Add('deletescene','', {}, false, function(source)
+    local src = source
+    TriggerClientEvent('qb-scenes:deletescene', src)
+end, 'admin')
