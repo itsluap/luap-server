@@ -20,14 +20,9 @@ local Translations = {
     info = {
         ["timeleft"] = "Ainda te faltam... %{JAILTIME} meses",
         ["lost_job"] = "Estás Desempregado",
-        ["job_interaction"] = "[E] Electricity Work", -- This needs to be translated
     }
 }
-
-if GetConvar('qb_locale', 'en') == 'pt' then
-    Lang = Locale:new({
-        phrases = Translations,
-        warnOnMissing = true,
-        fallbackLang = Lang,
-    })
-end
+Lang = Locale:new({
+    phrases = Translations,
+    warnOnMissing = true
+})
