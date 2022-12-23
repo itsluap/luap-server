@@ -1310,6 +1310,7 @@ Config.Locations = {
     },
 
     -- Casino Locations
+    --[[
     ["casino"] = {
         ["label"] = "Diamond Casino",
         ["coords"] = vector4(949.29, 32.13, 71.95, 79.54),
@@ -1339,7 +1340,7 @@ Config.Locations = {
         ["blipscale"] = 0.8,
         ["blipcolor"] = 0
     },
-
+    ]]--
     -- Weedshop Locations
     ["weedshop"] = {
         ["label"] = "LD Organics",
