@@ -701,4 +701,8 @@ QBShared.Items = {
 		["combinable"] = nil,   
 		["description"] = "Magic"
 	},
+
+	-- an-stancer --
+
+	['stancerkit'] = {['name'] = 'stancerkit', ['label'] = 'Camber Arms', ['weight'] = 2000, ['type'] = 'item', ['image'] = 'tunerchip.png', ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'Camber arms can be used to adjust vehicle tire angle'},
 }
