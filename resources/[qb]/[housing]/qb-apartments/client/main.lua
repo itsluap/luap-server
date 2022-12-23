@@ -145,13 +145,13 @@ local function RegisterInApartmentZone(targetKey, coords, heading, text)
             if targetKey == "entrancePos" then
                 ShowExitHeaderMenu()
             else
-                exports['qb-core']:DrawText(text, 'left')
+                exports['ps-ui']:DisplayText(text, 'primary')
             end
         else
             if targetKey == "entrancePos" then
                 CloseMenuFull()
             else
-                exports['qb-core']:HideText()
+                exports['ps-ui']:HideText()
             end
         end
 
@@ -591,21 +591,21 @@ CreateThread(function ()
             if IsInsideStashZone then
                 if IsControlJustPressed(0, 38) then
                     TriggerEvent('apartments:client:OpenStash')
-                    exports['qb-core']:HideText()
+                    exports['ps-ui']:HideText()
                 end
             end
 
             if IsInsideOutfitsZone then
                 if IsControlJustPressed(0, 38) then
                     TriggerEvent('apartments:client:ChangeOutfit')
-                    exports['qb-core']:HideText()
+                    exports['ps-ui']:HideText()
                 end
             end
 
             if IsInsideLogoutZone then
                 if IsControlJustPressed(0, 38) then
                     TriggerEvent('apartments:client:Logout')
-                    exports['qb-core']:HideText()
+                    exports['ps-ui']:HideText()
                 end
             end
         end
