@@ -688,7 +688,7 @@ end exports("removeAccountMember", removeAccountMember)
 
 -- give cash command --
 
-QBCore.Commands.Add('givecash', Lang:t('command.givecash'), {{name = 'id', help = 'Player ID'}, {name = 'amount', help = 'Amount'}}, true, function(source, args)
+QBCore.Commands.Add('givecash', "hand someone some cash", {{name = 'id', help = 'Player ID'}, {name = 'amount', help = 'Amount'}}, true, function(source, args)
     local src = source
       local id = tonumber(args[1])
       local amount = math.ceil(tonumber(args[2]))
