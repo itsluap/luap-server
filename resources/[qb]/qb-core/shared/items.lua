@@ -706,4 +706,5 @@ QBShared.Items = {
 	-- an-stancer --
 
 	['stancerkit'] = {['name'] = 'stancerkit', ['label'] = 'Camber Arms', ['weight'] = 2000, ['type'] = 'item', ['image'] = 'tunerchip.png', ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'Camber arms can be used to adjust vehicle tire angle'},
+	['slushy']                      = {['name'] = 'slushy',                     ['label'] = 'Slushy',                   ['weight'] = 750,       ['type'] = 'item',      ['image'] = 'slushy.png',       ['unique'] = true,      ['useable'] = true,     ['shouldClose'] = true,     ['combinable'] = nil,   ['description'] = 'A nice cold drink'},
 }
