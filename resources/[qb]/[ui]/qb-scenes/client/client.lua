@@ -50,19 +50,27 @@ end)
 -----------------------
 ---- Client Events ----
 -----------------------
-
+--[[
 RegisterCommand('createscene', function()
-    if QBCore.Functions.HasPermission(source, 'admin') then
-        OpenMenu()
-        TriggerServerEvent("InteractSound_SV:PlayOnSource", "monkeyopening", 0.05)
-    end
+    OpenMenu()
+    TriggerServerEvent("InteractSound_SV:PlayOnSource", "monkeyopening", 0.05)
 end, false)
+]]--
 
+RegisterNetEvent('qb-scenes:createscene', function()
+    OpenMenu()
+    TriggerServerEvent("InteractSound_SV:PlayOnSource", "monkeyopening", 0.05)
+end)
+
+--[[
 RegisterCommand('deletescene', function()
-    if QBCore.Functions.HasPermission(source, 'admin') then   
-        ToggleDeletionLaser()
-    end
+    ToggleDeletionLaser()
 end, false)
+]]--
+
+RegisterNetEvent('qb-scenes:deletescene', function()
+    ToggleDeletionLaser()
+end)
 
 RegisterNUICallback('CloseMenu', function(_, cb)
     CloseMenu()
