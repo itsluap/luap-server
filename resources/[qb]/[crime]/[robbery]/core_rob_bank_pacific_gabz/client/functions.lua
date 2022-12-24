@@ -124,7 +124,7 @@ end)
 
 RegisterNetEvent("luap:pacificminigames:maze")
 AddEventHandler("luap:pacificminigames:maze",function(data,cb)
-    local success = exports['ps-ui']:Maze(function(Success)
+    exports['ps-ui']:Maze(function(Success)
         if Success then
             cb(true)
         else
