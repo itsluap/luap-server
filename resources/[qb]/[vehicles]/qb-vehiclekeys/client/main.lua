@@ -97,10 +97,8 @@ CreateThread(function()
                         Hotwire(vehicle, plate)
                     end
                 end
-            else 
-                exports['ps-ui']:HideText()
             end
-
+            
             if Config.CarJackEnable and canCarjack then
                 local playerid = PlayerId()
                 local aiming, target = GetEntityPlayerIsFreeAimingAt(playerid)
