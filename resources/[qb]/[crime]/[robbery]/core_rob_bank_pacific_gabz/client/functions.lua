@@ -119,3 +119,16 @@ AddEventHandler("CORE_ROB_BANK_PACIFIC:PoliceNotification_c", function(data)
 		exports['core_dispach']:addCall(dispatch[1],dispatch[2],dispatch[3],dispatch[4],dispatch[5],dispatch[6],dispatch[7],dispatch[8])
 	end
 end)
+
+-- custom minigames --
+
+RegisterNetEvent("luap:pacificminigames:maze")
+AddEventHandler("luap:pacificminigames:maze",function(data,cb)
+    local success = exports['ps-ui']:Maze(function(success)
+        if Success then
+            cb(true)
+        else
+            cb(false)
+        end
+    end, 30)
+end)
