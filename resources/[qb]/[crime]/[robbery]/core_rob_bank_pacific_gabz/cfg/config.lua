@@ -157,6 +157,10 @@ cfg.robbery = {
             options = {
                 {
                     type = "hackvoltage_01",
+
+                    item_needed = {
+                        {"electronickit",1,100}, -- {item_name,item_amount,chance_to_remove}
+                    },
     
                     minigame = {
                         event = "CORE_ROB_MINIGAMES:VoltLab_c", --event
@@ -202,6 +206,10 @@ cfg.robbery = {
             options = {
                 {
                     type = "hackvoltage_01",
+
+                    item_needed = {
+                        {"electronickit",1,100}, -- {item_name,item_amount,chance_to_remove}
+                    },
     
                     minigame = {
                         event = "CORE_ROB_MINIGAMES:VoltLab_c", --event
@@ -247,6 +255,10 @@ cfg.robbery = {
             options = {
                 {
                     type = "hackvoltage_01",
+
+                    item_needed = {
+                        {"electronickit",1,100}, -- {item_name,item_amount,chance_to_remove}
+                    },
     
                     minigame = {
                         event = "CORE_ROB_MINIGAMES:VoltLab_c", --event
