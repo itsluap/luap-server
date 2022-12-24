@@ -1,3 +1,15 @@
+What we need done:
+    - Job Guides / Intructions (Example: How to be a police officer, ems member, etc)
+    - Weight for items needs to be balanced and make sense
+    - List of default keybinds (Most can be changed in, Settings > Keybinds > FiveM)
+    - Check shop prices (Check ALL prices / Double check economy)
+    - Finish and post rules
+    - Finish website and forums
+    - Finish clothing and car headlights/taillights
+
+
+
+
 TODO 12/21/22:
     1. figure out headlights (or atleast find an id that works / or make your own headlight id that works) (applies for taillights too)
     2. go through clothing pack this is in server and remove bad files (glitching clothes)
@@ -19,18 +31,15 @@ WORKKKKKK:
 -- no oversized vehicles (fix textures for every car)
 -- mechanic shops and car dealerships 100% good to go (no bugs / everything working / prices)
 ====
--- find a car that has no coronas and use the id for other cars (id 999 works for this) (use 1249 instead)
--- some headlights are uneven (not crazy important)
--- find a car that has perfect headlights (need 2 / one for white lights / one for yellow lights) and make it its own resource and start it before normal car pack
+-- find a car that has perfect headlights (need 2 / one for white lights / one for yellow lights) and make it its own resource and start it before normal car pack (id 999 works for this) (use 1249 instead)
 -- ^^ then make all cars follow the respective light id (white or yellow) ^^
+-- some headlights are uneven (not crazy important)
 ====
 
 || CLOTHING ||
--- no broken clothing
--- only way to do clothing: rebuild in dutycloth (need to go through every single ydd in 'clothingpack' to check for textures, heels, hats)
--- ^^ make sure to check for skin data ^^
+-- no broken clothing (check for textures, heels, hats, and skin data)
 -- ^^ check for bugs / crashes ^^ remove broken / duplicate files ^^
--- ^^ double check okayed files for heels and skin data ^^
+-- ^^ double check okayed files for heels, skin data, etc ^^
 -- 
 ====
 || FINISH HEISTS ||
@@ -47,5 +56,11 @@ HEISTS:
     - Fleeca: where to get electronickit and trojan_usb, (good to go)
     - Pacific: 
     -
+    - where to get all heist items?
 Testing:
     - apartments should be raidable now
+
+
+-- new player guide could be a link to a forum page that shows a guide
+-- make sure rules are 100%, try to cover everything / create a staff application
+-- pd hiring bonus / ems hiring bonus
