@@ -26,6 +26,7 @@ Config.WhitelistJobs = {
 	["vanilla"] = true,
 	["judge"] = true,
 	["lawyer"] = true,
+	["casino"] = true,
 }
 
 Config.Descriptions = {
