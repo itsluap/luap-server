@@ -1,6 +1,9 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
 local Previewing = {}
+
+GlobalState.isMech = false 
+
 ----Commands
 --[[QBCore.Commands.Add("test", "", {}, false, function(source, args) TriggerServerEvent('jim-mechanic:server:LoadNitrous', trim(GetVehicleNumberPlateText(GetVehiclePedIsIn(source)))) end)]]
 
@@ -157,6 +160,7 @@ QBCore.Functions.CreateCallback('jim-mechanic:mechCheck', function(source, cb)
 		local Player = QBCore.Functions.GetPlayer(v)
 		for l, b in pairs(Config.JobRoles) do
 			if Player.PlayerData.job.name == b and Player.PlayerData.job.onduty then dutyList[tostring(b)] = true end
+			GlobalState.isMech = true
 		end
 	end
 	local result = false

@@ -10,7 +10,16 @@ RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
     end)
 end)
 
-RegisterNetEvent('QBCore:Client:OnJobUpdate', function(JobInfo) PlayerJob = JobInfo onDuty = PlayerJob.onduty end)
+RegisterNetEvent('QBCore:Client:OnJobUpdate', function(JobInfo)
+	PlayerJob = JobInfo
+	onDuty = PlayerJob.onduty
+	for _, v in pairs(Config.JobRoles) do 
+		if v == PlayerJob.name then 
+			GlobalState.isMech = true 
+		end 
+	end
+end)
+
 RegisterNetEvent('QBCore:Client:SetDuty', function(duty) onDuty = duty end)
 
 AddEventHandler('onResourceStart', function(resource) if GetCurrentResourceName() ~= resource then return end
