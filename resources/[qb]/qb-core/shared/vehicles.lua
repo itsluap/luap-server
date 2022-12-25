@@ -4026,13 +4026,13 @@ QBShared.Vehicles = {
         ['hash'] = `rmodgt63`,
         ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
-	['rmodc63amg'] = {
-        ['name'] = 'C63 AMG Widebody',
-        ['brand'] = 'Mercedes',
-        ['model'] = 'rmodc63amg',
-        ['price'] = 120000,
+	['contss18'] = {
+        ['name'] = '',
+        ['brand'] = 'Bentley Supersport',
+        ['model'] = 'contss18',
+        ['price'] = 328000,
         ['category'] = 'imports',
-        ['hash'] = `rmodc63amg`,
+        ['hash'] = `contss18`,
         ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
     },
 
