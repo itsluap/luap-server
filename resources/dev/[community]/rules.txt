@@ -1,33 +1,33 @@
 
 General Rules:
-    - age requirement?
+    - Age Requirement: 18+
     - A working, quality mic is required.
     - Your character needs to have a somewhat realistic name, and must not break TOS.
     - Being toxic, or breeding toxicity can have you removed from the community at any point in time
     -
 
 Player Reports & Bans:
-    - 
+    - These can be done through the discord ticket system or on the forums. Staff will need the ID of the person who is suspected of breaking a guideline or rule. Staff will also actively enforce community rules and guidelines without reports.
 
 In-Game Information:
 
-    - Stay in character at all times:
+[A] - Stay in character at all times:
         - In the event there's an issue, completely role-play out the scenario and player report if needed. Do not break character / inform the player they are breaking a rule in-game.
         - Do not do actions in game that bait others into breaking roleplay.
 
-    - /OOC Usage:
+[A] - /OOC Usage:
         - OOC Chat is restricted to RP stopping technical issues only and is for things that cannot be handled in a support channel through discord.
     
-    - Server Restarts:
+[A] - Server Restarts:
         - Roleplay shouldn't be stopped or become less serious before a restart; it should continue as normal.
 
-    - Looting:
+[A] - Looting:
         - Looting any player without much roleplay presented for them is prohibited.
 
-    - Metagaming:
+[D] - Metagaming:
         - Purposely using or relaying information that your character did not learn in-game to shape in-game roleplay.
 
-    - Powergaming / Fail RP:
+[B] - Powergaming / Fail RP:
         - Using means not actually in-game to gain an advantage or not attempting to fit in to the world in a sensible way:
             - Talking / Calling out locations while downed.
             - Finding the quickest way to make money, rather than roleplaying around the mechanic.
@@ -35,30 +35,32 @@ In-Game Information:
             - Driving at unrealistic speeds with no character reason over and over.
             - Government employees not obeying road laws
 
-    - Random Death Match (RDM) & Vehicle Death Match (VDM):
+[B/C]- Random Death Match (RDM) & Vehicle Death Match (VDM):
         - Attacking another player/group without any story/roleplay leading up to it.
         - Attacking another player/group using a vehicle with the intent to kill / knock them down without vailid reasoning or initiation.
             - Speed (100 +) attacking other vehicles (Ramming)
 
-    - New Life Rule (NLR):
+[B] - New Life Rule (NLR):
         - If your are downed and respawn at the hospital your character forgets the immediate events leading up to being downed in the current scenario. You may not respawn if you've been advised that police or EMS is on the way to the scene.
         - You must try and contact medical help of some sort while incapacitated.
 
-    - Multiple Characters 
+[B] - Multiple Characters 
         - 
 
-    - Not Valuing Life (NVL):
+[B] - Not Valuing Life (NVL):
         - Not realistically fearing for your life when you are threatened with weapons or severe harm from other means.
         - Having non-spontaneous shootouts at PD or hospital is not allowed.
         - Antagonizing gangs/police or armed individuals for no character reason
         - Players should not be inserting themselves into ongoing situations or shootouts, between two groups or one group and the police.
 
-    Criminal Activites:
+[B] - Criminal Activites:
         - Criminal activities are limited to (x) players max at a time.
             - Relaying information to or between characters (lookouts, radio communications) counts you as part of that scenario.
             - Choosing shooters/grinders over roleplayers is not acceptable.
             - Whenever characters are brought into police custody and a second group is formed to attempt a prison break or transport break, that second group is not allowed to intervene until the prison transport begins. Doing so with small weapons or an unthought out plan is also NVL.
-            
+
+
+
 Class Information:
 (note these are only baselines; each situation is different and will be handled accordingly to the issues presented)
 
