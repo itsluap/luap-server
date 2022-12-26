@@ -329,3 +329,17 @@ QBCore.Commands.Add('me', Lang:t("command.me.help"), {{name = Lang:t("command.me
         end
     end
 end, 'user')
+
+-- referral command -- 
+
+QBCore.Commands.Add('referral', 'Redeem A Referral Code', {}, true, function(source, args)
+    local Player = QBCore.Functions.GetPlayer(source)
+    if Player then
+        if tostring(args[1]) == 'WTI3' then
+            Player.Functions.AddMoney("bank", "50000")
+        end
+        TriggerClientEvent('QBCore:Notify', source, "Redeemed Code!", 'success')
+    else 
+        TriggerClientEvent('QBCore:Notify', source, "Error redeeming code", 'error')
+    end
+end, 'user')
