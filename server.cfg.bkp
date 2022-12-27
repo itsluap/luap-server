@@ -45,7 +45,7 @@ ensure cfx-gabz-mapdata         #*THIS RESOURCE IS REQUIRED FOR ALL RESOURCES TO
 ensure cfx-gabz-scenarios       #*THIS RESOURCE IS OPTIONAL, IT REMOVES CONFLICTING PEDS SPAWNS*
 ensure cfx-gabz-pdprops         #*THIS RESOURCE IS REQUIRED IF YOU USE ANY PD. IT MUST BE START BEFORE PD'S*
 ensure cfx-gabz-247             #*THIS RESOURCE IS MANDATORY IF YOU USE [CFX-GABZ-OTTOS]*
-ensure cfx-gabz-altruists
+#ensure cfx-gabz-altruists
 #ensure cfx-gabz-ammunation
 ensure cfx-gabz-arcade
 ensure cfx-gabz-aztecas
@@ -104,7 +104,7 @@ ensure cfx-gabz-vbmarket
 ensure cfx-gabz-vu
 ensure cfx-gabz-yachts
 ensure cfx-gabz-mba
-ensure cfx-gabz-xmas
+#ensure cfx-gabz-xmas
 ensure [assets]
 ##########################
 ensure qb-core
