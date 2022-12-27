@@ -3661,6 +3661,15 @@ QBShared.Vehicles = {
         ['hash'] = `rmodm4gts`,
         ['shop'] = 'luap',
     },
+	['mansgtmk2'] = {
+        ['name'] = '2005 GT',
+        ['brand'] = 'Ford',
+        ['model'] = 'mansgtmk2',
+        ['price'] = 1000000,
+        ['category'] = 'sports',
+        ['hash'] = `mansgtmk2`,
+        ['shop'] = 'luap',
+    },
 	-- king -- 
 	['navigator'] = {
         ['name'] = 'Navigator',
@@ -3691,6 +3700,10 @@ QBShared.Vehicles = {
         ['shop'] = 'icey',
     },
 	----------------------------------------
+
+	-- mansuag --
+
+
 	
 	-- luxury shop --
 	['amgone'] = {
