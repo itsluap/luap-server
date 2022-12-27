@@ -11,11 +11,13 @@ Citizen.CreateThread(function()
 			local playerPed = GetPlayerPed(-1)
 			local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
 			if IsPedInAnyVehicle(playerPed, false) and IsControlPressed(2, 75) and not IsEntityDead(playerPed) then
-                Citizen.Wait(150)
+                Citizen.Wait(500)
 				if IsPedInAnyVehicle(playerPed, false) and IsControlPressed(2, 75) and not IsEntityDead(playerPed) then
 					SetVehicleEngineOn(vehicle, true, true, false)
 					TaskLeaveVehicle(playerPed, vehicle, 0)
 				end	
+			else
+				SetVehicleEngineOn(vehicle, false, false, true)
 			end
 		end
 		if IsPedInAnyVehicle(PlayerPedId(), false) then
@@ -247,12 +249,13 @@ end
 -----------------------------------------------------------------------------
 if UseCommands then
 	-- ENGINE
+	--[[
 	TriggerEvent('chat:addSuggestion', '/engine', 'Start/Stop Engine')
 
 	RegisterCommand("engine", function(source, args, rawCommand)
 		EngineControl()
 	end, false)
-
+	]]--
 	-- DOORS
 	TriggerEvent('chat:addSuggestion', '/door', 'Open/Close Vehicle Door', {
 		{ name="ID", help="1) Driver, 2) Passenger, 3) Driver Side Rear, 4) Passenger Side Rear" }
