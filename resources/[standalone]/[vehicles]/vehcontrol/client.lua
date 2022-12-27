@@ -65,7 +65,7 @@ end)
 -----------------------------------------------------------------------------
 
 RegisterNUICallback('ignition', function()
-    EngineControl()
+    --EngineControl()
 end)
 
 RegisterNUICallback('interiorLight', function()
