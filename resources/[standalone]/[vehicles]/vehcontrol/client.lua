@@ -248,15 +248,7 @@ end
 -- VEHICLE COMMANDS
 -----------------------------------------------------------------------------
 if UseCommands then
-	-- ENGINE
-	--[[
-	TriggerEvent('chat:addSuggestion', '/engine', 'Start/Stop Engine')
-
-	RegisterCommand("engine", function(source, args, rawCommand)
-		EngineControl()
-	end, false)
-	]]--
-	-- DOORS
+	-- DOORS=
 	TriggerEvent('chat:addSuggestion', '/door', 'Open/Close Vehicle Door', {
 		{ name="ID", help="1) Driver, 2) Passenger, 3) Driver Side Rear, 4) Passenger Side Rear" }
 	})
