@@ -2,7 +2,7 @@
 
 -- ottos - garagedoor left
 table.insert(Config.DoorList, {
-	fixText = false,
+	fixText = true,
 	objHash = 270330101,
 	slides = false,
 	authorizedJobs = { ['ottos']=0 },
@@ -21,7 +21,7 @@ table.insert(Config.DoorList, {
 
 -- ottos - garagedoor middle
 table.insert(Config.DoorList, {
-	fixText = false,
+	fixText = true,
 	objHash = 270330101,
 	slides = false,
 	authorizedJobs = { ['ottos']=0 },
@@ -40,7 +40,7 @@ table.insert(Config.DoorList, {
 
 -- ottos - garagedoor right
 table.insert(Config.DoorList, {
-	fixText = false,
+	fixText = true,
 	objHash = 270330101,
 	slides = false,
 	authorizedJobs = { ['ottos']=0 },
