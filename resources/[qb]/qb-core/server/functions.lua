@@ -212,7 +212,7 @@ function PaycheckInterval()
                         if account ~= 0 then -- Checks if player is employed by a society
                             if account < payment then -- Checks if company has enough money to pay society
                                 TriggerClientEvent('QBCore:Notify', Player.PlayerData.source, Lang:t('error.company_too_poor'), 'error')
-                            elseif account = false then 
+                            elseif account == false then 
                                 TriggerClientEvent('QBCore:Notify', Player.PlayerData.source, "Company has no bank account to pay you!", 'error')
                             else
                                 Player.Functions.AddMoney('bank', payment)
