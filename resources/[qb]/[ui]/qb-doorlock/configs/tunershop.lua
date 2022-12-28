@@ -3,7 +3,7 @@
 
 -- Entry (normal door)
 table.insert(Config.DoorList, {
-	authorizedJobs = { ['mechanic']=0 },
+	authorizedJobs = { ['tuner']=0 },
 	objCoords = vector3(154.9345, -3017.323, 7.190679),
 	objHeading = 270.00003051758,		
 	objHash = -2023754432, -- v_ilev_rc_door2
@@ -22,7 +22,7 @@ table.insert(Config.DoorList, {
 
 -- Garage door right (from outside)
 table.insert(Config.DoorList, {
-	authorizedJobs = { ['mechanic']=0 },
+	authorizedJobs = { ['tuner']=0 },
 	objCoords = vector3(154.8095, -3023.889, 8.503336),
 	objHeading = 89.999961853027,
 	objHash = -456733639, -- denis3d_ts_gate
@@ -41,7 +41,7 @@ table.insert(Config.DoorList, {
 
 -- Garage door left (from outside)
 table.insert(Config.DoorList, {
-	authorizedJobs = { ['mechanic']=0 },
+	authorizedJobs = { ['tuner']=0 },
 	objCoords = vector3(154.8095, -3034.051, 8.503336),
 	objHeading = 89.999961853027,		
 	objHash = -456733639, -- denis3d_ts_gate
@@ -60,7 +60,7 @@ table.insert(Config.DoorList, {
 
 -- Employees room
 table.insert(Config.DoorList, {
-	authorizedJobs = { ['mechanic']=0 },
+	authorizedJobs = { ['tuner']=0 },
 	objCoords = vector3(151.4668, -3011.705, 7.258367),
 	objHeading = 89.999977111816,
 	objHash = -1229046235, -- denis3d_ts_container_doors
