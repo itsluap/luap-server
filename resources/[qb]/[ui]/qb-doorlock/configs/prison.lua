@@ -1,529 +1,1022 @@
+-- ## GABZ - BOLINGBROKE PENITENTIARY
+-- ## COORDINATES: 1855.556 2586.384 45.673
 
 
--- 1 created by luap
-Config.DoorList['prison-1'] = {
-    objCoords = vec3(1844.998413, 2604.812500, 44.639778),
-    objYaw = 90.0,
-    authorizedJobs = { 'police', 'sheriff', 'trooper' },
-    doorLabel = 'Gate 1',
-    doorRate = 1.0,
-    locked = true,
-    fixText = true,
-    objName = 741314661,
-    distance = 4,
-    doorType = 'sliding',
-}
+-- ## RECEPTION - COORDINATES: 1855.556 2586.384 45.673
+-- entrance (big gates)
+table.insert(Config.DoorList, {
+	objHash = 741314661, -- prop_gate_prison_01
+	objCoords = vector3(1844.9, 2604.8, 44.6),
+	textCoords = vector3(1845.28, 2608.5, 48.0),
+	authorizedJobs = { ['police'] = 0 },
+	locked = true,
+	maxDistance = 12,
+	fixText = true,
+	size = 2,
+	slides = true,
+	lockpick = true,
+})
 
--- 2 created by luap
-Config.DoorList['prison-2'] = {
-    objYaw = 90.0,
-    doorLabel = 'Gate 2',
-    objName = 741314661,
-    fixText = true,
-    doorRate = 1.0,
-    objCoords = vec3(1818.542847, 2604.812500, 44.611004),
-    distance = 4,
-    authorizedJobs = { 'police', 'sheriff', 'trooper' },
-    doorType = 'sliding',
-    locked = true,
-}
+table.insert(Config.DoorList, {
+	objHash = 741314661, -- prop_gate_prison_01
+	objCoords = vector3(1818.5, 2604.8, 44.6),
+	textCoords = vector3(1818.5, 2608.4, 48.0),
+	authorizedJobs = { ['police'] = 0 },
+	locked = true,
+	maxDistance = 12,
+	fixText = true,
+	size = 2,
+	slides = true,
+	lockpick = true,
+})
 
--- 3 created by luap
-Config.DoorList['prison-3'] = {
-    pickable = true,
-    fixText = false,
-    doorLabel = 'Entrance to Lobby',
-    objName = -1033001619,
-    objYaw = 89.890563964844,
-    doorRate = 1.0,
-    objCoords = vec3(1845.197998, 2585.239990, 46.099289),
-    distance = 2,
-    authorizedJobs = { 'police', 'sheriff', 'trooper' },
-    doorType = 'door',
-    locked = true,
-}
+-- main entry
+table.insert(Config.DoorList, {
+	objHash = 1373390714, -- prop_gate_prison_01
+	objHeading = 89.999977111816,
+	maxDistance = 2.0,
+	audioRemote = false,
+	objCoords = vector3(1845.336, 2585.348, 46.0855),
+	authorizedJobs = { ['police'] = 0 },
+	lockpick = false,
+	fixText = true,
+	locked = true,
+	garage = false,
+	slides = false,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
 
--- 4 created by luap
-Config.DoorList['prison-4'] = {
-    pickable = true,
-    fixText = false,
-    doorLabel = 'Reception Desk',
-    objName = -1033001619,
-    objYaw = 270.48828125,
-    doorRate = 1.0,
-    objCoords = vec3(1837.713989, 2595.185059, 46.099289),
-    distance = 2,
-    authorizedJobs = { 'police', 'sheriff', 'trooper' },
-    doorType = 'door',
-    locked = true,
-}
+-- reception staff entry
+table.insert(Config.DoorList, {
+	objHash = 2024969025, -- sanhje_prison_recep_door01 
+	slides = false,
+	maxDistance = 2.0,
+	objHeading = 0.0,
+	lockpick = false,
+	authorizedJobs = { ['police']=0 },
+	fixText = false,
+	locked = true,
+	audioRemote = false,
+	objCoords = vector3(1844.404, 2576.997, 46.0356),
+	garage = false,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
 
--- 5 created by luap
-Config.DoorList['prison-5'] = {
-    pickable = true,
-    fixText = false,
-    doorLabel = 'Behind Reception',
-    objName = -1033001619,
-    objYaw = 89.890563964844,
-    doorRate = 1.0,
-    objCoords = vec3(1834.002075, 2591.110840, 46.099289),
-    distance = 2,
-    authorizedJobs = { 'police', 'sheriff', 'trooper' },
-    doorType = 'door',
-    locked = true,
-}
+-- cloakroom reception
+table.insert(Config.DoorList, {
+	objHash = 2024969025, -- sanhje_prison_recep_door01
+	slides = false,
+	maxDistance = 2.0,
+	objHeading = 0.0,
+	lockpick = false,
+	authorizedJobs = { ['police']=0 },
+	fixText = false,
+	locked = true,
+	audioRemote = false,
+	objCoords = vector3(1837.634, 2576.992, 46.0386),
+	garage = false,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
 
--- 6 created by luap
-Config.DoorList['prison-6'] = {
-    pickable = true,
-    fixText = false,
-    doorLabel = 'To Processing',
-    objName = -1033001619,
-    objYaw = 89.890563964844,
-    doorRate = 1.0,
-    objCoords = vec3(1837.697021, 2585.239990, 46.099289),
-    distance = 2,
-    authorizedJobs = { 'police', 'sheriff', 'trooper' },
-    doorType = 'door',
-    locked = true,
-}
+-- restroom reception
+table.insert(Config.DoorList, {
+	objHash = -2051651622, -- v_ilev_fib_door1
+	slides = false,
+	maxDistance = 2.0,
+	objHeading = 89.999977111816,
+	lockpick = false,
+	authorizedJobs = { ['police']=0 },
+	fixText = false,
+	locked = true,
+	audioRemote = false,
+	objCoords = vector3(1838.09, 2572.297, 46.15969),
+	garage = false,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
 
--- 7 created by luap
-Config.DoorList['prison-7'] = {
-    pickable = true,
-    fixText = false,
-    doorLabel = 'Rear Door (proceesing)',
-    objName = -1033001619,
-    objYaw = 89.890563964844,
-    doorRate = 1.0,
-    objCoords = vec3(1826.466064, 2585.270996, 46.099289),
-    distance = 2,
-    authorizedJobs = { 'police', 'sheriff', 'trooper' },
-    doorType = 'door',
-    locked = true,
-}
+-- visitors access
+table.insert(Config.DoorList, {
+	objHash = -684929024, -- sanhje_prison_recep_door02
+	slides = false,
+	maxDistance = 2.0,
+	objHeading = 89.999977111816,
+	lockpick = false,
+	authorizedJobs = { ['police']=0 },
+	fixText = false,
+	locked = true,
+	audioRemote = false,
+	objCoords = vector3(1835.528, 2587.44, 46.03712),
+	garage = false,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
 
--- 8 created by luap
-Config.DoorList['prison-8'] = {
-    pickable = true,
-    fixText = false,
-    doorLabel = 'To Hallway',
-    objName = -1033001619,
-    objYaw = 359.62673950195,
-    doorRate = 1.0,
-    objCoords = vec3(1827.364990, 2587.546875, 46.099289),
-    distance = 2,
-    authorizedJobs = { 'police', 'sheriff', 'trooper' },
-    doorType = 'door',
-    locked = true,
-}
+-- prison access reception
+table.insert(Config.DoorList, {
+	objHash = -684929024, -- sanhje_prison_recep_door02
+	slides = false,
+	maxDistance = 2.0,
+	objHeading = 0.0,
+	lockpick = false,
+	authorizedJobs = { ['police']=0 },
+	fixText = false,
+	locked = true,
+	audioRemote = false,
+	objCoords = vector3(1837.742, 2592.162, 46.03957),
+	garage = false,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
 
--- 9 created by luap
-Config.DoorList['prison-9'] = {
-    pickable = true,
-    fixText = false,
-    doorLabel = 'To outside hallway',
-    objName = -1033001619,
-    objYaw = 89.890563964844,
-    doorRate = 1.0,
-    objCoords = vec3(1819.129028, 2593.639893, 46.099289),
-    distance = 2,
-    authorizedJobs = { 'police', 'sheriff', 'trooper' },
-    doorType = 'door',
-    locked = true,
-}
+-- prison access 2 reception
+table.insert(Config.DoorList, {
+	objHash = -684929024, -- sanhje_prison_recep_door02
+	slides = false,
+	maxDistance = 2.0,
+	objHeading = 89.999961853027,
+	lockpick = false,
+	authorizedJobs = { ['police']=0 },
+	fixText = false,
+	locked = true,
+	audioRemote = false,
+	objCoords = vector3(1831.34, 2594.992, 46.03791),
+	garage = false,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
 
--- 10 created by luap
-Config.DoorList['prison-10'] = {
-    doors = {
-        {objName = 1645000677, objYaw = 89.926338195801, objCoords = vec3(1791.062988, 2595.103027, 46.311764)},
-        {objName = 262839150, objYaw = 270.07366943359, objCoords = vec3(1791.114014, 2592.503906, 46.312473)}
-    },
-    pickable = true,
-    doorRate = 1.0,
-    doorLabel = 'Cell Lobby Entrance',
-    distance = 2,
-    locked = true,
-    doorType = 'double',
-    authorizedJobs = { 'police', 'sheriff', 'trooper' },
-}
+-- photography room door
+table.insert(Config.DoorList, {
+	objHash = -684929024, -- sanhje_prison_recep_door02
+	slides = false,
+	maxDistance = 2.0,
+	objHeading = 270.00003051758,
+	lockpick = false,
+	authorizedJobs = { ['police']=0 },
+	fixText = false,
+	locked = true,
+	audioRemote = false,
+	objCoords = vector3(1838.617, 2593.705, 46.03636),
+	garage = false,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
 
+-- prisoners visits access
+table.insert(Config.DoorList, {
+	objHash = -684929024, -- sanhje_prison_recep_door02
+	slides = false,
+	maxDistance = 2.0,
+	objHeading = 179.99998474121,
+	lockpick = false,
+	authorizedJobs = { ['police']=0 },
+	fixText = false,
+	locked = true,
+	audioRemote = false,
+	objCoords = vector3(1827.981, 2592.157, 46.03718),
+	garage = false,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
 
--- 11 created by luap
-Config.DoorList['prison-11'] = {
-    locked = true,
-    objName = 430324891,
-    fixText = false,
-    objYaw = 159.91355895996,
-    pickable = true,
-    objCoords = vec3(1785.808472, 2590.019531, 44.797031),
-    doorRate = 1.0,
-    authorizedJobs = { 'police', 'sheriff', 'trooper' },
-    doorType = 'door',
-    doorLabel = 'To Cells',
-    distance = 2,
-}
+-- reception entry
+table.insert(Config.DoorList, {
+	maxDistance = 2.0,
+	objCoords = vector3(1835.902, 2584.903, 45.0169),
+	audioRemote = false,
+	garage = false,
+	authorizedJobs = { ['police']=0 },
+	fixText = false,
+	lockpick = false,
+	objHash = 673826957, -- prop_pris_door_03
+	locked = true,
+	objHeading = 89.999977111816,
+	slides = false,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
 
--- 12 created by luap
-Config.DoorList['prison-12'] = {
-    locked = true,
-    objName = 262839150,
-    fixText = false,
-    objYaw = 359.88809204102,
-    pickable = true,
-    objCoords = vec3(1786.383545, 2600.229004, 46.089169),
-    doorRate = 1.0,
-    authorizedJobs = { 'police', 'sheriff', 'trooper' },
-    doorType = 'door',
-    doorLabel = 'Rear Exit (Cell Lobby)',
-    distance = 2,
-}
-
--- 13 created by luap
-Config.DoorList['prison-13'] = {
-    locked = true,
-    objName = 1028191914,
-    fixText = false,
-    objYaw = 0.12177976965904,
-    pickable = true,
-    objCoords = vec3(1782.371460, 2595.814453, 45.972954),
-    doorRate = 1.0,
-    authorizedJobs = { 'police', 'sheriff', 'trooper' },
-    doorType = 'door',
-    doorLabel = 'Rear Kitchen Exit',
-    distance = 2,
-}
-
--- 14 created by luap
-Config.DoorList['prison-14'] = {
-    locked = true,
-    objName = 1028191914,
-    fixText = false,
-    objYaw = 1.4478982686996,
-    pickable = true,
-    objCoords = vec3(1780.351562, 2596.023438, 50.838913),
-    doorRate = 1.0,
-    authorizedJobs = { 'police', 'sheriff', 'trooper' },
-    doorType = 'door',
-    doorLabel = 'Watch Tower',
-    distance = 2,
-}
-
--- 15 created by luap
-Config.DoorList['prison-15'] = {
-    locked = true,
-    objName = 1028191914,
-    fixText = false,
-    objYaw = 270.10833740234,
-    pickable = true,
-    objCoords = vec3(1787.710571, 2606.000488, 50.732082),
-    doorRate = 1.0,
-    authorizedJobs = { 'police', 'sheriff', 'trooper' },
-    doorType = 'door',
-    doorLabel = 'Upstairs Door to Visitation',
-    distance = 2,
-}
-
--- 16 created by luap
-Config.DoorList['prison-16'] = {
-    locked = true,
-    objName = 1028191914,
-    fixText = false,
-    objYaw = 269.76599121094,
-    pickable = true,
-    objCoords = vec3(1781.949951, 2613.575928, 46.150200),
-    doorRate = 1.0,
-    authorizedJobs = { 'police', 'sheriff', 'trooper' },
-    doorType = 'door',
-    doorLabel = 'Civilian Visitation',
-    distance = 2,
-}
-
--- Outside to Visitation created by luap
-Config.DoorList['prison-17'] = {
-    doors = {
-        {objName = 262839150, objYaw = 180.0584564209, objCoords = vec3(1784.525024, 2609.673096, 46.301571)},
-        {objName = 1645000677, objYaw = 359.88809204102, objCoords = vec3(1787.121704, 2609.730957, 46.301567)}
-    },
-    pickable = true,
-    doorLabel = 'Prison Outside to Visitation',
-    doorRate = 1.0,
-    doorType = 'double',
-    locked = true,
-    authorizedJobs = { 'police', 'sheriff', 'trooper' },
-    distance = 2,
-}
+-- reception back door (to outside)
+table.insert(Config.DoorList, {
+	garage = false,
+	authorizedJobs = { ['police']=0 },
+	objHeading = 270.00003051758,
+	maxDistance = 2.0,
+	locked = true,
+	slides = false,
+	lockpick = false,
+	audioRemote = false,
+	objCoords = vector3(1819.073, 2594.873, 46.08695),
+	fixText = true,
+	objHash = 1373390714, -- prop_gate_prison_01		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
 
 
--- 18 created by luap
-Config.DoorList['prison-18'] = {
-    locked = true,
-    objName = 1028191914,
-    fixText = false,
-    objYaw = 89.728782653809,
-    pickable = true,
-    objCoords = vec3(1764.964478, 2608.424561, 50.732082),
-    doorRate = 1.0,
-    authorizedJobs = { 'police', 'sheriff', 'trooper' },
-    doorType = 'door',
-    doorLabel = 'The Hole Reception',
-    distance = 2,
-}
+-- ## CELL BLOCK - Coordinates: 1751.387 2505.984 45.565
+-- cellblock entry (outside)
+table.insert(Config.DoorList, {
+	authorizedJobs = { ['police']=0 },
+	objHash = 1373390714, -- prop_gate_prison_01
+	maxDistance = 2.0,
+	locked = true,
+	slides = false,
+	garage = false,
+	audioRemote = false,
+	lockpick = false,
+	fixText = true,
+	objCoords = vector3(1754.796, 2501.568, 45.80966),
+	objHeading = 210.00001525879,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
+
+-- cellblock entry 2 (inside)
+table.insert(Config.DoorList, {
+	authorizedJobs = { ['police']=0 },
+	objHash = 241550507, -- sanhje_prison_block_door -- sanhje_prison_block_door
+	maxDistance = 2.0,
+	locked = true,
+	slides = false,
+	garage = false,
+	audioRemote = false,
+	lockpick = false,
+	fixText = false,
+	objCoords = vector3(1758.652, 2492.659, 45.88988),
+	objHeading = 210.00001525879,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
+
+-- cell 1
+table.insert(Config.DoorList, {
+	authorizedJobs = { ['police']=0 },
+	objHash = 913760512, -- sanhje_prison_block_cell_door
+	maxDistance = 2.0,
+	locked = true,
+	slides = false,
+	garage = false,
+	audioRemote = false,
+	lockpick = false,
+	fixText = false,
+	objCoords = vector3(1768.548, 2498.411, 45.88988),
+	objHeading = 210.00001525879,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
+
+-- cell 2
+table.insert(Config.DoorList, {
+	authorizedJobs = { ['police']=0 },
+	objHash = 913760512, -- sanhje_prison_block_cell_door
+	maxDistance = 2.0,
+	locked = true,
+	slides = false,
+	garage = false,
+	audioRemote = false,
+	lockpick = false,
+	fixText = false,
+	objCoords = vector3(1765.401, 2496.594, 45.88988),
+	objHeading = 210.00001525879,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
+
+-- cell 3
+table.insert(Config.DoorList, {
+	authorizedJobs = { ['police']=0 },
+	objHash = 913760512, -- sanhje_prison_block_cell_door
+	maxDistance = 2.0,
+	locked = true,
+	slides = false,
+	garage = false,
+	audioRemote = false,
+	lockpick = false,
+	fixText = false,
+	objCoords = vector3(1762.255, 2494.778, 45.88988),
+	objHeading = 210.00001525879,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
+
+-- cell 4
+table.insert(Config.DoorList, {
+	authorizedJobs = { ['police']=0 },
+	objHash = 913760512, -- sanhje_prison_block_cell_door
+	maxDistance = 2.0,
+	locked = true,
+	slides = false,
+	garage = false,
+	audioRemote = false,
+	lockpick = false,
+	fixText = false,
+	objCoords = vector3(1755.963, 2491.146, 45.88988),
+	objHeading = 210.00001525879,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
+
+-- cell 5
+table.insert(Config.DoorList, {
+	authorizedJobs = { ['police']=0 },
+	objHash = 913760512, -- sanhje_prison_block_cell_door
+	maxDistance = 2.0,
+	locked = true,
+	slides = false,
+	garage = false,
+	audioRemote = false,
+	lockpick = false,
+	fixText = false,
+	objCoords = vector3(1752.817, 2489.33, 45.88988),
+	objHeading = 210.00001525879,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
+
+-- cell 6
+table.insert(Config.DoorList, {
+	authorizedJobs = { ['police']=0 },
+	objHash = 913760512, -- sanhje_prison_block_cell_door
+	maxDistance = 2.0,
+	locked = true,
+	slides = false,
+	garage = false,
+	audioRemote = false,
+	lockpick = false,
+	fixText = false,
+	objCoords = vector3(1749.671, 2487.514, 45.88988),
+	objHeading = 210.00001525879,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
+
+-- cell 7
+table.insert(Config.DoorList, {
+	authorizedJobs = { ['police']=0 },
+	objHash = 913760512, -- sanhje_prison_block_cell_door
+	maxDistance = 2.0,
+	locked = true,
+	slides = false,
+	garage = false,
+	audioRemote = false,
+	lockpick = false,
+	fixText = false,
+	objCoords = vector3(1768.547, 2498.412, 49.84591),
+	objHeading = 210.00001525879,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
+
+-- cell 8
+table.insert(Config.DoorList, {
+	authorizedJobs = { ['police']=0 },
+	objHash = 913760512, -- sanhje_prison_block_cell_door
+	maxDistance = 2.0,
+	locked = true,
+	slides = false,
+	garage = false,
+	audioRemote = false,
+	lockpick = false,
+	fixText = false,
+	objCoords = vector3(1765.401, 2496.595, 49.84591),
+	objHeading = 210.00001525879,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
+
+-- cell 9
+table.insert(Config.DoorList, {
+	authorizedJobs = { ['police']=0 },
+	objHash = 913760512, -- sanhje_prison_block_cell_door
+	maxDistance = 2.0,
+	locked = true,
+	slides = false,
+	garage = false,
+	audioRemote = false,
+	lockpick = false,
+	fixText = false,
+	objCoords = vector3(1762.255, 2494.779, 49.84591),
+	objHeading = 210.00001525879,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
+
+-- cell 10
+table.insert(Config.DoorList, {
+	authorizedJobs = { ['police']=0 },
+	objHash = 913760512, -- sanhje_prison_block_cell_door
+	maxDistance = 2.0,
+	locked = true,
+	slides = false,
+	garage = false,
+	audioRemote = false,
+	lockpick = false,
+	fixText = false,
+	objCoords = vector3(1759.109, 2492.963, 49.84591),
+	objHeading = 210.00001525879,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
+
+-- cell 11
+table.insert(Config.DoorList, {
+	authorizedJobs = { ['police']=0 },
+	objHash = 913760512, -- sanhje_prison_block_cell_door
+	maxDistance = 2.0,
+	locked = true,
+	slides = false,
+	garage = false,
+	audioRemote = false,
+	lockpick = false,
+	fixText = false,
+	objCoords = vector3(1755.963, 2491.146, 49.84591),
+	objHeading = 210.00001525879,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
+
+-- cell 12
+table.insert(Config.DoorList, {
+	authorizedJobs = { ['police']=0 },
+	objHash = 913760512, -- sanhje_prison_block_cell_door
+	maxDistance = 2.0,
+	locked = true,
+	slides = false,
+	garage = false,
+	audioRemote = false,
+	lockpick = false,
+	fixText = false,
+	objCoords = vector3(1752.817, 2489.329, 49.84591),
+	objHeading = 210.00001525879,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
+
+-- cell 13
+table.insert(Config.DoorList, {
+	authorizedJobs = { ['police']=0 },
+	objHash = 913760512, -- sanhje_prison_block_cell_door
+	maxDistance = 2.0,
+	locked = true,
+	slides = false,
+	garage = false,
+	audioRemote = false,
+	lockpick = false,
+	fixText = false,
+	objCoords = vector3(1749.671, 2487.513, 49.84591),
+	objHeading = 210.00001525879,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
+
+-- cell 14
+table.insert(Config.DoorList, {
+	authorizedJobs = { ['police']=0 },
+	objHash = 913760512, -- sanhje_prison_block_cell_door
+	maxDistance = 2.0,
+	locked = true,
+	slides = false,
+	garage = false,
+	audioRemote = false,
+	lockpick = false,
+	fixText = false,
+	objCoords = vector3(1758.078, 2475.393, 45.88988),
+	objHeading = 29.999996185303,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
+
+-- cell 15
+table.insert(Config.DoorList, {
+	authorizedJobs = { ['police']=0 },
+	objHash = 913760512, -- sanhje_prison_block_cell_door
+	maxDistance = 2.0,
+	locked = true,
+	slides = false,
+	garage = false,
+	audioRemote = false,
+	lockpick = false,
+	fixText = false,
+	objCoords = vector3(1761.225, 2477.21, 45.88988),
+	objHeading = 29.999996185303,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
+
+-- cell 16
+table.insert(Config.DoorList, {
+	authorizedJobs = { ['police']=0 },
+	objHash = 913760512, -- sanhje_prison_block_cell_door
+	maxDistance = 2.0,
+	locked = true,
+	slides = false,
+	garage = false,
+	audioRemote = false,
+	lockpick = false,
+	fixText = false,
+	objCoords = vector3(1764.369, 2479.026, 45.88988),
+	objHeading = 29.999996185303,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
+
+-- cell 17
+table.insert(Config.DoorList, {
+	authorizedJobs = { ['police']=0 },
+	objHash = 913760512, -- sanhje_prison_block_cell_door
+	maxDistance = 2.0,
+	locked = true,
+	slides = false,
+	garage = false,
+	audioRemote = false,
+	lockpick = false,
+	fixText = false,
+	objCoords = vector3(1767.515, 2480.843, 45.88988),
+	objHeading = 29.999996185303,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
+
+-- cell 18
+table.insert(Config.DoorList, {
+	authorizedJobs = { ['police']=0 },
+	objHash = 913760512, -- sanhje_prison_block_cell_door
+	maxDistance = 2.0,
+	locked = true,
+	slides = false,
+	garage = false,
+	audioRemote = false,
+	lockpick = false,
+	fixText = false,
+	objCoords = vector3(1770.661, 2482.659, 45.88988),
+	objHeading = 29.999996185303,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
+
+-- cell 19
+table.insert(Config.DoorList, {
+	authorizedJobs = { ['police']=0 },
+	objHash = 913760512, -- sanhje_prison_block_cell_door
+	maxDistance = 2.0,
+	locked = true,
+	slides = false,
+	garage = false,
+	audioRemote = false,
+	lockpick = false,
+	fixText = false,
+	objCoords = vector3(1773.807, 2484.476, 45.88988),
+	objHeading = 29.999996185303,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
+
+-- cell 20
+table.insert(Config.DoorList, {
+	authorizedJobs = { ['police']=0 },
+	objHash = 913760512, -- sanhje_prison_block_cell_door
+	maxDistance = 2.0,
+	locked = true,
+	slides = false,
+	garage = false,
+	audioRemote = false,
+	lockpick = false,
+	fixText = false,
+	objCoords = vector3(1776.952, 2486.292, 45.88988),
+	objHeading = 29.999996185303,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
+
+-- cell 21
+table.insert(Config.DoorList, {
+	authorizedJobs = { ['police']=0 },
+	objHash = 913760512, -- sanhje_prison_block_cell_door
+	maxDistance = 2.0,
+	locked = true,
+	slides = false,
+	garage = false,
+	audioRemote = false,
+	lockpick = false,
+	fixText = false,
+	objCoords = vector3(1758.078, 2475.391, 49.84636),
+	objHeading = 29.999996185303,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
+
+-- cell 22
+table.insert(Config.DoorList, {
+	authorizedJobs = { ['police']=0 },
+	objHash = 913760512, -- sanhje_prison_block_cell_door
+	maxDistance = 2.0,
+	locked = true,
+	slides = false,
+	garage = false,
+	audioRemote = false,
+	lockpick = false,
+	fixText = false,
+	objCoords = vector3(1761.225, 2477.209, 49.84636),
+	objHeading = 29.999996185303,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
+
+-- cell 23
+table.insert(Config.DoorList, {
+	authorizedJobs = { ['police']=0 },
+	objHash = 913760512, -- sanhje_prison_block_cell_door
+	maxDistance = 2.0,
+	locked = true,
+	slides = false,
+	garage = false,
+	audioRemote = false,
+	lockpick = false,
+	fixText = false,
+	objCoords = vector3(1764.369, 2479.025, 49.84636),
+	objHeading = 29.999996185303,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
+
+-- cell 24
+table.insert(Config.DoorList, {
+	authorizedJobs = { ['police']=0 },
+	objHash = 913760512, -- sanhje_prison_block_cell_door
+	maxDistance = 2.0,
+	locked = true,
+	slides = false,
+	garage = false,
+	audioRemote = false,
+	lockpick = false,
+	fixText = false,
+	objCoords = vector3(1767.515, 2480.843, 49.84636),
+	objHeading = 29.999996185303,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
+
+-- cell 25
+table.insert(Config.DoorList, {
+	authorizedJobs = { ['police']=0 },
+	objHash = 913760512, -- sanhje_prison_block_cell_door
+	maxDistance = 2.0,
+	locked = true,
+	slides = false,
+	garage = false,
+	audioRemote = false,
+	lockpick = false,
+	fixText = false,
+	objCoords = vector3(1770.66, 2482.659, 49.84636),
+	objHeading = 29.999996185303,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
+
+-- cell 26
+table.insert(Config.DoorList, {
+	authorizedJobs = { ['police']=0 },
+	objHash = 913760512, -- sanhje_prison_block_cell_door
+	maxDistance = 2.0,
+	locked = true,
+	slides = false,
+	garage = false,
+	audioRemote = false,
+	lockpick = false,
+	fixText = false,
+	objCoords = vector3(1773.807, 2484.477, 49.84636),
+	objHeading = 29.999996185303,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
+
+-- cell 27
+table.insert(Config.DoorList, {
+	authorizedJobs = { ['police']=0 },
+	objHash = 913760512, -- sanhje_prison_block_cell_door
+	maxDistance = 2.0,
+	locked = true,
+	slides = false,
+	garage = false,
+	audioRemote = false,
+	lockpick = false,
+	fixText = false,
+	objCoords = vector3(1776.951, 2486.293, 49.84636),
+	objHeading = 29.999996185303,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
+
+-- gym
+table.insert(Config.DoorList, {
+	authorizedJobs = { ['police']=0 },
+	objHash = 241550507, -- sanhje_prison_block_door 
+	maxDistance = 2.0,
+	locked = true,
+	slides = false,
+	garage = false,
+	audioRemote = false,
+	lockpick = false,
+	fixText = false,
+	objCoords = vector3(1751.147, 2481.178, 45.88988),
+	objHeading = 300.0,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
+
+-- recreational room
+table.insert(Config.DoorList, {
+	authorizedJobs = { ['police']=0 },
+	objHash = 241550507, -- sanhje_prison_block_door
+	maxDistance = 2.0,
+	locked = true,
+	slides = false,
+	garage = false,
+	audioRemote = false,
+	lockpick = false,
+	fixText = false,
+	objCoords = vector3(1752.281, 2479.248, 45.88988),
+	objHeading = 119.99996948242,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
+
+-- security left
+table.insert(Config.DoorList, {
+	authorizedJobs = { ['police']=0 },
+	objHash = 241550507, -- sanhje_prison_block_door
+	maxDistance = 2.0,
+	locked = true,
+	slides = false,
+	garage = false,
+	audioRemote = false,
+	lockpick = false,
+	fixText = false,
+	objCoords = vector3(1772.939, 2495.313, 49.84006),
+	objHeading = 29.999996185303,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
+
+-- security right
+table.insert(Config.DoorList, {
+	authorizedJobs = { ['police']=0 },
+	objHash = 241550507, -- sanhje_prison_block_door
+	maxDistance = 2.0,
+	locked = true,
+	slides = false,
+	garage = false,
+	audioRemote = false,
+	lockpick = false,
+	fixText = false,
+	objCoords = vector3(1775.414, 2491.025, 49.84006),
+	objHeading = 29.999996185303,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
 
 
+-- ## INFIRMARY - Coordinates: 1765.756 2561.949 45.565
+-- infirmary entry (outdoor)
+table.insert(Config.DoorList, {
+	objCoords = vector3(1765.118, 2566.524, 45.80285),
+	authorizedJobs = { ['police']=0 },
+	locked = true,
+	audioRemote = false,
+	slides = false,
+	lockpick = false,
+	fixText = true,
+	objHeading = 3.8476657209685e-05,
+	objHash = 1373390714, -- prop_gate_prison_01
+	garage = false,
+	maxDistance = 2.0,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
+
+-- infirmary reception
+table.insert(Config.DoorList, {
+	objCoords = vector3(1772.813, 2570.296, 45.74467),
+	authorizedJobs = { ['police']=0 },
+	locked = true,
+	audioRemote = false,
+	slides = false,
+	lockpick = false,
+	fixText = false,
+	objHeading = 4.8494574002689e-05,
+	objHash = 2074175368, -- sanhje_prison_infirmary_door3 
+	garage = false,
+	maxDistance = 2.0,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
+
+-- hallway entry
+table.insert(Config.DoorList, {
+	lockpick = false,
+	doors = {
+		{objHash = -1624297821, objHeading = 4.8494574002689e-05, objCoords = vector3(1766.325, 2574.698, 45.75301)}, -- sanhje_prison_infirmary_door1
+		{objHash = -1624297821, objHeading = 180.00001525879, objCoords = vector3(1764.025, 2574.698, 45.75301)} -- sanhje_prison_infirmary_door1
+ },
+	slides = false,
+	audioRemote = false,
+	maxDistance = 2.5,
+	authorizedJobs = { ['police']=0 },
+	locked = true,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
+
+-- laboratory
+table.insert(Config.DoorList, {
+	objCoords = vector3(1767.323, 2580.832, 45.74783),
+	garage = false,
+	maxDistance = 2.0,
+	lockpick = false,
+	objHash = -1392981450, -- sanhje_prison_infirmary_door2
+	fixText = false,
+	objHeading = 90.000007629395,
+	audioRemote = false,
+	slides = false,
+	authorizedJobs = { ['police']=0 },
+	locked = true,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
+
+-- surgery
+table.insert(Config.DoorList, {
+	lockpick = false,
+	doors = {
+		{objHash = -1624297821, objHeading = 270.0, objCoords = vector3(1767.321, 2582.308, 45.75345)}, -- sanhje_prison_infirmary_door1
+		{objHash = -1624297821, objHeading = 90.000007629395, objCoords = vector3(1767.321, 2584.607, 45.75345)} -- sanhje_prison_infirmary_door1
+ },
+	slides = false,
+	audioRemote = false,
+	maxDistance = 2.5,
+	authorizedJobs = { ['police']=0 },
+	locked = true,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
+
+-- intensive care
+table.insert(Config.DoorList, {
+	lockpick = false,
+	doors = {
+		{objHash = -1624297821, objHeading = 3.8476657209685e-05, objCoords = vector3(1766.325, 2589.564, 45.75309)}, -- sanhje_prison_infirmary_door1
+		{objHash = -1624297821, objHeading = 180.00006103516, objCoords = vector3(1764.026, 2589.564, 45.75309)} -- sanhje_prison_infirmary_door1
+ },
+	slides = false,
+	audioRemote = false,
+	maxDistance = 2.5,
+	authorizedJobs = { ['police']=0 },
+	locked = true,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
 
 
--- 19 created by luap
-Config.DoorList['prison-19'] = {
-    doorType = 'door',
-    objName = 430324891,
-    locked = true,
-    doorLabel = 'The Hole',
-    distance = 2,
-    doorRate = 1.0,
-    pickable = true,
-    authorizedJobs = { 'police', 'sheriff', 'trooper' },
-    fixText = false,
-    objYaw = 180.33160400391,
-    objCoords = vec3(1763.168457, 2600.225586, 49.553181),
-}
+-- ## CAFETERIA - Coordinates: 1772.354 2551.826 45.565
+-- entry 1 (from recreational area)
+table.insert(Config.DoorList, {
+	objCoords = vector3(1776.195, 2552.563, 45.74741),
+	garage = false,
+	maxDistance = 2.0,
+	lockpick = false,
+	objHash = 1373390714, -- prop_gate_prison_01
+	fixText = false,
+	objHeading = 270.00003051758,
+	audioRemote = false,
+	slides = false,
+	authorizedJobs = { ['police']=0 },
+	locked = true,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
 
--- 20 created by luap
-Config.DoorList['prison-20'] = {
-    doorType = 'door',
-    objName = 871712474,
-    locked = true,
-    doorLabel = 'The Hole Cell 1',
-    distance = 1,
-    doorRate = 1.0,
-    pickable = true,
-    authorizedJobs = { 'police', 'sheriff', 'trooper' },
-    fixText = false,
-    objYaw = 270.4482421875,
-    objCoords = vec3(1762.773560, 2596.512451, 50.670692),
-}
-
--- 21 created by luap
-Config.DoorList['prison-21'] = {
-    doorType = 'door',
-    objName = 871712474,
-    locked = true,
-    doorLabel = 'The Hole Cell 2',
-    distance = 1,
-    doorRate = 1.0,
-    pickable = true,
-    authorizedJobs = { 'police', 'sheriff', 'trooper' },
-    fixText = false,
-    objYaw = 89.728782653809,
-    objCoords = vec3(1765.196533, 2597.699463, 50.670692),
-}
-
--- 22 created by luap
-Config.DoorList['prison-22'] = {
-    doorType = 'door',
-    objName = 871712474,
-    locked = true,
-    doorLabel = 'The Hole Cell 3',
-    distance = 1,
-    doorRate = 1.0,
-    pickable = true,
-    authorizedJobs = { 'police', 'sheriff', 'trooper' },
-    fixText = false,
-    objYaw = 270.4482421875,
-    objCoords = vec3(1762.779541, 2593.567627, 50.670692),
-}
-
--- 23 created by luap
-Config.DoorList['prison-23'] = {
-    doorType = 'door',
-    objName = 871712474,
-    locked = true,
-    doorLabel = 'The Hole Cell 4',
-    distance = 1,
-    doorRate = 1.0,
-    pickable = true,
-    authorizedJobs = { 'police', 'sheriff', 'trooper' },
-    fixText = false,
-    objYaw = 89.728782653809,
-    objCoords = vec3(1765.189575, 2594.758545, 50.670692),
-}
-
--- 24 created by luap
-Config.DoorList['prison-24'] = {
-    doorType = 'door',
-    objName = 871712474,
-    locked = true,
-    doorLabel = 'The Hole Cell 5',
-    distance = 1,
-    doorRate = 1.0,
-    pickable = true,
-    authorizedJobs = { 'police', 'sheriff', 'trooper' },
-    fixText = false,
-    objYaw = 270.4482421875,
-    objCoords = vec3(1762.778564, 2590.628662, 50.670692),
-}
-
--- 25 created by luap
-Config.DoorList['prison-25'] = {
-    doorType = 'door',
-    objName = 871712474,
-    locked = true,
-    doorLabel = 'The Hole Cell 6',
-    distance = 1,
-    doorRate = 1.0,
-    pickable = true,
-    authorizedJobs = { 'police', 'sheriff', 'trooper' },
-    fixText = false,
-    objYaw = 89.728782653809,
-    objCoords = vec3(1765.189575, 2591.818604, 50.670692),
-}
-
--- 26 created by luap
-Config.DoorList['prison-26'] = {
-    doorType = 'door',
-    objName = 871712474,
-    locked = true,
-    doorLabel = 'The Hole Cell 7',
-    distance = 1,
-    doorRate = 1.0,
-    pickable = true,
-    authorizedJobs = { 'police', 'sheriff', 'trooper' },
-    fixText = false,
-    objYaw = 270.4482421875,
-    objCoords = vec3(1762.766479, 2587.677490, 50.670692),
-}
-
--- 27 created by luap
-Config.DoorList['prison-27'] = {
-    doorType = 'door',
-    objName = 871712474,
-    locked = true,
-    doorLabel = 'The Hole Cell 8',
-    distance = 1,
-    doorRate = 1.0,
-    pickable = true,
-    authorizedJobs = { 'police', 'sheriff', 'trooper' },
-    fixText = false,
-    objYaw = 89.728782653809,
-    objCoords = vec3(1765.191528, 2588.867432, 50.670692),
-}
-
--- 28 created by luap
-Config.DoorList['prison-28'] = {
-    doorRate = 1.0,
-    locked = true,
-    fixText = false,
-    doorType = 'door',
-    objYaw = 90.068550109863,
-    objCoords = vec3(1769.166992, 2619.261963, 46.150200),
-    distance = 2,
-    authorizedJobs = { 'police', 'sheriff', 'trooper' },
-    objName = 1028191914,
-    doorLabel = 'Prisoner Visitation Exit',
-    pickable = true,
-}
-
--- 29 created by luap
-Config.DoorList['prison-29'] = {
-    doorRate = 1.0,
-    locked = true,
-    fixText = false,
-    doorType = 'door',
-    objYaw = 359.74740600586,
-    objCoords = vec3(1766.896973, 2615.484131, 46.154190),
-    distance = 2,
-    authorizedJobs = { 'police', 'sheriff', 'trooper' },
-    objName = 1028191914,
-    doorLabel = 'Conjugal Visits',
-    pickable = true,
-}
-
--- 30 created by luap
-Config.DoorList['prison-30'] = {
-    objYaw = 269.76599121094,
-    locked = true,
-    doorType = 'door',
-    fixText = false,
-    objCoords = vec3(1769.170044, 2613.575928, 46.150200),
-    authorizedJobs = { 'police', 'sheriff', 'trooper' },
-    distance = 2,
-    pickable = true,
-    objName = 1028191914,
-    doorLabel = 'Conjugal Visits Civilian',
-    doorRate = 1.0,
-}
-
--- 31 created by luap
-Config.DoorList['prison-31'] = {
-    doorRate = 1.0,
-    locked = true,
-    fixText = false,
-    doorType = 'door',
-    objYaw = 269.85900878906,
-    objCoords = vec3(1759.910034, 2614.645020, 45.934784),
-    distance = 2,
-    authorizedJobs = { 'police', 'sheriff', 'trooper' },
-    objName = 1645000677,
-    doorLabel = 'Conjugal Visits Exit',
-    pickable = true,
-}
-
--- 32 created by luap
-Config.DoorList['prison-32'] = {
-    doorRate = 1.0,
-    locked = true,
-    fixText = false,
-    doorType = 'door',
-    objYaw = 90.163139343262,
-    objCoords = vec3(1783.136963, 2548.623047, 45.978088),
-    distance = 2,
-    authorizedJobs = { 'police', 'sheriff', 'trooper' },
-    objName = 1028191914,
-    doorLabel = 'Armory',
-    pickable = true,
-}
-
--- 33 created by luap
-Config.DoorList['prison-33'] = {
-    doorRate = 1.0,
-    locked = true,
-    fixText = false,
-    doorType = 'door',
-    objYaw = 269.73611450195,
-    objCoords = vec3(1791.682251, 2551.343262, 46.092167),
-    distance = 2,
-    authorizedJobs = { 'police', 'sheriff', 'trooper' },
-    objName = 262839150,
-    doorLabel = 'Hospital Exit',
-    pickable = true,
-}
-
--- 34 created by luap
-Config.DoorList['prison-34'] = {
-    doorRate = 1.0,
-    locked = true,
-    fixText = false,
-    doorType = 'door',
-    objYaw = 90.163139343262,
-    objCoords = vec3(1786.276001, 2551.772949, 49.754578),
-    distance = 2,
-    authorizedJobs = { 'police', 'sheriff', 'trooper' },
-    objName = 1028191914,
-    doorLabel = 'Office 1',
-    pickable = true,
-}
-
--- 35 created by luap
-Config.DoorList['prison-35'] = {
-    authorizedJobs = { 'police', 'sheriff', 'trooper' },
-    distance = 2,
-    doors = {
-        {objName = 1028191914, objYaw = 90.163139343262, objCoords = vec3(1781.755981, 2553.373047, 49.754578)},
-        {objName = 1028191914, objYaw = 269.45782470703, objCoords = vec3(1781.805054, 2550.772949, 49.754578)}
-    },
-    doorLabel = 'Office 2',
-    pickable = true,
-    locked = true,
-    doorRate = 1.0,
-    doorType = 'double',
-}
+-- entry 2
+table.insert(Config.DoorList, {
+	objCoords = vector3(1791.595, 2551.462, 45.7532),
+	garage = false,
+	maxDistance = 2.0,
+	lockpick = false,
+	objHash = 1373390714, -- prop_gate_prison_01
+	fixText = false,
+	objHeading = 89.999977111816,
+	audioRemote = false,
+	slides = false,
+	authorizedJobs = { ['police']=0 },
+	locked = true,		
+	-- oldMethod = true,
+	-- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+	-- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+	-- autoLock = 1000
+})
