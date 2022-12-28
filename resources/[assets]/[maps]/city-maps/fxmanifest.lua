@@ -35,5 +35,3 @@ data_file('DLC_ITYP_REQUEST')('stream/int_sheriff_stairs2.ytyp')
 data_file('DLC_ITYP_REQUEST')('stream/int_sheriff_second.ytyp')
 data_file('DLC_ITYP_REQUEST')('stream/int_sheriff_stairs1.ytyp')
 data_file('DLC_ITYP_REQUEST')('stream/int_sheriff_first.ytyp')
-
-client_script 'client.lua' -- casino
