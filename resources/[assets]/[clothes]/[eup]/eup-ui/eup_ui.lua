@@ -121,6 +121,7 @@ menuPool:Add(mainMenuF)
 menuPool:RefreshIndex()
 
 RegisterCommand('eup', function()
+	local ped = PlayerPedId()
 	if GlobalState.isLEO or GlobalState.isEMS then
 		if GetEntityModel(ped) == GetHashKey("mp_m_freemode_01") then
 			mainMenuM:Visible(not mainMenuM:Visible())
