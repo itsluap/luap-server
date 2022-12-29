@@ -116,7 +116,7 @@ ensure [project-sloth]
 ensure [standalone]
 ensure [voice]
 ensure gabz-chairs
-ensure gabz-pedspawner
+#ensure gabz-pedspawner
 
 ## Permissions ##
 add_ace group.admin command allow # allow all commands
