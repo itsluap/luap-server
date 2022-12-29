@@ -45,7 +45,7 @@ local function SetWalks(anim)
 end
 
 RegisterNetEvent('ps-walks:set', function(data)
-    local anim = Config.person-walkingSyles[data.id]
+    local anim = Config.WalkingSyles[data.id]
 	walkstyle = anim
 	SetWalks(anim)
     local PlayerData = QBCore.Functions.GetPlayerData()
