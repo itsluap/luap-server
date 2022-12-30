@@ -50,6 +50,7 @@ Config.DoorList['configname-identifier'] = {
 
 Config.DoorStates = {}
 Config.DoorList = {
+	--[[
 	-- Pacific Door 1 opened with security card B
 	{
 		doorRate = 1.0,
@@ -133,6 +134,7 @@ Config.DoorList = {
 		pickable = true,
 		distance = 2.0
 	},
+	]]--
 	-- Fleeca Door opened with lockpick
 	{
 		objName = 'v_ilev_gb_vaubar',
