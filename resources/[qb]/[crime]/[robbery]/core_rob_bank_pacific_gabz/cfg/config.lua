@@ -163,9 +163,9 @@ cfg.robbery = {
                     },
     
                     minigame = {
-                        event = "CORE_ROB_MINIGAMES:VoltLab_c", --event
+                        event = "CORE_ROB_BANK_PACIFIC:HACKMINIGAMECUSTOM_c", --event
                         data = { -- data that will pass to the event
-                            timer = 25, -- seconds
+                            --timer = 25, -- seconds
                         },
                     },
     
