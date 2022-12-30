@@ -163,7 +163,7 @@ cfg.robbery = {
                     },
     
                     minigame = {
-                        event = "CORE_ROB_BANK_PACIFIC:HACKMINIGAMECUSTOM_c", --event
+                        event = "CORE_ROB_BANK_PACIFIC:HACKMINIGAMECUSTOM_A", --event
                         data = { -- data that will pass to the event
                             timer = 25, -- seconds
                         },
@@ -212,7 +212,7 @@ cfg.robbery = {
                     },
     
                     minigame = {
-                        event = "CORE_ROB_BANK_PACIFIC:HACKMINIGAMECUSTOM_c", --event
+                        event = "CORE_ROB_BANK_PACIFIC:HACKMINIGAMECUSTOM_A", --event
                         data = { -- data that will pass to the event
                             timer = 25, -- seconds
                         },
@@ -261,7 +261,7 @@ cfg.robbery = {
                     },
     
                     minigame = {
-                        event = "CORE_ROB_BANK_PACIFIC:HACKMINIGAMECUSTOM_c", --event
+                        event = "CORE_ROB_BANK_PACIFIC:HACKMINIGAMECUSTOM_A", --event
                         data = { -- data that will pass to the event
                             timer = 25, -- seconds
                         },
@@ -316,12 +316,12 @@ cfg.robbery = {
                     type = "hacksecuritypanel_01",
     
                     item_needed = {
-                        {"robbery_card_01",1,100}, -- {item_name,item_amount,chance_to_remove}
-                        {"robbery_laptop_01",1,100}, -- {item_name,item_amount,chance_to_remove}
+                        {"security_card_01",1,100}, -- {item_name,item_amount,chance_to_remove}
+                        {"pixellaptop",1,0}, -- {item_name,item_amount,chance_to_remove}
                     },
     
                     minigame = {
-                        event = "CORE_ROB_MINIGAMES:TerminalMinigame_c",
+                        event = "CORE_ROB_BANK_PACIFIC:HACKMINIGAMECUSTOM_B",
                         data = {
                             background = 4, -- 0 to 6 | MUST BE INTEGER
                             lives = 5.0, -- max is 7.0 | MUST BE FLOAT
@@ -379,12 +379,12 @@ cfg.robbery = {
                     type = "hacksecuritypanel_01",
     
                     item_needed = {
-                        {"robbery_card_01",1,100}, -- {item_name,item_amount,chance_to_remove}
-                        {"robbery_laptop_01",1,100}, -- {item_name,item_amount,chance_to_remove}
+                        {"security_card_01",1,100}, -- {item_name,item_amount,chance_to_remove}
+                        {"pixellaptop",1,0}, -- {item_name,item_amount,chance_to_remove}
                     },
     
                     minigame = {
-                        event = "CORE_ROB_MINIGAMES:TerminalMinigame_c",
+                        event = "CORE_ROB_BANK_PACIFIC:HACKMINIGAMECUSTOM_B",
                         data = {
                             background = 4, -- 0 to 6 | MUST BE INTEGER
                             lives = 5.0, -- max is 7.0 | MUST BE FLOAT

@@ -22,8 +22,8 @@ local function VarHack(callback, blocks, speed)
     end
 end
 
-RegisterNetEvent("CORE_ROB_BANK_PACIFIC:HACKMINIGAMECUSTOM_c")
-AddEventHandler("CORE_ROB_BANK_PACIFIC:HACKMINIGAMECUSTOM_c",function(data,cb)
+RegisterNetEvent("CORE_ROB_BANK_PACIFIC:HACKMINIGAMECUSTOM_A")
+AddEventHandler("CORE_ROB_BANK_PACIFIC:HACKMINIGAMECUSTOM_A",function(data,cb)
     exports['ps-ui']:Circle(function(success)
         if success then
             cb(true)
@@ -31,6 +31,17 @@ AddEventHandler("CORE_ROB_BANK_PACIFIC:HACKMINIGAMECUSTOM_c",function(data,cb)
             cb(false)
         end
     end, 2, 20) -- Number of Blocks, Time (seconds) -- your minigame start here
+end)
+
+RegisterNetEvent("CORE_ROB_BANK_PACIFIC:HACKMINIGAMECUSTOM_B")
+AddEventHandler("CORE_ROB_BANK_PACIFIC:HACKMINIGAMECUSTOM_B",function(data,cb)
+    exports['minigame-shape']:StartShapeGame(function(Outcome)
+        if Outcome then
+            cb(true)
+        else
+            cb(false)
+        end
+    end)
 end)
 
 exports("VarHack", VarHack)
