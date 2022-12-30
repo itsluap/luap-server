@@ -3,8 +3,6 @@ What we need done:
     - Weight for items needs to be balanced and make sense
     - List of default keybinds (Most can be changed in, Settings > Keybinds > FiveM)
     - Check shop prices (Check ALL prices / Double check economy)
-    - Finish and post rules
-    - Finish website and forums
     - Finish clothing and car headlights/taillights
 
 
@@ -14,8 +12,7 @@ TODO 12/21/22:
     1. figure out headlights (or atleast find an id that works / or make your own headlight id that works) (applies for taillights too)
     2. go through clothing pack this is in server and remove bad files (glitching clothes)
     3. get second clothing pack finished and put into server (test to see if its working)
-    4. fix website, make it mobile friendly, only has to direct to forums and discord 
-    5. work on rules, take notes on keybinds and commands (build job guides)
+    5. take notes on keybinds and commands (build job guides)
     6. check economy IN-GAME, make sure prices make sense and arent to cheap (too expensive is okay)
     
 
