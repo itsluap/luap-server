@@ -28,7 +28,7 @@ WORKKKKKK:
 -- no oversized vehicles (fix textures for every car)
 -- mechanic shops and car dealerships 100% good to go (no bugs / everything working / prices)
 ====
--- find a car that has perfect headlights (need 2 / one for white lights / one for yellow lights) and make it its own resource and start it before normal car pack (id 999 works for this) (use 1249 instead)
+-- find a car that has perfect headlights (need 2 / one for white lights / one for yellow lights) and make it its own resource and start it before normal car pack (id 999 works for this) (use 1249 instead) (car: m2f22 light id: 756 color: white)
 -- ^^ then make all cars follow the respective light id (white or yellow) ^^
 -- some headlights are uneven (not crazy important)
 ====
