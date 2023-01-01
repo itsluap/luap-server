@@ -331,7 +331,7 @@ QBCore.Commands.Add('me', Lang:t("command.me.help"), {{name = Lang:t("command.me
 end, 'user')
 
 -- referral command -- 
-
+--[[
 QBCore.Commands.Add('referral', 'Redeem A Referral Code', {}, true, function(source, args)
     local Player = QBCore.Functions.GetPlayer(source)
     if Player then
@@ -343,3 +343,9 @@ QBCore.Commands.Add('referral', 'Redeem A Referral Code', {}, true, function(sou
         TriggerClientEvent('QBCore:Notify', source, "Error redeeming code", 'error')
     end
 end, 'user')
+]]--
+-- clear chat command --
+
+RegisterCommand('clear', function(source, args)
+    TriggerEvent('chat:clear')
+end, false)

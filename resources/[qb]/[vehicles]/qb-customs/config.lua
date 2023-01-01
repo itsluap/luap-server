@@ -14,7 +14,7 @@ Config.MinOnlineMechanics = 1 -- The amount of mechanics that have to be online 
 Config.DisabledCategoriesMechanics = {
     repair = false,
     mods = false,
-    armor = false,
+    armor = true,
     respray = false,
     liveries = false,
     wheels = false,
@@ -28,7 +28,7 @@ Config.DisabledCategoriesMechanics = {
     cosmetics = false,
 } -- `true` to disable category if enough mechanics are online and on-duty, `false` to ignore
 
-Config.PayWithSocietyWhenJobRestricted = true -- Whether to have job societies pay for employees if the location is restricted to the job
+Config.PayWithSocietyWhenJobRestricted = false -- Whether to have job societies pay for employees if the location is restricted to the job
 Config.PaidBySociety = {
     -- 'mechanic',
 } -- List of job societies that pay for employees, regardless of the customs location
