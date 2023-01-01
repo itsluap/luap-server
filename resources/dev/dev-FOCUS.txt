@@ -1,63 +1,47 @@
 What we need done:
     - Job Guides / Intructions (Example: How to be a police officer, ems member, etc)
     - Weight for items needs to be balanced and make sense
-    - List of default keybinds (Most can be changed in, Settings > Keybinds > FiveM)
-    - Check shop prices (Check ALL prices / Double check economy)
-    - Finish clothing and car headlights/taillights
-
-
-
-
-TODO 12/21/22:
-    1. figure out headlights (or atleast find an id that works / or make your own headlight id that works) (applies for taillights too)
-    2. go through clothing pack this is in server and remove bad files (glitching clothes)
-    3. get second clothing pack finished and put into server (test to see if its working)
-    5. take notes on keybinds and commands (build job guides)
-    6. check economy IN-GAME, make sure prices make sense and arent to cheap (too expensive is okay)
-    
+    - List of default keybinds and commands (Most can be changed in, Settings > Keybinds > FiveM)
+    - check economy IN-GAME, make sure prices make sense and arent to cheap (too expensive is okay)
+    - go through clothing pack this is in server and remove bad files (glitching clothes)
+    - get second clothing pack finished and put into server (test to see if its working)
 
 WORKKKKKK:
 -- finish clothing
--- finish heists / crime
 -- weight system
--- test as much in server as possible
-
 
 || VEHICLES ||
--- no broken headlights or taillights allowed (can launch with some broken headlights) (can be worked on in dev server after launch)
 -- no oversized vehicles (fix textures for every car)
--- mechanic shops and car dealerships 100% good to go (no bugs / everything working / prices)
-====
--- find a car that has perfect headlights (need 2 / one for white lights / one for yellow lights) and make it its own resource and start it before normal car pack (id 999 works for this) (use 1249 instead) (car: m2f22 light id: 756 color: white)
--- ^^ then make all cars follow the respective light id (white or yellow) ^^
--- some headlights are uneven (not crazy important)
-====
 
 || CLOTHING ||
 -- no broken clothing (check for textures, heels, hats, and skin data)
 -- ^^ check for bugs / crashes ^^ remove broken / duplicate files ^^
 -- ^^ double check okayed files for heels, skin data, etc ^^
--- 
 ====
-|| FINISH HEISTS ||
 || DEFAULT KEYBINDS FOR EVERYTHING NEED TO MAKE SENSE AND NOT BE DOUBLED UP ||
-|| FIGURE OUT WHERE RANDOM ARMOR IS COMING FROM ||
 ====
 
 To Do:
     - check if burgershot has boss management
     - check shops around whole city
     - make sure criminal activities require police online (test all crime activities before this)
-    - put in OkOkContract before launch
 HEISTS:
-    - Fleeca: where to get electronickit and trojan_usb, (good to go)
-    - Pacific: 
-    -
-    - where to get all heist items?
+    - change electric box hack
 Testing:
     - apartments should be raidable now
 
-
 -- new player guide could be a link to a forum page that shows a guide
--- make sure rules are 100%, try to cover everything / create a staff application
--- pd hiring bonus / ems hiring bonus
+-- make sure rules are 100%, try to cover everything, edit anything needed / create a staff application
+-- PD hiring bonus / EMS hiring bonus
+
+
+
+
+
+After launch:
+
+====
+-- find a car that has perfect headlights (need 2 / one for white lights / one for yellow lights) and make it its own resource and start it before normal car pack (id 999 works for this) (use 1249 instead) (car: m2f22 light id: 756 color: white)
+-- ^^ then make all cars follow the respective light id (white or yellow) ^^
+-- some headlights are uneven (not crazy important)
+====
