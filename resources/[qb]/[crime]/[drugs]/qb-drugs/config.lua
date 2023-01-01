@@ -153,8 +153,20 @@ Config.DrugsPrice = {
         max = 130,
     },
     ["meth"] = {
-        min = 30,
+        min = 90,
+        max = 80,
+    },
+    ["heroin"] = {
+        min = 80,
         max = 70,
+    },
+    ["lsd"] = {
+        min = 60,
+        max = 60,
+    },
+    ["marijuana"] = {
+        min = 18,
+        max = 37,
     },
 }
 

@@ -751,8 +751,79 @@ Config.Products = {
         },
         ]]--
     },
+    ["lesters"] = {
+        [1] = {
+            name = 'advancedlockpick',
+            price = 250,
+            amount = 100,
+            info = {},
+            type = 'item',
+            slot = 1,
+        },
+        [2] = {
+            name = 'screwdriverset',
+            price = 250,
+            amount = 100,
+            info = {},
+            type = 'item',
+            slot = 2,
+        },
+        [3] = {
+            name = 'drill',
+            price = 650,
+            amount = 100,
+            info = {},
+            type = 'item',
+            slot = 3,
+        },
+        [4] = {
+            name = 'gatecrack',
+            price = 450,
+            amount = 100,
+            info = {},
+            type = 'item',
+            slot = 4,
+        },
+        [5] = {
+            name = 'trojan_usb',
+            price = 450,
+            amount = 100,
+            info = {},
+            type = 'item',
+            slot = 5,
+        },
+        [6] = {
+            name = 'thermite',
+            price = 1500,
+            amount = 100,
+            info = {},
+            type = 'item',
+            slot = 6,
+        },
+        [7] = {
+            name = 'electronickit',
+            price = 3000,
+            amount = 100,
+            info = {},
+            type = 'item',
+            slot = 7,
+        },
+    },
 }
 Config.Locations = {
+    ["masker"] = {
+        ["label"] = "Lesters",
+        ["coords"] = vector4(1269.14, -1711.07, 54.77, 31.06),
+        ["ped"] = 'cs_lestercrest',
+        ["radius"] = 3.5,
+        ["targetIcon"] = "fas fa-shopping-basket",
+        ["targetLabel"] = "Open Shop",
+        ["products"] = Config.Products["lesters"],
+        ["showblip"] = false,
+        ["blipsprite"] = 362,
+        ["blipscale"] = 0.6,
+        ["blipcolor"] = 0
+    },
     -- Mask Shop
     ["masker"] = {
         ["label"] = "Mask shop",
