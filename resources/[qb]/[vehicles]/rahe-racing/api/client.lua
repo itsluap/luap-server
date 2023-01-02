@@ -7,7 +7,7 @@ local tabletBone = 60309
 local tabletOffset = vector3(0.03, 0.002, -0.0)
 local tabletRot = vector3(10.0, 160.0, 0.0)
 
-local function doAnimation()
+function doAnimation()
     if not isOpen then return end
     -- Animation
     RequestAnimDict(tabletDict)
