@@ -41,14 +41,14 @@ end
 
 RegisterCommand("racing", function()
     openTablet()
-    isOpen = enable
+    isOpen = true
     doAnimation()
 end)
 
 -- CLIENT export - This function is exported, so it can be opened from any other client-side script by using 'exports['rahe-racing']:openRacingTablet()'
 function openRacingTablet()
     openTablet()
-    isOpen = enable
+    isOpen = true
     doAnimation()
 end
 
