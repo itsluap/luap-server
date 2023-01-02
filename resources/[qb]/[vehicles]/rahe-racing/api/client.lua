@@ -66,4 +66,8 @@ end
 RegisterNetEvent('rahe-racing:client:tabletClosed', function()
     --ClearPedTasksImmediately(PlayerPedId())
     isOpen = false
+    ClearPedSecondaryTask(plyPed)
+    Citizen.Wait(250)
+    DetachEntity(tabletObj, true, false)
+    DeleteEntity(tabletObj)
 end)
