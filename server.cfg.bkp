@@ -34,6 +34,7 @@ setr UseTarget true
 
 # These resources will start by default.
 ensure mapmanager
+ensure baseevents
 ensure chat
 ensure spawnmanager
 ensure sessionmanager
