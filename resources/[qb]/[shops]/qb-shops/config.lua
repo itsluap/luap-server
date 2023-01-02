@@ -740,16 +740,14 @@ Config.Products = {
             type = 'item',
             slot = 4,
         },
-        --[[
         [5] = {
-            name = 'pixellaptop',
-            price = 2200,
+            name = 'racetablet',
+            price = 750,
             amount = 100,
             info = {},
             type = 'item',
             slot = 5,
         },
-        ]]--
     },
     ["lesters"] = {
         [1] = {

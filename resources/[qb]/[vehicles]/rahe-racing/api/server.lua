@@ -1,5 +1,9 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
+QBCore.Functions.CreateUseableItem("racetablet", function(source, item)
+    TriggerClientEvent("rahe-racing:client:openTablet", source)
+end)
+
 function getPlayerIdentifier(playerId)
     local Player = QBCore.Functions.GetPlayer(playerId)
     return Player.PlayerData.citizenid

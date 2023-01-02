@@ -40,9 +40,14 @@ function doAnimation()
 end
 
 RegisterCommand("racing", function()
-    openTablet()
-    isOpen = true
-    doAnimation()
+    local hasItem = QBCore.Functions.HasItem('racetablet')
+    if hasItem then
+        openTablet()
+        isOpen = true
+        doAnimation()
+    else
+        QBCore.Functions.Notify('You don\'t have a race tablet!', 'error')
+    end
 end)
 
 -- CLIENT export - This function is exported, so it can be opened from any other client-side script by using 'exports['rahe-racing']:openRacingTablet()'
@@ -56,6 +61,8 @@ end
 RegisterNetEvent("rahe-racing:client:openTablet")
 AddEventHandler("rahe-racing:client:openTablet", function()
     openTablet()
+    isOpen = true
+    doAnimation()
 end)
 
 function notifyPlayer(message)
