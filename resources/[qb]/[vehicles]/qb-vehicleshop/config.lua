@@ -263,8 +263,8 @@ Config.Shops = {
         ['ShowroomVehicles'] = {
             [1] = {
                 coords = vector4(808.23, -811.91, 25.18, 88.19),
-                defaultVehicle = 'daisx',
-                chosenVehicle = 'daisx'
+                defaultVehicle = 'nis13',
+                chosenVehicle = 'nis13'
             },
         }
     }, -- Add your next table under this comma
