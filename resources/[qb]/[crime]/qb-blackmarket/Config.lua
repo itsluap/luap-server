@@ -83,7 +83,7 @@ Config.SubMachineGunShop = {
             amount = 100,
             info = { quality = 100, },
             type = "item",
-            slot = 3,
+            slot = 1,
         },
         [2] = {
             name = "weapon_assaultsmg",
@@ -91,7 +91,7 @@ Config.SubMachineGunShop = {
             amount = 100,
             info = { quality = 100, },
             type = "item",
-            slot = 4,
+            slot = 2,
         },
         [3] = {
             name = "weapon_machinepistol",
@@ -99,7 +99,7 @@ Config.SubMachineGunShop = {
             amount = 100,
             info = { quality = 100, },
             type = "item",
-            slot = 1,
+            slot = 3,
         },
         [4] = {
             name = "weapon_minismg",
@@ -107,7 +107,7 @@ Config.SubMachineGunShop = {
             amount = 100,
             info = { quality = 100, },
             type = "item",
-            slot = 2,
+            slot = 4,
         }
     }
 }
@@ -122,7 +122,7 @@ Config.ShotGunShop = {
             amount = 100,
             info = { quality = 100, },
             type = "item",
-            slot = 3,
+            slot = 1,
         },
         [2] = {
             name = "weapon_sawnoffshotgun",
@@ -130,7 +130,7 @@ Config.ShotGunShop = {
             amount = 100,
             info = { quality = 100, },
             type = "item",
-            slot = 1,
+            slot = 2,
         },
         [3] = {
             name = "weapon_bullpupshotgun",
@@ -138,7 +138,7 @@ Config.ShotGunShop = {
             amount = 100,
             info = { quality = 100, },
             type = "item",
-            slot = 4,
+            slot = 3,
         },
         [4] = {
             name = "weapon_dbshotgun",
@@ -146,7 +146,7 @@ Config.ShotGunShop = {
             amount = 100,
             info = { quality = 100, },
             type = "item",
-            slot = 2,
+            slot = 4,
         },
     }
 }
@@ -161,7 +161,7 @@ Config.AssaultWeaponsShop = {
             amount = 100,
             info = { quality = 100, },
             type = "item",
-            slot = 3,
+            slot = 1,
         },
         [2] = {
             name = "weapon_assaultrifle",
@@ -177,7 +177,7 @@ Config.AssaultWeaponsShop = {
             amount = 100,
             info = { quality = 100, },
             type = "item",
-            slot = 1,
+            slot = 3,
         },
         [4] = {
             name = "weapon_bullpuprifle",
