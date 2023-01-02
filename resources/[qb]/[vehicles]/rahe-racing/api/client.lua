@@ -1,5 +1,44 @@
+local isOpen = false
+local tabletObj = nil
+local tabletDict = "amb@code_human_in_bus_passenger_idles@female@tablet@base"
+local tabletAnim = "base"
+local tabletProp = `prop_cs_tablet`
+
+local function doAnimation()
+    if not isOpen then return end
+    -- Animation
+    RequestAnimDict(tabletDict)
+    while not HasAnimDictLoaded(tabletDict) do Citizen.Wait(100) end
+    -- Model
+    RequestModel(tabletProp)
+    while not HasModelLoaded(tabletProp) do Citizen.Wait(100) end
+
+    local plyPed = PlayerPedId()
+    tabletObj = CreateObject(tabletProp, 0.0, 0.0, 0.0, true, true, false)
+    local tabletBoneIndex = GetPedBoneIndex(plyPed, tabletBone)
+
+    AttachEntityToEntity(tabletObj, plyPed, tabletBoneIndex, tabletOffset.x, tabletOffset.y, tabletOffset.z, tabletRot.x, tabletRot.y, tabletRot.z, true, false, false, false, 2, true)
+    SetModelAsNoLongerNeeded(tabletProp)
+
+    CreateThread(function()
+        while isOpen do
+            Wait(0)
+            if not IsEntityPlayingAnim(plyPed, tabletDict, tabletAnim, 3) then
+                TaskPlayAnim(plyPed, tabletDict, tabletAnim, 3.0, 3.0, -1, 49, 0, 0, 0, 0)
+            end
+        end
+
+
+        ClearPedSecondaryTask(plyPed)
+        Citizen.Wait(250)
+        DetachEntity(tabletObj, true, false)
+        DeleteEntity(tabletObj)
+    end)
+end
+
 RegisterCommand("racing", function()
     openTablet()
+    doAnimation()
 end)
 
 -- CLIENT export - This function is exported, so it can be opened from any other client-side script by using 'exports['rahe-racing']:openRacingTablet()'
@@ -19,5 +58,5 @@ end
 
 -- You can do some logic when the tablet is closed. For example if you started an animation when opened, you can end the animation here.
 RegisterNetEvent('rahe-racing:client:tabletClosed', function()
-
+    ClearPedTasksImmediately(PlayerPedId())
 end)
