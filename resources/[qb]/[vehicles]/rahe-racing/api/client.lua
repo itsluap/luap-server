@@ -3,6 +3,9 @@ local tabletObj = nil
 local tabletDict = "amb@code_human_in_bus_passenger_idles@female@tablet@base"
 local tabletAnim = "base"
 local tabletProp = `prop_cs_tablet`
+local tabletBone = 60309
+local tabletOffset = vector3(0.03, 0.002, -0.0)
+local tabletRot = vector3(10.0, 160.0, 0.0)
 
 local function doAnimation()
     if not isOpen then return end
@@ -58,5 +61,5 @@ end
 
 -- You can do some logic when the tablet is closed. For example if you started an animation when opened, you can end the animation here.
 RegisterNetEvent('rahe-racing:client:tabletClosed', function()
-    ClearPedTasksImmediately(PlayerPedId())
+    --ClearPedTasksImmediately(PlayerPedId())
 end)
