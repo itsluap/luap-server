@@ -1267,18 +1267,18 @@ Garages = {
     ['impoundlot'] = {
         ['Zone'] = {
             ['Shape'] = { --polygon that surrounds the parking area
-            vector2(-128.76565551758, -1186.7231445312),
-            vector2(-128.95680236816, -1158.9990234375),
-            vector2(-155.75888061524, -1158.6616210938),
-            vector2(-155.84657287598, -1186.7335205078)
+            vector2(-182.96565246582, -1160.4403076172),
+            vector2(-183.01268005371, -1168.6870117188),
+            vector2(-200.00119018555, -1168.7191162109),
+            vector2(-199.96868896484, -1160.0030517578)
             },
-            ['minZ'] = 22.25,  -- min height of the parking zone
-            ['maxZ'] = 26.31,  -- max height of the parking zone
+            ['minZ'] = 23.67,  -- min height of the parking zone
+            ['maxZ'] = 27.67,  -- max height of the parking zone
             debug = false,
         },
         label = "Impound Lot",
         showBlip = true,
-        blipcoords = vector3(-143.15, -1175.06, 23.77),
+        blipcoords = vector3(-190.32, -1164.69, 23.67),
         blipName = "Impound Lot",
         blipNumber = 68,
         type = 'depot',                --public, job, gang, depot
@@ -1286,16 +1286,11 @@ Garages = {
         drawText = 'Impound',                 --car, air, sea
         debug = false,
         ['ParkingSpots'] = {
-            vector4(-152.91, -1170.13, 23.14, 270.11),
-            vector4(-153.26, -1166.51, 23.14, 270.74),
-            vector4(-147.67, -1161.83, 23.14, 179.67),
-            vector4(-144.19, -1161.83, 23.14, 179.02),
-            vector4(-139.1, -1161.6, 23.14, 178.95),
-            vector4(-131.92, -1166.54, 23.14, 89.09),
-            vector4(-132.01, -1170.05, 23.14, 90.24),
-            vector4(-132.03, -1175.15, 23.14, 90.94),
-            vector4(-131.99, -1178.68, 23.14, 90.07),
-            vector4(-131.95, -1182.25, 23.14, 90.11),
+            vector4(-198.21, -1173.98, 23.04, 197.6),
+            vector4(-194.73, -1173.98, 23.04, 197.6),
+            vector4(-191.18, -1173.98, 23.04, 197.6),
+            vector4(-187.71, -1173.98, 23.04, 197.6),
+            vector4(-184.23, -1173.98, 23.04, 197.6),
         }
     },
     ['police'] = {

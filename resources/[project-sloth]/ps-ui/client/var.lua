@@ -24,13 +24,13 @@ end
 
 RegisterNetEvent("CORE_ROB_BANK_PACIFIC:HACKMINIGAMECUSTOM_A")
 AddEventHandler("CORE_ROB_BANK_PACIFIC:HACKMINIGAMECUSTOM_A",function(data,cb)
-    exports['ps-ui']:Circle(function(success)
+    exports['ps-ui']:Thermite(function(success)
         if success then
             cb(true)
         else
             cb(false)
         end
-    end, 2, 20) -- Number of Blocks, Time (seconds) -- your minigame start here
+    end, 15, 6, 3) -- Number of Blocks, Time (seconds) -- your minigame start here
 end)
 
 RegisterNetEvent("CORE_ROB_BANK_PACIFIC:HACKMINIGAMECUSTOM_B")
