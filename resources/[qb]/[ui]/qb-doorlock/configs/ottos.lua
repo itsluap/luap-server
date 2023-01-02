@@ -74,3 +74,17 @@ Config.DoorList['ottos-5'] = {
     objYaw = 270.00012207031,
     doorType = 'garage',
 }
+
+-- 6 created by luap
+Config.DoorList['ottos-6'] = {
+    doorRate = 1.0,
+    objName = 263193286,
+    doorType = 'door',
+    fixText = false,
+    authorizedJobs = { ['ottos'] = 0 },
+    distance = 2,
+    doorLabel = 'back door',
+    objYaw = 0.0,
+    locked = true,
+    objCoords = vec3(840.532104, -820.562439, 26.482372),
+}
