@@ -10,7 +10,7 @@ Config.DoorList['ottos-1'] = {
     distance = 2,
     doorRate = 1.0,
     objName = -147325430,
-    authorizedGangs = { ['cartel'] = 0 },
+    --authorizedGangs = { ['cartel'] = 0 },
     objYaw = 0.0,
     doorType = 'door',
 }
@@ -25,7 +25,7 @@ Config.DoorList['ottos-2'] = {
     distance = 2,
     doorRate = 1.0,
     objName = -147325430,
-    authorizedGangs = { ['cartel'] = 0 },
+    --authorizedGangs = { ['cartel'] = 0 },
     objYaw = 90.0,
     doorType = 'door',
 }
@@ -40,7 +40,7 @@ Config.DoorList['ottos-3'] = {
     distance = 4,
     doorRate = 1.0,
     objName = 270330101,
-    authorizedGangs = { ['cartel'] = 0 },
+    --authorizedGangs = { ['cartel'] = 0 },
     objYaw = 270.00012207031,
     doorType = 'garage',
 }
@@ -55,7 +55,7 @@ Config.DoorList['ottos-4'] = {
     distance = 4,
     doorRate = 1.0,
     objName = 270330101,
-    authorizedGangs = { ['cartel'] = 0 },
+    --authorizedGangs = { ['cartel'] = 0 },
     objYaw = 270.00012207031,
     doorType = 'garage',
 }
@@ -70,7 +70,7 @@ Config.DoorList['ottos-5'] = {
     distance = 4,
     doorRate = 1.0,
     objName = 270330101,
-    authorizedGangs = { ['cartel'] = 0 },
+    --authorizedGangs = { ['cartel'] = 0 },
     objYaw = 270.00012207031,
     doorType = 'garage',
 }
