@@ -10,7 +10,7 @@ sets tags "qbcore, roleplay, police, ems"
 sv_licenseKey "cfxk_1jasI5Iq0ivSo4mQ6FsdF_MvJ84"
 sv_hostname "^7Indigo RP | ^53.0 ^7| Serious RP"
 sets sv_projectName "^5Indigo 3.0"
-sets sv_projectDesc "Indigo RP / 3.0 / Custom Clothing / Tuner Vehicles / Player Owned Businesses"
+sets sv_projectDesc "Indigo RP / Custom Clothing / Tuner Vehicles / Player Owned Businesses"
 sets locale "en-US" 
 load_server_icon myLogo.png
 #set sv_enforceGameBuild 2545
