@@ -65,4 +65,5 @@ end
 -- You can do some logic when the tablet is closed. For example if you started an animation when opened, you can end the animation here.
 RegisterNetEvent('rahe-racing:client:tabletClosed', function()
     --ClearPedTasksImmediately(PlayerPedId())
+    isOpen = false
 end)
