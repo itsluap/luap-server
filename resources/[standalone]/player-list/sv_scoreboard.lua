@@ -15,18 +15,18 @@ end)
 RegisterServerEvent('qb-score:AddPlayer')
 AddEventHandler("qb-score:AddPlayer", function()
 
-    local identifiers, steamIdentifier = GetPlayerIdentifiers(source)
+    local identifiers, discordIdentifier = GetPlayerIdentifiers(source)
     for _, v in pairs(identifiers) do
-        if string.find(v, "steam") then
-            steamIdentifier = v
+        if string.find(v, "discord") then
+            discordIdentifier = v
             break
         end
     end
 
-    local stid = HexIdToSteamId(steamIdentifier)
+    --local stid = HexIdToSteamId(discordIdentifier)
     local ply = GetPlayerName(source)
-    local scomid = steamIdentifier:gsub("steam:", "")
-    local data = { src = source, steamid = stid, comid = scomid, name = ply }
+    local scomid = discordIdentifier:gsub("discord:", "")
+    local data = { src = source, discordid = discordIdentifier, comid = scomid, name = ply }
 
     TriggerClientEvent("qb-score:AddPlayer", -1, data )
     ST.Scoreboard.AddAllPlayers()
@@ -37,18 +37,18 @@ function ST.Scoreboard.AddAllPlayers(self)
 
     for i=1, #xPlayers, 1 do
         
-        local identifiers, steamIdentifier = GetPlayerIdentifiers(xPlayers[i])
+        local identifiers, discordIdentifier = GetPlayerIdentifiers(xPlayers[i])
         for _, v in pairs(identifiers) do
-            if string.find(v, "steam") then
-                steamIdentifier = v
+            if string.find(v, "discord") then
+                discordIdentifier = v
                 break
             end
         end
 
-        local stid = HexIdToSteamId(steamIdentifier)
+        --local stid = HexIdToSteamId(discordIdentifier)
         local ply = GetPlayerName(xPlayers[i])
-        local scomid = steamIdentifier:gsub("steam:", "")
-        local data = { src = xPlayers[i], steamid = stid, comid = scomid, name = ply }
+        local scomid = discordIdentifier:gsub("discord:", "")
+        local data = { src = xPlayers[i], discordid = discordIdentifier, comid = scomid, name = ply }
 
         TriggerClientEvent("qb-score:AddAllPlayers", source, data, recentData)
 
@@ -60,32 +60,33 @@ function ST.Scoreboard.AddPlayerS(self, data)
 end
 
 AddEventHandler("playerDropped", function()
-	local identifiers, steamIdentifier = GetPlayerIdentifiers(source)
+	local identifiers, discordIdentifier = GetPlayerIdentifiers(source)
     for _, v in pairs(identifiers) do
-        if string.find(v, "steam") then
-            steamIdentifier = v
+        if string.find(v, "discord") then
+            discordIdentifier = v
             break
         end
     end
 
-    local stid = HexIdToSteamId(steamIdentifier)
+    --local stid = HexIdToSteamId(discordIdentifier)
     local ply = GetPlayerName(source)
-    local scomid = steamIdentifier:gsub("steam:", "")
+    local scomid = discordIdentifier:gsub("discord:", "")
     local plyid = source
-    local data = { src = source, steamid = stid, comid = scomid, name = ply }
+    local data = { src = source, discordid = discordIdentifier, comid = scomid, name = ply }
 
     TriggerClientEvent("qb-score:RemovePlayer", -1, data )
     Wait(600000)
     TriggerClientEvent("qb-score:RemoveRecent", -1, plyid)
 end)
 
---[[ function ST.Scoreboard.RemovePlayerS(self, data)
+--[[
+function ST.Scoreboard.RemovePlayerS(self, data)
     ST._Scoreboard.RecentS = data
 end
 
 function ST.Scoreboard.RemoveRecentS(self, src)
     ST._Scoreboard.RecentS.src = nil
-end ]]
+end
 
 function HexIdToSteamId(hexId)
     local cid = math.floor(tonumber(string.sub(hexId, 7), 16))
@@ -95,3 +96,4 @@ function HexIdToSteamId(hexId)
 	local sid = "STEAM_0:"..a..":"..(a == 1 and b -1 or b)
     return sid
 end
+]]--

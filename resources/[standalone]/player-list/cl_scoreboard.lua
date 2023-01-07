@@ -87,7 +87,7 @@ Citizen.CreateThread(function()
             local playerId = GetPlayerFromServerId(v.src)
 
             if NetworkIsPlayerActive(playerId) or GetPlayerPed(playerId) == GetPlayerPed(-1) then
-                if WarMenu.MenuButton("[" .. v.src .. "] " .. v.steamid .. " ", "options") then ST._Scoreboard.SelectedPlayer = v end
+                if WarMenu.MenuButton("[" .. v.src .. "] " .. v.discordid .. " ", "options") then ST._Scoreboard.SelectedPlayer = v end
             else
                 if WarMenu.MenuButton("[" .. v.src .. "] - instanced?", "options", {r = 255, g = 0, b = 0, a = 255}) then ST._Scoreboard.SelectedPlayer = v end
             end
@@ -109,7 +109,7 @@ Citizen.CreateThread(function()
         if group ~= "user" then
             -- if WarMenu.Button("Name:", ST._Scoreboard.SelectedPlayer.name) then end
         end
-        if WarMenu.Button("Steam ID:", ST._Scoreboard.SelectedPlayer.steamid) then end
+        if WarMenu.Button("Discord ID:", ST._Scoreboard.SelectedPlayer.discordid) then end
         if WarMenu.Button("Community ID:", ST._Scoreboard.SelectedPlayer.comid) then end
         if WarMenu.Button("Server ID:", ST._Scoreboard.SelectedPlayer.src) then end
     end
