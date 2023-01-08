@@ -1,4 +1,4 @@
-Crouched = false
+GlobalState.Crouched = false
 CrouchedForce = false
 Aimed = false
 LastCam = 0
@@ -14,7 +14,7 @@ NormalWalk = function()
 	SetPedCanPlayAmbientAnims(Player, true)
 	SetPedCanPlayAmbientBaseAnims(Player, true)
 	ResetPedWeaponMovementClipset(Player)
-	Crouched = false
+	GlobalState.Crouched = false
 end
 
 SetupCrouch = function()
@@ -43,7 +43,7 @@ CrouchPlayer = function()
 	SetPedMovementClipset(Player, 'move_ped_crouched', 0.55)
 	SetPedStrafeClipset(Player, 'move_ped_crouched_strafing') -- it force be on third person if not player will freeze but this func make player can shoot with good anim on crouch if someone know how to fix this make request :D
 	SetWeaponAnimationOverride(Player, "Ballistic")
-	Crouched = true
+	GlobalState.Crouched = true
 	Aimed = false
 end
 
@@ -66,19 +66,19 @@ CrouchLoop = function()
 	SetupCrouch()
 	while CrouchedForce do
 		local CanDo = CanCrouch()
-		if CanDo and Crouched and IsPlayerFreeAimed() then
+		if CanDo and GlobalState.Crouched and IsPlayerFreeAimed() then
 			SetPlayerAimSpeed()
-		elseif CanDo and (not Crouched or Aimed) then
+		elseif CanDo and (not GlobalState.Crouched or Aimed) then
 			CrouchPlayer()
-		elseif not CanDo and Crouched then
+		elseif not CanDo and GlobalState.Crouched then
 			CrouchedForce = false
 			NormalWalk()
 		end
 
 		local NowCam = GetFollowPedCamViewMode()
-		if CanDo and Crouched and NowCam == 4 then
+		if CanDo and GlobalState.Crouched and NowCam == 4 then
 			SetFollowPedCamViewMode(LastCam)
-		elseif CanDo and Crouched and NowCam ~= 4 then
+		elseif CanDo and GlobalState.Crouched and NowCam ~= 4 then
 			LastCam = NowCam
 		end
 
@@ -109,7 +109,7 @@ RegisterKeyMapping('crouch', 'Crouch', 'keyboard', 'LCONTROL') -- now its better
 
 -- Exports --
 IsCrouched = function()
-	return Crouched
+	return GlobalState.Crouched
 end
 
 exports("IsCrouched", IsCrouched)
