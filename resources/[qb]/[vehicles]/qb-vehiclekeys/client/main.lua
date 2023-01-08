@@ -132,6 +132,11 @@ CreateThread(function()
     end
 end)
 
+function hideText()
+    hidText = true
+    exports['ps-ui']:HideText()
+end
+
 function isBlacklistedVehicle(vehicle)
     local isBlacklisted = false
     for _,v in ipairs(Config.NoLockVehicles) do
@@ -142,11 +147,6 @@ function isBlacklistedVehicle(vehicle)
     end
     if Entity(vehicle).state.ignoreLocks or GetVehicleClass(vehicle) == 13 then isBlacklisted = true end
     return isBlacklisted
-end
-
-function hideText()
-    exports['ps-ui']:HideText()
-    hidText = true
 end
 
 -----------------------
