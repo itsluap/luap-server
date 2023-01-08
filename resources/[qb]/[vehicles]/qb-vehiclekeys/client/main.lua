@@ -98,8 +98,10 @@ CreateThread(function()
                         Hotwire(vehicle, plate)
                     end
                 end
-            elseif not hidText then 
-                hideText()
+            else
+                if not hidText then 
+                    hideText()
+                end
             end
 
             
