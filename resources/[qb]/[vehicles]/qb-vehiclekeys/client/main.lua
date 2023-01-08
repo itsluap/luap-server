@@ -11,8 +11,7 @@ local AlertSend = false
 local lastPickedVehicle = nil
 local usingAdvanced = false
 local IsHotwiring = false
-
-isInVehicle = false
+local isPopup = false
 
 -----------------------
 ----   Threads     ----
@@ -90,15 +89,18 @@ CreateThread(function()
                 sleep = 1000
                 local vehicle = GetVehiclePedIsIn(ped)
                 local plate = QBCore.Functions.GetPlate(vehicle)
+
                 if GetPedInVehicleSeat(vehicle, -1) == PlayerPedId() and not HasKeys(plate) and not isBlacklistedVehicle(vehicle) and not AreKeysJobShared(vehicle) then
-                    isInVehicle = true
                     sleep = 0
-                    exports['ps-ui']:DisplayText("[H] Hotwire", "warning") -- Colors: primary, error, success, warning, info, mint
+                    if not isPopup then
+                        exports['ps-ui']:DisplayText("[H] Hotwire", "warning") -- Colors: primary, error, success, warning, info, mint
+                        isPopup = true
+                    end
                     SetVehicleEngineOn(vehicle, false, false, true)
 
                     if IsControlJustPressed(0, 74) then
                         Hotwire(vehicle, plate)
-                    end
+                    end 
                 end
             end
             
