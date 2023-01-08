@@ -161,6 +161,10 @@ AddEventHandler('onResourceStart', function(resourceName)
     end
 end)
 
+AddEventHandler('baseevents:leftVehicle', function(currentvehicle, seat,name,netid)
+	exports['ps-ui']:HideText()
+end)
+
 -- Handles state right when the player selects their character and location.
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
     GetKeys()
