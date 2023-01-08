@@ -3697,6 +3697,16 @@ QBShared.Vehicles = {
         ['hash'] = `ninjah2`,
         ['shop'] = 'luap',
     },
+	-- icey
+	['21bentayga'] = {
+        ['name'] = 'Bentayga',
+        ['brand'] = 'Bentley',
+        ['model'] = '21bentayga',
+        ['price'] = 1000000,
+        ['category'] = 'sports',
+        ['hash'] = `21bentayga`,
+        ['shop'] = 'icey',
+    },
 	-- king -- 
 	['navigator'] = {
         ['name'] = 'Navigator',
