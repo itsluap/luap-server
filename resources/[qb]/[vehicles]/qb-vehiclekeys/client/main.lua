@@ -11,7 +11,7 @@ local AlertSend = false
 local lastPickedVehicle = nil
 local usingAdvanced = false
 local IsHotwiring = false
-local hideUI = false
+local hidText = false
 
 -----------------------
 ----   Threads     ----
@@ -98,7 +98,7 @@ CreateThread(function()
                         Hotwire(vehicle, plate)
                     end
                 end
-            else 
+            elseif not hidText then 
                 hideText()
             end
 
@@ -143,6 +143,7 @@ end
 
 function hideText()
     exports['ps-ui']:HideText()
+    hidText = true
 end
 
 -----------------------
