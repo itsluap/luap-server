@@ -126,6 +126,7 @@ add_principal identifier.fivem:2448277 qbcore.god #luap2
 add_principal identifier.discord:353767887305048064 group.admin #lin
 add_principal identifier.discord:406599443601817650 group.admin #mediumking
 add_principal identifier.discord:548070310734200832 group.admin #icey
+add_principal identifier.discord:343161050163707904 group.admin #nodeth
 
 # Resources
 add_ace resource.qb-core command allow # Allow qb-core to execute commands
