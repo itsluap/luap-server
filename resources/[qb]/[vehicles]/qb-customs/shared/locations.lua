@@ -87,8 +87,8 @@ Config.Locations = {
         },
         restrictions = { deniedClasses = { 18 } },
         zones = {
-            { coords = vector3(-32.35, -1055.29, 28.4), length = 6.0, width = 4.0, heading = 180.0, minZ = 6.0, maxZ = 10.0 },
-            --{ coords = vector3(135.92, -3030.5, 7.04), length = 6.0, width = 4.0, heading = 180.0, minZ = 6.0, maxZ = 10.0 },
+            { coords = vector3(-32.35, -1055.29, 28.4), length = 6.0, width = 4.0, heading = 180.0, minZ = 27.0, maxZ = 30.0 },
+            { coords = vector3(-32.25, -1066.16, 28.4), length = 6.0, width = 4.0, heading = 180.0, minZ = 27.0, maxZ = 30.0 },
         }
     },
 }
