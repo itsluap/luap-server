@@ -96,8 +96,9 @@ CreateThread(function()
                     if IsControlJustPressed(0, 74) then
                         Hotwire(vehicle, plate)
                     end
-                end
+                elseif 
             end
+            
             
             if Config.CarJackEnable and canCarjack then
                 local playerid = PlayerId()
@@ -140,6 +141,10 @@ end
 -----------------------
 ---- Client Events ----
 -----------------------
+
+AddEventHandler('baseevents:leftVehicle', function(currentvehicle, seat,name,netid)
+    exports['ps-ui']:HideText()
+end)
 
 RegisterKeyMapping('togglelocks', Lang:t("info.tlock"), 'keyboard', 'L')
 RegisterCommand('togglelocks', function()
