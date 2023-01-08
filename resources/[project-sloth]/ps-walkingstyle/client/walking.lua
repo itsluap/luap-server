@@ -58,8 +58,10 @@ CreateThread(function()
         Wait(1000)
         local ped = PlayerPedId()
         local walkstyleCurrent = GetPedMovementClipset(ped)
-        if not exports['qb-assets']:IsCrouched() and walkstyleCurrent ~= joaat(walkstyle) or walkstyle == "default" then
-            SetWalks(walkstyle)
+        if walkstyleCurrent ~= joaat(walkstyle) or walkstyle == "default" then
+            if not exports['qb-assets']:IsCrouched() then
+                SetWalks(walkstyle)
+            end
         end
     end
 end)
