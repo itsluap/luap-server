@@ -106,7 +106,7 @@ CreateThread(function()
             if not IsPedInAnyVehicle(ped, false) and hideUI then 
                 exports['ps-ui']:HideText()
                 hideUI = false
-                break end
+                break
             end
             
             if Config.CarJackEnable and canCarjack then
