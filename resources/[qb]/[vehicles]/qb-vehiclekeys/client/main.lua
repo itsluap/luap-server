@@ -97,17 +97,11 @@ CreateThread(function()
                     if IsControlJustPressed(0, 74) then
                         Hotwire(vehicle, plate)
                     end
-                else
-                    hideUI = true 
                 end
+            else 
+                hideText()
             end
 
-            -- hide ui when not in car -- exports['ps-ui']:HideText()
-            if not IsPedInAnyVehicle(ped, false) and hideUI then 
-                exports['ps-ui']:HideText()
-                hideUI = false
-                break
-            end
             
             if Config.CarJackEnable and canCarjack then
                 local playerid = PlayerId()
@@ -145,6 +139,10 @@ function isBlacklistedVehicle(vehicle)
     end
     if Entity(vehicle).state.ignoreLocks or GetVehicleClass(vehicle) == 13 then isBlacklisted = true end
     return isBlacklisted
+end
+
+function hideText()
+    exports['ps-ui']:HideText()
 end
 
 -----------------------
