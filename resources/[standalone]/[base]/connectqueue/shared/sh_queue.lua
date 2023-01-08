@@ -13,7 +13,7 @@ end
 
 local Queue = {}
 -- EDIT THESE IN SERVER.CFG + OTHER OPTIONS IN CONFIG.LUA
-Queue.MaxPlayers = GetConvarInt("sv_maxclients", 30)
+Queue.MaxPlayers = GetConvarInt("sv_maxclients", 120)
 Queue.Debug = GetConvar("sv_debugqueue", "true") == "true" and true or false
 Queue.DisplayQueue = GetConvar("sv_displayqueue", "true") == "true" and true or false
 Queue.InitHostName = GetConvar("sv_hostname")
@@ -59,6 +59,7 @@ function Queue:DebugPrint(msg)
     end
 end
 
+--[[
 function Queue:HexIdToSteamId(hexId)
     local cid = math_floor(tonumber(string_sub(hexId, 7), 16))
 	local steam64 = math_floor(tonumber(string_sub( cid, 2)))
@@ -67,10 +68,11 @@ function Queue:HexIdToSteamId(hexId)
 	local sid = "steam_0:"..a..":"..(a == 1 and b -1 or b)
     return sid
 end
+]]--
 
-function Queue:IsSteamRunning(src)
+function Queue:IsDiscordRunning(src)
     for _, id in ipairs(GetPlayerIdentifiers(src)) do
-        if string_sub(id, 1, 5) == "steam" then
+        if string_sub(id, 1, 5) == "discord" then
             return true
         end
     end
@@ -151,9 +153,9 @@ function Queue:IsPriority(ids)
 
         if prioList[id] then prio = prioList[id] break end
 
-        if string_sub(id, 1, 5) == "steam" then
-            local steamid = Queue:HexIdToSteamId(id)
-            if prioList[steamid] then prio = prioList[steamid] break end
+        if string_sub(id, 1, 5) == "discord" then
+            local discordid = GetPlayerIdentifiers(source)
+            if prioList[discordid] then prio = prioList[discordid] break end
         end
     end
 
@@ -176,9 +178,9 @@ function Queue:HasTempPriority(ids)
 
         if tmpPrio[id] then return tmpPrio[id].power, tmpPrio[id].endTime, id end
 
-        if string_sub(id, 1, 5) == "steam" then
-            local steamid = Queue:HexIdToSteamId(id)
-            if tmpPrio[steamid] then return tmpPrio[steamid].power, tmpPrio[steamid].endTime, id end
+        if string_sub(id, 1, 5) == "discord" then
+            local discordid = GetPlayerIdentifiers(source)
+            if tmpPrio[discordid] then return tmpPrio[discordid].power, tmpPrio[discordid].endTime, id end
         end
     end
 
@@ -500,9 +502,9 @@ local function playerConnect(name, setKickReason, deferrals)
         return
     end
 
-    if Config.RequireSteam and not Queue:IsSteamRunning(src) then
+    if Config.RequireDiscord and not Queue:IsDiscordRunning(src) then
         -- prevent joining
-        done(Config.Language.steam)
+        done(Config.Language.discord)
         CancelEvent()
         return
     end

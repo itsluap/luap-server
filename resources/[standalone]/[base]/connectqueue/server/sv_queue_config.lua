@@ -4,13 +4,12 @@ Config = {}
 -- a lot of the steamid converting websites are broken rn and give you the wrong steamid. I use https://steamid.xyz/ with no problems.
 -- you can also give priority through the API, read the examples/readme.
 Config.Priority = {
-    ["STEAM_0:1:0000####"] = 1,
-    ["steam:110000######"] = 25,
-    ["ip:127.0.0.0"] = 85
+    ["discord:308903942937640961"] = 1, -- luap
+    -- more people here --
 }
 
--- require people to run steam
-Config.RequireSteam = false
+-- require people to run discords
+Config.RequireDiscord = true
 
 -- "whitelist" only server
 Config.PriorityOnly = false
@@ -57,5 +56,5 @@ Config.Language = {
     connectingerr = "\xE2\x9D\x97[Queue] Error: Error adding you to connecting list",
     timedout = "\xE2\x9D\x97[Queue] Error: Timed out?",
     wlonly = "\xE2\x9D\x97[Queue] You must be whitelisted to join this server",
-    steam = "\xE2\x9D\x97 [Queue] Error: Steam must be running"
+    discord = "\xE2\x9D\x97 [Queue] Error: Discord must be running"
 }
