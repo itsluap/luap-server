@@ -3707,6 +3707,15 @@ QBShared.Vehicles = {
         ['hash'] = `21bentayga`,
         ['shop'] = 'icey',
     },
+	['protoz'] = {
+        ['name'] = 'Proto 400Z',
+        ['brand'] = 'Nissan',
+        ['model'] = 'protoz',
+        ['price'] = 1000000,
+        ['category'] = 'sports',
+        ['hash'] = `protoz`,
+        ['shop'] = 'icey',
+    },
 	-- king -- 
 	['navigator'] = {
         ['name'] = 'Navigator',
