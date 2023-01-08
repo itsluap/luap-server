@@ -32,11 +32,12 @@ function doAnimation()
             end
         end
 
-
-        ClearPedSecondaryTask(plyPed)
-        Citizen.Wait(250)
-        DetachEntity(tabletObj, true, false)
-        DeleteEntity(tabletObj)
+        if isOpen = false then
+            ClearPedSecondaryTask(plyPed)
+            Citizen.Wait(250)
+            DetachEntity(tabletObj, true, false)
+            DeleteEntity(tabletObj)
+        end
     end)
 end
 
