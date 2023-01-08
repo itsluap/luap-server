@@ -161,7 +161,7 @@ AddEventHandler('onResourceStart', function(resourceName)
     end
 end)
 
-AddEventHandler('baseevents:leftVehicle', function(currentvehicle, seat,name,netid)
+RegisterNetEvent('baseevents:leftVehicle', function(currentvehicle, seat,name,netid)
 	exports['ps-ui']:HideText()
 end)
 
