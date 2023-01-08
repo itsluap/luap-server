@@ -99,10 +99,7 @@ CreateThread(function()
                     end
                 end
             else
-                print(hidText)
-                if not hidText then 
-                    hideText()
-                end
+                TriggerEvent('qb-vehiclekeys:client:hideUI')
             end
 
             
@@ -132,10 +129,9 @@ CreateThread(function()
     end
 end)
 
-function hideText()
-    hidText = true
+RegisterNetEvent('qb-vehiclekeys:client:hideUI', function()
     exports['ps-ui']:HideText()
-end
+end)
 
 function isBlacklistedVehicle(vehicle)
     local isBlacklisted = false
