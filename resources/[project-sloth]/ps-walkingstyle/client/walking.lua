@@ -59,7 +59,7 @@ CreateThread(function()
         local ped = PlayerPedId()
         local walkstyleCurrent = GetPedMovementClipset(ped)
         if GlobalState.Crouched == false and walkstyleCurrent ~= joaat(walkstyle) or walkstyle == "default" then
-            SetWalks(walkstyle)
+            --SetWalks(walkstyle)
         end
     end
 end)
