@@ -99,6 +99,7 @@ CreateThread(function()
                     end
                 end
             else
+                print(hidText)
                 if not hidText then 
                     hideText()
                 end
