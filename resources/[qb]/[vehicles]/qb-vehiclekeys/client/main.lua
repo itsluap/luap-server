@@ -11,6 +11,7 @@ local AlertSend = false
 local lastPickedVehicle = nil
 local usingAdvanced = false
 local IsHotwiring = false
+local hideUI = false
 
 -----------------------
 ----   Threads     ----
@@ -96,9 +97,15 @@ CreateThread(function()
                     if IsControlJustPressed(0, 74) then
                         Hotwire(vehicle, plate)
                     end
-                elseif not IsPedInAnyVehicle(ped, false) then
-                    exports['ps-ui']:HideText()
                 end
+            else
+                hideUI = true 
+            end
+
+            -- hide ui when not in car -- exports['ps-ui']:HideText()
+            if not IsPedInAnyVehicle(ped, false) and hideUI then 
+                exports['ps-ui']:HideText()
+                hideUI = false
             end
             
             if Config.CarJackEnable and canCarjack then
