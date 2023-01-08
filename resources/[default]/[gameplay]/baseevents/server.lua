@@ -6,10 +6,6 @@ RegisterServerEvent('baseevents:enteringAborted')
 RegisterServerEvent('baseevents:enteredVehicle')
 RegisterServerEvent('baseevents:leftVehicle')
 
-AddEventHandler('baseevents:leftVehicle', function(currentvehicle, seat,name,netid)
-	TriggerClientEvent('ps-ui:client:hidetext')
-end)
-
 AddEventHandler('baseevents:onPlayerKilled', function(killedBy, data)
 	local victim = source
 
