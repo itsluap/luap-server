@@ -50,14 +50,14 @@ Config.Locations = {
             { coords = vector3(135.92, -3030.5, 7.04), length = 6.0, width = 4.0, heading = 180.0, minZ = 6.0, maxZ = 10.0 },
         }
     },
-    ['LSC'] = {
+    ['bennys'] = {
         settings = {
-            label = 'Los Santos Customs',
-            welcomeLabel = "Welcome to the Los Santos Customs!",
+            label = 'Bennys',
+            welcomeLabel = "Welcome to Bennys!",
             enabled = true,
         },
         blip = {
-            label = 'Los Santos Customs',
+            label = 'Bennys',
             coords = vector3(-337.6, -136.7, 39.01),
             sprite = 446,
             scale = 0.65,
@@ -81,13 +81,13 @@ Config.Locations = {
             cosmetics = true,
         },
         drawtextui = {
-            text = "Los Santos Customs",
+            text = "Bennys",
             icon = "material-icons",
             materialIcon = 'construction',
         },
         restrictions = { deniedClasses = { 18 } },
         zones = {
-            { coords = vector3(-337.6, -136.7, 39.01), length = 6.0, width = 4.0, heading = 180.0, minZ = 6.0, maxZ = 10.0 },
+            { coords = vector3(-32.35, -1055.29, 28.4), length = 6.0, width = 4.0, heading = 180.0, minZ = 6.0, maxZ = 10.0 },
             --{ coords = vector3(135.92, -3030.5, 7.04), length = 6.0, width = 4.0, heading = 180.0, minZ = 6.0, maxZ = 10.0 },
         }
     },
