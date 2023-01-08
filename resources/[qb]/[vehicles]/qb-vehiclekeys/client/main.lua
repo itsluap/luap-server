@@ -142,7 +142,7 @@ end
 ---- Client Events ----
 -----------------------
 
-AddEventHandler('baseevents:leftVehicle', function(currentvehicle, seat,name,netid)
+AddEventHandler('baseevents:leftVehicle', function()
     exports['ps-ui']:HideText()
 end)
 
