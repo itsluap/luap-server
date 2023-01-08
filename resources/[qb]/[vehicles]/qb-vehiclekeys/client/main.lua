@@ -11,7 +11,6 @@ local AlertSend = false
 local lastPickedVehicle = nil
 local usingAdvanced = false
 local IsHotwiring = false
-local hidText = false
 
 -----------------------
 ----   Threads     ----
@@ -98,10 +97,7 @@ CreateThread(function()
                         Hotwire(vehicle, plate)
                     end
                 end
-            else
-                TriggerEvent('qb-vehiclekeys:client:hideUI')
             end
-
             
             if Config.CarJackEnable and canCarjack then
                 local playerid = PlayerId()
@@ -127,10 +123,6 @@ CreateThread(function()
         end
         Wait(sleep)
     end
-end)
-
-RegisterNetEvent('qb-vehiclekeys:client:hideUI', function()
-    exports['ps-ui']:HideText()
 end)
 
 function isBlacklistedVehicle(vehicle)

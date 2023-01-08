@@ -11,9 +11,6 @@ local VehicleList = {}
 -----------------------
 ---- Server Events ----
 -----------------------
-AddEventHandler('baseevents:leftVehicle', function(currentvehicle, seat,name,netid)
-	exports['ps-ui']:HideText()
-end)
 
 -- Event to give keys. receiver can either be a single id, or a table of ids.
 -- Must already have keys to the vehicle, trigger the event from the server, or pass forcegive paramter as true.
