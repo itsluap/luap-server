@@ -9,7 +9,7 @@ Config.Priority = {
 }
 
 -- require people to run discords
-Config.RequireDiscord = true
+Config.RequireDiscord = false
 
 -- "whitelist" only server
 Config.PriorityOnly = false
