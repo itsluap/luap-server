@@ -1,4 +1,4 @@
-local isInVehicle = false
+local GlobalState.isInVehicle = false
 local isEnteringVehicle = false
 local currentVehicle = 0
 local currentSeat = 0
@@ -9,7 +9,7 @@ Citizen.CreateThread(function()
 
 		local ped = PlayerPedId()
 
-		if not isInVehicle and not IsPlayerDead(PlayerId()) then
+		if not GlobalState.isInVehicle and not IsPlayerDead(PlayerId()) then
 			if DoesEntityExist(GetVehiclePedIsTryingToEnter(ped)) and not isEnteringVehicle then
 				-- trying to enter a vehicle!
 				local vehicle = GetVehiclePedIsTryingToEnter(ped)
@@ -24,7 +24,7 @@ Citizen.CreateThread(function()
 			elseif IsPedInAnyVehicle(ped, false) then
 				-- suddenly appeared in a vehicle, possible teleport
 				isEnteringVehicle = false
-				isInVehicle = true
+				GlobalState.isInVehicle = true
 				currentVehicle = GetVehiclePedIsUsing(ped)
 				currentSeat = GetPedVehicleSeat(ped)
 				local model = GetEntityModel(currentVehicle)
@@ -32,14 +32,14 @@ Citizen.CreateThread(function()
 				local netId = VehToNet(currentVehicle)
 				TriggerServerEvent('baseevents:enteredVehicle', currentVehicle, currentSeat, GetDisplayNameFromVehicleModel(GetEntityModel(currentVehicle)), netId)
 			end
-		elseif isInVehicle then
+		elseif GlobalState.isInVehicle then
 			if not IsPedInAnyVehicle(ped, false) or IsPlayerDead(PlayerId()) then
 				-- bye, vehicle
 				local model = GetEntityModel(currentVehicle)
 				local name = GetDisplayNameFromVehicleModel()
 				local netId = VehToNet(currentVehicle)
 				TriggerServerEvent('baseevents:leftVehicle', currentVehicle, currentSeat, GetDisplayNameFromVehicleModel(GetEntityModel(currentVehicle)), netId)
-				isInVehicle = false
+				GlobalState.GlobalState.isInVehicle = false
 				currentVehicle = 0
 				currentSeat = 0
 			end
