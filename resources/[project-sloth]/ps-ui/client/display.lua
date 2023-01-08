@@ -27,5 +27,12 @@ exports("UpdateText", function(text)
     })
 end)
 
+RegisterNetEvent('ps-ui:hidetext', function()
+    Text = ""
+    Color = "primary"
+    SendNUIMessage({
+        action = "hide",
+    })
+end)
 
 
