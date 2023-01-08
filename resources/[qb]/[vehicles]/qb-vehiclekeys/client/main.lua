@@ -11,7 +11,6 @@ local AlertSend = false
 local lastPickedVehicle = nil
 local usingAdvanced = false
 local IsHotwiring = false
-local isPopup = false
 
 -----------------------
 ----   Threads     ----
@@ -89,21 +88,17 @@ CreateThread(function()
                 sleep = 1000
                 local vehicle = GetVehiclePedIsIn(ped)
                 local plate = QBCore.Functions.GetPlate(vehicle)
-
                 if GetPedInVehicleSeat(vehicle, -1) == PlayerPedId() and not HasKeys(plate) and not isBlacklistedVehicle(vehicle) and not AreKeysJobShared(vehicle) then
                     sleep = 0
-                    if not isPopup then
-                        exports['ps-ui']:DisplayText("[H] Hotwire", "warning") -- Colors: primary, error, success, warning, info, mint
-                        isPopup = true
-                    end
+                    exports['ps-ui']:DisplayText("[H] Hotwire", "warning") -- Colors: primary, error, success, warning, info, mint
                     SetVehicleEngineOn(vehicle, false, false, true)
 
                     if IsControlJustPressed(0, 74) then
                         Hotwire(vehicle, plate)
-                    end 
+                    end
                 end
+                exports['ps-ui']:HideText()
             end
-            
             
             if Config.CarJackEnable and canCarjack then
                 local playerid = PlayerId()
@@ -161,10 +156,6 @@ AddEventHandler('onResourceStart', function(resourceName)
     if resourceName == GetCurrentResourceName() and QBCore.Functions.GetPlayerData() ~= {} then
         GetKeys()
     end
-end)
-
-RegisterNetEvent('baseevents:leftVehicle', function()
-	exports['ps-ui']:HideText()
 end)
 
 -- Handles state right when the player selects their character and location.
