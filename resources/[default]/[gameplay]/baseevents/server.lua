@@ -4,8 +4,9 @@ RegisterServerEvent('baseevents:onPlayerWasted')
 RegisterServerEvent('baseevents:enteringVehicle')
 RegisterServerEvent('baseevents:enteringAborted')
 RegisterServerEvent('baseevents:enteredVehicle')
---RegisterServerEvent('baseevents:leftVehicle')
-RegisterServerEvent("baseevents:leftVehicle", function()
+RegisterServerEvent('baseevents:leftVehicle')
+
+AddEventHandler('baseevents:leftVehicle', function(currentvehicle, seat,name,netid)
 	TriggerClientEvent('ps-ui:client:hidetext')
 end)
 
