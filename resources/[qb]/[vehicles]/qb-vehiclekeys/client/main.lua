@@ -97,9 +97,9 @@ CreateThread(function()
                     if IsControlJustPressed(0, 74) then
                         Hotwire(vehicle, plate)
                     end
+                else
+                    hideUI = true 
                 end
-            else
-                hideUI = true 
             end
 
             -- hide ui when not in car -- exports['ps-ui']:HideText()
