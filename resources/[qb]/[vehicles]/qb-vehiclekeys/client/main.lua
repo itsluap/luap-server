@@ -12,6 +12,8 @@ local lastPickedVehicle = nil
 local usingAdvanced = false
 local IsHotwiring = false
 
+isInVehicle = false
+
 -----------------------
 ----   Threads     ----
 -----------------------
@@ -89,6 +91,7 @@ CreateThread(function()
                 local vehicle = GetVehiclePedIsIn(ped)
                 local plate = QBCore.Functions.GetPlate(vehicle)
                 if GetPedInVehicleSeat(vehicle, -1) == PlayerPedId() and not HasKeys(plate) and not isBlacklistedVehicle(vehicle) and not AreKeysJobShared(vehicle) then
+                    isInVehicle = true
                     sleep = 0
                     exports['ps-ui']:DisplayText("[H] Hotwire", "warning") -- Colors: primary, error, success, warning, info, mint
                     SetVehicleEngineOn(vehicle, false, false, true)
@@ -96,6 +99,8 @@ CreateThread(function()
                     if IsControlJustPressed(0, 74) then
                         Hotwire(vehicle, plate)
                     end
+                elseif isInVehicle == false then
+                    exports['ps-ui']:HideText()
                 end
             end
             
@@ -141,10 +146,6 @@ end
 -----------------------
 ---- Client Events ----
 -----------------------
-
-AddEventHandler('baseevents:leftVehicle', function()
-    exports['ps-ui']:HideText()
-end)
 
 RegisterKeyMapping('togglelocks', Lang:t("info.tlock"), 'keyboard', 'L')
 RegisterCommand('togglelocks', function()
