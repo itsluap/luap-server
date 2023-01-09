@@ -17,7 +17,7 @@ Config.Webhook = 'https://discord.com/api/webhooks/1029233558251917333/Qn9I4IoZJ
 Config.VPNItem = 'vpn'
 
 -- The garage the vehicle goes to when you sell a car to a player
-Config.SellGarage = 'altastreet'
+Config.SellGarage = 'legionsquare'
 
 -- How Long Does The Player Have To Accept The Ping - This Is In Seconds
 Config.Timeout = 30
