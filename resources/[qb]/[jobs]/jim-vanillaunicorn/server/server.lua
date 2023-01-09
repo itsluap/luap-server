@@ -105,7 +105,9 @@ RegisterNetEvent('jim-vanillaunicorn:server:toggleItem', function(give, item, am
 				TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item], "remove", amount or 1)
 				if Config.Debug then print("^5Debug^7: ^1Removing ^2from Player^7(^2"..src.."^7) '^6"..QBCore.Shared.Items[item].label.."^7(^2x^6"..(amount or "1").."^7)'") end
 			end
-		else TriggerEvent("jim-vanillaunicorn:server:DupeWarn", item, src) end -- if not boot the player
+		else 
+            TriggerClientEvent('QBCore:Notify', source, "You don't have the required items!")
+        end -- if not boot the player
 	else
 		if QBCore.Functions.GetPlayer(src).Functions.AddItem(item, amount or 1) then
 			TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item], "add", amount or 1)
