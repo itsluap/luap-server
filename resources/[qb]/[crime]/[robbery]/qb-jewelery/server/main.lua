@@ -97,8 +97,8 @@ RegisterNetEvent('qb-jewellery:server:vitrineReward', function(vitrineIndex)
                 cheating = true
             end
         end
-   --  else
-        -- cheating = true
+    else
+        cheating = true
     end
 
     if cheating then
