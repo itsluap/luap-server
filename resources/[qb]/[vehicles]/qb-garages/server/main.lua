@@ -143,6 +143,18 @@ QBCore.Functions.CreateCallback("qb-garage:server:GetGarageVehicles", function(s
     end
 end)
 
+QBCore.Functions.CreateCallback("qb-garage:server:IsSpawnOk", function(_, cb, plate, type)
+    if type == "depot" then         --If depot, check if vehicle is not already spawned on the map
+        if OutsideVehicles[plate] and DoesEntityExist(OutsideVehicles[plate].entity) then
+            cb(false)
+        else
+            cb(true)
+        end
+    else
+        cb(true)
+    end
+end)
+
 if UseEnc0dedPersistenVehicles then
     QBCore.Functions.CreateCallback("qb-garage:server:checkIsSpawned", function (plate)
         local data = exports['persistent-vehicles']:GetVehicleData(plate, {'pos'})
