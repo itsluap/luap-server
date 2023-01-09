@@ -809,10 +809,10 @@ Config.Products = {
     },
 }
 Config.Locations = {
-    ["masker"] = {
+    ["lesters"] = {
         ["label"] = "Lesters",
         ["coords"] = vector4(1269.14, -1711.07, 54.77, 31.06),
-        ["ped"] = 'g_m_m_armboss_01',
+        ["ped"] = 'cs_lestercrest',
         ["radius"] = 3.5,
         ["targetIcon"] = "fas fa-shopping-basket",
         ["targetLabel"] = "Open Shop",
