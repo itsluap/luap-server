@@ -3716,6 +3716,16 @@ QBShared.Vehicles = {
         ['hash'] = `protoz`,
         ['shop'] = 'icey',
     },
+	-- nodeth
+	['bnrpandem'] = {
+        ['name'] = 'BNR32 Pandem',
+        ['brand'] = 'Nissan',
+        ['model'] = 'bnrpandem',
+        ['price'] = 1000000,
+        ['category'] = 'sports',
+        ['hash'] = `bnrpandem`,
+        ['shop'] = 'nodeth',
+    },
 	-- king -- 
 	['navigator'] = {
         ['name'] = 'Navigator',
