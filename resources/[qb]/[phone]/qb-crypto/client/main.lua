@@ -118,7 +118,7 @@ CreateThread(function()
 			local paletodist = #(pos - Crypto.Paleto.coords)
 			local pacificdist = #(pos - Crypto.Pacific.coords)
 			local pacificdist2 = #(pos - Crypto.Pacific.coords2)
-			local dist3 = #(pos - Crypto.Pacific.dist3)
+			local pacificdist3 = #(pos - Crypto.Pacific.coords3)
 			
 			if paletodist < 15 then
 				sleep = 5
@@ -146,6 +146,7 @@ CreateThread(function()
 						TriggerEvent('inventory:client:requiredItems', requiredItems2, false)
 					end
 				end
+			--[[
 			elseif pacificdist2 < 15 then
 				sleep = 5
 				if pacificdist2 < 1.5 then
@@ -160,9 +161,10 @@ CreateThread(function()
 						TriggerEvent('inventory:client:requiredItems', requiredItems2, false)
 					end
 				end
-			elseif dist3 < 15 then
+				]]--
+			elseif pacificdist3 < 15 then
 				sleep = 5
-				if dist3 < 1.5 then
+				if pacificdist3 < 1.5 then
 					print('pacific dist3')
 					if not requiredItemsShowed5 then
 						requiredItemsShowed5 = true
