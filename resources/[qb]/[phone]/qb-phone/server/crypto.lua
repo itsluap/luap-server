@@ -150,7 +150,7 @@ RegisterNetEvent('qb-phone:server:SellCrypto', function(type, amount)
     local cashAmount = tonumber(amount) * v.value -- reward if player has enough crypto
     local cryptoAmount = tonumber(amount) -- amount of crypto selected
 
-    if not v.purchase then return end -- only modders should be only to do this so no need to send a message to client
+    if not v.sellable then return end -- only modders should be only to do this so no need to send a message to client
 
     local txt = "Sold " .. amount .. "x " .. v.abbrev
 
