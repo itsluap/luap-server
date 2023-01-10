@@ -287,6 +287,7 @@ Config.PhoneApplications = {
         slot = 20,
         Alerts = 0,
     },
+    --[[
     ["racing"] = {
         app = "racing",
         color = "#353b48",
@@ -299,6 +300,7 @@ Config.PhoneApplications = {
         slot = 21,
         Alerts = 0,
     },
+    ]]--
     ["bank"] = {
         app = "bank",
         color = "#9c88ff",
@@ -308,7 +310,7 @@ Config.PhoneApplications = {
         style = "font-size: 2.7vh";
         job = false,
         blockedjobs = {},
-        slot = 22,
+        slot = 21,
         Alerts = 0,
     },
     --[[
@@ -395,7 +397,8 @@ Config.CryptoCoins = {
         icon = 'fas fa-caret-square-up', -- icon
         metadata = 'shung', -- meta data name
         value = 50, -- price of coin
-        purchase = true -- TRUE ( crypto is purchaseable in the phone) FALSE ( crypto is not purchaseable and only exchangeable )
+        purchase = true, -- TRUE ( crypto is purchaseable in the phone) FALSE ( crypto is not purchaseable and only exchangeable )
+        sellable = true,
     },
     {
         label = 'Guinea',
@@ -403,7 +406,8 @@ Config.CryptoCoins = {
         icon = 'fas fa-horse-head',
         metadata = 'gne',
         value = 100,
-        purchase = false
+        purchase = false,
+        sellable = true,
     },
     {
         label = 'X Coin',
@@ -411,7 +415,8 @@ Config.CryptoCoins = {
         icon = 'fas fa-times',
         metadata = 'xcoin',
         value = 75,
-        purchase = true
+        purchase = true,
+        sellable = true,
     },
     {
         label = 'LME',
@@ -419,6 +424,7 @@ Config.CryptoCoins = {
         icon = 'fas fa-lemon',
         metadata = 'lme',
         value = 150,
-        purchase = false
+        purchase = false,
+        sellable = true,
     },
 }

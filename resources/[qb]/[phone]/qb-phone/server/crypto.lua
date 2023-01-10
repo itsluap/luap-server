@@ -140,3 +140,47 @@ RegisterNetEvent('qb-phone:server:ExchangeCrypto', function(type, amount, statei
         )
     end
 end)
+
+RegisterNetEvent('qb-phone:server:SellCrypto', function(type, amount)
+    print('attempting to sell crypto')
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    if not Player or not Player.PlayerData.metadata.crypto[type] then return end -- if the crypto dosnt exist
+    local v = Config.CryptoCoins[GetConfig(type)]
+    local cashAmount = tonumber(amount) * v.value -- reward if player has enough crypto
+    local cryptoAmount = tonumber(amount) -- amount of crypto selected
+
+    if not v.sellable then return end -- only modders should be only to do this so no need to send a message to client
+
+    local txt = "Sold " .. amount .. "x " .. v.abbrev
+
+    if exports['qb-phone']:hasEnough(src, type, cryptoAmount) then -- check if player has enough crypto to sell
+
+        Player.Functions.AddMoney('bank', cashAmount, txt) -- add cash value of crypto to player bank
+
+        TriggerClientEvent('qb-phone:client:CustomNotification', src,
+            "WALLET",
+            "You Sold "..amount.." "..type.."!",
+            "fas fa-chart-line",
+            "#D3B300",
+            7500
+        )
+
+        if Config.RenewedBanking then
+            local cid = Player.PlayerData.citizenid
+            local name = ("%s %s"):format(Player.PlayerData.charinfo.firstname, Player.PlayerData.charinfo.lastname)
+            exports['Renewed-Banking']:handleTransaction(cid, "Crypto Sell", cashAmount, txt, "Los Santos Crypto", name, "deposit")
+        end
+
+        RemoveCrypto(src, type, cryptoAmount) -- remove chosen crypto amount
+
+    else
+        TriggerClientEvent('qb-phone:client:CustomNotification', src,
+            "WALLET",
+            "Not Enough Crypto",
+            "fas fa-chart-line",
+            "#D3B300",
+            7500
+        )
+    end
+end)

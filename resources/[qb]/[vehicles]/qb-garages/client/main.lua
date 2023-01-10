@@ -803,27 +803,29 @@ end)
 
 RegisterNetEvent('qb-garages:client:TakeOutDepot', function(data)
     local vehicle = data.vehicle
-    local vehExists = DoesEntityExist(OutsideVehicles[vehicle.plate])
-    if not vehExists then
-        if UseEnc0dedPersistenVehicles then
-            QBCore.Functions.TriggerCallback('qb-garage:server:checkIsSpawned', function(spawned)
-                if spawned then
-                    QBCore.Functions.Notify(Lang:t('error.not_impound'), "error", 5000)
-                    return
-                end
-            end, vehicle.plate)
+    --local vehExists = DoesEntityExist(OutsideVehicles[vehicle.plate])
+    QBCore.Functions.TriggerCallback('qb-garage:server:IsSpawnOk', function(spawn)
+        if spawn then
+            if UseEnc0dedPersistenVehicles then
+                QBCore.Functions.TriggerCallback('qb-garage:server:checkIsSpawned', function(spawned)
+                    if spawned then
+                        QBCore.Functions.Notify(Lang:t('error.not_impound'), "error", 5000)
+                        return
+                    end
+                end, vehicle.plate)
+            end
+            local PlayerData = QBCore.Functions.GetPlayerData()
+            if PlayerData.money['cash'] >= vehicle.depotprice or PlayerData.money['bank'] >= vehicle.depotprice then
+                TriggerEvent("qb-garages:client:TakeOutGarage", data, function (veh)
+                    if veh then
+                        TriggerServerEvent("qb-garage:server:PayDepotPrice", data)
+                    end
+                end)
+            end
+        else
+            QBCore.Functions.Notify(Lang:t('error.not_impound'), "error", 5000)
         end
-        local PlayerData = QBCore.Functions.GetPlayerData()
-        if PlayerData.money['cash'] >= vehicle.depotprice or PlayerData.money['bank'] >= vehicle.depotprice then
-            TriggerEvent("qb-garages:client:TakeOutGarage", data, function (veh)
-                if veh then
-                    TriggerServerEvent("qb-garage:server:PayDepotPrice", data)
-                end
-            end)
-        end
-    else
-        QBCore.Functions.Notify(Lang:t('error.not_impound'), "error", 5000)
-    end
+    end, vehicle.plate, type)    
 end)
 
 RegisterNetEvent('qb-garages:client:OpenHouseGarage', function()

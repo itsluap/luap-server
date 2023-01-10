@@ -1,7 +1,12 @@
 -- Variables
 local QBCore = exports['qb-core']:GetCoreObject()
 local requiredItemsShowed = false
+local requiredItemsShowed2 = false
+local requiredItemsShowed3 = false
+local requiredItemsShowed4 = false
+local requiredItemsShowed5 = false
 local requiredItems = {[1] = {name = QBCore.Shared.Items["cryptostick"]["name"], image = QBCore.Shared.Items["cryptostick"]["image"]}}
+local requiredItems2 = {[1] = {name = QBCore.Shared.Items["electronickit"]["name"], image = QBCore.Shared.Items["electronickit"]["image"]}}
 
 -- Functions
 
@@ -67,6 +72,7 @@ CreateThread(function()
 			local ped = PlayerPedId()
 			local pos = GetEntityCoords(ped)
 			local dist = #(pos - Crypto.Exchange.coords)
+			
 			if dist < 15 then
 				sleep = 5
 				if dist < 1.5 then
@@ -102,6 +108,77 @@ CreateThread(function()
 	end
 end)
 
+CreateThread(function()
+	while true do
+		local sleep = 5000
+		if LocalPlayer.state.isLoggedIn then
+			local ped = PlayerPedId()
+			local pos = GetEntityCoords(ped)
+			-- for pacific bank and paleto bank item ui --
+			local paletodist = #(pos - Crypto.Paleto.coords)
+			local pacificdist = #(pos - Crypto.Pacific.coords)
+			local pacificdist2 = #(pos - Crypto.Pacific.coords2)
+			local pacificdist3 = #(pos - Crypto.Pacific.coords3)
+			
+			if paletodist < 15 then
+				sleep = 5
+				if paletodist < 1.5 then
+					if not requiredItemsShowed2 then
+						requiredItemsShowed2 = true
+						TriggerEvent('inventory:client:requiredItems', requiredItems2, true)
+					end
+				else
+					if requiredItemsShowed2 then
+						requiredItemsShowed2 = false
+						TriggerEvent('inventory:client:requiredItems', requiredItems2, false)
+					end
+				end
+			elseif pacificdist < 5 then
+				sleep = 5
+				if pacificdist < 1.5 then
+					if not requiredItemsShowed3 then
+						requiredItemsShowed3 = true
+						TriggerEvent('inventory:client:requiredItems', requiredItems2, true)
+					end
+				else
+					if requiredItemsShowed3 then
+						requiredItemsShowed3 = false
+						TriggerEvent('inventory:client:requiredItems', requiredItems2, false)
+					end
+				end
+			elseif pacificdist2 < 5 then
+				sleep = 5
+				if pacificdist2 < 1.5 then
+					if not requiredItemsShowed4 then
+						requiredItemsShowed4 = true
+						TriggerEvent('inventory:client:requiredItems', requiredItems2, true)
+					end
+				else
+					if requiredItemsShowed4 then
+						requiredItemsShowed4 = false
+						TriggerEvent('inventory:client:requiredItems', requiredItems2, false)
+					end
+				end
+			elseif pacificdist3 < 5 then
+				sleep = 5
+				if pacificdist3 < 1.5 then
+					if not requiredItemsShowed5 then
+						requiredItemsShowed5 = true
+						TriggerEvent('inventory:client:requiredItems', requiredItems2, true)
+					end
+				else
+					if requiredItemsShowed5 then
+						requiredItemsShowed5 = false
+						TriggerEvent('inventory:client:requiredItems', requiredItems2, false)
+					end
+				end
+			end
+
+		end
+		Wait(sleep)
+	end
+end)
+
 -- Events
 
 RegisterNetEvent('qb-crypto:client:SyncReboot', function()
@@ -110,15 +187,7 @@ RegisterNetEvent('qb-crypto:client:SyncReboot', function()
 end)
 
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
-	TriggerServerEvent('qb-crypto:server:FetchWorth')
 	TriggerServerEvent('qb-crypto:server:GetRebootState')
-end)
-
-RegisterNetEvent('qb-crypto:client:UpdateCryptoWorth', function(crypto, amount, history)
-	Crypto.Worth[crypto] = amount
-	if history ~= nil then
-		Crypto.History[crypto] = history
-	end
 end)
 
 RegisterNetEvent('qb-crypto:client:GetRebootState', function(RebootInfo)
