@@ -144,6 +144,7 @@ CreateThread(function()
 				end
 			else
 				if pacificdist3 < 15 then
+					print('pacific dist')
 					sleep = 5
 					if pacificdist3 < 1.5 then
 						if not requiredItemsShowed then
