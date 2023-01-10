@@ -154,9 +154,9 @@ CreateThread(function()
 					end
 				end
 			end
+		else
+			Wait(sleep)
 		end
-	end
-		Wait(sleep)
 	end
 end)
 
