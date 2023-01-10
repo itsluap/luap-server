@@ -130,9 +130,9 @@ CreateThread(function()
 					end
 				end
 			elseif pacificdist2 < 15 then
-				print('pacific dist2')
 				sleep = 5
 				if pacificdist2 < 1.5 then
+					print('pacific dist2')
 					if not requiredItemsShowed then
 						requiredItemsShowed = true
 						TriggerEvent('inventory:client:requiredItems', requiredItems2, true)
