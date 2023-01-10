@@ -160,7 +160,7 @@ CreateThread(function()
 						TriggerEvent('inventory:client:requiredItems', requiredItems2, false)
 					end
 				end
-			else if pacificdist3 < 15 then
+			elseif pacificdist3 < 15 then
 				sleep = 5
 				if pacificdist3 < 1.5 then
 					print('pacific dist3')
@@ -174,6 +174,8 @@ CreateThread(function()
 						TriggerEvent('inventory:client:requiredItems', requiredItems2, false)
 					end
 				end
+			else 
+				print('not near')
 			end
 
 		end
