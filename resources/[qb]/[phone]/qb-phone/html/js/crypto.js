@@ -133,7 +133,7 @@ $(document).on('click', '.box-sell', function(e){
 $(document).on('click', '#crypto-send-sell', function(e){
     e.preventDefault();
     var crypto = CryptoMeta;
-    var amount = $(".crypto-amount").val();
+    var amount = $(".crypto-amount-sell").val();
     if(amount != ""){
         setTimeout(function(){
             ConfirmationFrame()
