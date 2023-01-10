@@ -55,6 +55,18 @@ CreateThread(function()
     end
 end)
 
+CreateThread(function()
+    local sleep
+    while true do
+        sleep = 250
+        if isLoggedIn then
+            local ped = PlayerPedId()
+            DisablePlayerVehicleRewards(ped)
+        end
+        Wait(sleep)
+    end
+end)
+
 RegisterNetEvent('tackle:client:GetTackled', function()
 	SetPedToRagdoll(PlayerPedId(), math.random(1000, 6000), math.random(1000, 6000), 0, false, false, false)
 	TimerEnabled = true
