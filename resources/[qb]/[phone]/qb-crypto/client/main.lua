@@ -1,6 +1,10 @@
 -- Variables
 local QBCore = exports['qb-core']:GetCoreObject()
 local requiredItemsShowed = false
+local requiredItemsShowed2 = false
+local requiredItemsShowed3 = false
+local requiredItemsShowed4 = false
+local requiredItemsShowed5 = false
 local requiredItems = {[1] = {name = QBCore.Shared.Items["cryptostick"]["name"], image = QBCore.Shared.Items["cryptostick"]["image"]}}
 local requiredItems2 = {[1] = {name = QBCore.Shared.Items["electronickit"]["name"], image = QBCore.Shared.Items["electronickit"]["image"]}}
 
@@ -103,35 +107,7 @@ CreateThread(function()
 		Wait(sleep)
 	end
 end)
---[[
-CreateThread(function()
-	while true do
-		local sleep = 5000
-		if LocalPlayer.state.isLoggedIn then
-			local ped = PlayerPedId()
-			local pos = GetEntityCoords(ped)
-			local dist3 = #(pos - Crypto.Pacific.dist3)
-			
-			if dist3 < 15 then
-				sleep = 5
-				if dist3 < 1.5 then
-					print('pacific dist3')
-					if not requiredItemsShowed then
-						requiredItemsShowed = true
-						TriggerEvent('inventory:client:requiredItems', requiredItems2, true)
-					end
-				else
-					if requiredItemsShowed then
-						requiredItemsShowed = false
-						TriggerEvent('inventory:client:requiredItems', requiredItems2, false)
-					end
-				end
-			end
-		end
-		Wait(sleep)
-	end
-end)
-]]--
+
 CreateThread(function()
 	while true do
 		local sleep = 5000
@@ -147,26 +123,26 @@ CreateThread(function()
 			if paletodist < 15 then
 				sleep = 5
 				if paletodist < 1.5 then
-					if not requiredItemsShowed then
-						requiredItemsShowed = true
+					if not requiredItemsShowed2 then
+						requiredItemsShowed2 = true
 						TriggerEvent('inventory:client:requiredItems', requiredItems2, true)
 					end
 				else
-					if requiredItemsShowed then
-						requiredItemsShowed = false
+					if requiredItemsShowed2 then
+						requiredItemsShowed2 = false
 						TriggerEvent('inventory:client:requiredItems', requiredItems2, false)
 					end
 				end
 			elseif pacificdist < 15 then
 				sleep = 5
 				if pacificdist < 1.5 then
-					if not requiredItemsShowed then
-						requiredItemsShowed = true
+					if not requiredItemsShowed3 then
+						requiredItemsShowed3 = true
 						TriggerEvent('inventory:client:requiredItems', requiredItems2, true)
 					end
 				else
-					if requiredItemsShowed then
-						requiredItemsShowed = false
+					if requiredItemsShowed3 then
+						requiredItemsShowed3 = false
 						TriggerEvent('inventory:client:requiredItems', requiredItems2, false)
 					end
 				end
@@ -174,13 +150,13 @@ CreateThread(function()
 				sleep = 5
 				if pacificdist2 < 1.5 then
 					print('pacific dist2')
-					if not requiredItemsShowed then
-						requiredItemsShowed = true
+					if not requiredItemsShowed4 then
+						requiredItemsShowed4 = true
 						TriggerEvent('inventory:client:requiredItems', requiredItems2, true)
 					end
 				else
-					if requiredItemsShowed then
-						requiredItemsShowed = false
+					if requiredItemsShowed4 then
+						requiredItemsShowed4 = false
 						TriggerEvent('inventory:client:requiredItems', requiredItems2, false)
 					end
 				end
@@ -188,13 +164,13 @@ CreateThread(function()
 				sleep = 5
 				if dist3 < 1.5 then
 					print('pacific dist3')
-					if not requiredItemsShowed then
-						requiredItemsShowed = true
+					if not requiredItemsShowed5 then
+						requiredItemsShowed5 = true
 						TriggerEvent('inventory:client:requiredItems', requiredItems2, true)
 					end
 				else
-					if requiredItemsShowed then
-						requiredItemsShowed = false
+					if requiredItemsShowed5 then
+						requiredItemsShowed5 = false
 						TriggerEvent('inventory:client:requiredItems', requiredItems2, false)
 					end
 				end
