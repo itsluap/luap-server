@@ -73,7 +73,6 @@ CreateThread(function()
 			local pacificdist = #(pos - Crypto.Pacific.coords)
 			local pacificdist2 = #(pos - Crypto.Pacific.coords2)
 			local pacificdist3 = #(pos - Crypto.Pacific.coords3)
-			local pacificdist4 = #(pos - Crypto.Pacific.coords4)
 			
 			if dist < 15 then
 				sleep = 5
@@ -146,19 +145,6 @@ CreateThread(function()
 			elseif pacificdist3 < 15 then
 				sleep = 5
 				if pacificdist3 < 1.5 then
-					if not requiredItemsShowed then
-						requiredItemsShowed = true
-						TriggerEvent('inventory:client:requiredItems', requiredItems2, true)
-					end
-				else
-					if requiredItemsShowed then
-						requiredItemsShowed = false
-						TriggerEvent('inventory:client:requiredItems', requiredItems2, false)
-					end
-				end
-			elseif pacificdist4 < 15 then
-				sleep = 5
-				if pacificdist4 < 1.5 then
 					if not requiredItemsShowed then
 						requiredItemsShowed = true
 						TriggerEvent('inventory:client:requiredItems', requiredItems2, true)
