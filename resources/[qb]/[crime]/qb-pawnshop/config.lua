@@ -23,42 +23,26 @@ Config.UseTarget = GetConvar('UseTarget', 'false') == 'true'
 
 Config.PawnItems = {
     [1] = {
-        item = 'goldchain',
-        price = math.random(100,200)
-    },
-    [2] = {
-        item = 'diamond_ring',
-        price = math.random(500,800)
-    },
-    [3] = {
-        item = 'rolex',
-        price = math.random(200,400)
-    },
-    [4] = {
-        item = '10kgoldchain',
-        price = math.random(100,200)
-    },
-    [5] = {
         item = 'tablet',
         price = math.random(50,100)
     },
-    [6] = {
+    [2] = {
         item = 'iphone',
         price = math.random(600,800)
     },
-    [7] = {
+    [3] = {
         item = 'samsungphone',
         price = math.random(400,600)
     },
-    [8] = {
+    [4] = {
         item = 'laptop',
         price = math.random(600,1000)
     },
-    [8] = {
+    [5] = {
         item = 'goldbar',
         price = math.random(1500,2500)
     },
-    [9] = {
+    [6] = {
         item = 'diamond',
         price = math.random(2500,3500)
     }
@@ -70,7 +54,7 @@ Config.MeltingItems = { -- meltTime is amount of time in minutes per item
         rewards = {
             [1] = {
                 item = 'goldbar',
-                amount = 2
+                amount = 1
             }
         },
         meltTime = 0.15
