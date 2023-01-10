@@ -130,6 +130,7 @@ CreateThread(function()
 					end
 				end
 			elseif pacificdist2 < 15 then
+				print('pacific dist2')
 				sleep = 5
 				if pacificdist2 < 1.5 then
 					if not requiredItemsShowed then
@@ -143,7 +144,7 @@ CreateThread(function()
 					end
 				end
 			elseif pacificdist3 < 15 then
-				print('pacific dist')
+				print('pacific dist3')
 				sleep = 5
 				if pacificdist3 < 1.5 then
 					if not requiredItemsShowed then
