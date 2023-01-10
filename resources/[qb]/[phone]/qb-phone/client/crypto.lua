@@ -17,6 +17,12 @@ RegisterNUICallback('ExchangeCrypto', function(data, cb)
     cb("ok")
 end)
 
+RegisterNUICallback('SellCrypto', function(data, cb)
+    TriggerServerEvent('qb-phone:server:SellCrypto', data.metadata, data.amount, data.stateid)
+
+    cb("ok")
+end)
+
 RegisterNetEvent('qb-phone:client:UpdateCrypto', function()
     SendNUIMessage({
         action = "UpdateCrypto",
