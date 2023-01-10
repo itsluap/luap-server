@@ -110,15 +110,7 @@ RegisterNetEvent('qb-crypto:client:SyncReboot', function()
 end)
 
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
-	TriggerServerEvent('qb-crypto:server:FetchWorth')
 	TriggerServerEvent('qb-crypto:server:GetRebootState')
-end)
-
-RegisterNetEvent('qb-crypto:client:UpdateCryptoWorth', function(crypto, amount, history)
-	Crypto.Worth[crypto] = amount
-	if history ~= nil then
-		Crypto.History[crypto] = history
-	end
 end)
 
 RegisterNetEvent('qb-crypto:client:GetRebootState', function(RebootInfo)
