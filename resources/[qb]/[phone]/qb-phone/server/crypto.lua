@@ -142,6 +142,7 @@ RegisterNetEvent('qb-phone:server:ExchangeCrypto', function(type, amount, statei
 end)
 
 RegisterNetEvent('qb-phone:server:SellCrypto', function(type, amount)
+    print('attempting to sell crypto')
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     if not Player or not Player.PlayerData.metadata.crypto[type] then return end -- if the crypto dosnt exist
