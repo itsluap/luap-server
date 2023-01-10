@@ -1,3 +1,4 @@
 
 -- finish cryptosticks (needs to give new version of cryptosticks)
---
+-- pawnshop needs to be fixed 
+-- 
