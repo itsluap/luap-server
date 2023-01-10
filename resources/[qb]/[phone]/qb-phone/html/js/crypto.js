@@ -30,7 +30,7 @@ function LoadCryptoCoins(){
                     '<div class="crypto-extralabel"><i class="fas fa-tag"></i>'+v.label+'</div>' +
                     '<div class="crypto-current"><i class="fas fa-money-check-alt"></i>'+CryptoType[Crypto]+'</div>' +
                     '<div class="crypto-cost"><i class="fas fa-chart-bar"></i>'+formatter.format(v.value)+'</div>' +
-                    '<div class="crypto-box"><span class="crypto-box box-purchase" data-cryptometa="'+v.metadata+'" data-label="'+v.label+'" style="margin-left: -1.0vh;">PURCHASE</span><span class="crypto-box box-exchange" data-cryptometa="'+v.metadata+'" data-label="'+v.label+'" style = "margin-left: 0.6vh;">EXCHANGE</span><span class="crypto-box box-sell" data-cryptometa="'+v.metadata+'" data-label="'+v.label+'" style="margin-left: 0.6vh;">SELL</span></div>' +
+                    '<div class="crypto-box"><span class="crypto-box box-purchase" data-cryptometa="'+v.metadata+'" data-label="'+v.label+'" style="margin-left: -1.5vh;">PURCHASE</span><span class="crypto-box box-exchange" data-cryptometa="'+v.metadata+'" data-label="'+v.label+'" style = "margin-left: 0.6vh;">EXCHANGE</span><span class="crypto-box box-sell" data-cryptometa="'+v.metadata+'" data-label="'+v.label+'" style="margin-left: 0.6vh;">SELL</span></div>' +
                     '</div>' +
                 '</div>';
             }else{
