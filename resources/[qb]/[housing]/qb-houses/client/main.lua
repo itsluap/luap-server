@@ -166,6 +166,7 @@ local function RegisterStashTarget()
         if isPointInside and not entering and isOwned then
              --exports['qb-core']:DrawText(Lang:t("target.open_stash"), 'left')
             exports['ps-ui']:DisplayText(Lang:t("target.open_stash"), 'primary')
+            print('showing stash ui')
         else
             exports['ps-ui']:HideText()
         end
