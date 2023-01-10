@@ -102,60 +102,60 @@ CreateThread(function()
 					end
 				end
 			end
-		end
-		if paletodist < 15 then
-			sleep = 5
-			if paletodist < 1.5 then
-				if not requiredItemsShowed then
-					requiredItemsShowed = true
-					TriggerEvent('inventory:client:requiredItems', 'electronickit', true)
-				end
-			else
-				if requiredItemsShowed then
-					requiredItemsShowed = false
-					TriggerEvent('inventory:client:requiredItems', 'electronickit', false)
-				end
-			end
-		end
-		if pacificdist < 15 then
-			sleep = 5
-			if pacificdist < 1.5 then
-				if not requiredItemsShowed then
-					requiredItemsShowed = true
-					TriggerEvent('inventory:client:requiredItems', 'electronickit', true)
-				end
-			else
-				if requiredItemsShowed then
-					requiredItemsShowed = false
-					TriggerEvent('inventory:client:requiredItems', 'electronickit', false)
+			if paletodist < 15 then
+				sleep = 5
+				if paletodist < 1.5 then
+					if not requiredItemsShowed then
+						requiredItemsShowed = true
+						TriggerEvent('inventory:client:requiredItems', 'electronickit', true)
+					end
+				else
+					if requiredItemsShowed then
+						requiredItemsShowed = false
+						TriggerEvent('inventory:client:requiredItems', 'electronickit', false)
+					end
 				end
 			end
-		end
-		if pacificdist2 < 15 then
-			sleep = 5
-			if pacificdist2 < 1.5 then
-				if not requiredItemsShowed then
-					requiredItemsShowed = true
-					TriggerEvent('inventory:client:requiredItems', 'electronickit', true)
-				end
-			else
-				if requiredItemsShowed then
-					requiredItemsShowed = false
-					TriggerEvent('inventory:client:requiredItems', 'electronickit', false)
+			if pacificdist < 15 then
+				sleep = 5
+				if pacificdist < 1.5 then
+					if not requiredItemsShowed then
+						requiredItemsShowed = true
+						TriggerEvent('inventory:client:requiredItems', 'electronickit', true)
+					end
+				else
+					if requiredItemsShowed then
+						requiredItemsShowed = false
+						TriggerEvent('inventory:client:requiredItems', 'electronickit', false)
+					end
 				end
 			end
-		end
-		if pacificdist3 < 15 then
-			sleep = 5
-			if pacificdist3 < 1.5 then
-				if not requiredItemsShowed then
-					requiredItemsShowed = true
-					TriggerEvent('inventory:client:requiredItems', 'electronickit', true)
+			if pacificdist2 < 15 then
+				sleep = 5
+				if pacificdist2 < 1.5 then
+					if not requiredItemsShowed then
+						requiredItemsShowed = true
+						TriggerEvent('inventory:client:requiredItems', 'electronickit', true)
+					end
+				else
+					if requiredItemsShowed then
+						requiredItemsShowed = false
+						TriggerEvent('inventory:client:requiredItems', 'electronickit', false)
+					end
 				end
-			else
-				if requiredItemsShowed then
-					requiredItemsShowed = false
-					TriggerEvent('inventory:client:requiredItems', 'electronickit', false)
+			end
+			if pacificdist3 < 15 then
+				sleep = 5
+				if pacificdist3 < 1.5 then
+					if not requiredItemsShowed then
+						requiredItemsShowed = true
+						TriggerEvent('inventory:client:requiredItems', 'electronickit', true)
+					end
+				else
+					if requiredItemsShowed then
+						requiredItemsShowed = false
+						TriggerEvent('inventory:client:requiredItems', 'electronickit', false)
+					end
 				end
 			end
 		end
