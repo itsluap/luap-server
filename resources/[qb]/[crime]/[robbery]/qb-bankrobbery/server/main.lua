@@ -170,141 +170,30 @@ RegisterNetEvent('qb-bankrobbery:server:recieveItem', function(type, bankId, loc
             return error(Lang:t("error.event_trigger_wrong", {event = "qb-bankrobbery:server:receiveItem", extraInfo = " (smallbank "..bankId..") ", source = source}))
         end
         local itemType = math.random(#Config.RewardTypes)
-        local WeaponChance = math.random(1, 50)
-        local odd1 = math.random(1, 50)
         local tierChance = math.random(1, 100)
         local tier
-        if tierChance < 50 then tier = 1 elseif tierChance >= 50 and tierChance < 80 then tier = 2 elseif tierChance >= 80 and tierChance < 95 then tier = 3 else tier = 4 end
-        if WeaponChance ~= odd1 then
-            if tier ~= 4 then
-                 if Config.RewardTypes[itemType].type == "item" then
-                    local item = Config.LockerRewards["tier"..tier][math.random(#Config.LockerRewards["tier"..tier])]
-                    local itemAmount = math.random(item.minAmount, item.maxAmount)
-                    ply.Functions.AddItem(item.item, itemAmount)
-                    TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item.item], "add")
-                 elseif Config.RewardTypes[itemType].type == "money" then
-                    local info = {
-                        worth = math.random(2300, 3200)
-                    }
-                    ply.Functions.AddItem('markedbills', math.random(2,3), false, info)
-                    TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['markedbills'], "add")
-                end
-            else
-                ply.Functions.AddItem('security_card_01', 1)
-                TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['security_card_01'], "add")
-            end
-        else
-            ply.Functions.AddItem('weapon_stungun', 1)
-            TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['weapon_stungun'], "add")
-        end
-    elseif type == "paleto" then
-        if #(GetEntityCoords(GetPlayerPed(source)) - Config.BigBanks["paleto"]["lockers"][lockerId]["coords"]) > 2.5 then
-            return error(Lang:t("error.event_trigger_wrong", {event = "qb-bankrobbery:server:receiveItem", extraInfo = " (paleto) ", source = source}))
-        end
-        local itemType = math.random(#Config.RewardTypes)
-        local tierChance = math.random(1, 100)
-        local WeaponChance = math.random(1, 10)
-        local odd1 = math.random(1, 10)
-        local tier
-        if tierChance < 25 then tier = 1 elseif tierChance >= 25 and tierChance < 70 then tier = 2 elseif tierChance >= 70 and tierChance < 95 then tier = 3 else tier = 4 end
-        if WeaponChance ~= odd1 then
-            if tier ~= 4 then
-                 if Config.RewardTypes[itemType].type == "item" then
-                    local item = Config.LockerRewardsPaleto["tier"..tier][math.random(#Config.LockerRewardsPaleto["tier"..tier])]
-                    local itemAmount = math.random(item.minAmount, item.maxAmount)
-                    ply.Functions.AddItem(item.item, itemAmount)
-                    TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item.item], "add")
-                 elseif Config.RewardTypes[itemType].type == "money" then
-                    local info = {
-                        worth = math.random(4000, 6000)
-                    }
-                    ply.Functions.AddItem('markedbills', math.random(1,4), false, info)
-                    TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['markedbills'], "add")
-                 end
-            else
-                ply.Functions.AddItem('security_card_02', 1)
-                TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['security_card_02'], "add")
-            end
-        else
-            ply.Functions.AddItem('weapon_vintagepistol', 1)
-            TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['weapon_vintagepistol'], "add")
-        end
-    elseif type == "pacific" then
-        if #(GetEntityCoords(GetPlayerPed(source)) - Config.BigBanks["pacific"]["lockers"][lockerId]["coords"]) > 2.5 then
-            return error(Lang:t("error.event_trigger_wrong", {event = "qb-bankrobbery:server:receiveItem", extraInfo = " (pacific) ", source = source}))
-        end
-        local itemType = math.random(#Config.RewardTypes)
-        local WeaponChance = math.random(1, 100)
-        local odd1 = math.random(1, 100)
-        local odd2 = math.random(1, 100)
-        local tierChance = math.random(1, 100)
-        local tier
-        if tierChance < 10 then tier = 1 elseif tierChance >= 25 and tierChance < 50 then tier = 2 elseif tierChance >= 50 and tierChance < 95 then tier = 3 else tier = 4 end
-        if WeaponChance ~= odd1 or WeaponChance ~= odd2 then
-            if tier ~= 4 then
+        if tierChance < 45 then tier = 1 elseif tierChance >= 45 and tierChance < 65 then tier = 2 elseif tierChance >= 65 and tierChance < 80 then tier = 3 elseif tierChance >= 80 and tierChance < 90 then tier = 5 else tier = 4 end
+        if tier ~= 4 then
                 if Config.RewardTypes[itemType].type == "item" then
-                    local item = Config.LockerRewardsPacific["tier"..tier][math.random(#Config.LockerRewardsPacific["tier"..tier])]
-                    local maxAmount
-                    if tier == 3 then maxAmount = 7 elseif tier == 2 then maxAmount = 18 else maxAmount = 25 end
-                    local itemAmount = math.random(maxAmount)
-                    ply.Functions.AddItem(item.item, itemAmount)
-                    TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item.item], "add")
+                local item = Config.LockerRewards["tier"..tier][math.random(#Config.LockerRewards["tier"..tier])]
+                local itemAmount = math.random(item.minAmount, item.maxAmount)
+                ply.Functions.AddItem(item.item, itemAmount)
+                TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item.item], "add")
                 elseif Config.RewardTypes[itemType].type == "money" then
-                    local info = {
-                        worth = math.random(19000, 21000)
-                    }
-                    ply.Functions.AddItem('markedbills', math.random(1,4), false, info)
-                    TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['markedbills'], "add")
-                end
-            else
                 local info = {
-                    worth = math.random(19000, 21000)
+                    worth = math.random(2300, 3200)
                 }
-                ply.Functions.AddItem('markedbills', math.random(1,4), false, info)
+                ply.Functions.AddItem('markedbills', math.random(2,3), false, info)
                 TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['markedbills'], "add")
-                info = {
-                    crypto = math.random(1, 3)
-                }
-                ply.Functions.AddItem("cryptostick", 1, false, info)
-                TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['cryptostick'], "add")
             end
+        elseif tier == 5 then
+            ply.Functions.AddItem('security_card_01', 1)
+            TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['security_card_01'], "add")
         else
-            local chance = math.random(1, 2)
-            local odd = math.random(1, 2)
-            if chance == odd then
-                ply.Functions.AddItem('weapon_microsmg', 1)
-                TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['weapon_microsmg'], "add")
-            else
-                ply.Functions.AddItem('weapon_minismg', 1)
-                TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['weapon_minismg'], "add")
-            end
+            ply.Functions.AddItem('security_card_02', 1)
+            TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['security_card_01'], "add")
         end
     end
-end)
-
-AddEventHandler('qb-bankrobbery:server:setTimeout', function()
-    if robberyBusy or timeOut then return end
-    timeOut = true
-    CreateThread(function()
-        SetTimeout(60000 * 90, function()
-            for k in pairs(Config.BigBanks["pacific"]["lockers"]) do
-                Config.BigBanks["pacific"]["lockers"][k]["isBusy"] = false
-                Config.BigBanks["pacific"]["lockers"][k]["isOpened"] = false
-                TriggerClientEvent("pacificheist:client:resetHeist")
-            end
-            for k in pairs(Config.BigBanks["paleto"]["lockers"]) do
-                Config.BigBanks["paleto"]["lockers"][k]["isBusy"] = false
-                Config.BigBanks["paleto"]["lockers"][k]["isOpened"] = false
-            end
-            TriggerClientEvent('qb-bankrobbery:client:ClearTimeoutDoors', -1)
-            Config.BigBanks["paleto"]["isOpened"] = false
-            Config.BigBanks["pacific"]["isOpened"] = false
-            timeOut = false
-            robberyBusy = false
-            Config.OnRobberyTimeoutEnd("paleto")
-            Config.OnRobberyTimeoutEnd("pacific")
-        end)
-    end)
 end)
 
 AddEventHandler('qb-bankrobbery:server:SetSmallBankTimeout', function(bankId)
@@ -328,14 +217,6 @@ RegisterNetEvent('qb-bankrobbery:server:callCops', function(type, bank, coords)
     if type == "small" then
         if not Config.SmallBanks[bank]["alarm"] then
             return error(Lang:t("error.event_trigger_wrong", {event = "qb-bankrobbery:server:callCops", extraInfo = " (smallbank "..bank..") ", source = source}))
-        end
-    elseif type == "paleto" then
-        if not Config.BigBanks["paleto"]["alarm"] then
-            return error(Lang:t("error.event_trigger_wrong", {event = "qb-bankrobbery:server:callCops", extraInfo = " (paleto) ", source = source}))
-        end
-    elseif type == "pacific" then
-        if not Config.BigBanks["pacific"]["alarm"] then
-            return error(Lang:t("error.event_trigger_wrong", {event = "qb-bankrobbery:server:callCops", extraInfo = " (pacific) ", source = source}))
         end
     end
     TriggerClientEvent("qb-bankrobbery:client:robberyCall", -1, type, coords)

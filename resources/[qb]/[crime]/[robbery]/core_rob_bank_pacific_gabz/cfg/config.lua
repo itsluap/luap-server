@@ -316,7 +316,7 @@ cfg.robbery = {
                     type = "hacksecuritypanel_01",
     
                     item_needed = {
-                        {"security_card_01",1,100}, -- {item_name,item_amount,chance_to_remove}
+                        {"security_card_02",1,100}, -- {item_name,item_amount,chance_to_remove}
                         {"pixellaptop",1,0}, -- {item_name,item_amount,chance_to_remove}
                     },
     
@@ -379,7 +379,7 @@ cfg.robbery = {
                     type = "hacksecuritypanel_01",
     
                     item_needed = {
-                        {"security_card_01",1,100}, -- {item_name,item_amount,chance_to_remove}
+                        {"security_card_0",1,100}, -- {item_name,item_amount,chance_to_remove}
                         {"pixellaptop",1,0}, -- {item_name,item_amount,chance_to_remove}
                     },
     
@@ -441,7 +441,7 @@ cfg.robbery = {
                     type = "hacksecuritypanel_01",
     
                     item_needed = {
-                        {"security_card_01",1,100}, -- {item_name,item_amount,chance_to_remove}
+                        {"security_card_02",1,100}, -- {item_name,item_amount,chance_to_remove}
                         {"pixellaptop",1,0}, -- {item_name,item_amount,chance_to_remove}
                     },
     
@@ -591,7 +591,7 @@ cfg.robbery = {
                     type = "hacksecuritypanel_01",
     
                     item_needed = {
-                        {"security_card_01",1,100}, -- {item_name,item_amount,chance_to_remove}
+                        {"security_card_02",1,100}, -- {item_name,item_amount,chance_to_remove}
                         {"pixellaptop",1,0}, -- {item_name,item_amount,chance_to_remove}
                     },
     
@@ -741,7 +741,7 @@ cfg.robbery = {
                     type = "hacksecuritypanel_01",
     
                     item_needed = {
-                        {"security_card_01",1,100}, -- {item_name,item_amount,chance_to_remove}
+                        {"security_card_02",1,100}, -- {item_name,item_amount,chance_to_remove}
                         {"pixellaptop",1,0}, -- {item_name,item_amount,chance_to_remove}
                     },
     
@@ -978,7 +978,7 @@ cfg.robbery = {
                     type = "hacksecuritypanel_01",
     
                     item_needed = {
-                        {"security_card_01",1,100}, -- {item_name,item_amount,chance_to_remove}
+                        {"security_card_02",1,100}, -- {item_name,item_amount,chance_to_remove}
                         {"pixellaptop",1,0}, -- {item_name,item_amount,chance_to_remove}
                     },
     
