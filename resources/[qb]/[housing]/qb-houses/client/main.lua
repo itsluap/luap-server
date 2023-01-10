@@ -159,7 +159,7 @@ local function RegisterStashTarget()
         heading = 0.0,
         minZ = stashLocation.z - 1.0,
         maxZ = stashLocation.z + 1.0,
-        debugPoly = false
+        debugPoly = true
     })
 
     stashTargetBox:onPlayerInOut(function (isPointInside)
