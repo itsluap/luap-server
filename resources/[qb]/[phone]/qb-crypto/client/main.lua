@@ -73,6 +73,7 @@ CreateThread(function()
 			local pacificdist = #(pos - Crypto.Pacific.coords)
 			local pacificdist2 = #(pos - Crypto.Pacific.coords2)
 			local pacificdist3 = #(pos - Crypto.Pacific.coords3)
+			
 			if dist < 15 then
 				sleep = 5
 				if dist < 1.5 then
