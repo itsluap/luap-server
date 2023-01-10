@@ -470,5 +470,24 @@ QBShared.Jobs = {
             },
         },
 	},
+    ['irc'] = {
+		label = 'Indigo Racing Championship',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+            ['0'] = {
+                name = 'Intern',
+                payment = 100
+            },
+            ['1'] = {
+                name = 'Board Member',
+                payment = 200
+            },
+            ['2'] = {
+                name = 'Founders',
+                payment = 200
+            },
+        },
+	},
 
 }
