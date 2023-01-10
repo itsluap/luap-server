@@ -6,7 +6,7 @@ local Translations = {
         cryptostick_malfunctioned = 'Cryptostick malfunctioned'
     },
     success = {
-        you_have_exchanged_your_cryptostick_for = 'You have exchanged your Cryptostick for: %{amount} QBit(s)'
+        you_have_exchanged_your_cryptostick_for = 'You have exchanged your Cryptostick for: 7 LME'
     },
     credit = {
         there_are_amount_credited = 'There are %{amount} Bitcoin(s) credited!',
