@@ -67,6 +67,11 @@ CreateThread(function()
 			local ped = PlayerPedId()
 			local pos = GetEntityCoords(ped)
 			local dist = #(pos - Crypto.Exchange.coords)
+			-- for pacific bank and paleto bank item ui --
+			local paletodist = #(pos - Crypto.Paleto.coords)
+			local pacificdist = #(pos - Crypto.Pacific.coords)
+			local pacificdist2 = #(pos - Crypto.Pacific.coords2)
+			local pacificdist3 = #(pos - Crypto.Pacific.coords3)
 			if dist < 15 then
 				sleep = 5
 				if dist < 1.5 then
@@ -98,6 +103,63 @@ CreateThread(function()
 				end
 			end
 		end
+		if paletodist < 15 then
+			sleep = 5
+			if paletodist < 1.5 then
+				if not requiredItemsShowed then
+					requiredItemsShowed = true
+					TriggerEvent('inventory:client:requiredItems', 'electronickit', true)
+				end
+			else
+				if requiredItemsShowed then
+					requiredItemsShowed = false
+					TriggerEvent('inventory:client:requiredItems', 'electronickit', false)
+				end
+			end
+		end
+		if pacificdist < 15 then
+			sleep = 5
+			if pacificdist < 1.5 then
+				if not requiredItemsShowed then
+					requiredItemsShowed = true
+					TriggerEvent('inventory:client:requiredItems', 'electronickit', true)
+				end
+			else
+				if requiredItemsShowed then
+					requiredItemsShowed = false
+					TriggerEvent('inventory:client:requiredItems', 'electronickit', false)
+				end
+			end
+		end
+		if pacificdist2 < 15 then
+			sleep = 5
+			if pacificdist2 < 1.5 then
+				if not requiredItemsShowed then
+					requiredItemsShowed = true
+					TriggerEvent('inventory:client:requiredItems', 'electronickit', true)
+				end
+			else
+				if requiredItemsShowed then
+					requiredItemsShowed = false
+					TriggerEvent('inventory:client:requiredItems', 'electronickit', false)
+				end
+			end
+		end
+		if pacificdist3 < 15 then
+			sleep = 5
+			if pacificdist3 < 1.5 then
+				if not requiredItemsShowed then
+					requiredItemsShowed = true
+					TriggerEvent('inventory:client:requiredItems', 'electronickit', true)
+				end
+			else
+				if requiredItemsShowed then
+					requiredItemsShowed = false
+					TriggerEvent('inventory:client:requiredItems', 'electronickit', false)
+				end
+			end
+		end
+	end
 		Wait(sleep)
 	end
 end)

@@ -7,6 +7,14 @@ Crypto = {
             percentage = 0
         },
     },
+    Paleto = {
+        coords = vector3(-108.97, 6484.51, 31.47),
+    },
+    Pacific = {
+        coords = vector3(260.69, 260.69, 137.75),
+        coords2 = vector3(277.53, 210.69, 137.75),
+        coords3 = vector3(267.09, 208.16, 137.75),
+    }, 
 
     Coin = 'qbit',
 
