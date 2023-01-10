@@ -164,9 +164,9 @@ local function RegisterStashTarget()
 
     stashTargetBox:onPlayerInOut(function (isPointInside)
         if isPointInside and not entering and isOwned then
-            exports['ps-ui']:DisplayText(Lang:t("target.open_stash"), 'primary')
+             exports['qb-core']:DrawText(Lang:t("target.open_stash"), 'left')
         else
-            exports['ps-ui']:HideText()
+            exports['qb-core']:HideText()
         end
 
         isInsideStashTarget = isPointInside
@@ -188,9 +188,9 @@ local function RegisterOutfitsTarget()
 
     outfitsTargetBox:onPlayerInOut(function (isPointInside)
         if isPointInside and not entering and isOwned then
-            exports['ps-ui']:DisplayText(Lang:t("target.outfits"), 'primary')
+             exports['qb-core']:DrawText(Lang:t("target.outfits"), 'left')
         else
-            exports['ps-ui']:HideText()
+            exports['qb-core']:HideText()
         end
 
         isInsideOutfitsTarget = isPointInside
@@ -212,9 +212,9 @@ local function RegisterCharactersTarget()
 
     charactersTargetBox:onPlayerInOut(function (isPointInside)
         if isPointInside and not entering and isOwned then
-            exports['ps-ui']:DisplayText(Lang:t("target.change_character"), 'primary')
+             exports['qb-core']:DrawText(Lang:t("target.change_character"), 'left')
         else
-            exports['ps-ui']:HideText()
+            exports['qb-core']:HideText()
         end
 
         isInsiteCharactersTarget = isPointInside
