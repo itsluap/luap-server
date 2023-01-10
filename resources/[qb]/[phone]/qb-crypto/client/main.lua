@@ -172,8 +172,6 @@ CreateThread(function()
 						TriggerEvent('inventory:client:requiredItems', requiredItems2, false)
 					end
 				end
-			else 
-				print('not near')
 			end
 
 		end
