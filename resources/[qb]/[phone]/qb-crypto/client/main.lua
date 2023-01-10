@@ -103,7 +103,7 @@ CreateThread(function()
 		Wait(sleep)
 	end
 end)
-
+--[[
 CreateThread(function()
 	while true do
 		local sleep = 5000
@@ -131,7 +131,7 @@ CreateThread(function()
 		Wait(sleep)
 	end
 end)
-
+]]--
 CreateThread(function()
 	while true do
 		local sleep = 5000
@@ -184,7 +184,22 @@ CreateThread(function()
 						TriggerEvent('inventory:client:requiredItems', requiredItems2, false)
 					end
 				end
+			elseif dist3 < 15 then
+				sleep = 5
+				if dist3 < 1.5 then
+					print('pacific dist3')
+					if not requiredItemsShowed then
+						requiredItemsShowed = true
+						TriggerEvent('inventory:client:requiredItems', requiredItems2, true)
+					end
+				else
+					if requiredItemsShowed then
+						requiredItemsShowed = false
+						TriggerEvent('inventory:client:requiredItems', requiredItems2, false)
+					end
+				end
 			end
+
 		end
 		Wait(sleep)
 	end
