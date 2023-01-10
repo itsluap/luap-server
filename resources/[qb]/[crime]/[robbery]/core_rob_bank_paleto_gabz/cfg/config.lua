@@ -10,7 +10,7 @@ cfg.police = {
 	amount = 0, -- police amount
 }
 cfg.timers = {
-	reset_timer = 60, -- This Timer is in Minutes
+	reset_timer = 45, -- This Timer is in Minutes
 	npc_timer = 300 -- This Timer is in Seconds
 }
 cfg.notification = {
