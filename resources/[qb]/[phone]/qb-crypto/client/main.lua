@@ -114,7 +114,7 @@ CreateThread(function()
 			local paletodist = #(pos - Crypto.Paleto.coords)
 			local pacificdist = #(pos - Crypto.Pacific.coords)
 			local pacificdist2 = #(pos - Crypto.Pacific.coords2)
-			local dist3 = #(pos - Crypto.Pacific.coords3)
+			local dist3 = #(pos - Crypto.Pacific.dist3)
 			
 			if paletodist < 15 then
 				sleep = 5
