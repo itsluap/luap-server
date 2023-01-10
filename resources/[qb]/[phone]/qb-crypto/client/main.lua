@@ -101,8 +101,7 @@ CreateThread(function()
 						TriggerEvent('inventory:client:requiredItems', requiredItems, false)
 					end
 				end
-			end
-			if paletodist < 15 then
+			elseif paletodist < 15 then
 				sleep = 5
 				if paletodist < 1.5 then
 					if not requiredItemsShowed then
@@ -115,8 +114,7 @@ CreateThread(function()
 						TriggerEvent('inventory:client:requiredItems', 'electronickit', false)
 					end
 				end
-			end
-			if pacificdist < 15 then
+			elseif pacificdist < 15 then
 				sleep = 5
 				if pacificdist < 1.5 then
 					if not requiredItemsShowed then
@@ -129,8 +127,7 @@ CreateThread(function()
 						TriggerEvent('inventory:client:requiredItems', 'electronickit', false)
 					end
 				end
-			end
-			if pacificdist2 < 15 then
+			elseif pacificdist2 < 15 then
 				sleep = 5
 				if pacificdist2 < 1.5 then
 					if not requiredItemsShowed then
@@ -143,8 +140,7 @@ CreateThread(function()
 						TriggerEvent('inventory:client:requiredItems', 'electronickit', false)
 					end
 				end
-			end
-			if pacificdist3 < 15 then
+			elseif pacificdist3 < 15 then
 				sleep = 5
 				if pacificdist3 < 1.5 then
 					if not requiredItemsShowed then
