@@ -1502,7 +1502,7 @@ cfg.robbery = {
             },
 
             weapons = {
-                GetHashKey("WEAPON_SWITCHBLADE"), -- hash of the weapon you need equiped
+                GetHashKey("WEAPON_KNIFE"), -- hash of the weapon you need equiped
             },
 
             polyzone = {0.1,0.8,0.85,0.0,0.0,0.0,0.0},-- {length,width,minZextra,maxZextra,offset_x,offset_y,offset_z}
@@ -1612,7 +1612,7 @@ cfg.robbery = {
                     type = "cutglass_01",
     
                     item_needed = {
-                        {"drill",1,100}, -- {item_name,item_amount,chance_to_remove}
+                        {"drill",1,0}, -- {item_name,item_amount,chance_to_remove}
                     },
 
                     item_to_give_type = "glass", -- "normal" or "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
