@@ -14,6 +14,7 @@ Crypto = {
         coords = vector3(260.69, 260.69, 137.75),
         coords2 = vector3(277.53, 210.69, 137.75),
         coords3 = vector3(267.07, 208.08, 137.75),
+        coords4 = vector3(267.07, 208.08, 137.75),
     }, 
 
     Coin = 'qbit',
