@@ -146,7 +146,6 @@ CreateThread(function()
 						TriggerEvent('inventory:client:requiredItems', requiredItems2, false)
 					end
 				end
-			--[[
 			elseif pacificdist2 < 15 then
 				sleep = 5
 				if pacificdist2 < 1.5 then
@@ -161,8 +160,7 @@ CreateThread(function()
 						TriggerEvent('inventory:client:requiredItems', requiredItems2, false)
 					end
 				end
-				]]--
-			elseif pacificdist3 < 15 then
+			else if pacificdist3 < 15 then
 				sleep = 5
 				if pacificdist3 < 1.5 then
 					print('pacific dist3')
