@@ -159,14 +159,14 @@ local function RegisterStashTarget()
         heading = 0.0,
         minZ = stashLocation.z - 1.0,
         maxZ = stashLocation.z + 1.0,
-        debugPoly = true
+        debugPoly = false
     })
 
     stashTargetBox:onPlayerInOut(function (isPointInside)
         if isPointInside and not entering and isOwned then
              --exports['qb-core']:DrawText(Lang:t("target.open_stash"), 'left')
             exports['ps-ui']:DisplayText(Lang:t("target.open_stash"), 'primary')
-            print('showing stash ui')
+            --print('showing stash ui')
         else
             exports['ps-ui']:HideText()
         end
