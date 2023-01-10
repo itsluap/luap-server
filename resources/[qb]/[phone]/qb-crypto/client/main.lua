@@ -110,6 +110,34 @@ CreateThread(function()
 		if LocalPlayer.state.isLoggedIn then
 			local ped = PlayerPedId()
 			local pos = GetEntityCoords(ped)
+			local dist3 = #(pos - Crypto.Pacific.dist3)
+			
+			if dist3 < 15 then
+				sleep = 5
+				if dist3 < 1.5 then
+					print('pacific dist3')
+					if not requiredItemsShowed then
+						requiredItemsShowed = true
+						TriggerEvent('inventory:client:requiredItems', requiredItems2, true)
+					end
+				else
+					if requiredItemsShowed then
+						requiredItemsShowed = false
+						TriggerEvent('inventory:client:requiredItems', requiredItems2, false)
+					end
+				end
+			end
+		end
+		Wait(sleep)
+	end
+end)
+
+CreateThread(function()
+	while true do
+		local sleep = 5000
+		if LocalPlayer.state.isLoggedIn then
+			local ped = PlayerPedId()
+			local pos = GetEntityCoords(ped)
 			-- for pacific bank and paleto bank item ui --
 			local paletodist = #(pos - Crypto.Paleto.coords)
 			local pacificdist = #(pos - Crypto.Pacific.coords)
@@ -156,8 +184,6 @@ CreateThread(function()
 						TriggerEvent('inventory:client:requiredItems', requiredItems2, false)
 					end
 				end
-			elseif dist3 < 15 then
-				print('wtf')
 			end
 		end
 		Wait(sleep)
