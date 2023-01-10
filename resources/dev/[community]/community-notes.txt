@@ -5,3 +5,8 @@ Notes:
     - when police impound cars it is indefinite (dv'd cars go to impound but phone wont show that)
     - walk out of car dealers for job to update (fixes dealer menu on cars)
     - duct tape is the publics repair kit (repair kits are mechanic only)
+
+
+Housing Guide:
+    - To set stash/wardrobe go to F1 menu - General - House Interation - Interation Locations
+    -
