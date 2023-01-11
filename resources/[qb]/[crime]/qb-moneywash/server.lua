@@ -21,7 +21,7 @@ AddEventHandler("laundry:startwasher", function(data)
     src = source
     if not washers[data.id].washing then 
         washers[data.id].washing = true
-        TriggerClientEvent('QBCore:Notify', src, "Washer will be done in 10 minutes.", 'info')
+        TriggerClientEvent('QBCore:Notify', src, "Washer will be done in 10 minutes.", 'primary')
         wash(data.id)
     else 
         TriggerClientEvent('QBCore:Notify', src, "This washer is already started!", 'error')
