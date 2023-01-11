@@ -847,9 +847,12 @@ local listen = false
 end
 
 RegisterNetEvent('qb-ambulancejob:checkin', function()
+    --[[
     if doctorCount >= Config.MinimalDoctors then
         TriggerServerEvent("hospital:server:SendDoctorAlert")
     else
+    ]]--
+    if true then
         TriggerEvent('animations:client:EmoteCommandStart', {"notepad"})
         QBCore.Functions.Progressbar("hospital_checkin", Lang:t('progress.checking_in'), 2000, false, true, {
             disableMovement = true,
