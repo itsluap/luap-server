@@ -6,7 +6,7 @@ this_is_a_map 'yes'
 data_file 'TIMECYCLEMOD_FILE' 'nutt_timecycle_mods_1.xml'
 
 files {
-    'laun_timecycle_mods_1.xml'
+    'laun_timecycle_mods_1.xml',
     'shellprops.ytyp',
     'stream/bossroom/gta5.meta',
     'stream/bossroom/water.xml',
