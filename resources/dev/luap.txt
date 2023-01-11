@@ -14,3 +14,11 @@
         - most bank robberies are showing as 10-99
     - SOP needs to be finished
     - State Statutes needs to be finished (wait for someome who wants to run DOJ?)
+
+-- cars
+    - finish car dealers asap
+    - finish car drop asap (handling, headlights/taillights, oversize)
+
+-- crafting system 
+    - start to balance out materials for crafting 
+    - slowly move into a crafting system only for mechs and most things
