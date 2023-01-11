@@ -811,6 +811,7 @@ RegisterNetEvent('qb-garages:client:TakeOutDepot', function(data)
         if spawn and not vehExists then
             print('garage spawn')
             print(spawn)
+            print(vehExists)
             if UseEnc0dedPersistenVehicles then
                 QBCore.Functions.TriggerCallback('qb-garage:server:checkIsSpawned', function(spawned)
                     if spawned then
