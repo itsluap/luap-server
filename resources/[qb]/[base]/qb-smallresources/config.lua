@@ -149,6 +149,7 @@ Config.Teleports = {
         },
 
     },
+    --[[
     --Coke Processing Enter/Exit
     [2] = {
         [1] = {
@@ -162,8 +163,9 @@ Config.Teleports = {
             drawText = '[E] Leave'
         },
     },
+    ]]--
     --Cartel Elevator
-    [3] = {
+    [2] = {
         [1] = {
             coords = vector4(5012.6, -5748.73, 28.95, 147.0),
             ["AllowVehicle"] = false,
@@ -176,7 +178,7 @@ Config.Teleports = {
         },
     },
     -- investment elevator
-    [4] = {
+    [3] = {
         [1] = {
             coords = vector4(-70.97, -801.12, 44.23, 338.38),
             ["AllowVehicle"] = false,
@@ -189,7 +191,7 @@ Config.Teleports = {
         },
     },
     -- penthouse elevator
-    [5] = {
+    [4] = {
         [1] = {
             coords = vector4(-305.05, -721.03, 28.03, 159.08),
             ["AllowVehicle"] = false,

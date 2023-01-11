@@ -2087,10 +2087,11 @@ end)
 RegisterCommand("refreshskin", function()
     local playerPed = PlayerPedId()
     local health = GetEntityHealth(playerPed)
-    reloadSkin(health)
+    local armor = GetPedArmour(playerPed)
+    reloadSkin(health, armor)
 end)
 
-function reloadSkin(health)
+function reloadSkin(health, armor)
     local model
 
     local gender = QBCore.Functions.GetPlayerData().charinfo.gender
@@ -2114,4 +2115,5 @@ function reloadSkin(health)
     SetPedMaxHealth(PlayerId(), maxhealth)
     Citizen.Wait(1000) -- Safety Delay
     SetEntityHealth(PlayerPedId(), health)
+    SetPedArmour(PlayerPedId(), armor)
 end
