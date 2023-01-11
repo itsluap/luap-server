@@ -194,15 +194,19 @@ cfg.robbery = {
                 {GetHashKey("bank_cash_trolly_01a"),100}, -- {hash,rarity}
                 {GetHashKey("bank_cash_trolly_01b"),100}, -- {hash,rarity}
                 {GetHashKey("bank_cash_trolly_01c"),100}, -- {hash,rarity}
+                --[[
                 {GetHashKey("bank_silver_trolly_01a"),50}, -- {hash,rarity}
                 {GetHashKey("bank_silver_trolly_01b"),50}, -- {hash,rarity}
                 {GetHashKey("bank_silver_trolly_01c"),50}, -- {hash,rarity}
+                ]]--
                 {GetHashKey("bank_gold_trolly_01a"),25}, -- {hash,rarity}
                 {GetHashKey("bank_gold_trolly_01b"),25}, -- {hash,rarity}
                 {GetHashKey("bank_gold_trolly_01c"),25}, -- {hash,rarity}
+                --[[
                 {GetHashKey("bank_diamond_trolly_01a"),10}, -- {hash,rarity}
                 {GetHashKey("bank_diamond_trolly_01b"),10}, -- {hash,rarity}
                 {GetHashKey("bank_diamond_trolly_01c"),10}, -- {hash,rarity}
+                ]]--
             },
     
             net_id = 0, -- dont change
@@ -282,15 +286,19 @@ cfg.robbery = {
                 {GetHashKey("bank_cash_trolly_01a"),100}, -- {hash,rarity}
                 {GetHashKey("bank_cash_trolly_01b"),100}, -- {hash,rarity}
                 {GetHashKey("bank_cash_trolly_01c"),100}, -- {hash,rarity}
+                --[[
                 {GetHashKey("bank_silver_trolly_01a"),50}, -- {hash,rarity}
                 {GetHashKey("bank_silver_trolly_01b"),50}, -- {hash,rarity}
                 {GetHashKey("bank_silver_trolly_01c"),50}, -- {hash,rarity}
+                ]]--
                 {GetHashKey("bank_gold_trolly_01a"),25}, -- {hash,rarity}
                 {GetHashKey("bank_gold_trolly_01b"),25}, -- {hash,rarity}
                 {GetHashKey("bank_gold_trolly_01c"),25}, -- {hash,rarity}
+                --[[
                 {GetHashKey("bank_diamond_trolly_01a"),10}, -- {hash,rarity}
                 {GetHashKey("bank_diamond_trolly_01b"),10}, -- {hash,rarity}
                 {GetHashKey("bank_diamond_trolly_01c"),10}, -- {hash,rarity}
+                ]]--
             },
     
             net_id = 0, -- dont change
@@ -370,15 +378,19 @@ cfg.robbery = {
                 {GetHashKey("bank_cash_trolly_01a"),100}, -- {hash,rarity}
                 {GetHashKey("bank_cash_trolly_01b"),100}, -- {hash,rarity}
                 {GetHashKey("bank_cash_trolly_01c"),100}, -- {hash,rarity}
+                --[[
                 {GetHashKey("bank_silver_trolly_01a"),50}, -- {hash,rarity}
                 {GetHashKey("bank_silver_trolly_01b"),50}, -- {hash,rarity}
                 {GetHashKey("bank_silver_trolly_01c"),50}, -- {hash,rarity}
+                ]]--
                 {GetHashKey("bank_gold_trolly_01a"),25}, -- {hash,rarity}
                 {GetHashKey("bank_gold_trolly_01b"),25}, -- {hash,rarity}
                 {GetHashKey("bank_gold_trolly_01c"),25}, -- {hash,rarity}
+                --[[
                 {GetHashKey("bank_diamond_trolly_01a"),10}, -- {hash,rarity}
                 {GetHashKey("bank_diamond_trolly_01b"),10}, -- {hash,rarity}
                 {GetHashKey("bank_diamond_trolly_01c"),10}, -- {hash,rarity}
+                ]]--
             },
     
             net_id = 0, -- dont change
