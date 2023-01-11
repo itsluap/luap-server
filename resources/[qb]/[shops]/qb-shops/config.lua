@@ -691,8 +691,8 @@ Config.Products = {
             slot = 2,
         },
         [3] = {
-            name = 'firstaid',
-            price = 250,
+            name = 'ifaks',
+            price = 1150,
             amount = 100,
             info = {},
             type = 'item',
