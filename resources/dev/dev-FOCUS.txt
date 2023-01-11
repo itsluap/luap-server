@@ -9,7 +9,6 @@ What we need done:
 WORKKKKKK:
 -- finish clothing
 -- weight system
--- PAWNSHOP
 
 || VEHICLES ||
 -- no oversized vehicles (fix textures for every car) -- start working on this

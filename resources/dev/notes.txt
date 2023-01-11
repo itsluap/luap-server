@@ -1,0 +1,7 @@
+
+meth runs:
+    - need to give task guy 5 meth
+    - then check goods
+    - then get task
+    - complete task and return to dealer to get payment
+    - you then get a briefcase, use briefcase to get money
