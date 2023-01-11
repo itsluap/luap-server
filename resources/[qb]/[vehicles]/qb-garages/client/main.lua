@@ -613,6 +613,7 @@ function UpdateSpawnedVehicle(spawnedVehicle, vehicleInfo, heading, garage, prop
         if plate then
             OutsideVehicles[plate] = spawnedVehicle
             TriggerServerEvent('qb-garages:server:UpdateOutsideVehicles', OutsideVehicles)
+            TriggerServerEvent('qb-garages:server:UpdateOutsideVehicles2', plate, nil)
         end
         if FuelScript then
             exports[FuelScript]:SetFuel(spawnedVehicle, 100)
@@ -625,6 +626,7 @@ function UpdateSpawnedVehicle(spawnedVehicle, vehicleInfo, heading, garage, prop
         if plate then
             OutsideVehicles[plate] = spawnedVehicle
             TriggerServerEvent('qb-garages:server:UpdateOutsideVehicles', OutsideVehicles)
+            TriggerServerEvent('qb-garages:server:UpdateOutsideVehicles2', plate, nil)
         end
         if FuelScript then
             exports[FuelScript]:SetFuel(spawnedVehicle, vehicleInfo.fuel)
