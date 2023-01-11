@@ -107,8 +107,8 @@ cfg.robbery = {
                         type = "hacksecuritypanel_01",
         
                         item_needed = {
-                            {"robbery_card_01",1,100}, -- {item_name,item_amount,chance_to_remove}
-                            {"robbery_laptop_01",1,100}, -- {item_name,item_amount,chance_to_remove}
+                            {"trojan_usb",1,100}, -- {item_name,item_amount,chance_to_remove}
+                            {"electronickit",1,100}, -- {item_name,item_amount,chance_to_remove}
                         },
         
                         minigame = {
@@ -194,6 +194,7 @@ cfg.robbery = {
                             [GetHashKey("bank_cash_trolly_01c")] = {
                                 {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            --[[
                             [GetHashKey("bank_silver_trolly_01a")] = {
                                 {"robbery_rewards_silverbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
@@ -203,15 +204,26 @@ cfg.robbery = {
                             [GetHashKey("bank_silver_trolly_01c")] = {
                                 {"robbery_rewards_silverbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            ]]--
                             [GetHashKey("bank_gold_trolly_01a")] = {
-                                {"robbery_rewards_goldbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldchain",2,4,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"rolex",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldbar",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"security_card_01",1,2,20}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_gold_trolly_01b")] = {
-                                {"robbery_rewards_goldbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldchain",2,4,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"rolex",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldbar",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"security_card_01",1,2,15}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_gold_trolly_01c")] = {
-                                {"robbery_rewards_goldbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldchain",2,4,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"rolex",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldbar",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"security_card_02",1,2,15}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            --[[
                             [GetHashKey("bank_diamond_trolly_01a")] = {
                                 {"robbery_rewards_diamondbox_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
@@ -221,6 +233,7 @@ cfg.robbery = {
                             [GetHashKey("bank_diamond_trolly_01c")] = {
                                 {"robbery_rewards_diamondbox_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            ]]-
                         },
         
                         markermenu = {"[1] Collect",157}, -- {text,key}
@@ -260,8 +273,8 @@ cfg.robbery = {
                         type = "hacksecuritypanel_01",
         
                         item_needed = {
-                            {"robbery_card_01",1,100}, -- {item_name,item_amount,chance_to_remove}
-                            {"robbery_laptop_01",1,100}, -- {item_name,item_amount,chance_to_remove}
+                            {"trojan_usb",1,100}, -- {item_name,item_amount,chance_to_remove}
+                            {"electronickit",1,100}, -- {item_name,item_amount,chance_to_remove}
                         },
         
                         minigame = {
@@ -347,6 +360,7 @@ cfg.robbery = {
                             [GetHashKey("bank_cash_trolly_01c")] = {
                                 {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            --[[
                             [GetHashKey("bank_silver_trolly_01a")] = {
                                 {"robbery_rewards_silverbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
@@ -356,15 +370,26 @@ cfg.robbery = {
                             [GetHashKey("bank_silver_trolly_01c")] = {
                                 {"robbery_rewards_silverbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            ]]--
                             [GetHashKey("bank_gold_trolly_01a")] = {
-                                {"robbery_rewards_goldbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldchain",2,4,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"rolex",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldbar",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"security_card_01",1,2,20}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_gold_trolly_01b")] = {
-                                {"robbery_rewards_goldbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldchain",2,4,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"rolex",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldbar",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"security_card_01",1,2,15}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_gold_trolly_01c")] = {
-                                {"robbery_rewards_goldbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldchain",2,4,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"rolex",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldbar",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"security_card_02",1,2,15}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            --[[
                             [GetHashKey("bank_diamond_trolly_01a")] = {
                                 {"robbery_rewards_diamondbox_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
@@ -374,6 +399,7 @@ cfg.robbery = {
                             [GetHashKey("bank_diamond_trolly_01c")] = {
                                 {"robbery_rewards_diamondbox_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            ]]-
                         },
         
                         markermenu = {"[1] Collect",157}, -- {text,key}
@@ -436,8 +462,8 @@ cfg.robbery = {
                         type = "hacksecuritypanel_01",
         
                         item_needed = {
-                            {"robbery_card_01",1,100}, -- {item_name,item_amount,chance_to_remove}
-                            {"robbery_laptop_01",1,100}, -- {item_name,item_amount,chance_to_remove}
+                            {"trojan_usb",1,100}, -- {item_name,item_amount,chance_to_remove}
+                            {"electronickit",1,100}, -- {item_name,item_amount,chance_to_remove}
                         },
         
                         minigame = {
@@ -523,6 +549,7 @@ cfg.robbery = {
                             [GetHashKey("bank_cash_trolly_01c")] = {
                                 {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            --[[
                             [GetHashKey("bank_silver_trolly_01a")] = {
                                 {"robbery_rewards_silverbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
@@ -532,15 +559,26 @@ cfg.robbery = {
                             [GetHashKey("bank_silver_trolly_01c")] = {
                                 {"robbery_rewards_silverbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            ]]--
                             [GetHashKey("bank_gold_trolly_01a")] = {
-                                {"robbery_rewards_goldbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldchain",2,4,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"rolex",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldbar",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"security_card_01",1,2,20}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_gold_trolly_01b")] = {
-                                {"robbery_rewards_goldbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldchain",2,4,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"rolex",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldbar",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"security_card_01",1,2,15}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_gold_trolly_01c")] = {
-                                {"robbery_rewards_goldbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldchain",2,4,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"rolex",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldbar",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"security_card_02",1,2,15}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            --[[
                             [GetHashKey("bank_diamond_trolly_01a")] = {
                                 {"robbery_rewards_diamondbox_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
@@ -550,6 +588,7 @@ cfg.robbery = {
                             [GetHashKey("bank_diamond_trolly_01c")] = {
                                 {"robbery_rewards_diamondbox_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            ]]-
                         },
         
                         markermenu = {"[1] Collect",157}, -- {text,key}
@@ -589,8 +628,8 @@ cfg.robbery = {
                         type = "hacksecuritypanel_01",
         
                         item_needed = {
-                            {"robbery_card_01",1,100}, -- {item_name,item_amount,chance_to_remove}
-                            {"robbery_laptop_01",1,100}, -- {item_name,item_amount,chance_to_remove}
+                            {"trojan_usb",1,100}, -- {item_name,item_amount,chance_to_remove}
+                            {"electronickit",1,100}, -- {item_name,item_amount,chance_to_remove}
                         },
         
                         minigame = {
@@ -676,6 +715,7 @@ cfg.robbery = {
                             [GetHashKey("bank_cash_trolly_01c")] = {
                                 {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            --[[
                             [GetHashKey("bank_silver_trolly_01a")] = {
                                 {"robbery_rewards_silverbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
@@ -685,15 +725,26 @@ cfg.robbery = {
                             [GetHashKey("bank_silver_trolly_01c")] = {
                                 {"robbery_rewards_silverbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            ]]--
                             [GetHashKey("bank_gold_trolly_01a")] = {
-                                {"robbery_rewards_goldbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldchain",2,4,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"rolex",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldbar",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"security_card_01",1,2,20}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_gold_trolly_01b")] = {
-                                {"robbery_rewards_goldbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldchain",2,4,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"rolex",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldbar",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"security_card_01",1,2,15}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_gold_trolly_01c")] = {
-                                {"robbery_rewards_goldbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldchain",2,4,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"rolex",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldbar",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"security_card_02",1,2,15}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            --[[
                             [GetHashKey("bank_diamond_trolly_01a")] = {
                                 {"robbery_rewards_diamondbox_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
@@ -703,6 +754,7 @@ cfg.robbery = {
                             [GetHashKey("bank_diamond_trolly_01c")] = {
                                 {"robbery_rewards_diamondbox_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            ]]-
                         },
         
                         markermenu = {"[1] Collect",157}, -- {text,key}
@@ -765,8 +817,8 @@ cfg.robbery = {
                         type = "hacksecuritypanel_01",
         
                         item_needed = {
-                            {"robbery_card_01",1,100}, -- {item_name,item_amount,chance_to_remove}
-                            {"robbery_laptop_01",1,100}, -- {item_name,item_amount,chance_to_remove}
+                            {"trojan_usb",1,100}, -- {item_name,item_amount,chance_to_remove}
+                            {"electronickit",1,100}, -- {item_name,item_amount,chance_to_remove}
                         },
         
                         minigame = {
@@ -852,6 +904,7 @@ cfg.robbery = {
                             [GetHashKey("bank_cash_trolly_01c")] = {
                                 {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            --[[
                             [GetHashKey("bank_silver_trolly_01a")] = {
                                 {"robbery_rewards_silverbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
@@ -861,15 +914,26 @@ cfg.robbery = {
                             [GetHashKey("bank_silver_trolly_01c")] = {
                                 {"robbery_rewards_silverbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            ]]--
                             [GetHashKey("bank_gold_trolly_01a")] = {
-                                {"robbery_rewards_goldbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldchain",2,4,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"rolex",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldbar",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"security_card_01",1,2,20}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_gold_trolly_01b")] = {
-                                {"robbery_rewards_goldbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldchain",2,4,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"rolex",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldbar",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"security_card_01",1,2,15}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_gold_trolly_01c")] = {
-                                {"robbery_rewards_goldbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldchain",2,4,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"rolex",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldbar",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"security_card_02",1,2,15}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            --[[
                             [GetHashKey("bank_diamond_trolly_01a")] = {
                                 {"robbery_rewards_diamondbox_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
@@ -879,6 +943,7 @@ cfg.robbery = {
                             [GetHashKey("bank_diamond_trolly_01c")] = {
                                 {"robbery_rewards_diamondbox_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            ]]-
                         },
         
                         markermenu = {"[1] Collect",157}, -- {text,key}
@@ -918,8 +983,8 @@ cfg.robbery = {
                         type = "hacksecuritypanel_01",
         
                         item_needed = {
-                            {"robbery_card_01",1,100}, -- {item_name,item_amount,chance_to_remove}
-                            {"robbery_laptop_01",1,100}, -- {item_name,item_amount,chance_to_remove}
+                            {"trojan_usb",1,100}, -- {item_name,item_amount,chance_to_remove}
+                            {"electronickit",1,100}, -- {item_name,item_amount,chance_to_remove}
                         },
         
                         minigame = {
@@ -1005,6 +1070,7 @@ cfg.robbery = {
                             [GetHashKey("bank_cash_trolly_01c")] = {
                                 {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            --[[
                             [GetHashKey("bank_silver_trolly_01a")] = {
                                 {"robbery_rewards_silverbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
@@ -1014,15 +1080,26 @@ cfg.robbery = {
                             [GetHashKey("bank_silver_trolly_01c")] = {
                                 {"robbery_rewards_silverbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            ]]--
                             [GetHashKey("bank_gold_trolly_01a")] = {
-                                {"robbery_rewards_goldbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldchain",2,4,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"rolex",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldbar",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"security_card_01",1,2,20}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_gold_trolly_01b")] = {
-                                {"robbery_rewards_goldbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldchain",2,4,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"rolex",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldbar",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"security_card_01",1,2,15}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_gold_trolly_01c")] = {
-                                {"robbery_rewards_goldbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldchain",2,4,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"rolex",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldbar",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"security_card_02",1,2,15}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            --[[
                             [GetHashKey("bank_diamond_trolly_01a")] = {
                                 {"robbery_rewards_diamondbox_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
@@ -1032,6 +1109,7 @@ cfg.robbery = {
                             [GetHashKey("bank_diamond_trolly_01c")] = {
                                 {"robbery_rewards_diamondbox_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            ]]-
                         },
         
                         markermenu = {"[1] Collect",157}, -- {text,key}
@@ -1094,8 +1172,8 @@ cfg.robbery = {
                         type = "hacksecuritypanel_01",
         
                         item_needed = {
-                            {"robbery_card_01",1,100}, -- {item_name,item_amount,chance_to_remove}
-                            {"robbery_laptop_01",1,100}, -- {item_name,item_amount,chance_to_remove}
+                            {"trojan_usb",1,100}, -- {item_name,item_amount,chance_to_remove}
+                            {"electronickit",1,100}, -- {item_name,item_amount,chance_to_remove}
                         },
         
                         minigame = {
@@ -1181,6 +1259,7 @@ cfg.robbery = {
                             [GetHashKey("bank_cash_trolly_01c")] = {
                                 {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            --[[
                             [GetHashKey("bank_silver_trolly_01a")] = {
                                 {"robbery_rewards_silverbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
@@ -1190,15 +1269,26 @@ cfg.robbery = {
                             [GetHashKey("bank_silver_trolly_01c")] = {
                                 {"robbery_rewards_silverbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            ]]--
                             [GetHashKey("bank_gold_trolly_01a")] = {
-                                {"robbery_rewards_goldbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldchain",2,4,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"rolex",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldbar",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"security_card_01",1,2,20}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_gold_trolly_01b")] = {
-                                {"robbery_rewards_goldbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldchain",2,4,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"rolex",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldbar",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"security_card_01",1,2,15}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_gold_trolly_01c")] = {
-                                {"robbery_rewards_goldbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldchain",2,4,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"rolex",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldbar",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"security_card_02",1,2,15}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            --[[
                             [GetHashKey("bank_diamond_trolly_01a")] = {
                                 {"robbery_rewards_diamondbox_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
@@ -1208,6 +1298,7 @@ cfg.robbery = {
                             [GetHashKey("bank_diamond_trolly_01c")] = {
                                 {"robbery_rewards_diamondbox_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            ]]-
                         },
         
                         markermenu = {"[1] Collect",157}, -- {text,key}
@@ -1247,8 +1338,8 @@ cfg.robbery = {
                         type = "hacksecuritypanel_01",
         
                         item_needed = {
-                            {"robbery_card_01",1,100}, -- {item_name,item_amount,chance_to_remove}
-                            {"robbery_laptop_01",1,100}, -- {item_name,item_amount,chance_to_remove}
+                            {"trojan_usb",1,100}, -- {item_name,item_amount,chance_to_remove}
+                            {"electronickit",1,100}, -- {item_name,item_amount,chance_to_remove}
                         },
         
                         minigame = {
@@ -1334,6 +1425,7 @@ cfg.robbery = {
                             [GetHashKey("bank_cash_trolly_01c")] = {
                                 {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            --[[
                             [GetHashKey("bank_silver_trolly_01a")] = {
                                 {"robbery_rewards_silverbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
@@ -1343,15 +1435,26 @@ cfg.robbery = {
                             [GetHashKey("bank_silver_trolly_01c")] = {
                                 {"robbery_rewards_silverbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            ]]--
                             [GetHashKey("bank_gold_trolly_01a")] = {
-                                {"robbery_rewards_goldbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldchain",2,4,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"rolex",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldbar",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"security_card_01",1,2,20}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_gold_trolly_01b")] = {
-                                {"robbery_rewards_goldbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldchain",2,4,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"rolex",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldbar",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"security_card_01",1,2,15}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_gold_trolly_01c")] = {
-                                {"robbery_rewards_goldbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldchain",2,4,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"rolex",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldbar",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"security_card_02",1,2,15}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            --[[
                             [GetHashKey("bank_diamond_trolly_01a")] = {
                                 {"robbery_rewards_diamondbox_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
@@ -1361,6 +1464,7 @@ cfg.robbery = {
                             [GetHashKey("bank_diamond_trolly_01c")] = {
                                 {"robbery_rewards_diamondbox_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            ]]-
                         },
         
                         markermenu = {"[1] Collect",157}, -- {text,key}
@@ -1423,8 +1527,8 @@ cfg.robbery = {
                         type = "hacksecuritypanel_01",
         
                         item_needed = {
-                            {"robbery_card_01",1,100}, -- {item_name,item_amount,chance_to_remove}
-                            {"robbery_laptop_01",1,100}, -- {item_name,item_amount,chance_to_remove}
+                            {"trojan_usb",1,100}, -- {item_name,item_amount,chance_to_remove}
+                            {"electronickit",1,100}, -- {item_name,item_amount,chance_to_remove}
                         },
         
                         minigame = {
@@ -1510,6 +1614,7 @@ cfg.robbery = {
                             [GetHashKey("bank_cash_trolly_01c")] = {
                                 {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            --[[
                             [GetHashKey("bank_silver_trolly_01a")] = {
                                 {"robbery_rewards_silverbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
@@ -1519,15 +1624,26 @@ cfg.robbery = {
                             [GetHashKey("bank_silver_trolly_01c")] = {
                                 {"robbery_rewards_silverbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            ]]--
                             [GetHashKey("bank_gold_trolly_01a")] = {
-                                {"robbery_rewards_goldbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldchain",2,4,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"rolex",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldbar",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"security_card_01",1,2,20}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_gold_trolly_01b")] = {
-                                {"robbery_rewards_goldbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldchain",2,4,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"rolex",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldbar",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"security_card_01",1,2,15}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_gold_trolly_01c")] = {
-                                {"robbery_rewards_goldbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldchain",2,4,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"rolex",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldbar",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"security_card_02",1,2,15}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            --[[
                             [GetHashKey("bank_diamond_trolly_01a")] = {
                                 {"robbery_rewards_diamondbox_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
@@ -1537,6 +1653,7 @@ cfg.robbery = {
                             [GetHashKey("bank_diamond_trolly_01c")] = {
                                 {"robbery_rewards_diamondbox_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            ]]-
                         },
         
                         markermenu = {"[1] Collect",157}, -- {text,key}
@@ -1576,8 +1693,8 @@ cfg.robbery = {
                         type = "hacksecuritypanel_01",
         
                         item_needed = {
-                            {"robbery_card_01",1,100}, -- {item_name,item_amount,chance_to_remove}
-                            {"robbery_laptop_01",1,100}, -- {item_name,item_amount,chance_to_remove}
+                            {"trojan_usb",1,100}, -- {item_name,item_amount,chance_to_remove}
+                            {"electronickit",1,100}, -- {item_name,item_amount,chance_to_remove}
                         },
         
                         minigame = {
@@ -1663,6 +1780,7 @@ cfg.robbery = {
                             [GetHashKey("bank_cash_trolly_01c")] = {
                                 {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            --[[
                             [GetHashKey("bank_silver_trolly_01a")] = {
                                 {"robbery_rewards_silverbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
@@ -1672,15 +1790,26 @@ cfg.robbery = {
                             [GetHashKey("bank_silver_trolly_01c")] = {
                                 {"robbery_rewards_silverbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            ]]--
                             [GetHashKey("bank_gold_trolly_01a")] = {
-                                {"robbery_rewards_goldbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldchain",2,4,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"rolex",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldbar",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"security_card_01",1,2,20}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_gold_trolly_01b")] = {
-                                {"robbery_rewards_goldbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldchain",2,4,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"rolex",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldbar",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"security_card_01",1,2,15}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_gold_trolly_01c")] = {
-                                {"robbery_rewards_goldbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldchain",2,4,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"rolex",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldbar",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"security_card_02",1,2,15}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            --[[
                             [GetHashKey("bank_diamond_trolly_01a")] = {
                                 {"robbery_rewards_diamondbox_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
@@ -1690,6 +1819,7 @@ cfg.robbery = {
                             [GetHashKey("bank_diamond_trolly_01c")] = {
                                 {"robbery_rewards_diamondbox_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            ]]-
                         },
         
                         markermenu = {"[1] Collect",157}, -- {text,key}
@@ -1752,8 +1882,8 @@ cfg.robbery = {
                         type = "hacksecuritypanel_01",
         
                         item_needed = {
-                            {"robbery_card_01",1,100}, -- {item_name,item_amount,chance_to_remove}
-                            {"robbery_laptop_01",1,100}, -- {item_name,item_amount,chance_to_remove}
+                            {"trojan_usb",1,100}, -- {item_name,item_amount,chance_to_remove}
+                            {"electronickit",1,100}, -- {item_name,item_amount,chance_to_remove}
                         },
         
                         minigame = {
@@ -1839,6 +1969,7 @@ cfg.robbery = {
                             [GetHashKey("bank_cash_trolly_01c")] = {
                                 {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            --[[
                             [GetHashKey("bank_silver_trolly_01a")] = {
                                 {"robbery_rewards_silverbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
@@ -1848,15 +1979,26 @@ cfg.robbery = {
                             [GetHashKey("bank_silver_trolly_01c")] = {
                                 {"robbery_rewards_silverbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            ]]--
                             [GetHashKey("bank_gold_trolly_01a")] = {
-                                {"robbery_rewards_goldbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldchain",2,4,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"rolex",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldbar",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"security_card_01",1,2,20}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_gold_trolly_01b")] = {
-                                {"robbery_rewards_goldbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldchain",2,4,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"rolex",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldbar",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"security_card_01",1,2,15}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_gold_trolly_01c")] = {
-                                {"robbery_rewards_goldbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldchain",2,4,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"rolex",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldbar",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"security_card_02",1,2,15}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            --[[
                             [GetHashKey("bank_diamond_trolly_01a")] = {
                                 {"robbery_rewards_diamondbox_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
@@ -1866,6 +2008,7 @@ cfg.robbery = {
                             [GetHashKey("bank_diamond_trolly_01c")] = {
                                 {"robbery_rewards_diamondbox_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            ]]-
                         },
         
                         markermenu = {"[1] Collect",157}, -- {text,key}
@@ -1905,8 +2048,8 @@ cfg.robbery = {
                         type = "hacksecuritypanel_01",
         
                         item_needed = {
-                            {"robbery_card_01",1,100}, -- {item_name,item_amount,chance_to_remove}
-                            {"robbery_laptop_01",1,100}, -- {item_name,item_amount,chance_to_remove}
+                            {"trojan_usb",1,100}, -- {item_name,item_amount,chance_to_remove}
+                            {"electronickit",1,100}, -- {item_name,item_amount,chance_to_remove}
                         },
         
                         minigame = {
@@ -1992,6 +2135,7 @@ cfg.robbery = {
                             [GetHashKey("bank_cash_trolly_01c")] = {
                                 {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            --[[
                             [GetHashKey("bank_silver_trolly_01a")] = {
                                 {"robbery_rewards_silverbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
@@ -2001,15 +2145,26 @@ cfg.robbery = {
                             [GetHashKey("bank_silver_trolly_01c")] = {
                                 {"robbery_rewards_silverbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            ]]--
                             [GetHashKey("bank_gold_trolly_01a")] = {
-                                {"robbery_rewards_goldbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldchain",2,4,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"rolex",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldbar",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"security_card_01",1,2,20}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_gold_trolly_01b")] = {
-                                {"robbery_rewards_goldbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldchain",2,4,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"rolex",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldbar",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"security_card_01",1,2,15}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_gold_trolly_01c")] = {
-                                {"robbery_rewards_goldbar_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldchain",2,4,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"rolex",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"goldbar",1,2,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"security_card_02",1,2,15}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            --[[
                             [GetHashKey("bank_diamond_trolly_01a")] = {
                                 {"robbery_rewards_diamondbox_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
@@ -2019,6 +2174,7 @@ cfg.robbery = {
                             [GetHashKey("bank_diamond_trolly_01c")] = {
                                 {"robbery_rewards_diamondbox_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
+                            ]]-
                         },
         
                         markermenu = {"[1] Collect",157}, -- {text,key}
