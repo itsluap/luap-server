@@ -748,6 +748,14 @@ Config.Products = {
             type = 'item',
             slot = 5,
         },
+        [6] = {
+            name = 'pixellaptop',
+            price = 1750,
+            amount = 100,
+            info = {},
+            type = 'item',
+            slot = 6,
+        },
     },
     ["lesters"] = {
         [1] = {
