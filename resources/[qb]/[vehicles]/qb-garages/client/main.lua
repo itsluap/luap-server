@@ -735,6 +735,7 @@ RegisterNetEvent("qb-garages:client:GarageMenu", function(data)
 end)
 
 RegisterNetEvent('qb-garages:client:TakeOutGarage', function(data, cb)
+    local SpawnVehicleServerside = true
     local garageType = data.type
     local vehicleModel = data.vehicleModel
     local vehicle = data.vehicle
