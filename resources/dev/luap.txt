@@ -1,0 +1,16 @@
+
+-- go through heist system
+    - add more heists
+    - seperate hacks for new heists
+    - 
+
+-- go through drug system
+    - make improvements as neccessary
+    - test corner selling, possibly use another system for players who don't want to corner sell
+    -
+
+-- police
+    - make sure ps dispatch codes are correct
+        - most bank robberies are showing as 10-99
+    - SOP needs to be finished
+    - State Statutes needs to be finished (wait for someome who wants to run DOJ?)
