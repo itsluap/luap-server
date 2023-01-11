@@ -806,9 +806,9 @@ end)
 
 RegisterNetEvent('qb-garages:client:TakeOutDepot', function(data)
     local vehicle = data.vehicle
-    --local vehExists = DoesEntityExist(OutsideVehicles[vehicle.plate])
+    local vehExists = DoesEntityExist(OutsideVehicles[vehicle.plate])
     QBCore.Functions.TriggerCallback('qb-garage:server:IsSpawnOk', function(spawn)
-        if spawn then
+        if spawn and not vehExists then
             print('garage spawn')
             print(spawn)
             if UseEnc0dedPersistenVehicles then
