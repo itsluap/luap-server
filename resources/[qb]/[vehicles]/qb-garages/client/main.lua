@@ -300,6 +300,7 @@ local function ParkOwnedVehicle(veh, garageName, vehLocation, plate)
     if plate then
         OutsideVehicles[plate] = nil
         TriggerServerEvent('qb-garages:server:UpdateOutsideVehicles', OutsideVehicles)
+        TriggerServerEvent('qb-garages:server:UpdateOutsideVehicles2', plate, nil)
     end
     QBCore.Functions.Notify(Lang:t("success.vehicle_parked"), "success", 4500)
 end

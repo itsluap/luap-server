@@ -143,7 +143,7 @@ QBCore.Functions.CreateCallback("qb-garage:server:GetGarageVehicles", function(s
     end
 end)
 
-QBCore.Functions.CreateCallback("qb-garage:server:IsSpawnOk", function(_, cb, plate, type)
+QBCore.Functions.CreateCallback("qb-garage:server:IsSpawnOk", function(_, cb, plate)
     if OutsideVehicles[plate] and DoesEntityExist(OutsideVehicles[plate].entity) then
         cb(false)
     else
@@ -254,6 +254,12 @@ RegisterNetEvent('qb-garages:server:UpdateOutsideVehicles', function(Vehicles)
     local ply = QBCore.Functions.GetPlayer(src)
     local citizenId = ply.PlayerData.citizenid
     OutsideVehicles[citizenId] = Vehicles
+end)
+
+RegisterNetEvent('qb-garages:server:UpdateOutsideVehicles2', function(plate, vehicle)
+    -- from real qb-garages --
+    local entity = NetworkGetEntityFromNetworkId(vehicle)
+    OutsideVehicles[plate] = {netID = vehicle, entity = entity}
 end)
 
 QBCore.Functions.CreateCallback("qb-garage:server:GetOutsideVehicles", function(source, cb)
