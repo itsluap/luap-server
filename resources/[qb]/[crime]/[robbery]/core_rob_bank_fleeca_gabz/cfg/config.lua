@@ -186,13 +186,13 @@ cfg.robbery = {
                         item_to_give_type = "hash_normal", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
                         item_to_give = {
                             [GetHashKey("bank_cash_trolly_01a")] = {
-                                {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_cash_trolly_01b")] = {
-                                {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_cash_trolly_01c")] = {
-                                {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             --[[
                             [GetHashKey("bank_silver_trolly_01a")] = {
@@ -352,13 +352,13 @@ cfg.robbery = {
                         item_to_give_type = "hash_normal", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
                         item_to_give = {
                             [GetHashKey("bank_cash_trolly_01a")] = {
-                                {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_cash_trolly_01b")] = {
-                                {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_cash_trolly_01c")] = {
-                                {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             --[[
                             [GetHashKey("bank_silver_trolly_01a")] = {
@@ -541,13 +541,13 @@ cfg.robbery = {
                         item_to_give_type = "hash_normal", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
                         item_to_give = {
                             [GetHashKey("bank_cash_trolly_01a")] = {
-                                {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_cash_trolly_01b")] = {
-                                {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_cash_trolly_01c")] = {
-                                {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             --[[
                             [GetHashKey("bank_silver_trolly_01a")] = {
@@ -707,13 +707,13 @@ cfg.robbery = {
                         item_to_give_type = "hash_normal", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
                         item_to_give = {
                             [GetHashKey("bank_cash_trolly_01a")] = {
-                                {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_cash_trolly_01b")] = {
-                                {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_cash_trolly_01c")] = {
-                                {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             --[[
                             [GetHashKey("bank_silver_trolly_01a")] = {
@@ -896,13 +896,13 @@ cfg.robbery = {
                         item_to_give_type = "hash_normal", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
                         item_to_give = {
                             [GetHashKey("bank_cash_trolly_01a")] = {
-                                {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_cash_trolly_01b")] = {
-                                {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_cash_trolly_01c")] = {
-                                {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             --[[
                             [GetHashKey("bank_silver_trolly_01a")] = {
@@ -1062,13 +1062,13 @@ cfg.robbery = {
                         item_to_give_type = "hash_normal", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
                         item_to_give = {
                             [GetHashKey("bank_cash_trolly_01a")] = {
-                                {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_cash_trolly_01b")] = {
-                                {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_cash_trolly_01c")] = {
-                                {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             --[[
                             [GetHashKey("bank_silver_trolly_01a")] = {
@@ -1251,13 +1251,13 @@ cfg.robbery = {
                         item_to_give_type = "hash_normal", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
                         item_to_give = {
                             [GetHashKey("bank_cash_trolly_01a")] = {
-                                {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_cash_trolly_01b")] = {
-                                {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_cash_trolly_01c")] = {
-                                {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             --[[
                             [GetHashKey("bank_silver_trolly_01a")] = {
@@ -1417,13 +1417,13 @@ cfg.robbery = {
                         item_to_give_type = "hash_normal", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
                         item_to_give = {
                             [GetHashKey("bank_cash_trolly_01a")] = {
-                                {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_cash_trolly_01b")] = {
-                                {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_cash_trolly_01c")] = {
-                                {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             --[[
                             [GetHashKey("bank_silver_trolly_01a")] = {
@@ -1606,13 +1606,13 @@ cfg.robbery = {
                         item_to_give_type = "hash_normal", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
                         item_to_give = {
                             [GetHashKey("bank_cash_trolly_01a")] = {
-                                {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_cash_trolly_01b")] = {
-                                {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_cash_trolly_01c")] = {
-                                {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             --[[
                             [GetHashKey("bank_silver_trolly_01a")] = {
@@ -1772,13 +1772,13 @@ cfg.robbery = {
                         item_to_give_type = "hash_normal", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
                         item_to_give = {
                             [GetHashKey("bank_cash_trolly_01a")] = {
-                                {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_cash_trolly_01b")] = {
-                                {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_cash_trolly_01c")] = {
-                                {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             --[[
                             [GetHashKey("bank_silver_trolly_01a")] = {
@@ -1961,13 +1961,13 @@ cfg.robbery = {
                         item_to_give_type = "hash_normal", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
                         item_to_give = {
                             [GetHashKey("bank_cash_trolly_01a")] = {
-                                {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_cash_trolly_01b")] = {
-                                {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_cash_trolly_01c")] = {
-                                {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             --[[
                             [GetHashKey("bank_silver_trolly_01a")] = {
@@ -2127,13 +2127,13 @@ cfg.robbery = {
                         item_to_give_type = "hash_normal", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
                         item_to_give = {
                             [GetHashKey("bank_cash_trolly_01a")] = {
-                                {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_cash_trolly_01b")] = {
-                                {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             [GetHashKey("bank_cash_trolly_01c")] = {
-                                {"money",1000,2500,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                                {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
                             --[[
                             [GetHashKey("bank_silver_trolly_01a")] = {
