@@ -43,12 +43,21 @@ local function RemoveJob(citizenid, job, rgrade)
     local jobs = GetJobs(citizenid)
     jobs[job] = nil
     local Player = QBCore.Functions.GetPlayerByCitizenId(citizenid)
+    
+    -- Since we removed a job, put player in a new job
+    local foundNewJob = false
     if Player.PlayerData.job.name == job then
         for k,v in pairs(jobs) do
             Player.Functions.SetJob(k,v)
+            foundNewJob = true
             break
         end
     end
+
+    if not foundNewJob then
+        Player.Functions.SetJob("unemployed", 0)
+    end
+
     MySQL.insert('INSERT INTO multijobs (citizenid, jobdata) VALUES (:citizenid, :jobdata) ON DUPLICATE KEY UPDATE jobdata = :jobdata', {
         citizenid = citizenid,
         jobdata = json.encode(jobs),
@@ -126,7 +135,7 @@ QBCore.Functions.CreateCallback("ps-multijob:getJobs",function(source, cb)
             description = Config.Descriptions[job],
             icon = Config.FontAwesomeIcons[job],
             label = QBCore.Shared.Jobs[job].label,
-            grade_label = QBCore.Shared.Jobs[job].grades[tostring(grade)].name,
+            gradeLabel = QBCore.Shared.Jobs[job].grades[tostring(grade)].name,
             salary = QBCore.Shared.Jobs[job].grades[tostring(grade)].payment,
             active = online,
         }
@@ -135,11 +144,12 @@ QBCore.Functions.CreateCallback("ps-multijob:getJobs",function(source, cb)
         else
             civjobs[#civjobs+1] = getjobs
         end
-        multijobs = {
-            whitelist = whitelistedjobs,
-            civilian = civjobs,
-        }
     end
+
+    multijobs = {
+        whitelist = whitelistedjobs,
+        civilian = civjobs,
+    }
     cb(multijobs)
 end)
 
@@ -188,7 +198,8 @@ RegisterNetEvent('QBCore:Server:OnJobUpdate', function(source, newJob)
         amount = amount + 1
     end
     if amount < Config.MaxJobs and not Config.IgnoredJobs[setjob.name] then
-        if not jobs[setjob.name] then
+        local foundOldJob = jobs[setjob.name]
+        if not foundOldJob or foundOldJob ~= setjob.grade.level then
             AddJob(Player.PlayerData.citizenid, setjob.name, setjob.grade.level)
         end
     end
