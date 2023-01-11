@@ -1422,7 +1422,7 @@ cfg.robbery = {
 
                     item_to_give_type = "normal", -- "normal" or "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
                     item_to_give = {
-                        {"robbery_rewards_painting_01",1,1,100} -- {item_name,amount_min,amount_max,item_rarity}
+                        {"painting1",1,1,100} -- {item_name,amount_min,amount_max,item_rarity}
                     },
 
                     interaction = {
@@ -1502,7 +1502,7 @@ cfg.robbery = {
             },
 
             weapons = {
-                GetHashKey("WEAPON_KNIFE"), -- hash of the weapon you need equiped
+                GetHashKey("WEAPON_SWITCHBLADE"), -- hash of the weapon you need equiped
             },
 
             polyzone = {0.1,0.8,0.85,0.0,0.0,0.0,0.0},-- {length,width,minZextra,maxZextra,offset_x,offset_y,offset_z}
@@ -1618,19 +1618,7 @@ cfg.robbery = {
                     item_to_give_type = "glass", -- "normal" or "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
                     item_to_give = {
                         [GetHashKey("h4_prop_h4_art_pant_01a")] = {
-                            {"robbery_rewards_panther_01",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
-                        },
-                        [GetHashKey("h4_prop_h4_t_bottle_02a")] = {
-                            {"robbery_rewards_tequila_01",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
-                        },
-                        [GetHashKey("h4_prop_h4_t_bottle_02b")] = {
-                            {"robbery_rewards_tequila_02",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
-                        },
-                        [GetHashKey("h4_prop_h4_necklace_01a")] = {
-                            {"robbery_rewards_diamondnecklace_01",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
-                        },
-                        [GetHashKey("h4_prop_h4_diamond_01a")] = {
-                            {"robbery_rewards_diamond_01",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                            {"goldmask",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                         },
                     },
     

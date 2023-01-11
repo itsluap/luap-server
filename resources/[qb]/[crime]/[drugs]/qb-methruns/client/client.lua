@@ -455,7 +455,7 @@ RegisterNetEvent('kevin-methruns:DropOffItems', function()
                 DeliveredItems = 0
                 PedSpawned = false
                 CanDropOff = false
-                CanCollect = false
+                -- CanCollect = false -- setting cancollect to false when it should be true?
             end
         else
             QBCore.Functions.Notify('You do not have the right items here..', 'error', 5000)
