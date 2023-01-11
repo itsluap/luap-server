@@ -6,6 +6,7 @@ this_is_a_map 'yes'
 data_file 'TIMECYCLEMOD_FILE' 'nutt_timecycle_mods_1.xml'
 
 files {
+    'laun_timecycle_mods_1.xml'
     'shellprops.ytyp',
     'stream/bossroom/gta5.meta',
     'stream/bossroom/water.xml',
@@ -22,7 +23,7 @@ data_file 'DLC_ITYP_REQUEST' 'stream/vg_jdm_props.ytyp'
 
 data_file 'DLC_ITYP_REQUEST' 'stream/patoche_shop_list.ytyp'
 
-data_file 'TIMECYCLEMOD_FILE' 'nutt_timecycle_mods_1.xml'
+data_file 'TIMECYCLEMOD_FILE' 'laun_timecycle_mods_1.xml'
 
 data_file "AUDIO_GAMEDATA" "gardoor_game.dat"
 
