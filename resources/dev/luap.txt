@@ -18,7 +18,13 @@
 -- cars
     - finish car dealers asap
     - finish car drop asap (handling, headlights/taillights, oversize)
+    - make sure player owned cars can't be lockpicked - need to hack with an electronickit
+    - find out whats locking vehicle wheels: pretty sure its seatbelt script, SetVehicleEngine, SetVehicleUnusable
 
 -- crafting system 
     - start to balance out materials for crafting 
     - slowly move into a crafting system only for mechs and most things
+
+
+    bad clothing: 
+        shoes: 182,
