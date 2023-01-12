@@ -1,6 +1,6 @@
 Functions = {}
-cashA = 2500
-cashB = 4500
+cashA = 16500
+cashB = 22500
 
 Citizen.CreateThread(function()
 	if cfg.framework == "esx" then
