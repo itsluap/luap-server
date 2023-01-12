@@ -134,7 +134,6 @@ Config.DoorList = {
 		pickable = true,
 		distance = 2.0
 	},
-	]]--
 	-- Fleeca Door opened with lockpick
 	{
 		objName = 'v_ilev_gb_vaubar',
@@ -185,4 +184,5 @@ Config.DoorList = {
 		pickable = true,
 		distance = 2.0
 	},
+	]]--
 }
