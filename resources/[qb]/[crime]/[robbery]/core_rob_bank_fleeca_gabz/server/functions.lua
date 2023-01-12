@@ -1,4 +1,6 @@
 Functions = {}
+cashA = 250
+cashB = 500
 
 Citizen.CreateThread(function()
 	if cfg.framework == "esx" then
@@ -164,6 +166,11 @@ AddEventHandler("CORE_ROB_BANK_FLEECA:GiveItem_s",function(player,item_name,item
 			xPlayer.Functions.AddMoney("cash",item_amount) -- give money to player
 		elseif item == "black_money" then -- check if item is blackmoney
 			xPlayer.Functions.AddMoney("blackmoney",amount) -- give blackmoney to player
+		elseif item == "markedbills" then 
+			local info = {
+				worth = math.random(cashA, cashB)
+			}
+			xPlayer.Functions.AddItem("markedbills",amount, false, info) -- give blackmoney to player
 		else -- if it is an item
 			xPlayer.Functions.AddItem(item_name,item_amount) -- give item to player
 		end
