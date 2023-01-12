@@ -2,7 +2,7 @@
 -- go through heist system
     - add more heists
     - seperate hacks for new heists
-    - 
+    - go through house roberries
 
 -- go through drug system
     - make improvements as neccessary
