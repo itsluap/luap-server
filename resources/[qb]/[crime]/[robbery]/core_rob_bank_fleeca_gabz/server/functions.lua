@@ -170,7 +170,7 @@ AddEventHandler("CORE_ROB_BANK_FLEECA:GiveItem_s",function(player,item_name,item
 			local info = {
 				worth = math.random(cashA, cashB)
 			}
-			xPlayer.Functions.AddItem("markedbills",amount, false, info) -- give blackmoney to player
+			xPlayer.Functions.AddItem("markedbills",item_amount, false, info) -- give blackmoney to player
 		else -- if it is an item
 			xPlayer.Functions.AddItem(item_name,item_amount) -- give item to player
 		end
