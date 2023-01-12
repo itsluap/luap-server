@@ -399,7 +399,7 @@ cfg.robbery = {
                             [GetHashKey("bank_diamond_trolly_01c")] = {
                                 {"robbery_rewards_diamondbox_01",44,44,100}, -- {item_name,amount_min,amount_max,item_rarity}
                             },
-                            ]]-
+                            ]]--
                         },
         
                         markermenu = {"[1] Collect",157}, -- {text,key}
