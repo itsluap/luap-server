@@ -72,6 +72,12 @@ end)
 
 RegisterNetEvent("laundry:openwasher")
 AddEventHandler("laundry:openwasher", function(data)
-    TriggerServerEvent("inventory:server:OpenInventory", "stash", "washer"..data.id, {maxweight = 1500000, slots = 10})
-    TriggerEvent("inventory:client:SetCurrentStash", "washer"..data.id)
+    QBCore.Functions.TriggerCallback("laundry:isWashing", function(result)
+        if result then
+            TriggerServerEvent("inventory:server:OpenInventory", "stash", "washer"..data.id, {maxweight = 1500000, slots = 10})
+            TriggerEvent("inventory:client:SetCurrentStash", "washer"..data.id)
+        else 
+            print('money wash fail notification here') print('moneywash is still running')
+        end
+    end)
 end)
