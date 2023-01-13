@@ -1,4 +1,5 @@
 local QBCore = exports['qb-core']:GetCoreObject()
+local GlobalState.Washing = false
 
 
 local washers = {
@@ -96,6 +97,7 @@ function wash(washerId)
     end
     ]]--
     local cleaned = (cleaned * 0.6)
+    GlobalState.Washing = true
     Citizen.Wait(60000 * 3)
     -- check for items after time limit --
     for k,v in pairs(items) do 
@@ -108,6 +110,7 @@ function wash(washerId)
     washers[washerId].cleaned = cleaned
     washers[washerId].pickup = true
     print('washer pickup = true')
+    GlobalState.Washing = false
 
     exports.ghmattimysql:execute("UPDATE stashitems SET items = '[]' WHERE stash = @stash", {
         ['@stash'] = stash,

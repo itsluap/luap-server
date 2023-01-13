@@ -72,6 +72,10 @@ end)
 
 RegisterNetEvent("laundry:openwasher")
 AddEventHandler("laundry:openwasher", function(data)
-    TriggerServerEvent("inventory:server:OpenInventory", "stash", "washer"..data.id, {maxweight = 1500000, slots = 10})
-    TriggerEvent("inventory:client:SetCurrentStash", "washer"..data.id)
+    if GlobalState.Washing then
+        TriggerServerEvent("inventory:server:OpenInventory", "stash", "washer"..data.id, {maxweight = 1500000, slots = 10})
+        TriggerEvent("inventory:client:SetCurrentStash", "washer"..data.id)
+    else 
+        print('moneywash still running')
+    end
 end)
