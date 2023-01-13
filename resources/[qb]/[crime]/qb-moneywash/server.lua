@@ -88,30 +88,25 @@ function wash(washerId)
     local stash = 'washer'..washerId
     local items = GetWasherItems(washerId)
     local cleaned = 0
-    --[[
+    -- check for items before timer so items can be removed --
     for k,v in pairs(items) do 
         if v.name == "markedbills" then 
             cleaned = cleaned + v.info.worth 
         end 
     end
-    ]]--
-    local cleaned = (cleaned * 0.6)
-    GlobalState.Washing = true
-    Citizen.Wait(60000 * 3)
-    -- check for items after time limit --
-    for k,v in pairs(items) do 
-        if v.name == "markedbills" then 
-            cleaned = cleaned + v.info.worth 
-        end 
-    end
-    Citizen.Wait(1000) -- wait again so we don't break things
-    print("[LAUNDRY]: CLEANED "..cleaned)
-    washers[washerId].cleaned = cleaned
-    washers[washerId].pickup = true
-    print('washer pickup = true')
-    GlobalState.Washing = false
-
+    -- take markedbills immediately instead of after timer --
     exports.ghmattimysql:execute("UPDATE stashitems SET items = '[]' WHERE stash = @stash", {
         ['@stash'] = stash,
     })
+    local cleaned = (cleaned * 0.6)
+    Citizen.Wait(60000 * 3)
+    -- Citizen.Wait(1000) -- wait again so we don't break things
+    print("[LAUNDRY]: CLEANED "..cleaned)
+    washers[washerId].cleaned = cleaned
+    washers[washerId].pickup = true
+    --[[
+    exports.ghmattimysql:execute("UPDATE stashitems SET items = '[]' WHERE stash = @stash", {
+        ['@stash'] = stash,
+    })
+    ]]--
 end
