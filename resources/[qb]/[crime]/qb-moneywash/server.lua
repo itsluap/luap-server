@@ -96,7 +96,7 @@ function wash(washerId)
     end
     ]]--
     local cleaned = (cleaned * 0.6)
-    Citizen.Wait(60000 * 10)
+    Citizen.Wait(60000 * 1)
     -- check for items after time limit --
     for k,v in pairs(items) do 
         if v.name == "markedbills" then 
@@ -107,6 +107,7 @@ function wash(washerId)
     print("[LAUNDRY]: CLEANED "..cleaned)
     washers[washerId].cleaned = cleaned
     washers[washerId].pickup = true
+    print('washer pickup = true')
 
     exports.ghmattimysql:execute("UPDATE stashitems SET items = '[]' WHERE stash = @stash", {
         ['@stash'] = stash,
