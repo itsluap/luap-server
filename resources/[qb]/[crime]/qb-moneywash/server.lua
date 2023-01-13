@@ -96,7 +96,7 @@ function wash(washerId)
     end
     ]]--
     local cleaned = (cleaned * 0.6)
-    Citizen.Wait(60000 * 1)
+    Citizen.Wait(60000 * 3)
     -- check for items after time limit --
     for k,v in pairs(items) do 
         if v.name == "markedbills" then 
