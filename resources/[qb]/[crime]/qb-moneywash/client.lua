@@ -72,7 +72,7 @@ end)
 
 RegisterNetEvent("laundry:openwasher")
 AddEventHandler("laundry:openwasher", function(data)
-    if GlobalState.Washing then
+    if not GlobalState.Washing then
         TriggerServerEvent("inventory:server:OpenInventory", "stash", "washer"..data.id, {maxweight = 1500000, slots = 10})
         TriggerEvent("inventory:client:SetCurrentStash", "washer"..data.id)
     else 
