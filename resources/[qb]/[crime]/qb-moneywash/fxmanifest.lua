@@ -12,5 +12,3 @@ server_scripts {
 client_scripts { 
     "client.lua",
 }
-
-shared_script '@qb-core/import.lua'
