@@ -72,6 +72,10 @@ end)
 
 RegisterNetEvent("laundry:openwasher")
 AddEventHandler("laundry:openwasher", function(data)
+    OpenWasher(data)
+end)
+
+function OpenWasher(data)
     local c = false 
     QBCore.Functions.TriggerCallback("laundry:isWashing", function(result)
         c = result
@@ -83,4 +87,4 @@ AddEventHandler("laundry:openwasher", function(data)
     else 
         print('money wash fail notification here') print('moneywash is still running')
     end
-end)
+end
