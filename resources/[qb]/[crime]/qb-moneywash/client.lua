@@ -73,7 +73,7 @@ end)
 RegisterNetEvent("laundry:openwasher")
 AddEventHandler("laundry:openwasher", function(data)
     QBCore.Functions.TriggerCallback("laundry:isWashing", function(result)
-        if result then
+        if not result then
             TriggerServerEvent("inventory:server:OpenInventory", "stash", "washer"..data.id, {maxweight = 1500000, slots = 10})
             TriggerEvent("inventory:client:SetCurrentStash", "washer"..data.id)
         else 
