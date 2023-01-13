@@ -1,5 +1,4 @@
 local QBCore = exports['qb-core']:GetCoreObject()
-local GlobalState.Washing = false
 
 
 local washers = {
