@@ -9,7 +9,7 @@ local GaragePoly = {}
 local MenuItemId = nil
 local VehicleClassMap = {}
 local GarageZones = {}
-local SpawnVehicleServerside = false
+local SpawnVehicleServerside = true
 
 -- helper functions
 
@@ -747,7 +747,7 @@ RegisterNetEvent('qb-garages:client:TakeOutGarage', function(data, cb)
     if garage.useVehicleSpawner then
         SpawnVehicleSpawnerVehicle(vehicleModel, location, heading, cb)
     end
-    if true then
+    if SpawnVehicleServerside then
         QBCore.Functions.TriggerCallback('qb-garage:server:spawnvehicle', function(netId, properties)
             local veh = NetToVeh(netId)
             if not veh or not netId then
@@ -804,7 +804,7 @@ RegisterNetEvent('qb-garages:client:ParkLastVehicle', function(parkingName)
         QBCore.Functions.Notify(Lang:t('error.no_vehicle'), "error", 4500)
     end
 end)
-
+--[[    -- made by luap --
 RegisterNetEvent('qb-garages:client:TakeOutDepot', function(data)
     local vehicle = data.vehicle
     local vehExists = DoesEntityExist(OutsideVehicles[vehicle.plate])
@@ -831,6 +831,27 @@ RegisterNetEvent('qb-garages:client:TakeOutDepot', function(data)
             QBCore.Functions.Notify(Lang:t('error.not_impound'), "error", 5000)
         end
     end, vehicle.plate, type)    
+end)
+--]]
+-- STOCK --
+RegisterNetEvent('qb-garages:client:TakeOutDepot', function(data)
+    local vehicle = data.vehicle
+    QBCore.Debug(OutsideVehicles)
+    local vehExists = DoesEntityExist(OutsideVehicles[vehicle.plate])
+    if not vehExists then
+        local PlayerData = QBCore.Functions.GetPlayerData()
+        if PlayerData.money['cash'] >= vehicle.depotprice or PlayerData.money['bank'] >= vehicle.depotprice then
+            TriggerEvent("qb-garages:client:TakeOutGarage", data, function (veh)
+                if veh then
+                    TriggerServerEvent("qb-garage:server:PayDepotPrice", data)
+                end
+            end)
+        else
+            QBCore.Functions.Notify(Lang:t('error.not_enough'), "error", 5000)
+        end
+    else
+        QBCore.Functions.Notify(Lang:t('error.not_impound'), "error", 5000)
+    end
 end)
 
 RegisterNetEvent('qb-garages:client:OpenHouseGarage', function()
