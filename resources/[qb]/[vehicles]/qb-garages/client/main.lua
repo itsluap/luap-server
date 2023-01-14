@@ -9,7 +9,7 @@ local GaragePoly = {}
 local MenuItemId = nil
 local VehicleClassMap = {}
 local GarageZones = {}
-local SpawnVehicleServerside = true
+local SpawnVehicleServerside = false
 
 -- helper functions
 
@@ -747,7 +747,7 @@ RegisterNetEvent('qb-garages:client:TakeOutGarage', function(data, cb)
     if garage.useVehicleSpawner then
         SpawnVehicleSpawnerVehicle(vehicleModel, location, heading, cb)
     end
-    if SpawnVehicleServerside then
+    if true then
         QBCore.Functions.TriggerCallback('qb-garage:server:spawnvehicle', function(netId, properties)
             local veh = NetToVeh(netId)
             if not veh or not netId then
@@ -810,7 +810,7 @@ RegisterNetEvent('qb-garages:client:TakeOutDepot', function(data)
     local vehExists = DoesEntityExist(OutsideVehicles[vehicle.plate])
     QBCore.Functions.TriggerCallback('qb-garage:server:IsSpawnOk', function(spawn)
         if spawn and not vehExists then
-            -- print('garage spawn') print(spawn) print(vehExists) print (OutsideVehicles[vehicle.plate])
+            print('garage spawn') print(spawn) print(vehExists) print (OutsideVehicles[vehicle.plate])
             if UseEnc0dedPersistenVehicles then
                 QBCore.Functions.TriggerCallback('qb-garage:server:checkIsSpawned', function(spawned)
                     if spawned then
