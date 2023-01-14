@@ -748,6 +748,7 @@ RegisterNetEvent('qb-garages:client:TakeOutGarage', function(data, cb)
         SpawnVehicleSpawnerVehicle(vehicleModel, location, heading, cb)
     end
     if SpawnVehicleServerside then
+        print('spawnvehicleserverside')
         QBCore.Functions.TriggerCallback('qb-garage:server:spawnvehicle', function(netId, properties)
             local veh = NetToVeh(netId)
             if not veh or not netId then
