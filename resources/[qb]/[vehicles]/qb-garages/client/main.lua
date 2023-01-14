@@ -804,7 +804,7 @@ RegisterNetEvent('qb-garages:client:ParkLastVehicle', function(parkingName)
         QBCore.Functions.Notify(Lang:t('error.no_vehicle'), "error", 4500)
     end
 end)
---[[    -- made by luap --
+   -- made by luap --
 RegisterNetEvent('qb-garages:client:TakeOutDepot', function(data)
     local vehicle = data.vehicle
     local vehExists = DoesEntityExist(OutsideVehicles[vehicle.plate])
@@ -832,7 +832,7 @@ RegisterNetEvent('qb-garages:client:TakeOutDepot', function(data)
         end
     end, vehicle.plate, type)    
 end)
---]]
+
 -- STOCK --
 RegisterNetEvent('qb-garages:client:TakeOutDepot', function(data)
     local vehicle = data.vehicle
@@ -853,6 +853,7 @@ RegisterNetEvent('qb-garages:client:TakeOutDepot', function(data)
         QBCore.Functions.Notify(Lang:t('error.not_impound'), "error", 5000)
     end
 end)
+]]--
 
 RegisterNetEvent('qb-garages:client:OpenHouseGarage', function()
     if UseLoafHousing then
