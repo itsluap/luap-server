@@ -9,7 +9,7 @@ local GaragePoly = {}
 local MenuItemId = nil
 local VehicleClassMap = {}
 local GarageZones = {}
-local SpawnVehicleServerside = false
+local SpawnVehicleServerside = true
 
 -- helper functions
 
