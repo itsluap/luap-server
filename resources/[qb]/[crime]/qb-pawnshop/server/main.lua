@@ -77,6 +77,7 @@ RegisterNetEvent('qb-pawnshop:server:pickupMelted', function(item)
             if Player.Functions.AddItem(m.item, (meltedAmount * rewardAmount)) then
                 TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[m.item], 'add')
                 TriggerClientEvent('QBCore:Notify', src, Lang:t('success.items_received',{ value = (meltedAmount * rewardAmount), value2 = QBCore.Shared.Items[m.item].label }), 'success')
+                TriggerClientEvent('qb-pawnshop:client:resetPickup', src) -- moving reset to try and combat duplication due to player having maxed inv (player is going to lose whatever they couldn't carry)
             else
                 TriggerClientEvent('qb-pawnshop:client:openMenu', src)
                 return
