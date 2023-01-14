@@ -5,3 +5,7 @@
 -- Inventory:
     - If player is in a vehicles trunk and gets hit/falls over the trunk will allow players to take items out but won't register the items as being taken out
       allowing duplication of items
+
+
+-- Whole Server:
+  -- things start to respond slow? causes problems in every script
