@@ -833,7 +833,7 @@ RegisterNetEvent('qb-garages:client:TakeOutDepot', function(data)
     end, vehicle.plate, type)    
 end)
 
--- STOCK --
+--[[-- STOCK --
 RegisterNetEvent('qb-garages:client:TakeOutDepot', function(data)
     local vehicle = data.vehicle
     QBCore.Debug(OutsideVehicles)
