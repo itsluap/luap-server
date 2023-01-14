@@ -7,5 +7,8 @@
       allowing duplication of items
 
 
+-- ps-fuel:
+    - can refuel jerry can but jerry can doesn't get updated fuel
+
 -- Whole Server:
   -- things start to respond slow? causes problems in every script
