@@ -6,8 +6,8 @@
 }
 
 body, html {
-  width: 100%;
-  height: 100%;
+  width: 70%;
+  height: 70%;
 }
 
 p {
@@ -22,7 +22,7 @@ p {
   position: relative;
   display: none;
   margin: 280px 1400px 0 0;
-  float: right;
+  left: 10vh;
   width: 485px;
   height: 383px;
   padding: 54px 17px 10px 144px;
@@ -31,7 +31,7 @@ p {
 
 img {
   position: absolute;
-  left:7px;
+  left:2px;
   top:5px;
 }
 
@@ -50,12 +50,6 @@ img {
   left: 60px;
 }
 
-#karakterfoto {
-  position: absolute;
-  top: 35px;
-  left: 60px;
-}
-
 #dob {
   position: absolute;
   left: 0;
@@ -65,12 +59,6 @@ img {
 #sex {
   position: absolute;
   left: 90px;
-}
-
-#height {
-  position: absolute;
-  left: 150px;
-  width: 60px;
 }
 
 #signature {
@@ -84,11 +72,4 @@ img {
   font-variant: small-caps;
   text-transform: none;
   font-family: "Courier New", Courier, monospace;
-}
-
-#licenses {
-  position: absolute;
-  top: 0px;
-  right: 33px;
-  width: 50px;
 }
