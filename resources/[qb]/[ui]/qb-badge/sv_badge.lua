@@ -8,7 +8,7 @@ AddEventHandler('badge:open', function(ID, targetID, type)
 	local show       = false
 	local _PED_ID = PED_ID
 
-	MySQL.Async.fetchAll('SELECT firstname, lastname, dateofbirth, sex, height FROM users WHERE identifier = @identifier', {['@identifier'] = identifier},
+	MySQL.Async.fetchAll('SELECT firstname, lastname, dateofbirth, sex, height FROM players WHERE identifier = @identifier', {['@identifier'] = identifier},
 	function (user)
 		if (user[1] ~= nil) then
 			MySQL.Async.fetchAll('SELECT type FROM user_licenses WHERE owner = @identifier', {['@identifier'] = identifier},

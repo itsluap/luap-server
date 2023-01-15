@@ -8,6 +8,10 @@
 
 -- if doing /911 animation and you pull out gun you get kicked for exploting
 
+-- pd blips show for everyone 
+
+-- hud shows nos in car even if car doesn't have nos
+
 -- Whole Server:
   -- things start to respond slow? causes problems in every script
 
