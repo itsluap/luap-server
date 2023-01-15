@@ -6,9 +6,15 @@
     - If player is in a vehicles trunk and gets hit/falls over the trunk will allow players to take items out but won't register the items as being taken out
       allowing duplication of items
 
-
--- ps-fuel:
-    - can refuel jerry can but jerry can doesn't get updated fuel
+-- if doing /911 animation and you pull out gun you get kicked for exploting
 
 -- Whole Server:
   -- things start to respond slow? causes problems in every script
+
+
+-- update all heists - keymaster
+-- update methruns - keymaster
+-- update casino - keymaster
+-- rahe racing update - keymaster
+-- rcore radio update - keymaster
+-- expert tattoo update - keymaster
