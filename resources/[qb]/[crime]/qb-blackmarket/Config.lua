@@ -36,7 +36,7 @@ Config.Text = {
 
 Config.PistolShop = {
     label = "Blackmarket Pistols",
-    slots = 10,
+    slots = 4,
     items = {
         [1] = {
             name = "weapon_pistol",
@@ -75,7 +75,7 @@ Config.PistolShop = {
 
 Config.SubMachineGunShop = {
     label = "Blackmarket Submachine Guns",
-    slots = 10,
+    slots = 4,
     items = {
         [1] = {
             name = "weapon_microsmg",
@@ -114,7 +114,7 @@ Config.SubMachineGunShop = {
 
 Config.ShotGunShop = {
     label = "Blackmarket Shotguns",
-    slots = 10,
+    slots = 4,
     items = {
         [1] = {
             name = "weapon_pumpshotgun",
@@ -153,7 +153,7 @@ Config.ShotGunShop = {
 
 Config.AssaultWeaponsShop = {
     label = "Blackmarket Assault Rifles",
-    slots = 10,
+    slots = 4,
     items = {
         [1] = {
             name = "weapon_carbinerifle",
@@ -192,7 +192,7 @@ Config.AssaultWeaponsShop = {
 
 Config.MiscellanceousShop = {
     label = "Blackmarket Miscellanceous",
-    slots = 10,
+    slots = 13,
     items = {
         [1] = {
             name = "armor",
