@@ -424,6 +424,15 @@ Config.Items = {
             slot = 19,
             authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}
         },
+        [20] = {
+            name = "ifaks",
+            price = 0,
+            amount = 50,
+            info = {},
+            type = "item",
+            slot = 20,
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}
+        },
     }
 }
 
