@@ -22,6 +22,3 @@
 -- rahe racing update - keymaster
 -- rcore radio update - keymaster
 -- expert tattoo update - keymaster
-
-
-- give nope in-game admin
