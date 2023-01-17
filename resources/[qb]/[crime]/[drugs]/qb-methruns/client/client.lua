@@ -21,6 +21,8 @@ local CanDropOff = false
 local CanCollect = false
 local caseprop = false
 local GotCase = false
+local ItemName = nil
+local Item = nil
 
 RegisterNetEvent('police:SetCopCount', function(amount)
     CurrentCops = amount
@@ -31,12 +33,12 @@ RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
 end)
 
 AddEventHandler('onResourceStart', function(resourceName)
-    --if GetCurrentResourceName() == resourceName then
+    if GetCurrentResourceName() == resourceName then
         PlayerData = QBCore.Functions.GetPlayerData()
         exports["ps-zones"]:DestroyZone('Meth-CarZone')
         exports["ps-zones"]:DestroyZone('Meth-SupplierZone')
         exports["ps-zones"]:DestroyZone('Meth-DropOffZone')
-    --end
+    end
 end)
 
 CreateThread(function()
@@ -146,7 +148,7 @@ RegisterNetEvent("ps-zones:enter", function(ZoneName, ZoneData)
         Supplier = CreatePed(0, Config.PedHash, SupplerLocation.x, SupplerLocation.y, SupplerLocation.z-1.0, SupplerLocation.w, true, true)
         FreezeEntityPosition(Supplier, true)
         SetEntityInvincible(Supplier, true)
-
+        SetBlockingOfNonTemporaryEvents(Supplier, true)
         CreateThread(function ()
             exports['qb-target']:AddTargetEntity(Supplier, {
                 options = {
@@ -286,6 +288,7 @@ RegisterNetEvent('kevin-methruns:client:CollectItems', function()
     CollectedItems = CollectedItems +1
     TriggerServerEvent('kevin-methruns:server:giveproducts')
     if CollectedItems == RecievedPackages then
+        exports['qb-target']:RemoveTargetEntity(Supplier, 'Pickup Goods')
         GotPackages = true
         SetPedAsNoLongerNeeded(Supplier)
         RemoveBlip(SupplerBlip)
@@ -415,59 +418,72 @@ RegisterNetEvent('kevin-methruns:GetDropOffLocation', function ()
 end)
 
 RegisterNetEvent('kevin-methruns:DropOffItems', function()
-    QBCore.Functions.TriggerCallback('kevin-methruns:server:hasItems', function(Items)
-        if Items then
-            DeliveredItems = DeliveredItems +1
-            if DeliveredItems == CollectedItems then
-                CanCollect = true
-                if Config.Notify == 'phone' then
-                    if Config.Phone == 'qb' then
-                        TriggerEvent('qb-phone:client:CustomNotification', 'TASK NOTIFICATION', 'Return to the boss for payment', 'fas fa-bars', '#c07ef2', 8500)
-                    elseif Config.Phone == 'gks' then
-                        TriggerEvent('gksphone:notifi', {title = "TASK NOTIFICATION", message = 'Return to the boss for payment', img= '/html/static/img/icons/messages.png'})
-                    elseif Config.Phone == 'qs' then
-                        TriggerEvent('qs-smartphone:client:notify', {title = 'TASK NOTIFICATION', text = 'Return to the boss for payment', icon = "./img/apps/whatsapp.png", timeout = 5500})
-                    end
-                elseif Config.Notify == 'qb' then
-                    QBCore.Functions.Notify('Return to the boss for payment', 'primary', 4000)
+    if PlayerData.metadata["methruns"] < Config.LevelRep then
+        ItemName = Config.LowRepItem
+        Item = QBCore.Functions.HasItem(ItemName, 1)
+    elseif PlayerData.metadata['methruns'] >= Config.LevelRep then
+        ItemName = Config.Config.HighRepItem
+        Item = QBCore.Functions.HasItem(ItemName, 1)
+    end
+    if Item then
+        DeliveredItems = DeliveredItems +1
+        TriggerServerEvent('kevin-methruns:removeitem', ItemName)
+        if DeliveredItems == CollectedItems then
+            if Config.Notify == 'phone' then
+                if Config.Phone == 'qb' then
+                    TriggerEvent('qb-phone:client:CustomNotification', 'TASK NOTIFICATION', 'Return to the boss for payment', 'fas fa-bars', '#c07ef2', 8500)
+                elseif Config.Phone == 'gks' then
+                    TriggerEvent('gksphone:notifi', {title = "TASK NOTIFICATION", message = 'Return to the boss for payment', img= '/html/static/img/icons/messages.png'})
+                elseif Config.Phone == 'qs' then
+                    TriggerEvent('qs-smartphone:client:notify', {title = 'TASK NOTIFICATION', text = 'Return to the boss for payment', icon = "./img/apps/whatsapp.png", timeout = 5500})
                 end
-                FreezeEntityPosition(DropOffPed, false)
-                FreezeEntityPosition(MethVehicle, false)
-                TaskEnterVehicle(DropOffPed, MethVehicle, -1, -1, 1.0, 1, 0)
-                SetPedAsNoLongerNeeded(DropOffPed)
-                Wait(18000)
-                DeleteEntity(MethVehicle)
-                DeleteEntity(DropOffPed)
-
-                MethVehicle = nil
-                LocationData = nil
-                MethCarLocation = vector3(0.0, 0.0, 0.0)
-                SupplerLocation = vector3(0.0, 0.0, 0.0)
-                DropLocation = vector3(0.0, 0.0, 0.0)
-                Supplier = nil
-                Goodies = false
-                ValidPackages = false
-                GotTimer = false
-                GotPackages = false
-                GotMeetLocation = false
-                AmbushPeds = nil
-                CollectedItems = 0
-                DeliveredItems = 0
-                PedSpawned = false
-                CanDropOff = false
-                -- CanCollect = false -- setting cancollect to false when it should be true?
+            elseif Config.Notify == 'qb' then
+                QBCore.Functions.Notify('Return to the boss for payment', 'primary', 4000)
             end
-        else
-            QBCore.Functions.Notify('You do not have the right items here..', 'error', 5000)
+            exports['qb-target']:RemoveTargetEntity(DropOffPed, 'Drop off goods')
+            PedSpawned = false
+            CanCollect = true
+            FreezeEntityPosition(DropOffPed, false)
+            FreezeEntityPosition(MethVehicle, false)
+            TaskEnterVehicle(DropOffPed, MethVehicle, -1, -1, 1.0, 1, 0)
+            CreateThread(function ()
+                while DoesEntityExist(DropOffPed) do
+                    if IsPedInVehicle(DropOffPed, MethVehicle) then
+                        SetPedAsNoLongerNeeded(DropOffPed)
+                        Wait(18000)
+                        DeleteEntity(MethVehicle)
+                        DeleteEntity(DropOffPed)
+                        MethVehicle = nil
+                        LocationData = nil
+                        MethCarLocation = vector3(0.0, 0.0, 0.0)
+                        SupplerLocation = vector3(0.0, 0.0, 0.0)
+                        DropLocation = vector3(0.0, 0.0, 0.0)
+                        Supplier = nil
+                        Goodies = false
+                        ValidPackages = false
+                        GotTimer = false
+                        GotPackages = false
+                        GotMeetLocation = false
+                        AmbushPeds = nil
+                        CollectedItems = 0
+                        DeliveredItems = 0
+                        PedSpawned = false
+                        CanDropOff = false
+                    end
+                    Wait(1000)
+                end
+            end)
         end
-    end)
+    else
+        QBCore.Functions.Notify('You do not have the right items here..', 'error', 5000)
+    end
 end)
 
 CreateThread(function()
     while true do
         if GotCase then
-            local Item = QBCore.Functions.HasItem(Config.Caseitem)
-            if Item then
+            local CaseItem = QBCore.Functions.HasItem(Config.Caseitem)
+            if CaseItem then
                 if not caseprop then
                     caseprop = true
                     TriggerEvent('animations:client:EmoteCommandStart', {"suitcase2"})
