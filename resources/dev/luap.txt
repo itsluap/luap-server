@@ -1,4 +1,11 @@
 
+-- monetization
+    - finish patreon (patreon only goes towards supporting server - no benefits)
+    - finish tebex (tebex is where people can make payments with benefits)
+
+-- bugs
+    - work out all bugs before adding new 'big' scripts
+
 -- go through heist system
     - add more heists
     - seperate hacks for new heists
@@ -26,5 +33,5 @@
     - slowly move into a crafting system only for mechs and most things
 
 
-    bad clothing: 
-        shoes: 182,
+-- bad clothing: 
+    - shoes: 182,
