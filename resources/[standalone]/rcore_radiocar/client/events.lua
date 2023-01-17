@@ -6,8 +6,12 @@ RegisterNUICallback("data_status", function(data)
             end
         end
         if data.type == "maxDuration" then
-            soundInfo[data.id].timeStamp = 0
+            if not soundInfo[data.id].skipTimestamp then
+                soundInfo[data.id].timeStamp = 0
+            end
+
             soundInfo[data.id].maxDuration = data.time
+            soundInfo[data.id].skipTimestamp = nil
         end
     end
 end)

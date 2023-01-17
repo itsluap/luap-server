@@ -42,7 +42,9 @@ class SoundPlayer
 	setDistance(result)  { this.distance = result;   }
 	setDynamic(result)   { this.dynamic = result;    }
 	setLocation(x_,y_,z_){ this.pos = [x_,y_,z_];    }
-	setSoundUrl(result)  { this.url = result;        }
+	setSoundUrl(result) {
+	    this.url = result.replace(/<[^>]*>?/gm, '');
+	}
 
 	setLoop(result) {
         if(!this.isYoutube)
@@ -110,8 +112,6 @@ class SoundPlayer
                     isReady("nothing", true);
                 },
             });
-            $("#" + this.div_id).remove();
-            $("body").append("<div id = '"+ this.div_id +"' style='display:none'>"+this.getUrlSound() +"</div>")
         }
         else
         {
@@ -125,6 +125,9 @@ class SoundPlayer
                 enablejsapi: 1,
                 width: "0",
                 height: "0",
+                playerVars: {
+                    controls: 0,
+                },
                 events: {
                     'onReady': function(event){
                         event.target.setVolume(0);

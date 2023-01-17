@@ -19,44 +19,53 @@ function getDefaultInfo()
     }
 end
 
+function UpdatePlayerPositionInNUI()
+    local ped = PlayerPedId()
+    local pos = GetEntityCoords(ped)
+
+    SendNUIMessage({
+        type = "position",
+        x = pos.x,
+        y = pos.y,
+        z = pos.z
+    })
+end
+
+function GetDistanceForUpdateCoordsInNUI()
+    return IsPedInAnyVehicle(PlayerPedId(), false) and 10.0 or 0.1
+end
+
 if not Config.UseExternalxSound then
     -- updating position on html side so we can count how much volume the sound needs.
     CreateThread(function()
-        local refresh = Config.RefreshTime or 200
+        local refresh = Config.RefreshTime
         local ped = PlayerPedId()
         local pos = GetEntityCoords(ped)
+        local lastPos = pos
         local changedPosition = false
-
-        -- performance save, this stupid thing will save around 10% performance
-        local Wait = Wait
-        local PlayerPedId = PlayerPedId
-        local GetEntityCoords = GetEntityCoords
-        local SendNUIMessage = SendNUIMessage
-
         while true do
             Wait(refresh)
             if not disableMusic and isPlayerCloseToMusic then
                 ped = PlayerPedId()
                 pos = GetEntityCoords(ped)
-                SendNUIMessage({
-                    type = "position",
-                    x = pos.x,
-                    y = pos.y,
-                    z = pos.z
-                })
 
-                if changedPosition then
-                    SendNUIMessage({ type = "unmuteAll" })
+                -- we will update position only when player have moved
+                if #(lastPos - pos) >= GetDistanceForUpdateCoordsInNUI() then
+                    lastPos = pos
+                    UpdatePlayerPositionInNUI()
                 end
 
+                if changedPosition then
+                    UpdatePlayerPositionInNUI()
+                    SendNUIMessage({ type = "unmuteAll" })
+                end
                 changedPosition = false
             else
                 if not changedPosition then
                     changedPosition = true
                     SendNUIMessage({ type = "position", x = -900000, y = -900000, z = -900000 })
+                    SendNUIMessage({ type = "muteAll" })
                 end
-
-                SendNUIMessage({ type = "muteAll" })
                 Wait(1000)
             end
         end
@@ -73,9 +82,27 @@ if not Config.UseExternalxSound then
             isPlayerCloseToMusic = false
             for k, v in pairs(soundInfo) do
                 if v.position ~= nil and v.isDynamic then
-                    if #(v.position - playerPos) < ((v.distance + Config.distanceBeforeUpdatingPos) or 40) then
+                    if #(v.position - playerPos) < v.distance + Config.distanceBeforeUpdatingPos then
                         isPlayerCloseToMusic = true
                         break
+                    end
+                end
+            end
+        end
+    end)
+
+    -- updating timeStamp
+    CreateThread(function()
+        Wait(1100)
+
+        while true do
+            Wait(1000)
+            for k, v in pairs(soundInfo) do
+                if v.playing or v.wasSilented then
+                    if getInfo(v.id).timeStamp ~= nil and getInfo(v.id).maxDuration ~= nil then
+                        if getInfo(v.id).timeStamp < getInfo(v.id).maxDuration then
+                            getInfo(v.id).timeStamp = getInfo(v.id).timeStamp + 1
+                        end
                     end
                 end
             end
@@ -96,16 +123,20 @@ if not Config.UseExternalxSound then
                     if #(v.position - playerPos) < (v.distance + Config.distanceBeforeUpdatingPos) then
                         if brokenOne[v.id] then
                             brokenOne[v.id] = nil
+                            v.wasSilented = false
+                            v.skipTimestamp = true
                             PlayUrlPos(v.id, v.url, v.volume, v.position, v.loop)
                             onPlayStart(v.id, function()
                                 if getInfo(v.id).maxDuration then
-                                    setTimeStamp(v.id, v.time or 0)
+                                    print("v.time", v.timeStamp)
+                                    setTimeStamp(v.id, v.timeStamp or 0)
                                 end
                                 Distance(v.id, v.distance)
                             end)
                         end
                     else
                         if not brokenOne[v.id] then
+                            v.wasSilented = true
                             brokenOne[v.id] = true
                             DestroySilent(v.id)
                         end
@@ -115,45 +146,23 @@ if not Config.UseExternalxSound then
         end
     end)
 
-    -- updating timeStamp
     CreateThread(function()
-        Wait(1100)
-        while true do
-            Wait(1000)
-            for k, v in pairs(soundInfo) do
-                if v.playing and v.maxDuration then
-                    if not v.time then
-                        v.time = 0
-                    end
-                    v.time = v.time + 1
+        Wait(5000)
+        local disableMusic = false
+        if GetResourceState(Config.xSoundName) == "missing" or GetResourceState(Config.xSoundName) == "unknown" then
+            TriggerEvent('chat:addSuggestion', "/streamermode", "Will enable streamer mode")
 
-                    if getInfo(v.id).timeStamp ~= nil and getInfo(v.id).maxDuration ~= nil then
-                        if getInfo(v.id).timeStamp < getInfo(v.id).maxDuration then
-                            getInfo(v.id).timeStamp = getInfo(v.id).timeStamp + 1
-                        end
-                    end
+            RegisterCommand("streamermode", function(source, args, rawCommand)
+                disableMusic = not disableMusic
+
+                if disableMusic then
+                    TriggerEvent('chat:addMessage', { args = { "^1[xSound]", Config.Messages["streamer_on"] } })
+                else
+                    TriggerEvent('chat:addMessage', { args = { "^1[xSound]", Config.Messages["streamer_off"] } })
                 end
-            end
+
+                TriggerEvent("xsound:streamerMode", disableMusic)
+            end, false)
         end
     end)
 end
-
-CreateThread(function()
-    Wait(5000)
-    local disableMusic = false
-    if GetResourceState(Config.xSoundName) == "missing" or GetResourceState(Config.xSoundName) == "unknown" then
-        TriggerEvent('chat:addSuggestion', "/streamermode", "Will enable streamer mode")
-
-        RegisterCommand("streamermode", function(source, args, rawCommand)
-            disableMusic = not disableMusic
-
-            if disableMusic then
-                TriggerEvent('chat:addMessage', { args = { "^1[xSound]", Config.Messages["streamer_on"] } })
-            else
-                TriggerEvent('chat:addMessage', { args = { "^1[xSound]", Config.Messages["streamer_off"] } })
-            end
-
-            TriggerEvent("xsound:streamerMode", disableMusic)
-        end, false)
-    end
-end)
