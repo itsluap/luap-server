@@ -3,7 +3,7 @@ game "gta5"
 
 author "Nuno Radio Man"
 description "[Robbery] Minigames"
-version "1.0.2"
+version "1.0.3"
 
 lua54 'yes'
 
