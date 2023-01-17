@@ -5,7 +5,7 @@ dependencies {
     '/server:4752',
     '/onesync',
     '/gameBuild:2060',
-    'rcore_casino_interior'
+    --'rcore_casino_interior'
 }
 
 version '1.0.34'

@@ -1,5 +1,7 @@
 Functions = {}
 resource = GetCurrentResourceName()
+cashA = 16500
+cashB = 22500
 
 Citizen.CreateThread(function()
 	if cfg.framework == "esx" then
@@ -165,6 +167,11 @@ AddEventHandler(resource..":GiveItem_s",function(player,item_name,item_amount)
 			xPlayer.Functions.AddMoney("cash",item_amount) -- give money to player
 		elseif item == "black_money" then -- check if item is blackmoney
 			xPlayer.Functions.AddMoney("blackmoney",amount) -- give blackmoney to player
+		elseif item_name == "markedbills" then 
+			local info = {
+				worth = math.random(cashA, cashB)
+			}
+			xPlayer.Functions.AddItem("markedbills",item_amount, false, info) -- give blackmoney to player
 		else -- if it is an item
 			xPlayer.Functions.AddItem(item_name,item_amount) -- give item to player
 		end
