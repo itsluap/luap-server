@@ -3,7 +3,7 @@ game "gta5"
 
 author "Nuno Radio Man"
 description "[Robbery] Jewelery Default"
-version "1.0.5"
+version "1.0.8"
 
 dependencies { 
 	"/onesync",
