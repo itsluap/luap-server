@@ -3,6 +3,7 @@ Config = {}
 Config.Core = 'QBCore'
 Config.CoreObject = 'qb-core'
 Config.TriggerName = 'qb-'
+Config.ScriptName = 'tattoo'
 
 Config.AllTattooList = json.decode(LoadResourceFile(GetCurrentResourceName(), 'tattoos.json'))
 Config.TattooCats = {

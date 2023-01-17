@@ -8,7 +8,7 @@ local Tattoshoppriceended = {}
 local ClothingSaveAs = false
 
 local function refreshTattoos()
-	QBCore.Functions.TriggerCallback(Config.TriggerName..'tattooshop:GetPlayerTattoos', function(tattooList)
+	QBCore.Functions.TriggerCallback(Config.TriggerName..Config.ScriptName..':GetPlayerTattoos', function(tattooList)
 		if tattooList then
 			ClearPedDecorations(PlayerPedId())
 			for k, v in pairs(tattooList) do
@@ -191,7 +191,7 @@ function ResetSkin2()
 end
 
 function BuyTattoo(collection, name, label, price)
-	QBCore.Functions.TriggerCallback(Config.TriggerName..'tattooshop:PurchaseTattoo', function(success)
+	QBCore.Functions.TriggerCallback(Config.TriggerName..Config.ScriptName..':PurchaseTattoo', function(success)
 		if success then
 			table.insert(currentTattoos, {collection = collection, nameHash = name, Count = opacity})
 		else
@@ -206,11 +206,11 @@ function RemoveTattoo(name, label)
 			table.remove(currentTattoos, k)
 		end
 	end
-	TriggerServerEvent(Config.TriggerName.."tattooshop:server:RemoveTattoo", currentTattoos)
+	TriggerServerEvent(Config.TriggerName..Config.ScriptName..':server:RemoveTattoo', currentTattoos)
 	QBCore.Functions.Notify("You have removed the " .. GetLabelText(label) .. " tattoo", 'success')
 end
 
-RegisterNetEvent(Config.TriggerName..'tattoo:client:SetaCameraForSell', function(data)
+RegisterNetEvent(Config.TriggerName..Config.ScriptName..':client:SetaCameraForSell', function(data)
 	for k, v in pairs(Config.TattooCats) do
 		if v[1] == data.db2[1] then
 			if not DoesCamExist(cam) then
@@ -229,13 +229,13 @@ RegisterNetEvent(Config.TriggerName..'tattoo:client:SetaCameraForSell', function
 		{
             header = '< Go Back',
             params = {
-                event = Config.TriggerName..'tatto:client:gobacktattolist'
+                event = Config.TriggerName..Config.ScriptName..':client:gobacktattolist'
             }
         },
 		{
             header = '🔄 Change Camera',
             params = {
-                event = Config.TriggerName..'tatto:client:changecamera',
+                event = Config.TriggerName..Config.ScriptName..':client:changecamera',
 				args = data.db2[1]
             }
         },
@@ -244,7 +244,7 @@ RegisterNetEvent(Config.TriggerName..'tattoo:client:SetaCameraForSell', function
 		header = "Apply tatto",
 		txt = "$"..data.db.Price,
 		params = {
-			event = Config.TriggerName.."tattoo:client:EndOftattoIsaccept",
+			event = Config.TriggerName..Config.ScriptName..":client:EndOftattoIsaccept",
 			args = {["price"] = data.db.Price, ["Collection"] = data.db.Collection, ["HashNameFemale"] = data.db.HashNameFemale, ["HashNameMale"] = data.db.HashNameMale, ["name"] = data.db.Name},
 		}
 	}
@@ -258,7 +258,7 @@ RegisterNetEvent(Config.TriggerName..'tattoo:client:SetaCameraForSell', function
 end)
 
 local cameraname = 1
-RegisterNetEvent(Config.TriggerName..'tatto:client:changecamera', function(data)
+RegisterNetEvent(Config.TriggerName..Config.ScriptName..':client:changecamera', function(data)
 	for k, v in pairs(Config.TattooCats) do
 		if v[1] == data then
 			if not DoesCamExist(cam) then
@@ -281,7 +281,7 @@ RegisterNetEvent(Config.TriggerName..'tatto:client:changecamera', function(data)
 	exports[Config.TriggerName..'menu']:openMenu(Tattoshoppriceended)
 end)
 
-RegisterNetEvent(Config.TriggerName..'tattoo:client:EndOftattoIsaccept', function(data)
+RegisterNetEvent(Config.TriggerName..Config.ScriptName..':client:EndOftattoIsaccept', function(data)
 	if DoesCamExist(cam) then
 		DetachCam(cam)
 		SetCamActive(cam, false)
@@ -295,7 +295,7 @@ RegisterNetEvent(Config.TriggerName..'tattoo:client:EndOftattoIsaccept', functio
 	end
 end)
 
-RegisterNetEvent(Config.TriggerName..'tatto:client:gobacktattolist', function()
+RegisterNetEvent(Config.TriggerName..Config.ScriptName..':client:gobacktattolist', function()
 	if DoesCamExist(cam) then
 		DetachCam(cam)
 		SetCamActive(cam, false)
@@ -306,7 +306,7 @@ RegisterNetEvent(Config.TriggerName..'tatto:client:gobacktattolist', function()
 	exports[Config.TriggerName..'menu']:openMenu(Tattoshopprice)
 end)
 
-RegisterNetEvent(Config.TriggerName..'tatto:client:Removing', function()
+RegisterNetEvent(Config.TriggerName..Config.ScriptName..':client:Removing', function()
 	if DoesCamExist(cam) then
 		DetachCam(cam)
 		SetCamActive(cam, false)
@@ -317,7 +317,7 @@ RegisterNetEvent(Config.TriggerName..'tatto:client:Removing', function()
 	exports[Config.TriggerName..'menu']:openMenu(Tattoshopprice)
 end)
 
-RegisterNetEvent(Config.TriggerName..'tatto:client:Wear', function()
+RegisterNetEvent(Config.TriggerName..Config.ScriptName..':client:Wear', function()
 	if DoesCamExist(cam) then
 		DetachCam(cam)
 		SetCamActive(cam, false)
@@ -328,7 +328,7 @@ RegisterNetEvent(Config.TriggerName..'tatto:client:Wear', function()
 	exports[Config.TriggerName..'menu']:openMenu(Tattoshopprice)
 end)
 
-RegisterNetEvent(Config.TriggerName..'tattoo:client:OpenTattooMenu', function(data)
+RegisterNetEvent(Config.TriggerName..Config.ScriptName..':client:OpenTattooMenu', function(data)
 	Tattoshopprice = {
 		{
 			header = "Tattoos for "..data[2],
@@ -337,19 +337,19 @@ RegisterNetEvent(Config.TriggerName..'tattoo:client:OpenTattooMenu', function(da
 		{
             header = '< Go Back',
             params = {
-                event = Config.TriggerName..'tatto:client:GoToMeno'
+                event = Config.TriggerName..Config.ScriptName..':client:GoToMeno'
             }
         },
 		{
             header = '✖ Removing clothes',
             params = {
-                event = Config.TriggerName..'tatto:client:Removing'
+                event = Config.TriggerName..Config.ScriptName..':client:Removing'
             }
         },
 		{
             header = '♻ Wear clothes',
             params = {
-                event = Config.TriggerName..'tatto:client:Wear'
+                event = Config.TriggerName..Config.ScriptName..':client:Wear'
             }
         },
 	}
@@ -363,7 +363,7 @@ RegisterNetEvent(Config.TriggerName..'tattoo:client:OpenTattooMenu', function(da
 								header = "[✔] "..GetLabelText(tattoo.Name).." (Already have)",
 								txt = "Select for forced remove",
 								params = {
-									event = Config.TriggerName.."tattoo:client:deletetattoo",
+									event = Config.TriggerName..Config.ScriptName..":client:deletetattoo",
 									args = {db = tattoo, db2 = data},
 								}
 							}
@@ -374,7 +374,7 @@ RegisterNetEvent(Config.TriggerName..'tattoo:client:OpenTattooMenu', function(da
 						header = "["..(#Tattoshopprice+1).."] "..GetLabelText(tattoo.Name),
 						txt = "$"..tattoo.Price,
 						params = {
-							event = Config.TriggerName.."tattoo:client:SetaCameraForSell",
+							event = Config.TriggerName..Config.ScriptName..":client:SetaCameraForSell",
 							args = {db = tattoo, db2 = data},
 						}
 					}
@@ -387,7 +387,7 @@ RegisterNetEvent(Config.TriggerName..'tattoo:client:OpenTattooMenu', function(da
 								header = "[✔] "..GetLabelText(tattoo.Name).." (Already have)",
 								txt = "Select for forced remove",
 								params = {
-									event = Config.TriggerName.."tattoo:client:deletetattoo",
+									event = Config.TriggerName..Config.ScriptName..":client:deletetattoo",
 									args = {db = tattoo, db2 = data},
 								}
 							}
@@ -398,7 +398,7 @@ RegisterNetEvent(Config.TriggerName..'tattoo:client:OpenTattooMenu', function(da
 						header = "["..(#Tattoshopprice+1).."] "..GetLabelText(tattoo.Name),
 						txt = "$"..tattoo.Price,
 						params = {
-							event = Config.TriggerName.."tattoo:client:SetaCameraForSell",
+							event = Config.TriggerName..Config.ScriptName..":client:SetaCameraForSell",
 							args = {db = tattoo, db2 = data},
 						}
 					}
@@ -417,7 +417,7 @@ RegisterNetEvent(Config.TriggerName..'tattoo:client:OpenTattooMenu', function(da
 	exports[Config.TriggerName..'menu']:openMenu(Tattoshopprice)
 end)
 
-RegisterNetEvent(Config.TriggerName..'tattoo:client:deletetattoo', function(data)
+RegisterNetEvent(Config.TriggerName..Config.ScriptName..':client:deletetattoo', function(data)
 	refreshTattoos()
 	Wait(100)
 	if GetEntityModel(PlayerPedId()) == `mp_m_freemode_01` then
@@ -427,11 +427,11 @@ RegisterNetEvent(Config.TriggerName..'tattoo:client:deletetattoo', function(data
 	end
 end)
 
-RegisterNetEvent(Config.TriggerName..'tattoo:server:settattos', function()
+RegisterNetEvent(Config.TriggerName..Config.ScriptName..':server:settattos', function()
 	refreshTattoos()
 end)
 
-RegisterNetEvent(Config.TriggerName..'tatto:client:GoToMeno', function(data)
+RegisterNetEvent(Config.TriggerName..Config.ScriptName..':client:GoToMeno', function(data)
 	refreshTattoos()
 	if DoesCamExist(cam) then
 		DetachCam(cam)
@@ -451,7 +451,7 @@ RegisterNetEvent(Config.TriggerName..'tatto:client:GoToMeno', function(data)
 			header = v[2],
 			txt = "Tattoo for "..v[2],
 			params = {
-				event = Config.TriggerName.."tattoo:client:OpenTattooMenu",
+				event = Config.TriggerName..Config.ScriptName..":client:OpenTattooMenu",
 				args = v,
 			}
 		}
@@ -496,7 +496,7 @@ CreateThread(function()
 					if dist < 2 then
 						--DrawText3Ds(v[1], v[2], v[3], '~g~E~w~ - Tattoo')
 						if IsControlJustPressed(0, 38) then -- E
-							TriggerEvent(Config.TriggerName..'tatto:client:GoToMeno')
+							TriggerEvent(Config.TriggerName..Config.ScriptName..':client:GoToMeno')
 						end
 					end
 					inRange = true
