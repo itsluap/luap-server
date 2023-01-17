@@ -3,7 +3,7 @@ game "gta5"
 
 author "Nuno Radio Man"
 description "[Robbery] Paleto Gabz"
-version "1.0.0"
+version "1.0.4"
 
 dependencies { 
 	"/onesync",

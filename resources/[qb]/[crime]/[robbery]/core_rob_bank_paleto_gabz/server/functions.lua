@@ -1,4 +1,5 @@
 Functions = {}
+resource = GetCurrentResourceName()
 
 Citizen.CreateThread(function()
 	if cfg.framework == "esx" then
@@ -17,42 +18,42 @@ Citizen.CreateThread(function()
 	end
 end)
 
-RegisterServerEvent("CORE_ROB_BANK_PALETO:GetList_s")
-AddEventHandler("CORE_ROB_BANK_PALETO:GetList_s",function()
+RegisterServerEvent(resource..":GetList_s")
+AddEventHandler(resource..":GetList_s",function()
 	local player = source
 
 	if cfg.framework == "esx" then
-		TriggerClientEvent("CORE_ROB_BANK_PALETO:GetList_c",player,robbery,cfg,player)
+		TriggerClientEvent(resource..":GetList_c",player,robbery,cfg,player)
 	end
 	if cfg.framework == "qbcore" then
-		TriggerClientEvent("CORE_ROB_BANK_PALETO:GetList_c",player,robbery,cfg,player)
+		TriggerClientEvent(resource..":GetList_c",player,robbery,cfg,player)
 	end
 	if cfg.framework == "vrp" then
 		local user_id = Functions.getUserId({player})
 		if user_id ~= nil then
-			TriggerClientEvent("CORE_ROB_BANK_PALETO:GetList_c",player,robbery,cfg,user_id)
+			TriggerClientEvent(resource..":GetList_c",player,robbery,cfg,user_id)
 		end
 	end
 	if cfg.framework == "vrpex" then
 		local user_id = Functions.getUserId(player)
 		if user_id ~= nil then
-			TriggerClientEvent("CORE_ROB_BANK_PALETO:GetList_c",player,robbery,cfg,user_id)
+			TriggerClientEvent(resource..":GetList_c",player,robbery,cfg,user_id)
 		end
 	end
 	if cfg.framework == "nunoradioman" then
 		TriggerEvent("CORE:GetUserID_s",player,function(user_id)
 			if user_id ~= nil then
-				TriggerClientEvent("CORE_ROB_BANK_PALETO:GetList_c",player,robbery,cfg,user_id)
+				TriggerClientEvent(resource..":GetList_c",player,robbery,cfg,user_id)
 			end
 		end)
 	end
 	if cfg.framework == "standalone" then
-		TriggerClientEvent("CORE_ROB_BANK_PALETO:GetList_c",player,robbery,cfg,player)
+		TriggerClientEvent(resource..":GetList_c",player,robbery,cfg,player)
 	end
 end)
-RegisterServerEvent("CORE_ROB_BANK_PALETO:CheckIfItemExists_s") -- THIS EVENT CHECKS FOR ITEMS
-AddEventHandler("CORE_ROB_BANK_PALETO:CheckIfItemExists_s",function(player,item_name,item_amount,cb)
-	if source ~= "" then TriggerEvent("CORE_ROB_BANK_PALETO:Log_s","luaexecutors",player) end
+RegisterServerEvent(resource..":CheckIfItemExists_s") -- THIS EVENT CHECKS FOR ITEMS
+AddEventHandler(resource..":CheckIfItemExists_s",function(player,item_name,item_amount,cb)
+	if source ~= "" then TriggerEvent(resource..":Log_s","luaexecutors",player) end
 
 	if cfg.framework == "esx" then
 		local xPlayer = Functions.GetPlayerFromId(player) -- get player data.
@@ -97,9 +98,9 @@ AddEventHandler("CORE_ROB_BANK_PALETO:CheckIfItemExists_s",function(player,item_
 		cb(true)
 	end
 end)
-RegisterServerEvent("CORE_ROB_BANK_PALETO:RemoveItem_s") -- THIS EVENT REMOVES ITEMS
-AddEventHandler("CORE_ROB_BANK_PALETO:RemoveItem_s",function(player,item_name,item_amount)
-	if source ~= "" then TriggerEvent("CORE_ROB_BANK_PALETO:Log_s","luaexecutors",player) end
+RegisterServerEvent(resource..":RemoveItem_s") -- THIS EVENT REMOVES ITEMS
+AddEventHandler(resource..":RemoveItem_s",function(player,item_name,item_amount)
+	if source ~= "" then TriggerEvent(resource..":Log_s","luaexecutors",player) end
 
 	if cfg.framework == "esx" then
 		local xPlayer = Functions.GetPlayerFromId(player) -- get player data.
@@ -142,11 +143,11 @@ AddEventHandler("CORE_ROB_BANK_PALETO:RemoveItem_s",function(player,item_name,it
 
 	end
 
-	TriggerEvent("CORE_ROB_BANK_PALETO:Log_s","removeitem",player,{item = item_name,amount = item_amount})
+	TriggerEvent(resource..":Log_s","removeitem",player,{item = item_name,amount = item_amount})
 end)
-RegisterServerEvent("CORE_ROB_BANK_PALETO:GiveItem_s") -- THIS EVENT ADDS ITEMS
-AddEventHandler("CORE_ROB_BANK_PALETO:GiveItem_s",function(player,item_name,item_amount)
-	if source ~= "" then TriggerEvent("CORE_ROB_BANK_PALETO:Log_s","luaexecutors",player) end
+RegisterServerEvent(resource..":GiveItem_s") -- THIS EVENT ADDS ITEMS
+AddEventHandler(resource..":GiveItem_s",function(player,item_name,item_amount)
+	if source ~= "" then TriggerEvent(resource..":Log_s","luaexecutors",player) end
 
 	if cfg.framework == "esx" then
 		local xPlayer = Functions.GetPlayerFromId(player) -- get player data.
@@ -191,10 +192,10 @@ AddEventHandler("CORE_ROB_BANK_PALETO:GiveItem_s",function(player,item_name,item
 
 	end
 
-	TriggerEvent("CORE_ROB_BANK_PALETO:Log_s","giveitem",player,{item = item_name,amount = item_amount})
+	TriggerEvent(resource..":Log_s","giveitem",player,{item = item_name,amount = item_amount})
 end)
-RegisterServerEvent("CORE_ROB_BANK_PALETO:CheckForPolice_s") -- THIS EVENT CHECK FOR POLICE
-AddEventHandler("CORE_ROB_BANK_PALETO:CheckForPolice_s",function(cb)
+RegisterServerEvent(resource..":CheckForPolice_s") -- THIS EVENT CHECK FOR POLICE
+AddEventHandler(resource..":CheckForPolice_s",function(cb)
 	if cfg.framework == "esx" then
 		local xPlayers = Functions.GetPlayers() -- get all players.
 
@@ -267,11 +268,9 @@ AddEventHandler("CORE_ROB_BANK_PALETO:CheckForPolice_s",function(cb)
 		cb(true) -- return true
 	end
 end)
-RegisterServerEvent("CORE_ROB_BANK_PALETO:CallPolice_s") -- THIS EVENT CALLS THE POLICE
-AddEventHandler("CORE_ROB_BANK_PALETO:CallPolice_s",function(data)
-	if cfg.dispatch == "ps_dispatch" or cfg.dispatch == "cd_dispatch" or cfg.dispatch == "core_dispatch" then
-		TriggerClientEvent("CORE_ROB_BANK_PALETO:PoliceNotification_c",data.player,data)
-	else
+RegisterServerEvent(resource..":CallPolice_s") -- THIS EVENT CALLS THE POLICE
+AddEventHandler(resource..":CallPolice_s",function(data)
+	if cfg.dispatch == "nunoradioman" then
 		if cfg.framework == "esx" then
 			local xPlayers = Functions.GetPlayers() -- get all players.
 	
@@ -280,7 +279,7 @@ AddEventHandler("CORE_ROB_BANK_PALETO:CallPolice_s",function(data)
 				for i=1,#xPlayers,1 do -- loop all players once.
 					local xPlayer = Functions.GetPlayerFromId(xPlayers[i]) -- get player info.
 					if xPlayer.job.name == group then -- check group.
-						TriggerClientEvent("CORE_ROB_BANK_PALETO:PoliceNotification_c",player,{coords = coords}) -- send notification to the player that has the police group.
+						TriggerClientEvent(resource..":PoliceNotification_c",xPlayers[i],data) -- send notification to the player that has the police group.
 					end
 				end
 			end
@@ -292,7 +291,7 @@ AddEventHandler("CORE_ROB_BANK_PALETO:CallPolice_s",function(data)
 			for groupindex,group in pairs(cfg.police.groups) do -- loop all groups in the cfg.police.groups
 				for k,v in pairs(xPlayers) do -- loop all players once.
 					if v.PlayerData.job.name == group and v.PlayerData.job.onduty then -- check group and duty.
-						TriggerClientEvent("CORE_ROB_BANK_PALETO:PoliceNotification_c",player,{coords = coords}) -- send notification to the player that has the police group.
+						TriggerClientEvent(resource..":PoliceNotification_c",k,data) -- send notification to the player that has the police group.
 					end
 				end
 			end
@@ -301,7 +300,8 @@ AddEventHandler("CORE_ROB_BANK_PALETO:CallPolice_s",function(data)
 			for groupindex,group in pairs(cfg.police.groups) do -- loop all groups in the cfg.police.groups
 				local cops = Functions.getUsersByPermission({group}) -- get all players with that group.
 				for k,v in pairs(cops) do -- loops all players that has that group.
-					TriggerClientEvent("CORE_ROB_BANK_PALETO:PoliceNotification_c",player,{coords = coords}) -- send notification to the player that has the police group.
+					local player = Functions.getUserSource({v}) -- get player source
+					TriggerClientEvent(resource..":PoliceNotification_c",player,data) -- send notification to the player that has the police group.
 				end
 			end
 		end
@@ -309,21 +309,24 @@ AddEventHandler("CORE_ROB_BANK_PALETO:CallPolice_s",function(data)
 			for groupindex,group in pairs(cfg.police.groups) do -- loop all groups in the cfg.police.groups
 				local cops = Functions.getUsersByPermission(group) -- get all players with that group.
 				for k,v in pairs(cops) do -- loops all players that has that group.
-					TriggerClientEvent("CORE_ROB_BANK_PALETO:PoliceNotification_c",player,{coords = coords}) -- send notification to the player that has the police group.
+					local player = Functions.getUserSource(v) -- get player source
+					TriggerClientEvent(resource..":PoliceNotification_c",player,data) -- send notification to the player that has the police group.
 				end
 			end
 		end
 		if cfg.framework == "nunoradioman" then
-			TriggerClientEvent("CORE_ROB_BANK_PALETO:PoliceNotification_c",-1,data) -- send notification to the player that has the police group.
+			TriggerClientEvent(resource..":PoliceNotification_c",-1,data) -- send notification to the player that has the police group.
 		end
+	else
+		TriggerClientEvent(resource..":PoliceNotification_c",data.player,data)
 	end
 end)
-RegisterServerEvent("CORE_ROB_BANK_PALETO:Notification_s") -- THIS EVENT CALLS AN NOTIFICATION
-AddEventHandler("CORE_ROB_BANK_PALETO:Notification_s",function(data)
-	TriggerClientEvent("CORE_ROB_BANK_PALETO:Notification_c",data.player,data) -- sends notification to certain player.
+RegisterServerEvent(resource..":Notification_s") -- THIS EVENT CALLS AN NOTIFICATION
+AddEventHandler(resource..":Notification_s",function(data)
+	TriggerClientEvent(resource..":Notification_c",data.player,data) -- sends notification to certain player.
 end)
-RegisterServerEvent("CORE_ROB_BANK_PALETO:Log_s") -- THIS EVENT CALLS AN LOG
-AddEventHandler("CORE_ROB_BANK_PALETO:Log_s",function(type,player,data)
+RegisterServerEvent(resource..":Log_s") -- THIS EVENT CALLS AN LOG
+AddEventHandler(resource..":Log_s",function(type,player,data)
 	if cfg.log.active then
 		local identifiers = GetPlayerIdentifiers(player)
 		local ids = {["rockstar"] = "Unknown",["discord"] = "Unknown",["ip"] = "Unknown",["steam"] = "Unknown",}
@@ -377,4 +380,6 @@ AddEventHandler("CORE_ROB_BANK_PALETO:Log_s",function(type,player,data)
 		PerformHttpRequest(cfg.log.logs[type].webhook,function(err,text,headers)end,"POST",json.encode({username=cfg.log.logs[type].username,embeds=embeds,avatar_url=cfg.log.logs[type].avatar}),{["Content-Type"]="application/json"})
 	end
 end)
+
 function split(str,sep) local array = {} local reg = string.format("([^%s]+)",sep) for mem in string.gmatch(str,reg) do table.insert(array,mem) end return array end
+function clone(obj, seen) if type(obj) ~= 'table' then return obj end if seen and seen[obj] then return seen[obj] end local s = seen or {} local res = {} s[obj] = res for k, v in pairs(obj) do res[clone(k, s)] = clone(v, s) end return setmetatable(res, getmetatable(obj)) end
