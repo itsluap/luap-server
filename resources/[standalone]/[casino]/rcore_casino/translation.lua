@@ -242,7 +242,14 @@ Translation = {
     XMAS_YOU_GOT_X = "You got %s! (%s)",
     XMAS_ALREADY_GOT = "You've already got you daily Christmas gift :)",
     XMAS_ALREADY_GOT_COOLDOWN = "You've already got you daily Christmas gift :). Come back in: %s",
-    CHIPS = "Casino Chips"
+    CHIPS = "Casino Chips",
+    OPENINGHOURS_CLOSED = "The Diamond Casino is closed. Come back again %s",
+    OPENINGHOURS_TODAY = "today at %s",
+    OPENINGHOURS_TOMORROW = "tomorrow at %s",
+    OPENINGHOURS_INXDAYS = "in %d days, at %s",
+    OPENINGHOURS_NEVEROPEN = "(Date will be announced soon)",
+    OPENINGHOURS_OPEN = "Open",
+    OPENINGHOURS_CLOSED_TITLE = "Closed",
 }
 
 Translation.POKER_HAND_NAMES["STRAIGHT_FLUSH"] = "a Straight Flush"

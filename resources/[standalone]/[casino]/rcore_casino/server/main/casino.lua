@@ -152,6 +152,14 @@ end)
 RegisterNetEvent("Casino:UseSeating")
 AddEventHandler("Casino:UseSeating", function(seatIndex)
     local playerId = source
+
+    -- stop if already sitting
+    for k, v in pairs(Seatings) do
+        if v == playerId then
+            return
+        end
+    end
+    
     if not Seatings[seatIndex] then
         BroadcastCasino("Casino:UseSeating", playerId, seatIndex)
         Cache:SetPlayerState(playerId, "Game", {
@@ -799,6 +807,50 @@ function CheckSociety()
     end)
 end
 
+function IsCasinoOpenAtCurrentTime()
+    if not Config.OpeningHours then
+        return true
+    end
+
+    local currentDay = os.date("%w") + 1
+    local currentHour = math.ceil(os.date("%H"))
+    local hours = Config.OpeningHours[currentDay]
+
+    if not hours then
+        return false
+    end
+
+    return currentHour >= hours[1] and currentHour <= hours[2]
+end
+
+function GetCasinoNextOpenTime()
+    if not Config.OpeningHours then
+        return Translation.Get("OPENINGHOURS_OPEN")
+    end
+
+    local currentDay = os.date("%w")
+    local currentHour = math.ceil(os.date("%H"))
+    local inDays = 0
+
+    for i = 1, 7 do
+        local day = Repeat(currentDay, 7) + 1
+        local hours = Config.OpeningHours[day]
+
+        if inDays == 0 and hours and hours[1] > currentHour then
+            return string.format(Translation.Get("OPENINGHOURS_TODAY"), hours[1] .. ":00")
+        elseif inDays == 1 and hours then
+            return string.format(Translation.Get("OPENINGHOURS_TOMORROW"), hours[1] .. ":00")
+        elseif inDays > 1 and hours then
+            return string.format(Translation.Get("OPENINGHOURS_INXDAYS"), inDays, hours[1] .. ":00")
+        end
+
+        inDays = inDays + 1
+        currentDay = currentDay + 1
+    end
+
+    return Translation.Get("OPENINGHOURS_NEVEROPEN")
+end
+
 -- player wants to refresh his balance
 RegisterNetEvent("Casino:Leave")
 AddEventHandler("Casino:Leave", function()
@@ -934,6 +986,16 @@ AddEventHandler("Casino:FuseBoxFixed", function()
     BroadcastCasino("Casino:FuseBoxStateChanged", false)
 end)
 
+-- player fixed fuse box
+RegisterNetEvent("Casino:CheckOpenState")
+AddEventHandler("Casino:CheckOpenState", function()
+    local playerId = source
+    local isOpen = IsCasinoOpenAtCurrentTime()
+    local nextOpenTime = GetCasinoNextOpenTime()
+
+    TriggerClientEvent("Casino:CheckOpenState", playerId, isOpen, nextOpenTime)
+end)
+
 -- disable maps if not using
 local mapDependencies = {}
 mapDependencies[1] = "rcore_casino_map"
@@ -945,8 +1007,8 @@ for k, v in pairs(mapDependencies) do
             while GetResourceState(v) ~= "started" do
                 Wait(5000)
             end
-            print("^3[Casino] Disabling resource " .. v .. ", because casino has been set to use another map.^7")
-            StopResource(v)
+            print("^1[Casino] You should disable resource " .. v .. ", because casino has been set to use another map.^7")
+            print("^1[Casino] You should remove '" .. v .. "' from dependencies in fxmanifest.lua.^7")
         end)
     end
 end
