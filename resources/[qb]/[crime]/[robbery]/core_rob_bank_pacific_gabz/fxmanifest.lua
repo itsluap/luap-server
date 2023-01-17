@@ -3,7 +3,7 @@ game "gta5"
 
 author "Nuno Radio Man"
 description "[Robbery] Pacific Gabz"
-version "1.0.0"
+version "1.0.3"
 
 dependencies { 
 	"/onesync",
@@ -19,7 +19,7 @@ client_scripts {
 	"client/*"
 }
 server_scripts { 
-	--"@vrp/lib/utils.lua",
+	"@vrp/lib/utils.lua",
 	"cfg/*",
 	"server/*"
 }
