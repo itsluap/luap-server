@@ -81,7 +81,7 @@ cfg.robbery = {
     
             hash_type = "normal", -- "normal" "rarity" "nospawn"
             hash = GetHashKey("hei_prop_hei_securitypanel"), -- hash of the model that will spawn
-    
+            
             net_id = 0, -- dont change
             status = false, -- dont change
             done = false, -- dont change
