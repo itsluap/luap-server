@@ -76,7 +76,7 @@ cfg.robbery = {
     interactables = {
         { -- 2
             type = "securitypanel01", -- type of loot
-            pos = {-100.10835,6465.88671,31.63413,0.0,0.0,316.0}, -- {pos_x,pos_y,pos_z,rot_x,rot_y,rot_z}
+            pos = {-100.10835,6465.88671,31.46128,0.0,0.0,316.0}, -- {pos_x,pos_y,pos_z,rot_x,rot_y,rot_z}
             offset = {0.0,0.0,0.0,0.0}, -- {offset_x,offset_y,offset_z,offset_heading}
     
             hash_type = "normal", -- "normal" "rarity" "nospawn"
