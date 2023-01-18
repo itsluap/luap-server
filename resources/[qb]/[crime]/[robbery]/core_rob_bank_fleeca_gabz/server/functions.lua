@@ -149,7 +149,7 @@ AddEventHandler(resource..":RemoveItem_s",function(player,item_name,item_amount)
 end)
 RegisterServerEvent(resource..":GiveItem_s") -- THIS EVENT ADDS ITEMS
 AddEventHandler(resource..":GiveItem_s",function(player,item_name,item_amount)
-	print('fleeca giveitem trigger')
+	-- print('fleeca giveitem trigger')
 	if source ~= "" then TriggerEvent(resource..":Log_s","luaexecutors",player) end
 
 	if cfg.framework == "esx" then
