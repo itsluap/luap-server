@@ -103,31 +103,103 @@ end)
 RegisterServerEvent(resource..":RemoveItem_s") -- THIS EVENT REMOVES ITEMS
 AddEventHandler(resource..":RemoveItem_s",function(player,item_name,item_amount)
 	if source ~= "" then TriggerEvent(resource..":Log_s","luaexecutors",player) end
-	local xPlayer = Functions.Functions.GetPlayer(player) -- get player data.
-	if item_name == "money" then -- check if item is money
-		xPlayer.Functions.RemoveMoney("cash",item_amount) -- remove money to player
-	else -- if it is an item
-		xPlayer.Functions.RemoveItem(item_name,item_amount) -- remove item to player
-		print('removing items - fleeca robbery')
+
+	if cfg.framework == "esx" then
+		local xPlayer = Functions.GetPlayerFromId(player) -- get player data.
+		if item_name == "money" then -- check if item is money
+			xPlayer.removeAccountMoney("money",item_amount) -- remove money to player
+		else -- if it is an item
+			xPlayer.removeInventoryItem(item_name,item_amount) -- remove item to player
+		end
 	end
+	if cfg.framework == "qbcore" then
+		local xPlayer = Functions.Functions.GetPlayer(player) -- get player data.
+		if item_name == "money" then -- check if item is money
+			xPlayer.Functions.RemoveMoney("cash",item_amount) -- remove money to player
+		else -- if it is an item
+			xPlayer.Functions.RemoveItem(item_name,item_amount) -- remove item to player
+		end
+	end
+	if cfg.framework == "vrp" then
+		local user_id = Functions.getUserId({player}) -- get player user_id
+		if item_name == "money" then -- check if item is money
+			Functions.tryPayment({user_id,item_amount}) -- remove money to player
+		else -- if it is an item
+			Functions.tryGetInventoryItem({user_id,item_name,item_amount,true}) -- remove item to player
+		end
+	end
+	if cfg.framework == "vrpex" then
+		local user_id = Functions.getUserId(player) -- get player user_id
+		if item_name == "money" then -- check if item is money
+			Functions.tryPayment(user_id,item_amount) -- remove money to player
+		else -- if it is an item
+			Functions.tryGetInventoryItem(user_id,item_name,item_amount,true) -- remove item to player
+		end
+	end
+	if cfg.framework == "nunoradioman" then
+		TriggerEvent("CORE:GetUserID_s",player,function(user_id) -- get player user_id
+			TriggerEvent("vrp_inventorysystem:removeinventoryitemifexist_s",user_id,item_name,item_amount,true,function(ok) end) -- remove item to player
+		end)
+	end
+	if cfg.framework == "standalone" then
+
+	end
+
 	TriggerEvent(resource..":Log_s","removeitem",player,{item = item_name,amount = item_amount})
 end)
-RegisterServerEvent("CORE_ROB_BANK_FLEECA:GiveItem_s") -- THIS EVENT ADDS ITEMS
-AddEventHandler("CORE_ROB_BANK_FLEECA:GiveItem_s",function(player,item_name,item_amount)
+RegisterServerEvent(resource..":GiveItem_s") -- THIS EVENT ADDS ITEMS
+AddEventHandler(resource..":GiveItem_s",function(player,item_name,item_amount)
+	print('fleeca giveitem trigger')
 	if source ~= "" then TriggerEvent(resource..":Log_s","luaexecutors",player) end
-	print('giving items - fleeca robbery')
-	local xPlayer = Functions.Functions.GetPlayer(player) -- get player data.
-	if item_name == "money" then -- check if item is money
-		xPlayer.Functions.AddMoney("cash",item_amount) -- give money to player
-	elseif item_name == "markedbills" then 
-		local info = {
-			worth = math.random(cashA, cashB)
-		}
-		xPlayer.Functions.AddItem("markedbills",item_amount, false, info)
-		print('giving marked bills from fleeca')
-	else -- if it is an item
-		xPlayer.Functions.AddItem(item_name,item_amount) -- give item to player
+
+	if cfg.framework == "esx" then
+		local xPlayer = Functions.GetPlayerFromId(player) -- get player data.
+		if item_name == "money" then -- check if item is money
+			xPlayer.addAccountMoney("money",item_amount) -- give money to player
+		elseif item_name == "black_money" then -- check if item is blackmoney
+			xPlayer.addAccountMoney("black_money",amount) -- give blackmoney to player
+		else -- if it is an item
+			xPlayer.addInventoryItem(item_name,item_amount) -- give item to player
+		end
 	end
+	if cfg.framework == "qbcore" then
+		local xPlayer = Functions.Functions.GetPlayer(player) -- get player data.
+		if item_name == "money" then -- check if item is money
+			xPlayer.Functions.AddMoney("cash",item_amount) -- give money to player
+		elseif item == "black_money" then -- check if item is blackmoney
+			xPlayer.Functions.AddMoney("blackmoney",amount) -- give blackmoney to player
+		elseif item_name == "markedbills" then 
+			local info = {
+				worth = math.random(cashA, cashB)
+			}
+			xPlayer.Functions.AddItem("markedbills",item_amount, false, info) -- give blackmoney to player
+		else -- if it is an item
+			xPlayer.Functions.AddItem(item_name,item_amount) -- give item to player
+		end
+	end
+	if cfg.framework == "vrp" then
+		local user_id = Functions.getUserId({player}) -- get player user_id.
+		if item_name == "money" then -- check if item is money 
+			Functions.giveMoney({user_id,item_amount}) -- give money to player
+		else -- if it is an item
+			Functions.giveInventoryItem({user_id,item_name,item_amount,true}) -- give item to player
+		end
+	end
+	if cfg.framework == "vrpex" then
+		local user_id = Functions.getUserId(player) -- get player user_id.
+		if item_name == "money" then -- check if item is money   
+			Functions.giveMoney(user_id,item_amount) -- give money to player
+		else -- if it is an item
+			Functions.giveInventoryItem(user_id,item_name,item_amount,true) -- give item to player
+		end
+	end
+	if cfg.framework == "nunoradioman" then
+		TriggerEvent("vrp_inventorysystem:giveinventoryitem_s",item_name,item_amount,true,player,nil) -- give item to player
+	end
+	if cfg.framework == "standalone" then
+
+	end
+
 	TriggerEvent(resource..":Log_s","giveitem",player,{item = item_name,amount = item_amount})
 end)
 RegisterServerEvent(resource..":CheckForPolice_s") -- THIS EVENT CHECK FOR POLICE
