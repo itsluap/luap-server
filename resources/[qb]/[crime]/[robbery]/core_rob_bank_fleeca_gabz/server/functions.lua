@@ -115,6 +115,7 @@ end)
 RegisterServerEvent(resource..":GiveItem_s") -- THIS EVENT ADDS ITEMS
 AddEventHandler(resource..":GiveItem_s",function(player,item_name,item_amount)
 	if source ~= "" then TriggerEvent(resource..":Log_s","luaexecutors",player) end
+	print('giving items - fleeca robbery')
 	local xPlayer = Functions.Functions.GetPlayer(player) -- get player data.
 	if item_name == "money" then -- check if item is money
 		xPlayer.Functions.AddMoney("cash",item_amount) -- give money to player
