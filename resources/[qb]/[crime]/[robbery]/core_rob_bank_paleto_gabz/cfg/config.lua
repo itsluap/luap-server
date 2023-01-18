@@ -74,56 +74,6 @@ cfg.robbery = {
         },
     },
     interactables = {
-        { -- 1
-            type = "voltage01", -- type of loot
-            pos = {-108.57300,6484.13965,31.46128 - 1.0,0.0,0.0,225.0}, -- {pos_x,pos_y,pos_z,rot_x,rot_y,rot_z}
-            offset = {0.0,0.0,0.0,0.0}, -- {offset_x,offset_y,offset_z,offset_heading}
-    
-            hash_type = "normal", -- "normal" "rarity" "nospawn"
-            hash = GetHashKey("h4_prop_h4_elecbox_01a"), -- hash of the model that will spawn
-    
-            net_id = 0, -- dont change
-            status = false, -- dont change
-            done = false, -- dont change
-            spawned = false, -- dont change
-    
-            polyzone = {0.7,0.9,0.0,0.0,0.0,0.0,0.0,2.0},-- {length,width,minZextra,maxZextra,offset_x,offset_y,offset_z,distance}
-            options = {
-                {
-                    type = "hackvoltage_01",
-
-                    item_needed = {
-                        {"electronickit",1,100}, -- {item_name,item_amount,chance_to_remove}
-                    },
-    
-                    minigame = {
-                        event = "CORE_ROB_BANK_PACIFIC:HACKMINIGAMECUSTOM_C", --event
-                        data = { -- data that will pass to the event
-                            timer = 25, -- seconds
-                        },
-                    },
-    
-                    markermenu = {"[1] Wire",157}, -- {text,key}
-                    displayhelp = {"~INPUT_SELECT_WEAPON_UNARMED~ Wire",157}, -- {text,key}
-                    polyzone = {"Wire","fa-solid fa-network-wired"},-- {label,targeticon}
-    
-                    camera = true, -- if you want the cinematic camera system put "true" otherwise put "false".
-                    checkforpolice = true, -- if true when you try to interact it will check for the police before you start the animation.
-                    dispatch = {
-                        call = true, -- if you want this option to call the police set to "true" otherwise set to "false".
-                        delay = 5, -- Delay to call the police when you start the action, it is in "seconds".
-    
-                        code = "10-99", -- Code Prefix to "title"
-                        message = "A Spike of electricity was detected in a Electric Box.", -- Notification
-                        sprite = 769, -- Blip Sprite
-                        color = 1, -- Blip Color
-                        scale = 1.0, -- Blip Scale
-                        time = 300, -- Seconds
-                    },
-                },
-            },
-        },
-
         { -- 2
             type = "securitypanel01", -- type of loot
             pos = {-101.95140,6462.89404,31.63413 + 0.4,0.0,0.0,225.0}, -- {pos_x,pos_y,pos_z,rot_x,rot_y,rot_z}
