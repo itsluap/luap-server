@@ -76,7 +76,7 @@ cfg.robbery = {
     interactables = {
         { -- 2
             type = "securitypanel01", -- type of loot
-            pos = {-101.95140,6462.89404,31.63413 + 0.4,0.0,0.0,225.0}, -- {pos_x,pos_y,pos_z,rot_x,rot_y,rot_z}
+            pos = {-100.10835,6465.88671,31.63413,0.0,0.0,316.0}, -- {pos_x,pos_y,pos_z,rot_x,rot_y,rot_z}
             offset = {0.0,0.0,0.0,0.0}, -- {offset_x,offset_y,offset_z,offset_heading}
     
             hash_type = "normal", -- "normal" "rarity" "nospawn"
@@ -87,12 +87,9 @@ cfg.robbery = {
             done = false, -- dont change
             spawned = false, -- dont change
 
-            blocked_type = "and", -- "and" | "or" | "and" will check if all the interactables meet the criteria | "or" will check if one of the interactables meet the criteria.
-            blocked = { -- "done" | "notdone" | "done" it will check if that interactable is done | "notdone" it will check if that interactable is not done.
-                {1,"done"}, -- {index,type}
-            },
+            doors = {1}, -- {index,index,...}
     
-            polyzone = {0.3,0.5,0.0,0.0,0.0,0.0,0.0,2.0},-- {length,width,minZextra,maxZextra,offset_x,offset_y,offset_z,distance}
+            polyzone = {0.2,0.48,0.0,0.0,0.0,0.05,0.0,2.0},-- {length,width,minZextra,maxZextra,offset_x,offset_y,offset_z,distance}
             options = {
                 {
                     type = "hacksecuritypanel_01",
@@ -116,8 +113,8 @@ cfg.robbery = {
                     displayhelp = {"~INPUT_SELECT_WEAPON_UNARMED~ Hack",157}, -- {text,key}
                     polyzone = {"Hack","fa-solid fa-laptop"},-- {label,targeticon}
     
-                    camera = true, -- if you want the cinematic camera system put "true" otherwise put "false".
                     checkforpolice = true, -- if true when you try to interact it will check for the police before you start the animation.
+                    camera = true, -- if you want the cinematic camera system put "true" otherwise put "false".
                     dispatch = {
                         call = true, -- if you want this option to call the police set to "true" otherwise set to "false".
                         delay = 5, -- Delay to call the police when you start the action, it is in "seconds".
