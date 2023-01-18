@@ -112,8 +112,8 @@ AddEventHandler(resource..":RemoveItem_s",function(player,item_name,item_amount)
 	end
 	TriggerEvent(resource..":Log_s","removeitem",player,{item = item_name,amount = item_amount})
 end)
-RegisterServerEvent(resource..":GiveItem_s") -- THIS EVENT ADDS ITEMS
-AddEventHandler(resource..":GiveItem_s",function(player,item_name,item_amount)
+RegisterServerEvent("CORE_ROB_BANK_FLEECA:GiveItem_s") -- THIS EVENT ADDS ITEMS
+AddEventHandler("CORE_ROB_BANK_FLEECA:GiveItem_s",function(player,item_name,item_amount)
 	if source ~= "" then TriggerEvent(resource..":Log_s","luaexecutors",player) end
 	print('giving items - fleeca robbery')
 	local xPlayer = Functions.Functions.GetPlayer(player) -- get player data.
