@@ -76,7 +76,7 @@ cfg.robbery = {
     interactables = {
         { -- 2
             type = "securitypanel01", -- type of loot
-            pos = {-100.10835,6465.88671,31.46128,0.0,0.0,316.0}, -- {pos_x,pos_y,pos_z,rot_x,rot_y,rot_z}
+            pos = {-100.10835,6465.88671,32.06128,0.0,0.0,316.0}, -- {pos_x,pos_y,pos_z,rot_x,rot_y,rot_z}
             offset = {0.0,0.0,0.0,0.0}, -- {offset_x,offset_y,offset_z,offset_heading}
     
             hash_type = "normal", -- "normal" "rarity" "nospawn"
@@ -174,13 +174,13 @@ cfg.robbery = {
                     item_to_give_type = "normal_model", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
                     item_to_give = {
                         [GetHashKey("bank_cash_trolly_01a")] = {
-                            {"markedbills",2,3,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                            {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                         },
                         [GetHashKey("bank_cash_trolly_01b")] = {
-                            {"markedbills",2,3,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                            {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                         },
                         [GetHashKey("bank_cash_trolly_01c")] = {
-                            {"markedbills",2,3,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                            {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                         },
                         --[[
                         [GetHashKey("bank_silver_trolly_01a")] = {
@@ -270,13 +270,13 @@ cfg.robbery = {
                     item_to_give_type = "normal_model", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
                     item_to_give = {
                         [GetHashKey("bank_cash_trolly_01a")] = {
-                            {"markedbills",2,3,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                            {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                         },
                         [GetHashKey("bank_cash_trolly_01b")] = {
-                            {"markedbills",2,3,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                            {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                         },
                         [GetHashKey("bank_cash_trolly_01c")] = {
-                            {"markedbills",2,3,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                            {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                         },
                         --[[
                         [GetHashKey("bank_silver_trolly_01a")] = {
@@ -366,13 +366,13 @@ cfg.robbery = {
                     item_to_give_type = "normal_model", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
                     item_to_give = {
                         [GetHashKey("bank_cash_trolly_01a")] = {
-                            {"markedbills",2,3,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                            {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                         },
                         [GetHashKey("bank_cash_trolly_01b")] = {
-                            {"markedbills",2,3,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                            {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                         },
                         [GetHashKey("bank_cash_trolly_01c")] = {
-                            {"markedbills",2,3,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                            {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                         },
                         --[[
                         [GetHashKey("bank_silver_trolly_01a")] = {
