@@ -183,7 +183,7 @@ cfg.robbery = {
                     { 
                         type = "grabtrolly_01",
         
-                        item_to_give_type = "hash_normal", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
+                        item_to_give_type = "normal_model", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
                         item_to_give = {
                             [GetHashKey("bank_cash_trolly_01a")] = {
                                 {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
@@ -349,7 +349,7 @@ cfg.robbery = {
                     { 
                         type = "grabtrolly_01",
         
-                        item_to_give_type = "hash_normal", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
+                        item_to_give_type = "normal_model", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
                         item_to_give = {
                             [GetHashKey("bank_cash_trolly_01a")] = {
                                 {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
@@ -538,7 +538,7 @@ cfg.robbery = {
                     { 
                         type = "grabtrolly_01",
         
-                        item_to_give_type = "hash_normal", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
+                        item_to_give_type = "normal_model", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
                         item_to_give = {
                             [GetHashKey("bank_cash_trolly_01a")] = {
                                 {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
@@ -704,7 +704,7 @@ cfg.robbery = {
                     { 
                         type = "grabtrolly_01",
         
-                        item_to_give_type = "hash_normal", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
+                        item_to_give_type = "normal_model", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
                         item_to_give = {
                             [GetHashKey("bank_cash_trolly_01a")] = {
                                 {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
@@ -893,7 +893,7 @@ cfg.robbery = {
                     { 
                         type = "grabtrolly_01",
         
-                        item_to_give_type = "hash_normal", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
+                        item_to_give_type = "normal_model", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
                         item_to_give = {
                             [GetHashKey("bank_cash_trolly_01a")] = {
                                 {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
@@ -1059,7 +1059,7 @@ cfg.robbery = {
                     { 
                         type = "grabtrolly_01",
         
-                        item_to_give_type = "hash_normal", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
+                        item_to_give_type = "normal_model", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
                         item_to_give = {
                             [GetHashKey("bank_cash_trolly_01a")] = {
                                 {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
@@ -1248,7 +1248,7 @@ cfg.robbery = {
                     { 
                         type = "grabtrolly_01",
         
-                        item_to_give_type = "hash_normal", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
+                        item_to_give_type = "normal_model", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
                         item_to_give = {
                             [GetHashKey("bank_cash_trolly_01a")] = {
                                 {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
@@ -1414,7 +1414,7 @@ cfg.robbery = {
                     { 
                         type = "grabtrolly_01",
         
-                        item_to_give_type = "hash_normal", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
+                        item_to_give_type = "normal_model", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
                         item_to_give = {
                             [GetHashKey("bank_cash_trolly_01a")] = {
                                 {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
@@ -1603,7 +1603,7 @@ cfg.robbery = {
                     { 
                         type = "grabtrolly_01",
         
-                        item_to_give_type = "hash_normal", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
+                        item_to_give_type = "normal_model", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
                         item_to_give = {
                             [GetHashKey("bank_cash_trolly_01a")] = {
                                 {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
@@ -1769,7 +1769,7 @@ cfg.robbery = {
                     { 
                         type = "grabtrolly_01",
         
-                        item_to_give_type = "hash_normal", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
+                        item_to_give_type = "normal_model", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
                         item_to_give = {
                             [GetHashKey("bank_cash_trolly_01a")] = {
                                 {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
@@ -1958,7 +1958,7 @@ cfg.robbery = {
                     { 
                         type = "grabtrolly_01",
         
-                        item_to_give_type = "hash_normal", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
+                        item_to_give_type = "normal_model", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
                         item_to_give = {
                             [GetHashKey("bank_cash_trolly_01a")] = {
                                 {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
@@ -2124,7 +2124,7 @@ cfg.robbery = {
                     { 
                         type = "grabtrolly_01",
         
-                        item_to_give_type = "hash_normal", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
+                        item_to_give_type = "normal_model", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
                         item_to_give = {
                             [GetHashKey("bank_cash_trolly_01a")] = {
                                 {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
