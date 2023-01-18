@@ -163,7 +163,7 @@ cfg.robbery = {
 
             blocked_type = "and", -- "and" | "or" | "and" will check if all the interactables meet the criteria | "or" will check if one of the interactables meet the criteria.
             blocked = { -- "done" | "notdone" | "done" it will check if that interactable is done | "notdone" it will check if that interactable is not done.
-                {2,"done"}, -- {index,type}
+                {1,"done"}, -- {index,type}
             },
     
             polyzone = {0.6,1.0,0.0,0.0,0.0,0.0,0.0,2.0},-- {length,width,minZextra,maxZextra,offset_x,offset_y,offset_z,distance}
@@ -227,8 +227,8 @@ cfg.robbery = {
         },
         { -- 4
             type = "trolly01",
-            pos = {-98.01368,6463.07568,31.63413 - 0.5,0.0,0.0,105.0}, -- {pos_x,pos_y,pos_z,rot_x,rot_y,rot_z}
-            offset = {0.0,0.0,0.0,0.0}, -- {offset_x,offset_y,offset_z,offset_heading}
+            pos = {-98.01368,6463.07568,31.63413,0.0,0.0,105.0}, -- {pos_x,pos_y,pos_z,rot_x,rot_y,rot_z}
+            offset = {0.0,0.0,-0.51,0.0}, -- {offset_x,offset_y,offset_z,offset_heading}
     
             hash_type = "rarity", -- "normal" "rarity" "nospawn"
             hash = "", -- if "normal" put the GetHashKey here, if "rarity" leave "" if "nospawn" leave it ""
@@ -259,7 +259,7 @@ cfg.robbery = {
 
             blocked_type = "and", -- "and" | "or" | "and" will check if all the interactables meet the criteria | "or" will check if one of the interactables meet the criteria.
             blocked = { -- "done" | "notdone" | "done" it will check if that interactable is done | "notdone" it will check if that interactable is not done.
-                {2,"done"}, -- {index,type}
+                {1,"done"}, -- {index,type}
             },
     
             polyzone = {0.6,1.0,0.0,0.0,0.0,0.0,0.0,2.0},-- {length,width,minZextra,maxZextra,offset_x,offset_y,offset_z,distance}
@@ -355,7 +355,7 @@ cfg.robbery = {
 
             blocked_type = "and", -- "and" | "or" | "and" will check if all the interactables meet the criteria | "or" will check if one of the interactables meet the criteria.
             blocked = { -- "done" | "notdone" | "done" it will check if that interactable is done | "notdone" it will check if that interactable is not done.
-                {2,"done"}, -- {index,type}
+                {1,"done"}, -- {index,type}
             },
     
             polyzone = {0.6,1.0,0.0,0.0,0.0,0.0,0.0,2.0},-- {length,width,minZextra,maxZextra,offset_x,offset_y,offset_z,distance}
