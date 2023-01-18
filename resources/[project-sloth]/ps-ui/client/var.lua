@@ -22,8 +22,8 @@ local function VarHack(callback, blocks, speed)
     end
 end
 
-RegisterNetEvent("CORE_ROB_BANK_PACIFIC:HACKMINIGAMECUSTOM_A")
-AddEventHandler("CORE_ROB_BANK_PACIFIC:HACKMINIGAMECUSTOM_A",function(data,cb)
+RegisterNetEvent("CORE_ROB_BANK_PACIFIC:HACKMINIGAMECUSTOM_C")
+AddEventHandler("CORE_ROB_BANK_PACIFIC:HACKMINIGAMECUSTOM_C",function(data,cb)
     exports['ps-ui']:Thermite(function(success)
         if success then
             cb(true)
