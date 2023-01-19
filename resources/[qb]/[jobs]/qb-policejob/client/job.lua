@@ -931,6 +931,7 @@ function armoury()
             if inAmoury and GlobalState.isLEO then
                 if onDuty then sleep = 5 end
                 if IsControlJustReleased(0, 38) then
+                    print(onduty)
                     TriggerEvent("qb-police:client:openArmoury")
                     break
                 end
