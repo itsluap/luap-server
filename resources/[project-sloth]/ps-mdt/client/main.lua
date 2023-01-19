@@ -38,7 +38,7 @@ RegisterNetEvent('QBCore:Client:OnJobUpdate', function(JobInfo)
     PlayerData.job = JobInfo
     local Player = QBCore.Functions.GetPlayerData()
     local job = Player.job.name
-    if AllowedJob(job) then
+    if job == 'police' or job == 'sheriff' or job == 'trooper' then
         TriggerServerEvent('luap:isLEO')
     else
         TriggerServerEvent('luap:isnotLEO')
