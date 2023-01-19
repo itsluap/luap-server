@@ -591,6 +591,7 @@ else
 end
 
 CreateThread(function()
+    print(onduty)
     -- Evidence Storage
     local evidenceZones = {}
     for _, v in pairs(Config.Locations["evidence"]) do
@@ -724,7 +725,7 @@ CreateThread(function()
     armouryCombo:onPlayerInOut(function(isPointInside)
         if isPointInside then
             inAmoury = true
-            if onDuty then
+            if GlobalState.isLEO then
                 exports['qb-core']:DrawText(Lang:t('info.enter_armory'),'left')
                 armoury()
             end
@@ -931,6 +932,7 @@ function armoury()
             if inAmoury and GlobalState.isLEO then
                 if onDuty then sleep = 5 end
                 if IsControlJustReleased(0, 38) then
+                    print(onduty)
                     TriggerEvent("qb-police:client:openArmoury")
                     break
                 end

@@ -2,14 +2,11 @@ fx_version 'adamant'
 
 game 'gta5'
 
-version '1.0.0'
-
 client_scripts {
     'cl_badge.lua'
 }
 
 server_scripts {
-    '@mysql-async/lib/MySQL.lua',
     'sv_badge.lua'
 }
 
@@ -24,5 +21,3 @@ files {
 	'html/assets/fonts/justsignature/JustSignature.woff',
 	'html/assets/images/*.png'
 }
-
--- Fan recreation of the NoPixel police badge system

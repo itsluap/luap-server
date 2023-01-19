@@ -2,7 +2,7 @@ fx_version 'cerulean'
 game 'gta5'
 
 description 'amir_expert#1911 - tattoo'
-version '1.0.4'
+version '1.0.5'
 
 client_script 'client/main.lua'
 shared_script 'config.lua'

@@ -88,29 +88,11 @@ RegisterNetEvent('kevin-methruns:server:giveproducts', function ()
 	end
 end)
 
-QBCore.Functions.CreateCallback('kevin-methruns:server:hasItems', function(source, cb)
-    local PlayerId = source
-    local Player = QBCore.Functions.GetPlayer(PlayerId)
-
-	if Player.PlayerData.metadata['methruns'] <= Config.LevelRep then
-		local hasItems = Player.Functions.GetItemByName(Config.LowRepItem)
-		if hasItems then
-			Player.Functions.RemoveItem(Config.LowRepItem, 1, false)
-			TriggerClientEvent('inventory:client:ItemBox', PlayerId, QBCore.Shared.Items[Config.LowRepItem], "remove")
-			cb(true)
-		else
-			cb(false)
-		end
-	elseif Player.PlayerData.metadata['methruns'] >= Config.LevelRep then
-		local hasItems = Player.Functions.GetItemByName(Config.HighRepItem)
-		if hasItems then
-			Player.Functions.RemoveItem(Config.HighRepItem, 1, false)
-			TriggerClientEvent('inventory:client:ItemBox', PlayerId, QBCore.Shared.Items[Config.HighRepItem], "remove")
-			cb(true)
-		else
-			cb(false)
-		end
-	end
+RegisterNetEvent('kevin-methruns:removeitem', function (Item)
+	local PlayerId = source
+	local Player = QBCore.Functions.GetPlayer(PlayerId)
+	Player.Functions.RemoveItem(Item, 1, false)
+	TriggerClientEvent('inventory:client:ItemBox', PlayerId, QBCore.Shared.Items[Item], "remove")
 end)
 
 RegisterNetEvent('kevin-methruns:server:Rewards', function()

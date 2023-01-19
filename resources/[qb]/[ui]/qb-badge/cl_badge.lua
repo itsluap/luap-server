@@ -1,9 +1,11 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+QBCore = exports['qb-core']:GetCoreObject()
+
 local plateModel = "prop_fib_badge"
 local plateModel2 = "prop_fib_badge"
 local animDict = "missfbi_s4mop"
 local animName = "swipe_card"
 local plate_net = nil
+
 local open = false
 
 RegisterNetEvent('badge:open')
@@ -11,15 +13,17 @@ AddEventHandler('badge:open', function( data, type )
 	open = true
 	SendNUIMessage({
 		action = "open",
-		array  = data,
-		type   = type
+		name = data.name,
+		dateofbirth = data.dob
 	})
+	DeleteEntity(plate_net)
+	DeleteEntity(NetToObj(plate_net))
+	Citizen.Wait (4000)
+	SendNUIMessage({
+		action = "close"
+	})
+	open = false
 end)
-
-RegisterCommand('pdbadge', function()
-    TriggerEvent('badge:openPD')
-end)
-
 
 Citizen.CreateThread(function()
 	while true do
@@ -36,11 +40,15 @@ end)
 RegisterNetEvent('showbadge')
 AddEventHandler('showbadge', function()
 	local player, distance = QBCore.Functions.GetClosestPlayer()
-	if distance ~= -1 and distance <= 3.0 then
+	if distance ~= -1 and distance <= 2.0 then
 		TriggerServerEvent('badge:open', GetPlayerServerId(PlayerId()), GetPlayerServerId(player))
         TriggerServerEvent('badge:open', GetPlayerServerId(PlayerId()), GetPlayerServerId(PlayerId()))
+		DeleteEntity(plate_net)
+		DeleteEntity(NetToObj(plate_net))
 	else 
 		TriggerServerEvent('badge:open', GetPlayerServerId(PlayerId()), GetPlayerServerId(PlayerId()))
+		DeleteEntity(plate_net)
+		DeleteEntity(NetToObj(plate_net))
 	end
 end)
 
@@ -68,6 +76,7 @@ function startAnim()
     plate_net = netid
     Citizen.Wait(3000)
     ClearPedSecondaryTask(playerPed)
+	DeleteEntity(plate_net)
     DetachEntity(NetToObj(plate_net), 1, 1)
     DeleteEntity(NetToObj(plate_net))
     plate_net = nil
@@ -76,24 +85,33 @@ end
 RegisterNetEvent('badge:openPD')
 AddEventHandler('badge:openPD', function()
 	TriggerEvent('showbadge')
+	QBCore.Functions.Progressbar("search_register", "Showing Badge", 3500, false, true, {disableMovement = true,
+	disableCarMovement = true,
+	disableMouse = false,
+	disableCombat = true,
+	disableInventory = true,
+}, {}, {}, {}, function()end, function()       
+end)
 	startAnim()
 end)
 
 function loadAnimDict( dict )
-    while ( not HasAnimDictLoaded( dict ) ) do
-        RequestAnimDict( dict )
-        Citizen.Wait( 0 )
+    while (not HasAnimDictLoaded(dict)) do
+        RequestAnimDict(dict)
+        Citizen.Wait(0)
     end
 end
 
 RegisterNetEvent('badge:shot')
 AddEventHandler('badge:shot', function(playerID)
-
 	local posx, posy = 0, 0.26
 	local width, height = 0.07, 0.14
 	local x, y = GetActiveScreenResolution()
-		if x == 1920 and y == 1080 then
-			posx, posy = 0.085, 0.35
+		if x == 2560 and y == 1440 then
+			posx, posy = 0.11, 0.27
+			width, height = 0.06, 0.1
+		elseif x == 1920 and y == 1080 then
+			posx, posy = 0.12, 0.35
 	 		width, height = 0.07, 0.14
 		elseif x == 1366 and y == 768 then
 			posx, posy = 0.686, 0.366
@@ -108,7 +126,7 @@ AddEventHandler('badge:shot', function(playerID)
 			posx, posy = 0.694, 0.267
 			width, height = 0.083, 0.145
 		elseif x == 1440 and y == 900 then
-			posx, posy = 0.702, 0.312
+			posx, posy = 0.152, 0.422
 			width, height = 0.082, 0.169
 		elseif x == 1680 and y == 1050 then
 			posx, posy = 0.745, 0.268
@@ -146,7 +164,6 @@ AddEventHandler('badge:shot', function(playerID)
 	local handle = RegisterPedheadshot(playerPed)
 
 	if not IsPedheadshotValid(handle) then
-		print('hello')
 		print(handle)
 	end
 

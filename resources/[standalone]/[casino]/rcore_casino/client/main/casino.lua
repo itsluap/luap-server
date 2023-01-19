@@ -32,9 +32,11 @@ LEAVING_BLOCKED_UNTIL = 0
 PLAYING_HISTORY = {}
 PODIUM_PROPS = nil
 IN_TP_SCENE = false
+OPEN_STATE = {"", ""}
 
 local PLAYER_CHIPS_ANIMATED = -1
 local LastCasinoUpdate = 0
+local NextOpenCheck = 0
 local CasinoUpdateSpeed = 500
 local CanInteractTime = 0
 local NextInteractionCheck = 0
@@ -1064,6 +1066,10 @@ CreateThread(function()
                 c = false
             end
 
+            if c and not OPEN_STATE[1] then
+                c = false
+            end
+
             if c ~= IN_CASINO then
                 IN_CASINO = c
                 if IN_CASINO then
@@ -1085,6 +1091,11 @@ CreateThread(function()
             else
                 OnLeaveInsideTrack()
             end
+        end
+
+        if GAME_TIMER > NextOpenCheck then
+            NextOpenCheck = GAME_TIMER + 10000
+            TriggerServerEvent("Casino:CheckOpenState")
         end
     end
 end, true)
@@ -2006,6 +2017,25 @@ if Config.Debug then
     end)
 end
 
+-- money callback
+RegisterNetEvent("Casino:CheckOpenState")
+AddEventHandler("Casino:CheckOpenState", function(isOpen, nextOpenTime)
+    OPEN_STATE = {isOpen, nextOpenTime}
+    if not OPEN_STATE[1] and IsEntityInCasino(PlayerPedId()) then
+        Casino_ShowNotInOpenHoursPrompt(true)
+        StopFromPlaying()
+    end
+end)
+
+function Casino_ShowNotInOpenHoursPrompt(tp)
+    local m = string.format(Translation.Get("OPENINGHOURS_CLOSED"), OPEN_STATE[2])
+    FullscreenPrompt(Translation.Get("OPENINGHOURS_CLOSED_TITLE"), m, function()
+        if tp then
+            SetEntityCoordsNoOffset(PlayerPedId(), Config.LeavePosition)
+        end
+    end, nil)
+end
+
 function StartGTAOTPScene()
     if IN_TP_SCENE then
         return
@@ -2285,4 +2315,12 @@ if Config.MapType ~= 5 then
             end
         end
     end)
+else
+    RequestIpl("hei_dlc_windows_casino")
+    RequestIpl("hei_dlc_casino_aircon")
+    RequestIpl("vw_dlc_casino_door")
+    RequestIpl("hei_dlc_casino_door")
+    RequestIpl("vw_casino_main")
+    RequestIpl("vw_casino_garage")
+    RequestIpl("vw_casino_carpark")
 end

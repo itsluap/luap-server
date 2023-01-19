@@ -24,8 +24,10 @@ RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
     callSign = PlayerData.metadata.callsign
     local Player = QBCore.Functions.GetPlayerData()
     local job = Player.job.name
-    if job = 'police' or job = 'sheriff' or job = 'trooper' then
+    if AllowedJob(job) then
         TriggerServerEvent('luap:isLEO')
+    else
+        TriggerServerEvent('luap:isnotLEO')
     end
 end)
 

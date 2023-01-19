@@ -1,10 +1,13 @@
 local isVip = false
 local wasCalled = false
+local enabledVip = Config.ForceVip
 
 -- if you want this script for... lets say like only vip, edit this function.
 -- WE DO NOT provide any help with setting the VIP. You need to contact your own programmer for this feature.
 function YourSpecialPermission()
-    --return isVip
+    if enabledVip then
+        return isVip
+    end
     return true
 end
 

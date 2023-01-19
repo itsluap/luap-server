@@ -36,19 +36,19 @@ Config.Text = {
 
 Config.PistolShop = {
     label = "Blackmarket Pistols",
-    slots = 10,
+    slots = 4,
     items = {
         [1] = {
             name = "weapon_pistol",
             price = 900,
-            amount = 100,
+            amount = 1100,
             info = { quality = 100, },
             type = "item",
             slot = 1,
         },
         [2] = {
             name = "weapon_heavypistol",
-            price = 1300,
+            price = 11300,
             amount = 100,
             info = { quality = 100, },
             type = "item",
@@ -56,7 +56,7 @@ Config.PistolShop = {
         },
         [3] = {
             name = "weapon_pistol50",
-            price = 1700,
+            price = 11700,
             amount = 100,
             info = { quality = 100, },
             type = "item",
@@ -64,7 +64,7 @@ Config.PistolShop = {
         },
         [4] = {
             name = "weapon_appistol",
-            price = 2200,
+            price = 12200,
             amount = 100,
             info = { quality = 100, },
             type = "item",
@@ -75,11 +75,11 @@ Config.PistolShop = {
 
 Config.SubMachineGunShop = {
     label = "Blackmarket Submachine Guns",
-    slots = 10,
+    slots = 4,
     items = {
         [1] = {
             name = "weapon_microsmg",
-            price = 2600,
+            price = 12600,
             amount = 100,
             info = { quality = 100, },
             type = "item",
@@ -87,7 +87,7 @@ Config.SubMachineGunShop = {
         },
         [2] = {
             name = "weapon_assaultsmg",
-            price = 3200,
+            price = 13200,
             amount = 100,
             info = { quality = 100, },
             type = "item",
@@ -95,7 +95,7 @@ Config.SubMachineGunShop = {
         },
         [3] = {
             name = "weapon_machinepistol",
-            price = 2000,
+            price = 12000,
             amount = 100,
             info = { quality = 100, },
             type = "item",
@@ -103,7 +103,7 @@ Config.SubMachineGunShop = {
         },
         [4] = {
             name = "weapon_minismg",
-            price = 2300,
+            price = 12300,
             amount = 100,
             info = { quality = 100, },
             type = "item",
@@ -114,11 +114,11 @@ Config.SubMachineGunShop = {
 
 Config.ShotGunShop = {
     label = "Blackmarket Shotguns",
-    slots = 10,
+    slots = 4,
     items = {
         [1] = {
             name = "weapon_pumpshotgun",
-            price = 2500,
+            price = 12500,
             amount = 100,
             info = { quality = 100, },
             type = "item",
@@ -126,7 +126,7 @@ Config.ShotGunShop = {
         },
         [2] = {
             name = "weapon_sawnoffshotgun",
-            price = 1200,
+            price = 11200,
             amount = 100,
             info = { quality = 100, },
             type = "item",
@@ -134,7 +134,7 @@ Config.ShotGunShop = {
         },
         [3] = {
             name = "weapon_bullpupshotgun",
-            price = 3600,
+            price = 13600,
             amount = 100,
             info = { quality = 100, },
             type = "item",
@@ -142,7 +142,7 @@ Config.ShotGunShop = {
         },
         [4] = {
             name = "weapon_dbshotgun",
-            price = 1600,
+            price = 11600,
             amount = 100,
             info = { quality = 100, },
             type = "item",
@@ -153,11 +153,11 @@ Config.ShotGunShop = {
 
 Config.AssaultWeaponsShop = {
     label = "Blackmarket Assault Rifles",
-    slots = 10,
+    slots = 4,
     items = {
         [1] = {
             name = "weapon_carbinerifle",
-            price = 5500,
+            price = 15500,
             amount = 100,
             info = { quality = 100, },
             type = "item",
@@ -165,7 +165,7 @@ Config.AssaultWeaponsShop = {
         },
         [2] = {
             name = "weapon_assaultrifle",
-            price = 4800,
+            price = 14800,
             amount = 100,
             info = { quality = 100, },
             type = "item",
@@ -173,7 +173,7 @@ Config.AssaultWeaponsShop = {
         },
         [3] = {
             name = "weapon_compactrifle",
-            price = 3700,
+            price = 13700,
             amount = 100,
             info = { quality = 100, },
             type = "item",
@@ -181,7 +181,7 @@ Config.AssaultWeaponsShop = {
         },
         [4] = {
             name = "weapon_bullpuprifle",
-            price = 6200,
+            price = 16200,
             amount = 100,
             info = { quality = 100, },
             type = "item",
@@ -192,7 +192,7 @@ Config.AssaultWeaponsShop = {
 
 Config.MiscellanceousShop = {
     label = "Blackmarket Miscellanceous",
-    slots = 10,
+    slots = 13,
     items = {
         [1] = {
             name = "armor",

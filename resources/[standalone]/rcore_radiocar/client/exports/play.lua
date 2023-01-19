@@ -95,15 +95,7 @@ function PlayUrlPos(name_, url_, volume_, pos, loop_, options)
         isPlayerCloseToMusic = true
     end
 
-    if isPlayerCloseToMusic then
-        SendNUIMessage({ type = "unmuteAll" })
-        SendNUIMessage({
-            type = "position",
-            x = playerPos.x,
-            y = playerPos.y,
-            z = playerPos.z
-        })
-    end
+    UpdatePlayerPositionInNUI()
 end
 
 function TextToSpeech(name_, lang, text, volume_, loop_, options)

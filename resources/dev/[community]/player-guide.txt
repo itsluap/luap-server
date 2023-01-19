@@ -1,0 +1,7 @@
+
+new players:
+
+-- jobs can be chosen at city hall
+-- basic items are sold at convienence stores
+-- vespucci beach has a market with shops that sell various items
+-- 

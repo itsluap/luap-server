@@ -74,75 +74,22 @@ cfg.robbery = {
         },
     },
     interactables = {
-        { -- 1
-            type = "voltage01", -- type of loot
-            pos = {-108.57300,6484.13965,31.46128 - 1.0,0.0,0.0,225.0}, -- {pos_x,pos_y,pos_z,rot_x,rot_y,rot_z}
-            offset = {0.0,0.0,0.0,0.0}, -- {offset_x,offset_y,offset_z,offset_heading}
-    
-            hash_type = "normal", -- "normal" "rarity" "nospawn"
-            hash = GetHashKey("h4_prop_h4_elecbox_01a"), -- hash of the model that will spawn
-    
-            net_id = 0, -- dont change
-            status = false, -- dont change
-            done = false, -- dont change
-            spawned = false, -- dont change
-    
-            polyzone = {0.7,0.9,0.0,0.0,0.0,0.0,0.0,2.0},-- {length,width,minZextra,maxZextra,offset_x,offset_y,offset_z,distance}
-            options = {
-                {
-                    type = "hackvoltage_01",
-
-                    item_needed = {
-                        {"electronickit",1,100}, -- {item_name,item_amount,chance_to_remove}
-                    },
-    
-                    minigame = {
-                        event = "CORE_ROB_BANK_PACIFIC:HACKMINIGAMECUSTOM_A", --event
-                        data = { -- data that will pass to the event
-                            timer = 25, -- seconds
-                        },
-                    },
-    
-                    markermenu = {"[1] Wire",157}, -- {text,key}
-                    displayhelp = {"~INPUT_SELECT_WEAPON_UNARMED~ Wire",157}, -- {text,key}
-                    polyzone = {"Wire","fa-solid fa-network-wired"},-- {label,targeticon}
-    
-                    camera = true, -- if you want the cinematic camera system put "true" otherwise put "false".
-                    checkforpolice = true, -- if true when you try to interact it will check for the police before you start the animation.
-                    dispatch = {
-                        call = true, -- if you want this option to call the police set to "true" otherwise set to "false".
-                        delay = 5, -- Delay to call the police when you start the action, it is in "seconds".
-    
-                        code = "10-99", -- Code Prefix to "title"
-                        message = "A Spike of electricity was detected in a Electric Box.", -- Notification
-                        sprite = 769, -- Blip Sprite
-                        color = 1, -- Blip Color
-                        scale = 1.0, -- Blip Scale
-                        time = 300, -- Seconds
-                    },
-                },
-            },
-        },
-
         { -- 2
             type = "securitypanel01", -- type of loot
-            pos = {-101.95140,6462.89404,31.63413 + 0.4,0.0,0.0,225.0}, -- {pos_x,pos_y,pos_z,rot_x,rot_y,rot_z}
+            pos = {-100.10835,6465.88671,31.63413,0.0,0.0,316.0}, -- {pos_x,pos_y,pos_z,rot_x,rot_y,rot_z}
             offset = {0.0,0.0,0.0,0.0}, -- {offset_x,offset_y,offset_z,offset_heading}
     
             hash_type = "normal", -- "normal" "rarity" "nospawn"
             hash = GetHashKey("hei_prop_hei_securitypanel"), -- hash of the model that will spawn
-    
+            
             net_id = 0, -- dont change
             status = false, -- dont change
             done = false, -- dont change
             spawned = false, -- dont change
 
-            blocked_type = "and", -- "and" | "or" | "and" will check if all the interactables meet the criteria | "or" will check if one of the interactables meet the criteria.
-            blocked = { -- "done" | "notdone" | "done" it will check if that interactable is done | "notdone" it will check if that interactable is not done.
-                {1,"done"}, -- {index,type}
-            },
+            doors = {1}, -- {index,index,...}
     
-            polyzone = {0.3,0.5,0.0,0.0,0.0,0.0,0.0,2.0},-- {length,width,minZextra,maxZextra,offset_x,offset_y,offset_z,distance}
+            polyzone = {0.2,0.48,0.0,0.0,0.0,0.05,0.0,2.0},-- {length,width,minZextra,maxZextra,offset_x,offset_y,offset_z,distance}
             options = {
                 {
                     type = "hacksecuritypanel_01",
@@ -166,8 +113,8 @@ cfg.robbery = {
                     displayhelp = {"~INPUT_SELECT_WEAPON_UNARMED~ Hack",157}, -- {text,key}
                     polyzone = {"Hack","fa-solid fa-laptop"},-- {label,targeticon}
     
-                    camera = true, -- if you want the cinematic camera system put "true" otherwise put "false".
                     checkforpolice = true, -- if true when you try to interact it will check for the police before you start the animation.
+                    camera = true, -- if you want the cinematic camera system put "true" otherwise put "false".
                     dispatch = {
                         call = true, -- if you want this option to call the police set to "true" otherwise set to "false".
                         delay = 5, -- Delay to call the police when you start the action, it is in "seconds".
@@ -216,7 +163,7 @@ cfg.robbery = {
 
             blocked_type = "and", -- "and" | "or" | "and" will check if all the interactables meet the criteria | "or" will check if one of the interactables meet the criteria.
             blocked = { -- "done" | "notdone" | "done" it will check if that interactable is done | "notdone" it will check if that interactable is not done.
-                {2,"done"}, -- {index,type}
+                {1,"done"}, -- {index,type}
             },
     
             polyzone = {0.6,1.0,0.0,0.0,0.0,0.0,0.0,2.0},-- {length,width,minZextra,maxZextra,offset_x,offset_y,offset_z,distance}
@@ -224,16 +171,16 @@ cfg.robbery = {
                 { 
                     type = "grabtrolly_01",
     
-                    item_to_give_type = "hash_normal", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
+                    item_to_give_type = "normal_model", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
                     item_to_give = {
                         [GetHashKey("bank_cash_trolly_01a")] = {
-                            {"markedbills",2,3,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                            {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                         },
                         [GetHashKey("bank_cash_trolly_01b")] = {
-                            {"markedbills",2,3,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                            {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                         },
                         [GetHashKey("bank_cash_trolly_01c")] = {
-                            {"markedbills",2,3,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                            {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                         },
                         --[[
                         [GetHashKey("bank_silver_trolly_01a")] = {
@@ -280,8 +227,8 @@ cfg.robbery = {
         },
         { -- 4
             type = "trolly01",
-            pos = {-98.01368,6463.07568,31.63413 - 0.5,0.0,0.0,105.0}, -- {pos_x,pos_y,pos_z,rot_x,rot_y,rot_z}
-            offset = {0.0,0.0,0.0,0.0}, -- {offset_x,offset_y,offset_z,offset_heading}
+            pos = {-98.01368,6463.07568,31.63413,0.0,0.0,105.0}, -- {pos_x,pos_y,pos_z,rot_x,rot_y,rot_z}
+            offset = {0.0,0.0,-0.51,0.0}, -- {offset_x,offset_y,offset_z,offset_heading}
     
             hash_type = "rarity", -- "normal" "rarity" "nospawn"
             hash = "", -- if "normal" put the GetHashKey here, if "rarity" leave "" if "nospawn" leave it ""
@@ -312,7 +259,7 @@ cfg.robbery = {
 
             blocked_type = "and", -- "and" | "or" | "and" will check if all the interactables meet the criteria | "or" will check if one of the interactables meet the criteria.
             blocked = { -- "done" | "notdone" | "done" it will check if that interactable is done | "notdone" it will check if that interactable is not done.
-                {2,"done"}, -- {index,type}
+                {1,"done"}, -- {index,type}
             },
     
             polyzone = {0.6,1.0,0.0,0.0,0.0,0.0,0.0,2.0},-- {length,width,minZextra,maxZextra,offset_x,offset_y,offset_z,distance}
@@ -320,16 +267,16 @@ cfg.robbery = {
                 { 
                     type = "grabtrolly_01",
     
-                    item_to_give_type = "hash_normal", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
+                    item_to_give_type = "normal_model", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
                     item_to_give = {
                         [GetHashKey("bank_cash_trolly_01a")] = {
-                            {"markedbills",2,3,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                            {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                         },
                         [GetHashKey("bank_cash_trolly_01b")] = {
-                            {"markedbills",2,3,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                            {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                         },
                         [GetHashKey("bank_cash_trolly_01c")] = {
-                            {"markedbills",2,3,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                            {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                         },
                         --[[
                         [GetHashKey("bank_silver_trolly_01a")] = {
@@ -408,7 +355,7 @@ cfg.robbery = {
 
             blocked_type = "and", -- "and" | "or" | "and" will check if all the interactables meet the criteria | "or" will check if one of the interactables meet the criteria.
             blocked = { -- "done" | "notdone" | "done" it will check if that interactable is done | "notdone" it will check if that interactable is not done.
-                {2,"done"}, -- {index,type}
+                {1,"done"}, -- {index,type}
             },
     
             polyzone = {0.6,1.0,0.0,0.0,0.0,0.0,0.0,2.0},-- {length,width,minZextra,maxZextra,offset_x,offset_y,offset_z,distance}
@@ -416,16 +363,16 @@ cfg.robbery = {
                 { 
                     type = "grabtrolly_01",
     
-                    item_to_give_type = "hash_normal", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
+                    item_to_give_type = "normal_model", -- "rarity" "normal" "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
                     item_to_give = {
                         [GetHashKey("bank_cash_trolly_01a")] = {
-                            {"markedbills",2,3,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                            {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                         },
                         [GetHashKey("bank_cash_trolly_01b")] = {
-                            {"markedbills",2,3,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                            {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                         },
                         [GetHashKey("bank_cash_trolly_01c")] = {
-                            {"markedbills",2,3,100}, -- {item_name,amount_min,amount_max,item_rarity}
+                            {"markedbills",1,1,100}, -- {item_name,amount_min,amount_max,item_rarity}
                         },
                         --[[
                         [GetHashKey("bank_silver_trolly_01a")] = {

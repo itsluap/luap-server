@@ -1,0 +1,47 @@
+What we need done:
+    - Job Guides / Intructions (Example: How to be a police officer, ems member, etc)
+    - Weight for items needs to be balanced and make sense
+    - List of default keybinds and commands (Most can be changed in, Settings > Keybinds > FiveM)
+    - check economy IN-GAME, make sure prices make sense and arent to cheap (too expensive is okay)
+    - go through clothing pack this is in server and remove bad files (glitching clothes)
+    - get second clothing pack finished and put into server (test to see if its working)
+
+WORKKKKKK:
+-- finish clothing
+-- weight system
+
+|| VEHICLES ||
+-- no oversized vehicles (fix textures for every car) -- start working on this
+
+|| CLOTHING ||
+-- no broken clothing (check for textures, heels, hats, and skin data)
+-- ^^ check for bugs / crashes ^^ remove broken / duplicate files ^^
+-- ^^ double check okayed files for heels, skin data, etc ^^
+====
+|| DEFAULT KEYBINDS FOR EVERYTHING NEED TO MAKE SENSE AND NOT BE DOUBLED UP ||
+====
+
+To Do:
+    - check if burgershot has boss management
+    - check shops around whole city
+    - make sure criminal activities require police online (test all crime activities before this)
+HEISTS:
+    - change electric box hack
+Testing:
+    - apartments should be raidable now
+
+-- new player guide could be a link to a forum page that shows a guide
+-- make sure rules are 100%, try to cover everything, edit anything needed / create a staff application
+-- PD hiring bonus / EMS hiring bonus
+
+
+
+
+
+After launch:
+
+====
+-- find a car that has perfect headlights (need 2 / one for white lights / one for yellow lights) and make it its own resource and start it before normal car pack (id 999 works for this) (use 1249 instead) (car: m2f22 light id: 756 color: white)
+-- ^^ then make all cars follow the respective light id (white or yellow) ^^
+-- some headlights are uneven (not crazy important)
+====

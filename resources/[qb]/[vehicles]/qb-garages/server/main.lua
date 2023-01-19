@@ -52,7 +52,7 @@ QBCore.Functions.CreateCallback('qb-garage:server:spawnvehicle', function (sourc
     local plate = vehInfo.plate
     local result = MySQL.query.await('SELECT mods FROM player_vehicles WHERE plate = ?', {plate})
     if result[1] then vehProps = json.decode(result[1].mods) end
-    print('setting mods on impound car')
+    --print('setting mods on impound car')
     local netId = NetworkGetNetworkIdFromEntity(veh)
     OutsideVehicles[plate] = {netID = netId, entity = veh}
     cb(netId, vehProps)

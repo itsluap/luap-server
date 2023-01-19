@@ -71,7 +71,7 @@ AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
         TriggerEvent('qb-clothing:client:loadOutfit', trackerClothingData)
     end
 
-    if PlayerJob and not GlobalState.isLEO then
+    if not GlobalState.isLEO then
         if DutyBlips then
             for _, v in pairs(DutyBlips) do
                 RemoveBlip(v)
@@ -99,14 +99,7 @@ RegisterNetEvent('QBCore:Client:OnPlayerUnload', function()
 end)
 
 RegisterNetEvent('QBCore:Client:OnJobUpdate', function(JobInfo)
-    if GlobalState.isLEO and not GlobalState.isLEO then
-        if JobInfo.onduty then
-            TriggerServerEvent("QBCore:ToggleDuty")
-            onDuty = false
-        end
-    end
-
-    if GlobalState.isLEO then
+    if not GlobalState.isLEO then
         if DutyBlips then
             for _, v in pairs(DutyBlips) do
                 RemoveBlip(v)

@@ -1,18 +1,8 @@
 Final (Ready to Launch):
-    - UPGRADE ACTUAL SERVER ON LAUNCH
     - add better admin menu (waiting for projectsloth release)
     - add boosting script (waiting for kevinscripts release)
     - add bowling script (waiting for gabz release)
-    - setup tebex -- can come after launch
-    - setup forums -- can come after launch
-    - fork branches of scripts so they update themselves
     - when server goes live create devloper branch of luap-server
     - make sure all scripts are updated (qbcore and project sloth)
-    - create new user guide - create control list - get discord ready
-    - create website - needs forums, applications, and tebex store
+    - create new user guide - create control list
     - fix heroin animation
-
-
-|| UPDATE ALL SCRIPTS BEFORE LAUNCH ||
-|| MAKE SURE DISCORD BOTS ARE WORKING BEFORE LAUNCH ||
-|| UPGRADE SERVER BEFORE LAUNCH ~$150 ||

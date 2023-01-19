@@ -14,7 +14,7 @@ RegisterServerEvent('ps-drugprocessing:processHydrochloric_acid', function()
 	local src = source
     local Player = QBCore.Functions.GetPlayer(src)
 
-	if Player.Functions.RemoveItem('chemicals', 1) then
+	if Player.Functions.RemoveItem('chemicals', 2) then
 		if Player.Functions.AddItem('hydrochloric_acid', 1) then
 			TriggerClientEvent("inventory:client:ItemBox", source, QBCore.Shared.Items['chemicals'], "remove")
 			TriggerClientEvent("inventory:client:ItemBox", source, QBCore.Shared.Items['hydrochloric_acid'], "add")
@@ -31,7 +31,7 @@ RegisterServerEvent('ps-drugprocessing:processsodium_hydroxide', function()
 	local src = source
     local Player = QBCore.Functions.GetPlayer(src)
 
-	if Player.Functions.RemoveItem('chemicals', 1) then
+	if Player.Functions.RemoveItem('chemicals', 2) then
 		if Player.Functions.AddItem('sodium_hydroxide', 1) then
 			TriggerClientEvent("inventory:client:ItemBox", source, QBCore.Shared.Items['chemicals'], "remove")
 			TriggerClientEvent("inventory:client:ItemBox", source, QBCore.Shared.Items['sodium_hydroxide'], "add")
@@ -48,7 +48,7 @@ RegisterServerEvent('ps-drugprocessing:processprocess_sulfuric_acid', function()
 	local src = source
     local Player = QBCore.Functions.GetPlayer(src)
 
-	if Player.Functions.RemoveItem('chemicals', 1) then
+	if Player.Functions.RemoveItem('chemicals', 2) then
 		if Player.Functions.AddItem('sulfuric_acid', 1) then
 			TriggerClientEvent("inventory:client:ItemBox", source, QBCore.Shared.Items['chemicals'], "remove")
 			TriggerClientEvent("inventory:client:ItemBox", source, QBCore.Shared.Items['sulfuric_acid'], "add")
@@ -65,7 +65,7 @@ RegisterServerEvent('ps-drugprocessing:process_lsa', function()
 	local src = source
     local Player = QBCore.Functions.GetPlayer(src)
 
-	if Player.Functions.RemoveItem('chemicals', 1) then
+	if Player.Functions.RemoveItem('chemicals', 2) then
 		if Player.Functions.AddItem('lsa', 1) then 
 			TriggerClientEvent("inventory:client:ItemBox", source, QBCore.Shared.Items['chemicals'], "remove")
 			TriggerClientEvent("inventory:client:ItemBox", source, QBCore.Shared.Items['lsa'], "add")

@@ -112,20 +112,28 @@ CreateThread(function()
         })
 
         enterTeleport.on("enter", function()
-            ShowHelpNotification(Translation.Get("PRESS_TO_ENTER_CASINO"))
+            if OPEN_STATE[1] == true then
+                ShowHelpNotification(Translation.Get("PRESS_TO_ENTER_CASINO"))
+            else
+                local m = string.format(Translation.Get("OPENINGHOURS_CLOSED"), OPEN_STATE[2])
+                ShowHelpNotification(m)
+            end
         end)
 
         enterTeleport.on("key", function(key)
-            CreateThread(function()
-              
-                Wait(500)
-                if Config.MapType ~= 5 then
-                    DoScreenFadeOut(500)
-                    SetEntityCoordsNoOffset(PlayerPedId(), Config.EnterPosition)
-                else
-                    StartGTAOTPScene()
-                end
-            end)
+            if OPEN_STATE[1] == true then
+                CreateThread(function()
+                    Wait(500)
+                    if Config.MapType ~= 5 then
+                        DoScreenFadeOut(500)
+                        SetEntityCoordsNoOffset(PlayerPedId(), Config.EnterPosition)
+                    else
+                        StartGTAOTPScene()
+                    end
+                end)
+            else
+               Casino_ShowNotInOpenHoursPrompt(false)
+            end
         end)
     end
 end)
