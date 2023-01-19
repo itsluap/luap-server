@@ -591,6 +591,7 @@ else
 end
 
 CreateThread(function()
+    print(onduty)
     -- Evidence Storage
     local evidenceZones = {}
     for _, v in pairs(Config.Locations["evidence"]) do
