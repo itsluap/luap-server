@@ -725,7 +725,7 @@ CreateThread(function()
     armouryCombo:onPlayerInOut(function(isPointInside)
         if isPointInside then
             inAmoury = true
-            if onDuty then
+            if GlobalState.isLEO then
                 exports['qb-core']:DrawText(Lang:t('info.enter_armory'),'left')
                 armoury()
             end
