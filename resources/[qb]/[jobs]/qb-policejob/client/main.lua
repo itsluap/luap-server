@@ -99,14 +99,14 @@ RegisterNetEvent('QBCore:Client:OnPlayerUnload', function()
 end)
 
 RegisterNetEvent('QBCore:Client:OnJobUpdate', function(JobInfo)
-    if GlobalState.isLEO and not GlobalState.isLEO then
-        if JobInfo.onduty then
+    if GlobalState.isLEO then
+        if JobInfo.onduty == true then
             TriggerServerEvent("QBCore:ToggleDuty")
             onDuty = false
         end
     end
 
-    if GlobalState.isLEO then
+    if not GlobalState.isLEO then
         if DutyBlips then
             for _, v in pairs(DutyBlips) do
                 RemoveBlip(v)
