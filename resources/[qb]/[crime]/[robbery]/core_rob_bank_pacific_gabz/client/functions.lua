@@ -1,10 +1,10 @@
 Functions = {}
-resource = GetCurrentResourceName()
 
 Citizen.CreateThread(function()
+	Citizen.Wait(2000)
 	while cfg == nil or robbery == nil do
 		local sleep = 1000
-		TriggerServerEvent(resource..":GetList_s")
+		TriggerServerEvent("CORE_ROB_BANK_PACIFIC:GetList_s")
 		Citizen.Wait(sleep)
 	end
 	
@@ -20,14 +20,14 @@ Citizen.CreateThread(function()
 	if cfg.interaction == "gtav" then INTERACTIONS_GTAV() end
 end)
 
-RegisterNetEvent(resource..":GetList_c")
-AddEventHandler(resource..":GetList_c",function(_robbery,_cfg,_user_id)
+RegisterNetEvent("CORE_ROB_BANK_PACIFIC:GetList_c")
+AddEventHandler("CORE_ROB_BANK_PACIFIC:GetList_c",function(_robbery,_cfg,_user_id)
 	robbery = _robbery
 	if _cfg ~= nil then cfg = _cfg end
 	if _user_id ~= nil then user_id = _user_id end
 end)
-RegisterNetEvent(resource..":Notification_c")
-AddEventHandler(resource..":Notification_c", function(data)
+RegisterNetEvent("CORE_ROB_BANK_PACIFIC:Notification_c")
+AddEventHandler("CORE_ROB_BANK_PACIFIC:Notification_c", function(data)
 	if cfg.notification.selected == "gtav" then
 		BeginTextCommandThefeedPost("STRING")
 		AddTextComponentSubstringPlayerName(data.notification)
@@ -40,60 +40,95 @@ AddEventHandler(resource..":Notification_c", function(data)
 		Functions.ShowNotification(data.notification)
 	end
 end)
-RegisterNetEvent(resource..":PoliceNotification_c")
-AddEventHandler(resource..":PoliceNotification_c", function(data)
+RegisterNetEvent("CORE_ROB_BANK_PACIFIC:PoliceNotification_c")
+AddEventHandler("CORE_ROB_BANK_PACIFIC:PoliceNotification_c", function(data)
 	if cfg.dispatch == "nunoradioman" then
-		BeginTextCommandThefeedPost("STRING") AddTextComponentSubstringPlayerName(data.dispatch.message) EndTextCommandThefeedPostTicker(true, false)
+		local dispatch = {}
 
-		local blip = AddBlipForCoord(data.coords.x,data.coords.y,data.coords.z)
+		dispatch.coords = data.coords
+		dispatch.code = data.dispatch.code
+		dispatch.message = data.dispatch.message
+		dispatch.sprite = data.dispatch.sprite
+		dispatch.color = data.dispatch.color
+		dispatch.scale = data.dispatch.scale
+		dispatch.time = data.dispatch.time
+		dispatch.radius = 25.0
+
+		BeginTextCommandThefeedPost("STRING") AddTextComponentSubstringPlayerName(dispatch.message) EndTextCommandThefeedPostTicker(true, false)
+
+		local blip = AddBlipForCoord(dispatch.coords.x,dispatch.coords.y,dispatch.coords.z)
 		SetBlipCategory(blip,2)
-		SetBlipSprite(blip,data.dispatch.sprite)
-		SetBlipColour(blip,data.dispatch.color)
-		SetBlipScale(blip,data.dispatch.scale)
-		BeginTextCommandSetBlipName("STRING") AddTextComponentString(data.dispatch.code.." - "..data.dispatch.message) EndTextCommandSetBlipName(blip)
+		SetBlipSprite(blip,dispatch.sprite)
+		SetBlipColour(blip,dispatch.color)
+		SetBlipScale(blip,dispatch.scale)
+		BeginTextCommandSetBlipName("STRING") AddTextComponentString(dispatch.code.." - "..dispatch.message) EndTextCommandSetBlipName(blip)
 
-		local blip_radius = AddBlipForRadius(data.coords.x,data.coords.y,data.coords.z,25.0)
+		local blip_radius = AddBlipForRadius(dispatch.coords.x,dispatch.coords.y,dispatch.coords.z,dispatch.radius)
 		SetBlipColour(blip_radius,1)
 		SetBlipAlpha(blip_radius,100)
 
-		Citizen.Wait(1000 * data.dispatch.time)
+		Citizen.Wait(1000 * dispatch.time)
 
 		RemoveBlip(blip)
 		RemoveBlip(blip_radius)
 	end
 	if cfg.dispatch == "ps_dispatch" then
-		exports["ps-dispatch"]:CustomAlert({
-			coords = data.coords,
-			message = data.dispatch.message,
-			dispatchCode = data.dispatch.code,
-			description =  data.dispatch.message,
-			radius = 25.0,
-			sprite = data.dispatch.sprite,
-			color = data.dispatch.color,
-			scale = data.dispatch.scale,
-			length = data.dispatch.time,
-		})
+		local dispatch = {}
+
+		dispatch.coords = data.coords
+		dispatch.dispatchCode = data.dispatch.code
+		dispatch.message = data.dispatch.message
+		dispatch.description = data.dispatch.message
+		dispatch.sprite = data.dispatch.sprite
+		dispatch.color = data.dispatch.color
+		dispatch.scale = data.dispatch.scale
+		dispatch.length = data.dispatch.time
+		dispatch.radius = 25.0
+
+		exports["ps-dispatch"]:CustomAlert(dispatch)
 	end
 	if cfg.dispatch == "cd_dispatch" then
-		TriggerServerEvent('cd_dispatch:AddNotification',{
-			job_table = cfg.police.groups, 
-			coords = data.coords,
-			title = data.dispatch.code.." - "..data.dispatch.message,
-			message = data.dispatch.message,
-			flash = 0,
-			unique_id = tostring(math.random(0000000,9999999)),
-			blip = {
-				sprite = data.dispatch.sprite, 
-				scale = data.dispatch.scale, 
-				colour = data.dispatch.color,
-				flashes = false,
-				text = data.dispatch.code.." - "..data.dispatch.message,
-				time = 1000 * data.dispatch.time,
-				sound = 1,
-			}
-		})
+		local dispatch = {}
+
+		dispatch.job_table = cfg.police.groups
+		dispatch.coords = data.coords
+		dispatch.title = data.dispatch.code.." - "..data.dispatch.message
+		dispatch.message = data.dispatch.message
+		dispatch.blip = {}
+		dispatch.blip.sprite = data.dispatch.sprite
+		dispatch.blip.colour = data.dispatch.color
+		dispatch.blip.scale = data.dispatch.scale
+		dispatch.blip.text = data.dispatch.code.." - "..data.dispatch.message
+		dispatch.blip.time = 1000 * data.dispatch.time
+		dispatch.blip.sound = 1
+		
+		TriggerServerEvent('cd_dispatch:AddNotification',dispatch)
 	end
 	if cfg.dispatch == "core_dispatch" then
-		exports['core_dispach']:addCall(data.dispatch.code,data.dispatch.message,{},{data.coords.x,data.coords.y,data.coords.z},cfg.police.groups[1],5000,data.dispatch.sprite,data.dispatch.color)
+		local dispatch = {}
+
+		dispatch[1] = data.dispatch.code
+		dispatch[2] = data.dispatch.message
+		dispatch[3] = {}
+		dispatch[4] = {data.coords.x,data.coords.y,data.coords.z}
+		dispatch[5] = cfg.police.groups[1]
+		dispatch[6] = 5000
+		dispatch[7] = data.dispatch.sprite
+		dispatch[8] = data.dispatch.color
+
+		exports['core_dispach']:addCall(dispatch[1],dispatch[2],dispatch[3],dispatch[4],dispatch[5],dispatch[6],dispatch[7],dispatch[8])
 	end
+end)
+
+-- custom minigames --
+
+RegisterNetEvent("luap:pacificminigames:maze")
+AddEventHandler("luap:pacificminigames:maze",function(data,cb)
+    local success = exports['ps-ui']:Maze(function(Success)
+        if Success then
+            cb(true)
+        else
+            cb(false)
+        end
+    end, 30)
 end)
