@@ -3,7 +3,7 @@ game "gta5"
 
 author "Nuno Radio Man"
 description "[Robbery] Essentials"
-version "1.0.9"
+version "1.1.0"
 
 lua54 "yes"
 
