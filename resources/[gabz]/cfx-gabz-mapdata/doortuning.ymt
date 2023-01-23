@@ -1954,5 +1954,9 @@
       <ModelName>gabz_mba_door_01</ModelName>
       <TuningName>DefaultStandardLatchShut</TuningName>
     </Item>
+    <Item>
+      <ModelName>sum_p_mp_yacht_door_02</ModelName>
+      <TuningName>DefaultStandardLatchShut</TuningName>
+    </Item>
   </ModelToTuneMapping>
 </CDoorTuningFile>
