@@ -16,7 +16,6 @@ RegisterNetEvent('qb-taxi:server:NpcPay', function(Payment)
     local Player = QBCore.Functions.GetPlayer(src)
     if Player.PlayerData.job.name == "taxi" then
         if NearTaxi(src) then
-            -- if timer is below max time
                 local randomAmount = math.random(1, 5)
                 local r1, r2 = math.random(1, 5), math.random(1, 5)
                 if randomAmount == r1 or randomAmount == r2 then Payment = Payment + math.random(10, 20) end
@@ -26,7 +25,6 @@ RegisterNetEvent('qb-taxi:server:NpcPay', function(Payment)
                     Player.Functions.AddItem("cryptostick", 1, false)
                     TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["cryptostick"], "add")
                 end
-            -- else if time is at max
         else
             DropPlayer(src, 'Attempting To Exploit')
         end
