@@ -198,7 +198,7 @@ Config.DeliveryLocations = {
     },
     [2] = {
         ["label"] = "Vinewood Video",
-        ["coords"] = vector3(223.98, 121.53, 102.76),
+        ["coords"] = vector3(223.51, 121.7, 102.84),
     },
     [3] = {
         ["label"] = "Taxi",

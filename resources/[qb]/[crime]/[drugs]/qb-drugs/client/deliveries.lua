@@ -164,7 +164,7 @@ local function DeliveryTimer()
             deliveryTimeout -= 1
             Wait(1000)
         end
-        deliveryTimeout = 0
+        -- deliveryTimeout = 0 -- setting deliverytimeout to 0 when it should be counting?
     end)
 end
 
