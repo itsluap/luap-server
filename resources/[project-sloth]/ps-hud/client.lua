@@ -1112,8 +1112,7 @@ CreateThread(function() -- Speeding
             if IsPedInAnyVehicle(ped, false) then
                 local speed = GetEntitySpeed(GetVehiclePedIsIn(ped, false)) * speedMultiplier
                 local stressSpeed = seatbeltOn and config.MinimumSpeed or config.MinimumSpeedUnbuckled
-                local yesHarness = exports['qb-smallresources']HasHarness()
-                if not yesHarness then
+                if not exports['qb-smallresources']HasHarness() then
                     if speed >= stressSpeed then
                         TriggerServerEvent('hud:server:GainStress', math.random(1, 2))
                     end
