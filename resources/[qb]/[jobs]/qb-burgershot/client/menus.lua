@@ -24,7 +24,7 @@ Citizen.CreateThread(function()
 			job = "burgershot",
 		    },
 		},
-		distance = 1.5
+		distance = 2.5
 	})
 
     exports['qb-target']:AddBoxZone("burger_tray_1", vector3(-1194.93, -892.92, 15.39), 1.05, 1.0, {
@@ -41,7 +41,7 @@ Citizen.CreateThread(function()
             label = "Tray 1",
             },
         },
-        distance = 1.5
+        distance = 2.5
     })
         --[[
 	exports['qb-target']:AddBoxZone("burger_tray_2", vector3(-1194.44, -894.8, 13.98), 0.5, 0.7, {
@@ -58,7 +58,7 @@ Citizen.CreateThread(function()
 			label = "Tray 2",
 		    },
 		},
-		distance = 1.5
+		distance = 2.5
 	})
     ]]--
 	exports['qb-target']:AddBoxZone("burger_tray_3", vector3(-1193.88, -906.98, 14.0), 1, 1, {
@@ -110,10 +110,10 @@ Citizen.CreateThread(function()
                 event = "qb-burgershot:Fries",
                 icon = "fas fa-box",
                 label = "Make Fries",
-                job = "burgershot",
+                job = "burgershot",distance = 1.5
             },
         },
-        distance = 1.5
+        distance = 2.5
     })
 
 
@@ -132,7 +132,7 @@ Citizen.CreateThread(function()
                 job = "burgershot",
             },
         },
-        distance = 1.5
+        distance = 2.5
     })
 
     exports['qb-target']:AddBoxZone("burgershotdrinks2", vector3(-1190.47, -904.65, 13.98), 2.2, 0.6, {
@@ -150,7 +150,7 @@ Citizen.CreateThread(function()
                 job = "burgershot",
             },
         },
-        distance = 1.5
+        distance = 2.5
     })
 
 
@@ -169,7 +169,7 @@ Citizen.CreateThread(function()
                 job = "burgershot",
             },
         },
-        distance = 1.5
+        distance = 2.5
     })
 
     exports['qb-target']:AddBoxZone("burgershotdisplay", vector3(-1197.78, -894.45, 14.0), 4.6, 1.2, {
@@ -187,7 +187,7 @@ Citizen.CreateThread(function()
                 job = "burgershot",
             },
         },
-        distance = 1.5
+        distance = 2.5
     })
 
 
@@ -206,7 +206,7 @@ Citizen.CreateThread(function()
                 job = "burgershot",
             },
         },
-        distance = 1.5
+        distance = 2.5
     })
 
 
@@ -226,7 +226,7 @@ Citizen.CreateThread(function()
                 job = "burgershot",
             },
         },
-        distance = 1.5
+        distance = 2.5
     })
 
     exports['qb-target']:AddBoxZone("BurgerShot_register_2", vector3(-1194.24, -893.87, 15.16), 0.6, 0.5, {
@@ -245,7 +245,7 @@ Citizen.CreateThread(function()
                 job = "burgershot",
             },
         },
-        distance = 1.5
+        distance = 2.5
     })  
 
 
@@ -266,7 +266,7 @@ Citizen.CreateThread(function()
                 job = "burgershot",
             },
         },
-        distance = 1.5
+        distance = 2.5
     })
 
 end)

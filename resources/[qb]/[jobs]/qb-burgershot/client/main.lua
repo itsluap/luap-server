@@ -498,7 +498,7 @@ Citizen.CreateThread(function()
                 end
             end
             local Distance = #(PlayerCoords - Config.Intercom['Customer'])
-            if Distance < 3.5 then
+            if Distance < 3 then
                 NearAnything = true
                 if not ShowingInteraction then
                     ShowingInteraction = true
