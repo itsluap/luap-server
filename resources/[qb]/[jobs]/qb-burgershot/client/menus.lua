@@ -94,7 +94,7 @@ Citizen.CreateThread(function()
 				job = "burgershot",
 			},
 		},
-		distance = 1.5
+		distance = 2.5
 	})
 
 
