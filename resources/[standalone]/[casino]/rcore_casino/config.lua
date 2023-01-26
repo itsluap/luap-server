@@ -168,7 +168,7 @@ Framework = {
     -- 2 = QBcore / custom
     -- for custom frameworks, also use option *2*, and rewrite all the qbcore functions
 
-    Active = 1,
+    Active = 2,
     -- Please follow the installation tutorial: --
     -- https://documentation.rcore.cz/paid-resources/rcore_casino
 
