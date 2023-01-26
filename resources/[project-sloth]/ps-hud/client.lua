@@ -1095,7 +1095,7 @@ CreateThread(function()
                 hasHarness()
                 local veh = GetEntityModel(GetVehiclePedIsIn(ped, false))
                 if seatbeltOn ~= true and IsThisModelACar(veh) then
-                    TriggerEvent("InteractSound_CL:PlayOnOne", "beltalarm", 0.6)
+                    -- TriggerEvent("InteractSound_CL:PlayOnOne", "beltalarm", 0.6) -- annoying as hell
                 end
             end
         end
