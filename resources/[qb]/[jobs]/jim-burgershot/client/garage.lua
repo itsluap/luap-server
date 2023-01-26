@@ -47,32 +47,20 @@ RegisterNetEvent('jim-burgershot:client:Garage:Menu', function(data)
 end)
 
 RegisterNetEvent("jim-burgershot:client:SpawnList", function(data)
-	local oldveh = GetClosestVehicle(data.coords.x, data.coords.y, data.coords.z, 2.5, 0, 71)
-	if oldveh ~= 0 then
-		local name = GetDisplayNameFromVehicleModel(GetEntityModel(oldveh)):lower()
-		for k, v in pairs(QBCore.Shared.Vehicles) do
-			if tonumber(v.hash) == GetEntityModel(vehicle) then
-			if Config.Debug then print("^5Debug^7: Vehicle^7: ^6"..v.hash.." ^7(^6"..QBCore.Shared.Vehicles[k].name..")") end
-			name = QBCore.Shared.Vehicles[k].name
-			end
-		end
-		triggerNotify(nil, name..Loc[Config.Lan].error["in_way"], "error")
-	else
-		QBCore.Functions.SpawnVehicle(data.spawnName, function(veh)
-			currentVeh = { out = true, current = veh }
-			SetVehicleModKit(veh, 0)
-			NetworkRequestControlOfEntity(veh)
-			SetVehicleNumberPlateText(veh, string.sub(PlayerJob.label, 1, 5)..tostring(math.random(100, 999)))
-			SetEntityHeading(veh, data.coords.w)
-			TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
-			SetVehicleColours(veh, 38, 38)
-			TriggerEvent("vehiclekeys:client:SetOwner", GetVehicleNumberPlateText(veh))
-			SetVehicleEngineOn(veh, true, true)
-			Wait(250)
-			SetVehicleDirtLevel(veh, 0.0)
-			triggerNotify(nil, Loc[Config.Lan].success["retrieved"]..GetDisplayNameFromVehicleModel(data.spawnName).." ["..GetVehicleNumberPlateText(currentVeh.current).."]", "success")
-		end, data.coords, true)
-	end
+	QBCore.Functions.SpawnVehicle(data.spawnName, function(veh)
+		currentVeh = { out = true, current = veh }
+		SetVehicleModKit(veh, 0)
+		NetworkRequestControlOfEntity(veh)
+		SetVehicleNumberPlateText(veh, string.sub(PlayerJob.label, 1, 5)..tostring(math.random(100, 999)))
+		SetEntityHeading(veh, data.coords.w)
+		TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
+		SetVehicleColours(veh, 38, 38)
+		TriggerEvent("vehiclekeys:client:SetOwner", GetVehicleNumberPlateText(veh))
+		SetVehicleEngineOn(veh, true, true)
+		Wait(250)
+		SetVehicleDirtLevel(veh, 0.0)
+		triggerNotify(nil, Loc[Config.Lan].success["retrieved"]..GetDisplayNameFromVehicleModel(data.spawnName).." ["..GetVehicleNumberPlateText(currentVeh.current).."]", "success")
+	end, data.coords, true)
 end)
 
 RegisterNetEvent("jim-burgershot:client:RemSpawn", function(data)
