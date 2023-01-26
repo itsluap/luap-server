@@ -49,6 +49,10 @@ Config.BossMenuZones = {
     ['mechanic'] = {
         { coords = vector3(-339.53, -156.44, 44.59), length = 1.15, width = 2.6, heading = 353.0, minZ = 43.59, maxZ = 44.99 },
     },
+    -- need vanilla
+    ['burgershot'] = {
+        { coords = vector3(-1177.87, -896.27, 15.09), length = 1.15, width = 2.6, heading = 353.0, minZ = 5.09, maxZ = 15.09 },
+    },
 }
 
 Config.GangMenus = {
