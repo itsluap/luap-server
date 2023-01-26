@@ -427,9 +427,9 @@ CreateThread(function()
 	end
 
 	--Atm Props
-	if not Props["atm1"] then Props["atm1"] = makeProp({prop = `prop_atm_01`, coords = vector4(-1184.53, -882.85, 13.94-0.22, 122.53)}, 1, 0) end
-	if not Props["atm2"] then Props["atm2"] = makeProp({prop = `prop_atm_01`, coords = vector4(-1199.6, -884.99, 13.50-0.22, 215.0)}, 1, 0) end
-	if not Props["bench"] then Props["bench"] = makeProp({prop = `prop_bench_01a`, coords = vector4(-1195.53, -878.53, 13.5, 212.0)}, 1, 0) end
+	-- if not Props["atm1"] then Props["atm1"] = makeProp({prop = `prop_atm_01`, coords = vector4(-1184.53, -882.85, 13.94-0.22, 122.53)}, 1, 0) end
+	-- if not Props["atm2"] then Props["atm2"] = makeProp({prop = `prop_atm_01`, coords = vector4(-1199.6, -884.99, 13.50-0.22, 215.0)}, 1, 0) end
+	-- if not Props["bench"] then Props["bench"] = makeProp({prop = `prop_bench_01a`, coords = vector4(-1195.53, -878.53, 13.5, 212.0)}, 1, 0) end
 end)
 
 RegisterNetEvent('jim-burgershot:washHands', function(data)
