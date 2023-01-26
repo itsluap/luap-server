@@ -501,6 +501,7 @@ QBShared.Items = {
     --['coke_small_brick'] 		 	 = {['name'] = 'coke_small_brick', 				['label'] = 'Coke Package', 			['weight'] = 350, 		['type'] = 'item', 		['image'] = 'coke_small_brick.png', 	['unique'] = false, 	['useable'] = false, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Small package of cocaine, mostly used for deals and takes a lot of space'},
 	-- car sale contract
 	['contract'] 					 = {['name'] = 'contract', 					['label'] = 'Title Contract', 			    ['weight'] = 100, 		['type'] = 'item', 		['image'] = 'printerdocument.png', 			['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true,   ['combinable'] = nil,   ['description'] = 'A contract that signs your car title over.'},
+	['scratch_ticket'] 				 = {['name'] = 'scratch_ticket', 			['label'] = 'Scratch Ticket', 			    ['weight'] = 100, 		['type'] = 'item', 		['image'] = 'scratch_ticket.png', 			['unique'] = true, 		['useable'] = true, 	['shouldClose'] = true,   ['combinable'] = nil,   ['description'] = 'Try your luck.'},
 
 	-- masks
 	['terror']  					= {['name'] = 'terror', 			  ['label'] = 'Balaclava',  	        	['weight'] = 100,  		['type'] = 'item',  	['image'] = 'Clothing_1_57.png',  			['unique'] = false,  	['useable'] = true,  	['shouldClose'] = true,  	['combinable'] = nil, 	['description'] = ''},
