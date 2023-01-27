@@ -6,7 +6,7 @@
 			    <Item>
       <modelName>cateyeworktruck</modelName>
       <txdName>cateyeworktruck</txdName>
-      <handlingId>cateyeworktruck</handlingId>
+      <handlingId>cateyelifted</handlingId>
       <gameName>cateyeworktruck</gameName>
       <vehicleMakeName>CHEVY</vehicleMakeName>
       <expressionDictName>null</expressionDictName>
@@ -15,7 +15,7 @@
       <animConvRoofName>null</animConvRoofName>
       <animConvRoofWindowsAffected />
       <ptfxAssetName>null</ptfxAssetName>
-      <audioNameHash>paradise</audioNameHash>
+      <audioNameHash>dump</audioNameHash>
       <layout>LAYOUT_BISON</layout>
       <coverBoundOffsets>BISON_COVER_OFFSET_INFO</coverBoundOffsets>
       <explosionInfo>EXPLOSION_INFO_DEFAULT</explosionInfo>
