@@ -147,6 +147,7 @@ cfg.robbery = {
     
             weapons = { -- {weapon_hash}
                 GetHashKey("WEAPON_DE"),
+                GetHashKey("WEAPON_M70"),
                 GetHashKey("WEAPON_AK47"),
                 GetHashKey("WEAPON_M9"),
                 GetHashKey("WEAPON_M1911"),
@@ -210,6 +211,7 @@ cfg.robbery = {
 
             weapons = { -- {weapon_hash}
                 GetHashKey("WEAPON_DE"),
+                GetHashKey("WEAPON_M70"),
                 GetHashKey("WEAPON_AK47"),
                 GetHashKey("WEAPON_M9"),
                 GetHashKey("WEAPON_M1911"),
@@ -273,6 +275,7 @@ cfg.robbery = {
             
             weapons = { -- {weapon_hash}
                 GetHashKey("WEAPON_DE"),
+                GetHashKey("WEAPON_M70"),
                 GetHashKey("WEAPON_AK47"),
                 GetHashKey("WEAPON_M9"),
                 GetHashKey("WEAPON_M1911"),
@@ -336,6 +339,7 @@ cfg.robbery = {
             
             weapons = { -- {weapon_hash}
                 GetHashKey("WEAPON_DE"),
+                GetHashKey("WEAPON_M70"),
                 GetHashKey("WEAPON_AK47"),
                 GetHashKey("WEAPON_M9"),
                 GetHashKey("WEAPON_M1911"),
@@ -399,6 +403,7 @@ cfg.robbery = {
             
             weapons = { -- {weapon_hash}
                 GetHashKey("WEAPON_DE"),
+                GetHashKey("WEAPON_M70"),
                 GetHashKey("WEAPON_AK47"),
                 GetHashKey("WEAPON_M9"),
                 GetHashKey("WEAPON_M1911"),
@@ -462,6 +467,7 @@ cfg.robbery = {
             
             weapons = { -- {weapon_hash}
                 GetHashKey("WEAPON_DE"),
+                GetHashKey("WEAPON_M70"),
                 GetHashKey("WEAPON_AK47"),
                 GetHashKey("WEAPON_M9"),
                 GetHashKey("WEAPON_M1911"),
@@ -525,6 +531,7 @@ cfg.robbery = {
             
             weapons = { -- {weapon_hash}
                 GetHashKey("WEAPON_DE"),
+                GetHashKey("WEAPON_M70"),
                 GetHashKey("WEAPON_AK47"),
                 GetHashKey("WEAPON_M9"),
                 GetHashKey("WEAPON_M1911"),
@@ -588,6 +595,7 @@ cfg.robbery = {
             
             weapons = { -- {weapon_hash}
                 GetHashKey("WEAPON_DE"),
+                GetHashKey("WEAPON_M70"),
                 GetHashKey("WEAPON_AK47"),
                 GetHashKey("WEAPON_M9"),
                 GetHashKey("WEAPON_M1911"),
@@ -651,6 +659,7 @@ cfg.robbery = {
             
             weapons = { -- {weapon_hash}
                 GetHashKey("WEAPON_DE"),
+                GetHashKey("WEAPON_M70"),
                 GetHashKey("WEAPON_AK47"),
                 GetHashKey("WEAPON_M9"),
                 GetHashKey("WEAPON_M1911"),
@@ -714,6 +723,7 @@ cfg.robbery = {
             
             weapons = { -- {weapon_hash}
                 GetHashKey("WEAPON_DE"),
+                GetHashKey("WEAPON_M70"),
                 GetHashKey("WEAPON_AK47"),
                 GetHashKey("WEAPON_M9"),
                 GetHashKey("WEAPON_M1911"),
@@ -777,6 +787,7 @@ cfg.robbery = {
             
             weapons = { -- {weapon_hash}
                 GetHashKey("WEAPON_DE"),
+                GetHashKey("WEAPON_M70"),
                 GetHashKey("WEAPON_AK47"),
                 GetHashKey("WEAPON_M9"),
                 GetHashKey("WEAPON_M1911"),
@@ -840,6 +851,7 @@ cfg.robbery = {
             
             weapons = { -- {weapon_hash}
                 GetHashKey("WEAPON_DE"),
+                GetHashKey("WEAPON_M70"),
                 GetHashKey("WEAPON_AK47"),
                 GetHashKey("WEAPON_M9"),
                 GetHashKey("WEAPON_M1911"),
@@ -903,6 +915,7 @@ cfg.robbery = {
             
             weapons = { -- {weapon_hash}
                 GetHashKey("WEAPON_DE"),
+                GetHashKey("WEAPON_M70"),
                 GetHashKey("WEAPON_AK47"),
                 GetHashKey("WEAPON_M9"),
                 GetHashKey("WEAPON_M1911"),
@@ -966,6 +979,7 @@ cfg.robbery = {
             
             weapons = { -- {weapon_hash}
                 GetHashKey("WEAPON_DE"),
+                GetHashKey("WEAPON_M70"),
                 GetHashKey("WEAPON_AK47"),
                 GetHashKey("WEAPON_M9"),
                 GetHashKey("WEAPON_M1911"),
@@ -1029,6 +1043,7 @@ cfg.robbery = {
             
             weapons = { -- {weapon_hash}
                 GetHashKey("WEAPON_DE"),
+                GetHashKey("WEAPON_M70"),
                 GetHashKey("WEAPON_AK47"),
                 GetHashKey("WEAPON_M9"),
                 GetHashKey("WEAPON_M1911"),
@@ -1092,6 +1107,7 @@ cfg.robbery = {
             
             weapons = { -- {weapon_hash}
                 GetHashKey("WEAPON_DE"),
+                GetHashKey("WEAPON_M70"),
                 GetHashKey("WEAPON_AK47"),
                 GetHashKey("WEAPON_M9"),
                 GetHashKey("WEAPON_M1911"),
@@ -1155,6 +1171,7 @@ cfg.robbery = {
             
             weapons = { -- {weapon_hash}
                 GetHashKey("WEAPON_DE"),
+                GetHashKey("WEAPON_M70"),
                 GetHashKey("WEAPON_AK47"),
                 GetHashKey("WEAPON_M9"),
                 GetHashKey("WEAPON_M1911"),
@@ -1218,6 +1235,7 @@ cfg.robbery = {
             
             weapons = { -- {weapon_hash}
                 GetHashKey("WEAPON_DE"),
+                GetHashKey("WEAPON_M70"),
                 GetHashKey("WEAPON_AK47"),
                 GetHashKey("WEAPON_M9"),
                 GetHashKey("WEAPON_M1911"),
@@ -1281,6 +1299,7 @@ cfg.robbery = {
             
             weapons = { -- {weapon_hash}
                 GetHashKey("WEAPON_DE"),
+                GetHashKey("WEAPON_M70"),
                 GetHashKey("WEAPON_AK47"),
                 GetHashKey("WEAPON_M9"),
                 GetHashKey("WEAPON_M1911"),
@@ -1344,6 +1363,7 @@ cfg.robbery = {
             
             weapons = { -- {weapon_hash}
                 GetHashKey("WEAPON_DE"),
+                GetHashKey("WEAPON_M70"),
                 GetHashKey("WEAPON_AK47"),
                 GetHashKey("WEAPON_M9"),
                 GetHashKey("WEAPON_M1911"),
