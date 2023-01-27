@@ -1,6 +1,7 @@
 Config = {}
 
 Config.whitelist = { -- when adding add-on cars simply use their spawn name
+    '20fttrailer',
     'FLATBED',
     'BENSON',
     'WASTLNDR', -- WASTELANDER
