@@ -153,7 +153,7 @@ AddEventHandler(resource..":GiveItem_s",function(player,item_name,item_amount)
 		local xPlayer = Functions.GetPlayerFromId(player) -- get player data.
 		if item_name == "money" then -- check if item is money
 			xPlayer.addAccountMoney("money",item_amount) -- give money to player
-		elseif item_name == "black_money" then -- check if item is blackmoney
+		elseif item_name == "dirtymoney" then -- check if item is dirtymoney
 			xPlayer.addAccountMoney("black_money",amount) -- give blackmoney to player
 		else -- if it is an item
 			xPlayer.addInventoryItem(item_name,item_amount) -- give item to player
@@ -163,8 +163,8 @@ AddEventHandler(resource..":GiveItem_s",function(player,item_name,item_amount)
 		local xPlayer = Functions.Functions.GetPlayer(player) -- get player data.
 		if item_name == "money" then -- check if item is money
 			xPlayer.Functions.AddMoney("cash",item_amount) -- give money to player
-		elseif item == "black_money" then -- check if item is blackmoney
-			xPlayer.Functions.AddMoney("blackmoney",amount) -- give blackmoney to player
+		elseif item == "markedbills" then -- check if item is markedbills
+			xPlayer.Functions.AddItem("markedbills",1,false,{worth = item_amount})
 		else -- if it is an item
 			xPlayer.Functions.AddItem(item_name,item_amount) -- give item to player
 		end

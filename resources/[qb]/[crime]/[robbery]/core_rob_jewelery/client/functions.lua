@@ -8,14 +8,11 @@ Citizen.CreateThread(function()
 		Citizen.Wait(sleep)
 	end
 	
-	if cfg.framework == "esx" then
-		TriggerEvent("esx:getSharedObject",function(obj) Functions = obj end)
-	end
-	if cfg.framework == "qbcore" then
-		Functions = exports["qb-core"]:GetCoreObject()
-	end
+	if cfg.framework == "esx" then TriggerEvent("esx:getSharedObject",function(obj) Functions = obj end) end
+	if cfg.framework == "qbcore" then Functions = exports["qb-core"]:GetCoreObject() end
 
 	if cfg.interaction == "qbtarget" then INTERACTIONS_QBTARGET() end
+	if cfg.interaction == "qtarget" then INTERACTIONS_QTARGET() end
 	if cfg.interaction == "markermenu" then INTERACTIONS_MARKERMENU() end
 	if cfg.interaction == "gtav" then INTERACTIONS_GTAV() end
 end)

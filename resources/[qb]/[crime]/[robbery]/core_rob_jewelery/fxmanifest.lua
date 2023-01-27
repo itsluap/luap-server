@@ -3,7 +3,7 @@ game "gta5"
 
 author "Nuno Radio Man"
 description "[Robbery] Jewelery Default"
-version "1.0.8"
+version "1.1.0"
 
 dependencies { 
 	"/onesync",
@@ -19,7 +19,6 @@ client_scripts {
 	"client/*"
 }
 server_scripts { 
-	"@vrp/lib/utils.lua",
 	"cfg/*",
 	"server/*"
 }
