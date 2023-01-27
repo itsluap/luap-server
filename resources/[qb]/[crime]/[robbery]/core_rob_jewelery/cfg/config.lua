@@ -106,7 +106,7 @@ cfg.robbery = {
                     type = "hackvoltage_01",
     
                     minigame = {
-                        event = "CORE_ROB_BANK_PACIFIC:HACKMINIGAMECUSTOM_A", --event
+                        event = "CORE_ROB_BANK_PACIFIC:HACKMINIGAMECUSTOM_C", --event
                         data = { -- data that will pass to the event
                             timer = 25, -- seconds
                         },
