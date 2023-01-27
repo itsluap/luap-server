@@ -1644,7 +1644,7 @@ cfg.robbery = {
                     },
     
                     item_needed = {
-                        {"robbery_glasscutter_01",1,100}, -- {item_name,item_amount,chance_to_remove}
+                        {"drill",1,100}, -- {item_name,item_amount,chance_to_remove}
                     },
     
                     item_to_give_type = "glass", -- "normal" or "random" | "normal" trys to spawn every item, "random" gets an random item, not by rarity.
