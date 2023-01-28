@@ -132,6 +132,7 @@ add_principal identifier.discord:406599443601817650 group.admin #mediumking
 add_principal identifier.discord:548070310734200832 group.admin #icey
 add_principal identifier.discord:343161050163707904 group.admin #nodeth
 add_principal identifier.discord:246096113130668032 group.admin #nope
+add_principal identifier.discord:900144578424885318 group.admin #james
 
 # Resources
 add_ace resource.qb-core command allow # Allow qb-core to execute commands
