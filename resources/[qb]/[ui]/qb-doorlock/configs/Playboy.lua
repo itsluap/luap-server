@@ -42,3 +42,31 @@ Config.DoorList['Playboy-3'] = {
     fixText = false,
     doorType = 'door',
 }
+
+-- 4 created by Twitch-N0pe121
+Config.DoorList['Playboy-4'] = {
+    objCoords = vec3(-1528.278320, 78.260696, 57.321274),
+    doorType = 'garage',
+    locked = true,
+    distance = 4,
+    objName = -112388600,
+    fixText = false,
+    objYaw = 187.67080688477,
+    doorLabel = 'Garage Middle',
+    authorizedCitizenIDs = { ['NDL17225'] = true },
+    doorRate = 1.0,
+}
+
+-- 5 created by Twitch-N0pe121
+Config.DoorList['Playboy-5'] = {
+    objCoords = vec3(-1534.917358, 79.801453, 57.321274),
+    doorType = 'garage',
+    locked = true,
+    distance = 4,
+    objName = -112388600,
+    fixText = false,
+    objYaw = 136.83329772949,
+    doorLabel = 'Garage Right',
+    authorizedCitizenIDs = { ['NDL17225'] = true },
+    doorRate = 1.0,
+}
