@@ -3,17 +3,19 @@ games {'gta5'}
 
 this_is_a_map 'yes'
 
-data_file 'TIMECYCLEMOD_FILE' 'nutt_timecycle_mods_1.xml'
-
 files {
+    "interiorproxies.meta",
     'laun_timecycle_mods_1.xml',
     'shellprops.ytyp',
     'stream/bossroom/gta5.meta',
     'stream/bossroom/water.xml',
     "nutt_timecycle_mods_1.xml",
     "gardoor_game.dat151.rel",
-    "interiorproxies.meta"
 }
+
+data_file 'INTERIOR_PROXY_ORDER_FILE' 'interiorproxies.meta'
+
+data_file 'TIMECYCLEMOD_FILE' 'nutt_timecycle_mods_1.xml'
 
 data_file 'DLC_ITYP_REQUEST' 'shellprops.ytyp'
 
