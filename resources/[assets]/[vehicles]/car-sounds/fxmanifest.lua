@@ -211,6 +211,7 @@ data_file 'AUDIO_GAMEDATA'  'audioconfig/f20c_game.dat'
 data_file 'AUDIO_SOUNDDATA' 'audioconfig/f20c_sounds.dat'
 data_file 'AUDIO_WAVEPACK'  'sfx/dlc_f20c'
 -- Honda K20A 2.0 I4 Engine =   k20a
+data_file 'AUDIO_SYNTHDATA' 'audioconfig/k20a_amp.dat'
 data_file 'AUDIO_GAMEDATA'  'audioconfig/k20a_game.dat'
 data_file 'AUDIO_SOUNDDATA' 'audioconfig/k20a_sounds.dat'
 data_file 'AUDIO_WAVEPACK'  'sfx/dlc_k20a'
@@ -235,6 +236,7 @@ data_file 'AUDIO_GAMEDATA'  'audioconfig/aq26mit4b11t_game.dat'
 data_file 'AUDIO_SOUNDDATA' 'audioconfig/aq26mit4b11t_sounds.dat'
 data_file 'AUDIO_WAVEPACK'  'sfx/dlc_aq26mit4b11t'
 -- Nissan Skyline R32/R33/R34 RB26DETT I6 Engine =   rb26dett
+data_file 'AUDIO_SYNTHDATA' 'audioconfig/rb26dett_amp.dat'
 data_file 'AUDIO_GAMEDATA'  'audioconfig/rb26dett_game.dat'
 data_file 'AUDIO_SOUNDDATA' 'audioconfig/rb26dett_sounds.dat'
 data_file 'AUDIO_WAVEPACK'  'sfx/dlc_rb26dett'
@@ -251,10 +253,12 @@ data_file 'AUDIO_GAMEDATA'  'audioconfig/aq14nisvq37vhrt_game.dat'
 data_file 'AUDIO_SOUNDDATA' 'audioconfig/aq14nisvq37vhrt_sounds.dat'
 data_file 'AUDIO_WAVEPACK'  'sfx/dlc_aq14nisvq37vhrt'
 -- Pagani Huayra AMG M158 V12 Engine =  m158huayra
+data_file 'AUDIO_SYNTHDATA' 'audioconfig/m158huayra_amp.dat'
 data_file 'AUDIO_GAMEDATA'  'audioconfig/m158huayra_game.dat'
 data_file 'AUDIO_SOUNDDATA' 'audioconfig/m158huayra_sounds.dat'
 data_file 'AUDIO_WAVEPACK'  'sfx/dlc_m158huayra'
 -- Pagani M297 AMG V12 Engine =  m297zonda
+data_file 'AUDIO_SYNTHDATA' 'audioconfig/m297zonda_amp.dat'
 data_file 'AUDIO_GAMEDATA'  'audioconfig/m297zonda_game.dat'
 data_file 'AUDIO_SOUNDDATA' 'audioconfig/m297zonda_sounds.dat'
 data_file 'AUDIO_WAVEPACK'  'sfx/dlc_m297zonda'
@@ -323,6 +327,7 @@ data_file 'AUDIO_GAMEDATA'  'audioconfig/ta023l539_game.dat'
 data_file 'AUDIO_SOUNDDATA' 'audioconfig/ta023l539_sounds.dat'
 data_file 'AUDIO_WAVEPACK'  'sfx/dlc_ta023l539'
 -- Porsche 911 GT3 RS Flat-6 =   tagt3flat6
+data_file 'AUDIO_SYNTHDATA' 'audioconfig/gt3flat6_amp.dat'
 data_file 'AUDIO_GAMEDATA'  'audioconfig/tagt3flat6_game.dat'
 data_file 'AUDIO_SOUNDDATA' 'audioconfig/tagt3flat6_sounds.dat'
 data_file 'AUDIO_WAVEPACK'  'sfx/dlc_tagt3flat6'
@@ -398,6 +403,89 @@ data_file 'AUDIO_WAVEPACK'  'sfx/dlc_bmws702'
 data_file "AUDIO_GAMEDATA" "audioconfig/aq38mclm838tq_game.dat"
 data_file "AUDIO_SOUNDDATA" "audioconfig/aq38mclm838tq_sounds.dat"
 data_file "AUDIO_WAVEPACK" "sfx/dlc_aq38mclm838tq"
+-- bmw m4
+data_file "AUDIO_SYNTHDATA" "audioconfig/lg18bmwm4_amp.dat"
+data_file "AUDIO_GAMEDATA" "audioconfig/lg18bmwm4_game.dat"
+data_file "AUDIO_SOUNDDATA" "audioconfig/lg18bmwm4_sounds.dat"
+data_file "AUDIO_WAVEPACK" "sfx/dlc_lg18bmwm4"
+-- mercedes sound
+data_file 'AUDIO_GAMEDATA' 'audioconfig/w211_game.dat'
+data_file 'AUDIO_SOUNDDATA' 'audioconfig/w211_sounds.dat'
+data_file 'AUDIO_WAVEPACK' 'sfx/dlc_w211'
+-- for bdragon
+data_file 'AUDIO_GAMEDATA' 'audioconfig/elegyx_game.dat'
+data_file 'AUDIO_SOUNDDATA' 'audioconfig/elegyx_sounds.dat'
+data_file 'AUDIO_WAVEPACK' 'sfx/dlc_elegyx'
+-- for redeye
+data_file 'AUDIO_GAMEDATA' 'audioconfig/dodgehemihellcat_game.dat'
+data_file 'AUDIO_SOUNDDATA' 'audioconfig/dodgehemihellcat_sounds.dat'
+data_file 'AUDIO_WAVEPACK' 'sfx/dlc_dodgehemihellcat'
+-- for roxanne
+data_file 'AUDIO_GAMEDATA' 'audioconfig/roxanne_game.dat'
+data_file 'AUDIO_SOUNDDATA' 'audioconfig/roxanne_sounds.dat'
+data_file 'AUDIO_WAVEPACK' 'sfx/dlc_roxanne'
+
+-- sound pack
+data_file 'AUDIO_GAMEDATA' 'audioconfig/musv8_game.dat'
+data_file 'AUDIO_SOUNDDATA' 'audioconfig/musv8_sounds.dat'
+data_file 'AUDIO_WAVEPACK' 'sfx/dlc_musv8'
+
+data_file 'AUDIO_GAMEDATA' 'audioconfig/f50v12_game.dat'
+data_file 'AUDIO_SOUNDDATA' 'audioconfig/f50v12_sounds.dat'
+data_file 'AUDIO_WAVEPACK' 'sfx/dlc_f50v12'
+
+data_file 'AUDIO_GAMEDATA' 'audioconfig/ferrarif12_game.dat'
+data_file 'AUDIO_SOUNDDATA' 'audioconfig/ferrarif12_sounds.dat'
+data_file 'AUDIO_WAVEPACK' 'sfx/dlc_ferrarif12'
+
+data_file 'AUDIO_GAMEDATA' 'audioconfig/murciev12_game.dat'
+data_file 'AUDIO_SOUNDDATA' 'audioconfig/murciev12_sounds.dat'
+data_file 'AUDIO_WAVEPACK' 'sfx/dlc_murciev12'
+
+data_file 'AUDIO_GAMEDATA' 'audioconfig/sestov10_game.dat'
+data_file 'AUDIO_SOUNDDATA' 'audioconfig/sestov10_sounds.dat'
+data_file 'AUDIO_WAVEPACK' 'sfx/dlc_sestov10'
+
+data_file 'AUDIO_SYNTHDATA' 'audioconfig/predatorv8_amp.dat'
+data_file 'AUDIO_GAMEDATA' 'audioconfig/predatorv8_game.dat'
+data_file 'AUDIO_SOUNDDATA' 'audioconfig/predatorv8_sounds.dat'
+data_file 'AUDIO_WAVEPACK' 'sfx/dlc_predatorv8'
+
+data_file 'AUDIO_SYNTHDATA' 'audioconfig/p60b40_amp.dat'
+data_file 'AUDIO_GAMEDATA' 'audioconfig/p60b40_game.dat'
+data_file 'AUDIO_SOUNDDATA' 'audioconfig/p60b40_sounds.dat'
+data_file 'AUDIO_WAVEPACK' 'sfx/dlc_p60b40'
+
+data_file 'AUDIO_GAMEDATA' 'audioconfig/apollosv8_game.dat'
+data_file 'AUDIO_SOUNDDATA' 'audioconfig/apollosv8_sounds.dat'
+data_file 'AUDIO_WAVEPACK' 'sfx/dlc_apollosv8'
+
+data_file 'AUDIO_GAMEDATA' 'audioconfig/avesv_game.dat'
+data_file 'AUDIO_SOUNDDATA' 'audioconfig/avesv_sounds.dat'
+data_file 'AUDIO_WAVEPACK' 'sfx/dlc_avesv'
+
+data_file 'AUDIO_GAMEDATA' 'audioconfig/avesvv12_game.dat'
+data_file 'AUDIO_SOUNDDATA' 'audioconfig/avesvv12_sounds.dat'
+data_file 'AUDIO_WAVEPACK' 'sfx/dlc_avesvv12'
+
+data_file 'AUDIO_GAMEDATA' 'audioconfig/c6v8sound_game.dat'
+data_file 'AUDIO_SOUNDDATA' 'audioconfig/c6v8sound_sounds.dat'
+data_file 'AUDIO_WAVEPACK' 'sfx/dlc_c6v8sound'
+
+data_file 'AUDIO_GAMEDATA' 'audioconfig/gtaspanov10_game.dat'
+data_file 'AUDIO_SOUNDDATA' 'audioconfig/gtaspanov10_sounds.dat'
+data_file 'AUDIO_WAVEPACK' 'sfx/dlc_gtaspanov10'
+data_file 'AUDIO_GAMEDATA' 'audioconfig/laferrarisound_game.dat'
+data_file 'AUDIO_SOUNDDATA' 'audioconfig/laferrarisound_sounds.dat'
+data_file 'AUDIO_WAVEPACK' 'sfx/dlc_laferrarisound'
+
+data_file 'AUDIO_GAMEDATA' 'audioconfig/perfov10_game.dat'
+data_file 'AUDIO_SOUNDDATA' 'audioconfig/perfov10_sounds.dat'
+data_file 'AUDIO_WAVEPACK' 'sfx/dlc_perfov10'
+
+data_file 'AUDIO_GAMEDATA' 'audioconfig/urusv8_game.dat'
+data_file 'AUDIO_SOUNDDATA' 'audioconfig/urusv8_sounds.dat'
+data_file 'AUDIO_WAVEPACK' 'sfx/dlc_urusv8'
 
 client_script {
     'vehicle_names.lua'
