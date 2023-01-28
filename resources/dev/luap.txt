@@ -18,12 +18,12 @@
 
 -- police
     - make sure ps dispatch codes are correct
-        - most bank robberies are showing as 10-99
+    - most bank robberies are showing as 10-99
     - SOP needs to be finished
     - State Statutes needs to be finished (wait for someome who wants to run DOJ?)
 
 -- cars
-    - finish car dealers asap
+    - finish car dealers asap -- PRICES ARENT SET
     - finish car drop asap (handling, headlights/taillights, oversize)
     - make sure player owned cars can't be lockpicked - need to hack with an electronickit
     - find out whats locking vehicle wheels: pretty sure its seatbelt script, SetVehicleEngine, SetVehicleUnusable
