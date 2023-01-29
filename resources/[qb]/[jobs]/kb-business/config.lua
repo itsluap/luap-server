@@ -26,3 +26,55 @@ Config.FindKey = function(int)
 		end
 	end
 end
+
+Crafting = {
+	Joint = {
+		{ ['slicedonion'] = { ['onion'] = 1, },
+			['amount'] = 3 },
+		{ ['slicedpotato'] = { ['potato'] = 1, },
+			['amount'] = 3 },
+		{ ['chickenwrap'] = { ['shotnuggets'] = 1, ['lettuce'] = 1, } },
+		{ ['cheesewrap'] = { ['cheddar'] = 1, ['lettuce'] = 1, } },
+	},
+	Blunt = {
+		{ ['heartstopper'] = {
+				['burgerbun'] = 1,
+				['cheddar'] = 1,
+				['lettuce'] = 1,
+				['burgermeat'] = 1,
+				['slicedonion'] = 1,
+		} },
+		{ ['bleeder'] = {
+				['burgerbun'] = 1,
+				['cheddar'] = 1,
+				['lettuce'] = 1,
+				['burgermeat'] = 1,
+				['slicedonion'] = 1,
+		} },
+		{ ['torpedo'] = {
+				['burgerbun'] = 1,
+				['cheddar'] = 1,
+				['lettuce'] = 1,
+				['burgermeat'] = 1,
+				['slicedonion'] = 1,
+		} },
+		{ ['meatfree'] = {
+				['burgerbun'] = 1,
+				['cheddar'] = 1,
+				['lettuce'] = 1,
+				['slicedonion'] = 1,
+		} },
+		{ ['moneyshot'] = {
+				['burgerbun'] = 1,
+				['cheddar'] = 1,
+				['lettuce'] = 1,
+				['burgermeat'] = 1,
+				['slicedonion'] = 1,
+		} },
+	},
+	Bag = {
+		{ ['burgermeat'] = { ['burgerpatty'] = 1, } },
+	},
+}
+
+Loc = {}

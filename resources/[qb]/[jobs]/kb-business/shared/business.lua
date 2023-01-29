@@ -73,169 +73,20 @@ KB.Businesses = {
 				heading = 50,
 				minMaxZ = 0.3, --// for example 47.22 becomes 48.22 & 46.22				
 			},
-		},		
-		dispensers = {
-			--[[
-			["pppfridge"] = {
-				label = "Fridge",
-				employeeOnly = false, --// This is available to be used by anyone
-				job = "puffpuffpass",
-				slots = 1,
-				coords = vector3(1984.93, 3048.26, 47.22),
-				length = 0.7,
-				width = 1,
-				heading = 140,
-				minMaxZ = 1, --// for example 47.22 becomes 48.22 & 46.22
-				items = {
-					[1] = {
-						name = "joint",
-						price = 35,
-						amount = 10,
-						info = {},
-						type = "item",
-						slot = 1,
-					},
-				}
-			},
-			]]--
-			--[[
-			["pppdispenser1"] = {
-				label = "Fridge",
-				bossOnly = false,
-				employeeOnly = true,
-				job = "puffpuffpass",
-				slots = 15,
-				coords = vector3(1981.97, 3053.85, 46.85),
-				length = 0.7,
-				width = 1,
-				heading = 330,
-				minMaxZ = 0.3, --// for example 47.22 becomes 48.22 & 46.22
-				items = {
-					[1] = {
-						name = "beer",
-						price = 0,
-						amount = 10,
-						info = {},
-						type = "item",
-						slot = 1,
-					},
-					[2] = {
-						name = "whiskey",
-						price = 0,
-						amount = 10,
-						type = "item",
-						slot = 2,
-					},
-					[3] = {
-						name = "vodka",
-						price = 0,
-						amount = 10,
-						type = "item",
-						slot = 3,
-					},
-					[4] = {
-						name = "rum",
-						price = 0,
-						amount = 10,
-						type = "item",
-						slot = 4,
-					},
-					[5] = {
-						name = "tequila",
-						price = 0,
-						amount = 10,
-						type = "item",
-						slot = 5,
-					},
-					[6] = {
-						name = "water_bottle",
-						price = 0,
-						amount = 10,
-						type = "item",
-						slot = 6,
-					},
-					[7] = {
-						name = "crisps",
-						price = 0,
-						amount = 10,
-						type = "item",
-						slot = 7,
-					},
-					[8] = {
-						name = "ecola",
-						price = 0,
-						amount = 10,
-						type = "item",
-						slot = 8,
-					},
-					[9] = {
-						name = "ecolalight",
-						price = 0,
-						amount = 10,
-						type = "item",
-						slot = 9,
-					},
-					[10] = {
-						name = "sprunk",
-						price = 0,
-						amount = 10,
-						type = "item",
-						slot = 10,
-					},
-					[11] = {
-						name = "sprunklight",
-						price = 0,
-						amount = 10,
-						type = "item",
-						slot = 11,
-					},
-					[12] = {
-						name = "saltysids",
-						price = 0,
-						amount = 10,
-						type = "item",
-						slot = 12,
-					},
-					[13] = {
-						name = "pieandbeans",
-						price = 0,
-						amount = 10,
-						type = "item",
-						slot = 13,
-					},
-					[14] = {
-						name = "lime",
-						price = 0,
-						amount = 10,
-						type = "item",
-						slot = 14,
-					},
-					[15] = {
-						name = "dart",
-						price = 0,
-						amount = 10,
-						type = "item",
-						slot = 15,
-					},
-				}
-			},
-			]]--
 		},
 		employeeActions = {
-			--[[
 			["crafting"] = {
-				label = "Cook",
-				action = "Cook Dog",
+				label = "Crafting",
+				action = "Craft",
 				type = "client",
 				icon = "fas fa-hand",
-				event = "kb-business:client:cookdog",
+				event = "kb-business:client:weedcraft",
 				coords = vector3(1984.43, 3050.3, 47.21),
 				length = 0.4,
 				width = 0.8,
 				heading = 235,
 				minMaxZ = 0.2, --// for example 47.22 becomes 48.22 & 46.22				
 			},
-			]]--
 		},
 	},
 
