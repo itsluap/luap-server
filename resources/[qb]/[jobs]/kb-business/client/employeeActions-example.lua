@@ -23,6 +23,7 @@ AddEventHandler('kb-business:client:weedcraftjoint', function()
 	data = {
 		craftable = Config.Joint
 	}
+	print(data.craftable)
 	print('running client event - opening menu')
 	local Menu = {}
 	Menu[#Menu + 1] = { header = "Puff Puff Pass", txt = "", isMenuHeader = true }
