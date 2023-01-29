@@ -844,4 +844,61 @@ QBShared.Items = {
 		["combinable"] = nil,
 		["description"] = "Casino Sprite"
 	},
+
+	-- puff puff pass --
+
+	-- lighters --
+	["lighter_yellow"] 				= {["name"] = "lighter_yellow",  	     	["label"] = "Lighter",	 		["weight"] = 100, 		["type"] = "item", 		["image"] = "lighter_yellow.png", 		["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = "weed"},
+	["lighter_green"] 				= {["name"] = "lighter_green",  	     	["label"] = "Lighter",	 		["weight"] = 100, 		["type"] = "item", 		["image"] = "lighter_green.png", 		["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = "weed"},
+	["lighter_blue"] 	 			= {["name"] = "lighter_blue",       		["label"] = "Lighter",	 		["weight"] = 100, 		["type"] = "item", 		["image"] = "lighter_blue.png", 		["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = "weed"},
+
+	-- pounds --
+	["white_widow_lb"] 				= {["name"] = "white_widow_lb",  	     	["label"] = "Pound",	 		["weight"] = 5000, 		["type"] = "item", 		["image"] = "white_widow_lb.png", 		["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = "pound"},
+	["skunk_lb"] 					= {["name"] = "skunk_lb",  	     			["label"] = "Pound",	 		["weight"] = 5000, 		["type"] = "item", 		["image"] = "skunk_lb.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = "pound"},
+	["purple_haze_lb"] 	 			= {["name"] = "purple_haze_lb",       		["label"] = "Pound",	 		["weight"] = 5000, 		["type"] = "item", 		["image"] = "purple_haze_lb.png", 		["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = "pound"},
+	["og_kush_lb"] 					= {["name"] = "og_kush_lb",					["label"] = "Pound",			["weight"] = 5000,		["type"] = "item",		["image"] = "og_kush_lb.png",			["unique"] = false, 	["useable"] = true,		["shouldClose"] = true,		["combinable"] = nil,	["description"] = "pound" },
+	["amnesia_lb"] 				    = {["name"] = "amnesia_lb",					["label"] = "Pound",			["weight"] = 5000,		["type"] = "item",		["image"] = "amnesia_lb.png",			["unique"] = false, 	["useable"] = true,		["shouldClose"] = true,		["combinable"] = nil,	["description"] = "pound" },
+	["ak47_lb"] 					= {["name"] = "ak47_lb",					["label"] = "Pound",			["weight"] = 5000,		["type"] = "item",		["image"] = "ak47_lb.png",				["unique"] = false, 	["useable"] = true,		["shouldClose"] = true,		["combinable"] = nil,	["description"] = "pound" },
+
+	-- ounces --
+	["white_widow_oz"] 				= {["name"] = "white_widow_oz",  	     	["label"] = "Pound",	 		["weight"] = 5000, 		["type"] = "item", 		["image"] = "white_widow_oz.png", 		["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = "ounce"},
+	["skunk_oz"] 					= {["name"] = "skunk_oz",  	     			["label"] = "Pound",	 		["weight"] = 5000, 		["type"] = "item", 		["image"] = "skunk_oz.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = "ounce"},
+	["purple_haze_oz"] 	 			= {["name"] = "purple_haze_oz",       		["label"] = "Pound",	 		["weight"] = 5000, 		["type"] = "item", 		["image"] = "purple_haze_oz.png", 		["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = "ounce"},
+	["og_kush_oz"] 					= {["name"] = "og_kush_oz",					["label"] = "Pound",			["weight"] = 5000,		["type"] = "item",		["image"] = "og_kush_oz.png",			["unique"] = false, 	["useable"] = true,		["shouldClose"] = true,		["combinable"] = nil,	["description"] = "ounce" },
+	["amneria_oz"] 				    = {["name"] = "amneria_oz",					["label"] = "Pound",			["weight"] = 5000,		["type"] = "item",		["image"] = "amneria_oz.png",			["unique"] = false, 	["useable"] = true,		["shouldClose"] = true,		["combinable"] = nil,	["description"] = "ounce" },
+	["ak47_oz"] 					= {["name"] = "ak47_oz",					["label"] = "Pound",			["weight"] = 5000,		["type"] = "item",		["image"] = "ak47_oz.png",				["unique"] = false, 	["useable"] = true,		["shouldClose"] = true,		["combinable"] = nil,	["description"] = "ounce" },
+
+	-- papers --
+	["rolling_paper_orange"] 		= {["name"] = "rolling_paper_orange",  	    ["label"] = "Ounce",	 		["weight"] = 1000, 		["type"] = "item", 		["image"] = "rolling_paper_orange.png", 		["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = "papers"},
+	["rolling_paper_purple"] 		= {["name"] = "rolling_paper_purple",  	    ["label"] = "Ounce",	 		["weight"] = 1000, 		["type"] = "item", 		["image"] = "rolling_paper_purple.png", 		["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = "papers"},
+	["rolling_paper_yellow"] 	 	= {["name"] = "rolling_paper_yellow",       ["label"] = "Ounce",	 		["weight"] = 1000, 		["type"] = "item", 		["image"] = "rolling_paper_yellow.png", 		["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = "papers"},
+	["rolling_paper_red"] 			= {["name"] = "rolling_paper_red",			["label"] = "Ounce",			["weight"] = 1000,		["type"] = "item",		["image"] = "rolling_paper_red.png",			["unique"] = false, 	["useable"] = true,		["shouldClose"] = true,		["combinable"] = nil,	["description"] = "papers" },
+	["rolling_paper_green"] 		= {["name"] = "rolling_paper_green",		["label"] = "Ounce",			["weight"] = 1000,		["type"] = "item",		["image"] = "rolling_paper_green.png",			["unique"] = false, 	["useable"] = true,		["shouldClose"] = true,		["combinable"] = nil,	["description"] = "papers" },
+	["rolling_paper_blue"] 			= {["name"] = "rolling_paper_blue",			["label"] = "Ounce",			["weight"] = 1000,		["type"] = "item",		["image"] = "rolling_paper_blue.png",			["unique"] = false, 	["useable"] = true,		["shouldClose"] = true,		["combinable"] = nil,	["description"] = "papers" },
+
+
+	-- bags --
+	["pink_weed_bag"] 				= {["name"] = "pink_weed_bag",  	     	["label"] = "Bag",	 		["weight"] = 100, 		["type"] = "item", 		["image"] = "joint_whitewidow.png", 		["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = "bag"},
+	["blue_weed_bag"] 				= {["name"] = "blue_weed_bag",  	     	["label"] = "Bag",	 		["weight"] = 100, 		["type"] = "item", 		["image"] = "joint_skunk.png", 				["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = "bag"},
+	["green_weed_bag"] 	 			= {["name"] = "green_weed_bag",       		["label"] = "Bag",	 		["weight"] = 100, 		["type"] = "item", 		["image"] = "joint_purplehaze.png", 		["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = "bag"},
+	["ak47_bag"] 					= {["name"] = "ak47_bag",					["label"] = "Bag",			["weight"] = 100,		["type"] = "item",		["image"] = "joint_og_kush.png",			["unique"] = false, 	["useable"] = true,		["shouldClose"] = true,		["combinable"] = nil,	["description"] = "bag" },
+	["skunk_bag"] 				    = {["name"] = "skunk_bag",					["label"] = "Bag",			["weight"] = 100,		["type"] = "item",		["image"] = "joint_amnesia.png",			["unique"] = false, 	["useable"] = true,		["shouldClose"] = true,		["combinable"] = nil,	["description"] = "bag" },
+	["purple_haze_bag"] 			= {["name"] = "purple_haze_bag",			["label"] = "Bag",			["weight"] = 100,		["type"] = "item",		["image"] = "joint_ak47.png",				["unique"] = false, 	["useable"] = true,		["shouldClose"] = true,		["combinable"] = nil,	["description"] = "bag" },
+	["og_kush_bag"] 				= {["name"] = "og_kush_bag",  	     		["label"] = "Bag",	 		["weight"] = 100, 		["type"] = "item", 		["image"] = "joint_whitewidow.png", 		["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = "bag"},
+	["white_widow_bag"] 			= {["name"] = "white_widow_bag",  	     	["label"] = "Bag",	 		["weight"] = 100, 		["type"] = "item", 		["image"] = "joint_skunk.png", 				["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = "bag"},
+	["blue_dream_bag"] 	 			= {["name"] = "blue_dream_bag",       		["label"] = "Bag",	 		["weight"] = 100, 		["type"] = "item", 		["image"] = "joint_purplehaze.png", 		["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = "bag"},
+	["amnesia_bag"] 				= {["name"] = "amnesia_bag",				["label"] = "Bag",			["weight"] = 100,		["type"] = "item",		["image"] = "joint_og_kush.png",			["unique"] = false, 	["useable"] = true,		["shouldClose"] = true,		["combinable"] = nil,	["description"] = "bag" },
+	["banana_kush_bag"] 			= {["name"] = "banana_kush_bag",			["label"] = "Bag",			["weight"] = 100,		["type"] = "item",		["image"] = "joint_amnesia.png",			["unique"] = false, 	["useable"] = true,		["shouldClose"] = true,		["combinable"] = nil,	["description"] = "bag" },
+
+
+	-- joints --
+	["joint_whitewidow"] 				= {["name"] = "joint_whitewidow",  	     		["label"] = "Joint",	 		["weight"] = 100, 		["type"] = "item", 		["image"] = "joint_whitewidow.png", 		["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = "weed"},
+	["joint_skunk"] 					= {["name"] = "joint_skunk",  	     			["label"] = "Joint",	 		["weight"] = 100, 		["type"] = "item", 		["image"] = "joint_skunk.png", 				["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = "weed"},
+	["joint_purplehaze"] 	 			= {["name"] = "joint_purplehaze",       		["label"] = "Joint",	 		["weight"] = 100, 		["type"] = "item", 		["image"] = "joint_purplehaze.png", 		["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = "weed"},
+	["joint_og_kush"] 					= {["name"] = "joint_og_kush",					["label"] = "Joint",			["weight"] = 100,		["type"] = "item",		["image"] = "joint_og_kush.png",			["unique"] = false, 	["useable"] = true,		["shouldClose"] = true,		["combinable"] = nil,	["description"] = "weed" },
+	["joint_amnesia"] 				    = {["name"] = "joint_amnesia",					["label"] = "Joint",			["weight"] = 100,		["type"] = "item",		["image"] = "joint_amnesia.png",			["unique"] = false, 	["useable"] = true,		["shouldClose"] = true,		["combinable"] = nil,	["description"] = "weed" },
+	["joint_ak47"] 						= {["name"] = "joint_ak47",						["label"] = "Joint",			["weight"] = 100,		["type"] = "item",		["image"] = "joint_ak47.png",				["unique"] = false, 	["useable"] = true,		["shouldClose"] = true,		["combinable"] = nil,	["description"] = "weed" },
+
+
+
 }

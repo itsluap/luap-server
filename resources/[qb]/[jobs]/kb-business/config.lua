@@ -29,13 +29,14 @@ end
 
 Crafting = {
 	Joint = {
-		{ ['slicedonion'] = { ['onion'] = 1, },
-			['amount'] = 3 },
-		{ ['slicedpotato'] = { ['potato'] = 1, },
-			['amount'] = 3 },
-		{ ['chickenwrap'] = { ['shotnuggets'] = 1, ['lettuce'] = 1, } },
-		{ ['cheesewrap'] = { ['cheddar'] = 1, ['lettuce'] = 1, } },
+		{ ['joint_whitewidow'] = { ['white_widow_bag'] = 1, ['rolling_paper_green'] = 1, } },
+		{ ['joint_og_kush'] = { ['og_kush_bag'] = 1, ['rolling_paper_blue'] = 1, } },
+		{ ['joint_amnesia'] = { ['amnesia_bag'] = 1, ['rolling_paper_yellow'] = 1, } },
+		{ ['joint_ak47'] = { ['ak47_bag'] = 1, ['rolling_paper_red'] = 1, } },
+		{ ['joint_skunk'] = { ['skunk_bag'] = 1, ['rolling_paper_orange'] = 1} },
+		{ ['joint_purplehaze'] = { ['purple_haze_bag'] = 1, ['rolling_paper_purple'] = 1 } },
 	},
+	--[[
 	Blunt = {
 		{ ['heartstopper'] = {
 				['burgerbun'] = 1,
@@ -72,9 +73,7 @@ Crafting = {
 				['slicedonion'] = 1,
 		} },
 	},
-	Bag = {
-		{ ['burgermeat'] = { ['burgerpatty'] = 1, } },
-	},
+	]]--
 }
 
 Loc = {}

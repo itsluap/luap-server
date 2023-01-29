@@ -6,7 +6,7 @@ description 'KB-Business Script'
 version '1.0.1'
 
 shared_scripts {'config.lua', 'shared/business.lua'}
-server_scripts {'server/main.lua', 'server/employeeActions-exampleS.lua'}
+server_scripts {'server/main.lua', 'server/employeeActions-exampleS.lua', 'server/ppp_server.lua'}
 client_scripts {
     '@PolyZone/client.lua',
     '@PolyZone/BoxZone.lua',
@@ -14,7 +14,8 @@ client_scripts {
     '@PolyZone/CircleZone.lua',
     '@PolyZone/ComboZone.lua',
 	'client/main.lua',
-	'client/employeeActions-example.lua'
+	'client/employeeActions-example.lua',
+	'client/ppp_client.lua',
 } 
 
 ui_page 'html/index.html'
@@ -31,7 +32,9 @@ escrow_ignore {
 	'README.md',
 	'config.lua',
 	'client/employeeActions-example.lua',
-	'server/employeeActions-exampleS.lua'
+	'server/employeeActions-exampleS.lua',
+	'client/ppp_client.lua',
+	'server/ppp_server.lua',
 }
 
 lua54 'yes'
