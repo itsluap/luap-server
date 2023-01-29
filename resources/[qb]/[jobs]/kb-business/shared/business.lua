@@ -1,3 +1,5 @@
+local QBCore = exports['qb-core']:GetCoreObject()
+
 KB = KB or {}
 
 KB.Businesses = {
