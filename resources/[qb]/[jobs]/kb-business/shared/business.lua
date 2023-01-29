@@ -78,8 +78,8 @@ KB.Businesses = {
 		},
 		employeeActions = {
 			["crafting"] = {
-				label = "Crafting",
-				action = "Craft",
+				label = "Joint Crafting",
+				action = "Joint Craft",
 				type = "client",
 				icon = "fas fa-hand",
 				event = "kb-business:client:weedcraftjoint",
