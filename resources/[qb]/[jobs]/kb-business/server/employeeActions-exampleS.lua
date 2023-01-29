@@ -87,7 +87,7 @@ RegisterNetEvent('kb-business:server:toggleItem', function(give, item, amount, n
 			print('notification here for: dont have required items')
 		end
 	end
-	GlobalState.canMakeWeed = false
+	--GlobalState.canMakeWeed = false
 end)
 
 RegisterServerEvent("kb-business:server:GrabBox", function()
