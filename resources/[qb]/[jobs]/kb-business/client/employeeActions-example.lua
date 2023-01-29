@@ -19,7 +19,10 @@ RegisterNetEvent('kb-business:Crafting:MakeItem', function(data)
 end)
 
 RegisterNetEvent('kb-business:client:weedcraftjoint')
-AddEventHandler('kb-business:client:weedcraftjoint', function(data)
+AddEventHandler('kb-business:client:weedcraftjoint', function()
+	data = {
+		craftable = Config.Joint
+	}
 	print('running client event - opening menu')
 	local Menu = {}
 	Menu[#Menu + 1] = { header = "Puff Puff Pass", txt = "", isMenuHeader = true }

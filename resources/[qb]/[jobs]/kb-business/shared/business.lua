@@ -81,7 +81,6 @@ KB.Businesses = {
 				type = "client",
 				icon = "fas fa-hand",
 				event = "kb-business:client:weedcraftjoint",
-				craftable = Config.Joint,
 				coords = vector3(-1551.19, -455.54, 35.89),
 				length = 0.6,
 				width = 1.0,
