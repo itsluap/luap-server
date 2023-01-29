@@ -55,7 +55,7 @@ RegisterNetEvent('kb-business:server:toggleItem', function(give, item, amount, n
 	local src = newsrc or source
 	local amount = amount or 1
 	local remamount = amount
-	local canmake = false
+	canmake = false
 	if not give then
 		if HasItem(src, item, amount) then -- check if you still have the item
 			canmake = true
