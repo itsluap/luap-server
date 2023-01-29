@@ -72,6 +72,7 @@ RegisterNetEvent('kb-business:server:toggleItem', function(give, item, amount, n
 			end
 			canmake = true
 		else
+			canmake = false
 			-- give = false
 			-- print('notification here for: dont have required items')
 		end
