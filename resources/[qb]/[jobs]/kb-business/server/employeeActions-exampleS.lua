@@ -1,6 +1,6 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
-GlobalState.canMakeWeedWeed = false
+GlobalState.canMakeJoint = false
 
 function HasItem(source, items, amount)
     local Player = QBCore.Functions.GetPlayer(source)
@@ -60,7 +60,7 @@ RegisterNetEvent('kb-business:server:toggleItem', function(give, item, amount, n
 	local remamount = amount
 	if not give then
 		if HasItem(src, item, amount) then -- check if you still have the item
-			GlobalState.canMakeWeed = true
+			GlobalState.canMakeJoint = true
 			if QBCore.Functions.GetPlayer(src).Functions.GetItemByName(item).unique then -- If unique item, keep removing until gone
 				while remamount > 0 do
 					QBCore.Functions.GetPlayer(src).Functions.RemoveItem(item, 1)
@@ -73,28 +73,70 @@ RegisterNetEvent('kb-business:server:toggleItem', function(give, item, amount, n
 				if Config.Debug then print("^5Debug^7: ^1Removing ^2from Player^7(^2"..src.."^7) '^6"..QBCore.Shared.Items[item].label.."^7(^2x^6"..(amount or "1").."^7)'") end
 				TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item], "remove", amount)
 			end
-			--print(GlobalState.canMakeWeed)
+			--print(GlobalState.canMakeJoint)
 		end
 	elseif give then
-		--print(GlobalState.canMakeWeed)
-		if GlobalState.canMakeWeed then
+		--print(GlobalState.canMakeJoint)
+		if GlobalState.canMakeJoint then
 			if QBCore.Functions.GetPlayer(src).Functions.AddItem(item, amount) then
 				if Config.Debug then print("^5Debug^7: ^4Giving ^2Player^7(^2"..src.."^7) '^6"..QBCore.Shared.Items[item].label.."^7(^2x^6"..(amount or "1").."^7)'") end
 				TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item], "add", amount)
-				GlobalState.canMakeWeed = false
+				GlobalState.canMakeJoint = false
 			end
 		else
 			--print("You don't have the required items")
 			TriggerClientEvent("QBCore:Notify", src, "You don't have the required items", "error")
 		end
 	end
-	--GlobalState.canMakeWeed = false
+	--GlobalState.canMakeJoint = false
 end)
 
 RegisterServerEvent("kb-business:server:GrabBox", function()
 	local src = source local Player = QBCore.Functions.GetPlayer(src)
 	TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["pppbox"], "add", 1)
 	Player.Functions.AddItem("pppbox", 1, false, { ["id"] = math.random(1, 9999999) })
+end)
+
+QBCore.Functions.CreateUseableItem("joint_whitewidow", function(source, item)
+    local Player = QBCore.Functions.GetPlayer(source)
+	if not Player.Functions.RemoveItem(item.name, 1, item.slot) then return end
+    TriggerClientEvent("kb-business:client:UseStressBuffJoint", source)
+end)
+
+QBCore.Functions.CreateUseableItem("joint_skunk", function(source, item)
+    local Player = QBCore.Functions.GetPlayer(source)
+	if not Player.Functions.RemoveItem(item.name, 1, item.slot) then return end
+    TriggerClientEvent("kb-business:client:UseStressBuffJoint", source)
+end)
+
+QBCore.Functions.CreateUseableItem("joint_whitewidow", function(source, item)
+    local Player = QBCore.Functions.GetPlayer(source)
+	if not Player.Functions.RemoveItem(item.name, 1, item.slot) then return end
+    TriggerClientEvent("kb-business:client:UseStressBuffJoint", source)
+end)
+
+QBCore.Functions.CreateUseableItem("joint_purplehaze", function(source, item)
+    local Player = QBCore.Functions.GetPlayer(source)
+	if not Player.Functions.RemoveItem(item.name, 1, item.slot) then return end
+    TriggerClientEvent("kb-business:client:UseStressBuffJoint", source)
+end)
+
+QBCore.Functions.CreateUseableItem("joint_og_kush", function(source, item)
+    local Player = QBCore.Functions.GetPlayer(source)
+	if not Player.Functions.RemoveItem(item.name, 1, item.slot) then return end
+    TriggerClientEvent("kb-business:client:UseStressBuffJoint", source)
+end)
+
+QBCore.Functions.CreateUseableItem("joint_amnesia", function(source, item)
+    local Player = QBCore.Functions.GetPlayer(source)
+	if not Player.Functions.RemoveItem(item.name, 1, item.slot) then return end
+    TriggerClientEvent("kb-business:client:UseStressBuffJoint", source)
+end)
+
+QBCore.Functions.CreateUseableItem("joint_ak47", function(source, item)
+    local Player = QBCore.Functions.GetPlayer(source)
+	if not Player.Functions.RemoveItem(item.name, 1, item.slot) then return end
+    TriggerClientEvent("kb-business:client:UseStressBuffJoint", source)
 end)
 
 -- default stuff --
