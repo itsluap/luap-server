@@ -1,5 +1,7 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
+GlobalState.canMake = false
+
 function HasItem(source, items, amount)
     local Player = QBCore.Functions.GetPlayer(source)
     if not Player then return false end
@@ -55,7 +57,6 @@ RegisterNetEvent('kb-business:server:toggleItem', function(give, item, amount, n
 	local src = newsrc or source
 	local amount = amount or 1
 	local remamount = amount
-	GlobalState.canMake = false
 	if not give then
 		if HasItem(src, item, amount) then -- check if you still have the item
 			GlobalState.canMake = true
