@@ -48,6 +48,7 @@ RegisterServerEvent('kb-business:Crafting:GetItem', function(ItemMake, craftable
 		for k, v in pairs(craftable[ItemMake]) do TriggerEvent("kb-business:server:toggleItem", false, tostring(k), v, src) item2 = tostring(k) amount2 = v end
 	end
 	--This should give the item, while the rest removes the requirements
+	Citizen.Wait(2000)
 	TriggerEvent("kb-business:server:toggleItem", true, ItemMake, amount, src)
 end)
 
