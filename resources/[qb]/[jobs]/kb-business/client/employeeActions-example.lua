@@ -18,12 +18,15 @@ RegisterNetEvent('kb-business:Crafting:MakeItem', function(data)
 	end, data.item)
 end)
 
-RegisterNetEvent('kb-business:client:weedcraft')
-AddEventHandler('kb-business:client:weedcraft', function(data)
+RegisterNetEvent('kb-business:client:weedcraftjoint')
+AddEventHandler('kb-business:client:weedcraftjoint', function()
 	print('running client event - opening menu')
+	data = {
+		crafting = Config.Joint
+	}
 	local Menu = {}
-	Menu[#Menu + 1] = { header = data.header, txt = "", isMenuHeader = true }
-	Menu[#Menu + 1] = { icon = "fas fa-circle-xmark", header = "", txt = Loc[Config.Lan].menu["close"], params = { event = "" } }
+	Menu[#Menu + 1] = { header = "Puff Puff Pass", txt = "", isMenuHeader = true }
+	Menu[#Menu + 1] = { icon = "fas fa-circle-xmark", header = "", txt = "Close", params = { event = "" } }
 	for i = 1, #data.craftable do
 		for k, v in pairs(data.craftable[i]) do
 			if k ~= "amount" then
