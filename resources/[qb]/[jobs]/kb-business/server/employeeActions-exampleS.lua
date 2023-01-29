@@ -1,5 +1,42 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
+function HasItem(source, items, amount)
+    local Player = QBCore.Functions.GetPlayer(source)
+    if not Player then return false end
+    local isTable = type(items) == 'table'
+    local isArray = isTable and table.type(items) == 'array' or false
+    local totalItems = #items
+    local count = 0
+    local kvIndex = 2
+    if isTable and not isArray then
+        totalItems = 0
+        for _ in pairs(items) do totalItems += 1 end
+        kvIndex = 1
+    end
+    if isTable then
+	if Config.Debug then print("^5Debug^7: ^3HasItem^7: ^2Checking if player^7(^6"..source.."^7)^2 has items^7") end
+        for k, v in pairs(items) do
+            local itemKV = {k, v}
+            local item = Player.Functions.GetItemByName(itemKV[kvIndex])
+            if item and ((amount and item.amount >= amount) or (not isArray and item.amount >= v) or (not amount and isArray)) then
+                count += 1
+            end
+        end
+        if count == totalItems then
+			if Config.Debug then print("^5Debug^7: ^3HasItem^7: ^2Items FOUND^7") end
+            return true
+        end
+    else -- Single item as stringHasItem(v, 1)
+		if Config.Debug then print("^5Debug^7: ^3HasItem^7: ^2Checking if player^7(^6"..source.."^7)^2 has items^7") end
+		local item = Player.Functions.GetItemByName(items)
+        if item and (not amount or (item and amount and item.amount >= amount)) then
+            return true
+        end
+    end
+	if Config.Debug then print("^5Debug^7: ^3HasItem^7: ^2Items Not FOUND^7") end
+    return false
+end
+
 ---Crafting
 RegisterServerEvent('kb-business:Crafting:GetItem', function(ItemMake, craftable)
 	local src = source
