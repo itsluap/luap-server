@@ -20,6 +20,7 @@ end)
 
 RegisterNetEvent('kb-business:client:weedcraft')
 AddEventHandler('kb-business:client:weedcraft', function(data)
+	print('running client event - opening menu')
 	local Menu = {}
 	Menu[#Menu + 1] = { header = data.header, txt = "", isMenuHeader = true }
 	Menu[#Menu + 1] = { icon = "fas fa-circle-xmark", header = "", txt = Loc[Config.Lan].menu["close"], params = { event = "" } }
