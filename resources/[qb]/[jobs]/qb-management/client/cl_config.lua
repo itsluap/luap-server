@@ -28,6 +28,9 @@ Config.BossMenus = {
     ['burgershot'] = {
         vector3(-1177.87, -896.27, 15.09),
     },
+    ['puffpuffpass'] = {
+        vector3(-1565.01, -449.61, 35.79),
+    },
 }
 
 Config.BossMenuZones = {
@@ -52,6 +55,9 @@ Config.BossMenuZones = {
     -- need vanilla
     ['burgershot'] = {
         { coords = vector3(-1177.87, -896.27, 15.09), length = 1.15, width = 2.6, heading = 353.0, minZ = 5.09, maxZ = 15.09 },
+    },
+    ['puffpuffpass'] = {
+        { coords = vector3(-1565.01, -449.61, 35.79), length = 1.15, width = 2.6, heading = 231.0, minZ = 25.79, maxZ = 35.79 },
     },
 }
 
