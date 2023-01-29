@@ -45,10 +45,10 @@ RegisterServerEvent('kb-business:Crafting:GetItem', function(ItemMake, craftable
 	local amount = 1
 	if craftable then
 		if craftable["amount"] then amount = craftable["amount"] end
-		for k, v in pairs(craftable[ItemMake]) do TriggerEvent("kb-business:server:toggleItem", false, tostring(k), v, src) end
+		for k, v in pairs(craftable[ItemMake]) do TriggerEvent("kb-business:server:toggleItem", false, tostring(k), v, src) item2 = tostring(k) amount2 = v end
 	end
 	--This should give the item, while the rest removes the requirements
-	if HasItem(src, tostring(k), v) then -- check if you still have the item
+	if HasItem(src, item2, amount2) then -- check if you still have the item
 		TriggerEvent("kb-business:server:toggleItem", true, ItemMake, amount, src)
 	else 
 		print('notifitcation here?')
