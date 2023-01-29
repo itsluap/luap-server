@@ -99,44 +99,44 @@ end)
 
 QBCore.Functions.CreateUseableItem("joint_whitewidow", function(source, item)
     local Player = QBCore.Functions.GetPlayer(source)
+	local jointType = "joint_whitewidow"
 	if not Player.Functions.RemoveItem(item.name, 1, item.slot) then return end
-    TriggerClientEvent("kb-business:client:UseStressBuffJoint", source)
+    TriggerClientEvent("kb-business:client:UseStressBuffJoint", source, jointType)
 end)
 
 QBCore.Functions.CreateUseableItem("joint_skunk", function(source, item)
     local Player = QBCore.Functions.GetPlayer(source)
+	local jointType = "joint_skunk"
 	if not Player.Functions.RemoveItem(item.name, 1, item.slot) then return end
-    TriggerClientEvent("kb-business:client:UseStressBuffJoint", source)
-end)
-
-QBCore.Functions.CreateUseableItem("joint_whitewidow", function(source, item)
-    local Player = QBCore.Functions.GetPlayer(source)
-	if not Player.Functions.RemoveItem(item.name, 1, item.slot) then return end
-    TriggerClientEvent("kb-business:client:UseStressBuffJoint", source)
+    TriggerClientEvent("kb-business:client:UseStressBuffJoint", source, jointType)
 end)
 
 QBCore.Functions.CreateUseableItem("joint_purplehaze", function(source, item)
     local Player = QBCore.Functions.GetPlayer(source)
+	local jointType = "joint_purplehaze"
 	if not Player.Functions.RemoveItem(item.name, 1, item.slot) then return end
-    TriggerClientEvent("kb-business:client:UseStressBuffJoint", source)
+    TriggerClientEvent("kb-business:client:UseStressBuffJoint", source, jointType)
 end)
 
 QBCore.Functions.CreateUseableItem("joint_og_kush", function(source, item)
     local Player = QBCore.Functions.GetPlayer(source)
+	local jointType = "joint_og_kush"
 	if not Player.Functions.RemoveItem(item.name, 1, item.slot) then return end
-    TriggerClientEvent("kb-business:client:UseStressBuffJoint", source)
+    TriggerClientEvent("kb-business:client:UseStressBuffJoint", source, jointType)
 end)
 
 QBCore.Functions.CreateUseableItem("joint_amnesia", function(source, item)
     local Player = QBCore.Functions.GetPlayer(source)
+	local jointType = "joint_amnesia"
 	if not Player.Functions.RemoveItem(item.name, 1, item.slot) then return end
-    TriggerClientEvent("kb-business:client:UseStressBuffJoint", source)
+    TriggerClientEvent("kb-business:client:UseStressBuffJoint", source, jointType)
 end)
 
 QBCore.Functions.CreateUseableItem("joint_ak47", function(source, item)
     local Player = QBCore.Functions.GetPlayer(source)
+	local jointType = "joint_ak47"
 	if not Player.Functions.RemoveItem(item.name, 1, item.slot) then return end
-    TriggerClientEvent("kb-business:client:UseStressBuffJoint", source)
+    TriggerClientEvent("kb-business:client:UseStressBuffJoint", source, jointType)
 end)
 
 -- default stuff --

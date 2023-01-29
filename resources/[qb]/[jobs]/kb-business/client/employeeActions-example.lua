@@ -50,19 +50,20 @@ AddEventHandler('kb-business:client:weedcraftjoint', function()
 	exports['qb-menu']:openMenu(Menu)
 end)
 
-RegisterNetEvent('kb-business:client:UseStressBuffJoint', function()
+RegisterNetEvent('kb-business:client:UseStressBuffJoint', function(jointType)
     QBCore.Functions.Progressbar("smoke_joint", "Lighting joint..", 1500, false, true, {
         disableMovement = false,
         disableCarMovement = false,
 		disableMouse = false,
 		disableCombat = true,
     }, {}, {}, {}, function() -- Done
-        TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["joint"], "remove")
+        TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items[jointType], "remove")
         if IsPedInAnyVehicle(PlayerPedId(), false) then
             TriggerEvent('animations:client:EmoteCommandStart', {"smoke3"})
         else
             TriggerEvent('animations:client:EmoteCommandStart', {"smokeweed"})
         end
+		Citizen.Wait(1000)
         TriggerEvent("evidence:client:SetStatus", "weedsmell", 300)
         TriggerEvent('animations:client:SmokeWeed')
 		exports['ps-buffs']:AddStressBuff(30000, 10)
