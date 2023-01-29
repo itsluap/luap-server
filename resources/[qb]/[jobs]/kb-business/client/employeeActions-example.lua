@@ -35,7 +35,7 @@ AddEventHandler('kb-business:client:weedcraftjoint', function()
 				local disable = false
 				local checktable = {}
 				for l, b in pairs(data.craftable[i][tostring(k)]) do
-					if b == 1 then number = "x1" else number = " x"..b end
+					if b == 1 then number = " x1" else number = " x"..b end
 					text = text.."- "..QBCore.Shared.Items[l].label..number.."<br>"
 					settext = text
 					checktable[l] = HasItem(l, b)
