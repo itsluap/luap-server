@@ -58,6 +58,7 @@ RegisterNetEvent('kb-business:server:toggleItem', function(give, item, amount, n
 	local canmake = false
 	if not give then
 		if HasItem(src, item, amount) then -- check if you still have the item
+			canmake = true
 			if QBCore.Functions.GetPlayer(src).Functions.GetItemByName(item).unique then -- If unique item, keep removing until gone
 				while remamount > 0 do
 					QBCore.Functions.GetPlayer(src).Functions.RemoveItem(item, 1)
@@ -70,7 +71,6 @@ RegisterNetEvent('kb-business:server:toggleItem', function(give, item, amount, n
 				if Config.Debug then print("^5Debug^7: ^1Removing ^2from Player^7(^2"..src.."^7) '^6"..QBCore.Shared.Items[item].label.."^7(^2x^6"..(amount or "1").."^7)'") end
 				TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item], "remove", amount)
 			end
-			canmake = true
 		else
 			canmake = false
 			-- give = false
