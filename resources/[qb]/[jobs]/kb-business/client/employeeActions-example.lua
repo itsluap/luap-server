@@ -19,11 +19,8 @@ RegisterNetEvent('kb-business:Crafting:MakeItem', function(data)
 end)
 
 RegisterNetEvent('kb-business:client:weedcraftjoint')
-AddEventHandler('kb-business:client:weedcraftjoint', function()
+AddEventHandler('kb-business:client:weedcraftjoint', function(data)
 	print('running client event - opening menu')
-	data = {
-		craftable = Config.Joint
-	}
 	local Menu = {}
 	Menu[#Menu + 1] = { header = "Puff Puff Pass", txt = "", isMenuHeader = true }
 	Menu[#Menu + 1] = { icon = "fas fa-circle-xmark", header = "", txt = "Close", params = { event = "" } }
