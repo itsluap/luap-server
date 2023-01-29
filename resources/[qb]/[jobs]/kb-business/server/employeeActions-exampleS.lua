@@ -45,13 +45,10 @@ RegisterServerEvent('kb-business:Crafting:GetItem', function(ItemMake, craftable
 	local amount = 1
 	if craftable then
 		if craftable["amount"] then amount = craftable["amount"] end
-		for k, v in pairs(craftable[ItemMake]) do TriggerEvent("kb-business:server:toggleItem", false, tostring(k), v, src) item2 = tostring(k) amount2 = v end
-		--This should give the item, while the rest removes the requirements
-		Citizen.Wait(1000)
-		TriggerEvent("kb-business:server:toggleItem", true, ItemMake, amount, src)
+		for k, v in pairs(craftable[ItemMake]) do TriggerEvent("kb-business:server:toggleItem", false, tostring(k), v, src) end
 	end
 	--This should give the item, while the rest removes the requirements
-	--TriggerEvent("kb-business:server:toggleItem", true, ItemMake, amount, src)
+	TriggerEvent("kb-business:server:toggleItem", true, ItemMake, amount, src)
 end)
 
 RegisterNetEvent('kb-business:server:toggleItem', function(give, item, amount, newsrc)
@@ -74,12 +71,16 @@ RegisterNetEvent('kb-business:server:toggleItem', function(give, item, amount, n
 			end
 		else
 			-- give = false
-			print('notification here for: dont have required items')
+			-- print('notification here for: dont have required items')
 		end
 	elseif give then
-		if QBCore.Functions.GetPlayer(src).Functions.AddItem(item, amount) then
-			if Config.Debug then print("^5Debug^7: ^4Giving ^2Player^7(^2"..src.."^7) '^6"..QBCore.Shared.Items[item].label.."^7(^2x^6"..(amount or "1").."^7)'") end
-			TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item], "add", amount)
+		if HasItem(src, item, amount) then
+			if QBCore.Functions.GetPlayer(src).Functions.AddItem(item, amount) then
+				if Config.Debug then print("^5Debug^7: ^4Giving ^2Player^7(^2"..src.."^7) '^6"..QBCore.Shared.Items[item].label.."^7(^2x^6"..(amount or "1").."^7)'") end
+				TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item], "add", amount)
+			end
+		else
+			print('notification here for: dont have required items')
 		end
 	end
 end)
