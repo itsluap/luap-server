@@ -55,6 +55,7 @@ RegisterNetEvent('kb-business:server:toggleItem', function(give, item, amount, n
 	local src = newsrc or source
 	local amount = amount or 1
 	local remamount = amount
+	local canmake = false
 	if not give then
 		if HasItem(src, item, amount) then -- check if you still have the item
 			if QBCore.Functions.GetPlayer(src).Functions.GetItemByName(item).unique then -- If unique item, keep removing until gone
@@ -69,12 +70,13 @@ RegisterNetEvent('kb-business:server:toggleItem', function(give, item, amount, n
 				if Config.Debug then print("^5Debug^7: ^1Removing ^2from Player^7(^2"..src.."^7) '^6"..QBCore.Shared.Items[item].label.."^7(^2x^6"..(amount or "1").."^7)'") end
 				TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item], "remove", amount)
 			end
+			canmake = true
 		else
 			-- give = false
 			-- print('notification here for: dont have required items')
 		end
 	elseif give then
-		if HasItem(src, item, amount) then
+		if canmake then
 			if QBCore.Functions.GetPlayer(src).Functions.AddItem(item, amount) then
 				if Config.Debug then print("^5Debug^7: ^4Giving ^2Player^7(^2"..src.."^7) '^6"..QBCore.Shared.Items[item].label.."^7(^2x^6"..(amount or "1").."^7)'") end
 				TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item], "add", amount)
@@ -83,6 +85,7 @@ RegisterNetEvent('kb-business:server:toggleItem', function(give, item, amount, n
 			print('notification here for: dont have required items')
 		end
 	end
+	canmake = false
 end)
 
 RegisterServerEvent("kb-business:server:GrabBox", function()
