@@ -23,8 +23,6 @@ AddEventHandler('kb-business:client:weedcraftjoint', function()
 	data = {
 		craftable = Config.Joint
 	}
-	print(data.craftable)
-	print('running client event - opening menu')
 	local Menu = {}
 	Menu[#Menu + 1] = { header = "Puff Puff Pass", txt = "", isMenuHeader = true }
 	Menu[#Menu + 1] = { icon = "fas fa-circle-xmark", header = "", txt = "Close", params = { event = "" } }
@@ -32,7 +30,7 @@ AddEventHandler('kb-business:client:weedcraftjoint', function()
 		for k, v in pairs(data.craftable[i]) do
 			if k ~= "amount" then
 				local text = ""
-				setheader = "<img src=nui://"..Config.img..QBCore.Shared.Items[k].image.." width=35px onerror='this.onerror=null; this.remove();'>"..QBCore.Shared.Items[tostring(k)].label
+				setheader = "<img src=nui://".."lj-inventory/html/images/"..QBCore.Shared.Items[k].image.." width=35px onerror='this.onerror=null; this.remove();'>"..QBCore.Shared.Items[tostring(k)].label
 				if data.craftable[i]["amount"] ~= nil then setheader = setheader.." x"..data.craftable[i]["amount"] end
 				local disable = false
 				local checktable = {}
