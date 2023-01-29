@@ -51,7 +51,7 @@ AddEventHandler('kb-business:client:weedcraftjoint', function()
 end)
 
 RegisterNetEvent('kb-business:client:UseStressBuffJoint', function(jointType)
-    QBCore.Functions.Progressbar("smoke_joint", "Lighting joint..", 1500, false, true, {
+    QBCore.Functions.Progressbar("smoke_joint", "Lighting joint..", 2500, false, true, {
         disableMovement = false,
         disableCarMovement = false,
 		disableMouse = false,
