@@ -1,7 +1,7 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
 RegisterNetEvent('kb-business:Crafting:MakeItem', function(data)
-    bartext = "Preparing"..QBCore.Shared.Items[data.item].label
+    bartext = "Preparing "..QBCore.Shared.Items[data.item].label
     bartime = 12500
     animDictNow = "mini@repair"
     animNow = "fixing_a_ped"
