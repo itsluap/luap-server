@@ -74,6 +74,7 @@ RegisterNetEvent('kb-business:server:toggleItem', function(give, item, amount, n
 				TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item], "remove", amount)
 			end
 		else
+			give = false
 			print('notification here for: dont have required items')
 		end
 	elseif give then
