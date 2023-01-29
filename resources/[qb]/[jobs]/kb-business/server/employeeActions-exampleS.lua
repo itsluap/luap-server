@@ -48,7 +48,11 @@ RegisterServerEvent('kb-business:Crafting:GetItem', function(ItemMake, craftable
 		for k, v in pairs(craftable[ItemMake]) do TriggerEvent("kb-business:server:toggleItem", false, tostring(k), v, src) end
 	end
 	--This should give the item, while the rest removes the requirements
-	TriggerEvent("kb-business:server:toggleItem", false, ItemMake, amount, src)
+	if HasItem(src, tostring(k), v) then -- check if you still have the item
+		TriggerEvent("kb-business:server:toggleItem", true, ItemMake, amount, src)
+	else 
+		print('notifitcation here?')
+	end
 end)
 
 RegisterNetEvent('kb-business:server:toggleItem', function(give, item, amount, newsrc)
