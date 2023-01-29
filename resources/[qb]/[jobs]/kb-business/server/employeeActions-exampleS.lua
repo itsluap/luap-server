@@ -73,7 +73,7 @@ RegisterNetEvent('kb-business:server:toggleItem', function(give, item, amount, n
 			end
 			print(canMake)
 		else
-			canMake = false
+			--canMake = false
 			-- give = false
 			-- print('notification here for: dont have required items')
 		end
@@ -88,7 +88,7 @@ RegisterNetEvent('kb-business:server:toggleItem', function(give, item, amount, n
 			print('notification here for: dont have required items')
 		end
 	end
-	canMake = false
+	--canMake = false
 end)
 
 RegisterServerEvent("kb-business:server:GrabBox", function()
