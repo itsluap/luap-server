@@ -1,6 +1,6 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
-GlobalState.canMake = false
+GlobalState.canMakeWeedWeed = false
 
 function HasItem(source, items, amount)
     local Player = QBCore.Functions.GetPlayer(source)
@@ -50,6 +50,7 @@ RegisterServerEvent('kb-business:Crafting:GetItem', function(ItemMake, craftable
 		for k, v in pairs(craftable[ItemMake]) do TriggerEvent("kb-business:server:toggleItem", false, tostring(k), v, src) end
 	end
 	--This should give the item, while the rest removes the requirements
+	Citizen.Wait(1000)
 	TriggerEvent("kb-business:server:toggleItem", true, ItemMake, amount, src)
 end)
 
@@ -59,7 +60,7 @@ RegisterNetEvent('kb-business:server:toggleItem', function(give, item, amount, n
 	local remamount = amount
 	if not give then
 		if HasItem(src, item, amount) then -- check if you still have the item
-			GlobalState.canMake = true
+			GlobalState.canMakeWeed = true
 			if QBCore.Functions.GetPlayer(src).Functions.GetItemByName(item).unique then -- If unique item, keep removing until gone
 				while remamount > 0 do
 					QBCore.Functions.GetPlayer(src).Functions.RemoveItem(item, 1)
@@ -72,25 +73,21 @@ RegisterNetEvent('kb-business:server:toggleItem', function(give, item, amount, n
 				if Config.Debug then print("^5Debug^7: ^1Removing ^2from Player^7(^2"..src.."^7) '^6"..QBCore.Shared.Items[item].label.."^7(^2x^6"..(amount or "1").."^7)'") end
 				TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item], "remove", amount)
 			end
-			print(GlobalState.canMake)
-		else
-			--canMake = false
-			-- give = false
-			-- print('notification here for: dont have required items')
+			print(GlobalState.canMakeWeed)
 		end
 	elseif give then
-		print(GlobalState.canMake)
-		if GlobalState.canMake then
+		print(GlobalState.canMakeWeed)
+		if GlobalState.canMakeWeed then
 			if QBCore.Functions.GetPlayer(src).Functions.AddItem(item, amount) then
 				if Config.Debug then print("^5Debug^7: ^4Giving ^2Player^7(^2"..src.."^7) '^6"..QBCore.Shared.Items[item].label.."^7(^2x^6"..(amount or "1").."^7)'") end
 				TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item], "add", amount)
-				GlobalState.canMake = false
+				GlobalState.canMakeWeed = false
 			end
 		else
 			print('notification here for: dont have required items')
 		end
 	end
-	--GlobalState.canMake = false
+	GlobalState.canMakeWeed = false
 end)
 
 RegisterServerEvent("kb-business:server:GrabBox", function()
