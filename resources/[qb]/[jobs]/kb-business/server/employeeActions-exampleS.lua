@@ -71,6 +71,7 @@ RegisterNetEvent('kb-business:server:toggleItem', function(give, item, amount, n
 				if Config.Debug then print("^5Debug^7: ^1Removing ^2from Player^7(^2"..src.."^7) '^6"..QBCore.Shared.Items[item].label.."^7(^2x^6"..(amount or "1").."^7)'") end
 				TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item], "remove", amount)
 			end
+			print(canmake)
 		else
 			canmake = false
 			-- give = false
