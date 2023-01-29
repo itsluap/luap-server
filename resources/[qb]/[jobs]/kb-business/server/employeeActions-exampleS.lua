@@ -48,11 +48,7 @@ RegisterServerEvent('kb-business:Crafting:GetItem', function(ItemMake, craftable
 		for k, v in pairs(craftable[ItemMake]) do TriggerEvent("kb-business:server:toggleItem", false, tostring(k), v, src) item2 = tostring(k) amount2 = v end
 	end
 	--This should give the item, while the rest removes the requirements
-	if HasItem(src, item2, amount2) then -- check if you still have the item
-		TriggerEvent("kb-business:server:toggleItem", true, ItemMake, amount, src)
-	else 
-		print('notifitcation here?')
-	end
+	TriggerEvent("kb-business:server:toggleItem", true, ItemMake, amount, src)
 end)
 
 RegisterNetEvent('kb-business:server:toggleItem', function(give, item, amount, newsrc)
@@ -74,7 +70,7 @@ RegisterNetEvent('kb-business:server:toggleItem', function(give, item, amount, n
 				TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item], "remove", amount)
 			end
 		else
-			give = false
+			-- give = false
 			print('notification here for: dont have required items')
 		end
 	elseif give then
