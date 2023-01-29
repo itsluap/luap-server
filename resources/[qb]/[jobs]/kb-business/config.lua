@@ -27,7 +27,7 @@ Config.FindKey = function(int)
 	end
 end
 
-Crafting = {
+Config = {
 	Joint = {
 		{ ['joint_whitewidow'] = { ['white_widow_bag'] = 1, ['rolling_paper_green'] = 1, } },
 		{ ['joint_og_kush'] = { ['og_kush_bag'] = 1, ['rolling_paper_blue'] = 1, } },
