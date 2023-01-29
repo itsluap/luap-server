@@ -84,7 +84,7 @@ RegisterNetEvent('kb-business:server:toggleItem', function(give, item, amount, n
 				GlobalState.canMakeWeed = false
 			end
 		else
-			print('notification here for: dont have required items')
+			QBCore.Functions.Notify(source, "You don't have the required items", 'error')
 		end
 	end
 	--GlobalState.canMakeWeed = false
