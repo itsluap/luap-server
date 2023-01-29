@@ -15,7 +15,7 @@ KB.Businesses = {
 		},
 		duty = {
 			coords = vector3(-1546.61, -430.92, 35.89),
-			minMaxZ = 0.2,
+			minMaxZ = 0.4,
 			heading = 230,
 			length = 0.6,
 			width = 0.2
