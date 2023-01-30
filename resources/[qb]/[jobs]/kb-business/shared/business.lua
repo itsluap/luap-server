@@ -89,6 +89,18 @@ KB.Businesses = {
 				heading = 50,
 				minMaxZ = 0.2, --// for example 47.22 becomes 48.22 & 46.22				
 			},
+			["restock"] = {
+				label = "Restock Supplies",
+				action = "Restock",
+				type = "client",
+				icon = "fas fa-hand",
+				event = "kb-business:client:WeedRestock",
+				coords = vector3(-1551.19, -455.54, 35.89),
+				length = 0.6,
+				width = 1.0,
+				heading = 50,
+				minMaxZ = 0.2, --// for example 47.22 becomes 48.22 & 46.22				
+			},
 		},
 	},
 

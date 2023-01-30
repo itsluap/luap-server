@@ -72,6 +72,59 @@ RegisterNetEvent('kb-business:client:UseStressBuffJoint', function(jointType)
     end)
 end)
 
+RegisterNetEvent('kb-business:client:WeedRestock', function()
+	started = true
+	local current = 'mp_m_shopkeep_01'
+	if started then
+		-- set waypoint to ped 
+		RequestModel(current)
+        while not HasModelLoaded(current) do
+            Wait(0)
+        end
+		vector4(-217.39, 6248.74, 31.49, 45.17)
+		ShopPed = CreatePed(0, current, -217.39, 6248.74, 31.49, 45.17, false, false) --  create ped
+		TaskStartScenarioInPlace(ShopPed, "WORLD_HUMAN_STAND_MOBILE", 0, true)
+        FreezeEntityPosition(ShopPed, true)
+        SetEntityInvincible(ShopPed, true)
+        SetBlockingOfNonTemporaryEvents(ShopPed, true)
+		exports['qb-target']:AddTargetEntity(ShopPed, { -- create third eye
+			options = {
+				{
+					type = "client"
+					event = "kb-business:client:WeedRestockShop"
+					label = "Restock Shop",
+					icon = "fas fa-shopping-basket",
+					job = "puffpuffpass"
+				}
+			},
+			distance = 2.0
+		})
+		TriggerEvent('kb-business:client:WeedRestockTimer') -- start timer
+	elseif not started then 
+		exports['qb-target']:RemoveTargetEntity(ShopPed, 'Restock Shop') -- remove third eye if started returns false
+		-- todo: also remove ped completely if started returns false
+	end
+end)
+
+RegisterNetEvent('kb-business:client:WeedRestockTimer', function()
+	local current = 'mp_m_shopkeep_01'
+    local timer = 30 * 60000
+    while timer > 0 do
+        Wait(1000)
+        timer = timer - 1000
+        if timer == 0 then
+            exports['qb-target']:RemoveTargetEntity(ShopPed, 'Restock Shop')
+			-- todo: also remove ped if timer runs up
+        end
+    end
+end)
+
+RegisterNetEvent('kb-business:client:StopWeedRestock', function()
+	local current = 'mp_m_shopkeep_01'
+	-- ShopPed = CreatePed(0, current, -217.39, 6248.74, 31.49, 45.17, false, false)
+	exports['qb-target']:RemoveTargetEntity(ShopPed, 'Restock Shop')
+end)
+
 -- default stuff --
 
 RegisterNetEvent('kb-business:client:cookdog')
