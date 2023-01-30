@@ -95,11 +95,11 @@ KB.Businesses = {
 				type = "client",
 				icon = "fas fa-hand",
 				event = "kb-business:client:WeedRestock",
-				coords = vector3(-1551.19, -455.54, 35.89),
-				length = 0.6,
-				width = 1.0,
+				coords = vector3(-1555.75, -455.29, 35.89),
+				length = 1.6,
+				width = 2.0,
 				heading = 50,
-				minMaxZ = 0.2, --// for example 47.22 becomes 48.22 & 46.22				
+				minMaxZ = 1.5, --// for example 47.22 becomes 48.22 & 46.22				
 			},
 		},
 	},

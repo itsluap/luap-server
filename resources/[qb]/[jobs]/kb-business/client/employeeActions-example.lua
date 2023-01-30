@@ -1,4 +1,5 @@
 local QBCore = exports['qb-core']:GetCoreObject()
+local canStock = true
 
 -- puff puff pass stuff --
 
@@ -73,16 +74,16 @@ RegisterNetEvent('kb-business:client:UseStressBuffJoint', function(jointType)
 end)
 
 RegisterNetEvent('kb-business:client:WeedRestock', function()
-	started = true
 	local current = 'mp_m_shopkeep_01'
-	if started then
+	if canStock then
 		-- set waypoint to ped 
+		canStock = false
 		RequestModel(current)
         while not HasModelLoaded(current) do
             Wait(0)
         end
 		vector4(-217.39, 6248.74, 31.49, 45.17)
-		ShopPed = CreatePed(0, current, -217.39, 6248.74, 31.49, 45.17, false, false) --  create ped
+		ShopPed = CreatePed(0, current, -217.39, 6248.74, 30.49, 45.17, false, false) --  create ped
 		TaskStartScenarioInPlace(ShopPed, "WORLD_HUMAN_STAND_MOBILE", 0, true)
         FreezeEntityPosition(ShopPed, true)
         SetEntityInvincible(ShopPed, true)
@@ -100,9 +101,10 @@ RegisterNetEvent('kb-business:client:WeedRestock', function()
 			distance = 2.0
 		})
 		TriggerEvent('kb-business:client:WeedRestockTimer') -- start timer
-	elseif not started then 
+	elseif not canStock then 
 		exports['qb-target']:RemoveTargetEntity(ShopPed, 'Restock Shop') -- remove third eye if started returns false
 		-- todo: also remove ped completely if started returns false
+		-- todo: notification saying restock was cancelled
 	end
 end)
 
@@ -114,6 +116,7 @@ RegisterNetEvent('kb-business:client:WeedRestockTimer', function()
         timer = timer - 1000
         if timer == 0 then
             exports['qb-target']:RemoveTargetEntity(ShopPed, 'Restock Shop')
+			started = false
 			-- todo: also remove ped if timer runs up
         end
     end
