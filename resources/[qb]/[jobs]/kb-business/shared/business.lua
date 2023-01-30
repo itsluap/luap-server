@@ -89,7 +89,6 @@ KB.Businesses = {
 				heading = 50,
 				minMaxZ = 0.2, --// for example 47.22 becomes 48.22 & 46.22				
 			},
-			--[[
 			["restock"] = {
 				label = "Restock Supplies",
 				action = "Restock",
@@ -102,7 +101,6 @@ KB.Businesses = {
 				heading = 50,
 				minMaxZ = 0.2, --// for example 47.22 becomes 48.22 & 46.22				
 			},
-			]]--
 		},
 	},
 

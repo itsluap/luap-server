@@ -95,7 +95,7 @@ RegisterNetEvent('kb-business:client:WeedRestock', function()
 					label = "Restock Shop",
 					icon = "fas fa-shopping-basket",
 					job = "puffpuffpass"
-				}
+				},
 			},
 			distance = 2.0
 		})
