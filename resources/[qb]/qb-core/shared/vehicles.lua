@@ -3561,7 +3561,7 @@ QBShared.Vehicles = {
 	------ END OF PDM ------------
 
 	-- LUAP VEHICELS --
-
+	--[[ -- trying to stop people from using my cars
 	['chr20'] = {
         ['name'] = '2020 Hellcat',
         ['brand'] = 'Dodge',
@@ -3688,6 +3688,7 @@ QBShared.Vehicles = {
         ['hash'] = `fgt`,
         ['shop'] = 'luap',
     },
+	]]--
 	['ninjah2'] = {
         ['name'] = 'H2',
         ['brand'] = 'Ninja',
