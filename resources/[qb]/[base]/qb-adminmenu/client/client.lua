@@ -57,14 +57,12 @@ menu1:AddButton({
 })
 
 --vehicle spawner
---[[
 menu1:AddButton({
     icon = '🚗',
     label = Lang:t("menu.vehicles"),
     value = menu5,
     description = Lang:t("desc.vehicles_desc")
 })
-]]--
 
 --dealer list
 local menu1_dealer_list = menu1:AddButton({
@@ -249,12 +247,14 @@ local menu3_server_time = menu3:AddSlider({
 })
 
 -- Vehicle Spawner Menu Buttons
+--[[
 local menu5_vehicles_spawn = menu5:AddButton({
     icon = '🚗',
     label = Lang:t("menu.spawn_vehicle"),
     value = menu12,
     description = Lang:t("desc.spawn_vehicle_desc")
 })
+]]--
 
 local menu5_vehicles_fix = menu5:AddButton({
     icon = '🔧',
