@@ -3608,6 +3608,7 @@ QBShared.Vehicles = {
         ['hash'] = `m3e36`,
         ['shop'] = 'luap',
     },
+	--[[
 	['rx8hachi'] = {
         ['name'] = 'Hachi RX8',
         ['brand'] = 'Mazda',
@@ -3617,6 +3618,7 @@ QBShared.Vehicles = {
         ['hash'] = `rx8hachi`,
         ['shop'] = 'luap',
     },
+	]]--
 	['manssupersnake'] = {
         ['name'] = 'Supersnake',
         ['brand'] = 'Ford',

@@ -57,12 +57,14 @@ menu1:AddButton({
 })
 
 --vehicle spawner
+--[[
 menu1:AddButton({
     icon = '🚗',
     label = Lang:t("menu.vehicles"),
     value = menu5,
     description = Lang:t("desc.vehicles_desc")
 })
+]]--
 
 --dealer list
 local menu1_dealer_list = menu1:AddButton({
