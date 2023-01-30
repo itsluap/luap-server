@@ -92,7 +92,7 @@ RegisterNetEvent('kb-business:client:WeedRestock', function()
 			options = {
 				{
 					type = "client",
-					event = "kb-business:client:WeedRestockShop",
+					event = "kb-business:OpenWeedRestock",
 					label = "Restock Shop",
 					icon = "fas fa-shopping-basket",
 					job = "puffpuffpass",
@@ -101,6 +101,7 @@ RegisterNetEvent('kb-business:client:WeedRestock', function()
 			distance = 2.0
 		})
 		TriggerEvent('kb-business:client:WeedRestockTimer') -- start timer
+		-- todo: notification saying restock was started
 	elseif not canStock then 
 		exports['qb-target']:RemoveTargetEntity(ShopPed, 'Restock Shop') -- remove third eye if started returns false
 		-- todo: also remove ped completely if started returns false
@@ -124,8 +125,11 @@ end)
 
 RegisterNetEvent('kb-business:client:StopWeedRestock', function()
 	local current = 'mp_m_shopkeep_01'
-	-- ShopPed = CreatePed(0, current, -217.39, 6248.74, 31.49, 45.17, false, false)
 	exports['qb-target']:RemoveTargetEntity(ShopPed, 'Restock Shop')
+end)
+
+RegisterNetEvent("kb-business:OpenWeedRestock", function()
+	TriggerServerEvent("inventory:server:OpenInventory", "shop", "market", Config.RestockShop)
 end)
 
 -- default stuff --

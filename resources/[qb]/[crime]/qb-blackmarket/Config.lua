@@ -70,7 +70,7 @@ Config.PistolShop = {
             type = "item",
             slot = 4,
         },
-}
+    }
 }
 
 Config.SubMachineGunShop = {
