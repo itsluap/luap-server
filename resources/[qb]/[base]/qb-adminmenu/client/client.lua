@@ -885,7 +885,7 @@ local function OpenCarModelsMenu(category)
         })
     end
 end
-
+--[[
 menu5_vehicles_spawn:On('Select', function(_)
     menu12:ClearItems()
     for k, v in pairs(vehicles) do
@@ -900,6 +900,7 @@ menu5_vehicles_spawn:On('Select', function(_)
         })
     end
 end)
+]]--
 
 menu5_vehicles_fix:On('Select', function(_)
     TriggerServerEvent('QBCore:CallCommand', "fix", {})
