@@ -103,3 +103,10 @@ function HasItem(source, items, amount)
 	if Config.Debug then print("^5Debug^7: ^3HasItem^7: ^2Items ^1NOT FOUND^7") end
     return false
 end
+
+-- update --
+
+RegisterServerEvent('qb-burgershot:server:alert:workers')
+AddEventHandler('qb-burgershot:server:alert:workers', function()
+    TriggerClientEvent('qb-burgershot:client:call:intercom', -1)
+end)

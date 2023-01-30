@@ -122,4 +122,9 @@ Crafting = {
 	},
 }
 
+Config.Intercom = {
+    ['Worker'] = vector3(-1192.00, -906.65, 14.09),
+    ['Customer'] = vector3(-1204.79, -899.01, 13.30),
+}
+
 Loc = {}
