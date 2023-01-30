@@ -3561,7 +3561,6 @@ QBShared.Vehicles = {
 	------ END OF PDM ------------
 
 	-- LUAP VEHICELS --
-	--[[ -- trying to stop people from using my cars
 	['chr20'] = {
         ['name'] = '2020 Hellcat',
         ['brand'] = 'Dodge',
@@ -3589,6 +3588,7 @@ QBShared.Vehicles = {
         ['hash'] = `drer36`,
         ['shop'] = 'luap',
     },
+	--[[
 	['bdragon'] = {
         ['name'] = 'Bentley Dragon',
         ['brand'] = 'Bentley',
@@ -3598,6 +3598,7 @@ QBShared.Vehicles = {
         ['hash'] = `bdragonblue`,
         ['shop'] = 'luap',
     },
+	]]--
 	['m3e36'] = {
         ['name'] = 'M3 E36',
         ['brand'] = 'BMW',
@@ -3688,7 +3689,6 @@ QBShared.Vehicles = {
         ['hash'] = `fgt`,
         ['shop'] = 'luap',
     },
-	]]--
 	['ninjah2'] = {
         ['name'] = 'H2',
         ['brand'] = 'Ninja',
