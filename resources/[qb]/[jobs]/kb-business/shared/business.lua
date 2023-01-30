@@ -77,7 +77,7 @@ KB.Businesses = {
 			},
 		},
 		employeeActions = {
-			["crafting"] = {
+			["jointcrafting"] = {
 				label = "Joint Crafting",
 				action = "Joint Craft",
 				type = "client",
@@ -86,6 +86,30 @@ KB.Businesses = {
 				coords = vector3(-1551.19, -455.54, 35.89),
 				length = 0.6,
 				width = 1.0,
+				heading = 50,
+				minMaxZ = 0.2, --// for example 47.22 becomes 48.22 & 46.22				
+			},
+			["bluntcrafting"] = {
+				label = "Blunt Crafting",
+				action = "Blunt Craft",
+				type = "client",
+				icon = "fas fa-hand",
+				event = "kb-business:client:weedcraftblunt",
+				coords = vector3(-1552.4, -456.97, 35.89),
+				length = 0.4,
+				width = 0.4,
+				heading = 320,
+				minMaxZ = 0.2, --// for example 47.22 becomes 48.22 & 46.22				
+			},
+			["bongcrafting"] = {
+				label = "Bong Crafting",
+				action = "Bong Craft",
+				type = "client",
+				icon = "fas fa-hand",
+				event = "kb-business:client:weedcraftbong",
+				coords = vector3(-1549.93, -453.85, 35.89),
+				length = 0.35,
+				width = 0.8,
 				heading = 50,
 				minMaxZ = 0.2, --// for example 47.22 becomes 48.22 & 46.22				
 			},
