@@ -51,35 +51,14 @@ Config = {
 
 Config.RestockShop = {
     label = "Restock Shop",
-    slots = 4,
+    slots = 1,
     items = {
         [1] = {
-            name = "weapon_pistol",
+            name = "white_widow_lb",
             price = 900,
             amount = 1100,
             type = "item",
             slot = 1,
-        },
-        [2] = {
-            name = "weapon_heavypistol",
-            price = 11300,
-            amount = 100,
-            type = "item",
-            slot = 2,
-        },
-        [3] = {
-            name = "weapon_pistol50",
-            price = 11700,
-            amount = 100,
-            type = "item",
-            slot = 3,
-        },
-        [4] = {
-            name = "weapon_appistol",
-            price = 12200,
-            amount = 100,
-            type = "item",
-            slot = 4,
         },
     }
 }
