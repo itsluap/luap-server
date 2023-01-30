@@ -53,13 +53,93 @@ Config.RestockShop = {
     label = "Restock Shop",
     slots = 1,
     items = {
+		-- pounds --
         [1] = {
             name = "white_widow_lb",
-            price = 900,
-            amount = 1100,
+            price = 2800,
+            amount = 100,
             type = "item",
             slot = 1,
         },
+		[2] = {
+            name = "skunk_lb",
+            price = 2800,
+            amount = 100,
+            type = "item",
+            slot = 2,
+        },
+		[3] = {
+            name = "purple_haze_lb",
+            price = 2800,
+            amount = 100,
+            type = "item",
+            slot = 3,
+        },
+		[4] = {
+            name = "og_kush_lb",
+            price = 2800,
+            amount = 100,
+            type = "item",
+            slot = 4,
+        },
+		[5] = {
+            name = "amnesia_lb",
+            price = 2800,
+            amount = 100,
+            type = "item",
+            slot = 5,
+        },
+		[6] = {
+            name = "ak47_lb",
+            price = 2800,
+            amount = 100,
+            type = "item",
+            slot = 6,
+        },
+		-- rolling papers --
+		[7] = {
+            name = "rolling_paper_orange",
+            price = 10,
+            amount = 1000,
+            type = "item",
+            slot = 7,
+        },
+		[8] = {
+            name = "rolling_paper_purple",
+            price = 10,
+            amount = 1000,
+            type = "item",
+            slot = 8,
+        },
+		[9] = {
+            name = "rolling_paper_yellow",
+            price = 10,
+            amount = 1000,
+            type = "item",
+            slot = 9,
+        },
+		[10] = {
+            name = "rolling_paper_red",
+            price = 10,
+            amount = 1000,
+            type = "item",
+            slot = 10,
+        },
+		[11] = {
+            name = "rolling_paper_green",
+            price = 10,
+            amount = 1000,
+            type = "item",
+            slot = 11,
+        },
+		[12] = {
+            name = "rolling_paper_blue",
+            price = 10,
+            amount = 1000,
+            type = "item",
+            slot = 12,
+        },
+
     }
 }
 
