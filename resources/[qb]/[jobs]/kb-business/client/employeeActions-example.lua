@@ -90,8 +90,8 @@ RegisterNetEvent('kb-business:client:WeedRestock', function()
 		exports['qb-target']:AddTargetEntity(ShopPed, { -- create third eye
 			options = {
 				{
-					type = "client"
-					event = "kb-business:client:WeedRestockShop"
+					type = "client",
+					event = "kb-business:client:WeedRestockShop",
 					label = "Restock Shop",
 					icon = "fas fa-shopping-basket",
 					job = "puffpuffpass",
