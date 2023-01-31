@@ -223,9 +223,11 @@ QBCore.Functions.CreateUseableItem("purple_haze_oz", function(source, item)
 	local Player = QBCore.Functions.GetPlayer(source)
 	if not Player.Functions.RemoveItem(item.name, 1, item.slot) then return end
 	TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["purple_haze_oz"], "remove")
+	--[[
 	Wait(1000)
 	Player.Functions.AddItem("purple_haze_bag", 28)
 	TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["purple_haze_bag"], "add")
+	]]--
 end)
 
 QBCore.Functions.CreateUseableItem("og_kush_oz", function(source, item)
