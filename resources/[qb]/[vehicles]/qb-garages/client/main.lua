@@ -744,6 +744,9 @@ RegisterNetEvent('qb-garages:client:TakeOutGarage', function(data, cb)
     local parkingSpots = garage.ParkingSpots or {}
 
     local location, heading = GetSpawnLocationAndHeading(garage, garageType, parkingSpots, vehicle, spawnDistance)
+    if garageType == 'job' then 
+        WarpPlayerIntoVehicle = true
+    end
     if garage.useVehicleSpawner then
         SpawnVehicleSpawnerVehicle(vehicleModel, location, heading, cb)
     end
@@ -758,6 +761,7 @@ RegisterNetEvent('qb-garages:client:TakeOutGarage', function(data, cb)
             UpdateSpawnedVehicle(veh, vehicle, heading, garage, properties)
             if cb then cb(veh) end
 	end, vehicle, location, garage.WarpPlayerIntoVehicle ~= nil and garage.WarpPlayerIntoVehicle or WarpPlayerIntoVehicle)
+
     else
         QBCore.Functions.SpawnVehicle(vehicleModel, function(veh)
             QBCore.Functions.TriggerCallback('qb-garage:server:GetVehicleProperties', function(properties)
