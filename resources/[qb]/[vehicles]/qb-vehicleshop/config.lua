@@ -211,9 +211,10 @@ Config.Shops = {
         ['blipSprite'] = 326, -- Blip sprite
         ['blipColor'] = 3, -- Blip color
         ['Categories'] = {
-            ['tuner'] = 'Tuner',
-            --['super'] = 'Super',
-            --['sports'] = 'Sports'
+            --['tuner'] = 'Tuner',
+            ['imports'] = 'Imports',
+            ['super'] = 'Super',
+            ['sports'] = 'Sports'
         },
         ['TestDriveTimeLimit'] = 0.5,
         ['Location'] = vector3(135.64, -3029.98, 6.52),
@@ -294,7 +295,7 @@ Config.Shops = {
         ['Categories'] = {
             ['super'] = 'Super',
             ['sports'] = 'Sports',
-            ['tuner'] = 'Tuner',
+            --['tuner'] = 'Tuner',
             ['imports'] = 'Imports',
         },
         ['TestDriveTimeLimit'] = 0.5,
