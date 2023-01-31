@@ -64,6 +64,7 @@ Config = {
 		--['beanmachine'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.10, },
 		--['bakery'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.10, },
 		['burgershot'] = { MinAmountforTicket = 50, PayPerTicket = 50 , Commission = 0.10, },
+		['puffpuffpass'] = { MinAmountforTicket = 50, PayPerTicket = 50 , Commission = 0.10, },
 		--['catcafe'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.10, },
 		--['henhouse'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.10, },
 		--['pizzathis'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.10, },

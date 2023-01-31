@@ -89,11 +89,15 @@ Config.Rollingpaper = 'rolling_paper'
 
 
 
-Config.RollingJoints = {  -- Weed bag -- amount = How many joints you get
+Config.RollingJoints = {  -- Weed bag -- amount = How many joints you get -- THESE USE SEPERATE JOINTS FROM PUFF PUFF PASS (NO BUFFS)
     {Item = "banana_kush_bag",  GiveJoint = 'banana_kush_joint', Amount = 1},
     {Item = "blue_dream_bag",  GiveJoint = 'blue_dream_joint', Amount = 1},
     {Item = "og_kush_bag",  GiveJoint = 'og_kush_joint', Amount = 1},
     {Item = "purple_haze_bag",  GiveJoint = 'purple_haze_joint', Amount = 1},
+    {Item = "amnesia_bag",  GiveJoint = 'amnesia_joint', Amount = 1},
+    {Item = "white_widow_bag",  GiveJoint = 'white_widow_joint', Amount = 1},
+    {Item = "skunk_bag",  GiveJoint = 'skunk_joint', Amount = 1},
+    {Item = "ak47_bag",  GiveJoint = 'ak47_joint', Amount = 1},
 }
 
 -------------------------
