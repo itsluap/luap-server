@@ -766,6 +766,9 @@ RegisterNetEvent('qb-garages:client:TakeOutGarage', function(data, cb)
             end, vehicle.plate)
         end, location, true)
     end
+    if garageType = 'job' then
+        TriggerEvent('qb-admin:client:SaveCar')
+    end
 end)
 
 
