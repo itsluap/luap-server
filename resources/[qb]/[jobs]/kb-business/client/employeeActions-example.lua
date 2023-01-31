@@ -76,7 +76,14 @@ end)
 RegisterNetEvent('kb-business:client:WeedRestock', function()
 	local current = 'mp_m_shopkeep_01'
 	if canStock then
-		-- set waypoint to ped 
+		x = -217.39
+		y = 6248.74
+		z = 30.49
+
+		BLIP_1 = AddBlipForCoord(x,  y,  z)
+		SetBlipSprite(BLIP_1, 8)
+		SetBlipRoute(BLIP_1,  true) -- waypoint to blip
+		--SetBlipRouteColour( blip,  colour )
 		canStock = false
 		RequestModel(current)
         while not HasModelLoaded(current) do
@@ -101,11 +108,11 @@ RegisterNetEvent('kb-business:client:WeedRestock', function()
 			distance = 2.0
 		})
 		TriggerEvent('kb-business:client:WeedRestockTimer') -- start timer
-		-- todo: notification saying restock was started
+		TriggerEvent('QBCore:Notify', "Restock has been started!", 'success') 
 	elseif not canStock then 
 		exports['qb-target']:RemoveTargetEntity(ShopPed, 'Restock Shop') -- remove third eye if started returns false
-		-- todo: also remove ped completely if started returns false
-		-- todo: notification saying restock was cancelled
+		DeletePed(ShopPed)
+		TriggerEvent('QBCore:Notify', "Restock was cancelled!", 'error') 
 	end
 end)
 
@@ -117,8 +124,8 @@ RegisterNetEvent('kb-business:client:WeedRestockTimer', function()
         timer = timer - 1000
         if timer == 0 then
             exports['qb-target']:RemoveTargetEntity(ShopPed, 'Restock Shop')
-			started = false
-			-- todo: also remove ped if timer runs up
+			canStock = true
+			DeletePed(ShopPed)
         end
     end
 end)
