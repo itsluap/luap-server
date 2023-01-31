@@ -59,7 +59,7 @@ SpawnVehicleServerside = false -- REQUIRES THE ABSOLUTE LATEST VERSION OF QBCORE
 SpawnAtFreeParkingSpot = true
 -- NEW --
 
-StoreDamageAccuratly = false -- Do not use, if on latest qb-core, if set to true, make sure to apply / run patch1.sql
+StoreDamageAccuratly = true -- Do not use, if on latest qb-core, if set to true, make sure to apply / run patch1.sql
 StoreParkinglotAccuratly = false  -- store the last parking lot in the DB, if set to true, make sure to apply / run patch1.sql, I recommend applying the tracking snippet for qb-phone from the ReadMe to the phone so you can track the vehicle to the exact parking lot
 SpawnAtLastParkinglot = false -- spawn the vehicle at hte last parked location if StoreParkinglotAccuratly = true, if set to true, make sure to apply / run patch1.sql, I recommend applying the tracking snippet from the ReadMe to the phone so you can track the vehicle to the exact parking lot
 GarageNameAsBlipName = true -- if set to true, the blips name will match the garage name
@@ -171,7 +171,7 @@ VehicleHeading = 'driverside' -- only used when NO parking spots are defined in 
 ]]
 
 SharedJobGarages = { -- define the job garages which are shared
-    --'pdgarage',
+    'ottosdealer',
 }
 
 Garages = {
@@ -1582,6 +1582,30 @@ Garages = {
         },
         label = 'Otto\'s Auto Parking',
         type = 'public',
+        vehicleCategories = {'car', 'motorcycle', 'other'},
+        drawText = 'Parking',
+        ["ParkingSpots"] = {
+            vector4(832.02, -785.34, 26.27, 115.0),
+            vector4(833.37, -788.34, 26.29, 116.96),
+            vector4(834.97, -791.28, 26.29, 110.62),
+            vector4(836.57, -794.34, 26.28, 114.73),
+        },
+        debug = false
+    },
+    ['ottosdealer'] = {
+        ['Zone'] = {
+            ['Shape'] = { --polygon that surrounds the parking area
+            vvector2(794.86669921875, -820.06561279297),
+            vector2(794.65203857422, -803.72039794922),
+            vector2(802.55841064453, -803.86395263672),
+            vector2(802.6337890625, -820.11297607422)
+            },
+            ['minZ'] = 26.0,  -- min height of the parking zone
+            ['maxZ'] = 29.0,  -- max height of the parking zone
+        },
+        label = 'Otto\'s Dealer Parking',
+        type = 'job',
+        job = 'ottos',
         vehicleCategories = {'car', 'motorcycle', 'other'},
         drawText = 'Parking',
         ["ParkingSpots"] = {
