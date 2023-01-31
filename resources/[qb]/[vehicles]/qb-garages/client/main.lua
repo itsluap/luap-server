@@ -407,6 +407,8 @@ local function CreateGarageZone()
             CurrentGarage = zone.name
             exports['qb-core']:DrawText(Garages[CurrentGarage]['drawText'], DrawTextPosition)
         else
+            print(isPointInside)
+            print(IsAuthorizedToAccessGarage(zone.name))
             CurrentGarage = nil
             if MenuItemId ~= nil then
                 exports['qb-radialmenu']:RemoveOption(MenuItemId)
