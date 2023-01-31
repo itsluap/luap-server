@@ -148,55 +148,55 @@ end)
 QBCore.Functions.CreateUseableItem("white_widow_lb", function(source, item)
 	local Player = QBCore.Functions.GetPlayer(source)
 	if not Player.Functions.RemoveItem(item.name, 1, item.slot) then return end
-	TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["white_widow_lb"], "remove")
+	TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["white_widow_lb"], "remove")
 	Wait(1000)
 	Player.Functions.AddItem("white_widow_oz", 16)
-	TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["white_widow_oz"], "add")
+	TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["white_widow_oz"], "add")
 end)
 
 QBCore.Functions.CreateUseableItem("skunk_lb", function(source, item)
 	local Player = QBCore.Functions.GetPlayer(source)
 	if not Player.Functions.RemoveItem(item.name, 1, item.slot) then return end
-	TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["skunk_lb"], "remove")
+	TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["skunk_lb"], "remove")
 	Wait(1000)
 	Player.Functions.AddItem("skunk_oz", 16)
-	TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["skunk_oz"], "add")
+	TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["skunk_oz"], "add")
 end)
 
 QBCore.Functions.CreateUseableItem("purple_haze_lb", function(source, item)
 	local Player = QBCore.Functions.GetPlayer(source)
 	if not Player.Functions.RemoveItem(item.name, 1, item.slot) then return end
-	TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["purple_haze_lb"], "remove")
+	TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["purple_haze_lb"], "remove")
 	Wait(1000)
 	Player.Functions.AddItem("purple_haze_oz", 16)
-	TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["purple_haze_oz"], "add")
+	TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["purple_haze_oz"], "add")
 end)
 
 QBCore.Functions.CreateUseableItem("og_kush_lb", function(source, item)
 	local Player = QBCore.Functions.GetPlayer(source)
 	if not Player.Functions.RemoveItem(item.name, 1, item.slot) then return end
-	TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["og_kush_lb"], "remove")
+	TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["og_kush_lb"], "remove")
 	Wait(1000)
 	Player.Functions.AddItem("og_kush_oz", 16)
-	TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["og_kush_oz"], "add")
+	TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["og_kush_oz"], "add")
 end)
 
 QBCore.Functions.CreateUseableItem("amneisa_lb", function(source, item)
 	local Player = QBCore.Functions.GetPlayer(source)
 	if not Player.Functions.RemoveItem(item.name, 1, item.slot) then return end
-	TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["amneisa_lb"], "remove")
+	TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["amneisa_lb"], "remove")
 	Wait(1000)
 	Player.Functions.AddItem("amneisa_oz", 16)
-	TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["amneisa_oz"], "add")
+	TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["amneisa_oz"], "add")
 end)
 
 QBCore.Functions.CreateUseableItem("ak47_lb", function(source, item)
 	local Player = QBCore.Functions.GetPlayer(source)
 	if not Player.Functions.RemoveItem(item.name, 1, item.slot) then return end
-	TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["ak47_lb"], "remove")
+	TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["ak47_lb"], "remove")
 	Wait(1000)
 	Player.Functions.AddItem("ak47_oz", 16)
-	TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["ak47_oz"], "add")
+	TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["ak47_oz"], "add")
 end)
 
 -- ounces --
@@ -204,57 +204,55 @@ end)
 QBCore.Functions.CreateUseableItem("white_widow_oz", function(source, item)
 	local Player = QBCore.Functions.GetPlayer(source)
 	if not Player.Functions.RemoveItem(item.name, 1, item.slot) then return end
-	TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["white_widow_oz"], "remove")
+	TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["white_widow_oz"], "remove")
 	Wait(1000)
 	Player.Functions.AddItem("white_widow_bag", 28)
-	TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["white_widow_bag"], "add")
+	TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["white_widow_bag"], "add")
 end)
 
 QBCore.Functions.CreateUseableItem("skunk_oz", function(source, item)
 	local Player = QBCore.Functions.GetPlayer(source)
 	if not Player.Functions.RemoveItem(item.name, 1, item.slot) then return end
-	TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["skunk_oz"], "remove")
+	TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["skunk_oz"], "remove")
 	Wait(1000)
 	Player.Functions.AddItem("skunk_bag", 28)
-	TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["skunk_bag"], "add")
+	TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["skunk_bag"], "add")
 end)
 
 QBCore.Functions.CreateUseableItem("purple_haze_oz", function(source, item)
 	local Player = QBCore.Functions.GetPlayer(source)
 	if not Player.Functions.RemoveItem(item.name, 1, item.slot) then return end
-	TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["purple_haze_oz"], "remove")
-	--[[
+	TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["purple_haze_oz"], "remove")
 	Wait(1000)
 	Player.Functions.AddItem("purple_haze_bag", 28)
-	TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["purple_haze_bag"], "add")
-	]]--
+	TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["purple_haze_bag"], "add")
 end)
 
 QBCore.Functions.CreateUseableItem("og_kush_oz", function(source, item)
 	local Player = QBCore.Functions.GetPlayer(source)
 	if not Player.Functions.RemoveItem(item.name, 1, item.slot) then return end
-	TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["og_kush_oz"], "remove")
+	TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["og_kush_oz"], "remove")
 	Wait(1000)
 	Player.Functions.AddItem("og_kush_bag", 28)
-	TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["og_kush_bag"], "add")
+	TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["og_kush_bag"], "add")
 end)
 
 QBCore.Functions.CreateUseableItem("amnesia_oz", function(source, item)
 	local Player = QBCore.Functions.GetPlayer(source)
 	if not Player.Functions.RemoveItem(item.name, 1, item.slot) then return end
-	TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["amnesia_oz"], "remove")
+	TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["amnesia_oz"], "remove")
 	Wait(1000)
 	Player.Functions.AddItem("amnesia_bag", 28)
-	TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["amnesia_bag"], "add")
+	TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["amnesia_bag"], "add")
 end)
 
 QBCore.Functions.CreateUseableItem("ak47_oz", function(source, item)
 	local Player = QBCore.Functions.GetPlayer(source)
 	if not Player.Functions.RemoveItem(item.name, 1, item.slot) then return end
-	TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["ak47_oz"], "remove")
+	TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["ak47_oz"], "remove")
 	Wait(1000)
 	Player.Functions.AddItem("ak47_bag", 28)
-	TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["ak47_bag"], "add")
+	TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["ak47_bag"], "add")
 end)
 
 -- default stuff --
