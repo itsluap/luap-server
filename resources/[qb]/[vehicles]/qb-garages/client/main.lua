@@ -406,6 +406,8 @@ local function CreateGarageZone()
         if isPointInside and IsAuthorizedToAccessGarage(zone.name) then
             CurrentGarage = zone.name
             exports['qb-core']:DrawText(Garages[CurrentGarage]['drawText'], DrawTextPosition)
+            print(isPointInside)
+            print(IsAuthorizedToAccessGarage(zone.name))
         else
             print(isPointInside)
             print(IsAuthorizedToAccessGarage(zone.name))

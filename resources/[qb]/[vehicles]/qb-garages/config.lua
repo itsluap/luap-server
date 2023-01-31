@@ -1600,8 +1600,8 @@ Garages = {
             vector2(802.55841064453, -803.86395263672),
             vector2(802.6337890625, -820.11297607422)
             },
-            ['minZ'] = 26.0,  -- min height of the parking zone
-            ['maxZ'] = 29.0,  -- max height of the parking zone
+            ['minZ'] = 25.0,  -- min height of the parking zone
+            ['maxZ'] = 28.0,  -- max height of the parking zone
         },
         label = 'Otto\'s Dealer Parking',
         type = 'job',
