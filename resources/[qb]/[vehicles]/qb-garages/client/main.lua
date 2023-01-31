@@ -772,7 +772,7 @@ RegisterNetEvent('qb-garages:client:TakeOutGarage', function(data, cb)
     end
     if garageType == 'job' then
         Wait(1000)
-        TriggerEvent('qb-admin:client:SaveCar')
+        TriggerEvent('qb-admin:client:luapSaveCar')
     end
 end)
 

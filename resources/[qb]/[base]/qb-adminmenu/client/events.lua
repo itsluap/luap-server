@@ -84,6 +84,25 @@ RegisterNetEvent('qb-admin:client:SaveCar', function()
     end
 end)
 
+RegisterNetEvent('qb-admin:client:luapSaveCar', function()
+    local ped = PlayerPedId()
+    local veh = GetVehiclePedIsIn(ped)
+
+    if veh ~= nil and veh ~= 0 then
+        local plate = QBCore.Functions.GetPlate(veh)
+        local props = QBCore.Functions.GetVehicleProperties(veh)
+        local hash = props.model
+        local vehname = getVehicleFromVehList(hash)
+        if QBCore.Shared.Vehicles[vehname] ~= nil and next(QBCore.Shared.Vehicles[vehname]) ~= nil then
+            TriggerServerEvent('qb-admin:server:luapSaveCar', props, QBCore.Shared.Vehicles[vehname], GetHashKey(veh), plate)
+        else
+            QBCore.Functions.Notify(Lang:t("error.no_store_vehicle_garage"), 'error')
+        end
+    else
+        QBCore.Functions.Notify(Lang:t("error.no_vehicle"), 'error')
+    end
+end)
+
 local function LoadPlayerModel(skin)
     RequestModel(skin)
     while not HasModelLoaded(skin) do

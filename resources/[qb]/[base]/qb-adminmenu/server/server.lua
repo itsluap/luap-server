@@ -219,6 +219,22 @@ RegisterNetEvent('qb-admin:server:SaveCar', function(mods, vehicle, _, plate)
     end
 end)
 
+RegisterNetEvent('qb-admin:server:luapSaveCar', function(mods, vehicle, _, plate)
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    local result = MySQL.query.await('SELECT plate FROM player_vehicles WHERE plate = ?', { plate })
+    MySQL.insert('INSERT INTO player_vehicles (license, citizenid, vehicle, hash, mods, plate, state) VALUES (?, ?, ?, ?, ?, ?, ?)', {
+        Player.PlayerData.license,
+        Player.PlayerData.citizenid,
+        vehicle.model,
+        vehicle.hash,
+        json.encode(mods),
+        plate,
+        0
+    })
+    TriggerClientEvent('QBCore:Notify', src, Lang:t("success.success_vehicle_owner"), 'success', 5000)
+end)
+
 -- Commands
 
 QBCore.Commands.Add('maxmods', Lang:t("desc.max_mod_desc"), {}, false, function(source)
