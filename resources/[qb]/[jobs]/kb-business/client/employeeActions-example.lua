@@ -112,6 +112,7 @@ RegisterNetEvent('kb-business:client:WeedRestock', function()
 	elseif not canStock then 
 		exports['qb-target']:RemoveTargetEntity(ShopPed, 'Restock Shop') -- remove third eye if started returns false
 		DeletePed(ShopPed)
+		ClearAllBlipRoutes()
 		TriggerEvent('QBCore:Notify', "Restock was cancelled!", 'error') 
 	end
 end)
@@ -126,6 +127,7 @@ RegisterNetEvent('kb-business:client:WeedRestockTimer', function()
             exports['qb-target']:RemoveTargetEntity(ShopPed, 'Restock Shop')
 			canStock = true
 			DeletePed(ShopPed)
+			ClearAllBlipRoutes()
         end
     end
 end)
