@@ -181,13 +181,13 @@ QBCore.Functions.CreateUseableItem("og_kush_lb", function(source, item)
 	TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["og_kush_oz"], "add")
 end)
 
-QBCore.Functions.CreateUseableItem("amneisa_lb", function(source, item)
+QBCore.Functions.CreateUseableItem("amnesia_lb", function(source, item)
 	local Player = QBCore.Functions.GetPlayer(source)
 	if not Player.Functions.RemoveItem(item.name, 1, item.slot) then return end
-	TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["amneisa_lb"], "remove")
+	TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["amnesia_lb"], "remove")
 	Wait(1000)
-	Player.Functions.AddItem("amneisa_oz", 16)
-	TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["amneisa_oz"], "add")
+	Player.Functions.AddItem("amnesia_oz", 16)
+	TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["amnesia_oz"], "add")
 end)
 
 QBCore.Functions.CreateUseableItem("ak47_lb", function(source, item)
