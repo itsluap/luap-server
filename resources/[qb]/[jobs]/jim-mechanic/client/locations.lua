@@ -333,9 +333,8 @@ Config.Locations = {
 		discordcolour = 16711680,
 		discordimg = "https://i.imgur.com/74UVnCb.jpeg",
 	},
-	--[[
 	-- HAYES AUTOS --
-	{    job = "mechanic",
+	{    job = "hayes",
 		zones = {
 			vector2(-1439.9047851563, -443.4548034668),
 			vector2(-1426.0206298828, -466.5227355957),
@@ -357,7 +356,6 @@ Config.Locations = {
 		discordcolour = 39135,
 		discordimg = "https://static.wikia.nocookie.net/gtawiki/images/0/0c/HayesAutoBodyShop-GTAV-Logo.png",
 	},
-	]]--
 }
 
 local till = {}
