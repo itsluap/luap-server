@@ -1958,5 +1958,61 @@
       <ModelName>sum_p_mp_yacht_door_02</ModelName>
       <TuningName>DefaultStandardLatchShut</TuningName>
     </Item>
+    <Item>
+      <ModelName>gabz_bahama_door_01</ModelName>
+      <TuningName>DefaultStandardLatchShut</TuningName>
+    </Item>
+    <Item>
+        <ModelName>gabz_bahama_door_02</ModelName>
+        <TuningName>DefaultStandardLatchShut</TuningName>
+    </Item>
+    <Item>
+        <ModelName>gabz_bahama_door_03</ModelName>
+        <TuningName>DefaultStandardLatchShut</TuningName>
+    </Item>
+    <Item>
+        <ModelName>gabz_bahama_door_04a</ModelName>
+        <TuningName>DefaultStandardLatchShut</TuningName>
+    </Item>
+    <Item>
+        <ModelName>gabz_bahama_door_04b</ModelName>
+        <TuningName>DefaultStandardLatchShut</TuningName>
+    </Item>
+    <Item>
+        <ModelName>gabz_bahama_toilet_door</ModelName>
+        <TuningName>DefaultStandardLatchShut</TuningName>
+    </Item>
+    <Item>
+      <ModelName>gabz_gangs_int01_door_01</ModelName>
+      <TuningName>DefaultStandardLatchShut</TuningName>
+    </Item>
+    <Item>
+        <ModelName>gabz_gangs_int01_door_02</ModelName>
+        <TuningName>DefaultStandardLatchShut</TuningName>
+    </Item>
+    <Item>
+        <ModelName>gabz_gangs_int01_door_03</ModelName>
+        <TuningName>DefaultStandardLatchShut</TuningName>
+    </Item>
+    <Item>
+        <ModelName>gabz_gangs_int02_door_01</ModelName>
+        <TuningName>DefaultStandardLatchShut</TuningName>
+    </Item>
+    <Item>
+        <ModelName>gabz_gangs_int02_door_02</ModelName>
+        <TuningName>DefaultStandardLatchShut</TuningName>
+    </Item>
+    <Item>
+        <ModelName>gabz_gangs_int02_door_03</ModelName>
+        <TuningName>DefaultStandardLatchShut</TuningName>
+    </Item>
+    <Item>
+        <ModelName>gabz_bennys_prop_garage_door_01</ModelName>
+        <TuningName>SupermodGarage</TuningName>
+    </Item>
+    <Item>
+        <ModelName>gabz_bennys_prop_garage_door_02</ModelName>
+        <TuningName>SupermodGarage</TuningName>
+    </Item>
   </ModelToTuneMapping>
 </CDoorTuningFile>

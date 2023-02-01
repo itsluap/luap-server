@@ -1,7 +1,7 @@
 fx_version 'cerulean'
 game 'gta5'
 author 'Gabz'
-description 'VESPUCCI BEACH MARKET'
+description 'Vespucci Beach Market'
 version '1.0.0'
 lua54 'yes'
 this_is_a_map 'yes'
@@ -12,12 +12,11 @@ dependencies {
     'cfx-gabz-mapdata', -- ⚠️PLEASE READ⚠️; Requires [cfx-gabz-mapdata] to work properly.
 }
 
-escrow_ignore {
-    'stream/**/*.ytd',
-    'gabz_vbm_entityset.lua',
+server_scripts {
+    'version_check.lua',
 }
 
-client_script {
-    'gabz_vbm_entityset.lua',
+escrow_ignore {
+    'stream/**/*.ytd',
 }
 dependency '/assetpacks'

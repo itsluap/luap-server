@@ -2,7 +2,7 @@ fx_version 'cerulean'
 game 'gta5'
 author 'Gabz'
 description 'PDM'
-version '8.0.0'
+version '1.0.0'
 lua54 'yes'
 this_is_a_map 'yes'
 
@@ -16,16 +16,9 @@ server_scripts {
     'version_check.lua',
 }
 
-data_file 'TIMECYCLEMOD_FILE' 'gabz_pdm_timecycle.xml'
-
-files {
-	'gabz_pdm_timecycle.xml',
-}
-
 escrow_ignore {
     'stream/**/*.ytd',
     'stream/ydr/gabz_pdm_flag1.yft',
     'stream/ydr/gabz_pdm_flag2.yft',
-    'pdm.lua',
 }
 dependency '/assetpacks'

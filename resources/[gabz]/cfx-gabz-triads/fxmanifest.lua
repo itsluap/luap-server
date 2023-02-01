@@ -13,6 +13,10 @@ dependencies {
     'cfx-gabz-catcafe', -- ⚠️PLEASE READ⚠️; Requires [cfx-gabz-catcafe] for the collisions to work properly.
 }
 
+server_scripts {
+    'version_check.lua',
+}
+
 escrow_ignore {
     'stream/**/*.ytd',
 }

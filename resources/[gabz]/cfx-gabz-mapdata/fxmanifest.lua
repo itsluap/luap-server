@@ -28,6 +28,10 @@ client_script {
     'gabz_entityset_mods1.lua',
 }
 
+server_scripts {
+    'version_check.lua',
+}
+
 escrow_ignore {
     'gabz-doorlocks/*.lua',
     'gabz_entityset_mods1.lua',

@@ -2,7 +2,7 @@ fx_version 'cerulean'
 game 'gta5'
 author 'Gabz'
 description 'Yachts'
-version '8.0.0'
+version '1.0.0'
 lua54 'yes'
 this_is_a_map 'yes'
 
@@ -16,7 +16,7 @@ client_scripts {
 }
 
 server_scripts {
-    'version_check.lua',
+  'version_check.lua',
 }
 
 escrow_ignore {
