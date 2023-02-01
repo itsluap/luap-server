@@ -11,8 +11,8 @@ KB.Businesses = {
 		},
 		blip = {
 			title = "Puff Puff Pass",
-			colour = 66,
-			id = 93,
+			colour = 1,
+			id = 140,
 			coords = vector4(-1555.1, -435.99, 35.89, 51.43)
 		},
 		duty = {
