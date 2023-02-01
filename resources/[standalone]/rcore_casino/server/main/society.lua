@@ -91,7 +91,8 @@ function RemoveMoneyFromSociety(money)
         return
     end
     if Framework.Active == 2 then
-        local moneyNow = GetMoneyFromSociety()
+        local moneyNow = exports['Renewed-Banking']:getAccountMoney(Config.SocietyName)
+        --print(moneyNow)
         if (moneyNow - money) < 0 then
             money = moneyNow
         end
