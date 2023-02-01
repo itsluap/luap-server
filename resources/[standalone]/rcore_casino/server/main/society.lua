@@ -96,14 +96,14 @@ function RemoveMoneyFromSociety(money)
             money = moneyNow
         end
         xpcall(function()
-            local societyMoney = exports["qb-bossmenu"]:GetAccount(Config.SocietyName)
+            local societyMoney = exports['Renewed-Banking']:getAccountMoney(Config.SocietyName)
             -- if societyMoney >= money then
             TriggerEvent("qb-bossmenu:server:removeAccountMoney", Config.SocietyName, money)
             -- end
         end, function(error)
-            local societyMoney = exports["qb-management"]:GetAccount(Config.SocietyName)
+            local societyMoney = exports['Renewed-Banking']:getAccountMoney(Config.SocietyName)
             -- if societyMoney >= money then
-            exports["qb-management"]:RemoveMoney(Config.SocietyName, money)
+            exports['Renewed-Banking']:removeAccountMoney(Config.SocietyName, money)
             -- end
         end)
     end
@@ -140,7 +140,7 @@ function GiveMoneyToSociety(money)
     end
     if Framework.Active == 2 then
         xpcall(function()
-            exports["qb-management"]:AddMoney(Config.SocietyName, money)
+            exports['Renewed-Banking']:addAccountMoney(Config.SocietyName, money)
         end, function(error)
             TriggerEvent("qb-bossmenu:server:addAccountMoney", Config.SocietyName, money)
         end)
@@ -172,11 +172,11 @@ function GetMoneyFromSociety()
 
     if Framework.Active == 2 then
         xpcall(function()
-            local societyMoney = exports["qb-bossmenu"]:GetAccount(Config.SocietyName)
+            local societyMoney = exports['Renewed-Banking']:getAccountMoney(Config.SocietyName)
             result = societyMoney
             promise:resolve(result)
         end, function(error)
-            local societyMoney = exports["qb-management"]:GetAccount(Config.SocietyName)
+            local societyMoney = exports['Renewed-Banking']:getAccountMoney(Config.SocietyName)
             result = societyMoney
             promise:resolve(result)
         end)
