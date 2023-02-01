@@ -53,10 +53,11 @@ ensure cfx-gabz-247             #*THIS RESOURCE IS MANDATORY IF YOU USE [CFX-GAB
 #ensure cfx-gabz-ammunation
 ensure cfx-gabz-arcade
 ensure cfx-gabz-aztecas
+ensure cfx-gabz-bahama
 ensure cfx-gabz-ballas
 ensure cfx-gabz-barber
 ensure cfx-gabz-beanmachine
-#ensure cfx-gabz-bennys         #*READ BELOW*!
+ensure cfx-gabz-bennys         #*READ BELOW*!
 ensure cfx-gabz-binco
 ensure cfx-gabz-bobcat
 ensure cfx-gabz-bowling
@@ -108,6 +109,8 @@ ensure cfx-gabz-vbmarket
 ensure cfx-gabz-vu
 ensure cfx-gabz-yachts
 ensure cfx-gabz-mba
+ensure cfx-gabz-paletocamp
+ensure cfx-gabz-weedcamp
 #ensure cfx-gabz-xmas
 ensure [assets]
 ##########################
