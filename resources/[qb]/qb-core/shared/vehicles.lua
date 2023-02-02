@@ -3781,15 +3781,6 @@ QBShared.Vehicles = {
         ['hash'] = `rmod918spyder`,
         ['shop'] = {'ottos',}
     },
-	['rmod918spyder'] = {
-        ['name'] = '918 Spyder',
-        ['brand'] = 'Porsche',
-        ['model'] = 'rmod918spyder',
-        ['price'] = 1000000,
-        ['category'] = 'imports',
-        ['hash'] = `rmod918spyder`,
-        ['shop'] = {'ottos',}
-    },
 	['rmodbentayga'] = {
         ['name'] = 'Bentayga',
         ['brand'] = 'Bentley',

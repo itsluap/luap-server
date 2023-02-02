@@ -63,6 +63,8 @@ Config = {
 	Jobs = {
 		--['beanmachine'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.10, },
 		--['bakery'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.10, },
+		['ottos'] = { MinAmountforTicket = 50, PayPerTicket = 50 , Commission = 0.10, },
+		['hayes'] = { MinAmountforTicket = 50, PayPerTicket = 50 , Commission = 0.10, },
 		['burgershot'] = { MinAmountforTicket = 50, PayPerTicket = 50 , Commission = 0.10, },
 		['puffpuffpass'] = { MinAmountforTicket = 50, PayPerTicket = 50 , Commission = 0.10, },
 		--['catcafe'] = { MinAmountforTicket = 50, PayPerTicket = 50, Commission = 0.10, },
