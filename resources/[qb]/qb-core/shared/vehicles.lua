@@ -3762,9 +3762,174 @@ QBShared.Vehicles = {
 
 	-- mansuag --
 
+	-- rmod --
+	['rmodi8ks'] = {
+        ['name'] = 'I8 KS',
+        ['brand'] = 'BMW',
+        ['model'] = 'rmodi8ks',
+        ['price'] = 1000000,
+        ['category'] = 'imports',
+        ['hash'] = `rmodi8ks`,
+        ['shop'] = {'ottos',}
+    },
+	['rmod918spyder'] = {
+        ['name'] = '918 Spyder',
+        ['brand'] = 'Porsche',
+        ['model'] = 'rmod918spyder',
+        ['price'] = 1000000,
+        ['category'] = 'imports',
+        ['hash'] = `rmod918spyder`,
+        ['shop'] = {'ottos',}
+    },
+	['rmod918spyder'] = {
+        ['name'] = '918 Spyder',
+        ['brand'] = 'Porsche',
+        ['model'] = 'rmod918spyder',
+        ['price'] = 1000000,
+        ['category'] = 'imports',
+        ['hash'] = `rmod918spyder`,
+        ['shop'] = {'ottos',}
+    },
+	['rmodbentayga'] = {
+        ['name'] = 'Bentayga',
+        ['brand'] = 'Bentley',
+        ['model'] = 'rmodbentayga',
+        ['price'] = 1000000,
+        ['category'] = 'imports',
+        ['hash'] = `rmodbentayga`,
+        ['shop'] = {'ottos',}
+    },
+	['rmodr8alpil'] = {
+        ['name'] = 'R8 Alpil',
+        ['brand'] = 'Audi',
+        ['model'] = 'rmodr8alpil',
+        ['price'] = 1000000,
+        ['category'] = 'imports',
+        ['hash'] = `rmodr8alpil`,
+        ['shop'] = {'ottos',}
+    },
+	['rmodsennagtr'] = {
+        ['name'] = 'Senna GTR',
+        ['brand'] = 'Mclaren',
+        ['model'] = 'rmodsennagtr',
+        ['price'] = 1000000,
+        ['category'] = 'imports',
+        ['hash'] = `rmodsennagtr`,
+        ['shop'] = {'ottos',}
+    },
+	['rmodcharger'] = {
+        ['name'] = 'Hellcat Charger',
+        ['brand'] = 'Dodge',
+        ['model'] = 'rmodcharger',
+        ['price'] = 1000000,
+        ['category'] = 'imports',
+        ['hash'] = `rmodcharger`,
+        ['shop'] = {'ottos',}
+    },
+	['rmodf8'] = {
+        ['name'] = 'F8',
+        ['brand'] = 'Ferrari',
+        ['model'] = 'rmodf8',
+        ['price'] = 1000000,
+        ['category'] = 'imports',
+        ['hash'] = `rmodf8`,
+        ['shop'] = {'ottos',}
+    },
+	['rmodjeepg'] = {
+        ['name'] = 'Gladiator',
+        ['brand'] = 'Jeep',
+        ['model'] = 'rmodjeepg',
+        ['price'] = 1000000,
+        ['category'] = 'imports',
+        ['hash'] = `rmodjeepg`,
+        ['shop'] = {'ottos',}
+    },
+	['rmod911gt3'] = {
+        ['name'] = '911 GT3',
+        ['brand'] = 'Porsche',
+        ['model'] = 'rmod911gt3',
+        ['price'] = 1000000,
+        ['category'] = 'imports',
+        ['hash'] = `rmod911gt3`,
+        ['shop'] = {'ottos',}
+    },
+	['rmodr8v10'] = {
+        ['name'] = 'R8 V10',
+        ['brand'] = 'Audi',
+        ['model'] = 'rmodr8v10',
+        ['price'] = 1000000,
+        ['category'] = 'imports',
+        ['hash'] = `rmodr8v10`,
+        ['shop'] = {'ottos',}
+    },
+	['rmodquadra'] = {
+        ['name'] = 'Quadra',
+        ['brand'] = 'Audi',
+        ['model'] = 'rmodquadra',
+        ['price'] = 1000000,
+        ['category'] = 'imports',
+        ['hash'] = `rmodquadra`,
+        ['shop'] = {'ottos',}
+    },
+	['rmodsupralb'] = {
+        ['name'] = 'Supra LB WLK',
+        ['brand'] = 'Toyota',
+        ['model'] = 'rmodsupralb',
+        ['price'] = 1000000,
+        ['category'] = 'imports',
+        ['hash'] = `rmodsupralb`,
+        ['shop'] = {'ottos',}
+    },
+	['rmodsuprapandem'] = {
+        ['name'] = 'Supra Pandem',
+        ['brand'] = 'Toyota',
+        ['model'] = 'rmodsuprapandem',
+        ['price'] = 1000000,
+        ['category'] = 'imports',
+        ['hash'] = `rmodsuprapandem`,
+        ['shop'] = {'ottos',}
+    },
+	['rmodz06'] = {
+        ['name'] = 'Z06 Corvette',
+        ['brand'] = 'Chevy',
+        ['model'] = 'rmodz06',
+        ['price'] = 1000000,
+        ['category'] = 'imports',
+        ['hash'] = `rmodz06`,
+        ['shop'] = {'ottos',}
+    },
+	['rmodcamaro69'] = {
+        ['name'] = '1969 Camaro',
+        ['brand'] = 'Chevy',
+        ['model'] = 'rmodcamaro69',
+        ['price'] = 1000000,
+        ['category'] = 'imports',
+        ['hash'] = `rmodcamaro69`,
+        ['shop'] = {'ottos',}
+    },
+	['rmod350zpandem'] = {
+        ['name'] = '350z Pandem',
+        ['brand'] = 'Nissan',
+        ['model'] = 'rmod350zpandem',
+        ['price'] = 1000000,
+        ['category'] = 'imports',
+        ['hash'] = `rmod350zpandem`,
+        ['shop'] = {'ottos',}
+    },
+	['rmodrs5'] = {
+        ['name'] = 'RS5',
+        ['brand'] = 'Audi',
+        ['model'] = 'rmodrs5',
+        ['price'] = 1000000,
+        ['category'] = 'imports',
+        ['hash'] = `rmodrs5`,
+        ['shop'] = {'ottos',}
+    },
 
+	-- rmod end --
 	
 	-- luxury shop --
+	-- rmod --
 	['amgone'] = {
         ['name'] = 'AMG One',
         ['brand'] = 'Mercedes',
