@@ -42,7 +42,7 @@ end
 RegisterNetEvent("dz-drone:client:InitiateDrone", function()
 	InitiateDrone({
 		speed		= 2,			-- Drone movement speed - usage: 2.5 / 15 / 100
-		range		= 350,			-- Drone max range length before loses signal - usage: 100 / 350 / 1000
+		range		= 1000,			-- Drone max range length before loses signal - usage: 100 / 350 / 1000
 		sphere		= true,			-- Drone max range zone red walls sphere - usage: true / false
 		health		= 100,			-- Drone health value - usage: 50 / 100 / 250 or "false" if you don't want the drone to have health (invincible)
 		explode		= false,		-- Drone explode when its health reaches 0 - usage: true / false

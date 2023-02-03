@@ -923,4 +923,8 @@ QBShared.Items = {
 	["banana_kush_weed"] 			 = {["name"] = "banana_kush_weed", 			 	["label"] = "Banana Kush Weed 1G", 		["weight"] = 200, 		["type"] = "item", 		["image"] = "banana_kush_weed.png", 	["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Weed for packing"},
 	["purple_haze_weed"] 			 = {["name"] = "purple_haze_weed", 			 	["label"] = "Purple Haze Weed 1G", 		["weight"] = 200, 		["type"] = "item", 		["image"] = "purple_haze_weed.png", 	["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Weed for packing"},
 
+	-- drones --
+	['drone'] 					    = {['name'] = 'drone', 		     			   	['label'] = 'Drone', 						['weight'] = 1500, 		['type'] = 'item', 		['image'] = 'drone.png', 						['unique'] = true,    	['useable'] = true, 	['shouldClose'] = true,	   	['combinable'] = nil,   ['description'] = 'Regular Drone with regular options.'},	
+	['drone_lspd'] 		 		    = {['name'] = 'drone_lspd', 					['label'] = 'LSPD Drone', 					['weight'] = 1500, 	    ['type'] = 'item', 		['image'] = 'drone_lspd.png', 					['unique'] = true, 		['useable'] = true, 	['shouldClose'] = true,   	['combinable'] = nil,   ['description'] = 'Advanced LSPD Drone with and advanced options.'},
+
 }
