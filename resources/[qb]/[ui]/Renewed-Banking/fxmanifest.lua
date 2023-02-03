@@ -3,7 +3,7 @@ game 'gta5'
 
 description 'Renewed Banking'
 Author "uShifty#1733"
-version '1.0.2'
+version '1.0.3'
 
 lua54 'yes'
 
@@ -14,6 +14,7 @@ shared_scripts {
 }
 
 client_scripts {
+    --'@ox_lib/init.lua',
     'client/*.lua'
 }
 

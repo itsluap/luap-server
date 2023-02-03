@@ -1,36 +1,4 @@
 Translations = {
-    error = {
-        not_give = "Could not give item to the given id.",
-        givecash = "Usage /givecash [ID] [AMOUNT]",
-        wrong_id = "Wrong ID.",
-        dead = "You are dead LOL.",
-        too_far_away = "You are too far away lmfao.",
-        not_enough = "You don\'t have this amount.",
-        invalid_amount = "Invalid Amount Given"
-    },
-    success = {
-        debit_card = "You have successfully ordered a Debit Card.",
-        cash_deposit = "You successfully made a cash deposit of $%{value}.",
-        cash_withdrawal = "You successfully made a cash withdrawal of $%{value}.",
-        updated_pin = "You have successfully updated your debit card pin.",
-        savings_deposit = "You successfully made a savings deposit of $%{value}.",
-        savings_withdrawal = "You successfully made a savings withdrawal of $%{value}.",
-        opened_savings = "You have successfully opened a savings account.",
-        give_cash = "Successfully gave $%{cash} to ID %{id}",
-        received_cash = "Successfully received $%{cash} from ID %{id}"
-    },
-    info = {
-        bank_blip = "Bank",
-        access_bank_target = "Access Bank",
-        access_bank_key = "[E] - Access Bank",
-        current_to_savings = "Transfer Current Account to Savings",
-        savings_to_current = "Transfer Savings to Current Account",
-        deposit = "Deposit $%{amount} into Current Account",
-        withdraw = "Withdraw $%{amount} from Current Account",
-    },
-    command = {
-        givecash = "Give cash to player."
-    },
     time = {
         weeks = "%{time} weeks ago",
         aweek = "A week ago",
@@ -56,7 +24,11 @@ Translations = {
         fail_transfer = "Failed to transfer to unknown account!",
         account_taken = "Account ID is already in use",
         unknown_player = "Player with ID '%{id}' could not be found.",
-        loading_failed = "Failed to load Banking Data!"
+        loading_failed = "Failed to load Banking Data!",
+        dead = "Action failed, you're dead ",
+        too_far_away = "Action failed, too far away",
+        give_cash = "Successfully gave $%{cash} to ID %{id}",
+        received_cash = "Successfully received $%{cash} from ID %{id}"
     },
     menu = {
         bank_name = "Los Santos Banking",
@@ -82,7 +54,8 @@ Translations = {
         account_id = "Account ID (NO SPACES)",
         change_account_name = "Change Account Name",
         citizen_id = "Citizen/State ID",
-        add_account_member = "Add Account Member"
+        add_account_member = "Add Account Member",
+        givecash = "Usage /givecash [ID] [AMOUNT]",
     },
     ui = {
         account_title = " Account / ",
@@ -108,7 +81,7 @@ Translations = {
         transfer_but = "Transfer",
     }
 }
-Lang = Lang or Locale:new({
+Lang = Locale:new({
     phrases = Translations,
     warnOnMissing = true
 })
