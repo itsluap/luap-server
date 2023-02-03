@@ -31,6 +31,7 @@ AddEventHandler('onResourceStart', function(resource) if GetCurrentResourceName(
 end)
 
 Config.Locations = {
+	--[[
 	-- BENNYS NEXT TO PDM --
 	{	job = "mechanic",
 		zones = {
@@ -54,6 +55,7 @@ Config.Locations = {
 		discordcolour = 16711680,
 		discordimg = "https://static.wikia.nocookie.net/gtawiki/images/b/be/BennysOriginalMotorWorks-GTAO-Logo.png",
 	},
+	]]--
 	--[[
 	-- ALTA STREET BENNYS --
 	{	job = "mechanic",

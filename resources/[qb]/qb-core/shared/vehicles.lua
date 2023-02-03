@@ -4684,15 +4684,6 @@ QBShared.Vehicles = {
         ['hash'] = `c33s13`,
         ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
-	['c33s13'] = {
-        ['name'] = 'C33 S13',
-        ['brand'] = 'Nissan',
-        ['model'] = 'c33s13',
-        ['price'] = 120000,
-        ['category'] = 'tuner',
-        ['hash'] = `c33s13`,
-        ['shop'] = {'tuner', 'ottos',  'autoex',}
-    },
 	['bnr34'] = {
         ['name'] = 'R34 Skyline',
         ['brand'] = 'Nissan',
@@ -4700,15 +4691,6 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `bnr34`,
-        ['shop'] = {'tuner', 'ottos',  'autoex',}
-    },
-	['amuses2k'] = {
-        ['name'] = 'Amuse S2000',
-        ['brand'] = 'Honda',
-        ['model'] = 'amuses2k',
-        ['price'] = 120000,
-        ['category'] = 'tuner',
-        ['hash'] = `amuses2k`,
         ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['amuses2k'] = {
@@ -4765,15 +4747,6 @@ QBShared.Vehicles = {
         ['hash'] = `911r`,
         ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
-	['911r'] = {
-        ['name'] = '911 GT3',
-        ['brand'] = 'Porsche',
-        ['model'] = '911r',
-        ['price'] = 120000,
-        ['category'] = 'tuner',
-        ['hash'] = `911r`,
-        ['shop'] = {'tuner', 'ottos',  'autoex',}
-    },
 	['850'] = {
         ['name'] = '850 CSi',
         ['brand'] = 'BMW',
@@ -4790,15 +4763,6 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `458it`,
-        ['shop'] = {'tuner', 'ottos',  'autoex',}
-    },
-	['350zstardast'] = {
-        ['name'] = 'Stardast 350z',
-        ['brand'] = 'Nissan',
-        ['model'] = '350zstardast',
-        ['price'] = 120000,
-        ['category'] = 'tuner',
-        ['hash'] = `350zstardast`,
         ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['350zstardast'] = {
@@ -4844,15 +4808,6 @@ QBShared.Vehicles = {
         ['price'] = 120000,
         ['category'] = 'tuner',
         ['hash'] = `350z`,
-        ['shop'] = {'tuner', 'ottos',  'autoex',}
-    },
-	['720s'] = {
-        ['name'] = '720s',
-        ['brand'] = 'Mclaren',
-        ['model'] = '720s',
-        ['price'] = 120000,
-        ['category'] = 'tuner',
-        ['hash'] = `720s`,
         ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
 	['720s'] = {
