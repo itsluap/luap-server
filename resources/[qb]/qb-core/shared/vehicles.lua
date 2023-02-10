@@ -4666,15 +4666,6 @@ QBShared.Vehicles = {
         ['hash'] = `celica`,
         ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
-	['celica'] = {
-        ['name'] = 'Celica',
-        ['brand'] = 'Toyota',
-        ['model'] = 'celica',
-        ['price'] = 120000,
-        ['category'] = 'tuner',
-        ['hash'] = `celica`,
-        ['shop'] = {'tuner', 'ottos',  'autoex',}
-    },
 	['c33s13'] = {
         ['name'] = 'C33 S13',
         ['brand'] = 'Nissan',
