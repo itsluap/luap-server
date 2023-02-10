@@ -32,7 +32,7 @@ CreateThread(function()
             }
         end
     end
-    TriggerClientEvent("qb-garages:client:houseGarageConfig", -1, HouseGarages)
+    TriggerClientEvent("indigo-garages:client:houseGarageConfig", -1, HouseGarages)
     TriggerClientEvent("qb-houses:client:setHouseConfig", -1, Config.Houses)
 end)
 
@@ -195,7 +195,7 @@ RegisterNetEvent('qb-houses:server:addGarage', function(house, coords)
         label = Config.Houses[house].adress,
         takeVehicle = coords
     }
-    TriggerClientEvent("qb-garages:client:addHouseGarage", -1, house, garageInfo)
+    TriggerClientEvent("indigo-garages:client:addHouseGarage", -1, house, garageInfo)
     TriggerClientEvent('QBCore:Notify', src, Lang:t("info.added_garage", {value = garageInfo.label}))
 end)
 

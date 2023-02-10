@@ -99,7 +99,7 @@ local function SetupVehicleMenu()
             title = 'Give Keys',
             icon = 'key',
             type = 'client',
-            event = 'qb-vehiclekeys:client:GiveKeys',
+            event = 'indigo-vehiclekeys:client:GiveKeys',
             shouldClose = true
         }
 

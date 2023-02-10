@@ -103,10 +103,10 @@ The `traveldistance` column adds an Odometer to the toolbox/mechanic_tools menus
 
 **You don't need `qb-mechanicjob` to use this script**
 
-Extra damages will be enabled by default if you use `qb-mechanicjob` and `qb-vehiclefailure`
+Extra damages will be enabled by default if you use `qb-mechanicjob` and `indigo-vehiclefailure`
 
-This needs to be added the the main script, but if you **DON'T** want to use qb-mechanicjob but have an updated qb-vehiclefailure
-replace this event in qb-vehiclefailure > client.lua. This will make it only work if qb-mechanicjob is started.
+This needs to be added the the main script, but if you **DON'T** want to use qb-mechanicjob but have an updated indigo-vehiclefailure
+replace this event in indigo-vehiclefailure > client.lua. This will make it only work if qb-mechanicjob is started.
 
 ```lua
 -- Functions
@@ -610,7 +610,7 @@ end
 	- Remove fixFailure() event as it didn't do anything apparently
 	- Changed the jim-mechanic:server:loadStatus to do a vehicle damage setup event to help fix nil values.
 		- Replace repair.lua, function.lua and functionserver.lua
-	- Installation instructions changed to fit new updated qb-vehiclefailure
+	- Installation instructions changed to fit new updated indigo-vehiclefailure
 	- Turned odometer into a vehicle debug screen if the debug mode is enabled
 
 ## Update v2.6:

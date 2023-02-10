@@ -155,7 +155,7 @@ function PlaneSpawn()
 	
 	local plate = GetVehicleNumberPlateText(airplane)
 	--TriggerServerEvent('garage:addKeys', plate)
-	TriggerServerEvent("qb-vehiclekeys:server:AcquireVehicleKeys", plate)
+	TriggerServerEvent("indigo-vehiclekeys:server:AcquireVehicleKeys", plate)
 
 	RemoveBlip(blip1)
 	SetBlipRoute(blip1, false)

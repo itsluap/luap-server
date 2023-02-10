@@ -25,7 +25,7 @@ Real Estate for QB-Core Framework :house_with_garden:
 - [qb-anticheat](https://github.com/qbcore-framework/qb-anticheat) - Anti Cheat 
 - [qb-phone](https://github.com/qbcore-framework/qb-phone) - Houses app
 - [qb-multicharacter](https://github.com/qbcore-framework/qb-multicharacter) - Checking if player is inside after character chosen (You need to edit the lines if you don't use this)
-- [qb-garages](https://github.com/qbcore-framework/qb-garages) - House Garage
+- [indigo-garages](https://github.com/qbcore-framework/indigo-garages) - House Garage
 - [qb-interior](https://github.com/qbcore-framework/qb-interior) - Necessary for house interiors
 - [qb-clothing](https://github.com/qbcore-framework/qb-clothing) - Outfits
 - [qb-weathersync](https://github.com/qbcore-framework/qb-weathersync) - Desync weather inside house
@@ -94,7 +94,7 @@ ensure indigo-radialmenu
 ensure qb-anticheat
 ensure qb-phone
 ensure qb-multicharacter
-ensure qb-garages
+ensure indigo-garages
 ensure qb-interior
 ensure qb-clothing
 ensure qb-weathersync

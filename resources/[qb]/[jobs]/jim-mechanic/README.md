@@ -256,7 +256,7 @@ Read this before opening a ticket.
 - This is activated by using third eye/qb-target
 - Note: I have been asked several times to add more options to this
 	- There are so many different custom police cars that use a random modification to change a small thing on the vehicle.
-	- At that point if I added more/all options it would just be another version of `qb-customs`
+	- At that point if I added more/all options it would just be another version of `indigo-customs`
 
 ------------------
 ## preview.lua - `/preview`
@@ -1147,9 +1147,9 @@ end
 
 ## QB-MechanicJob
 - **You don't NEED qb-mechaicjob to use Jim-Mechanic but doing so grants extra features**
-- Extra damages will be enabled by default if you use `qb-mechanicjob` and `qb-vehiclefailure`
-- This needs to be added the the main script, but if you **DON'T** want to use qb-mechanicjob but have an updated qb-vehiclefailure
-- Replace this event in qb-vehiclefailure > client.lua.
+- Extra damages will be enabled by default if you use `qb-mechanicjob` and `indigo-vehiclefailure`
+- This needs to be added the the main script, but if you **DON'T** want to use qb-mechanicjob but have an updated indigo-vehiclefailure
+- Replace this event in indigo-vehiclefailure > client.lua.
 - This will make it only work if qb-mechanicjob is started.
 
 ```lua
