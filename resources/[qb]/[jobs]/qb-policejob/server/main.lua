@@ -1068,10 +1068,11 @@ CreateThread(function()
         TriggerClientEvent("police:SetCopCount", -1, curCops)
     end
 end)
-
+--[[
 CreateThread(function()
     while true do
         Wait(5000)
         UpdateBlips()
     end
 end)
+]]-- removing blips for now since they'll show to anyone with the police, even if the job isnt selected
