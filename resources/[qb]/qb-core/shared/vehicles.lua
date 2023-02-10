@@ -3920,6 +3920,312 @@ QBShared.Vehicles = {
 	-- rmod end --
 	
 	-- luxury shop --
+	['v877'] = {
+        ['name'] = '1977 Vantage',
+        ['brand'] = 'Aston Martin',
+        ['model'] = 'v877',
+        ['price'] = 85000,
+        ['category'] = 'imports',
+        ['hash'] = `v877`,
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+    },
+	['db11'] = {
+        ['name'] = '2017 DB11',
+        ['brand'] = 'Aston Martin',
+        ['model'] = 'db11',
+        ['price'] = 215000,
+        ['category'] = 'imports',
+        ['hash'] = `db11`,
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+    },
+	['vulcan'] = {
+        ['name'] = 'Vulcan',
+        ['brand'] = 'Aston Martin',
+        ['model'] = 'vulcan',
+        ['price'] = 2300000,
+        ['category'] = 'imports',
+        ['hash'] = `vulcan`,
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+    },
+	['victor'] = {
+        ['name'] = 'Victor',
+        ['brand'] = 'Aston Martin',
+        ['model'] = 'victor',
+        ['price'] = 3800000,
+        ['category'] = 'imports',
+        ['hash'] = `victor`,
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+    },
+	['rmodmartin'] = {
+        ['name'] = '2021 DB11',
+        ['brand'] = 'Aston Martin',
+        ['model'] = 'rmodmartin',
+        ['price'] = 320000,
+        ['category'] = 'imports',
+        ['hash'] = `rmodmartin`,
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+    },
+	['rmodr8c'] = {
+        ['name'] = 'R8 Convertible',
+        ['brand'] = 'Audi',
+        ['model'] = 'rmodr8c',
+        ['price'] = 160000,
+        ['category'] = 'imports',
+        ['hash'] = `rmodr8c`,
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+    },
+	['rmodrs6'] = {
+        ['name'] = '2020 RS6',
+        ['brand'] = 'Audi',
+        ['model'] = 'rmodrs6',
+        ['price'] = 90000,
+        ['category'] = 'imports',
+        ['hash'] = `rmodrs6`,
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+    },
+	['rmodrs6r'] = {
+        ['name'] = '2020 RS6R',
+        ['brand'] = 'Audi',
+        ['model'] = 'rmodrs6r',
+        ['price'] = 97000,
+        ['category'] = 'imports',
+        ['hash'] = `rmodrs6r`,
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+    },
+	['22m5'] = {
+        ['name'] = '2022 M5',
+        ['brand'] = 'BMW',
+        ['model'] = '22m5',
+        ['price'] = 110000,
+        ['category'] = 'imports',
+        ['hash'] = `22m5`,
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+    },
+	['bs17'] = {
+        ['name'] = 'S1000 RR',
+        ['brand'] = 'BMW',
+        ['model'] = 'bs17',
+        ['price'] = 17000,
+        ['category'] = 'imports',
+        ['hash'] = `bs17`,
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+    },
+	['e92'] = {
+        ['name'] = '2008 M3',
+        ['brand'] = 'BMW',
+        ['model'] = 'e92',
+        ['price'] = 35000,
+        ['category'] = 'imports',
+        ['hash'] = `e92`,
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+    },
+	['m4f82'] = {
+        ['name'] = '2015 M4',
+        ['brand'] = 'BMW',
+        ['model'] = 'm4f82',
+        ['price'] = 35000,
+        ['category'] = 'imports',
+        ['hash'] = `m4f82`,
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+    },
+	['rmodm5e34'] = {
+        ['name'] = '1995 M5',
+        ['brand'] = 'BMW',
+        ['model'] = 'rmodm5e34',
+        ['price'] = 85000,
+        ['category'] = 'imports',
+        ['hash'] = `rmodm5e34`,
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+    },
+	['bdivo'] = {
+        ['name'] = '2019 Divo',
+        ['brand'] = 'Bugatti',
+        ['model'] = 'bdivo',
+        ['price'] = 5800000,
+        ['category'] = 'imports',
+        ['hash'] = `bdivo`,
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+    },
+	['chiron17'] = {
+        ['name'] = '2017 Chiron',
+        ['brand'] = 'Bugatti',
+        ['model'] = 'chiron17',
+        ['price'] = 4300000,
+        ['category'] = 'imports',
+        ['hash'] = `chiron17`,
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+    },
+	['bolide'] = {
+        ['name'] = '2020 Bolide',
+        ['brand'] = 'Bugatti',
+        ['model'] = 'bolide',
+        ['price'] = 9000000,
+        ['category'] = 'imports',
+        ['hash'] = `bolide`,
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+    },
+	['supersport'] = {
+        ['name'] = '2010 Supersport',
+        ['brand'] = 'Bugatti',
+        ['model'] = 'supersport',
+        ['price'] = 3300000,
+        ['category'] = 'imports',
+        ['hash'] = `supersport`,
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+    },
+	['exor'] = {
+        ['name'] = 'Hennessey Camaro',
+        ['brand'] = 'Chevy',
+        ['model'] = 'exor',
+        ['price'] = 155000,
+        ['category'] = 'imports',
+        ['hash'] = `exor`,
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+    },
+	['c8corvette'] = {
+        ['name'] = '2020 C8',
+        ['brand'] = 'Chevy',
+        ['model'] = 'c8corvette',
+        ['price'] = 78000,
+        ['category'] = 'imports',
+        ['hash'] = `c8corvette`,
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+    },
+	['acr'] = {
+        ['name'] = '2016 Viper ACR',
+        ['brand'] = 'Dodge',
+        ['model'] = 'acr',
+        ['price'] = 120000,
+        ['category'] = 'imports',
+        ['hash'] = `acr`,
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+    },
+	['nixpycharger21'] = {
+        ['name'] = '2021 Hellcat Charger',
+        ['brand'] = 'Dodge',
+        ['model'] = 'nixpycharger21',
+        ['price'] = 85000,
+        ['category'] = 'imports',
+        ['hash'] = `nixpycharger21`,
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+    },
+	['rmodcharger69'] = {
+        ['name'] = '1969 Charger',
+        ['brand'] = 'Dodge',
+        ['model'] = 'rmodcharger69',
+        ['price'] = 89000,
+        ['category'] = 'imports',
+        ['hash'] = `rmodcharger69`,
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+    },
+	['vip8'] = {
+        ['name'] = '2008 Viper',
+        ['brand'] = 'Dodge',
+        ['model'] = 'vip8',
+        ['price'] = 62000,
+        ['category'] = 'imports',
+        ['hash'] = `vip8`,
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+    },
+	['rmodf40'] = {
+        ['name'] = 'F40',
+        ['brand'] = 'Ferrari',
+        ['model'] = 'rmodf40',
+        ['price'] = 1500000,
+        ['category'] = 'imports',
+        ['hash'] = `rmodf40`,
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+    },
+	['gt17'] = {
+        ['name'] = '2017 GT',
+        ['brand'] = 'Ford',
+        ['model'] = 'gt17',
+        ['price'] = 500000,
+        ['category'] = 'imports',
+        ['hash'] = `gt17`,
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+    },
+	['19raptor'] = {
+        ['name'] = '2019 Raptor',
+        ['brand'] = 'Ford',
+        ['model'] = '19raptor',
+        ['price'] = 76000,
+        ['category'] = 'imports',
+        ['hash'] = `19raptor`,
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+    },
+	['ffrs'] = {
+        ['name'] = '2009 Focus',
+        ['brand'] = 'Ford',
+        ['model'] = 'ffrs',
+        ['price'] = 39000,
+        ['category'] = 'imports',
+        ['hash'] = `ffrs`,
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+    },
+	['mache'] = {
+        ['name'] = '2021 Mach E',
+        ['brand'] = 'Ford',
+        ['model'] = 'mache',
+        ['price'] = 46000,
+        ['category'] = 'imports',
+        ['hash'] = `mache`,
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+    },
+	['rmodescort'] = {
+        ['name'] = 'Escort RS',
+        ['brand'] = 'Ford',
+        ['model'] = 'rmodescort',
+        ['price'] = 19000,
+        ['category'] = 'imports',
+        ['hash'] = `rmodescort`,
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+    },
+	['velociraptor'] = {
+        ['name'] = 'Hennessey Velociraptor',
+        ['brand'] = 'Ford',
+        ['model'] = 'velociraptor',
+        ['price'] = 340000,
+        ['category'] = 'imports',
+        ['hash'] = `velociraptor`,
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+    },
+	['trhawk'] = {
+        ['name'] = '2018 Trackhawk',
+        ['brand'] = 'Jeep',
+        ['model'] = 'trhawk',
+        ['price'] = 90000,
+        ['category'] = 'imports',
+        ['hash'] = `trhawk`,
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+    },
+	['zx10r'] = {
+        ['name'] = '2016 ZX10R',
+        ['brand'] = 'Kawasaki',
+        ['model'] = 'zx10r',
+        ['price'] = 16000,
+        ['category'] = 'imports',
+        ['hash'] = `zx10r`,
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+    },
+	['kiagt'] = {
+        ['name'] = 'Stinger GT',
+        ['brand'] = 'Kia',
+        ['model'] = 'kiagt',
+        ['price'] = 36000,
+        ['category'] = 'imports',
+        ['hash'] = `kiagt`,
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+    },
+	['06sx2t'] = {
+        ['name'] = 'SX 125cc',
+        ['brand'] = 'KTM',
+        ['model'] = '06sx2t',
+        ['price'] = 8000,
+        ['category'] = 'imports',
+        ['hash'] = `06sx2t`,
+        ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+    },
 	['amgone'] = {
         ['name'] = 'AMG One',
         ['brand'] = 'Mercedes',
