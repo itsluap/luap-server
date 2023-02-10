@@ -100,6 +100,6 @@ RegisterNetEvent('jim-mechanic:client:Livery:Check', function()
 				LiveryMenu[#LiveryMenu + 1] = { icon = icon, isMenuHeader = disabled, header = k..". "..v.name, txt = v.install, params = { event = 'jim-mechanic:client:Livery:Apply', args = { id = tostring(v.id) } } }
 			end
 		end
-		exports['qb-menu']:openMenu(LiveryMenu)
+		exports['indigo-menu']:openMenu(LiveryMenu)
 	end
 end)

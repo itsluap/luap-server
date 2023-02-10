@@ -554,7 +554,7 @@ RegisterNetEvent('jim-burgershot:Crafting', function(data)
 			end
 		end
 	end
-	exports['qb-menu']:openMenu(Menu)
+	exports['indigo-menu']:openMenu(Menu)
 end)
 
 RegisterNetEvent('jim-burgershot:client:Eat', function(itemName)

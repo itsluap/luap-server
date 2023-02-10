@@ -57,7 +57,7 @@ RegisterNetEvent('jim-mechanic:client:Interior:Check', function()
 		if GetNumVehicleMods(vehicle, 34) ~= 0 then InteriorMenu[#InteriorMenu + 1] = { header = Loc[Config.Lan]["interior"].label7, txt = "["..(GetNumVehicleMods(vehicle, 34)+1)..Loc[Config.Lan]["common"].menuinstalled..installed7, params = { event = "jim-mechanic:client:Interior:Choose", args = 34 } } end
 		if GetNumVehicleMods(vehicle, 35) ~= 0 then InteriorMenu[#InteriorMenu + 1] = { header = Loc[Config.Lan]["interior"].label8, txt = "["..(GetNumVehicleMods(vehicle, 35)+1)..Loc[Config.Lan]["common"].menuinstalled..installed8, params = { event = "jim-mechanic:client:Interior:Choose", args = 35 } } end
 		if GetNumVehicleMods(vehicle, 36) ~= 0 then InteriorMenu[#InteriorMenu + 1] = { header = Loc[Config.Lan]["interior"].label9, txt = "["..(GetNumVehicleMods(vehicle, 36)+1)..Loc[Config.Lan]["common"].menuinstalled..installed9, params = { event = "jim-mechanic:client:Interior:Choose", args = 36 } } end
-		exports['qb-menu']:openMenu(InteriorMenu)
+		exports['indigo-menu']:openMenu(InteriorMenu)
 	end
 end)
 
@@ -88,6 +88,6 @@ RegisterNetEvent('jim-mechanic:client:Interior:Choose', function(mod)
 				if GetVehicleMod(vehicle, tonumber(mod)) == v.id then icon = "fas fa-check" disabled = true end
 				ModMenu[#ModMenu + 1] = { icon = icon, isMenuHeader = disabled, header = k..". "..v.name, txt = v.install, params = { event = 'jim-mechanic:client:Interior:Apply', args = { mod = v.id, bumperid = mod } } }
 			end
-		exports['qb-menu']:openMenu(ModMenu)
+		exports['indigo-menu']:openMenu(ModMenu)
 	end
 end)

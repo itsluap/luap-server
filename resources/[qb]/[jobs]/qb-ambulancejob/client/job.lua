@@ -66,11 +66,11 @@ function MenuGarage()
         header = Lang:t('menu.close'),
         txt = "",
         params = {
-            event = "qb-menu:client:closeMenu"
+            event = "indigo-menu:client:closeMenu"
         }
 
     }
-    exports['qb-menu']:openMenu(vehicleMenu)
+    exports['indigo-menu']:openMenu(vehicleMenu)
 end
 
 -- Events
@@ -168,10 +168,10 @@ function Status()
             header = Lang:t('menu.close'),
             txt = "",
             params = {
-                event = "qb-menu:client:closeMenu"
+                event = "indigo-menu:client:closeMenu"
             }
         }
-        exports['qb-menu']:openMenu(statusMenu)
+        exports['indigo-menu']:openMenu(statusMenu)
     end
 end
 

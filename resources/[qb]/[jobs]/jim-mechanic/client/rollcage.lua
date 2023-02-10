@@ -50,5 +50,5 @@ RegisterNetEvent('jim-mechanic:client:RollCage:Check', function()
 			if GetVehicleMod(vehicle, 5) == v.id then icon = "fas fa-check" disabled = true end
 			RoofMenu[#RoofMenu + 1] = { icon = icon, isMenuHeader = disabled, header = k..". "..v.name, txt = v.install, params = { event = 'jim-mechanic:client:RollCage:Apply', args = tostring(v.id) } }
 		end
-	exports['qb-menu']:openMenu(RoofMenu)
+	exports['indigo-menu']:openMenu(RoofMenu)
 end)

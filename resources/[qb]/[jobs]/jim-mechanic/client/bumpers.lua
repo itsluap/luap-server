@@ -42,7 +42,7 @@ RegisterNetEvent('jim-mechanic:client:Bumpers:Check', function()
 		if GetNumVehicleMods(vehicle, 6) ~= 0 then BumperMenu[#BumperMenu + 1] = { header = Loc[Config.Lan]["bumpers"].menugrille, txt = "["..(GetNumVehicleMods(vehicle, 6)+1)..Loc[Config.Lan]["common"].menuinstalled..installed1, params = { event = "jim-mechanic:client:Bumpers:Choose", args = 6 } } end
 		if GetNumVehicleMods(vehicle, 1) ~= 0 then BumperMenu[#BumperMenu + 1] = { header = Loc[Config.Lan]["bumpers"].menuFBumper, txt = "["..(GetNumVehicleMods(vehicle, 1)+1)..Loc[Config.Lan]["common"].menuinstalled..installed2, params = { event = "jim-mechanic:client:Bumpers:Choose", args = 1 } } end
 		if GetNumVehicleMods(vehicle, 2) ~= 0 then BumperMenu[#BumperMenu + 1] = { header = Loc[Config.Lan]["bumpers"].menuBBumper, txt = "["..(GetNumVehicleMods(vehicle, 2)+1)..Loc[Config.Lan]["common"].menuinstalled..installed3, params = { event = "jim-mechanic:client:Bumpers:Choose", args = 2 } } end
-		exports['qb-menu']:openMenu(BumperMenu)
+		exports['indigo-menu']:openMenu(BumperMenu)
 	end
 end)
 
@@ -72,6 +72,6 @@ RegisterNetEvent('jim-mechanic:client:Bumpers:Choose', function(mod)
 				if GetVehicleMod(vehicle, tonumber(mod)) == v.id then icon = "fas fa-check" disabled = true end
 				BumpersMenu[#BumpersMenu + 1] = { icon = icon, isMenuHeader = disabled, header = k..". "..v.name, txt = v.install, params = { event = 'jim-mechanic:client:Bumpers:Apply', args = { mod = tostring(v.id), bumperid = tonumber(mod) } } }
 			end
-		exports['qb-menu']:openMenu(BumpersMenu)
+		exports['indigo-menu']:openMenu(BumpersMenu)
 	end
 end)

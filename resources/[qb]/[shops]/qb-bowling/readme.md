@@ -4,7 +4,7 @@
 
 
 # Dependencies
-[qb-menu](https://github.com/qbcore-framework/qb-menu)
+[indigo-menu](https://github.com/qbcore-framework/indigo-menu)
 
 [bt-polyzone](https://github.com/brentN5/bt-polyzone)
 

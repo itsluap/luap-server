@@ -53,6 +53,6 @@ RegisterNetEvent('jim-mechanic:client:Spoilers:Check', function()
 				if GetVehicleMod(vehicle, 0) == v.id then icon = "fas fa-check" disabled = true end
 				spoilerMenu[#spoilerMenu + 1] = { icon = icon, isMenuHeader = disabled, header = k..". "..v.name, txt = v.install, params = { event = 'jim-mechanic:client:Spoilers:Apply', args = tostring(v.id) } }
 			end
-		exports['qb-menu']:openMenu(spoilerMenu)
+		exports['indigo-menu']:openMenu(spoilerMenu)
 	end
 end)

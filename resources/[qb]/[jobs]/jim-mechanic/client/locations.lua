@@ -512,7 +512,7 @@ RegisterNetEvent('jim-mechanic:client:Crafting:Menu', function()
 	Menu[#Menu + 1] = { header = Loc[Config.Lan]["crafting"].toolheader, txt = #Crafting.Tools..Loc[Config.Lan]["crafting"].numitems, params = { event = "jim-mechanic:Crafting", args = { craftable = Crafting.Tools, header = Loc[Config.Lan]["crafting"].toolheader, } } }
 	Menu[#Menu + 1] = { header = Loc[Config.Lan]["crafting"].performheader, txt = #Crafting.Perform..Loc[Config.Lan]["crafting"].numitems, params = { event = "jim-mechanic:Crafting", args = { craftable = Crafting.Perform, header = Loc[Config.Lan]["crafting"].performheader, } } }
 	Menu[#Menu + 1] = { header = Loc[Config.Lan]["crafting"].cosmetheader, txt = #Crafting.Cosmetic..Loc[Config.Lan]["crafting"].numitems, params = { event = "jim-mechanic:Crafting", args = { craftable = Crafting.Cosmetic, header = Loc[Config.Lan]["crafting"].cosmetheader, } } }
-	exports['qb-menu']:openMenu(Menu)
+	exports['indigo-menu']:openMenu(Menu)
 end)
 
 RegisterNetEvent('jim-mechanic:Crafting', function(data)
@@ -544,7 +544,7 @@ RegisterNetEvent('jim-mechanic:Crafting', function(data)
 			end
 		end
 	end
-	exports['qb-menu']:openMenu(Menu)
+	exports['indigo-menu']:openMenu(Menu)
 end)
 
 RegisterNetEvent('jim-mechanic:Crafting:MakeItem', function(data)
@@ -620,7 +620,7 @@ end)
 ------ Store Stuff ------
 -- Menu to pick the store
 RegisterNetEvent('jim-mechanic:client:Store:Menu', function(data)
-    exports['qb-menu']:openMenu({
+    exports['indigo-menu']:openMenu({
         { header = Loc[Config.Lan]["stores"].tools, txt = "", params = { event = "jim-mechanic:client:Store", args = { id = 1, job = data.job } } },
         { header = Loc[Config.Lan]["stores"].perform, txt = "", params = { event = "jim-mechanic:client:Store", args = { id = 2, job = data.job } } },
         { header = Loc[Config.Lan]["stores"].cosmetic, txt = "", params = { event = "jim-mechanic:client:Store", args = { id = 3, job = data.job } } },
@@ -671,7 +671,7 @@ RegisterNetEvent('jim-mechanic:client:Garage:Menu', function(data)
 			vehicleMenu[#vehicleMenu+1] = { header = v, params = { event = "jim-mechanic:client:Garage:SpawnList", args = { spawnName = spawnName, coords = data.coords } } }
 		end
 	end
-    exports['qb-menu']:openMenu(vehicleMenu)
+    exports['indigo-menu']:openMenu(vehicleMenu)
 	unloadAnimDict("amb@prop_human_atm@male@enter")
 end)
 

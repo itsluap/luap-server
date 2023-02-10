@@ -81,7 +81,7 @@ RegisterNetEvent('jim-mechanic:client:neonMenu', function()
 	if not bike then NeonMenu[#NeonMenu + 1] = { header = Loc[Config.Lan]["xenons"].neonheader2, txt = "", params = { event = "jim-mechanic:client:neonToggleMenu", } } end
 	if not bike then NeonMenu[#NeonMenu + 1] = { header = Loc[Config.Lan]["xenons"].neonheader3, txt = "", params = { event = "jim-mechanic:client:neonColorMenu", } } end
 	if IsToggleModOn(vehicle, 22) then NeonMenu[#NeonMenu + 1] = { header = Loc[Config.Lan]["xenons"].neonheader4, txt = "", params = { event = "jim-mechanic:client:xenonMenu", } } end
-	exports['qb-menu']:openMenu(NeonMenu)
+	exports['indigo-menu']:openMenu(NeonMenu)
 end)
 
 RegisterNetEvent('jim-mechanic:client:applyNeonPostion', function(args)
@@ -129,7 +129,7 @@ RegisterNetEvent('jim-mechanic:client:neonToggleMenu', function()
 	if IsVehicleNeonLightEnabled(vehicle, 1) then rHead = "fas fa-check" else rHead = "fas fa-x" end
 	if IsVehicleNeonLightEnabled(vehicle, 3) then bHead = "fas fa-check" else bHead = "fas fa-x" end
 	if IsVehicleNeonLightEnabled(vehicle, 0) then lHead = "fas fa-check" else lHead = "fas fa-x" end
-    exports['qb-menu']:openMenu({
+    exports['indigo-menu']:openMenu({
 		{ icon = "underglow_controller", header = Loc[Config.Lan]["xenons"].neonheader3, txt = Loc[Config.Lan]["xenons"].neontxt1, isMenuHeader = true },
         { icon = "fas fa-circle-arrow-left", header = "", txt = string.gsub(Loc[Config.Lan]["common"].ret, "⬅️ ", ""), params = { event = "jim-mechanic:client:neonMenu", } },
         { header = Loc[Config.Lan]["xenons"].toggle, txt = "", params = { event = "jim-mechanic:client:applyNeonPostion", args = -1 } },
@@ -153,7 +153,7 @@ RegisterNetEvent('jim-mechanic:client:neonColorMenu', function()
 		if r == v.R and g == v.G and b == v.B then installed = Loc[Config.Lan]["common"].current icon = "fas fa-check" disabled = true else installed = "" end
 		XenonMenu[#XenonMenu + 1] = { icon = icon, isMenuHeader = disabled, header = v.name, txt = installed, params = { event = 'jim-mechanic:client:applyNeonColor', args = { R = v.R, G = v.G, B = v.B }  } }
 	end
-	exports['qb-menu']:openMenu(XenonMenu)
+	exports['indigo-menu']:openMenu(XenonMenu)
 end)
 
 RegisterNetEvent('jim-mechanic:client:applyXenonColor', function(args)
@@ -178,6 +178,6 @@ RegisterNetEvent('jim-mechanic:client:xenonMenu', function()
 			if GetVehicleHeadlightsColour(vehicle) == v.id then installed = Loc[Config.Lan]["common"].current icon = "fas fa-check" disabled = true else installed = "" end
 			XenonMenu[#XenonMenu + 1] = { icon = icon, isMenuHeader = disabled, header = v.name, txt = installed, params = { event = 'jim-mechanic:client:applyXenonColor', args = v.id  } }
 		end
-		exports['qb-menu']:openMenu(XenonMenu)
+		exports['indigo-menu']:openMenu(XenonMenu)
 	end
 end)

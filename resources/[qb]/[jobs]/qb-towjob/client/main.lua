@@ -72,15 +72,15 @@ local function MenuGarage()
         header = Lang:t("menu.close_menu"),
         txt = "",
         params = {
-            event = "qb-menu:client:closeMenu"
+            event = "indigo-menu:client:closeMenu"
         }
 
     }
-    exports['qb-menu']:openMenu(towMenu)
+    exports['indigo-menu']:openMenu(towMenu)
 end
 
 local function CloseMenuFull()
-    exports['qb-menu']:closeMenu()
+    exports['indigo-menu']:closeMenu()
 end
 
 local function CreateZone(type, number)

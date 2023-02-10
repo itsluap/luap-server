@@ -636,7 +636,7 @@ function GetJobType(job)
 	end
 end
 
--- this is a hack, because the qb-menu in qb-policejob populates an impound location and passed it through to the event.
+-- this is a hack, because the indigo-menu in qb-policejob populates an impound location and passed it through to the event.
 -- if this impound locations are changed in qb-policejob, they must also be changed here.
 Config.ImpoundLocations = { 
     [1] = vector4(436.68, -1007.42, 27.32, 180.0),

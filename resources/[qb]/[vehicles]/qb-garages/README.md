@@ -2,7 +2,7 @@
 
 
 
-**ATENTION: THIS SCRIPT USES THE LATEST VERSION OF THE [RADIALMENU](https://github.com/qbcore-framework/qb-radialmenu) AND [QB-CORE](https://github.com/qbcore-framework/qb-core)**
+**ATENTION: THIS SCRIPT USES THE LATEST VERSION OF THE [RADIALMENU](https://github.com/qbcore-framework/indigo-radialmenu) AND [QB-CORE](https://github.com/qbcore-framework/qb-core)**
 
 This is a qb-garages script that uses the radialmenu to retrieve and park vehicles.
 Almost everything is fully customizable to the last bit!
@@ -10,7 +10,7 @@ Almost everything is fully customizable to the last bit!
 **For screenshots scroll down**
 
 ## Dependencies
- - [qb-radialmenu](https://github.com/qbcore-framework/qb-radialmenu)
+ - [indigo-radialmenu](https://github.com/qbcore-framework/indigo-radialmenu)
  - [qb-core](https://github.com/qbcore-framework/qb-core)
 
 ## Installation

@@ -153,7 +153,7 @@ RegisterNetEvent('jim-payments:Tickets:Menu', function(data)
 		else if not v.gang and k == PlayerJob.name then name = k label = PlayerJob.label sellable = true end
 	end
 		if sellable then -- if info is found then:
-			exports['qb-menu']:openMenu({
+			exports['indigo-menu']:openMenu({
 				{ isMenuHeader = true, header = "🧾 "..label..Loc[Config.Lan].menu["receipt"], txt = Loc[Config.Lan].menu["trade_confirm"] },
 				{ isMenuHeader = true, header = "", txt = Loc[Config.Lan].menu["ticket_amount"]..amount..Loc[Config.Lan].menu["total_pay"]..(Config.Jobs[name].PayPerTicket * amount) },
 				{ icon = "fas fa-circle-check", header = Loc[Config.Lan].menu["yes"], txt = "", params = { event = "jim-payments:Tickets:Sell:yes" } },
@@ -165,7 +165,7 @@ end)
 
 RegisterNetEvent("jim-payments:client:PayPopup", function(amount, biller, billtype, img, billerjob, gang, outside)
 	local img = img or ""
-	exports['qb-menu']:openMenu({
+	exports['indigo-menu']:openMenu({
 		{ isMenuHeader = true, header = img.."🧾 "..billerjob..Loc[Config.Lan].menu["payment"], txt = Loc[Config.Lan].menu["accept_payment"] },
 		{ isMenuHeader = true, header = "", txt = billtype:gsub("^%l", string.upper)..Loc[Config.Lan].menu["payment_amount"]..amount },
 		{ icon = "fas fa-circle-check", header = Loc[Config.Lan].menu["yes"], txt = "", params = { isServer = true, event = "jim-payments:server:PayPopup", args = { accept = true, amount = amount, biller = biller, billtype = billtype, gang = gang, outside = outside } } },
@@ -173,7 +173,7 @@ RegisterNetEvent("jim-payments:client:PayPopup", function(amount, biller, billty
 end)
 
 RegisterNetEvent("jim-payments:client:PolPopup", function(amount, biller, billerjob)
-	exports['qb-menu']:openMenu({
+	exports['indigo-menu']:openMenu({
 		{ isMenuHeader = true, header = "🧾 "..billerjob..Loc[Config.Lan].menu["payment"], txt = Loc[Config.Lan].menu["accept_charge"] },
 		{ isMenuHeader = true, header = "", txt = Loc[Config.Lan].menu["bank_charge"]..amount },
 		{ icon = "fas fa-circle-check", header = Loc[Config.Lan].menu["yes"], txt = "", params = { isServer = true, event = "jim-payments:server:PolPopup", args = { accept = true, amount = amount, biller = biller } } },
@@ -181,7 +181,7 @@ RegisterNetEvent("jim-payments:client:PolPopup", function(amount, biller, biller
 end)
 
 RegisterNetEvent('jim-payments:Tickets:Sell:yes', function() TriggerServerEvent('jim-payments:Tickets:Sell') end)
-RegisterNetEvent('jim-payments:Tickets:Sell:no', function() exports['qb-menu']:closeMenu() end)
+RegisterNetEvent('jim-payments:Tickets:Sell:no', function() exports['indigo-menu']:closeMenu() end)
 
 AddEventHandler('onResourceStop', function(r) if r ~= GetCurrentResourceName() then return end
 	for k in pairs(Targets) do exports['qb-target']:RemoveZone(k) end

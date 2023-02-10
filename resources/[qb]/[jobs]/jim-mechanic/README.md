@@ -287,8 +287,8 @@ There is little snippets of information on each line for these, but this is a mo
 - This also enables Debug Messages in the F8 Menu and server console to help me and you with debugging issues
 
 ### Config.img
-- Use this if if you are using an older/edited version of qb-menu
-- This is for adding images of inventory items to qb-menu and qb-input.
+- Use this if if you are using an older/edited version of indigo-menu
+- This is for adding images of inventory items to indigo-menu and qb-input.
 - The default would be: `qb-inventory/html/images/`
 - I personally use LJ's inventory system which makes it: `lj-inventory/html/images/`. I imagine other's are pretty similar.
 
@@ -297,7 +297,7 @@ There is little snippets of information on each line for these, but this is a mo
 - Set to false to use default inventory style shops
 
 ### Config.JimMenu
-- Set this to true if you have an updated qb-menu with inventory icon/fontawesome support
+- Set this to true if you have an updated indigo-menu with inventory icon/fontawesome support
 - This clear's `Config.img` so you don't get duplicate images
 
 ### Config.distkph
@@ -491,7 +491,7 @@ NosBindings = {
 
 ### Config.skillcheck
 - When adding Nos to a vehicle there are three skillcheck script options available
-	- "qb-skillbar"
+	- "indigo-skillbar"
 	- "qb-lock"
 	- "ps-ui"
 
@@ -825,7 +825,7 @@ RepairFuelCost = 8,
 ```
 
 ## Dependancies
-- This script requires `qb-menu` and `qb-input` for the menu systems
+- This script requires `indigo-menu` and `qb-input` for the menu systems
 - This script requires `qb-target` for opening stores, crafting tables, cash registers, going on duty, nos refill
 - This script is also designed to use [jim-payments](https://github.com/jimathy/jim-payments) for charging customers and sending money to the society accounts
 

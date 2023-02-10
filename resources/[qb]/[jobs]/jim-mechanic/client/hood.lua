@@ -57,6 +57,6 @@ RegisterNetEvent('jim-mechanic:client:Hood:Check', function()
 				if GetVehicleMod(vehicle, 7) == v.id then icon = "fas fa-check" disabled = true end
 				HoodMenu[#HoodMenu + 1] = { icon = icon, isMenuHeader = disabled, header = k..". "..v.name, txt = v.install, params = { event = 'jim-mechanic:client:Hood:Apply', args = { id = tostring(v.id) } } }
 			end
-		exports['qb-menu']:openMenu(HoodMenu)
+		exports['indigo-menu']:openMenu(HoodMenu)
 	end
 end)

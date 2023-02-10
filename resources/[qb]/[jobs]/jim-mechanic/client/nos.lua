@@ -132,7 +132,7 @@ RegisterNetEvent('jim-mechanic:client:applyNOS', function()
 				end
 			end, 2, 20)
 		else
-			local Skillbar = exports['qb-skillbar']:GetSkillbarObject()
+			local Skillbar = exports['indigo-skillbar']:GetSkillbarObject()
 			Skillbar.Start({ duration = math.random(2500,5000), pos = math.random(10, 30), width = math.random(10, 20),	},
 			function() -- On success
 			TriggerEvent("QBCore:Notify", Loc[Config.Lan]["nos"].installing, "success")
@@ -736,7 +736,7 @@ RegisterNetEvent('jim-mechanic:client:NOS:rgbORhex', function()
 		PaintMenu[#PaintMenu+1] = { icon = "fas fa-circle-xmark", header = "", txt = string.gsub(Loc[Config.Lan]["common"].close, "❌ ", ""), params = { event = "jim-mechanic:client:Menu:Close" } }
 		PaintMenu[#PaintMenu+1] = { header = Loc[Config.Lan]["paintrgb"].hex, text = Loc[Config.Lan]["common"].current..":<br>"..currentHEXCol, params = { event = "jim-mechanic:client:NOS:HEXPicker" }, }
 		PaintMenu[#PaintMenu+1] = { header = Loc[Config.Lan]["paintrgb"].rgb, text = Loc[Config.Lan]["common"].current..":<br>"..currentRBGCol, params = { event = "jim-mechanic:client:NOS:RGBPicker" }, }
-		exports['qb-menu']:openMenu(PaintMenu)
+		exports['indigo-menu']:openMenu(PaintMenu)
 	end
 end)
 

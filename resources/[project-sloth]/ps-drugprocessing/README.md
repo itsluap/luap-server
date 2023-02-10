@@ -65,7 +65,7 @@ qb-inventory > html > images
 # Dependencies
 * [PolyZone](https://github.com/mkafrin/PolyZone)
 * [qb-target](https://github.com/BerkieBb/qb-target)
-* [qb-menu](https://github.com/qbcore-framework/qb-menu)
+* [indigo-menu](https://github.com/qbcore-framework/indigo-menu)
 * [ps-ui](https://github.com/Project-Sloth/ps-ui)
 * [Meth Lab IPL](https://github.com/Bob74/bob74_ipl/tree/master/dlc_tuner)
 

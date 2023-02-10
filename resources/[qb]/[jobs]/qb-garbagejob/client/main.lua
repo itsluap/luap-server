@@ -502,7 +502,7 @@ RegisterNetEvent('qb-garbagejob:client:MainMenu', function()
     if not garbageVehicle or finished then
         MainMenu[#MainMenu+1] = { header = Lang:t("menu.route"), txt = Lang:t("menu.request_route"), params = { event = 'qb-garbagejob:client:RequestRoute',}}
     end
-    exports['qb-menu']:openMenu(MainMenu)
+    exports['indigo-menu']:openMenu(MainMenu)
 end)
 
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()

@@ -50,7 +50,7 @@ AddEventHandler('kb-business:client:weedcraftjoint', function()
 			end
 		end
 	end
-	exports['qb-menu']:openMenu(Menu)
+	exports['indigo-menu']:openMenu(Menu)
 end)
 
 RegisterNetEvent('kb-business:client:UseStressBuffJoint', function(jointType)

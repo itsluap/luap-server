@@ -146,6 +146,6 @@ RegisterNetEvent('jim-mechanic:client:rgbORhex', function()
 		PaintMenu[#PaintMenu+1] = { icon = "fas fa-circle-arrow-left", header = "", txt = string.gsub(Loc[Config.Lan]["common"].ret, "⬅️ ", ""), params = { event = "jim-mechanic:client:Paints:Check" } }
 		PaintMenu[#PaintMenu+1] = { header = Loc[Config.Lan]["paintrgb"].hex, text = priHexCol..secHexCol, params = { event = "jim-mechanic:client:HEXPicker" }, }
 		PaintMenu[#PaintMenu+1] = { header = Loc[Config.Lan]["paintrgb"].rgb, text = priRGBCol..secRGBCol, params = { event = "jim-mechanic:client:RGBPicker" }, }
-		exports['qb-menu']:openMenu(PaintMenu)
+		exports['indigo-menu']:openMenu(PaintMenu)
 	end
 end)

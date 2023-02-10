@@ -127,7 +127,7 @@ AddEventHandler('bp-bowling:client:openMenu' , function()
             }
         }
     end
-    exports['qb-menu']:openMenu(uNwinDTestMenu)
+    exports['indigo-menu']:openMenu(uNwinDTestMenu)
 end)
 
 
@@ -155,7 +155,7 @@ AddEventHandler('bp-bowling:openMenu2' , function(data)
                     }
                 }
             end
-            exports['qb-menu']:openMenu(uNwinDTestMenu2)
+            exports['indigo-menu']:openMenu(uNwinDTestMenu2)
         end
 
     else

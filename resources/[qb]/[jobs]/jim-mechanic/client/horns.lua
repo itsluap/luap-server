@@ -49,7 +49,7 @@ RegisterNetEvent('jim-mechanic:client:Horn:Check', function()
 				if GetVehicleMod(vehicle, 14) == v.id then icon = "fas fa-check" disabled = true end
 				HornMenu[#HornMenu + 1] = { icon = icon, isMenuHeader = disabled, header = k..". "..v.name, txt = v.txt, params = { event = 'jim-mechanic:client:Horn:Apply', args = { mod = v.id, name = v.name } } }
 			end
-		exports['qb-menu']:openMenu(HornMenu)
+		exports['indigo-menu']:openMenu(HornMenu)
 	end
 end)
 

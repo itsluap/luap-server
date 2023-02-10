@@ -578,12 +578,12 @@ RegisterNetEvent('qb-prison:client:jobMenu', function()
 				icon = "fas fa-x",
 				params = {
 					isServer = false,
-					event = exports['qb-menu']:closeMenu(),
+					event = exports['indigo-menu']:closeMenu(),
 				}
 			},
 		}
 
-        exports['qb-menu']:openMenu(pjobMenu)
+        exports['indigo-menu']:openMenu(pjobMenu)
 
 		if Config.Debug then
         	print("Job Menu: Opened")
@@ -778,7 +778,7 @@ RegisterNetEvent('qb-prison:client:slushy', function()
 				end
 			end, Config.SlushyMiniGame.PSCircle.circles, Config.SlushyMiniGame.PSCircle.time) -- NumberOfCircles, MS
 		elseif Config.SlushyMiniGame.QBSkillbar.enabled then
-			local Skillbar = exports['qb-skillbar']:GetSkillbarObject()
+			local Skillbar = exports['indigo-skillbar']:GetSkillbarObject()
 			Skillbar.Start({
 				duration = Config.SlushyMiniGame.QBSkillbar.duration, -- how long the skillbar runs for
 				pos = Config.SlushyMiniGame.QBSkillbar.pos, -- how far to the right the static box is
@@ -892,7 +892,7 @@ RegisterNetEvent('qb-prison:client:soda', function()
 				end
 			end, Config.SodaMiniGame.PSCircle.circles, Config.SodaMiniGame.PSCircle.time) -- NumberOfCircles, MS
 		elseif Config.SodaMiniGame.QBSkillbar.enabled then
-			local Skillbar = exports['qb-skillbar']:GetSkillbarObject()
+			local Skillbar = exports['indigo-skillbar']:GetSkillbarObject()
 			Skillbar.Start({
 				duration = Config.SodaMiniGame.QBSkillbar.duration, -- how long the skillbar runs for
 				pos = Config.SodaMiniGame.QBSkillbar.pos, -- how far to the right the static box is
@@ -1004,7 +1004,7 @@ RegisterNetEvent('qb-prison:CraftingMenu', function()
 		table.insert(craftingheader, item)
 	end
 
-	exports['qb-menu']:openMenu(craftingheader)
+	exports['indigo-menu']:openMenu(craftingheader)
 end)
 
 local function CraftItem(item)

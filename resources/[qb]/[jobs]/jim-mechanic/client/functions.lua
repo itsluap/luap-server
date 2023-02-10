@@ -281,7 +281,7 @@ RegisterNetEvent('jim-mechanic:client:Menu:Close', function()
 	if IsPedSittingInAnyVehicle(PlayerPedId()) then	vehicle = GetVehiclePedIsIn(playerPed, false)
 	else vehicle = getClosest(coords) end
 	for i = 0, 5 do	SetVehicleDoorShut(vehicle, i, false, true) end
-	exports['qb-menu']:closeMenu()
+	exports['indigo-menu']:closeMenu()
 end)
 
 function emptyHands(playerPed, dpemote)

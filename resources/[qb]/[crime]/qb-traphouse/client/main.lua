@@ -260,7 +260,7 @@ local function OpenHeaderMenu(data)
         }
     }
 
-    exports['qb-menu']:openMenu(headerMenu)
+    exports['indigo-menu']:openMenu(headerMenu)
 end
 
 local function HasKey(CitizenId)
@@ -450,7 +450,7 @@ RegisterNetEvent('qb-traphouse:client:SyncData', function(k, data)
 end)
 
 RegisterNetEvent('qb-traphouse:client:target:CloseMenu', function ()
-    TriggerEvent('qb-menu:client:closeMenu')
+    TriggerEvent('indigo-menu:client:closeMenu')
 end)
 
 

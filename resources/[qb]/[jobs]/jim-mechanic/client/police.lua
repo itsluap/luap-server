@@ -42,7 +42,7 @@ RegisterNetEvent('jim-mechanic:client:Police:Menu', function()
 				PoliceMenu[#PoliceMenu+1] = { icon = "fas fa-car-burst", header = Loc[Config.Lan]["police"].spoiler, txt = "", params = { event = "jim-mechanic:client:Police:Spoiler" }, } end
 			PoliceMenu[#PoliceMenu+1] = { icon = "fas fa-brush", header = Loc[Config.Lan]["paint"].menuheader, txt = "", params = { event = "jim-mechanic:client:Police:Paint" }, }
 			--PoliceMenu[#PoliceMenu+1] = { header = "Test", txt = "Vehicle Death Simulator", params = { event = "jim-mechanic:client:Police:test" }, }
-		exports['qb-menu']:openMenu(PoliceMenu)
+		exports['indigo-menu']:openMenu(PoliceMenu)
 	end
 end)
 
@@ -61,7 +61,7 @@ RegisterNetEvent('jim-mechanic:client:Police:Extra', function()
 		if IsVehicleExtraTurnedOn(vehicle, i) then icon = "fas fa-check" else icon = "fas fa-x" end
 		ExtraMenu[#ExtraMenu+1] = { icon = icon, header = "Extra "..i, txt = "", params = { event = "jim-mechanic:client:Police:Extra:Apply", args = { id = i }, }, } end
 	end
-	if hadMod then exports['qb-menu']:openMenu(ExtraMenu) elseif not hadMod then TriggerEvent("QBCore:Notify", Loc[Config.Lan]["common"].noOptions, "error") TriggerEvent('jim-mechanic:client:Police:Menu') return end
+	if hadMod then exports['indigo-menu']:openMenu(ExtraMenu) elseif not hadMod then TriggerEvent("QBCore:Notify", Loc[Config.Lan]["common"].noOptions, "error") TriggerEvent('jim-mechanic:client:Police:Menu') return end
 end)
 RegisterNetEvent('jim-mechanic:client:Police:Extra:Apply', function(data)
 	local playerPed = PlayerPedId()
@@ -153,7 +153,7 @@ RegisterNetEvent('jim-mechanic:client:Police:Livery', function()
 				LiveryMenu[#LiveryMenu + 1] = { icon = icon, isMenuHeader = disabled, header = k..". "..v.name, txt = v.install, params = { event = 'jim-mechanic:client:Police:Apply', args = { id = tostring(v.id) } } }
 			end
 		end
-		exports['qb-menu']:openMenu(LiveryMenu)
+		exports['indigo-menu']:openMenu(LiveryMenu)
 	end
 end)
 RegisterNetEvent('jim-mechanic:client:Police:Apply', function(data)
@@ -210,7 +210,7 @@ RegisterNetEvent('jim-mechanic:client:Police:Plates', function()
 				if GetVehicleNumberPlateTextIndex(vehicle) == v.id then installed = Loc[Config.Lan]["common"].current icon = "fas fa-check" disabled = true else installed = "" end
 				PlateMenu[#PlateMenu + 1] = { icon = icon, isMenuHeader = disabled, header = k..". "..v.name, txt = installed, params = { event = 'jim-mechanic:client:Police:Plates:Apply', args = v.id  } }
 			end
-			exports['qb-menu']:openMenu(PlateMenu)
+			exports['indigo-menu']:openMenu(PlateMenu)
 		end
 	end
 end)
@@ -248,7 +248,7 @@ RegisterNetEvent('jim-mechanic:client:Police:Spoiler', function()
 				if GetVehicleMod(vehicle, 0) == v.id then icon = "fas fa-check" disabled = true end
 				spoilerMenu[#spoilerMenu + 1] = { icon = icon, isMenuHeader = disabled, header = k..". "..v.name, txt = v.install, params = { event = 'jim-mechanic:client:Police:Spoilers:Apply', args = tostring(v.id) } }
 			end
-		exports['qb-menu']:openMenu(spoilerMenu)
+		exports['indigo-menu']:openMenu(spoilerMenu)
 	end
 end)
 RegisterNetEvent('jim-mechanic:client:Police:Spoilers:Apply', function(mod)
@@ -300,13 +300,13 @@ RegisterNetEvent('jim-mechanic:client:Police:Paint', function()
 		PaintMenu[#PaintMenu + 1] = { header = Loc[Config.Lan]["paint"].primary, txt = Loc[Config.Lan]["common"].current..": "..vehPrimaryColour, params = { event = "jim-mechanic:client:Police:Paints:Choose", args = Loc[Config.Lan]["paint"].primary } }
 		PaintMenu[#PaintMenu + 1] = { header = Loc[Config.Lan]["paint"].secondary, txt = Loc[Config.Lan]["common"].current..": "..vehSecondaryColour, params = { event = "jim-mechanic:client:Police:Paints:Choose", args = Loc[Config.Lan]["paint"].secondary } }
 		PaintMenu[#PaintMenu + 1] = { header = Loc[Config.Lan]["paint"].pearl, txt = Loc[Config.Lan]["common"].current..": "..vehPearlescentColour, params = { event = "jim-mechanic:client:Police:Paints:Choose", args = Loc[Config.Lan]["paint"].pearl } }
-	exports['qb-menu']:openMenu(PaintMenu)
+	exports['indigo-menu']:openMenu(PaintMenu)
 end)
 
 RegisterNetEvent('jim-mechanic:client:Police:Paints:Choose', function(data)
 	if IsPedInAnyVehicle(PlayerPedId(), false) then	vehicle = GetVehiclePedIsIn(PlayerPedId(), false) pushVehicle(vehicle) end
 	if DoesEntityExist(vehicle) then
-		exports['qb-menu']:openMenu({
+		exports['indigo-menu']:openMenu({
 			{ icon = "fas fa-brush", header = data..Loc[Config.Lan]["paint"].menuheader, txt = "", isMenuHeader = true },
 			{ icon = "fas fa-circle-arrow-left", header = "", txt = string.gsub(Loc[Config.Lan]["common"].ret, "⬅️ ", ""), params = { event = "jim-mechanic:client:Police:Paint" } },
 			{ header = Loc[Config.Lan]["paint"].classic, txt = "", params = { event = "jim-mechanic:client:Police:Paints:Choose:Colour", args = { paint = data, finish = Loc[Config.Lan]["paint"].classic } } },
@@ -353,7 +353,7 @@ RegisterNetEvent('jim-mechanic:client:Police:Paints:Choose:Colour', function(dat
 			if colourCheck == v.id then installed = Loc[Config.Lan]["common"].current icon = "fas fa-check" disabled = true else installed = "" end
 			PaintMenu[#PaintMenu + 1] = { icon = icon, isMenuHeader = disabled, header = k..". "..v.name, txt = installed, params = { event = 'jim-mechanic:client:Police:Paints:Apply', args = { paint = data.paint, id = v.id, name = v.name, finish = data.finish } } } end
 	end
-	exports['qb-menu']:openMenu(PaintMenu)
+	exports['indigo-menu']:openMenu(PaintMenu)
 end)
 
 RegisterNetEvent('jim-mechanic:client:Police:Paints:Apply', function(data)

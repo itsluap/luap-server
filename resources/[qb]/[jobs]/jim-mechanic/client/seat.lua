@@ -52,6 +52,6 @@ RegisterNetEvent('jim-mechanic:client:Seat:Check', function()
 				if GetVehicleMod(vehicle, 32) == v.id then icon = "fas fa-check" disabled = true end
 				SeatMenu[#SeatMenu + 1] = { icon = icon, isMenuHeader = disabled, header = k..". "..v.name, txt = v.install, params = { event = 'jim-mechanic:client:Seat:Apply', args = tostring(v.id) } }
 			end
-		exports['qb-menu']:openMenu(SeatMenu)
+		exports['indigo-menu']:openMenu(SeatMenu)
 	end
 end)

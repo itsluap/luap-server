@@ -53,6 +53,6 @@ RegisterNetEvent('jim-mechanic:client:Exhaust:Check', function()
 				if GetVehicleMod(vehicle, 4) == v.id then icon = "fas fa-check" disabled = true end
 				ExhaustMenu[#ExhaustMenu + 1] = { icon = icon, isMenuHeader = disabled,  header = k..". "..v.name, txt = v.install, params = { event = 'jim-mechanic:client:Exhaust:Apply', args = { id = tostring(v.id) } } }
 			end
-		exports['qb-menu']:openMenu(ExhaustMenu)
+		exports['indigo-menu']:openMenu(ExhaustMenu)
 	end
 end)

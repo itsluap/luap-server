@@ -5,7 +5,7 @@ local DynamicMenuItems = {}
 
 -- UTIL
 local function CloseMenuFull()
-    exports['qb-menu']:closeMenu()
+    exports['indigo-menu']:closeMenu()
     exports['qb-core']:HideText()
     shownBossMenu = false
 end
@@ -101,11 +101,11 @@ RegisterNetEvent('qb-bossmenu:client:OpenMenu', function()
         header = "Exit",
         icon = "fa-solid fa-angle-left",
         params = {
-            event = "qb-menu:closeMenu",
+            event = "indigo-menu:closeMenu",
         }
     }
 
-    exports['qb-menu']:openMenu(bossMenu)
+    exports['indigo-menu']:openMenu(bossMenu)
 end)
 
 RegisterNetEvent('qb-bossmenu:client:employeelist', function()
@@ -138,7 +138,7 @@ RegisterNetEvent('qb-bossmenu:client:employeelist', function()
                 event = "qb-bossmenu:client:OpenMenu",
             }
         }
-        exports['qb-menu']:openMenu(EmployeesMenu)
+        exports['indigo-menu']:openMenu(EmployeesMenu)
     end, PlayerJob.name)
 end)
 
@@ -185,7 +185,7 @@ RegisterNetEvent('qb-bossmenu:client:ManageEmployee', function(data)
             event = "qb-bossmenu:client:OpenMenu",
         }
     }
-    exports['qb-menu']:openMenu(EmployeeMenu)
+    exports['indigo-menu']:openMenu(EmployeeMenu)
 end)
 
 RegisterNetEvent('qb-bossmenu:client:Stash', function()
@@ -230,7 +230,7 @@ RegisterNetEvent('qb-bossmenu:client:HireMenu', function()
                 event = "qb-bossmenu:client:OpenMenu",
             }
         }
-        exports['qb-menu']:openMenu(HireMenu)
+        exports['indigo-menu']:openMenu(HireMenu)
     end)
 end)
 

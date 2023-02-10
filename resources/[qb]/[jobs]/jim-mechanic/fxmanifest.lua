@@ -6,7 +6,7 @@ fx_version "cerulean"
 game "gta5"
 
 dependencies {
-	'qb-menu',
+	'indigo-menu',
 	'qb-input',
 }
 

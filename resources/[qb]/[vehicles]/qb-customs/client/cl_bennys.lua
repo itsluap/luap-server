@@ -769,7 +769,7 @@ function EnterLocation(override)
     end
 
     if Config.UseRadial and radialMenuItemId then
-        exports['qb-radialmenu']:RemoveOption(radialMenuItemId)
+        exports['indigo-radialmenu']:RemoveOption(radialMenuItemId)
         radialMenuItemId = nil
     end
 
@@ -912,7 +912,7 @@ function SetupInteraction()
         else
             if Config.UseRadial then
                 if not radialMenuItemId then
-                    radialMenuItemId = exports['qb-radialmenu']:AddOption({
+                    radialMenuItemId = exports['indigo-radialmenu']:AddOption({
                         id = 'customs',
                         title = 'Enter Customs',
                         icon = 'wrench',
@@ -964,7 +964,7 @@ CreateThread(function()
                 elseif CustomsData['location'] == location and CustomsData['spot'] == _name then
                     CustomsData = {}
                     if Config.UseRadial and radialMenuItemId then
-                        exports['qb-radialmenu']:RemoveOption(radialMenuItemId)
+                        exports['indigo-radialmenu']:RemoveOption(radialMenuItemId)
                         radialMenuItemId = nil
                     end
 

@@ -5,7 +5,7 @@ local DynamicMenuItems = {}
 
 -- UTIL
 local function CloseMenuFullGang()
-    exports['qb-menu']:closeMenu()
+    exports['indigo-menu']:closeMenu()
     exports['qb-core']:HideText()
     shownGangMenu = false
 end
@@ -114,11 +114,11 @@ RegisterNetEvent('qb-gangmenu:client:OpenMenu', function()
         header = "Exit",
         icon = "fa-solid fa-angle-left",
         params = {
-            event = "qb-menu:closeMenu",
+            event = "indigo-menu:closeMenu",
         }
     }
 
-    exports['qb-menu']:openMenu(gangMenu)
+    exports['indigo-menu']:openMenu(gangMenu)
 end)
 
 RegisterNetEvent('qb-gangmenu:client:ManageGang', function()
@@ -151,7 +151,7 @@ RegisterNetEvent('qb-gangmenu:client:ManageGang', function()
                 event = "qb-gangmenu:client:OpenMenu",
             }
         }
-        exports['qb-menu']:openMenu(GangMembersMenu)
+        exports['indigo-menu']:openMenu(GangMembersMenu)
     end, PlayerGang.name)
 end)
 
@@ -195,7 +195,7 @@ RegisterNetEvent('qb-gangmenu:lient:ManageMember', function(data)
             event = "qb-gangmenu:client:ManageGang",
         }
     }
-    exports['qb-menu']:openMenu(MemberMenu)
+    exports['indigo-menu']:openMenu(MemberMenu)
 end)
 
 RegisterNetEvent('qb-gangmenu:client:HireMembers', function()
@@ -228,7 +228,7 @@ RegisterNetEvent('qb-gangmenu:client:HireMembers', function()
                 event = "qb-gangmenu:client:OpenMenu",
             }
         }
-        exports['qb-menu']:openMenu(HireMembersMenu)
+        exports['indigo-menu']:openMenu(HireMembersMenu)
     end)
 end)
 

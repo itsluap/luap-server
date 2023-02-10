@@ -71,7 +71,7 @@ RegisterNetEvent('jim-mechanic:client:Exterior:Check', function()
 		if hasExtra then
 			ExteriorMenu[#ExteriorMenu + 1] = { header = Loc[Config.Lan]["police"].extras, txt = "[ "..extraCount..Loc[Config.Lan]["check"].label12, params = { event = "jim-mechanic:client:Exterior:Extra" } }
 		end
-		exports['qb-menu']:openMenu(ExteriorMenu)
+		exports['indigo-menu']:openMenu(ExteriorMenu)
 	end
 end)
 
@@ -99,7 +99,7 @@ RegisterNetEvent('jim-mechanic:client:Exterior:Choose', function(data)
 				if GetVehicleMod(vehicle, tonumber(data.mod)) == v.id then icon = "fas fa-check" disabled = true end
 				ModMenu[#ModMenu + 1] = { icon = icon, isMenuHeader = disabled, header = k..". "..v.name, txt = v.install, params = { event = 'jim-mechanic:client:Exterior:Apply', args = { id = v.id, mod = data.mod } } }
 			end
-		exports['qb-menu']:openMenu(ModMenu)
+		exports['indigo-menu']:openMenu(ModMenu)
 	end
 end)
 
@@ -115,7 +115,7 @@ RegisterNetEvent('jim-mechanic:client:Exterior:Extra', function()
 		if IsVehicleExtraTurnedOn(vehicle, i) then icon = "fas fa-check" else icon = "fas fa-x" end
 		ExtraMenu[#ExtraMenu+1] = { icon = icon, header = "Extra "..i, txt = "", params = { event = "jim-mechanic:client:Exterior:Extra:Apply", args = { id = i }, }, } end
 	end
-	exports['qb-menu']:openMenu(ExtraMenu)
+	exports['indigo-menu']:openMenu(ExtraMenu)
 end)
 
 RegisterNetEvent('jim-mechanic:client:Exterior:Extra:Apply', function(data)

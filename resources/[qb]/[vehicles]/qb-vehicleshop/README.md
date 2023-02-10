@@ -62,7 +62,7 @@
 * Here's a Wiki on how to create new PolyZone:
 https://github.com/mkafrin/PolyZone/wiki/Using-the-creation-script
 
-**[qb-menu](https://github.com/qbcore-framework/qb-menu)**
+**[indigo-menu](https://github.com/qbcore-framework/indigo-menu)**
 
 **[qb-input](https://github.com/qbcore-framework/qb-input)**
 

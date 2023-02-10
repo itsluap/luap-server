@@ -91,20 +91,20 @@ function RemoveMoneyFromSociety(money)
         return
     end
     if Framework.Active == 2 then
-        local moneyNow = exports['Renewed-Banking']:getAccountMoney(Config.SocietyName)
+        local moneyNow = exports['indigo-banking']:getAccountMoney(Config.SocietyName)
         --print(moneyNow)
         if (moneyNow - money) < 0 then
             money = moneyNow
         end
         xpcall(function()
-            local societyMoney = exports['Renewed-Banking']:getAccountMoney(Config.SocietyName)
+            local societyMoney = exports['indigo-banking']:getAccountMoney(Config.SocietyName)
             -- if societyMoney >= money then
             TriggerEvent("qb-bossmenu:server:removeAccountMoney", Config.SocietyName, money)
             -- end
         end, function(error)
-            local societyMoney = exports['Renewed-Banking']:getAccountMoney(Config.SocietyName)
+            local societyMoney = exports['indigo-banking']:getAccountMoney(Config.SocietyName)
             -- if societyMoney >= money then
-            exports['Renewed-Banking']:removeAccountMoney(Config.SocietyName, money)
+            exports['indigo-banking']:removeAccountMoney(Config.SocietyName, money)
             -- end
         end)
     end
@@ -141,7 +141,7 @@ function GiveMoneyToSociety(money)
     end
     if Framework.Active == 2 then
         xpcall(function()
-            exports['Renewed-Banking']:addAccountMoney(Config.SocietyName, money)
+            exports['indigo-banking']:addAccountMoney(Config.SocietyName, money)
         end, function(error)
             TriggerEvent("qb-bossmenu:server:addAccountMoney", Config.SocietyName, money)
         end)
@@ -173,11 +173,11 @@ function GetMoneyFromSociety()
 
     if Framework.Active == 2 then
         xpcall(function()
-            local societyMoney = exports['Renewed-Banking']:getAccountMoney(Config.SocietyName)
+            local societyMoney = exports['indigo-banking']:getAccountMoney(Config.SocietyName)
             result = societyMoney
             promise:resolve(result)
         end, function(error)
-            local societyMoney = exports['Renewed-Banking']:getAccountMoney(Config.SocietyName)
+            local societyMoney = exports['indigo-banking']:getAccountMoney(Config.SocietyName)
             result = societyMoney
             promise:resolve(result)
         end)

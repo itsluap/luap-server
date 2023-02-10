@@ -272,7 +272,7 @@ QBCore.Functions.CreateCallback('qb-phone:server:PurchaseRoom', function(source,
 
         local cid = Player.PlayerData.citizenid
         if Config.RenewedBanking then
-            exports['Renewed-Banking']:handleTransaction(cid, "Discord App", price, "Discord Channel Purchase", roomData.room_owner_name, "Discord", "withdraw")
+            exports['indigo-banking']:handleTransaction(cid, "Discord App", price, "Discord Channel Purchase", roomData.room_owner_name, "Discord", "withdraw")
         end
 
         local roomCode = generateRoomCode()

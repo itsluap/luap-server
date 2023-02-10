@@ -55,7 +55,7 @@ CreateThread(function()
     })
 end)
 
--- qb-menu
+-- indigo-menu
 
 RegisterNetEvent('qb-blackmarket:OpenShop', function()
     local BlackMarket = {
@@ -100,7 +100,7 @@ RegisterNetEvent('qb-blackmarket:OpenShop', function()
             }
         },
     }
-    exports['qb-menu']:openMenu(BlackMarket)
+    exports['indigo-menu']:openMenu(BlackMarket)
 end)
 
 -- BlackMarket Shop Event

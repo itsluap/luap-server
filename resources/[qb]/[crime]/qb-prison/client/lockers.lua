@@ -83,7 +83,7 @@ RegisterNetEvent('qb-prison:client:ForceOpenLocker', function(data)
             end
         end, "prisonstash_"..locker.citizenid)
     else
-        exports['qb-menu']:closeMenu()
+        exports['indigo-menu']:closeMenu()
     end
 end)
 

@@ -83,7 +83,7 @@ https://discord.gg/xKgQZ6wZvS
 ----------------------
 # Dependancies
 
-- This script requires `qb-menu` and `qb-input` for the menu systems
+- This script requires `indigo-menu` and `qb-input` for the menu systems
 - This script requires `qb-target` for opening stores, crafting tables, cash registers, going on duty, nos refill
 
 - This script is also designed to use `jim-payments` (https://github.com/jimathy/jim-payments) for charging customs and sending money to the society accounts
@@ -684,7 +684,7 @@ end
 ## Update v2.3.3:
 	- Made /preview's rim's alphabetical - preview.lua
 	- Removed F8 print spam from null named wheels - preview.lua
-	- Further support for qb-menu edit
+	- Further support for indigo-menu edit
 		- Mechanic_Tools menu support - repair.lua
 		- Better ToolBox Support - check_tunes.lua
 	- Fix spelling mistake in config
@@ -694,7 +694,7 @@ end
 		- Job requirement for crafting now actually works - locations.lua
 		- Fix for being able to craft from stash even if you didn't have items - craftingserver.lua
 		- Small change that makes StashTidy only happen once in crafting, rather than twice to reduce server strain - craftingserver.lua
-	- QB-Menu edit support added in Crafting menus and better support for toolbox menus - location.lua/check_tunes.lua
+	- indigo-menu edit support added in Crafting menus and better support for toolbox menus - location.lua/check_tunes.lua
 	- Caved in and added the ability to remove cosmetic items on use, enable the CosmeticRemoval in the config.lua
 		- This adds an extra event to all files that deal with cosmetic items, replace the files to make use of this
 	- Rims are now alphabetical again! - rims.lua
@@ -707,7 +707,7 @@ end
 	- Removed paymentserver.lua and thus the /charge command in favor of jim-payments (I forgot there was even a /charge command built in)
 	- Added new rimNames.lua which adds the ability to give names to custom rims named "NULL"
 		- Info here: https://github.com/jimathy/RimNames
-	- Started adding support for a qb-menu edit that supports icon images on its own - check_tunes.lua
+	- Started adding support for a indigo-menu edit that supports icon images on its own - check_tunes.lua
 		- Currently only in the toolbox menu
 
 ## Update v2.3:

@@ -112,11 +112,11 @@ local function MenuGarage()
         header = Lang:t("menu.close_menu"),
         txt = "",
         params = {
-            event = "qb-menu:client:closeMenu"
+            event = "indigo-menu:client:closeMenu"
         }
 
     }
-    exports['qb-menu']:openMenu(truckMenu)
+    exports['indigo-menu']:openMenu(truckMenu)
 end
 
 local function SetDelivering(active)
@@ -433,7 +433,7 @@ RegisterNetEvent('qb-trucker:client:SpawnVehicle', function()
         SetVehicleLivery(veh, 1)
         SetVehicleColours(veh, 122, 122)
         exports['ps-fuel']:SetFuel(veh, 100.0)
-        exports['qb-menu']:closeMenu()
+        exports['indigo-menu']:closeMenu()
         TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
         SetEntityAsMissionEntity(veh, true, true)
         TriggerEvent("vehiclekeys:client:SetOwner", QBCore.Functions.GetPlate(veh))

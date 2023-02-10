@@ -3,7 +3,7 @@ Config = {
 	Debug = false, -- Set to true to show green debug boxes to help track
 	img = "lj-inventory/html/images/", -- Set this to the directory for your inventory image files
 	JimShops = false, -- If using my free script jim-shops, enable this to use it with the mechanic stores.
-	JimMenu = false, -- If using my free edit of qb-menu enable this.
+	JimMenu = false, -- If using my free edit of indigo-menu enable this.
 	distkph = false, -- Set to false to read distance travelled in Miles.
 
 -- Main variables
@@ -83,7 +83,7 @@ Config = {
 	EnableScreen = true, -- True adds screen effects while boosting
 
 	skillcheck = "ps-ui", -- When adding Nos to a vehicle there are three script options available
-								-- "qb-skillbar" "qb-lock" "ps-ui"
+								-- "indigo-skillbar" "qb-lock" "ps-ui"
 
 	explosiveFail = false, 		-- Better not fail that skill check. (1 in 10 chance of explosion)
 	explosiveFailJob = false, 	-- if true, mechanics can trigger an explosion

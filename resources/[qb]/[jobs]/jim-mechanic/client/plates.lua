@@ -67,7 +67,7 @@ RegisterNetEvent('jim-mechanic:client:Plates:Check', function()
 		if GetNumVehicleMods(vehicle, 26) ~= 0 then PlatesMenu[#PlatesMenu + 1] = { header = Loc[Config.Lan]["plates"].label2, txt = "["..(GetNumVehicleMods(vehicle, 26)+1)..Loc[Config.Lan]["common"].menuinstalled..installed2, params = { event = "jim-mechanic:client:Plates:Choose", args = { mod = 26 } } } end
 		PlatesMenu[#PlatesMenu + 1] = { header = Loc[Config.Lan]["plates"].label3, txt = "["..GetNumberOfVehicleNumberPlates(vehicle)..Loc[Config.Lan]["common"].menuinstalled..installed1, params = { event = "jim-mechanic:client:Plates:Custom" } }
 
-		exports['qb-menu']:openMenu(PlatesMenu)
+		exports['indigo-menu']:openMenu(PlatesMenu)
 	end
 end)
 
@@ -85,7 +85,7 @@ RegisterNetEvent('jim-mechanic:client:Plates:Custom', function()
 			if GetVehicleNumberPlateTextIndex(vehicle) == v.id then installed = Loc[Config.Lan]["common"].current icon = "fas fa-check" disabled = true else installed = "" end
 			PlateMenu[#PlateMenu + 1] = { icon = icon, isMenuHeader = disabled, header = k..". "..v.name, txt = installed, params = { event = 'jim-mechanic:client:Plates:Custom:Apply', args = v.id  } }
 		end
-		exports['qb-menu']:openMenu(PlateMenu)
+		exports['indigo-menu']:openMenu(PlateMenu)
 	end
 end)
 
@@ -109,7 +109,7 @@ RegisterNetEvent('jim-mechanic:client:Plates:Choose', function(data)
 				if GetVehicleMod(vehicle, tonumber(data.mod)) == v.id then icon = "fas fa-check" disabled = true end
 				ModMenu[#ModMenu + 1] = { icon = icon, isMenuHeader = disabled, header = k..". "..v.name, txt = v.install, params = { event = 'jim-mechanic:client:Plates:Apply', args = { id = v.id, mod = data.mod } } }
 			end
-		exports['qb-menu']:openMenu(ModMenu)
+		exports['indigo-menu']:openMenu(ModMenu)
 	end
 end)
 

@@ -31,7 +31,7 @@
     - Coffee Machine (Minigame)
     - Slushy Machine (Minigame)
     - Configure what minigame to use for each drink machine!
-        - Uses PS-UI, QB-Lock, and QB-Skillbar
+        - Uses PS-UI, QB-Lock, and indigo-skillbar
         - All configurable from the config
 - Prison break!
 	- qb-target at gate panels
@@ -144,12 +144,12 @@ end)
 
 - qb-policejob https://github.com/qbcore-framework/qb-policejob
 - qb-target https://github.com/qbcore-framework/qb-target
-- qb-menu https://github.com/qbcore-framework/qb-menu
+- indigo-menu https://github.com/qbcore-framework/indigo-menu
 - qb-lock https://github.com/Tex27/qb-lock
 - OPTIONAL FOR PRISON SHIV: Custom-Weapons https://github.com/NoobySloth/Custom-Weapons
 - OPTIONAL FOR CONFIG:
 	- ps-ui https://github.com/Project-Sloth/ps-ui
-	- qb-skillbar https://github.com/qbcore-framework/qb-skillbar
+	- indigo-skillbar https://github.com/qbcore-framework/indigo-skillbar
 	- qb-prisonjobs https://thrasherrrdev.tebex.io/package/5226873
 	- QBCore prison_map https://github.com/qbcore-framework/prison_map (WORK IN PROGRESS)
 	- Gabz Prison https://fivem.gabzv.com/package/4724793 (Set Up)

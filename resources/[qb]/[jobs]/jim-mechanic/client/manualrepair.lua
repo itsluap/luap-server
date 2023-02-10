@@ -80,7 +80,7 @@ RegisterNetEvent('jim-mechanic:client:Manual:Menu', function()
 		--RepairMenu[#RepairMenu+1] = { icon = "fas fa-magnifying-glass", header = "Preview", txt = "", params = { event = "jim-mechanic:client:Preview:Menu" }, }
 		--RepairMenu[#RepairMenu+1] = { header = "Test", txt = "Vehicle Death Simulator", params = { event = "jim-mechanic:client:Police:test" }, }
 
-	exports['qb-menu']:openMenu(RepairMenu)
+	exports['indigo-menu']:openMenu(RepairMenu)
 end)
 local repairing = false
 RegisterNetEvent('jim-mechanic:client:Manual:Repair', function(data)

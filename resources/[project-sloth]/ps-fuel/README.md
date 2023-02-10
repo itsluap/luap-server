@@ -7,7 +7,7 @@ A NoPixel inspired functionality fuel system that uses PolyZones that target spe
 
 ### Dependencies:
 * [qb-target](https://github.com/BerkieBb/qb-target)
-* [qb-menu](https://github.com/qbcore-framework/qb-menu)
+* [indigo-menu](https://github.com/qbcore-framework/indigo-menu)
 * [polyzone](https://github.com/qbcore-framework/PolyZone)
 
 <br>

@@ -53,7 +53,7 @@ CreateThread(function()
         local pawnShopCombo = ComboZone:Create( zone, { name = 'NewPawnShopCombo', debugPoly = false })
         pawnShopCombo:onPlayerInOut(function(isPointInside)
             if isPointInside then
-                exports['qb-menu']:showHeader({
+                exports['indigo-menu']:showHeader({
                     {
                         header = Lang:t('info.title'),
                         txt = Lang:t('info.open_pawn'),
@@ -63,7 +63,7 @@ CreateThread(function()
                     }
                 })
             else
-                exports['qb-menu']:closeMenu()
+                exports['indigo-menu']:closeMenu()
             end
         end)
     end
@@ -113,7 +113,7 @@ RegisterNetEvent('qb-pawnshop:client:openMenu', function()
                     }
                 }
             end
-            exports['qb-menu']:openMenu(pawnShop)
+            exports['indigo-menu']:openMenu(pawnShop)
         else
             QBCore.Functions.Notify(Lang:t('info.pawn_closed', { value = Config.TimeOpen, value2 = Config.TimeClosed }))
         end
@@ -159,7 +159,7 @@ RegisterNetEvent('qb-pawnshop:client:openMenu', function()
                 }
             }
         end
-        exports['qb-menu']:openMenu(pawnShop)
+        exports['indigo-menu']:openMenu(pawnShop)
     end
 end)
 
@@ -197,7 +197,7 @@ RegisterNetEvent('qb-pawnshop:client:openPawn', function(data)
                 event = 'qb-pawnshop:client:openMenu'
             }
         }
-        exports['qb-menu']:openMenu(pawnMenu)
+        exports['indigo-menu']:openMenu(pawnMenu)
     end)
 end)
 
@@ -236,7 +236,7 @@ RegisterNetEvent('qb-pawnshop:client:openMelt', function(data)
                 event = 'qb-pawnshop:client:openMenu'
             }
         }
-        exports['qb-menu']:openMenu(meltMenu)
+        exports['indigo-menu']:openMenu(meltMenu)
     end)
 end)
 

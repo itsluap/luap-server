@@ -194,7 +194,7 @@ Place these under DP.PropEmotes = {
 	- Added Support for CheckMarks
 		- This is a toggle in the config, if it causes issues(like lag) disable it
 	- Added Support for Jim-Shops
-	- Added support for new Qb-Menu icons
+	- Added support for new indigo-menu icons
 	- Finally fixed missing missing tray in GN mods MLO
 		- It was always there but had to be moved slightly to the side for it to actually not be invisible
 	- Added missing ATM to other entrance under the 2nd "ATM Machine" sign

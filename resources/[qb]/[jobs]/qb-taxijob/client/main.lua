@@ -236,7 +236,7 @@ local function calculateFareAmount()
     end
 end
 
--- qb-menu
+-- indigo-menu
 
 function TaxiGarage()
     local vehicleMenu = {
@@ -271,10 +271,10 @@ function TaxiGarage()
         header = Lang:t("menu.close_menu"),
         txt = "",
         params = {
-            event = "qb-menu:client:closeMenu"
+            event = "indigo-menu:client:closeMenu"
         }
     }
-    exports['qb-menu']:openMenu(vehicleMenu)
+    exports['indigo-menu']:openMenu(vehicleMenu)
 end
 
 RegisterNetEvent("qb-taxi:client:TakeVehicle", function(data)
@@ -303,7 +303,7 @@ RegisterNetEvent("qb-taxi:client:TakeVehicle", function(data)
 end)
 
 function closeMenuFull()
-    exports['qb-menu']:closeMenu()
+    exports['indigo-menu']:closeMenu()
 end
 
 -- Events

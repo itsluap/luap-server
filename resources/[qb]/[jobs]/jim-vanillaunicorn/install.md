@@ -66,7 +66,7 @@ Update v1.4:
 	- Added Support for Jim-Shops
 	- Upgraded Crafting Systems
 	- Added simple Toy/Prize support, info in the config.lua
-	- Added support for qb-menu icons
+	- Added support for indigo-menu icons
 	- Improved loading and unloading of qb-targets and props
 	- Added Job Garage for deliveries
 	- Change emotes in the install.md that require the contract dlc
@@ -112,7 +112,7 @@ Update v1.1:
 	- Payment systems removed/changed in favour of support for my free payment script jim-payments: https://github.com/jimathy/jim-payments#
 		- Add this script to your server and payment systems will work as normal with extra features
 		- This change removes events from client.lua and server.lua
-	- Added item checkmarks to qb-menu's to show if you have the required items or not
+	- Added item checkmarks to indigo-menu's to show if you have the required items or not
 		- This adds changes to client.lua
 	- QoL Fixes
 	- New items added

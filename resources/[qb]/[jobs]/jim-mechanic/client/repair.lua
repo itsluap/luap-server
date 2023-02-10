@@ -238,7 +238,7 @@ RegisterNetEvent('jim-mechanic:client:Repair:Check', function(skip)
 	if DoesEntityExist(vehicle) then
 		if skip == -1 then
 			TriggerEvent('animations:client:EmoteCommandStart', {"clipboard"})
-			exports['qb-menu']:openMenu(RepairMenu)
+			exports['indigo-menu']:openMenu(RepairMenu)
 		else
 			SetVehicleDoorOpen(vehicle, 4, false, false)
 			time = math.random(3000,5000)
@@ -251,7 +251,7 @@ RegisterNetEvent('jim-mechanic:client:Repair:Check', function(skip)
 				{}, {}, function()
 					emptyHands(PlayerPedId())
 					TriggerEvent('animations:client:EmoteCommandStart', {"clipboard"})
-					exports['qb-menu']:openMenu(RepairMenu)
+					exports['indigo-menu']:openMenu(RepairMenu)
 				end, function() -- Cancel
 					emptyHands(PlayerPedId())
 				end, "mechanic_tools")
@@ -282,6 +282,6 @@ RegisterNetEvent('jim-mechanic:client:Repair:Sure', function(data)
 			RepairMenu[#RepairMenu + 1] = { header = "", txt = Loc[Config.Lan]["check"].label47, params = { event = "jim-mechanic:client:Repair:Apply", args = { part = data.part, cost = data.cost } } }
 			RepairMenu[#RepairMenu + 1] = { header = "", txt = Loc[Config.Lan]["check"].label48, params = { event = "jim-mechanic:client:Repair:Check", args = -1 } }
 		end
-		exports['qb-menu']:openMenu(RepairMenu)
+		exports['indigo-menu']:openMenu(RepairMenu)
 	end
 end)

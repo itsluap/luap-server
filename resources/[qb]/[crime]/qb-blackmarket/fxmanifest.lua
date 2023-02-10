@@ -15,7 +15,7 @@ client_scripts {
 shared_scripts {'Config.lua'}
 
 dependencies {
-    'qb-menu',
+    'indigo-menu',
     'qb-target'
 }
 

@@ -132,9 +132,9 @@ local function createTestDriveReturn()
     testDriveZone:onPlayerInOut(function(isPointInside)
         if isPointInside and IsPedInAnyVehicle(PlayerPedId()) then
             SetVehicleForwardSpeed(GetVehiclePedIsIn(PlayerPedId(), false), 0)
-            exports['qb-menu']:openMenu(returnTestDrive)
+            exports['indigo-menu']:openMenu(returnTestDrive)
         else
-            exports['qb-menu']:closeMenu()
+            exports['indigo-menu']:closeMenu()
         end
     end)
 end
@@ -179,10 +179,10 @@ local function createVehZones(shopName, entity)
         combo:onPlayerInOut(function(isPointInside)
             if isPointInside then
                 if PlayerData and PlayerData.job and (PlayerData.job.name == Config.Shops[insideShop]['Job'] or Config.Shops[insideShop]['Job'] == 'none') then
-                    exports['qb-menu']:showHeader(vehHeaderMenu)
+                    exports['indigo-menu']:showHeader(vehHeaderMenu)
                 end
             else
-                exports['qb-menu']:closeMenu()
+                exports['indigo-menu']:closeMenu()
             end
         end)
     else
@@ -374,9 +374,9 @@ function Init()
 
         financeZone:onPlayerInOut(function(isPointInside)
             if isPointInside then
-                exports['qb-menu']:showHeader(financeMenu)
+                exports['indigo-menu']:showHeader(financeMenu)
             else
-                exports['qb-menu']:closeMenu()
+                exports['indigo-menu']:closeMenu()
             end
         end)
     end)
@@ -407,11 +407,11 @@ end
 
 -- Events
 RegisterNetEvent('qb-vehicleshop:client:homeMenu', function()
-    exports['qb-menu']:openMenu(vehicleMenu)
+    exports['indigo-menu']:openMenu(vehicleMenu)
 end)
 
 RegisterNetEvent('qb-vehicleshop:client:showVehOptions', function()
-    exports['qb-menu']:openMenu(vehicleMenu)
+    exports['indigo-menu']:openMenu(vehicleMenu)
 end)
 
 RegisterNetEvent('qb-vehicleshop:client:TestDrive', function()
@@ -465,7 +465,7 @@ RegisterNetEvent('qb-vehicleshop:client:TestDriveReturn', function()
         testDriveVeh = 0
         inTestDrive = false
         DeleteEntity(veh)
-        exports['qb-menu']:closeMenu()
+        exports['indigo-menu']:closeMenu()
         testDriveZone:destroy()
     else
         QBCore.Functions.Notify(Lang:t('error.testdrive_return'), 'error')
@@ -494,7 +494,7 @@ RegisterNetEvent('qb-vehicleshop:client:vehCategories', function()
             }
         }
     end
-    exports['qb-menu']:openMenu(categoryMenu)
+    exports['indigo-menu']:openMenu(categoryMenu)
 end)
 
 RegisterNetEvent('qb-vehicleshop:client:openVehCats', function(data)
@@ -546,7 +546,7 @@ RegisterNetEvent('qb-vehicleshop:client:openVehCats', function(data)
             end
         end
     end
-    exports['qb-menu']:openMenu(vehMenu)
+    exports['indigo-menu']:openMenu(vehMenu)
 end)
 
 RegisterNetEvent('qb-vehicleshop:client:openFinance', function(data)
@@ -673,7 +673,7 @@ RegisterNetEvent('qb-vehicleshop:client:getVehicles', function()
             end
         end
         if #ownedVehicles > 0 then
-            exports['qb-menu']:openMenu(ownedVehicles)
+            exports['indigo-menu']:openMenu(ownedVehicles)
         else
             QBCore.Functions.Notify(Lang:t('error.nofinanced'), 'error', 7500)
         end
@@ -731,7 +731,7 @@ RegisterNetEvent('qb-vehicleshop:client:getVehicleFinance', function(data)
             }
         },
     }
-    exports['qb-menu']:openMenu(vehFinance)
+    exports['indigo-menu']:openMenu(vehFinance)
 end)
 
 RegisterNetEvent('qb-vehicleshop:client:financePayment', function(data)

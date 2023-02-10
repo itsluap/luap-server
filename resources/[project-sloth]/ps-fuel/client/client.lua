@@ -176,7 +176,7 @@ end)
 -- Client Events
 
 RegisterNetEvent('ps-fuel:client:buyCanMenu', function()
-	exports['qb-menu']:openMenu({
+	exports['indigo-menu']:openMenu({
 		{
 			header = "Gas Station",
 			txt = 'The total cost is going to be: $'..Config.canCost..' including taxes.',
@@ -208,7 +208,7 @@ RegisterNetEvent('ps-fuel:client:refuelCanMenu', function()
 	local fuelToAdd = tonumber(ammotoAdd/45)
 	if fuelToAdd ~= 0 then
 		price = math.floor(fuelToAdd * Config.fuelPrice)
-		exports['qb-menu']:openMenu({
+		exports['indigo-menu']:openMenu({
 			{
 				header = "Gas Station",
 				txt = "The total cost of refueling the Gas can will be "..Config.refuelCost.."$",

@@ -102,12 +102,12 @@ local function showEntranceHeaderMenu()
     headerMenu[#headerMenu + 1] = {
         header = Lang:t('menu.close_menu'),
         params = {
-            event = 'qb-menu:client:closeMenu'
+            event = 'indigo-menu:client:closeMenu'
         }
     }
 
     if headerMenu and next(headerMenu) then
-        exports['qb-menu']:openMenu(headerMenu)
+        exports['indigo-menu']:openMenu(headerMenu)
     end
 end
 
@@ -140,12 +140,12 @@ local function showExitHeaderMenu()
     headerMenu[#headerMenu + 1] = {
         header = Lang:t('menu.close_menu'),
         params = {
-          event = 'qb-menu:client:closeMenu'
+          event = 'indigo-menu:client:closeMenu'
         }
     }
 
     if headerMenu and next(headerMenu) then
-        exports['qb-menu']:openMenu(headerMenu)
+        exports['indigo-menu']:openMenu(headerMenu)
     end
 end
 
@@ -666,7 +666,7 @@ end
 -- GUI Functions
 
 function CloseMenuFull()
-    exports['qb-menu']:closeMenu()
+    exports['indigo-menu']:closeMenu()
 end
 
 local function RemoveHouseKey(citizenData)
@@ -707,7 +707,7 @@ function HouseKeysMenu()
                 }
             }
         end
-        exports['qb-menu']:openMenu(keyholderMenu)
+        exports['indigo-menu']:openMenu(keyholderMenu)
     end
 
 end
@@ -732,7 +732,7 @@ local function optionMenu(citizenData)
         },
     }
 
-    exports['qb-menu']:openMenu(keyholderOptions)
+    exports['indigo-menu']:openMenu(keyholderOptions)
 end
 
 -- Shell Configuration
@@ -1346,7 +1346,7 @@ end)
 RegisterNetEvent('qb-houses:client:HomeInvasion', function()
     local ped = PlayerPedId()
     local pos = GetEntityCoords(ped)
-    local Skillbar = exports['qb-skillbar']:GetSkillbarObject()
+    local Skillbar = exports['indigo-skillbar']:GetSkillbarObject()
     if ClosestHouse ~= nil then
         QBCore.Functions.TriggerCallback('police:server:IsPoliceForcePresent', function(IsPresent)
             if IsPresent then

@@ -138,7 +138,7 @@ RegisterNetEvent('jim-mechanic:client:Paints:Check', function()
 				PaintMenu[#PaintMenu + 1] = { header = Loc[Config.Lan]["paint"].interior, txt = Loc[Config.Lan]["common"].current..": "..interiorColor, params = { event = "jim-mechanic:client:Paints:Choose", args = Loc[Config.Lan]["paint"].interior } }
 				PaintMenu[#PaintMenu + 1] = { header = Loc[Config.Lan]["paint"].dashboard, txt = Loc[Config.Lan]["common"].current..": "..dashboardColor, params = { event = "jim-mechanic:client:Paints:Choose", args = Loc[Config.Lan]["paint"].dashboard } }
 			end
-		exports['qb-menu']:openMenu(PaintMenu)
+		exports['indigo-menu']:openMenu(PaintMenu)
 	end
 end)
 
@@ -152,7 +152,7 @@ RegisterNetEvent('jim-mechanic:client:Paints:Choose', function(data)
 	if not IsPedInAnyVehicle(playerPed, false) then	vehicle = getClosest(coords) pushVehicle(vehicle) else
 	vehicle = GetVehiclePedIsIn(playerPed, false) pushVehicle(vehicle) end
 	if DoesEntityExist(vehicle) then
-		exports['qb-menu']:openMenu({
+		exports['indigo-menu']:openMenu({
 			{ icon = "paintcan", header = data..Loc[Config.Lan]["paint"].menuheader, txt = "", isMenuHeader = true },
 			{ icon = "fas fa-circle-arrow-left", header = "", txt = string.gsub(Loc[Config.Lan]["common"].ret, "⬅️ ", ""), params = { event = "jim-mechanic:client:Paints:Check" } },
 			{ header = Loc[Config.Lan]["paint"].classic, txt = "", params = { event = "jim-mechanic:client:Paints:Choose:Paint", args = { paint = data, finish = Loc[Config.Lan]["paint"].classic } } },
@@ -208,6 +208,6 @@ RegisterNetEvent('jim-mechanic:client:Paints:Choose:Paint', function(data)
 				if colourCheck == v.id then installed = Loc[Config.Lan]["common"].current icon = "fas fa-check" disabled = true else installed = "" end
 				PaintMenu[#PaintMenu + 1] = { icon = icon, isMenuHeader = disabled, header = k..". "..v.name, txt = installed, params = { event = 'jim-mechanic:client:Paints:Apply', args = { paint = data.paint, id = v.id, name = v.name, finish = data.finish } } } end
 		end
-		exports['qb-menu']:openMenu(PaintMenu)
+		exports['indigo-menu']:openMenu(PaintMenu)
 	end
 end)

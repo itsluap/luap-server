@@ -19,7 +19,7 @@ RegisterNetEvent("ps-fuel:server:OpenMenu", function (amount, inGasStation, hasW
 	local tax = GlobalTax(amount)
 	local total = math.ceil(amount + tax)
 	if inGasStation == true and not hasWeapon then
-		TriggerClientEvent('qb-menu:client:openMenu', src, {
+		TriggerClientEvent('indigo-menu:client:openMenu', src, {
 			{
 				header = 'Gas Station',
 				txt = 'The total cost is going to be: $'..total..' including taxes.' ,
@@ -30,7 +30,7 @@ RegisterNetEvent("ps-fuel:server:OpenMenu", function (amount, inGasStation, hasW
 			},
 		})
 	else
-		TriggerClientEvent('qb-menu:client:openMenu', src, {
+		TriggerClientEvent('indigo-menu:client:openMenu', src, {
 			{
 				header = 'Gas Station',
 				txt = 'Refuel from jerry can' ,

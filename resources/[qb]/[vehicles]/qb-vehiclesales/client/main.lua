@@ -380,7 +380,7 @@ RegisterNetEvent('qb-occasions:client:MainMenu', function()
         }
     }
 
-    exports['qb-menu']:openMenu(MainMenu)
+    exports['indigo-menu']:openMenu(MainMenu)
 end)
 
 -- Threads

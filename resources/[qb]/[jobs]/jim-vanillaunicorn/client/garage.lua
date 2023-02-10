@@ -43,7 +43,7 @@ RegisterNetEvent('jim-vanillaunicorn:client:Garage:Menu', function(data)
 			vehicleMenu[#vehicleMenu+1] = { header = name, params = { event = "jim-vanillaunicorn:client:SpawnList", args = { spawnName = spawnName, coords = data.coords } } }
 		end
 	end
-    exports['qb-menu']:openMenu(vehicleMenu)
+    exports['indigo-menu']:openMenu(vehicleMenu)
 end)
 
 RegisterNetEvent("jim-vanillaunicorn:client:SpawnList", function(data)

@@ -21,7 +21,7 @@ Real Estate for QB-Core Framework :house_with_garden:
 
 ## Dependencies
 - [qb-core](https://github.com/qbcore-framework/qb-core)
-- [qb-radialmenu](https://github.com/qbcore-framework/qb-radialmenu) - For the menu in screenshots
+- [indigo-radialmenu](https://github.com/qbcore-framework/indigo-radialmenu) - For the menu in screenshots
 - [qb-anticheat](https://github.com/qbcore-framework/qb-anticheat) - Anti Cheat 
 - [qb-phone](https://github.com/qbcore-framework/qb-phone) - Houses app
 - [qb-multicharacter](https://github.com/qbcore-framework/qb-multicharacter) - Checking if player is inside after character chosen (You need to edit the lines if you don't use this)
@@ -30,7 +30,7 @@ Real Estate for QB-Core Framework :house_with_garden:
 - [qb-clothing](https://github.com/qbcore-framework/qb-clothing) - Outfits
 - [qb-weathersync](https://github.com/qbcore-framework/qb-weathersync) - Desync weather inside house
 - [qb-weed](https://github.com/qbcore-framework/qb-weed) - Weed plant
-- [qb-skillbar](https://github.com/qbcore-framework/qb-skillbar) - Skills
+- [indigo-skillbar](https://github.com/qbcore-framework/indigo-skillbar) - Skills
 
 ## Screenshots
 ![Buy House](https://imgur.com/4eQnRqA.png)
@@ -90,7 +90,7 @@ Real Estate for QB-Core Framework :house_with_garden:
 - Add the following code to your server.cfg/resouces.cfg
 ```
 ensure qb-core
-ensure qb-radialmenu
+ensure indigo-radialmenu
 ensure qb-anticheat
 ensure qb-phone
 ensure qb-multicharacter
@@ -99,7 +99,7 @@ ensure qb-interior
 ensure qb-clothing
 ensure qb-weathersync
 ensure qb-weed
-ensure qb-skillbar
+ensure indigo-skillbar
 ```
 
 ## Configuration

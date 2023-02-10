@@ -46,7 +46,7 @@ RegisterNetEvent('jim-mechanic:client:Skirts:Check', function()
 		if GetNumVehicleMods(vehicle, 3) ~= 0 then SkirtMenu[#SkirtMenu + 1] = { header = Loc[Config.Lan]["skirts"].menuskirt, txt = "["..(GetNumVehicleMods(vehicle, 3)+1)..Loc[Config.Lan]["common"].menuinstalled..installed1, params = { event = "jim-mechanic:client:Skirts:Choose", args = 3 } } end
 		if GetNumVehicleMods(vehicle, 9) ~= 0 then SkirtMenu[#SkirtMenu + 1] = { header = Loc[Config.Lan]["skirts"].menuRF, txt = "["..(GetNumVehicleMods(vehicle, 9)+1)..Loc[Config.Lan]["common"].menuinstalled..installed2, params = { event = "jim-mechanic:client:Skirts:Choose", args = 9 } } end
 		if GetNumVehicleMods(vehicle, 8) ~= 0 then SkirtMenu[#SkirtMenu + 1] = { header = Loc[Config.Lan]["skirts"].menuLF, txt = "["..(GetNumVehicleMods(vehicle, 8)+1)..Loc[Config.Lan]["common"].menuinstalled..installed3, params = { event = "jim-mechanic:client:Skirts:Choose", args = 8 } } end
-		exports['qb-menu']:openMenu(SkirtMenu)
+		exports['indigo-menu']:openMenu(SkirtMenu)
 	end
 end)
 
@@ -73,6 +73,6 @@ RegisterNetEvent('jim-mechanic:client:Skirts:Choose', function(mod)
 				if GetVehicleMod(vehicle, mod) == v.id then icon = "fas fa-check" disabled = true end
 				SkirtsMenu[#SkirtsMenu + 1] = { icon = icon, isMenuHeader = disabled, header = k..". "..v.name, txt = v.install, params = { event = 'jim-mechanic:client:Skirts:Apply', args = { mod = tostring(v.id), bumperid = tonumber(mod) } } }
 			end
-		exports['qb-menu']:openMenu(SkirtsMenu)
+		exports['indigo-menu']:openMenu(SkirtsMenu)
 	end
 end)

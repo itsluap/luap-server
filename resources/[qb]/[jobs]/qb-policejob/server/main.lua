@@ -729,7 +729,7 @@ RegisterNetEvent('police:server:BillPlayer', function(playerId, price)
     if not Player or not OtherPlayer or not GlobalState.isLEO then return end
 
     OtherPlayer.Functions.RemoveMoney("bank", price, "paid-bills")
-    exports['Renewed-Banking']:addAccountMoney("police", price)
+    exports['indigo-banking']:addAccountMoney("police", price)
     TriggerClientEvent('QBCore:Notify', OtherPlayer.PlayerData.source, Lang:t("info.fine_received", {fine = price}))
 end)
 

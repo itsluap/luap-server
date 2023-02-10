@@ -140,7 +140,7 @@ local function GetDeliveryLocation()
 end
 
 local function closeMenuFull()
-    exports['qb-menu']:closeMenu()
+    exports['indigo-menu']:closeMenu()
 end
 
 -- Old Menu Code (being removed)
@@ -165,10 +165,10 @@ local function busGarage()
     vehicleMenu[#vehicleMenu + 1] = {
         header = Lang:t('menu.bus_close'),
         params = {
-            event = "qb-menu:client:closeMenu"
+            event = "indigo-menu:client:closeMenu"
         }
     }
-    exports['qb-menu']:openMenu(vehicleMenu)
+    exports['indigo-menu']:openMenu(vehicleMenu)
 end
 
 RegisterNetEvent("qb-busjob:client:TakeVehicle", function(data)

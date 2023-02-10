@@ -86,11 +86,11 @@ function MenuGarage()
         header = Lang:t("text.close_menu"),
         txt = "",
         params = {
-            event = "qb-menu:client:closeMenu"
+            event = "indigo-menu:client:closeMenu"
         }
 
     }
-    exports['qb-menu']:openMenu(vehicleMenu)
+    exports['indigo-menu']:openMenu(vehicleMenu)
 end
 
 function TakeOutHelicopters(vehicleInfo)
@@ -133,11 +133,11 @@ function MenuHeliGarage()
         header = Lang:t("text.close_menu"),
         txt = "",
         params = {
-            event = "qb-menu:client:closeMenu"
+            event = "indigo-menu:client:closeMenu"
         }
 
     }
-    exports['qb-menu']:openMenu(vehicleMenu)
+    exports['indigo-menu']:openMenu(vehicleMenu)
 end
 
 CreateThread(function()

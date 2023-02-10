@@ -40,7 +40,7 @@ RegisterNetEvent('jim-mechanic:client:Windows:Check', function()
 		if GetVehicleWindowTint(vehicle) == 2 then applied5 = Loc[Config.Lan]["common"].current else applied5 = "" end
 		if GetVehicleWindowTint(vehicle) == 1 then applied6 = Loc[Config.Lan]["common"].current else applied6 = "" end
 
-		exports['qb-menu']:openMenu({
+		exports['indigo-menu']:openMenu({
 			{ icon = "tint_supplies", header = searchCar(vehicle)..Loc[Config.Lan]["windows"].menuheader, txt = "", isMenuHeader = true },
 			{ icon = "fas fa-circle-xmark", header = "", txt = string.gsub(Loc[Config.Lan]["common"].close, "❌ ", ""), params = { event = "jim-mechanic:client:Menu:Close" } },
 			{ header = Loc[Config.Lan]["windows"].label1, txt = applied1, params = { event = "jim-mechanic:client:Windows:Apply", args = { mod = 0, name = Loc[Config.Lan]["windows"].label1 } } },

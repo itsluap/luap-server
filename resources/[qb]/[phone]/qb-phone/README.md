@@ -59,10 +59,10 @@ QBCore.Commands.Add('removejob', 'Removes A Players Job (Admin Only)', { { name 
 end, 'admin')
 ```
 
-6. If you use qb-cityhall then u have to Find ApplyJob in qb-cityhall/server/main.lua and replace with this one
+6. If you use indigo-cityhall then u have to Find ApplyJob in indigo-cityhall/server/main.lua and replace with this one
 
 ```lua
-RegisterNetEvent('qb-cityhall:server:ApplyJob', function(job, cityhallCoords)
+RegisterNetEvent('indigo-cityhall:server:ApplyJob', function(job, cityhallCoords)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     if not Player then return end

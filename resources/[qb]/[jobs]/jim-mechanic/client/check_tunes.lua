@@ -122,7 +122,7 @@ RegisterNetEvent('jim-mechanic:client:Menu', function()
 
 		CheckMenu[#CheckMenu + 1] = { icon = "fas fa-toolbox", header = "", txt = Loc[Config.Lan]["check"].label10, params = { event = "jim-mechanic:client:Menu:List" } }
 
-	exports['qb-menu']:openMenu(CheckMenu)
+	exports['indigo-menu']:openMenu(CheckMenu)
 end)
 
 RegisterNetEvent('jim-mechanic:client:Menu:List', function()
@@ -192,7 +192,7 @@ RegisterNetEvent('jim-mechanic:client:Menu:List', function()
 	local mods = nil
 	for _, v in pairs(all) do if GetNumVehicleMods(vehicle, v) ~= 0 then mods = true break end end
 	if GetVehicleLiveryCount(vehicle) ~= -1 then mods = true end
-	if mods then exports['qb-menu']:openMenu(CheckMenu) else TriggerEvent("QBCore:Notify", Loc[Config.Lan]["common"].noOptions, "error") return end
+	if mods then exports['indigo-menu']:openMenu(CheckMenu) else TriggerEvent("QBCore:Notify", Loc[Config.Lan]["common"].noOptions, "error") return end
 end)
 
 ---BRAKES
@@ -234,5 +234,5 @@ RegisterNetEvent('jim-mechanic:client:Menu:Remove', function(data)
 		{ icon = icon, isMenuHeader = true, header = header },
 		{ icon = "fas fa-circle-check", header = "", txt = string.gsub(Loc[Config.Lan]["check"].label47, "✅ ", ""), params = { event = event } },
 		{ icon = "fas fa-circle-xmark", header = "", txt = string.gsub(Loc[Config.Lan]["check"].label48, "❌ ", ""), params = { event = "jim-mechanic:client:Menu" } } }
-	exports['qb-menu']:openMenu(CheckMenu)
+	exports['indigo-menu']:openMenu(CheckMenu)
 end)

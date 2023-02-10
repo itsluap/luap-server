@@ -16,7 +16,7 @@ server_script 'server/main.lua'
 
 dependencies {
     'qb-lockpick',
-    'qb-skillbar'
+    'indigo-skillbar'
 }
 
 lua54 'yes'

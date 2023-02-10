@@ -309,7 +309,7 @@ RegisterNetEvent("jim-mechanic:client:giveList", function(item)
 	list[#list+1] = { isMenuHeader = true, header = item.info["veh"], txt = Loc[Config.Lan]["police"].plates..": "..item.info["vehplate"].."<br>"..Loc[Config.Lan]["previews"].changes..(#item.info["vehlist"]) }
 	list[#list+1] = { icon = "fas fa-circle-xmark", header = "", txt = string.gsub(Loc[Config.Lan]["common"].close, "❌ ", ""), params = { event = "jim-mechanic:client:Menu:Close" }, }
 	list[#list+1] = { isMenuHeader = true, header = "", txt = newlist }
-	exports['qb-menu']:openMenu(list)
+	exports['indigo-menu']:openMenu(list)
 end)
 
 --A function to detect if the person editing is in the driver seat or not
@@ -417,7 +417,7 @@ RegisterNetEvent('jim-mechanic:client:Preview:Menu', function()
 		if not IsThisModelABike(GetEntityModel(vehicle)) then
 			PreviewMenu[#PreviewMenu+1] = { header = "", txt = Loc[Config.Lan]["windows"].menuheader, params = { event = "jim-mechanic:client:Preview:Windows:Check" }, }
 		end
-		exports['qb-menu']:openMenu(PreviewMenu)
+		exports['indigo-menu']:openMenu(PreviewMenu)
 		preview(playerPed, vehicle)
 
 	end
@@ -450,7 +450,7 @@ RegisterNetEvent("jim-mechanic:client:Preview:Multi", function(data)
 			if GetVehicleMod(vehicle, data.id) == v.id then icon = "fas fa-check" disabled = true end
 			modMenu[#modMenu + 1] = { icon = icon, isMenuHeader = disabled, header = k..". "..v.name, txt = v.install, params = { event = 'jim-mechanic:client:Preview:Multi:Apply', args = { id = tostring(v.id), mod = data.id, name = data.name }, } }
 		end
-	exports['qb-menu']:openMenu(modMenu)
+	exports['indigo-menu']:openMenu(modMenu)
 end)
 
 RegisterNetEvent('jim-mechanic:client:Preview:Multi:Apply', function(data)
@@ -526,7 +526,7 @@ RegisterNetEvent('jim-mechanic:client:Preview:Livery', function(data)
 				LiveryMenu[#LiveryMenu + 1] = { icon = icon, isMenuHeader = disabled, header = k..". "..v.name, txt = v.install, params = { event = 'jim-mechanic:client:Preview:Apply', args = { id = tostring(v.id), close = data.close } } }
 			end
 		end
-		exports['qb-menu']:openMenu(LiveryMenu)
+		exports['indigo-menu']:openMenu(LiveryMenu)
 	end
 end)
 
@@ -587,7 +587,7 @@ RegisterNetEvent('jim-mechanic:client:Preview:Plates', function()
 				if GetVehicleNumberPlateTextIndex(vehicle) == v.id then installed = Loc[Config.Lan]["common"].current icon = "fas fa-check" disabled = true else installed = "" end
 				PlateMenu[#PlateMenu + 1] = { icon = icon, isMenuHeader = disabled, header = k..". "..v.name, txt = installed, params = { event = 'jim-mechanic:client:Preview:Plates:Apply', args = v.id  } }
 			end
-			exports['qb-menu']:openMenu(PlateMenu)
+			exports['indigo-menu']:openMenu(PlateMenu)
 		end
 	end
 end)
@@ -657,14 +657,14 @@ RegisterNetEvent('jim-mechanic:client:Preview:Paint', function()
 			PaintMenu[#PaintMenu + 1] = { header = Loc[Config.Lan]["paint"].interior, txt = Loc[Config.Lan]["common"].current..": "..interiorColor, params = { event = "jim-mechanic:client:Preview:Paints:Choose", args = Loc[Config.Lan]["paint"].interior } }
 			PaintMenu[#PaintMenu + 1] = { header = Loc[Config.Lan]["paint"].dashboard, txt = Loc[Config.Lan]["common"].current..": "..dashboardColor, params = { event = "jim-mechanic:client:Preview:Paints:Choose", args = Loc[Config.Lan]["paint"].dashboard } }
 		end
-	exports['qb-menu']:openMenu(PaintMenu)
+	exports['indigo-menu']:openMenu(PaintMenu)
 end)
 
 RegisterNetEvent('jim-mechanic:client:Preview:Paints:Choose', function(data)
 	local playerPed	= PlayerPedId()
 	if IsPedInAnyVehicle(playerPed, false) then	vehicle = GetVehiclePedIsIn(playerPed, false) end
 	if DoesEntityExist(vehicle) then
-		exports['qb-menu']:openMenu({
+		exports['indigo-menu']:openMenu({
 			{ header = searchCar(vehicle), txt = "Class: "..getClass(vehicle).."<br>"..Loc[Config.Lan]["check"].plate..trim(GetVehicleNumberPlateText(vehicle))..Loc[Config.Lan]["check"].value..searchPrice(vehicle).."<br>"..searchDist(vehicle),
 				params = { event = "jim-mechanic:client:Preview:Camera", args = { data = data, event = "jim-mechanic:client:Preview:Paints:Choose" }, } },
 			{ header = data..Loc[Config.Lan]["paint"].menuheader, txt = "", isMenuHeader = true },
@@ -719,7 +719,7 @@ RegisterNetEvent('jim-mechanic:client:Preview:Paints:Choose:Colour', function(da
 			if colourCheck == v.id then installed = Loc[Config.Lan]["common"].current icon = "fas fa-check" disabled = true else installed = "" end
 			PaintMenu[#PaintMenu + 1] = { icon = icon, isMenuHeader = disabled, header = k..". "..v.name, txt = installed, params = { event = 'jim-mechanic:client:Preview:Paints:Apply', args = { paint = data.paint, id = v.id, name = v.name, finish = data.finish } } } end
 	end
-	exports['qb-menu']:openMenu(PaintMenu)
+	exports['indigo-menu']:openMenu(PaintMenu)
 end)
 
 RegisterNetEvent('jim-mechanic:client:Preview:Paints:Apply', function(data)
@@ -772,7 +772,7 @@ RegisterNetEvent('jim-mechanic:client:Preview:Rims:Check', function()
 		WheelMenu[#WheelMenu + 1] = { header = Loc[Config.Lan]["rims"].label13, params = { event = "jim-mechanic:client:Preview:Rims:Choose", args = { wheeltype = 6, bike = false } } }
 		WheelMenu[#WheelMenu + 1] = { header = Loc[Config.Lan]["rims"].label14, params = { event = "jim-mechanic:client:Preview:Rims:Choose", args = { wheeltype = 6, bike = true } } }
 	end
-	exports['qb-menu']:openMenu(WheelMenu)
+	exports['indigo-menu']:openMenu(WheelMenu)
 end)
 
 RegisterNetEvent('jim-mechanic:client:Preview:Rims:Choose', function(data)
@@ -827,7 +827,7 @@ RegisterNetEvent('jim-mechanic:client:Preview:Rims:Choose', function(data)
 		for k, v in pairsByKeys(validMods) do
 			RimsMenu[#RimsMenu + 1] = { header = k, txt = Loc[Config.Lan]["common"].amountoption..#validMods[k], params = { event = 'jim-mechanic:client:Preview:Rims:SubMenu', args = { mod = v.id, wheeltype = data.wheeltype, wheeltable = validMods[k], bike = data.bike } } }
 		end
-		exports['qb-menu']:openMenu(RimsMenu)
+		exports['indigo-menu']:openMenu(RimsMenu)
 		SetVehicleWheelType(vehicle, originalWheel)
 
 end)
@@ -844,7 +844,7 @@ RegisterNetEvent('jim-mechanic:client:Preview:Rims:SubMenu', function(data)
 	for i=1, #data.wheeltable do
 		RimsMenu[#RimsMenu + 1] = { header = data.wheeltable[i].name, txt = data.wheeltable[i].install, params = { event = 'jim-mechanic:client:Preview:Rims:Apply', args = { mod = data.wheeltable[i].id, wheeltype = data.wheeltype, wheeltable = data.wheeltable, bike = data.bike } } }
 	end
-	exports['qb-menu']:openMenu(RimsMenu)
+	exports['indigo-menu']:openMenu(RimsMenu)
 end)
 
 --Windows
@@ -872,7 +872,7 @@ RegisterNetEvent('jim-mechanic:client:Preview:Windows:Check', function()
 		if GetVehicleWindowTint(vehicle) == 2 then applied5 = Loc[Config.Lan]["common"].current else applied5 = "" end
 		if GetVehicleWindowTint(vehicle) == 1 then applied6 = Loc[Config.Lan]["common"].current else applied6 = "" end
 
-		exports['qb-menu']:openMenu({
+		exports['indigo-menu']:openMenu({
 			{ header = searchCar(vehicle), txt = "Class: "..getClass(vehicle).."<br>"..Loc[Config.Lan]["check"].plate..trim(GetVehicleNumberPlateText(vehicle))..Loc[Config.Lan]["check"].value..searchPrice(vehicle).."<br>"..searchDist(vehicle),
 				params = { event = "jim-mechanic:client:Preview:Camera", args = { data = nil, event = "jim-mechanic:client:Preview:Windows:Check" }, } },
 			{ header = Loc[Config.Lan]["windows"].menuheader, txt = "", isMenuHeader = true },

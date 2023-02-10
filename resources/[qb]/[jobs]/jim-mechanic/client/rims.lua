@@ -63,7 +63,7 @@ RegisterNetEvent('jim-mechanic:client:Rims:Check', function()
 			if cycle then
 				WheelMenu[#WheelMenu + 1] = { header = Loc[Config.Lan]["rims"].label13, params = { event = "jim-mechanic:client:Rims:Choose", args = { wheeltype = 6, bike = false } } }
 				WheelMenu[#WheelMenu + 1] = { header = Loc[Config.Lan]["rims"].label14, params = { event = "jim-mechanic:client:Rims:Choose", args = { wheeltype = 6, bike = true } } } end
-		exports['qb-menu']:openMenu(WheelMenu)
+		exports['indigo-menu']:openMenu(WheelMenu)
 	end
 end)
 
@@ -125,7 +125,7 @@ RegisterNetEvent('jim-mechanic:client:Rims:Choose', function(data)
 				for k, v in pairsByKeys(validMods) do
 					RimsMenu[#RimsMenu + 1] = { header = k, txt = Loc[Config.Lan]["common"].amountoption..#validMods[k], params = { event = 'jim-mechanic:client:Rims:SubMenu', args = { mod = v.id, wheeltype = data.wheeltype, wheeltable = validMods[k], bike = data.bike } } }
 				end
-			exports['qb-menu']:openMenu(RimsMenu)
+			exports['indigo-menu']:openMenu(RimsMenu)
 			SetVehicleWheelType(vehicle, originalWheel)
 		end
 	end
@@ -148,7 +148,7 @@ RegisterNetEvent('jim-mechanic:client:Rims:SubMenu', function(data)
 				for i=1, #data.wheeltable do
 					RimsMenu[#RimsMenu + 1] = { header = data.wheeltable[i].name, txt = data.wheeltable[i].install, params = { event = 'jim-mechanic:client:Rims:Apply', args = { mod = data.wheeltable[i].id, wheeltype = data.wheeltype, wheeltable = data.wheeltable, bike = data.bike } } }
 				end
-			exports['qb-menu']:openMenu(RimsMenu)
+			exports['indigo-menu']:openMenu(RimsMenu)
 		end
 	end
 end)

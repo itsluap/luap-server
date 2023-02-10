@@ -89,7 +89,7 @@ RegisterNetEvent('qb-phone:server:PurchaseCrypto', function(type, amount)
         if Config.RenewedBanking then
             local cid = Player.PlayerData.citizenid
             local name = ("%s %s"):format(Player.PlayerData.charinfo.firstname, Player.PlayerData.charinfo.lastname)
-            exports['Renewed-Banking']:handleTransaction(cid, "Crypto Purchase", cashAmount, txt, "Los Santos Crypto", name, "withdraw")
+            exports['indigo-banking']:handleTransaction(cid, "Crypto Purchase", cashAmount, txt, "Los Santos Crypto", name, "withdraw")
         end
 
         AddCrypto(src, type, amount)
@@ -169,7 +169,7 @@ RegisterNetEvent('qb-phone:server:SellCrypto', function(type, amount)
         if Config.RenewedBanking then
             local cid = Player.PlayerData.citizenid
             local name = ("%s %s"):format(Player.PlayerData.charinfo.firstname, Player.PlayerData.charinfo.lastname)
-            exports['Renewed-Banking']:handleTransaction(cid, "Crypto Sell", cashAmount, txt, "Los Santos Crypto", name, "deposit")
+            exports['indigo-banking']:handleTransaction(cid, "Crypto Sell", cashAmount, txt, "Los Santos Crypto", name, "deposit")
         end
 
         RemoveCrypto(src, type, cryptoAmount) -- remove chosen crypto amount

@@ -53,11 +53,11 @@ local function ShowEntranceHeaderMenu()
         header = Lang:t('text.close_menu'),
         txt = "",
         params = {
-            event = "qb-menu:client:closeMenu"
+            event = "indigo-menu:client:closeMenu"
         }
     }
 
-    exports['qb-menu']:showHeader(headerMenu)
+    exports['indigo-menu']:showHeader(headerMenu)
 end
 
 local function ShowExitHeaderMenu()
@@ -83,11 +83,11 @@ local function ShowExitHeaderMenu()
         header = Lang:t('text.close_menu'),
         txt = "",
         params = {
-            event = "qb-menu:client:closeMenu"
+            event = "indigo-menu:client:closeMenu"
         }
     }
 
-    exports['qb-menu']:openMenu(headerMenu)
+    exports['indigo-menu']:openMenu(headerMenu)
 end
 
 local function RegisterApartmentEntranceZone(apartmentID, apartmentData)
@@ -389,17 +389,17 @@ function MenuOwners()
                 header = Lang:t('text.close_menu'),
                 txt = "",
                 params = {
-                    event = "qb-menu:client:closeMenu"
+                    event = "indigo-menu:client:closeMenu"
                 }
 
             }
-            exports['qb-menu']:openMenu(apartmentMenu)
+            exports['indigo-menu']:openMenu(apartmentMenu)
         end
     end, ClosestHouse)
 end
 
 function CloseMenuFull()
-    exports['qb-menu']:closeMenu()
+    exports['indigo-menu']:closeMenu()
 end
 
 

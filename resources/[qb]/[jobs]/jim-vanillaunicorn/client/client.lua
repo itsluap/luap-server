@@ -354,7 +354,7 @@ RegisterNetEvent('jim-vanillaunicorn:Crafting', function(data)
 			end
 		end
 	end
-	exports['qb-menu']:openMenu(Menu)
+	exports['indigo-menu']:openMenu(Menu)
 end)
 
 function FoodProgress(ItemMake, craftable)
@@ -477,9 +477,9 @@ end)
 
 -- CUSTOM DJ BOOTH STUFF
 RegisterNetEvent('jim-vanillaunicorn:client:playMusic', function(data)
-	exports['qb-menu']:openMenu({
+	exports['indigo-menu']:openMenu({
 		{ isMenuHeader = true, header = '<center><img src=https://static.wikia.nocookie.net/gtawiki/images/1/10/VanillaUnicorn-GTAV-Logo.png/ width=225px>' },
-		{ icon = "fas fa-circle-xmark", header = "", txt = Loc[Config.Lan].menu["close"], params = { event = "qb-menu:client:closemenu" } },
+		{ icon = "fas fa-circle-xmark", header = "", txt = Loc[Config.Lan].menu["close"], params = { event = "indigo-menu:client:closemenu" } },
 		{ icon = "fab fa-youtube", header = Loc[Config.Lan].menu["play_song"], txt = Loc[Config.Lan].menu["youtube_link"], params = { event = 'jim-vanillaunicorn:client:musicMenu', args = { zoneNum = data.zone } } },
 		{ icon = "fas fa-pause", header = Loc[Config.Lan].menu["pause_music"], txt = Loc[Config.Lan].menu["pause_music"], params = { isServer = true, event = 'jim-vanillaunicorn:server:pauseMusic', args = { zoneNum = data.zone } } },
 		{ icon = "fas fa-play", header = Loc[Config.Lan].menu["resume_music"], txt = Loc[Config.Lan].menu["resume_music"], params = { isServer = true, event = 'jim-vanillaunicorn:server:resumeMusic', args = { zoneNum = data.zone } } },
@@ -554,7 +554,7 @@ end
 
 RegisterNetEvent('qb-stripclub:client:open:effect:panel')
 AddEventHandler('qb-stripclub:client:open:effect:panel', function()
-    exports['qb-menu']:openMenu({
+    exports['indigo-menu']:openMenu({
         {
             header = 'Stage Effects',
             --icon = 'fas fa-code',

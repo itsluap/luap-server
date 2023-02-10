@@ -69,7 +69,7 @@ RegisterNetEvent('jim-mechanic:client:Tires:Check', function()
 	elseif r == 15 and g == 3 and b == 255 then app14 = Loc[Config.Lan]["common"].current
 	elseif r == 0 and g == 0 and b == 0 then app15 = Loc[Config.Lan]["common"].current
 	else app0 = Loc[Config.Lan]["common"].current end
-	exports['qb-menu']:openMenu({
+	exports['indigo-menu']:openMenu({
 		{ header = searchCar(vehicle)..Loc[Config.Lan]["smoke"].menuheader, txt = "", isMenuHeader = true, },
 		{ icon = "fas fa-circle-xmark", header = "", txt = string.gsub(Loc[Config.Lan]["common"].close, "❌ ", ""), params = { event = "jim-mechanic:client:Menu:Close" } },
 		{ header = Loc[Config.Lan]["smoke"].remove, txt = app15, params = { event = "jim-mechanic:client:Tires:Apply", args = { R = 0, G = 0, B = 0 } } },

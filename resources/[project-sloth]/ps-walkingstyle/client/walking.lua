@@ -67,7 +67,7 @@ CreateThread(function()
 end)
 
 CreateThread(function()
-    local walkId = exports['qb-radialmenu']:AddOption({
+    local walkId = exports['indigo-radialmenu']:AddOption({
         id = 'walkstyles',
         title = 'Walkstyle',
         icon = 'person-walking',

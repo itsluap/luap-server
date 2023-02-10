@@ -80,7 +80,7 @@ local function PublicGarage(garageName, type)
     local categories = garage.vehicleCategories
     local superCategory = GetSuperCategoryFromCategories(categories)
 
-    exports['qb-menu']:openMenu({
+    exports['indigo-menu']:openMenu({
         {
             header = garage.label,
             isMenuHeader = true,
@@ -104,7 +104,7 @@ local function PublicGarage(garageName, type)
             header = Lang:t("menu.leave.car"),
             txt = "",
             params = {
-                event = 'qb-menu:closeMenu'
+                event = 'indigo-menu:closeMenu'
             }
         },
     })
@@ -112,7 +112,7 @@ end
 
 local function MenuHouseGarage()
     local superCategory = GetSuperCategoryFromCategories(HouseGarageCategories)
-    exports['qb-menu']:openMenu({
+    exports['indigo-menu']:openMenu({
         {
             header = Lang:t("menu.header.house_garage"),
             isMenuHeader = true
@@ -136,14 +136,14 @@ local function MenuHouseGarage()
             header = Lang:t("menu.leave.car"),
             txt = "",
             params = {
-                event = "qb-menu:closeMenu"
+                event = "indigo-menu:closeMenu"
             }
         },
     })
 end
 
 local function ClearMenu()
-	TriggerEvent("qb-menu:closeMenu")
+	TriggerEvent("indigo-menu:closeMenu")
 end
 
 -- Functions
@@ -343,7 +343,7 @@ end
 local function AddRadialParkingOption()
     local Player = PlayerPedId()
     if IsPedInAnyVehicle(Player) then
-        MenuItemId = exports['qb-radialmenu']:AddOption({
+        MenuItemId = exports['indigo-radialmenu']:AddOption({
             id = 'put_up_vehicle',
             title = 'Park Vehicle',
             icon = 'square-parking',
@@ -352,7 +352,7 @@ local function AddRadialParkingOption()
             shouldClose = true
         }, MenuItemId)
     else
-        MenuItemId = exports['qb-radialmenu']:AddOption({
+        MenuItemId = exports['indigo-radialmenu']:AddOption({
             id = 'open_garage_menu',
             title = 'Open Garage',
             icon = 'warehouse',
@@ -364,7 +364,7 @@ local function AddRadialParkingOption()
 end
 
 local function AddRadialImpoundOption()
-    MenuItemId = exports['qb-radialmenu']:AddOption({
+    MenuItemId = exports['indigo-radialmenu']:AddOption({
         id = 'open_garage_menu',
         title = 'Open Impound Lot',
         icon = 'warehouse',
@@ -394,7 +394,7 @@ local function UpdateRadialMenu()
        AddRadialParkingOption()
     else
         if MenuItemId ~= nil then
-            exports['qb-radialmenu']:RemoveOption(MenuItemId)
+            exports['indigo-radialmenu']:RemoveOption(MenuItemId)
             MenuItemId = nil
         end
     end
@@ -409,7 +409,7 @@ local function CreateGarageZone()
         else
             CurrentGarage = nil
             if MenuItemId ~= nil then
-                exports['qb-radialmenu']:RemoveOption(MenuItemId)
+                exports['indigo-radialmenu']:RemoveOption(MenuItemId)
                 MenuItemId = nil
             end
             exports['qb-core']:HideText()
@@ -456,7 +456,7 @@ local function RegisterHousePoly(house)
         else
             exports['qb-core']:HideText()
             if MenuItemId ~= nil then
-                exports['qb-radialmenu']:RemoveOption(MenuItemId)
+                exports['indigo-radialmenu']:RemoveOption(MenuItemId)
                 MenuItemId = nil
             end
             CurrentHouseGarage = nil
@@ -497,11 +497,11 @@ function JobMenuGarage(garageName)
         header = Lang:t('menu.leave.job'),
         txt = "",
         params = {
-            event = "qb-menu:client:closeMenu"
+            event = "indigo-menu:client:closeMenu"
         }
 
     }
-    exports['qb-menu']:openMenu(vehicleMenu)
+    exports['indigo-menu']:openMenu(vehicleMenu)
 end
 
 function GetFreeParkingSpots(parkingSpots)
@@ -727,10 +727,10 @@ RegisterNetEvent("qb-garages:client:GarageMenu", function(data)
                 header = leave,
                 txt = "",
                 params = {
-                    event = "qb-menu:closeMenu",
+                    event = "indigo-menu:closeMenu",
                 }
             }
-            exports['qb-menu']:openMenu(MenuGarageOptions)
+            exports['indigo-menu']:openMenu(MenuGarageOptions)
         end
     end, garageId, type, superCategory)
 end)
@@ -778,7 +778,7 @@ end)
 
 
 
-RegisterNetEvent('qb-radialmenu:client:onRadialmenuOpen', function()
+RegisterNetEvent('indigo-radialmenu:client:onRadialmenuOpen', function()
     UpdateRadialMenu()
 end)
 
