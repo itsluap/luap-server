@@ -25,7 +25,7 @@ CreateThread(function()
 	end
 end)
 
-RegisterNetEvent('bb-multichar:logout', function()
+RegisterNetEvent('indigo-multichar:logout', function()
     createPeds()
 end)
 
@@ -36,9 +36,9 @@ function createPeds()
     SetEntityCoords(ped, Config['hidden'])
     FreezeEntityPosition(ped, true)
     
-    QBCore.Functions.TriggerCallback('bb-multichar:server:get', function(chars, max)
+    QBCore.Functions.TriggerCallback('indigo-multichar:server:get', function(chars, max)
         if #chars > 0 and chars[1] then
-            QBCore.Functions.TriggerCallback('bb-multichar:server:getSkin', function(data)
+            QBCore.Functions.TriggerCallback('indigo-multichar:server:getSkin', function(data)
                 local model = tonumber(data.model)
                 local loaded = loadModel(model)
                 if loaded then
@@ -128,7 +128,7 @@ end
 RegisterNUICallback('switch', function(data, cb)
     local selectedChar = tonumber(data.char)
     if currentChar == -1 then
-        QBCore.Functions.TriggerCallback('bb-multichar:server:getSkin', function(data)
+        QBCore.Functions.TriggerCallback('indigo-multichar:server:getSkin', function(data)
             local model = tonumber(data.model)
             local loaded = loadModel(model)
             if loaded then
@@ -156,7 +156,7 @@ RegisterNUICallback('switch', function(data, cb)
         end, data.citizenid)
     elseif selectedChar and selectedChar ~= currentChar then
         if selectedChar > currentChar then
-            QBCore.Functions.TriggerCallback('bb-multichar:server:getSkin', function(data)
+            QBCore.Functions.TriggerCallback('indigo-multichar:server:getSkin', function(data)
                 ClearPedTasks(CreatedPeds['default'])
                 TaskGoStraightToCoord(CreatedPeds['default'], Config['leftped'].x, Config['leftped'].y, Config['leftped'].z, 1.4, 8000, Config['leftped'].w)
 
@@ -189,7 +189,7 @@ RegisterNUICallback('switch', function(data, cb)
                 CreatedPeds['right'] = nil
             end, data.citizenid)
         else
-            QBCore.Functions.TriggerCallback('bb-multichar:server:getSkin', function(data)
+            QBCore.Functions.TriggerCallback('indigo-multichar:server:getSkin', function(data)
                 ClearPedTasks(CreatedPeds['default'])
                 TaskGoStraightToCoord(CreatedPeds['default'], Config['rightped'].x, Config['rightped'].y, Config['rightped'].z, 1.4, 8000, Config['rightped'].w)
             
@@ -237,7 +237,7 @@ RegisterNUICallback('switch', function(data, cb)
 end)
 
 RegisterNUICallback("create", function(data, cb)
-    QBCore.Functions.TriggerCallback('bb-multichar:server:createCharacter', function(res)
+    QBCore.Functions.TriggerCallback('indigo-multichar:server:createCharacter', function(res)
         cb(res)
 
         if res then
@@ -279,11 +279,11 @@ RegisterNUICallback("select", function(data, cb)
     CreatedPeds['default'] = nil
     currentChar = -1
 
-    TriggerServerEvent('bb-multichar:server:spawnPlayer', data.citizenid)
+    TriggerServerEvent('indigo-multichar:server:spawnPlayer', data.citizenid)
 end)
 
 RegisterNUICallback("delete", function(data, cb)
-    QBCore.Functions.TriggerCallback('bb-multichar:server:deleteCharacter', function(chars, max)
+    QBCore.Functions.TriggerCallback('indigo-multichar:server:deleteCharacter', function(chars, max)
         DeletePed(CreatedPeds['default'])
         CreatedPeds = {}
         PlayerCharacters = {}
@@ -291,7 +291,7 @@ RegisterNUICallback("delete", function(data, cb)
         currentClothing = {}
         
         if #chars > 0 and chars[1] then
-            QBCore.Functions.TriggerCallback('bb-multichar:server:getSkin', function(data)
+            QBCore.Functions.TriggerCallback('indigo-multichar:server:getSkin', function(data)
                 local model = tonumber(data.model)
     
                 local model = tonumber(data.model)

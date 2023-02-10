@@ -143,7 +143,7 @@ get = L1_1
 L1_1 = QBCore
 L1_1 = L1_1.Functions
 L1_1 = L1_1.CreateCallback
-L2_1 = "bb-multichar:server:get"
+L2_1 = "indigo-multichar:server:get"
 function L3_1(A0_2, A1_2)
   local L2_2, L3_2, L4_2, L5_2
   L2_2 = GetPlayerPed
@@ -166,10 +166,10 @@ function L3_1(A0_2, A1_2)
 end
 L1_1(L2_1, L3_1)
 L1_1 = RegisterServerEvent
-L2_1 = "bb-multichar:server:spawnPlayer"
+L2_1 = "indigo-multichar:server:spawnPlayer"
 L1_1(L2_1)
 L1_1 = AddEventHandler
-L2_1 = "bb-multichar:server:spawnPlayer"
+L2_1 = "indigo-multichar:server:spawnPlayer"
 function L3_1(A0_2)
   local L1_2, L2_2, L3_2, L4_2, L5_2
   L1_2 = source
@@ -191,7 +191,7 @@ L1_1(L2_1, L3_1)
 L1_1 = QBCore
 L1_1 = L1_1.Functions
 L1_1 = L1_1.CreateCallback
-L2_1 = "bb-multichar:server:createCharacter"
+L2_1 = "indigo-multichar:server:createCharacter"
 function L3_1(A0_2, A1_2, A2_2)
   local L3_2, L4_2, L5_2, L6_2, L7_2, L8_2, L9_2, L10_2, L11_2
   L3_2 = A0_2
@@ -303,7 +303,7 @@ L1_1(L2_1, L3_1)
 L1_1 = QBCore
 L1_1 = L1_1.Functions
 L1_1 = L1_1.CreateCallback
-L2_1 = "bb-multichar:server:deleteCharacter"
+L2_1 = "indigo-multichar:server:deleteCharacter"
 function L3_1(A0_2, A1_2, A2_2)
   local L3_2, L4_2, L5_2
   L3_2 = QBCore
@@ -324,7 +324,7 @@ L1_1(L2_1, L3_1)
 L1_1 = QBCore
 L1_1 = L1_1.Functions
 L1_1 = L1_1.CreateCallback
-L2_1 = "bb-multichar:server:getSkin"
+L2_1 = "indigo-multichar:server:getSkin"
 function L3_1(A0_2, A1_2, A2_2)
   local L3_2, L4_2, L5_2, L6_2, L7_2
   L3_2 = A0_2

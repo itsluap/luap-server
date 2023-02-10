@@ -43,7 +43,7 @@ $(document).on("click", ".container #slider #selectcharacter", function (e) {
         $('.container__create').fadeOut(200);
         $('.container__info').fadeOut(200);
         
-        $.post("https://bb-multichar/switch", JSON.stringify({ char: selected, citizenid: ele.attr("data-citizenid")}), function(data) {
+        $.post("https://indigo-multichar/switch", JSON.stringify({ char: selected, citizenid: ele.attr("data-citizenid")}), function(data) {
             if (selected >= 0) {
                 setTimeout(()=>{
                     resolveInfo(selected - 1)
@@ -85,7 +85,7 @@ $(document).on("click", "#createchar_button", function (e) {
         cid: characters.length + 1
     }
 
-    $.post("https://bb-multichar/create", JSON.stringify({ char: createdCharacter})).then((res) => {
+    $.post("https://indigo-multichar/create", JSON.stringify({ char: createdCharacter})).then((res) => {
         if (res) {
             $("body").fadeOut(300);
             $('.deletechar_modal').fadeOut(0);
@@ -98,7 +98,7 @@ $(document).on("click", "#createchar_button", function (e) {
 
 $(document).on("click", "#spawnplayer_button", function (e) {
     if (!switching) {
-        $.post("https://bb-multichar/select", JSON.stringify({ citizenid: $(`.container #slider #selectcharacter[data-char='${char}']`).attr('data-citizenid')}));
+        $.post("https://indigo-multichar/select", JSON.stringify({ citizenid: $(`.container #slider #selectcharacter[data-char='${char}']`).attr('data-citizenid')}));
         $("body").fadeOut(500);
         $('.deletechar_modal').fadeOut(350);
         $('.container__create').fadeOut(350);
@@ -119,7 +119,7 @@ $(document).on("input", "#deleteplayer_input", function (e) {
         $('.deletechar_modal #data').fadeOut(0);
         setTimeout(()=> {$('.deletechar_modal .preloader-wrapper').fadeIn(100);}, 50)
 
-        $.post("https://bb-multichar/delete", JSON.stringify({ citizenid: $(`.container #slider #selectcharacter[data-char='${char}']`).attr('data-citizenid')}))
+        $.post("https://indigo-multichar/delete", JSON.stringify({ citizenid: $(`.container #slider #selectcharacter[data-char='${char}']`).attr('data-citizenid')}))
         .then((res) => {
             if (res) {
                 characters = res.characters;

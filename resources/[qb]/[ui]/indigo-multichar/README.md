@@ -1,4 +1,4 @@
-## BB-MULTICHARACTER
+## indigo-multicharACTER
 
 # Installation
 1.  Drag & drop to your server, stop qb-multicharacter or whatever multicharacter you're using.
