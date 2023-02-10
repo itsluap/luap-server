@@ -73,9 +73,9 @@ ensure cfx-gabz-fleeca
 ensure cfx-gabz-harmony
 ensure cfx-gabz-haters
 ensure cfx-gabz-hayes
-ensure cfx-gabz-hub            #*READ BELOW*!
+#ensure cfx-gabz-hub            #*READ BELOW*!
 ensure cfx-gabz-import
-#ensure cfx-gabz-impound        #*READ BELOW*!
+ensure cfx-gabz-impound        #*READ BELOW*!
 #ensure cfx-gabz-lamesapd        #*THIS RESOURCE REQUIRES [CFX-GABZ-PDPROPS] TO WORK PROPERLY*
 ensure cfx-gabz-lost
 ensure cfx-gabz-lostsc
@@ -90,7 +90,7 @@ ensure cfx-gabz-paletobank
 ensure cfx-gabz-paletoliquor
 ensure cfx-gabz-paletopd        #*THIS RESOURCE REQUIRES [CFX-GABZ-PDPROPS] TO WORK PROPERLY*
 ensure cfx-gabz-parkranger
-#ensure cfx-gabz-pdm            #*READ BELOW*!
+ensure cfx-gabz-pdm            #*READ BELOW*!
 ensure cfx-gabz-pillbox
 ensure cfx-gabz-pinkcage
 ensure cfx-gabz-pizzeria        #*THIS RESOURCE IS MANDATORY IF YOU USE [CFX-GABZ-OTTOS]*
@@ -132,8 +132,8 @@ add_ace group.admin command allow # allow all commands
 add_principal identifier.fivem:2448277 qbcore.god #luap2
 add_principal identifier.discord:353767887305048064 group.admin #lin
 add_principal identifier.discord:406599443601817650 group.admin #mediumking
-add_principal identifier.discord:548070310734200832 group.admin #icey
-add_principal identifier.discord:343161050163707904 group.admin #nodeth
+#add_principal identifier.discord:548070310734200832 group.admin #icey
+#add_principal identifier.discord:343161050163707904 group.admin #nodeth
 add_principal identifier.discord:246096113130668032 group.admin #nope
 add_principal identifier.discord:900144578424885318 group.admin #james
 
