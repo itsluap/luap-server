@@ -358,6 +358,29 @@ Config.Locations = {
 		discordcolour = 39135,
 		discordimg = "https://static.wikia.nocookie.net/gtawiki/images/0/0c/HayesAutoBodyShop-GTAV-Logo.png",
 	},
+	-- NEW BENNYS --
+	{    job = "bennys",
+		zones = {
+			vector2(-231.33561706543, -1342.6379394531),
+			vector2(-231.33355712891, -1311.3192138672),
+			vector2(-186.73043823242, -1311.337890625),
+			vector2(-186.73062133789, -1342.6239013672)
+		},
+		stash = { { coords = vector3(-223.69, -1339.33, 32.63), w = 4.0, d = 1.0, heading = 302.0, }, },
+		store = { { coords = vector3(-219.45, -1337.8, 31.3), w = 5.5, d = 1.0, heading = 302.0, }, },
+		crafting = { { coords = vector3(-217.02, -1333.27, 31.3), w = 0.6, d = 1.0, heading = 302.0, }, },
+		clockin = { { coords = vector3(-192.24, -1315.58, 31.13), heading = 300.0 }, },
+		-- garage = { spawn = vector4(-1379.84, -451.82, 34.44, 124.0),
+					-- out = vector4(-1401.57, -451.19, 34.48, 212.71),
+					-- list = { "towtruck", "panto", "slamtruck", "cheburek", "utillitruck3" } },
+		payments = { coords = vector3(-193.64, -1334.68, 34.86), heading = 350.0, img = "<center><p><img src=https://static.wikia.nocookie.net/gtawiki/images/0/0c/HayesAutoBodyShop-GTAV-Logo.png width=150px></p>" },
+		blip = vector3(-214.79, -1327.71, 31.3),
+		bliplabel = "Benny's",
+		blipcolor = 17,
+		discordlink = "",
+		--discordcolour = 39135,
+		--discordimg = "https://static.wikia.nocookie.net/gtawiki/images/0/0c/HayesAutoBodyShop-GTAV-Logo.png",
+	},
 }
 
 local till = {}

@@ -311,7 +311,7 @@ Config.Shops = {
             },
         }
     }, -- Add your next table under this comma
-    ['boats'] = {
+    ['sea'] = {
         ['Type'] = 'free-use', -- no player interaction is required to purchase a vehicle
         ['Zone'] = {
             ['Shape'] = {--polygon that surrounds the shop

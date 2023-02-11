@@ -378,6 +378,44 @@ QBShared.Jobs = {
             },
         },
 	},
+    ['bennys'] = {
+		label = "Benny's",
+        type = "mechanic",
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+            ['0'] = {
+                name = 'Recruit',
+                payment = 500
+            },
+			['1'] = {
+                name = 'Novice',
+                payment = 800
+            },
+			['2'] = {
+                name = 'Experienced',
+                payment = 1000
+            },
+			['3'] = {
+                name = 'Advanced',
+                payment = 2000
+            },
+			['4'] = {
+                name = 'Manager',
+				isboss = true,
+                --bankAuth = true,
+                payment = 4000
+            },
+            ['5'] = {
+                name = 'Owner',
+                isboss = true,
+                bankAuth = true,
+				isboss = true,
+                bankAuth = true,
+                payment = 6000
+            },
+        },
+	},
     ['burgershot'] = {
 		label = 'BurgerShot',
 		defaultDuty = true,

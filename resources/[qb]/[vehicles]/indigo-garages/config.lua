@@ -1592,6 +1592,28 @@ Garages = {
         },
         debug = false
     },
+    ['bennysparking'] = {
+        ['Zone'] = {
+            ['Shape'] = { --polygon that surrounds the parking area
+            vector2(-235.62110900879, -1317.8486328125),
+            vector2(-235.60565185547, -1312.1346435547),
+            vector2(-247.04827880859, -1312.2078857422),
+            vector2(-247.09149169922, -1318.0657958984)
+            },
+            ['minZ'] = 25.0,  -- min height of the parking zone
+            ['maxZ'] = 28.0,  -- max height of the parking zone
+        },
+        label = 'Benny\'s Auto Parking',
+        type = 'public',
+        vehicleCategories = {'car', 'motorcycle', 'other'},
+        drawText = 'Parking',
+        ["ParkingSpots"] = {
+            vector4(-244.97, -1314.76, 31.3, 179.79),
+            vector4(-241.51, -1314.76, 31.3, 179.79),
+            vector4(-238.11, -1314.76, 31.3, 179.79),
+        },
+        debug = false
+    },
     ['ottosdealer'] = {
         ['Zone'] = {
             ['Shape'] = { --polygon that surrounds the parking area
@@ -1818,7 +1840,7 @@ Garages = {
         },
         label = 'Boat House',
         type = 'public',
-        vehicleCategories = {'sea'},
+        vehicleCategories = {'boat'},
         drawText = 'BOAT HOUSE',
         showBlip = true,
         blipName = 'Boat House',
