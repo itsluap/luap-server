@@ -3418,6 +3418,7 @@ QBShared.Vehicles = {
 		['category'] = 'pimports',
 		['hash'] = `taki428`,
 		['shop'] = 'pdm',
+		['tier'] = 'D',
 	},
 	['focusrs'] = {
 		['name'] = '2017 Focus',
@@ -3464,6 +3465,7 @@ QBShared.Vehicles = {
 		['category'] = 'pimports',
 		['hash'] = `mgt`,
 		['shop'] = 'pdm',
+		['tier'] = 'B',
 	},
 	['rakchr'] = {
 		['name'] = '2015 Charger SE',
@@ -3501,6 +3503,7 @@ QBShared.Vehicles = {
 		['category'] = 'pimports',
 		['hash'] = `czr1`,
 		['shop'] = 'pdm',
+		['tier'] = 'B',
 	},
 	['z2879'] = {
 		['name'] = '1979 Z28',
@@ -3964,6 +3967,7 @@ QBShared.Vehicles = {
         ['category'] = 'imports',
         ['hash'] = `rmodmartin`,
         ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+		['tier'] = 'A+',
     },
 	['rmodr8c'] = {
         ['name'] = 'R8 Convertible',
@@ -3973,6 +3977,7 @@ QBShared.Vehicles = {
         ['category'] = 'imports',
         ['hash'] = `rmodr8c`,
         ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+		['tier'] = 'A',
     },
 	['rmodrs6'] = {
         ['name'] = '2020 RS6',
@@ -3982,6 +3987,7 @@ QBShared.Vehicles = {
         ['category'] = 'imports',
         ['hash'] = `rmodrs6`,
         ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+		['tier'] = 'A',
     },
 	['rmodrs6r'] = {
         ['name'] = '2020 RS6R',
@@ -3991,6 +3997,7 @@ QBShared.Vehicles = {
         ['category'] = 'imports',
         ['hash'] = `rmodrs6r`,
         ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+		['tier'] = 'A+',
     },
 	['22m5'] = {
         ['name'] = '2022 M5',
@@ -4018,6 +4025,7 @@ QBShared.Vehicles = {
         ['category'] = 'imports',
         ['hash'] = `e92`,
         ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+		['tier'] = 'C',
     },
 	['m4f82'] = {
         ['name'] = '2015 M4',
@@ -4099,6 +4107,7 @@ QBShared.Vehicles = {
         ['category'] = 'imports',
         ['hash'] = `acr`,
         ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+		['tier'] = 'A',
     },
 	['nixpycharger21'] = {
         ['name'] = '2021 Hellcat Charger',
@@ -4108,6 +4117,7 @@ QBShared.Vehicles = {
         ['category'] = 'imports',
         ['hash'] = `nixpycharger21`,
         ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+		['tier'] = 'A',
     },
 	['rmodcharger69'] = {
         ['name'] = '1969 Charger',
@@ -4126,6 +4136,7 @@ QBShared.Vehicles = {
         ['category'] = 'imports',
         ['hash'] = `vip8`,
         ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+		['tier'] = 'B',
     },
 	['rmodf40'] = {
         ['name'] = 'F40',
@@ -4135,6 +4146,7 @@ QBShared.Vehicles = {
         ['category'] = 'imports',
         ['hash'] = `rmodf40`,
         ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+		['tier'] = 'S',
     },
 	['gt17'] = {
         ['name'] = '2017 GT',
@@ -4144,6 +4156,7 @@ QBShared.Vehicles = {
         ['category'] = 'imports',
         ['hash'] = `gt17`,
         ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+		['tier'] = 'S+',
     },
 	['19raptor'] = {
         ['name'] = '2019 Raptor',
@@ -4162,6 +4175,7 @@ QBShared.Vehicles = {
         ['category'] = 'imports',
         ['hash'] = `ffrs`,
         ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+		['tier'] = 'B',
     },
 	['mache'] = {
         ['name'] = '2021 Mach E',
@@ -4180,6 +4194,7 @@ QBShared.Vehicles = {
         ['category'] = 'imports',
         ['hash'] = `rmodescort`,
         ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+		['tier'] = 'B',
     },
 	['velociraptor'] = {
         ['name'] = 'Hennessey Velociraptor',
@@ -4198,6 +4213,7 @@ QBShared.Vehicles = {
         ['category'] = 'imports',
         ['hash'] = `trhawk`,
         ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+		['tier'] = 'B',
     },
 	['zx10r'] = {
         ['name'] = '2016 ZX10R',
@@ -4216,6 +4232,7 @@ QBShared.Vehicles = {
         ['category'] = 'imports',
         ['hash'] = `kiagt`,
         ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+		['tier'] = 'B',
     },
 	['06sx2t'] = {
         ['name'] = 'SX 125cc',
@@ -4234,6 +4251,7 @@ QBShared.Vehicles = {
         ['category'] = 'imports',
         ['hash'] = `amgone`,
         ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+		['tier'] = 'S+',
     },
 	['rmodlfa'] = {
         ['name'] = 'Lexus LFA',
@@ -4243,6 +4261,7 @@ QBShared.Vehicles = {
         ['category'] = 'imports',
         ['hash'] = `rmodlfa`,
         ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+		['tier'] = 'S',
     },
 	['dredurango'] = {
         ['name'] = 'SRT Durango',
@@ -4252,6 +4271,7 @@ QBShared.Vehicles = {
         ['category'] = 'imports',
         ['hash'] = `dredurango`,
         ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+		['tier'] = 'A',
     },
 	['lc100'] = {
         ['name'] = 'Land Cruiser',
@@ -4279,6 +4299,7 @@ QBShared.Vehicles = {
         ['category'] = 'imports',
         ['hash'] = `rmodcamaro`,
         ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+		['tier'] = 'A',
     },
 	['forgt50020'] = {
         ['name'] = '2020 Shelby GT500',
@@ -4288,6 +4309,7 @@ QBShared.Vehicles = {
         ['category'] = 'imports',
         ['hash'] = `forgt50020`,
         ['shop'] = {'luxury', 'imports', 'ottos',  'autoex',}
+		['tier'] = 'A',
     },
 	['rmodmustang'] = {
         ['name'] = '2015 Mustang GT Widebody',
