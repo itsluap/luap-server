@@ -8,7 +8,7 @@
 ------------------------------------------------------------------------------------
 
 * Add the images from the images file into your inventory html images
-* Add the below lines into your indigo-core>shared>item.lua at the bottom
+* Add the below lines into your qb-core>shared>item.lua at the bottom
 ```lua
 	["methcontainer"] 			     = {["name"] = "methcontainer",				    ["label"] = "Meth Container",			   	["weight"] = 9500,    	["type"] = "item",		["image"] = "methcontainer.png",         ["unique"] = true,		["useable"] = false,	    ["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Container full of white powder"},
 	["methcase"] 			     = {["name"] = "methcase",				    ["label"] = "Shiny Case",			   	["weight"] = 4500,    	["type"] = "item",		["image"] = "securitycase.png",         ["unique"] = true,		["useable"] = true,	    ["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Briefcase full of money"},
@@ -16,7 +16,7 @@
 
 ```
 
-* Add the following line to indigo-core > server > player.lua any where around 87-140 area under metadata
+* Add the following line to qb-core > server > player.lua any where around 87-140 area under metadata
 ```lua
     PlayerData.metadata['methruns'] = PlayerData.metadata['methruns'] or 0
 ```
@@ -56,7 +56,7 @@ end exports('MethRuns', MethRuns)
 	["methruns"] =  {displayCode = '10-31', description = "Suspicious Drug Activity", radius = 0, recipientList = {'police'}, blipSprite = 514, blipColour = 43, blipScale = 1.5, blipLength = 2, sound = "robberysound", offset = "false"},
 ```
 
-# For the item detection to work properly ensure that the snippet below is in your indigo-core > client >functions.lua
+# For the item detection to work properly ensure that the snippet below is in your qb-core > client >functions.lua
 
 ```lua
 function QBCore.Functions.HasItem(items, amount)

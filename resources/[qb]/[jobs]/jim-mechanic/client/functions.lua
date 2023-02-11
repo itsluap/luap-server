@@ -1,4 +1,4 @@
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 
 --Don't even try to ask me how this works, found it on a tutorial site for organising tables
 function pairsByKeys(t)

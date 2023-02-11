@@ -1,4 +1,4 @@
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 
 Config.RepairLocations = {
     --Add your poly zone box locations and job name for each store and it will add it to the indigo-target loop above

@@ -6,7 +6,7 @@ version '2.0.0'
 
 shared_scripts {
 	'config.lua',
-	'@indigo-core/shared/locale.lua',
+	'@qb-core/shared/locale.lua',
 	'locales/en.lua'
 }
 

@@ -1,5 +1,5 @@
 # indigo-weathersync
-Synced weather and time for indigo-core Framework :sunrise:
+Synced weather and time for qb-core Framework :sunrise:
 
 # License
 
@@ -21,7 +21,7 @@ Synced weather and time for indigo-core Framework :sunrise:
 
 
 ## Dependencies
-- [indigo-core](https://github.com/qbcore-framework/indigo-core)
+- [qb-core](https://github.com/qbcore-framework/qb-core)
 
 ## Features
 - Syncs the weather for all players
@@ -31,7 +31,7 @@ Synced weather and time for indigo-core Framework :sunrise:
 - Download the script and put it in the `[qb]` directory.
 - Add the following code to your server.cfg/resouces.cfg
 ```
-ensure indigo-core
+ensure qb-core
 ensure indigo-weathersync
 ```
 

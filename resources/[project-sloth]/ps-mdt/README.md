@@ -6,7 +6,7 @@ For all support questions, ask in our Discord support chat. Do not create issues
 
 ## Dependencies
 
-- [QBCore](https://github.com/qbcore-framework/indigo-core)
+- [QBCore](https://github.com/qbcore-framework/qb-core)
 - [PS-Dispatch](https://github.com/Project-Sloth/ps-dispatch) [If you intend to use it, make sure this starts before the mdt!]
 - [Ox MySQL](https://github.com/overextended/oxmysql)
 

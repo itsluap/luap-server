@@ -1,8 +1,8 @@
 # indigo-cityhall
-City Services for indigo-core Framework / UI Clearly not inspired
+City Services for qb-core Framework / UI Clearly not inspired
 
 ## Dependencies
-- [indigo-core](https://github.com/qbcore-framework/indigo-core)
+- [qb-core](https://github.com/qbcore-framework/qb-core)
 - [PolyZone](https://github.com/mkafrin/PolyZone) - For Interaction (DrawText and indigo-target both require this)
 - [indigo-target](https://github.com/BerkieBb/indigo-target) - For Interaction (Optional)
 - [indigo-phone](https://github.com/qbcore-framework/indigo-phone) - For E-Mail
@@ -16,14 +16,14 @@ City Services for indigo-core Framework / UI Clearly not inspired
 - Ability to add nultiple driving school locations
 - Ability to take driving lessons
 - indigo-target integration, this is optional
-- PolyZone and indigo-core DrawText integration, this is optional
+- PolyZone and qb-core DrawText integration, this is optional
 
 ## Installation
 ### Manual
 - Download the script and put it in the `[qb]` directory.
 - Add the following code to your server.cfg/resources.cfg
 ```
-ensure indigo-core
+ensure qb-core
 ensure indigo-target # Optional
 ensure indigo-phone
 ensure indigo-cityhall

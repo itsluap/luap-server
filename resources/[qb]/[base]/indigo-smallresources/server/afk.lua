@@ -1,4 +1,4 @@
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 
 RegisterNetEvent('KickForAFK', function()
 	DropPlayer(source, 'You Have Been Kicked For Being AFK')

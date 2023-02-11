@@ -1,4 +1,4 @@
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 
 RegisterNUICallback('GetAvailableTaxiDrivers', function(_, cb)
     QBCore.Functions.TriggerCallback('indigo-phone:server:GetAvailableTaxiDrivers', function(drivers)

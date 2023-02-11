@@ -1,5 +1,5 @@
 --[[
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 
 local First = vector3(0.0, 0.0, 0.0)
 local Second = vector3(5.0, 5.0, 5.0)

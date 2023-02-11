@@ -1,4 +1,4 @@
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 local carryPackage = nil
 local packageCoords = nil
 local onDuty = false
@@ -73,9 +73,9 @@ local function RegisterEntranceTarget()
 
     entranceZone:onPlayerInOut(function(isPointInside)
       if isPointInside then
-        exports['indigo-core']:DrawText(Lang:t("text.point_enter_warehouse"), 'left')
+        exports['qb-core']:DrawText(Lang:t("text.point_enter_warehouse"), 'left')
       else
-        exports['indigo-core']:HideText()
+        exports['qb-core']:HideText()
       end
 
       isInsideEntranceZone = isPointInside
@@ -114,9 +114,9 @@ local function RegisterExitTarget()
 
     exitZone:onPlayerInOut(function(isPointInside)
       if isPointInside then
-        exports['indigo-core']:DrawText(Lang:t("text.point_exit_warehouse"), 'left')
+        exports['qb-core']:DrawText(Lang:t("text.point_exit_warehouse"), 'left')
       else
-        exports['indigo-core']:HideText()
+        exports['qb-core']:HideText()
       end
 
       isInsideExitZone = isPointInside
@@ -175,9 +175,9 @@ local function RegisterDutyTarget()
   
     dutyZone:onPlayerInOut(function(isPointInside)
       if isPointInside then
-        exports['indigo-core']:DrawText(GetDutyTargetText(), 'left')
+        exports['qb-core']:DrawText(GetDutyTargetText(), 'left')
       else
-        exports['indigo-core']:HideText()
+        exports['qb-core']:HideText()
       end
 
       isInsideDutyZone = isPointInside
@@ -237,9 +237,9 @@ local function RegisterDeliveyTarget()
   
     deliveryZone:onPlayerInOut(function(isPointInside)
       if isPointInside and carryPackage then
-        exports['indigo-core']:DrawText(Lang:t("text.point_hand_in_package"), 'left')
+        exports['qb-core']:DrawText(Lang:t("text.point_hand_in_package"), 'left')
       else
-        exports['indigo-core']:HideText()
+        exports['qb-core']:HideText()
       end
 
       isInsideDeliveryZone = isPointInside
@@ -418,9 +418,9 @@ function RegisterPickupTarget(coords)
 
     pickupZone:onPlayerInOut(function(isPointInside)
       if isPointInside then
-        exports['indigo-core']:DrawText( Lang:t("text.point_get_package"), 'left')
+        exports['qb-core']:DrawText( Lang:t("text.point_get_package"), 'left')
       else
-        exports['indigo-core']:HideText()
+        exports['qb-core']:HideText()
       end
 
       isInsidePickupZone = isPointInside
@@ -547,30 +547,30 @@ CreateThread(function()
       if isInsideEntranceZone then
         sleep = 0
         if IsControlJustReleased(0, 38) then
-          exports['indigo-core']:KeyPressed()
+          exports['qb-core']:KeyPressed()
           Wait(500)
           TriggerEvent('indigo-recyclejob:client:target:enterLocation')
-          exports['indigo-core']:HideText()
+          exports['qb-core']:HideText()
         end
       end
       
       if isInsideExitZone then
         sleep = 0
         if IsControlJustReleased(0, 38) then
-          exports['indigo-core']:KeyPressed()
+          exports['qb-core']:KeyPressed()
           Wait(500)
           TriggerEvent('indigo-recyclejob:client:target:exitLocation')
-          exports['indigo-core']:HideText()
+          exports['qb-core']:HideText()
         end
       end
 
       if isInsideDutyZone then
         sleep = 0
         if IsControlJustReleased(0, 38) then
-          exports['indigo-core']:KeyPressed()
+          exports['qb-core']:KeyPressed()
           Wait(500)
           TriggerEvent('indigo-recyclejob:client:target:toggleDuty')
-          exports['indigo-core']:HideText()
+          exports['qb-core']:HideText()
         end
       end
 
@@ -578,10 +578,10 @@ CreateThread(function()
         if isInsidePickupZone and not carryPackage then
           sleep = 0
           if IsControlJustReleased(0, 38) then
-            exports['indigo-core']:KeyPressed()
+            exports['qb-core']:KeyPressed()
             Wait(500)
             TriggerEvent('indigo-recyclejob:client:target:pickupPackage')
-            exports['indigo-core']:HideText()
+            exports['qb-core']:HideText()
           end
         elseif packageCoords and not carryPackage then
           sleep = 0
@@ -591,10 +591,10 @@ CreateThread(function()
         if isInsideDeliveryZone and carryPackage then
           sleep = 0
           if IsControlJustReleased(0, 38) then
-            exports['indigo-core']:KeyPressed()
+            exports['qb-core']:KeyPressed()
             Wait(500)
             TriggerEvent('indigo-recyclejob:client:target:dropPackage')
-            exports['indigo-core']:HideText()
+            exports['qb-core']:HideText()
           end
         end
       end

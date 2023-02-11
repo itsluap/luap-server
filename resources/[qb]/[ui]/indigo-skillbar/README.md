@@ -1,5 +1,5 @@
 # indigo-skillbar
-Skill Bar For indigo-core
+Skill Bar For qb-core
 
 # License
 

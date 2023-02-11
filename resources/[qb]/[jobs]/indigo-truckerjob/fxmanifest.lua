@@ -5,7 +5,7 @@ description 'indigo-truckerjob'
 version '1.0.0'
 
 shared_scripts {
-	'@indigo-core/shared/locale.lua',
+	'@qb-core/shared/locale.lua',
 	'config.lua',
 	'locales/en.lua',
 }

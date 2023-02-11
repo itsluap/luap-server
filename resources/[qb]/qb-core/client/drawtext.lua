@@ -17,18 +17,18 @@ local function keyPressed()
     end)
 end
 
-RegisterNetEvent('indigo-core:client:DrawText', function(text, position)
+RegisterNetEvent('qb-core:client:DrawText', function(text, position)
     drawText(text, position)
 end)
 
-RegisterNetEvent('indigo-core:client:HideText', function()
+RegisterNetEvent('qb-core:client:HideText', function()
     hideText()
 end)
-RegisterNetEvent('indigo-core:client:HideText', function()
+RegisterNetEvent('qb-core:client:HideText', function()
     hideText()
 end)
 
-RegisterNetEvent('indigo-core:client:KeyPressed', function()
+RegisterNetEvent('qb-core:client:KeyPressed', function()
     keyPressed()
 end)
 

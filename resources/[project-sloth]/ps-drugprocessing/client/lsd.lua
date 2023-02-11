@@ -1,5 +1,5 @@
 local isPickingUp, isProcessing = false, false
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 
 local function Processlsd()
 	isProcessing = true

@@ -27,7 +27,7 @@ Coming soon...
 # Meth Preview
 https://streamable.com/0pcjlt
 
-# Add to indigo-core > shared.lua
+# Add to qb-core > shared.lua
 
 ```
     ["wet_weed"] 		 	 	 	 = {["name"] = "wet_weed",           			["label"] = "Moist Weed",	 			["weight"] = 3000, 		["type"] = "item", 		["image"] = "wet_weed.png", 			["unique"] = false, 	["useable"] = false, 	["shouldClose"] = false,   ["combinable"] = nil,   ["expire"] = 90,  ["description"] = "Wet weed that needs to be treated!"},

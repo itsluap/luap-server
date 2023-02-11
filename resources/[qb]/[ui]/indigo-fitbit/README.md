@@ -1,5 +1,5 @@
 # indigo-fitbit
-FitBit For indigo-core
+FitBit For qb-core
 
 # License
 

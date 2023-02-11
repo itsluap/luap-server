@@ -1,4 +1,4 @@
-QBCore = exports['indigo-core']:GetCoreObject()
+QBCore = exports['qb-core']:GetCoreObject()
 inJail = false
 jailTime = 0
 currentJob = nil

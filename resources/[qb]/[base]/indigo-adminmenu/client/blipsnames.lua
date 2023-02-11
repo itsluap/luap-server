@@ -1,4 +1,4 @@
-QBCore = exports['indigo-core']:GetCoreObject()
+QBCore = exports['qb-core']:GetCoreObject()
 local ShowBlips = false
 local ShowNames = false
 local NetCheck1 = false

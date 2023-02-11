@@ -1,4 +1,4 @@
-QBCore = exports['indigo-core']:GetCoreObject()
+QBCore = exports['qb-core']:GetCoreObject()
 
 function sendToDiscord(message) --Functions to send the log to discord
     local time = os.date("*t")

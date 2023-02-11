@@ -1,5 +1,5 @@
-local QBCore = exports['indigo-core']:GetCoreObject()
-RegisterNetEvent('QBCore:Server:UpdateObject', function() if source ~= '' then return false end QBCore = exports['indigo-core']:GetCoreObject() end)
+local QBCore = exports['qb-core']:GetCoreObject()
+RegisterNetEvent('QBCore:Server:UpdateObject', function() if source ~= '' then return false end QBCore = exports['qb-core']:GetCoreObject() end)
 
 local function cv(amount)
     local formatted = amount

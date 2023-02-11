@@ -1,4 +1,4 @@
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 
 RegisterNetEvent('indigo-phone:server:addImageToGallery', function(image)
     local src = source

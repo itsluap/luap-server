@@ -1,5 +1,5 @@
 # indigo-newsjob
-News Job For indigo-core
+News Job For qb-core
 
 # License
 

@@ -1,4 +1,4 @@
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 --========================================================== Exterior
 RegisterNetEvent('jim-mechanic:client:Exterior:Apply', function(data)
 	local playerPed	= PlayerPedId()

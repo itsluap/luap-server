@@ -1,4 +1,4 @@
-QBCore = exports['indigo-core']:GetCoreObject()
+QBCore = exports['qb-core']:GetCoreObject()
 
 local getOutDict = 'switch@franklin@bed'
 local getOutAnim = 'sleep_getup_rubeyes'
@@ -730,11 +730,11 @@ CreateThread(function()
         local sleep = 1000
         if isInHospitalBed and canLeaveBed then
             sleep = 0
-            exports['indigo-core']:DrawText(Lang:t('text.bed_out'))
+            exports['qb-core']:DrawText(Lang:t('text.bed_out'))
             if IsControlJustReleased(0, 38) then
-                exports['indigo-core']:KeyPressed(38)
+                exports['qb-core']:KeyPressed(38)
                 LeaveBed()
-                exports['indigo-core']:HideText()
+                exports['qb-core']:HideText()
             end
         end
         Wait(sleep)
@@ -832,7 +832,7 @@ local listen = false
         listen = true
         while listen do
             if IsControlJustPressed(0, 38) then
-                exports['indigo-core']:KeyPressed(38)
+                exports['qb-core']:KeyPressed(38)
                 if variable == "checkin" then
                    TriggerEvent('indigo-ambulancejob:checkin')
                     listen = false
@@ -940,15 +940,15 @@ else
             checkingCombo:onPlayerInOut(function(isPointInside)
                 if isPointInside then
                     if doctorCount >= Config.MinimalDoctors then
-                        exports['indigo-core']:DrawText(Lang:t('text.call_doc'),'left')
+                        exports['qb-core']:DrawText(Lang:t('text.call_doc'),'left')
                         CheckInControls("checkin")
                     else
-                        exports['indigo-core']:DrawText(Lang:t('text.check_in'), 'left')
+                        exports['qb-core']:DrawText(Lang:t('text.check_in'), 'left')
                         CheckInControls("checkin")
                     end
                 else
                     listen = false
-                    exports['indigo-core']:HideText()
+                    exports['qb-core']:HideText()
                 end
             end)
         end
@@ -964,11 +964,11 @@ else
             local bedCombo = ComboZone:Create(bedPoly, {name = "bedCombo", debugPoly = false})
             bedCombo:onPlayerInOut(function(isPointInside)
                 if isPointInside then
-                    exports['indigo-core']:DrawText(Lang:t('text.lie_bed'), 'left')
+                    exports['qb-core']:DrawText(Lang:t('text.lie_bed'), 'left')
                     CheckInControls("beds")
                 else
                     listen = false
-                    exports['indigo-core']:HideText()
+                    exports['qb-core']:HideText()
                 end
             end)
         end

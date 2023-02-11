@@ -26,10 +26,10 @@ function GetCoreObject(framework, resourceName, callBack)
     -- QBCORE / custom
     if framework == 2 then
         xpcall(function()
-            callBack(exports[resourceName or 'indigo-core']['GetCoreObject']())
+            callBack(exports[resourceName or 'qb-core']['GetCoreObject']())
         end, function(error)
             xpcall(function()
-                callBack(exports[resourceName or 'indigo-core']['GetSharedObject']())
+                callBack(exports[resourceName or 'qb-core']['GetSharedObject']())
             end, function(error)
                 CreateThread(function()
                     local tries = 10

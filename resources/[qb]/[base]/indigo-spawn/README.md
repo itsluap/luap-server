@@ -1,5 +1,5 @@
 # indigo-spawn
-Spawn Selector for indigo-core Framework :eagle:
+Spawn Selector for qb-core Framework :eagle:
 
 # License
 
@@ -21,7 +21,7 @@ Spawn Selector for indigo-core Framework :eagle:
 
 
 ## Dependencies
-- [indigo-core](https://github.com/qbcore-framework/indigo-core)
+- [qb-core](https://github.com/qbcore-framework/qb-core)
 - [indigo-houses](https://github.com/qbcore-framework/indigo-houses) - Lets player select the house
 - [qb-apartment](https://github.com/qbcore-framework/qb-apartment) - Lets player select the apartment
 - [indigo-garages](https://github.com/qbcore-framework/indigo-garages) - For house garages
@@ -37,7 +37,7 @@ Spawn Selector for indigo-core Framework :eagle:
 - Download the script and put it in the `[qb]` directory.
 - Add the following code to your server.cfg/resouces.cfg
 ```
-ensure indigo-core
+ensure qb-core
 ensure indigo-spawn
 ensure indigo-apartments
 ensure indigo-garages

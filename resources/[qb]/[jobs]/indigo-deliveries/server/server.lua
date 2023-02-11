@@ -1,4 +1,4 @@
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 
 local Jobs = {}
 local Location = vector4(0.0, 0.0, 0.0, 0.0)

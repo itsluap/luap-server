@@ -12,12 +12,12 @@
 
 * Drop the kevin-deliveries folder into your resource be sure that the resource name is "kevin-deliveries" and nothing else
 * Copy the image inside the images folder and paste it into you inventory> html> images folder
-* Paste the snippet below in you indigo-core>shared>items.lua
+* Paste the snippet below in you qb-core>shared>items.lua
 ```lua
 	["delivery-box"] 			     		 = {["name"] = "delivery-box",				    		["label"] = "Delivery Package",			   			["weight"] = 50000,    	["type"] = "item",		["image"] = "delivery-box.png",         			["unique"] = true,		["useable"] = false,	    ["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "",								["created"] = nil, 		["decay"] = 1.0 },
 ```
 
-# If you want it to be using a specifc job if the config is set to true then add the snip below to indigo-core > shared > job.lua
+# If you want it to be using a specifc job if the config is set to true then add the snip below to qb-core > shared > job.lua
 ```lua
    ['delivery'] = {
 		label = 'Road Runner Deliveries', --- change if you like
@@ -31,7 +31,7 @@
         },
 	},
 ```
-* Add the following line to indigo-core > server > player.lua any where around 87-140 area under metadata
+* Add the following line to qb-core > server > player.lua any where around 87-140 area under metadata
 ```lua
     PlayerData.metadata['deliveries'] = PlayerData.metadata['deliveries'] or 0
 ```

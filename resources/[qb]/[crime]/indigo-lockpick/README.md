@@ -1,5 +1,5 @@
 # indigo-lockpick
-Lockpick Mini-Game For indigo-core
+Lockpick Mini-Game For qb-core
 
 # License
 

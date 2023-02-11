@@ -1,5 +1,5 @@
 # indigo-customs
-Vehicle Customization For indigo-core
+Vehicle Customization For qb-core
 
 Make sure to read the locations.lua settings VERY carefully. It has all the information needed to properly setup all your locations. Chances are if something is not working, your configuration for that location is wrong. Doublecheck before opening an issue.
 

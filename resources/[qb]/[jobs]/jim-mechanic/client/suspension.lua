@@ -1,4 +1,4 @@
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 --========================================================== Suspension
 RegisterNetEvent('jim-mechanic:client:applySuspension', function(level)
 	if not jobChecks() then return end

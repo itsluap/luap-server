@@ -1,5 +1,5 @@
 -- Variables
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 local PlayerData = QBCore.Functions.GetPlayerData()
 local route = 1
 local max = #Config.NPCLocations.Locations
@@ -101,7 +101,7 @@ local function GetDeliveryLocation()
     PolyZone:onPlayerInOut(function(isPointInside)
         if isPointInside then
             inRange = true
-            exports["indigo-core"]:DrawText(Lang:t('info.busstop_text'), 'rgb(220, 20, 60)')
+            exports["qb-core"]:DrawText(Lang:t('info.busstop_text'), 'rgb(220, 20, 60)')
             CreateThread(function()
                 repeat
                     Wait(0)
@@ -126,14 +126,14 @@ local function GetDeliveryLocation()
                         resetNpcTask()
                         nextStop()
                         TriggerEvent('indigo-busjob:client:DoBusNpc')
-                        exports["indigo-core"]:HideText()
+                        exports["qb-core"]:HideText()
                         PolyZone:destroy()
                         break
                     end
                 until not inRange
             end)
         else
-            exports["indigo-core"]:HideText()
+            exports["qb-core"]:HideText()
             inRange = false
         end
     end)
@@ -247,7 +247,7 @@ RegisterNetEvent('indigo-busjob:client:DoBusNpc', function()
             PolyZone:onPlayerInOut(function(isPointInside)
                 if isPointInside then
                     inRange = true
-                    exports["indigo-core"]:DrawText(Lang:t('info.busstop_text'), 'rgb(220, 20, 60)')
+                    exports["qb-core"]:DrawText(Lang:t('info.busstop_text'), 'rgb(220, 20, 60)')
                     CreateThread(function()
                         repeat
                             Wait(5)
@@ -273,14 +273,14 @@ RegisterNetEvent('indigo-busjob:client:DoBusNpc', function()
                                 GetDeliveryLocation()
                                 NpcData.NpcTaken = true
                                 TriggerServerEvent('indigo-busjob:server:NpcPay')
-                                exports["indigo-core"]:HideText()
+                                exports["qb-core"]:HideText()
                                 PolyZone:destroy()
                                 break
                             end
                         until not inRange
                     end)
                 else
-                    exports["indigo-core"]:HideText()
+                    exports["qb-core"]:HideText()
                     inRange = false
                 end
             end)
@@ -309,21 +309,21 @@ CreateThread(function()
                     repeat
                         Wait(5)
                         if not inVeh then
-                            exports["indigo-core"]:DrawText(Lang:t('info.busstop_text'), 'left')
+                            exports["qb-core"]:DrawText(Lang:t('info.busstop_text'), 'left')
                             if IsControlJustReleased(0, 38) then
                                 busGarage()
-                                exports["indigo-core"]:HideText()
+                                exports["qb-core"]:HideText()
                                 break
                             end
                         else
-                            exports["indigo-core"]:DrawText(Lang:t('info.bus_stop_work'), 'left')
+                            exports["qb-core"]:DrawText(Lang:t('info.bus_stop_work'), 'left')
                             if IsControlJustReleased(0, 38) then
                                 if (not NpcData.Active or NpcData.Active and NpcData.NpcTaken == false) then
                                     if IsPedInAnyVehicle(PlayerPedId(), false) then
                                         BusData.Active = false;
                                         DeleteVehicle(GetVehiclePedIsIn(PlayerPedId()))
                                         RemoveBlip(NpcData.NpcBlip)
-                                        exports["indigo-core"]:HideText()
+                                        exports["qb-core"]:HideText()
                                         resetNpcTask()
                                         break
                                     end
@@ -335,7 +335,7 @@ CreateThread(function()
                     until not inRange
                 end)
             else
-                exports["indigo-core"]:HideText()
+                exports["qb-core"]:HideText()
                 inRange = false
             end
         end

@@ -16,7 +16,7 @@ files {
 }
 
 dependencies {
-    'indigo-core'
+    'qb-core'
 }
 
 lua54 'yes'

@@ -1,4 +1,4 @@
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 
 local washers = {
     {x=1135.70, y=-992.30, z=46.11, h=99.29},

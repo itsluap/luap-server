@@ -66,7 +66,7 @@
 
 ## Installation:
 - Add slushy.png to your inventory/html/images folder
-- Add 'slushy' to indigo-core/shared/items.lua
+- Add 'slushy' to qb-core/shared/items.lua
 ```lua
 ['slushy']                      = {['name'] = 'slushy',                     ['label'] = 'Slushy',                   ['weight'] = 750,       ['type'] = 'item',      ['image'] = 'slushy.png',       ['unique'] = true,      ['useable'] = true,     ['shouldClose'] = true,     ['combinable'] = nil,   ['description'] = 'A nice cold drink in the coldest place in San Andreas'},
 ```
@@ -162,7 +162,7 @@ end)
 - xViperAG https://github.com/xViperAG - New rework
 - xThrasherrr https://github.com/xThrasherrr - New Rework
 - NoobySloth - Created Prison Shank Model
-- indigo-core Framework - For creating the framework!
+- qb-core Framework - For creating the framework!
 - Jimathy666 - Inspiration on the Locker Spawn (jim-mechanic)
 
 -----------------------------------------------------------------------------------------------------------------

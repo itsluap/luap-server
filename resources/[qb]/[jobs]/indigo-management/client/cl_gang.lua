@@ -1,4 +1,4 @@
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 local PlayerGang = QBCore.Functions.GetPlayerData().gang
 local shownGangMenu = false
 local DynamicMenuItems = {}
@@ -6,7 +6,7 @@ local DynamicMenuItems = {}
 -- UTIL
 local function CloseMenuFullGang()
     exports['indigo-menu']:closeMenu()
-    exports['indigo-core']:HideText()
+    exports['qb-core']:HideText()
     shownGangMenu = false
 end
 
@@ -274,11 +274,11 @@ CreateThread(function()
                                 if #(pos - coords) <= 1.5 then
                                     nearGangmenu = true
                                     if not shownGangMenu then
-                                        exports['indigo-core']:DrawText('[E] Open Gang Management', 'left')
+                                        exports['qb-core']:DrawText('[E] Open Gang Management', 'left')
                                     end
 
                                     if IsControlJustReleased(0, 38) then
-                                        exports['indigo-core']:HideText()
+                                        exports['qb-core']:HideText()
                                         TriggerEvent("qb-gangmenu:client:OpenMenu")
                                     end
                                 end

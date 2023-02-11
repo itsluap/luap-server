@@ -1,5 +1,5 @@
 # indigo-keyminigame
-Keys Mini-Game For indigo-core
+Keys Mini-Game For qb-core
 
 # License
 

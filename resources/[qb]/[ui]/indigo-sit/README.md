@@ -5,7 +5,7 @@ Orignial - https://github.com/boostless/esx_sit
 
 ## Requirements
 
-indigo-core - https://github.com/qbcore-framework/indigo-core
+qb-core - https://github.com/qbcore-framework/qb-core
 
 indigo-target - https://github.com/BerkieBb/indigo-target
 

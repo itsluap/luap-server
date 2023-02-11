@@ -1,4 +1,4 @@
-QBCore = exports['indigo-core']:GetCoreObject()
+QBCore = exports['qb-core']:GetCoreObject()
 local currentDealer = nil
 local dealerIsHome = false
 local waitingDelivery = nil
@@ -75,7 +75,7 @@ local function KnockDoorAnim(home)
                 Lang:t("info.fred_knock_message", {firstName = myData.charinfo.firstname})
             }
         })
-        exports['indigo-core']:DrawText(Lang:t("info.other_dealers_button"), 'left')
+        exports['qb-core']:DrawText(Lang:t("info.other_dealers_button"), 'left')
         AwaitingInput()
     else
         TriggerServerEvent("InteractSound_SV:PlayOnSource", "knock_door", 0.2)
@@ -214,22 +214,22 @@ function AwaitingInput()
         while waitingKeyPress do
             if not dealerIsHome then
                 if IsControlPressed(0, 38) then
-                    exports['indigo-core']:KeyPressed()
+                    exports['qb-core']:KeyPressed()
                     KnockDealerDoor()
                 end
             elseif dealerIsHome then
                 if IsControlJustPressed(0, 38) then
                     OpenDealerShop()
-                    exports['indigo-core']:KeyPressed()
+                    exports['qb-core']:KeyPressed()
                     waitingKeyPress = false
                 end
                 if IsControlJustPressed(0, 47) then
                     if waitingDelivery then
-                        exports['indigo-core']:KeyPressed()
+                        exports['qb-core']:KeyPressed()
                         waitingKeyPress = false
                     end
                     RequestDelivery()
-                    exports['indigo-core']:KeyPressed()
+                    exports['qb-core']:KeyPressed()
                     dealerIsHome = false
                     waitingKeyPress = false
                 end
@@ -323,15 +323,15 @@ function InitZones()
         dealerCombo:onPlayerInOut(function(isPointInside)
             if isPointInside then
                 if not dealerIsHome then
-                    exports['indigo-core']:DrawText(Lang:t("info.knock_button"),'left')
+                    exports['qb-core']:DrawText(Lang:t("info.knock_button"),'left')
                     AwaitingInput()
                 elseif dealerIsHome then
-                    exports['indigo-core']:DrawText(Lang:t("info.other_dealers_button"), 'left')
+                    exports['qb-core']:DrawText(Lang:t("info.other_dealers_button"), 'left')
                     AwaitingInput()
                 end
             else
                 waitingKeyPress = false
-                exports['indigo-core']:HideText()
+                exports['qb-core']:HideText()
             end
         end)
     end
@@ -400,11 +400,11 @@ RegisterNetEvent('indigo-drugs:client:setLocation', function(locationData)
         drugDeliveryZone:onPlayerInOut(function(isPointInside)
             if isPointInside then
                 local inDeliveryZone = true
-                exports['indigo-core']:DrawText(Lang:t("info.deliver_items_button", {itemAmount = activeDelivery["amount"], itemLabel = QBCore.Shared.Items[activeDelivery["itemData"]["item"]]["label"]}),'left')
+                exports['qb-core']:DrawText(Lang:t("info.deliver_items_button", {itemAmount = activeDelivery["amount"], itemLabel = QBCore.Shared.Items[activeDelivery["itemData"]["item"]]["label"]}),'left')
                 CreateThread(function()
                     while inDeliveryZone do
                         if IsControlJustPressed(0, 38) then
-                            exports['indigo-core']:KeyPressed()
+                            exports['qb-core']:KeyPressed()
                             DeliverStuff()
                             waitingDelivery = nil
                             break
@@ -414,7 +414,7 @@ RegisterNetEvent('indigo-drugs:client:setLocation', function(locationData)
                 end)
             else
                 inDeliveryZone = false
-                exports['indigo-core']:HideText()
+                exports['qb-core']:HideText()
             end
         end)
     end

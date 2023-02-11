@@ -1,5 +1,5 @@
 # indigo-apartments
-Apartments System for indigo-core Framework :office:
+Apartments System for qb-core Framework :office:
 
 # License
 
@@ -21,7 +21,7 @@ Apartments System for indigo-core Framework :office:
 
 
 ## Dependencies
-- [indigo-core](https://github.com/qbcore-framework/indigo-core)
+- [qb-core](https://github.com/qbcore-framework/qb-core)
 - [indigo-clothing](https://github.com/qbcore-framework/indigo-clothing) - To save outfits
 - [indigo-houses](https://github.com/qbcore-framework/indigo-houses) - House logic
 - [indigo-interior](https://github.com/qbcore-framework/indigo-interior) - Interior logic
@@ -48,7 +48,7 @@ Apartments System for indigo-core Framework :office:
 - Import `indigo-apartments.sql` in your database
 - Add the following code to your server.cfg/resouces.cfg
 ```
-ensure indigo-core
+ensure qb-core
 ensure indigo-interior
 ensure indigo-weathersync
 ensure indigo-clothing

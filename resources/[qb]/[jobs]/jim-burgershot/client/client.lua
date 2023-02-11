@@ -1,4 +1,4 @@
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 
 PlayerJob = {}
 isLoggedIn = false
@@ -617,7 +617,7 @@ Citizen.CreateThread(function()
                     NearAnything = true
                     if not ShowingInteraction then
                         ShowingInteraction = true
-                        exports['indigo-core']:DrawText('Drive Thru', 'left')
+                        exports['qb-core']:DrawText('Drive Thru', 'left')
                         exports['pma-voice']:addPlayerToCall(878914, 'Phone')
                     end
                 end
@@ -628,14 +628,14 @@ Citizen.CreateThread(function()
                 if not ShowingInteraction then
                     ShowingInteraction = true
                     TriggerServerEvent('qb-burgershot:server:alert:workers')
-                    exports['indigo-core']:DrawText('Drive Thru', 'left')
+                    exports['qb-core']:DrawText('Drive Thru', 'left')
                     exports['pma-voice']:addPlayerToCall(878914, 'Phone')
                 end
             end
             if not NearAnything then
                 if ShowingInteraction then
                     ShowingInteraction = false
-                    exports['indigo-core']:HideText()
+                    exports['qb-core']:HideText()
                     exports['pma-voice']:removePlayerFromCall(878914, 'Phone')
                 end
                 Citizen.Wait(1000)

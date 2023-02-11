@@ -1,5 +1,5 @@
 # indigo-truckerjob
-Trucker Job For indigo-core
+Trucker Job For qb-core
 
 # License
 

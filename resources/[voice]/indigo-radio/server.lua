@@ -1,4 +1,4 @@
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 
 QBCore.Functions.CreateUseableItem("radio", function(source)
     TriggerClientEvent('indigo-radio:use', source)

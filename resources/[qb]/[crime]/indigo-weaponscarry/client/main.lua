@@ -1,4 +1,4 @@
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 
 --[[
   This is PlayerSlots here we define the Category of the weapons that goes on the Player

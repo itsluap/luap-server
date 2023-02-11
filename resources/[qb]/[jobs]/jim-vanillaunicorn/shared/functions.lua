@@ -1,5 +1,5 @@
-local QBCore = exports['indigo-core']:GetCoreObject()
-RegisterNetEvent('QBCore:Client:UpdateObject', function() QBCore = exports['indigo-core']:GetCoreObject() end)
+local QBCore = exports['qb-core']:GetCoreObject()
+RegisterNetEvent('QBCore:Client:UpdateObject', function() QBCore = exports['qb-core']:GetCoreObject() end)
 
 local time = 1000
 function loadModel(model) if not HasModelLoaded(model) then

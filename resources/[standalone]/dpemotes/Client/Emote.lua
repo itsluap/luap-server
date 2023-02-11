@@ -1,4 +1,4 @@
-QBCore = exports['indigo-core']:GetCoreObject()
+QBCore = exports['qb-core']:GetCoreObject()
 -- You probably shouldnt touch these.
 local AnimationDuration = -1
 local ChosenAnimation = ""

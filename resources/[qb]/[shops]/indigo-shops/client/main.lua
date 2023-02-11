@@ -1,4 +1,4 @@
-local QBCore = exports["indigo-core"]:GetCoreObject()
+local QBCore = exports["qb-core"]:GetCoreObject()
 local PlayerData = QBCore.Functions.GetPlayerData()
 local inChips = false
 local currentShop, currentData
@@ -108,10 +108,10 @@ local function listenForControl()
         while listen do
             if IsControlJustPressed(0, 38) then -- E
                 if inChips then
-                    exports["indigo-core"]:KeyPressed()
+                    exports["qb-core"]:KeyPressed()
                     TriggerServerEvent("indigo-shops:server:sellChips")
                 else
-                    exports["indigo-core"]:KeyPressed()
+                    exports["qb-core"]:KeyPressed()
                     openShop(currentShop, currentData)
                 end
                 listen = false
@@ -258,10 +258,10 @@ if not Config.UseTarget then
             if isPointInside then
                 currentShop = zone.name
                 currentData = Config.Locations[zone.name]
-                exports["indigo-core"]:DrawText(Lang:t("info.open_shop"))
+                exports["qb-core"]:DrawText(Lang:t("info.open_shop"))
                 listenForControl()
             else
-                exports["indigo-core"]:HideText()
+                exports["qb-core"]:HideText()
                 listen = false
             end
         end)
@@ -270,10 +270,10 @@ if not Config.UseTarget then
         sellChips:onPlayerInOut(function(isPointInside)
             if isPointInside then
                 inChips = true
-                exports["indigo-core"]:DrawText(Lang:t("info.sell_chips"))
+                exports["qb-core"]:DrawText(Lang:t("info.sell_chips"))
             else
                 inChips = false
-                exports["indigo-core"]:HideText()
+                exports["qb-core"]:HideText()
             end
         end)
     end)

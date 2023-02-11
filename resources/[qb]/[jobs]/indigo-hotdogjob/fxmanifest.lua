@@ -7,7 +7,7 @@ version '1.0.0'
 ui_page 'html/ui.html'
 
 shared_scripts {
-    '@indigo-core/shared/locale.lua',
+    '@qb-core/shared/locale.lua',
     'locales/en.lua',
     'locales/*.lua',
     'config.lua'

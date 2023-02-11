@@ -1,4 +1,4 @@
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 
 
 -- exports['indigo-phone']:RemoveCrypto(Player, type, amount)

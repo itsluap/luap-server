@@ -1,5 +1,5 @@
 # indigo-truckrobbery
-Armored Truck Robbery For indigo-core
+Armored Truck Robbery For qb-core
 
 # License
 

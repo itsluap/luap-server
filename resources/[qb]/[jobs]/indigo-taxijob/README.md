@@ -1,5 +1,5 @@
 # indigo-taxijob
-Taxi Job For indigo-core
+Taxi Job For qb-core
 
 # License
 

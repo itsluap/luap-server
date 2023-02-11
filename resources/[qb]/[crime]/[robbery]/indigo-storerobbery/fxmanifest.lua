@@ -8,7 +8,7 @@ ui_page 'html/index.html'
 
 shared_scripts {
     'config.lua',
-    '@indigo-core/shared/locale.lua',
+    '@qb-core/shared/locale.lua',
     'locales/en.lua', -- Change to the language you want
 }
 client_script 'client/main.lua'

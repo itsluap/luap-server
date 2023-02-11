@@ -1,5 +1,5 @@
 # indigo-hotdogjob
-Hot Dog Job For indigo-core
+Hot Dog Job For qb-core
 
 # License
 

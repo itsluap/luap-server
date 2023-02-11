@@ -1,5 +1,5 @@
 # indigo-towjob
-Towing Job For indigo-core
+Towing Job For qb-core
 
 # License
 

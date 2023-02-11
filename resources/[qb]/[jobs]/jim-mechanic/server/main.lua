@@ -1,4 +1,4 @@
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 
 -- ITEM CHECKS --
 AddEventHandler('onResourceStart', function(r) if GetCurrentResourceName() ~= r then return end

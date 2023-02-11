@@ -1,4 +1,4 @@
-QBCore = exports['indigo-core']:GetCoreObject()
+QBCore = exports['qb-core']:GetCoreObject()
 
 local plateModel = "prop_fib_badge"
 local plateModel2 = "prop_fib_badge"

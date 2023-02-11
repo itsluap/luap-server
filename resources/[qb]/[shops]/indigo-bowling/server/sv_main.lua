@@ -1,4 +1,4 @@
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 
 QBCore.Functions.CreateUseableItem("bowlingball", function(source, item)
     local Player = QBCore.Functions.GetPlayer(source)

@@ -1,8 +1,8 @@
 # indigo-ambulancejob
-EMS Job and Death/Wound Logic for indigo-core Framework :ambulance:
+EMS Job and Death/Wound Logic for qb-core Framework :ambulance:
 
 ## Dependencies
-- [indigo-core](https://github.com/qbcore-framework/indigo-core) (Required)
+- [qb-core](https://github.com/qbcore-framework/qb-core) (Required)
 - [indigo-phone](https://github.com/qbcore-framework/indigo-phone) (Required)
 - [indigo-target](https://github.com/BerkieBb/indigo-target) (Optional)
 - [PolyZone](https://github.com/mkafrin/PolyZone) (Required)

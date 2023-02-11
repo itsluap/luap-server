@@ -1,5 +1,5 @@
 # indigo-busjob
-Bus Job For indigo-core
+Bus Job For qb-core
 
 # License
 

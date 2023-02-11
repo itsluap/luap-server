@@ -22,5 +22,5 @@ server_scripts {
 }
 
 dependencies {
-	'indigo-core'
+	'qb-core'
 }

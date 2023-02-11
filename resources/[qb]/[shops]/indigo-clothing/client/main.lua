@@ -1,4 +1,4 @@
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 local creatingCharacter = false
 local cam = -1
 local headingToCam = GetEntityHeading(PlayerPedId())
@@ -487,17 +487,17 @@ else
                 zoneName = zone.name
                 inZone = true
                 if zoneName == 'surgeon' then
-                    exports['indigo-core']:DrawText('[E] - Plastic Surgery', 'left')
+                    exports['qb-core']:DrawText('[E] - Plastic Surgery', 'left')
                 elseif zoneName == 'clothing' then
-                    exports['indigo-core']:DrawText('[E] - Clothing Shop', 'left')
+                    exports['qb-core']:DrawText('[E] - Clothing Shop', 'left')
                 elseif zoneName == 'barber' then
-                    exports['indigo-core']:DrawText('[E] - Barber', 'left')
+                    exports['qb-core']:DrawText('[E] - Barber', 'left')
                 elseif zoneName == 'tattoo' then
-                    exports['indigo-core']:DrawText('[E] - Tattoo Shop', 'left')
+                    exports['qb-core']:DrawText('[E] - Tattoo Shop', 'left')
                 end
             else
                 inZone = false
-                exports['indigo-core']:HideText()
+                exports['qb-core']:HideText()
             end
         end)
 
@@ -520,11 +520,11 @@ else
                 if (job == Config.ClothingRooms[zoneID].requiredJob) then
                     zoneName = zoneID
                     inZone = true
-                    exports['indigo-core']:DrawText('[E] - Clothing Shop', 'left')
+                    exports['qb-core']:DrawText('[E] - Clothing Shop', 'left')
                 end
             else
                 inZone = false
-                exports['indigo-core']:HideText()
+                exports['qb-core']:HideText()
             end
         end)
     end)

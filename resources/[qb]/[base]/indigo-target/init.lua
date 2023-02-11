@@ -114,12 +114,12 @@ local function ItemCheck() return true end
 local function CitizenCheck() return true end
 
 CreateThread(function()
-	local state = GetResourceState('indigo-core')
+	local state = GetResourceState('qb-core')
 	if state ~= 'missing' then
 		local timeout = 0
 		while state ~= 'started' and timeout <= 100 do
 			timeout += 1
-			state = GetResourceState('indigo-core')
+			state = GetResourceState('qb-core')
 			Wait(0)
 		end
 		Config.Standalone = false
@@ -139,7 +139,7 @@ CreateThread(function()
 			Wait(1000)
 		end
 	else
-		local QBCore = exports['indigo-core']:GetCoreObject()
+		local QBCore = exports['qb-core']:GetCoreObject()
 		local PlayerData = QBCore.Functions.GetPlayerData()
 
 		ItemCheck = QBCore.Functions.HasItem

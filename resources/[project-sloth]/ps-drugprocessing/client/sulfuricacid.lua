@@ -1,7 +1,7 @@
 local spawnedSulfuricAcidBarrels = 0
 local SulfuricAcidBarrels = {}
 local inSulfuricFarm = false
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 
 local function ValidateSulfuricAcidCoord(plantCoord)
 	local validate = true

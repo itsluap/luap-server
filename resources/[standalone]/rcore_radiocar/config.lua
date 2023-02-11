@@ -31,11 +31,11 @@ Config.GetQBCoreObject = function()
     local objectType = 1
 
     if objectType == 1 then
-        return exports['indigo-core']:GetCoreObject()
+        return exports['qb-core']:GetCoreObject()
     end
 
     if objectType == 2 then
-        return exports['indigo-core']:GetSharedObject()
+        return exports['qb-core']:GetSharedObject()
     end
 
     if objectType == 3 then

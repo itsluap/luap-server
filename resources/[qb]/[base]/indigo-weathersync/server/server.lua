@@ -1,4 +1,4 @@
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 local CurrentWeather = Config.StartWeather
 local baseTime = Config.BaseTime
 local timeOffset = Config.TimeOffset

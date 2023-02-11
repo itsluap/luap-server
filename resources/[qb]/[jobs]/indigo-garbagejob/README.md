@@ -1,4 +1,4 @@
-# Garbage Job V2 For indigo-core
+# Garbage Job V2 For qb-core
 
 # Rework Update
 - Job now pays per bag delivered on a configured scale.

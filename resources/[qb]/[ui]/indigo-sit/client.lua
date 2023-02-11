@@ -1,4 +1,4 @@
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 local debugProps, sitting, lastPos, currentSitCoords, currentScenario, occupied = {}
 local disableControls = false
 local currentObj = nil

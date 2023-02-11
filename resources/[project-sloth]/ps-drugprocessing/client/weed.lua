@@ -1,7 +1,7 @@
 local spawnedWeeds = 0
 local weedPlants = {}
 local isPickingUp, isProcessing, inWeedField = false, false, false
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 
 local function ValidateWeedCoord(plantCoord)
 	local validate = true

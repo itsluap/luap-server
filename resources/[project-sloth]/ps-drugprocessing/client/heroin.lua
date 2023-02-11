@@ -1,7 +1,7 @@
 local spawnedPoppys = 0
 local PoppyPlants = {}
 local isPickingUp, isProcessing, inHeroinField = false, false, false
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 
 local function ValidateHeroinCoord(plantCoord)
 	local validate = true

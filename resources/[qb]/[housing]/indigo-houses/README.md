@@ -1,5 +1,5 @@
 # indigo-houses
-Real Estate for indigo-core Framework :house_with_garden:
+Real Estate for qb-core Framework :house_with_garden:
 
 # License
 
@@ -20,7 +20,7 @@ Real Estate for indigo-core Framework :house_with_garden:
     along with this program.  If not, see <https://www.gnu.org/licenses/>
 
 ## Dependencies
-- [indigo-core](https://github.com/qbcore-framework/indigo-core)
+- [qb-core](https://github.com/qbcore-framework/qb-core)
 - [indigo-radialmenu](https://github.com/qbcore-framework/indigo-radialmenu) - For the menu in screenshots
 - [qb-anticheat](https://github.com/qbcore-framework/qb-anticheat) - Anti Cheat 
 - [indigo-phone](https://github.com/qbcore-framework/indigo-phone) - Houses app
@@ -89,7 +89,7 @@ Real Estate for indigo-core Framework :house_with_garden:
 - Import `indigo-houses.sql` in your database
 - Add the following code to your server.cfg/resouces.cfg
 ```
-ensure indigo-core
+ensure qb-core
 ensure indigo-radialmenu
 ensure qb-anticheat
 ensure indigo-phone

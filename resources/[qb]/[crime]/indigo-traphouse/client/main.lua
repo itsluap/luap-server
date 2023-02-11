@@ -1,4 +1,4 @@
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 local PlayerData = {}
 local ClosestTraphouse = nil
 local InsideTraphouse = false
@@ -57,9 +57,9 @@ local function RegisterTraphouseEntranceZone(traphouseID, traphouseData)
 
     zone:onPlayerInOut(function (isPointInside)
         if isPointInside then
-            exports['indigo-core']:DrawText('[E] ' .. Lang:t('targetInfo.enter'), 'left')
+            exports['qb-core']:DrawText('[E] ' .. Lang:t('targetInfo.enter'), 'left')
         else
-            exports['indigo-core']:HideText()
+            exports['qb-core']:HideText()
         end
 
         isInsideEntranceTarget = isPointInside
@@ -98,9 +98,9 @@ local function RegisterTraphouseInteractionZone(traphouseID, traphouseData)
 
     zone:onPlayerInOut(function (isPointInside)
         if isPointInside then
-            exports['indigo-core']:DrawText('[E] ' .. Lang:t('targetInfo.options'), 'left')
+            exports['qb-core']:DrawText('[E] ' .. Lang:t('targetInfo.options'), 'left')
         else
-            exports['indigo-core']:HideText()
+            exports['qb-core']:HideText()
             TriggerEvent('indigo-traphouse:client:target:CloseMenu')
         end
 
@@ -174,9 +174,9 @@ local function RegisterTraphouseExitZone(coords, traphouseID, traphouseData)
 
     zone:onPlayerInOut(function (isPointInside)
         if isPointInside then
-            exports['indigo-core']:DrawText('[E] ' .. Lang:t("targetInfo.leave"), 'left')
+            exports['qb-core']:DrawText('[E] ' .. Lang:t("targetInfo.leave"), 'left')
         else
-            exports['indigo-core']:HideText()
+            exports['qb-core']:HideText()
         end
 
         isInsideExitTarget = isPointInside
@@ -574,7 +574,7 @@ CreateThread(function ()
                     wait = 0
                     if IsControlJustPressed(0, 38) then
                         TriggerEvent("indigo-traphouse:client:EnterTraphouse")
-                        exports['indigo-core']:HideText()
+                        exports['qb-core']:HideText()
                     end
                 end
             else
@@ -600,7 +600,7 @@ CreateThread(function ()
                     wait = 0
                     if IsControlJustPressed(0, 38) then
                         LeaveTraphouse(ClosestTraphouse, data)
-                        exports['indigo-core']:HideText()
+                        exports['qb-core']:HideText()
                     end
                 end
 
@@ -608,7 +608,7 @@ CreateThread(function ()
                     wait = 0
                     if IsControlJustPressed(0, 38) then
                         OpenHeaderMenu(data)
-                        exports['indigo-core']:HideText()
+                        exports['qb-core']:HideText()
                     end
                 end
             end

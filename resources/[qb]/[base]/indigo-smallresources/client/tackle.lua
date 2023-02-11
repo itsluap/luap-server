@@ -1,4 +1,4 @@
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 local isLoggedIn = LocalPlayer.state.isLoggedIn
 
 local function TackleAnim()

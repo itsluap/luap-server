@@ -1,7 +1,7 @@
 Config = {}
 
 Config.Core = 'QBCore'
-Config.CoreObject = 'indigo-core'
+Config.CoreObject = 'qb-core'
 Config.TriggerName = 'qb-'
 Config.ScriptName = 'tattoo'
 

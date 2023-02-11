@@ -1,4 +1,4 @@
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 
 QBCore.Functions.CreateCallback('indigo-phone:server:GetAvailableTaxiDrivers', function(_, cb)
     local TaxiDrivers = {}

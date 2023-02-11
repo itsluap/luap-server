@@ -1,5 +1,5 @@
 # indigo-weapons
-Weapon Logic Script For indigo-core
+Weapon Logic Script For qb-core
 
 # License
 

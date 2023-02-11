@@ -2,7 +2,7 @@
 
 
 
-**ATENTION: THIS SCRIPT USES THE LATEST VERSION OF THE [RADIALMENU](https://github.com/qbcore-framework/indigo-radialmenu) AND [indigo-core](https://github.com/qbcore-framework/indigo-core)**
+**ATENTION: THIS SCRIPT USES THE LATEST VERSION OF THE [RADIALMENU](https://github.com/qbcore-framework/indigo-radialmenu) AND [qb-core](https://github.com/qbcore-framework/qb-core)**
 
 This is a indigo-garages script that uses the radialmenu to retrieve and park vehicles.
 Almost everything is fully customizable to the last bit!
@@ -11,7 +11,7 @@ Almost everything is fully customizable to the last bit!
 
 ## Dependencies
  - [indigo-radialmenu](https://github.com/qbcore-framework/indigo-radialmenu)
- - [indigo-core](https://github.com/qbcore-framework/indigo-core)
+ - [qb-core](https://github.com/qbcore-framework/qb-core)
 
 ## Installation
 

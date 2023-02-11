@@ -3,7 +3,7 @@
 New qb-bossmenu / qb-gangmenu converted into one resource using indigo-menu and indigo-input, with SQL support for society funds!
 
 ## Dependencies
-- [indigo-core](https://github.com/qbcore-framework/indigo-core)
+- [qb-core](https://github.com/qbcore-framework/qb-core)
 - [indigo-smallresources](https://github.com/qbcore-framework/indigo-smallresources) (For the Logs)
 - [indigo-input](https://github.com/qbcore-framework/indigo-input)
 - [indigo-menu](https://github.com/qbcore-framework/indigo-menu)

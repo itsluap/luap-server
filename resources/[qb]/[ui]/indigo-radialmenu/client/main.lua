@@ -1,4 +1,4 @@
-QBCore = exports['indigo-core']:GetCoreObject()
+QBCore = exports['qb-core']:GetCoreObject()
 PlayerData = QBCore.Functions.GetPlayerData() -- Setting this for when you restart the resource in game
 local inRadialMenu = false
 

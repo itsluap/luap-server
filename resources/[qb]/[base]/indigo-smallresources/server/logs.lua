@@ -1,4 +1,4 @@
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 
 local Webhooks = {
     ['default'] = 'https://discordapp.com/api/webhooks/1035048969061011466/hphpHPUY6LGLC0z_BdSWx7hRXnlpnh99OIXGDNrSQ6Bn34aWmeXB81AGS13sv_lQH_b6',

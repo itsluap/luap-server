@@ -1,6 +1,6 @@
 -- Variables
 
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 local meterIsOpen = false
 local meterActive = false
 local lastLocation = nil
@@ -598,7 +598,7 @@ function createNpcPickUpLocation()
         if isPlayerInside then
             if whitelistedVehicle() and not isInsidePickupZone and not NpcData.NpcTaken then
                 isInsidePickupZone = true
-                exports['indigo-core']:DrawText(Lang:t("info.call_npc"), Config.DefaultTextLocation)
+                exports['qb-core']:DrawText(Lang:t("info.call_npc"), Config.DefaultTextLocation)
                 callNpcPoly()
             end
         else
@@ -620,7 +620,7 @@ function createNpcDelieveryLocation()
         if isPlayerInside then
             if whitelistedVehicle() and not isInsideDropZone and NpcData.NpcTaken then
                 isInsideDropZone = true
-                exports['indigo-core']:DrawText(Lang:t("info.drop_off_npc"), Config.DefaultTextLocation)
+                exports['qb-core']:DrawText(Lang:t("info.drop_off_npc"), Config.DefaultTextLocation)
                 dropNpcPoly()
             end
         else
@@ -635,7 +635,7 @@ function callNpcPoly()
             local ped = PlayerPedId()
             if isInsidePickupZone then
                 if IsControlJustPressed(0, 38) then
-                    exports['indigo-core']:KeyPressed()
+                    exports['qb-core']:KeyPressed()
                     local veh = GetVehiclePedIsIn(ped, 0)
                     local maxSeats, freeSeat = GetVehicleMaxNumberOfPassengers(veh)
 
@@ -681,7 +681,7 @@ function dropNpcPoly()
             local ped = PlayerPedId()
             if isInsideDropZone then
                 if IsControlJustPressed(0, 38) then
-                    exports['indigo-core']:KeyPressed()
+                    exports['qb-core']:KeyPressed()
                     local veh = GetVehiclePedIsIn(ped, 0)
                     TaskLeaveVehicle(NpcData.Npc, veh, 0)
                     SetEntityAsMissionEntity(NpcData.Npc, false, true)
@@ -727,12 +727,12 @@ function setupCabParkingLocation()
     taxiParking:onPlayerInOut(function(isPlayerInside)
         if isPlayerInside and not Notified and Config.UseTarget then
             if whitelistedVehicle() then
-                exports['indigo-core']:DrawText(Lang:t("info.vehicle_parking"), Config.DefaultTextLocation)
+                exports['qb-core']:DrawText(Lang:t("info.vehicle_parking"), Config.DefaultTextLocation)
                 Notified = true
                 isPlayerInsideZone = true
             end
         else
-            exports['indigo-core']:HideText()
+            exports['qb-core']:HideText()
             Notified = false
             isPlayerInsideZone = false
         end
@@ -744,7 +744,7 @@ CreateThread(function()
     while true do
         if isPlayerInsideZone then
             if IsControlJustReleased(0, 38) then
-                exports['indigo-core']:KeyPressed()
+                exports['qb-core']:KeyPressed()
                 if IsPedInAnyVehicle(PlayerPedId(), false) then
                     local ped = PlayerPedId()
                     local vehicle = GetVehiclePedIsIn(ped, false)

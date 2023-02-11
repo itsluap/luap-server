@@ -1,4 +1,4 @@
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 --========================================================== Brakes
 --Add Brakes
 RegisterNetEvent('jim-mechanic:client:applyBrakes', function(level)

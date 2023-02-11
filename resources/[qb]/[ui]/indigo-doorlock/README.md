@@ -5,7 +5,7 @@ This doorlock system is based on [nui_doorlock by thelindat](https://github.com/
 
 ## Dependencies
 
-* [indigo-core](https://github.com/qbcore-framework/indigo-core)
+* [qb-core](https://github.com/qbcore-framework/qb-core)
 * [indigo-input](https://github.com/qbcore-framework/indigo-input) - For Making New Doors
 * [indigo-lockpick](https://github.com/qbcore-framework/indigo-lockpick) - For Lockpicking Doors
 

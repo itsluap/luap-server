@@ -1,4 +1,4 @@
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 isLoggedIn = false
 local spawnedCocaLeaf = 0
 local CocaPlants = {}

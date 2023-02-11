@@ -1,4 +1,4 @@
-local QBCore = exports["indigo-core"]:GetCoreObject()
+local QBCore = exports["qb-core"]:GetCoreObject()
 local isOpen = false
 local tabletObj = nil
 local tabletDict = "amb@code_human_in_bus_passenger_idles@female@tablet@base"

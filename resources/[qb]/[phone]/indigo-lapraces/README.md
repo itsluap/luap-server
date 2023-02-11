@@ -1,5 +1,5 @@
 # indigo-lapraces
-Race Track Creation For indigo-core
+Race Track Creation For qb-core
 
 # License
 

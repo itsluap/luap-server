@@ -1,5 +1,5 @@
 # indigo-vehiclesales
-Used Car Sale for indigo-core Framework :blue_car:
+Used Car Sale for qb-core Framework :blue_car:
 
 # License
 
@@ -21,7 +21,7 @@ Used Car Sale for indigo-core Framework :blue_car:
 
 
 ## Dependencies
-- [indigo-core](https://github.com/qbcore-framework/indigo-core)
+- [qb-core](https://github.com/qbcore-framework/qb-core)
 - [indigo-garages](https://github.com/qbcore-framework/indigo-garages) - Vehicle ownership
 - [indigo-phone](https://github.com/qbcore-framework/indigo-phone) - For the e-mail
 - [qb-logs](https://github.com/qbcore-framework/qb-logs) - Keep event logs
@@ -45,7 +45,7 @@ Used Car Sale for indigo-core Framework :blue_car:
 - Import `indigo-vehiclesales.sql` in your database
 - Add the following code to your server.cfg/resouces.cfg
 ```
-ensure indigo-core
+ensure qb-core
 ensure indigo-garages
 ensure indigo-phone
 ensure qb-logs

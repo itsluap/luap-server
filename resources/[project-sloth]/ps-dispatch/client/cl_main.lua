@@ -1,7 +1,7 @@
 PlayerData = {}
 PlayerJob = {}
 isLoggedIn = true
-QBCore = exports['indigo-core']:GetCoreObject()
+QBCore = exports['qb-core']:GetCoreObject()
 local blips = {}
 
 -- core related

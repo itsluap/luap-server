@@ -12,7 +12,7 @@ Add the item images to your inventory script
 For Example:
 	`[qb]` > `qb-inventory` > `html` > `images`
 
-THESE GO IN YOUR SHARED.LUA IN indigo-core:
+THESE GO IN YOUR SHARED.LUA IN qb-core:
 
 Under the QBShared.Items in items.lua
 

@@ -179,7 +179,7 @@ Read this before opening a ticket.
 - The toolbox is only usable by mechanics, if `Config.RequiresJob` is enabled
 - This item can only be used **OUTSIDE** of a vehicle.
 - This displays information about the vehicle's currently installed peformance modifications
-	- It will attempt to grab information from indigo-core's `vehicles.lua` to display vehicle names and the value, it does this by searching for a matching "model hash".
+	- It will attempt to grab information from qb-core's `vehicles.lua` to display vehicle names and the value, it does this by searching for a matching "model hash".
 	- It will list the names and levels of each installed modification, and even if they can be installed on the vehicle at all.
 	- If there is an installed item you can select it in the shown menu, then you will be the given a confirmation option to remove it. Doing so will set it back to stock and place the specific upgrade in your inventory.
 - At the bottom of this menu is a quick shortcut to what is displayed by the `/checkmods` command, which displays a simple list of all possible cosmetic mods that can applied to the current vehicle
@@ -757,7 +757,7 @@ RepairFuelCost = 8,
 
 ### Item installation
 - Add the image files from the zip to your `qb-inventory > html > images` folder
-- Add these lines to your indigo-core > shared lua under the Items section
+- Add these lines to your qb-core > shared lua under the Items section
 
 ```lua
 --Jim-Mechanic Vehicles
@@ -863,7 +863,7 @@ RepairFuelCost = 8,
 - When successfully added the mechboards will show the vehicle and plate number
 
 ## Updating core events
-- To add the ability to save RGB paints, their colour finishes and drift/bulletproof tires you need to change two functions in your indigo-core/client/functions.lua
+- To add the ability to save RGB paints, their colour finishes and drift/bulletproof tires you need to change two functions in your qb-core/client/functions.lua
 - Replace `GetVehicleProperties` and `SetVehicleProperties` functions with these:
 ```lua
 function QBCore.Functions.GetVehicleProperties(vehicle)

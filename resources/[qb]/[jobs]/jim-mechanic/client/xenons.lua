@@ -1,4 +1,4 @@
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 --========================================================== Headlights
 RegisterNetEvent('jim-mechanic:client:applyXenons', function()
 	if not jobChecks() then return end

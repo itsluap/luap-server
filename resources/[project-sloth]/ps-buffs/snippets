@@ -130,7 +130,7 @@ Notes. You need to replace the following snippets in core. Do not ADD
 
 If you add this block of code instead of replacing, you will get error In server console with hungerRate is nil or thirstRate is nil!
 
---------------indigo-core/client/loops.lua---------------------------------------------------------------------------
+--------------qb-core/client/loops.lua---------------------------------------------------------------------------
 CreateThread(function()
     while true do
         local sleep = 0
@@ -153,7 +153,7 @@ end)
 --
 --
 
-indigo-core/server/events.lua - Replace the event with this new event--------------------------------------------------------
+qb-core/server/events.lua - Replace the event with this new event--------------------------------------------------------
 RegisterNetEvent('QBCore:UpdatePlayer', function(hungerRate, thirstRate)
     print('Updating Player', hungerRate, thirstRate)
     local src = source
@@ -184,7 +184,7 @@ end)
 
 
 
-Replace this in indigo-core/client/events.lua---------------------------------------------------------------------------------------------
+Replace this in qb-core/client/events.lua---------------------------------------------------------------------------------------------
 RegisterNetEvent('QBCore:Player:UpdatePlayerData', function()
     local hungerRate = 0
     local thirstRate = 0

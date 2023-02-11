@@ -1,4 +1,4 @@
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 local PlayerData = QBCore.Functions.GetPlayerData()
 local config = Config
 local UIConfig = UIConfig
@@ -627,7 +627,7 @@ RegisterNetEvent('hud:client:ToggleAirHud', function()
     showAltitude = not showAltitude
 end)
 
-RegisterNetEvent('hud:client:UpdateNeeds', function(newHunger, newThirst) -- Triggered in indigo-core
+RegisterNetEvent('hud:client:UpdateNeeds', function(newHunger, newThirst) -- Triggered in qb-core
     hunger = newHunger
     thirst = newThirst
 end)

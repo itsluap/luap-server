@@ -5,7 +5,7 @@ local Casings = {}
 local BloodDrops = {}
 local FingerDrops = {}
 local Objects = {}
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 local updatingCops = false
 
 -- Functions

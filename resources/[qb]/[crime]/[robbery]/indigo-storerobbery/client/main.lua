@@ -1,4 +1,4 @@
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 local currentRegister = 0
 local currentSafe = 0
 local copsCalled = false

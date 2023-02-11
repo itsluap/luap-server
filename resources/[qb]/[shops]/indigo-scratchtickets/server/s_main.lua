@@ -1,7 +1,7 @@
 local players = {}
 local totalSumChance = 0
 
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 
 CreateThread(function()
   for _,priceInfo in pairs(Config.Prices) do

@@ -1,4 +1,4 @@
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 --========================================================== Transmission
 RegisterNetEvent('jim-mechanic:client:applyTransmission', function(level)
 	if not jobChecks() then return end

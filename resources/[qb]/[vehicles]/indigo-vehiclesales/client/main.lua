@@ -1,4 +1,4 @@
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 local Zone = nil
 local TextShown = false
 local AcitveZone = {}
@@ -408,14 +408,14 @@ CreateThread(function()
 
         SpawnZone[k]:onPlayerInOut(function(isPointInside)
             if isPointInside and IsPedInAnyVehicle(PlayerPedId(), false) then
-                exports['indigo-core']:DrawText(Lang:t("menu.interaction"), 'left')
+                exports['qb-core']:DrawText(Lang:t("menu.interaction"), 'left')
                 TextShown = true
                 Listen4Control()
             else
                 listen = false
                 if TextShown then
                     TextShown = false
-                    exports['indigo-core']:HideText()
+                    exports['qb-core']:HideText()
                 end
             end
         end)
@@ -430,14 +430,14 @@ CreateThread(function()
 
                 VehicleZones:onPlayerInOut(function(isPointInside)
                     if isPointInside and IsCarSpawned(k2) then
-                        exports['indigo-core']:DrawText(Lang:t("menu.view_contract_int"), 'left')
+                        exports['qb-core']:DrawText(Lang:t("menu.view_contract_int"), 'left')
                         TextShown = true
                         Listen4Control(k2)
                     else
                         listen = false
                         if TextShown then
                             TextShown = false
-                            exports['indigo-core']:HideText()
+                            exports['qb-core']:HideText()
                         end
                     end
                 end)

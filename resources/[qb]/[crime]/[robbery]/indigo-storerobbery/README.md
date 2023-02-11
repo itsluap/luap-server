@@ -1,5 +1,5 @@
 # indigo-storerobbery
-Store Robberies For indigo-core
+Store Robberies For qb-core
 
 # License
 

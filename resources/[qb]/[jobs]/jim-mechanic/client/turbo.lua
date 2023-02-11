@@ -1,4 +1,4 @@
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 --========================================================== Turbo
 RegisterNetEvent('jim-mechanic:client:applyTurbo', function()
 	if not jobChecks() then return end

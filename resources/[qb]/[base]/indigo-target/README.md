@@ -16,7 +16,7 @@ indigo-target is a targeting solution that allows interaction with any predefine
 
 ## Optional Dependency
 
-* [QBCore](https://github.com/qbcore-framework/indigo-core)
+* [QBCore](https://github.com/qbcore-framework/qb-core)
 
 ## Information
 

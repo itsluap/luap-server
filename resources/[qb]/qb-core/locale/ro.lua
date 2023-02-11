@@ -1,5 +1,5 @@
 --[[
-Romanian base language translation for indigo-core
+Romanian base language translation for qb-core
 Translation done by wanderrer (Martin Riggs#0807 on Discord)
 ]]--
 local Translations = {

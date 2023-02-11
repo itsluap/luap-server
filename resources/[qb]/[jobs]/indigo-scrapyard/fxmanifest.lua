@@ -9,7 +9,7 @@ shared_script {
     '@PolyZone/BoxZone.lua',
     '@PolyZone/ComboZone.lua',
     'config.lua',
-    '@indigo-core/shared/locale.lua',
+    '@qb-core/shared/locale.lua',
     'locales/en.lua', -- Change to the language you want
 }
 server_scripts {

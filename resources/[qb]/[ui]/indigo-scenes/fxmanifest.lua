@@ -2,7 +2,7 @@ fx_version 'cerulean'
 games { 'gta5' }
 
 author 'ItsANoBrainer'
-description 'indigo-core Scenes'
+description 'qb-core Scenes'
 version '1.0.9'
 
 ui_page 'html/index.html'
@@ -25,7 +25,7 @@ server_scripts {
 }
 
 shared_scripts {
-	'@indigo-core/shared/locale.lua',
+	'@qb-core/shared/locale.lua',
 	'locales/en.lua',
 	'/shared/config.lua',
 }

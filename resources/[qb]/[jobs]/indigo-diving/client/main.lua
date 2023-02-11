@@ -1,4 +1,4 @@
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 local isLoggedIn = LocalPlayer.state['isLoggedIn']
 local zones = {}
 local currentArea = 0
@@ -132,10 +132,10 @@ local function setDivingLocation(divingLocation)
             zones[k]:onPlayerInOut(function(inside)
                 if inside then
                     currentArea = k
-                    exports['indigo-core']:DrawText(Lang:t("info.collect_coral_dt"))
+                    exports['qb-core']:DrawText(Lang:t("info.collect_coral_dt"))
                 else
                     currentArea = 0
-                    exports['indigo-core']:HideText()
+                    exports['qb-core']:HideText()
                 end
             end)
         end
@@ -194,10 +194,10 @@ local function createSeller()
             zone:onPlayerInOut(function(inside)
                 if inside then
                     inSellerZone = true
-                    exports['indigo-core']:DrawText(Lang:t("info.sell_coral_dt"))
+                    exports['qb-core']:DrawText(Lang:t("info.sell_coral_dt"))
                 else
                     inSellerZone = false
-                    exports['indigo-core']:HideText()
+                    exports['qb-core']:HideText()
                 end
             end)
         end
@@ -387,9 +387,9 @@ CreateThread(function()
                 sleep = 0
                 if IsControlJustPressed(0, 51) then -- E
                     takeCoral(currentArea)
-                    exports['indigo-core']:KeyPressed()
+                    exports['qb-core']:KeyPressed()
                     Wait(500)
-                    exports['indigo-core']:HideText()
+                    exports['qb-core']:HideText()
                     sleep = 3000
                 end
             end
@@ -398,9 +398,9 @@ CreateThread(function()
                 sleep = 0
                 if IsControlJustPressed(0, 51) then -- E
                     sellCoral()
-                    exports['indigo-core']:KeyPressed()
+                    exports['qb-core']:KeyPressed()
                     Wait(500)
-                    exports['indigo-core']:HideText()
+                    exports['qb-core']:HideText()
                     sleep = 3000
                 end
             end

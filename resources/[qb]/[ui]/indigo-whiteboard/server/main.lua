@@ -1,4 +1,4 @@
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 
 RegisterNetEvent('indigo-whiteboard:changewhiteboard', function(url, room)
     local Player = QBCore.Functions.GetPlayer(source)

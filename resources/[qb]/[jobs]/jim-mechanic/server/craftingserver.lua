@@ -1,4 +1,4 @@
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 
 local function StashTidy(stash, stashId)
 	if Config.Debug then print("^5Debug^7: ^3StashTidy^7: ^2Tidying Stash^7 - '^6"..stashId.."^7'") end

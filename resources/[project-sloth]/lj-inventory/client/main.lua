@@ -1,5 +1,5 @@
 -- Variables
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 local PlayerData = QBCore.Functions.GetPlayerData()
 local inInventory = false
 local currentWeapon = nil
@@ -351,7 +351,7 @@ RegisterNetEvent('QBCore:Client:OnPlayerUnload', function()
 end)
 
 RegisterNetEvent('QBCore:Client:UpdateObject', function()
-    QBCore = exports['indigo-core']:GetCoreObject()
+    QBCore = exports['qb-core']:GetCoreObject()
 end)
 
 RegisterNetEvent('QBCore:Player:SetPlayerData', function(val)

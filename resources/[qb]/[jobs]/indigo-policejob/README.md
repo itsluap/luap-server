@@ -1,5 +1,5 @@
 # indigo-policejob
-Police Job for indigo-core Framework :police_officer:
+Police Job for qb-core Framework :police_officer:
 
 # License
 
@@ -20,7 +20,7 @@ Police Job for indigo-core Framework :police_officer:
     along with this program.  If not, see <https://www.gnu.org/licenses/>
 
 ## Dependencies
-- [indigo-core](https://github.com/qbcore-framework/indigo-core)
+- [qb-core](https://github.com/qbcore-framework/qb-core)
 - [qb-bossmenu](https://github.com/qbcore-framework/qb-bossmenu) - For the boss menu
 - [indigo-garages](https://github.com/qbcore-framework/indigo-garages) - For the vehicle spawner
 - [indigo-clothing](https://github.com/qbcore-framework/indigo-clothing) - For the locker room
@@ -96,7 +96,7 @@ Police Job for indigo-core Framework :police_officer:
 - Download the script and put it in the `[qb]` directory.
 - Add the following code to your server.cfg/resouces.cfg
 ```
-ensure indigo-core
+ensure qb-core
 ensure indigo-policejob
 ```
 

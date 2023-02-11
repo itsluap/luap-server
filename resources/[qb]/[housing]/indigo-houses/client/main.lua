@@ -1,4 +1,4 @@
-QBCore = exports['indigo-core']:GetCoreObject()
+QBCore = exports['qb-core']:GetCoreObject()
 IsInside = false
 ClosestHouse = nil
 HasHouseKey = false
@@ -164,7 +164,7 @@ local function RegisterStashTarget()
 
     stashTargetBox:onPlayerInOut(function (isPointInside)
         if isPointInside and not entering and isOwned then
-             --exports['indigo-core']:DrawText(Lang:t("target.open_stash"), 'left')
+             --exports['qb-core']:DrawText(Lang:t("target.open_stash"), 'left')
             exports['ps-ui']:DisplayText(Lang:t("target.open_stash"), 'primary')
             --print('showing stash ui')
         else

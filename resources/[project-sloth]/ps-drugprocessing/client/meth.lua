@@ -1,6 +1,6 @@
 local  isProcessing, isTempChangeU, isTempChangeD, isBagging = false, false, false, false
 local Methlab = false
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 
 local function ProcessChemicals()
 	isProcessing = true

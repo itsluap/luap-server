@@ -1,4 +1,4 @@
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 --========================================================== Armour
 -- Add Armour
 RegisterNetEvent('jim-mechanic:client:applyArmour', function()

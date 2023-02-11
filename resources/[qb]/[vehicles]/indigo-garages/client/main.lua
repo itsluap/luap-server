@@ -1,4 +1,4 @@
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 local PlayerData = {}
 local PlayerGang = {}
 local PlayerJob = {}
@@ -405,14 +405,14 @@ local function CreateGarageZone()
     combo:onPlayerInOut(function(isPointInside, l, zone)
         if isPointInside and IsAuthorizedToAccessGarage(zone.name) then
             CurrentGarage = zone.name
-            exports['indigo-core']:DrawText(Garages[CurrentGarage]['drawText'], DrawTextPosition)
+            exports['qb-core']:DrawText(Garages[CurrentGarage]['drawText'], DrawTextPosition)
         else
             CurrentGarage = nil
             if MenuItemId ~= nil then
                 exports['indigo-radialmenu']:RemoveOption(MenuItemId)
                 MenuItemId = nil
             end
-            exports['indigo-core']:HideText()
+            exports['qb-core']:HideText()
         end
     end)
 end
@@ -452,9 +452,9 @@ local function RegisterHousePoly(house)
     zone:onPlayerInOut(function(isPointInside)
         if isPointInside then
             CurrentHouseGarage = house
-            exports['indigo-core']:DrawText(HouseParkingDrawText, DrawTextPosition)
+            exports['qb-core']:DrawText(HouseParkingDrawText, DrawTextPosition)
         else
-            exports['indigo-core']:HideText()
+            exports['qb-core']:HideText()
             if MenuItemId ~= nil then
                 exports['indigo-radialmenu']:RemoveOption(MenuItemId)
                 MenuItemId = nil

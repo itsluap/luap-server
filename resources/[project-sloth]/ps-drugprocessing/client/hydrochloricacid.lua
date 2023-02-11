@@ -1,7 +1,7 @@
 local spawnedHydrochloricAcidBarrels = 0
 local HydrochloricAcidBarrels = {}
 local inhydrochloricField = false
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 
 
 local function ValidateHydrochloricAcidCoord(plantCoord)

@@ -13,7 +13,7 @@ In collaboration with [OnlyCats](https://github.com/onlycats) who helped reorgan
 # Dependencies
 * [qbcore framework](https://github.com/qbcore-framework)
 * [indigo-target](https://github.com/BerkieBb/indigo-target)
-* [indigo-core](https://github.com/qbcore-framework/indigo-core)
+* [qb-core](https://github.com/qbcore-framework/qb-core)
 * [qb-logs](https://github.com/qbcore-framework/qb-logs)
 * [indigo-traphouse](https://github.com/qbcore-framework/indigo-traphouse)
 * [indigo-radio](https://github.com/qbcore-framework/indigo-radio)
@@ -22,7 +22,7 @@ In collaboration with [OnlyCats](https://github.com/onlycats) who helped reorgan
 
 # How to install lj-inventory (Latest QBCore Update)
 * Download source files from github
-* Make sure you have latest updated [indigo-core](https://github.com/qbcore-framework/indigo-core)
+* Make sure you have latest updated [qb-core](https://github.com/qbcore-framework/qb-core)
 * Make sure you have latest updated [indigo-smallresources](https://github.com/qbcore-framework/indigo-smallresources)
 * Make sure you have latest updated [indigo-weapons](https://github.com/qbcore-framework/indigo-weapons)
 * Drag source files into your resources folder

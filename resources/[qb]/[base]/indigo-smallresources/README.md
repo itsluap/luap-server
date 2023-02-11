@@ -1,5 +1,5 @@
 # indigo-smallresources
-Base scripts for indigo-core Framework :building_construction:
+Base scripts for qb-core Framework :building_construction:
 
 # License
 
@@ -21,7 +21,7 @@ Base scripts for indigo-core Framework :building_construction:
 
 
 ## Dependencies
-- [indigo-core](https://github.com/qbcore-framework/indigo-core)
+- [qb-core](https://github.com/qbcore-framework/qb-core)
 
 ## Features
 - Consumeable foods/beverages/drinks/drugs (sandwich, water_bottle, tosti, beer, vodka etc.)
@@ -59,7 +59,7 @@ Base scripts for indigo-core Framework :building_construction:
 - Download the script and put it in the `[qb]` directory.
 - Add the following code to your server.cfg/resouces.cfg
 ```
-ensure indigo-core
+ensure qb-core
 ensure indigo-smallresources
 ```
 

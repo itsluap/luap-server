@@ -1,4 +1,4 @@
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 --========================================================== Interior
 RegisterNetEvent('jim-mechanic:client:Interior:Apply', function(data)
 	local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)

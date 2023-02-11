@@ -1,7 +1,7 @@
 # QBUS Realistic Smoking V2
 # After purchasing the script, go to our discord, create a ticket and send us the ip address of your server and transaction id
 
-indigo-core/shared.lua
+qb-core/shared.lua
 # Items 
 	["redw"] 						 = {["name"] = "redw", 			 	  	  		["label"] = "Redwood Pack", 			["weight"] = 200, 		["type"] = "item", 		["image"] = "redw.png", 				["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Take out your cigarettes"},
 	["marlboro"] 				     = {["name"] = "marlboro", 			 	  	  	["label"] = "Marlboro Pack", 			["weight"] = 200, 		["type"] = "item", 		["image"] = "marlboro.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Take out your cigarettes"},

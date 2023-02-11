@@ -7,7 +7,7 @@ author 'JDev'
 
 shared_scripts {
     'config.lua',
-    '@indigo-core/shared/locale.lua',
+    '@qb-core/shared/locale.lua',
     'locales/en.lua',
 }
 

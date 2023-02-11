@@ -1,4 +1,4 @@
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 local Player = nil
 local CruisedSpeed = 0
 local vehicleClasses = {

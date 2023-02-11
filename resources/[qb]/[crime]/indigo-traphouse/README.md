@@ -1,5 +1,5 @@
 # indigo-traphouse
-Player Trap Houses For indigo-core
+Player Trap Houses For qb-core
 
 # License
 

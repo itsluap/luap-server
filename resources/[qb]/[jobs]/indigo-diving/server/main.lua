@@ -1,4 +1,4 @@
-local QBCore = exports['indigo-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 local currentDivingArea = math.random(1, #Config.CoralLocations)
 local availableCoral = {}
 

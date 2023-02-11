@@ -8,7 +8,7 @@ Citizen.CreateThread(function()
 		TriggerEvent("esx:getSharedObject",function(obj) Functions = obj end)
 	end
 	if cfg.framework == "qbcore" then
-		Functions = exports["indigo-core"]:GetCoreObject()
+		Functions = exports["qb-core"]:GetCoreObject()
 	end
 	if cfg.framework == "vrp" then
 		local Proxy = module("vrp","lib/Proxy")
