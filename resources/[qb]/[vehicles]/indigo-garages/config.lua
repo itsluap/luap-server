@@ -1600,8 +1600,8 @@ Garages = {
             vector2(-247.04827880859, -1312.2078857422),
             vector2(-247.09149169922, -1318.0657958984)
             },
-            ['minZ'] = 25.0,  -- min height of the parking zone
-            ['maxZ'] = 28.0,  -- max height of the parking zone
+            ['minZ'] = 31.0,  -- min height of the parking zone
+            ['maxZ'] = 34.0,  -- max height of the parking zone
         },
         label = 'Benny\'s Auto Parking',
         type = 'public',
