@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 local walkstyle = 'default'
 local walktable = {}
 
@@ -59,7 +59,7 @@ CreateThread(function()
         local ped = PlayerPedId()
         local walkstyleCurrent = GetPedMovementClipset(ped)
         if walkstyleCurrent ~= joaat(walkstyle) or walkstyle == "default" then
-            if not exports['qb-assets']:IsCrouched() then
+            if not exports['indigo-assets']:IsCrouched() then
                 SetWalks(walkstyle)
             end
         end

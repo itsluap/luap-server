@@ -1,5 +1,5 @@
 # indigo-apartments
-Apartments System for QB-Core Framework :office:
+Apartments System for indigo-core Framework :office:
 
 # License
 
@@ -21,12 +21,12 @@ Apartments System for QB-Core Framework :office:
 
 
 ## Dependencies
-- [qb-core](https://github.com/qbcore-framework/qb-core)
+- [indigo-core](https://github.com/qbcore-framework/indigo-core)
 - [indigo-clothing](https://github.com/qbcore-framework/indigo-clothing) - To save outfits
 - [indigo-houses](https://github.com/qbcore-framework/indigo-houses) - House logic
 - [indigo-interior](https://github.com/qbcore-framework/indigo-interior) - Interior logic
-- [qb-weathersync](https://github.com/qbcore-framework/qb-weathersync) - To desync weather while inside
-- [qb-spawn](https://github.com/qbcore-framework/qb-spawn) - To spawn the player at apartment if last location was in apartment
+- [indigo-weathersync](https://github.com/qbcore-framework/indigo-weathersync) - To desync weather while inside
+- [indigo-spawn](https://github.com/qbcore-framework/indigo-spawn) - To spawn the player at apartment if last location was in apartment
 
 ## Screenshots
 ![Inside Apartment](https://i.imgur.com/mp3XL4Y.jpg)
@@ -48,12 +48,12 @@ Apartments System for QB-Core Framework :office:
 - Import `indigo-apartments.sql` in your database
 - Add the following code to your server.cfg/resouces.cfg
 ```
-ensure qb-core
+ensure indigo-core
 ensure indigo-interior
-ensure qb-weathersync
+ensure indigo-weathersync
 ensure indigo-clothing
 ensure indigo-houses
-ensure qb-spawn
+ensure indigo-spawn
 ensure indigo-apartments
 ```
 

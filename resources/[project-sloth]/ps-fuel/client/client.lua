@@ -1,6 +1,6 @@
 -- Variables
 
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 local fuelSynced = false
 local inBlacklisted = false
 local inGasStation = false
@@ -53,7 +53,7 @@ CreateThread(function()
 		--"engine",
 	}
 
-	exports['qb-target']:AddTargetBone(bones, {
+	exports['indigo-target']:AddTargetBone(bones, {
 		options = {
 			{
 				type = "client",
@@ -390,7 +390,7 @@ end)
 
 -- Target Export
 
-exports['qb-target']:AddTargetModel(props, {
+exports['indigo-target']:AddTargetModel(props, {
 	options = {
 		{
 			type = "client",

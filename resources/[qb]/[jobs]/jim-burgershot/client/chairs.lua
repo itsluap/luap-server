@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 
 local burgerseat = 0
 local sitting = false
@@ -7,7 +7,7 @@ local Chairs = {}
 CreateThread(function()
 	for k, v in pairs(Config.Chairs) do
 		Chairs["BurgerChair"..k] =
-		exports['qb-target']:AddBoxZone("BurgerChair"..k, v.coords.xyz, 0.7, 0.7, { name="BurgerChair"..k, heading = v.coords.w, debugPoly=Config.Debug, minZ = v.coords.z-1.2, maxZ = v.coords.z+0.1, },
+		exports['indigo-target']:AddBoxZone("BurgerChair"..k, v.coords.xyz, 0.7, 0.7, { name="BurgerChair"..k, heading = v.coords.w, debugPoly=Config.Debug, minZ = v.coords.z-1.2, maxZ = v.coords.z+0.1, },
 			{ options = { { event = "jim-burgershot:Chair", icon = "fas fa-chair", label = Loc[Config.Lan].info["Sit Down"], loc = v.coords, stand = v.stand }, },
 				distance = 2.2
 		})
@@ -296,5 +296,5 @@ elseif Config.MLO == "NP" then
 end
 
 AddEventHandler('onResourceStop', function(r) if r ~= GetCurrentResourceName() then return end
-	for k in pairs(Chairs) do exports['qb-target']:RemoveZone(k) end
+	for k in pairs(Chairs) do exports['indigo-target']:RemoveZone(k) end
 end)

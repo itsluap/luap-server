@@ -1,5 +1,5 @@
 -- Variables
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 local PlayerData = QBCore.Functions.GetPlayerData()
 local inInventory = false
 local currentWeapon = nil
@@ -319,7 +319,7 @@ local function CreateItemDrop(index)
     PlaceObjectOnGroundProperly(dropItem)
     FreezeEntityPosition(dropItem, true)
 	if Config.UseTarget then
-		exports['qb-target']:AddTargetEntity(dropItem, {
+		exports['indigo-target']:AddTargetEntity(dropItem, {
 			options = {
 				{
 					icon = 'fa-solid fa-bag-shopping',
@@ -351,7 +351,7 @@ RegisterNetEvent('QBCore:Client:OnPlayerUnload', function()
 end)
 
 RegisterNetEvent('QBCore:Client:UpdateObject', function()
-    QBCore = exports['qb-core']:GetCoreObject()
+    QBCore = exports['indigo-core']:GetCoreObject()
 end)
 
 RegisterNetEvent('QBCore:Player:SetPlayerData', function(val)
@@ -1018,7 +1018,7 @@ CreateThread(function()
 end)
 
 
-    --qb-target
+    --indigo-target
     RegisterNetEvent("inventory:client:Crafting", function(dropId)
         local crafting = {}
         crafting.label = "Crafting"
@@ -1044,7 +1044,7 @@ end)
         `prop_toolchest_05`,
         `prop_toolchest_04`,
     }
-    exports['qb-target']:AddTargetModel(toolBoxModels, {
+    exports['indigo-target']:AddTargetModel(toolBoxModels, {
             options = {
                 {
                     event = "inventory:client:WeaponAttachmentCrafting",
@@ -1059,7 +1059,7 @@ end)
             },
         distance = 1.0
     })
-    exports['qb-target']:AddTargetModel(Config.VendingObjects, {
+    exports['indigo-target']:AddTargetModel(Config.VendingObjects, {
         options = {
             {
                 event = "inventory:client:OpenVending",
@@ -1070,7 +1070,7 @@ end)
         },
     distance = 1.0
     })
-    exports['qb-target']:AddTargetModel(Config.VendingFoodObjects, {
+    exports['indigo-target']:AddTargetModel(Config.VendingFoodObjects, {
         options = {
             {
                 event = "inventory:client:OpenFoodVending",

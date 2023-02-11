@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 local debugProps, sitting, lastPos, currentSitCoords, currentScenario, occupied = {}
 local disableControls = false
 local currentObj = nil
@@ -35,7 +35,7 @@ Citizen.CreateThread(function()
 		table.insert(Sitables, model)
 	end
 	Citizen.Wait(100)
-	exports['qb-target']:AddTargetModel(Sitables, {
+	exports['indigo-target']:AddTargetModel(Sitables, {
         options = {
             {
                 event = "indigo-sit:Sit",

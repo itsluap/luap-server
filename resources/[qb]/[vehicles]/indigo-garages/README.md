@@ -2,7 +2,7 @@
 
 
 
-**ATENTION: THIS SCRIPT USES THE LATEST VERSION OF THE [RADIALMENU](https://github.com/qbcore-framework/indigo-radialmenu) AND [QB-CORE](https://github.com/qbcore-framework/qb-core)**
+**ATENTION: THIS SCRIPT USES THE LATEST VERSION OF THE [RADIALMENU](https://github.com/qbcore-framework/indigo-radialmenu) AND [indigo-core](https://github.com/qbcore-framework/indigo-core)**
 
 This is a indigo-garages script that uses the radialmenu to retrieve and park vehicles.
 Almost everything is fully customizable to the last bit!
@@ -11,7 +11,7 @@ Almost everything is fully customizable to the last bit!
 
 ## Dependencies
  - [indigo-radialmenu](https://github.com/qbcore-framework/indigo-radialmenu)
- - [qb-core](https://github.com/qbcore-framework/qb-core)
+ - [indigo-core](https://github.com/qbcore-framework/indigo-core)
 
 ## Installation
 
@@ -95,7 +95,7 @@ Everything that says optional can be omitted.
 ### parking vehicle using target
 ```
 local garageName = 'pdgarage'
-    exports['qb-target']:AddBoxZone(garageName, vector3(469.51, -992.35, 26.27), 0.2, 0.2, {
+    exports['indigo-target']:AddBoxZone(garageName, vector3(469.51, -992.35, 26.27), 0.2, 0.2, {
         name = garageName,
         debugPoly = true,
         minZ = 26.80,

@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 local PlayerData = QBCore.Functions.GetPlayerData()
 local isLoggedIn = LocalPlayer.state.isLoggedIn
 local playerPed = PlayerPedId()
@@ -147,7 +147,7 @@ local function spawnPeds()
                 }
             end
             if opts then
-                exports['qb-target']:AddTargetEntity(ped, {
+                exports['indigo-target']:AddTargetEntity(ped, {
                     options = {opts},
                     distance = 2.0
                 })
@@ -167,13 +167,13 @@ local function spawnPeds()
                         if inside then
                             if current.drivingschool then
                                 inRangeDrivingSchool = true
-                                exports['qb-core']:DrawText('[E] Take Driving Lessons')
+                                exports['indigo-core']:DrawText('[E] Take Driving Lessons')
                             elseif current.cityhall then
                                 inRangeCityhall = true
-                                exports['qb-core']:DrawText('[E] Open Cityhall')
+                                exports['indigo-core']:DrawText('[E] Open Cityhall')
                             end
                         else
-                            exports['qb-core']:HideText()
+                            exports['indigo-core']:HideText()
                             if current.drivingschool then
                                 inRangeDrivingSchool = false
                             elseif current.cityhall then
@@ -246,7 +246,7 @@ end)
 
 RegisterNUICallback('close', function(_, cb)
     setCityhallPageState(false, false)
-    if not Config.UseTarget and inRangeCityhall then exports['qb-core']:DrawText('[E] Open Cityhall') end -- Reopen interaction when you're still inside the zone
+    if not Config.UseTarget and inRangeCityhall then exports['indigo-core']:DrawText('[E] Open Cityhall') end -- Reopen interaction when you're still inside the zone
     cb('ok')
 end)
 
@@ -314,9 +314,9 @@ CreateThread(function()
                         sleep = 0
                         if IsControlJustPressed(0, 38) then
                             setCityhallPageState(true, true)
-                            exports['qb-core']:KeyPressed()
+                            exports['indigo-core']:KeyPressed()
                             Wait(500)
-                            exports['qb-core']:HideText()
+                            exports['indigo-core']:HideText()
                             sleep = 1000
                         end
                     end
@@ -325,9 +325,9 @@ CreateThread(function()
                     if IsControlJustPressed(0, 38) then
                         TriggerServerEvent('indigo-cityhall:server:sendDriverTest', Config.DrivingSchools[closestDrivingSchool].instructors)
                         sleep = 5000
-                        exports['qb-core']:KeyPressed()
+                        exports['indigo-core']:KeyPressed()
                         Wait(500)
-                        exports['qb-core']:HideText()
+                        exports['indigo-core']:HideText()
                     end
                 end
             end

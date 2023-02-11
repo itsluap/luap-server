@@ -1,4 +1,4 @@
-QBCore = exports['qb-core']:GetCoreObject()
+QBCore = exports['indigo-core']:GetCoreObject()
 inJail = false
 jailTime = 0
 currentJob = nil
@@ -155,7 +155,7 @@ end
 
 local function CreateAllTargets()
 	if not targetsCreated then
-		CheckTime = exports['qb-target']:AddBoxZone("prisontime", vector3(1827.3, 2587.72, 46.01), 0.4, 0.55, {
+		CheckTime = exports['indigo-target']:AddBoxZone("prisontime", vector3(1827.3, 2587.72, 46.01), 0.4, 0.55, {
 			name = "prisontime",
 			heading = 0,
 			debugPoly = Config.DebugPoly,
@@ -181,7 +181,7 @@ local function CreateAllTargets()
 		table.insert(TargetsTable, "prisontime")
 
 		for k,v in pairs(Config.Locations.PrisonBreak) do
-			exports['qb-target']:AddBoxZone("prisonbreak"..k, vector3(v.coords.x, v.coords.y, v.coords.z), v.length, v.width, {
+			exports['indigo-target']:AddBoxZone("prisonbreak"..k, vector3(v.coords.x, v.coords.y, v.coords.z), v.length, v.width, {
 				name = "prisonbreak"..k,
 				heading = v.coords.w,
 				debugPoly = Config.DebugPoly,
@@ -206,7 +206,7 @@ local function CreateAllTargets()
 			table.insert(TargetsTable, "prisonbreak"..k)
 		end
 
-		Canteen = exports['qb-target']:AddBoxZone("prisoncanteen", vector3(1780.95, 2560.05, 45.67), 3.8, 0.5, {
+		Canteen = exports['indigo-target']:AddBoxZone("prisoncanteen", vector3(1780.95, 2560.05, 45.67), 3.8, 0.5, {
 			name = "prisoncanteen",
 			heading = 90,
 			debugPoly = Config.DebugPoly,
@@ -225,7 +225,7 @@ local function CreateAllTargets()
 		})
 		table.insert(TargetsTable, "prisoncanteen")
 
-		Slushy = exports['qb-target']:AddBoxZone("prisonslushy", vector3(1777.64, 2559.97, 45.67), 0.5, 0.7, {
+		Slushy = exports['indigo-target']:AddBoxZone("prisonslushy", vector3(1777.64, 2559.97, 45.67), 0.5, 0.7, {
 			name = "prisonslushy",
 			heading = 0,
 			debugPoly = Config.DebugPoly,
@@ -244,7 +244,7 @@ local function CreateAllTargets()
 		})
 		table.insert(TargetsTable, "prisonslushy")
 
-		Coffee = exports['qb-target']:AddBoxZone("prisoncoffee", vector3(1778.83, 2560.04, 45.67), 0.5, 0.3, {
+		Coffee = exports['indigo-target']:AddBoxZone("prisoncoffee", vector3(1778.83, 2560.04, 45.67), 0.5, 0.3, {
 			name = "prisoncoffee",
 			heading = 0,
 			debugPoly = Config.DebugPoly,
@@ -263,7 +263,7 @@ local function CreateAllTargets()
 		})
 		table.insert(TargetsTable, "prisoncoffee")
 
-		Soda = exports['qb-target']:AddBoxZone("prisonsoda", vector3(1778.26, 2560.02, 45.67), 0.6, 0.55, {
+		Soda = exports['indigo-target']:AddBoxZone("prisonsoda", vector3(1778.26, 2560.02, 45.67), 0.6, 0.55, {
 			name = "prisonsoda",
 			heading = 0,
 			debugPoly = Config.DebugPoly,
@@ -283,7 +283,7 @@ local function CreateAllTargets()
 		table.insert(TargetsTable, "prisonsoda")
 
 		if Config.Crafting then
-			Crafting = exports['qb-target']:AddBoxZone("prisoncrafting", vector3(Config.CraftingLocation.x, Config.CraftingLocation.y, Config.CraftingLocation.z), 1.4, 0.5, {
+			Crafting = exports['indigo-target']:AddBoxZone("prisoncrafting", vector3(Config.CraftingLocation.x, Config.CraftingLocation.y, Config.CraftingLocation.z), 1.4, 0.5, {
 				name = "prisoncrafting",
 				heading = Config.CraftingLocation.w,
 				debugPoly = Config.DebugPoly,
@@ -305,7 +305,7 @@ local function CreateAllTargets()
 		end
 
 		if not Config.QB_PrisonJobs then
-			exports['qb-target']:AddBoxZone("PrisonChinUp", Config.Workout.Chinup.coords, 1, 2.0, {
+			exports['indigo-target']:AddBoxZone("PrisonChinUp", Config.Workout.Chinup.coords, 1, 2.0, {
 				name = "PrisonChinUp",
 				heading = 30,
 				debugPoly = Config.DebugPoly,
@@ -344,7 +344,7 @@ end
 local function DestroyAllTargets()
 	if targetsCreated then
 		for k,v in pairs(TargetsTable) do
-			exports['qb-target']:RemoveZone(v)
+			exports['indigo-target']:RemoveZone(v)
 		end
 
 		targetsCreated = false

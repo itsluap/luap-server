@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 
 RegisterNUICallback('bennys/getitems', function(_, cb)
     local translated = {}
@@ -45,7 +45,7 @@ CreateThread(function()
     SetEntityInvincible(ped, true)
     SetBlockingOfNonTemporaryEvents(ped, true)
 
-    exports['qb-target']:AddTargetEntity(ped, {
+    exports['indigo-target']:AddTargetEntity(ped, {
         options = {
             {
                 label = Lang:t('bennys.warehouse'),

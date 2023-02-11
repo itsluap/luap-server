@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 --========================================================== Tires
 RegisterNetEvent('jim-mechanic:client:Tires:Apply', function(data)
 	local vehicle = getClosest(GetEntityCoords(PlayerPedId())) pushVehicle(vehicle) lookVeh(vehicle)
@@ -92,7 +92,7 @@ RegisterNetEvent('jim-mechanic:client:Tires:Check', function()
 end)
 
 RegisterNetEvent('jim-mechanic:client:smokeCustomMenu', function()
-    local dialog = exports['qb-input']:ShowInput({
+    local dialog = exports['indigo-input']:ShowInput({
         header = Loc[Config.Lan]["smoke"].custom,
         submitText = "Submit",
         inputs = {

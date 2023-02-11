@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 
 RegisterNetEvent('indigo-phone:server:wenmo_givemoney_toID', function(data)
     local src = source

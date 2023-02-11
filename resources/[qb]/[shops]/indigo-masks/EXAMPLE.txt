@@ -1,6 +1,6 @@
 Example to adding more masks 
 
-In qb-core/shared/items.lua add this
+In indigo-core/shared/items.lua add this
 
 ['']  					= {['name'] = '', 			['label'] = '',		['weight'] = 1,  		['type'] = 'item',  	['image'] = 'mask.png',  			['unique'] = true,  	['useable'] = true,  	['shouldClose'] = true,  	['combinable'] = nil, 	['description'] = ''},
 

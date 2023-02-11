@@ -6,7 +6,7 @@ useStandalone = false
 useQBCore = true 
 
 -- Incase you have changed your qbcore resource name
-resourceName = 'qb-core'
+resourceName = 'indigo-core'
 
 -- Registers a usable item for QBCore
 useItem = true 

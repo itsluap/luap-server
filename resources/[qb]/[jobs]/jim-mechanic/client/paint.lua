@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 --========================================================== Paint
 RegisterNetEvent('jim-mechanic:client:Paints:Apply', function(data)
 	local playerPed	= PlayerPedId()

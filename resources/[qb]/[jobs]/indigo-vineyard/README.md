@@ -1,8 +1,8 @@
 # indigo-vineyard
-Vineyard Job For QB-Core
+Vineyard Job For indigo-core
 ## Dependencies
 
-* [qb-core](https://github.com/qbcore-framework/qb-core)
+* [indigo-core](https://github.com/qbcore-framework/indigo-core)
 * [PolyZone](https://github.com/mkafrin/PolyZone)
 
 # License

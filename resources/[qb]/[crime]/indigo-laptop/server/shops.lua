@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 local crateCount = 0
 crates = {} -- Table which stores crate netIDs with its contents ( shop items )
 

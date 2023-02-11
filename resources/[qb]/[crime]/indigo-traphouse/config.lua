@@ -1,7 +1,7 @@
 Config = Config or {}
 
 -- **** IMPORTANT ****
--- UseTarget should only be set to true when using qb-target
+-- UseTarget should only be set to true when using indigo-target
 Config.UseTarget = GetConvar('UseTarget', 'false') == 'true'
 
 Config.MinZOffset = 40

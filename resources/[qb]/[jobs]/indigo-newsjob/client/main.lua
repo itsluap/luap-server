@@ -1,4 +1,4 @@
-QBCore = exports['qb-core']:GetCoreObject()
+QBCore = exports['indigo-core']:GetCoreObject()
 PlayerJob = {}
 
 local function DrawText3D(x, y, z, text)

@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 local currentJobStage = "WAITING"
 local GroupID = 0
 local isGroupLeader = false

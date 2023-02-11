@@ -1,5 +1,5 @@
 # indigo-shops
-Shops For QB-Core
+Shops For indigo-core
 
 # License
 

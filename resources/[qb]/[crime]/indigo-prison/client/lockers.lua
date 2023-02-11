@@ -43,7 +43,7 @@ end)
 
 RegisterNetEvent('indigo-prison:client:ForceOpenLocker', function(data)
     local prisonStash = QBCore.Functions.GetPlayerData().citizenid
-    local locker = exports['qb-input']:ShowInput({
+    local locker = exports['indigo-input']:ShowInput({
         header = Lang:t('info.prison_stash'),
         submitText = "Open Locker",
         inputs = {
@@ -111,7 +111,7 @@ RegisterNetEvent('indigo-prison:client:SpawnLockers', function()
             locker[#locker+1] = CreateObject(`p_cs_locker_01_s`, v.coords.x, v.coords.y, v.coords.z - 1, false, false, false)
             SetEntityHeading(locker[#locker], v.coords.w - 180)
             FreezeEntityPosition(locker[#locker], true)
-            exports['qb-target']:AddBoxZone("lockers"..k, v.coords, 1.5, 1.6, {
+            exports['indigo-target']:AddBoxZone("lockers"..k, v.coords, 1.5, 1.6, {
                 name = "lockers"..k,
                 heading = v.coords.w,
                 debugPoly = false,
@@ -154,7 +154,7 @@ RegisterNetEvent('indigo-prison:client:SpawnLockers', function()
             locker[#locker+1] = CreateObject(`p_cs_locker_01_s`,v.coords.x, v.coords.y, v.coords.z-1,false,false,false)
             SetEntityHeading(locker[#locker], v.coords.w - 180)
             FreezeEntityPosition(locker[#locker], true)
-            exports['qb-target']:AddBoxZone("lockers"..k, v.coords, 1.5, 1.6, {
+            exports['indigo-target']:AddBoxZone("lockers"..k, v.coords, 1.5, 1.6, {
                 name = "lockers"..k,
                 heading = v.coords.w,
                 debugPoly = false,

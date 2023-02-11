@@ -133,7 +133,7 @@ RegisterNetEvent('qb-trunk:client:KidnapGetIn', function(veh)
                                 DetachEntity(ped, true, true)
                                 ClearPedTasks(ped)
                                 inTrunk = false
-                                TriggerServerEvent('qb-smallresources:trunk:server:setTrunkBusy', plate, nil)
+                                TriggerServerEvent('indigo-smallresources:trunk:server:setTrunkBusy', plate, nil)
                                 SetEntityCoords(ped, vehCoords.x, vehCoords.y, vehCoords.z)
                                 SetEntityCollision(PlayerPedId(), true, true)
                                 TrunkCam(false)

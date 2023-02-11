@@ -1,5 +1,5 @@
 # indigo-clothing
-Clothing for QB-Core Framework :dress:
+Clothing for indigo-core Framework :dress:
 
 # License
 
@@ -20,7 +20,7 @@ Clothing for QB-Core Framework :dress:
     along with this program.  If not, see <https://www.gnu.org/licenses/>
 
 ## Dependencies
-- [qb-core](https://github.com/qbcore-framework/qb-core)
+- [indigo-core](https://github.com/qbcore-framework/indigo-core)
 
 ## Screenshots
 ![image](https://user-images.githubusercontent.com/66404074/153545004-6337e685-d3a5-478c-8fa2-e50f4b1d2030.png)
@@ -53,7 +53,7 @@ Clothing for QB-Core Framework :dress:
 - Import `indigo-clothing.sql` in your database
 - Add the following code to your server.cfg/resouces.cfg
 ```
-ensure qb-core
+ensure indigo-core
 ensure indigo-clothing
 ```
 

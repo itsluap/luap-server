@@ -423,7 +423,7 @@ RegisterNetEvent('police:client:EvidenceStashDrawer', function(data)
     if not takeLoc then return end
 
     if #(pos - takeLoc) <= 1.0 then
-        local drawer = exports['qb-input']:ShowInput({
+        local drawer = exports['indigo-input']:ShowInput({
             header = Lang:t('info.evidence_stash', {value = currentEvidence}),
             submitText = "open",
             inputs = {
@@ -513,7 +513,7 @@ if Config.UseTarget then
     CreateThread(function()
         -- Toggle Duty
         for k, v in pairs(Config.Locations["duty"]) do
-            exports['qb-target']:AddBoxZone("PoliceDuty_"..k, vector3(v.x, v.y, v.z), 1, 1, {
+            exports['indigo-target']:AddBoxZone("PoliceDuty_"..k, vector3(v.x, v.y, v.z), 1, 1, {
                 name = "PoliceDuty_"..k,
                 heading = 11,
                 debugPoly = false,
@@ -576,15 +576,15 @@ else
         if isPointInside then
             dutylisten = true
             if not onDuty then
-                exports['qb-core']:DrawText(Lang:t('info.on_duty'),'left')
+                exports['indigo-core']:DrawText(Lang:t('info.on_duty'),'left')
                 dutylistener()
             else
-                exports['qb-core']:DrawText(Lang:t('info.off_duty'),'left')
+                exports['indigo-core']:DrawText(Lang:t('info.off_duty'),'left')
                 dutylistener()
             end
         else
             inDuty = false
-            exports['qb-core']:HideText()
+            exports['indigo-core']:HideText()
         end
     end)
 
@@ -649,10 +649,10 @@ CreateThread(function()
     stashCombo:onPlayerInOut(function(isPointInside, _, _)
         if isPointInside then
             inStash = true
-            exports['qb-core']:DrawText(Lang:t('info.stash_enter'), 'left')
+            exports['indigo-core']:DrawText(Lang:t('info.stash_enter'), 'left')
             stash()
         else
-            exports['qb-core']:HideText()
+            exports['indigo-core']:HideText()
             inStash = false
         end
     end)
@@ -674,12 +674,12 @@ CreateThread(function()
         if isPointInside then
             inTrash = true
             if onDuty then
-                exports['qb-core']:DrawText(Lang:t('info.trash_enter'),'left')
+                exports['indigo-core']:DrawText(Lang:t('info.trash_enter'),'left')
                 trash()
             end
         else
             inTrash = false
-            exports['qb-core']:HideText()
+            exports['indigo-core']:HideText()
         end
     end)
 
@@ -700,12 +700,12 @@ CreateThread(function()
         if isPointInside then
             inFingerprint = true
             if onDuty then
-                exports['qb-core']:DrawText(Lang:t('info.scan_fingerprint'),'left')
+                exports['indigo-core']:DrawText(Lang:t('info.scan_fingerprint'),'left')
                 fingerprint()
             end
         else
             inFingerprint = false
-            exports['qb-core']:HideText()
+            exports['indigo-core']:HideText()
         end
     end)
 
@@ -726,12 +726,12 @@ CreateThread(function()
         if isPointInside then
             inAmoury = true
             if GlobalState.isLEO then
-                exports['qb-core']:DrawText(Lang:t('info.enter_armory'),'left')
+                exports['indigo-core']:DrawText(Lang:t('info.enter_armory'),'left')
                 armoury()
             end
         else
             inAmoury = false
-            exports['qb-core']:HideText()
+            exports['indigo-core']:HideText()
         end
     end)
 
@@ -753,17 +753,17 @@ CreateThread(function()
             inHelicopter = true
             if onDuty then
                 if IsPedInAnyVehicle(PlayerPedId(), false) then
-                    exports['qb-core']:HideText()
-                    exports['qb-core']:DrawText(Lang:t('info.store_heli'), 'left')
+                    exports['indigo-core']:HideText()
+                    exports['indigo-core']:DrawText(Lang:t('info.store_heli'), 'left')
                     heli()
                 else
-                    exports['qb-core']:DrawText(Lang:t('info.take_heli'), 'left')
+                    exports['indigo-core']:DrawText(Lang:t('info.take_heli'), 'left')
                     heli()
                 end
             end
         else
             inHelicopter = false
-            exports['qb-core']:HideText()
+            exports['indigo-core']:HideText()
         end
     end)
 
@@ -786,7 +786,7 @@ CreateThread(function()
             inImpound = true
             if onDuty then
                 if IsPedInAnyVehicle(PlayerPedId(), false) then
-                    exports['qb-core']:DrawText(Lang:t('info.impound_veh'), 'left')
+                    exports['indigo-core']:DrawText(Lang:t('info.impound_veh'), 'left')
                     impound()
                 else
                     local currentSelection = 0
@@ -812,7 +812,7 @@ CreateThread(function()
         else
             inImpound = false
             exports['indigo-menu']:closeMenu()
-            exports['qb-core']:HideText()
+            exports['indigo-core']:HideText()
         end
     end)
 
@@ -834,7 +834,7 @@ CreateThread(function()
             inGarage = true
             if onDuty and GlobalState.isLEO then
                 if IsPedInAnyVehicle(PlayerPedId(), false) then
-                    exports['qb-core']:DrawText(Lang:t('info.store_veh'), 'left')
+                    exports['indigo-core']:DrawText(Lang:t('info.store_veh'), 'left')
 		    garage()
                 else
                     local currentSelection = 0
@@ -860,7 +860,7 @@ CreateThread(function()
         else
             inGarage = false
             exports['indigo-menu']:closeMenu()
-            exports['qb-core']:HideText()
+            exports['indigo-core']:HideText()
         end
     end)
 end)

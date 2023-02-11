@@ -6,7 +6,7 @@ version '2.1.0'
 
 shared_scripts {
     'config.lua',
-    '@qb-core/shared/locale.lua',
+    '@indigo-core/shared/locale.lua',
     'locales/en.lua',
     'locales/*.lua'
 }
@@ -25,10 +25,10 @@ client_scripts {
 }
 
 dependencies {
-    'qb-core',
+    'indigo-core',
     'indigo-interior',
     'indigo-clothing',
-    'qb-weathersync'
+    'indigo-weathersync'
 }
 
 lua54 'yes'

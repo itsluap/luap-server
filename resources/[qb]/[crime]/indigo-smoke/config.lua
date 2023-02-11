@@ -5,7 +5,7 @@ Config.Language = 'en'
 --Version 2.5
 --Script by devcore
 --To get fixes for the new version, come to our discord : https://discord.gg/zcG9KQj3sa
--- in the README you will find the text to insert into qb-core / shared.lua to create items
+-- in the README you will find the text to insert into indigo-core / shared.lua to create items
 
 
 Config.EarCigCommand = 'earcig'

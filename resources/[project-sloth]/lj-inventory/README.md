@@ -12,8 +12,8 @@ Runs at ~ 0.00 to 0.01 ms if you have more optimization suggestions feel free to
 In collaboration with [OnlyCats](https://github.com/onlycats) who helped reorganized and also created some custom images.
 # Dependencies
 * [qbcore framework](https://github.com/qbcore-framework)
-* [qb-target](https://github.com/BerkieBb/qb-target)
-* [qb-core](https://github.com/qbcore-framework/qb-core)
+* [indigo-target](https://github.com/BerkieBb/indigo-target)
+* [indigo-core](https://github.com/qbcore-framework/indigo-core)
 * [qb-logs](https://github.com/qbcore-framework/qb-logs)
 * [indigo-traphouse](https://github.com/qbcore-framework/indigo-traphouse)
 * [qb-radio](https://github.com/qbcore-framework/qb-radio)
@@ -22,9 +22,9 @@ In collaboration with [OnlyCats](https://github.com/onlycats) who helped reorgan
 
 # How to install lj-inventory (Latest QBCore Update)
 * Download source files from github
-* Make sure you have latest updated [qb-core](https://github.com/qbcore-framework/qb-core)
-* Make sure you have latest updated [qb-smallresources](https://github.com/qbcore-framework/qb-smallresources)
-* Make sure you have latest updated [qb-weapons](https://github.com/qbcore-framework/qb-weapons)
+* Make sure you have latest updated [indigo-core](https://github.com/qbcore-framework/indigo-core)
+* Make sure you have latest updated [indigo-smallresources](https://github.com/qbcore-framework/indigo-smallresources)
+* Make sure you have latest updated [indigo-weapons](https://github.com/qbcore-framework/indigo-weapons)
 * Drag source files into your resources folder
 * Rename folder from `lj-inventory-main` to `lj-inventory`
 * Replace all qb-inventory to lj-inventory. 

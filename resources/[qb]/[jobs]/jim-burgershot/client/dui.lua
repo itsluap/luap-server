@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 
 -- Dont touch these
 local inZone
@@ -97,7 +97,7 @@ CreateThread(function()
 	end)
 	for k, v in pairs(PresetList) do
 		Targets[v["tex"].texn] =
-		exports['qb-target']:AddCircleZone(v["tex"].texn, v["coords"], v["radius"], { name=v["tex"].texn, debugPoly=Config.Debug, useZ=true, },
+		exports['indigo-target']:AddCircleZone(v["tex"].texn, v["coords"], v["radius"], { name=v["tex"].texn, debugPoly=Config.Debug, useZ=true, },
 			{ options = {
 					{ type = "client", event = "jim-burgershot:DuiSelect", icon = "fas fa-circle-check", label = Loc[Config.Lan].dui["add_image"], job = JobGrade, tex = v["tex"].texn, size = v["tex"].size, texd = v["tex"].texd  },
 					{ type = "server", event = "jim-burgershot:Server:ChangeDUI", icon = "fas fa-circle-minus", label = Loc[Config.Lan].dui["reset_image"], job = JobGrade, tex = v["tex"].texn, texd = v["tex"].texd, },
@@ -112,7 +112,7 @@ RegisterNetEvent("jim-burgershot:DuiSelect", function(data)
 				"<img src="..duiList[tostring(data.tex)].url.." width=150px onerror='this.onerror=null; this.remove();'><br>"..
 				"Size: ["..tonumber(data.size[1])..", "..tonumber(data.size[2]).."]<br><br>"
 		end
-	local dialog = exports['qb-input']:ShowInput({
+	local dialog = exports['indigo-input']:ShowInput({
         header = image..Loc[Config.Lan].dui["new_url"],
         submitText = Loc[Config.Lan].dui["change"],
         inputs = { { type = 'text', isRequired = true, name = 'url', text = 'HTML Link' } } })
@@ -160,7 +160,7 @@ end)
 
 AddEventHandler('onResourceStop', function(r) if r ~= GetCurrentResourceName() then return end
 	for k, v in pairs(duiList) do
-		exports['qb-target']:RemoveZone(k)
+		exports['indigo-target']:RemoveZone(k)
 		RemoveReplaceTexture(tostring(v.texd), tostring(k))
 		if tostring(v.texd) == "bs_int_txd" then RemoveReplaceTexture("bs_ext_txd", tostring(k)) end
 	end

@@ -1,10 +1,10 @@
 # indigo-cityhall
-City Services for QB-Core Framework / UI Clearly not inspired
+City Services for indigo-core Framework / UI Clearly not inspired
 
 ## Dependencies
-- [qb-core](https://github.com/qbcore-framework/qb-core)
-- [PolyZone](https://github.com/mkafrin/PolyZone) - For Interaction (DrawText and qb-target both require this)
-- [qb-target](https://github.com/BerkieBb/qb-target) - For Interaction (Optional)
+- [indigo-core](https://github.com/qbcore-framework/indigo-core)
+- [PolyZone](https://github.com/mkafrin/PolyZone) - For Interaction (DrawText and indigo-target both require this)
+- [indigo-target](https://github.com/BerkieBb/indigo-target) - For Interaction (Optional)
 - [indigo-phone](https://github.com/qbcore-framework/indigo-phone) - For E-Mail
 
 ## Features
@@ -15,16 +15,16 @@ City Services for QB-Core Framework / UI Clearly not inspired
 - Ability to add multiple cityhall locations
 - Ability to add nultiple driving school locations
 - Ability to take driving lessons
-- qb-target integration, this is optional
-- PolyZone and qb-core DrawText integration, this is optional
+- indigo-target integration, this is optional
+- PolyZone and indigo-core DrawText integration, this is optional
 
 ## Installation
 ### Manual
 - Download the script and put it in the `[qb]` directory.
 - Add the following code to your server.cfg/resources.cfg
 ```
-ensure qb-core
-ensure qb-target # Optional
+ensure indigo-core
+ensure indigo-target # Optional
 ensure indigo-phone
 ensure indigo-cityhall
 ```
@@ -37,10 +37,10 @@ ensure indigo-cityhall
 ![Job Page](https://i.imgur.com/NQLAPpv.png)
 ![CheckMark](https://i.imgur.com/5WHYYsi.png)
 ![Cityhall DrawText Interaction](https://i.imgur.com/Uxh2GZC.png)
-![Cityhall QB-Target Interaction](https://i.imgur.com/K54cMLt.png)
+![Cityhall indigo-target Interaction](https://i.imgur.com/K54cMLt.png)
 ![Driving School Sending And Receiving Mail](https://i.imgur.com/iJof4jI.png)
 ![Driving School DrawText Interaction](https://i.imgur.com/32BPp8f.png)
-![Driving School QB-Target Interaction](https://i.imgur.com/P7jWBsV.png)
+![Driving School indigo-target Interaction](https://i.imgur.com/P7jWBsV.png)
 
 # License
 

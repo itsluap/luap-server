@@ -6,7 +6,7 @@ if Config.FrameWork == 1 then
 end
 
 if Config.FrameWork == 2 then
-    QBCore = exports['qb-core']:GetCoreObject()
+    QBCore = exports['indigo-core']:GetCoreObject()
     ESX = {}
 
     ESX.GetPlayerFromId = function(source)

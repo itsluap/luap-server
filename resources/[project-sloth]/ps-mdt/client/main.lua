@@ -1,4 +1,4 @@
-QBCore = exports['qb-core']:GetCoreObject()
+QBCore = exports['indigo-core']:GetCoreObject()
 local PlayerData = {}
 local CurrentCops = 0
 local isOpen = false

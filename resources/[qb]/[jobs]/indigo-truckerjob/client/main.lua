@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 local PlayerJob = {}
 local JobsDone = 0
 local LocationsDone = {}
@@ -161,7 +161,7 @@ local function CreateZone(type, number)
     end
 
     if Config.UseTarget and type == "main" then
-        exports['qb-target']:AddBoxZone(boxName, coords, size, size, {
+        exports['indigo-target']:AddBoxZone(boxName, coords, size, size, {
             minZ = coords.z - 5.0,
             maxZ = coords.z + 5.0,
             name = boxName,
@@ -345,7 +345,7 @@ local function Deliver()
         if currentCount == CurrentLocation.dropcount then
             LocationsDone[#LocationsDone+1] = CurrentLocation.id
             TriggerServerEvent("indigo-shops:server:RestockShopItems", CurrentLocation.store)
-            exports['qb-core']:HideText()
+            exports['indigo-core']:HideText()
             Delivering = false
             showMarker = false
             TriggerServerEvent('qb-trucker:server:nano')
@@ -415,7 +415,7 @@ RegisterNetEvent('QBCore:Client:OnJobUpdate', function(JobInfo)
     if OldPlayerJob == "trucker" then
         RemoveTruckerBlips()
         zoneCombo:destroy()
-        exports['qb-core']:HideText()
+        exports['indigo-core']:HideText()
         Delivering = false
         showMarker = false
     elseif PlayerJob.name == "trucker" then

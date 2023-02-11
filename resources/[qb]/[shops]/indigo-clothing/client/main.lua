@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 local creatingCharacter = false
 local cam = -1
 local headingToCam = GetEntityHeading(PlayerPedId())
@@ -414,7 +414,7 @@ if Config.UseTarget then
                 }
             end
 
-            exports['qb-target']:AddBoxZone(v.shopType .. k, v.coords, v.length, v.width, {
+            exports['indigo-target']:AddBoxZone(v.shopType .. k, v.coords, v.length, v.width, {
                 name = v.shopType .. k,
                 debugPoly = false,
                 minZ = v.coords.z-1,
@@ -448,7 +448,7 @@ if Config.UseTarget then
                 end
             end
 
-            exports['qb-target']:AddBoxZone('clothing_' .. v.requiredJob .. k, v.coords, v.length, v.width, {
+            exports['indigo-target']:AddBoxZone('clothing_' .. v.requiredJob .. k, v.coords, v.length, v.width, {
                 name = 'clothing_' .. v.requiredJob .. k,
                 debugPoly = false,
                 minZ = v.coords.z - 2,
@@ -487,17 +487,17 @@ else
                 zoneName = zone.name
                 inZone = true
                 if zoneName == 'surgeon' then
-                    exports['qb-core']:DrawText('[E] - Plastic Surgery', 'left')
+                    exports['indigo-core']:DrawText('[E] - Plastic Surgery', 'left')
                 elseif zoneName == 'clothing' then
-                    exports['qb-core']:DrawText('[E] - Clothing Shop', 'left')
+                    exports['indigo-core']:DrawText('[E] - Clothing Shop', 'left')
                 elseif zoneName == 'barber' then
-                    exports['qb-core']:DrawText('[E] - Barber', 'left')
+                    exports['indigo-core']:DrawText('[E] - Barber', 'left')
                 elseif zoneName == 'tattoo' then
-                    exports['qb-core']:DrawText('[E] - Tattoo Shop', 'left')
+                    exports['indigo-core']:DrawText('[E] - Tattoo Shop', 'left')
                 end
             else
                 inZone = false
-                exports['qb-core']:HideText()
+                exports['indigo-core']:HideText()
             end
         end)
 
@@ -520,11 +520,11 @@ else
                 if (job == Config.ClothingRooms[zoneID].requiredJob) then
                     zoneName = zoneID
                     inZone = true
-                    exports['qb-core']:DrawText('[E] - Clothing Shop', 'left')
+                    exports['indigo-core']:DrawText('[E] - Clothing Shop', 'left')
                 end
             else
                 inZone = false
-                exports['qb-core']:HideText()
+                exports['indigo-core']:HideText()
             end
         end)
     end)

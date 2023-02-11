@@ -1,5 +1,5 @@
 -- Variables
-QBCore = exports['qb-core']:GetCoreObject()
+QBCore = exports['indigo-core']:GetCoreObject()
 isHandcuffed = false
 cuffType = 1
 isEscorted = false

@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 
 --- Global Variables ---
 PlayerData = QBCore.Functions.GetPlayerData()
@@ -93,7 +93,7 @@ local PublicPhoneobject = {
     -1559354806
 }
 
-exports["qb-target"]:AddTargetModel(PublicPhoneobject, {
+exports["indigo-target"]:AddTargetModel(PublicPhoneobject, {
     options = {
         {
             type = "client",

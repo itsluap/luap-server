@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 
 local hiddenprocess = vector3(1086.55, -3198.07, -38.99) -- Change this to whatever location you want. This is server side to prevent people from dumping the coords
 local hiddenstart = vector3(2122.27, 4784.9, 40.97) -- Change this to whatever location you want. This is server side to prevent people from dumping the coords

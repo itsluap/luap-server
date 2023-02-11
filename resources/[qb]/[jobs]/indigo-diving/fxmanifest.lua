@@ -5,7 +5,7 @@ description 'indigo-diving'
 version '1.1.0'
 
 shared_script {
-    '@qb-core/shared/locale.lua',
+    '@indigo-core/shared/locale.lua',
     'locales/en.lua',
     'locales/*.lua',
     'config.lua'

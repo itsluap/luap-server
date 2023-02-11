@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 local Zone = nil
 local TextShown = false
 local AcitveZone = {}
@@ -43,7 +43,7 @@ local function spawnOccasionsVehicles(vehicles)
                 FreezeEntityPosition(occasionVehicles[Zone][i].car,true)
                 if Config.UseTarget then
                     if not EntityZones then EntityZones = {} end
-                    EntityZones[i] = exports['qb-target']:AddTargetEntity(occasionVehicles[Zone][i].car, {
+                    EntityZones[i] = exports['indigo-target']:AddTargetEntity(occasionVehicles[Zone][i].car, {
                         options = {
                             {
                                 type = "client",
@@ -73,7 +73,7 @@ local function despawnOccasionsVehicles()
         end
 
         if EntityZones[i] and Config.UseTarget then
-            exports['qb-target']:RemoveZone(EntityZones[i])
+            exports['indigo-target']:RemoveZone(EntityZones[i])
         end
     end
     EntityZones = {}
@@ -408,14 +408,14 @@ CreateThread(function()
 
         SpawnZone[k]:onPlayerInOut(function(isPointInside)
             if isPointInside and IsPedInAnyVehicle(PlayerPedId(), false) then
-                exports['qb-core']:DrawText(Lang:t("menu.interaction"), 'left')
+                exports['indigo-core']:DrawText(Lang:t("menu.interaction"), 'left')
                 TextShown = true
                 Listen4Control()
             else
                 listen = false
                 if TextShown then
                     TextShown = false
-                    exports['qb-core']:HideText()
+                    exports['indigo-core']:HideText()
                 end
             end
         end)
@@ -430,14 +430,14 @@ CreateThread(function()
 
                 VehicleZones:onPlayerInOut(function(isPointInside)
                     if isPointInside and IsCarSpawned(k2) then
-                        exports['qb-core']:DrawText(Lang:t("menu.view_contract_int"), 'left')
+                        exports['indigo-core']:DrawText(Lang:t("menu.view_contract_int"), 'left')
                         TextShown = true
                         Listen4Control(k2)
                     else
                         listen = false
                         if TextShown then
                             TextShown = false
-                            exports['qb-core']:HideText()
+                            exports['indigo-core']:HideText()
                         end
                     end
                 end)

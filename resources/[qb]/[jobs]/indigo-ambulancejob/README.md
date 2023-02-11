@@ -1,10 +1,10 @@
 # indigo-ambulancejob
-EMS Job and Death/Wound Logic for QB-Core Framework :ambulance:
+EMS Job and Death/Wound Logic for indigo-core Framework :ambulance:
 
 ## Dependencies
-- [qb-core](https://github.com/qbcore-framework/qb-core) (Required)
+- [indigo-core](https://github.com/qbcore-framework/indigo-core) (Required)
 - [indigo-phone](https://github.com/qbcore-framework/indigo-phone) (Required)
-- [qb-target](https://github.com/BerkieBb/qb-target) (Optional)
+- [indigo-target](https://github.com/BerkieBb/indigo-target) (Optional)
 - [PolyZone](https://github.com/mkafrin/PolyZone) (Required)
 
 # Server.cfg Convar Update

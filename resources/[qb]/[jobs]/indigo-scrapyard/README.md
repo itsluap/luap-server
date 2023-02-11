@@ -1,5 +1,5 @@
 # indigo-scrapyard
-Scrapyard For QB-Core
+Scrapyard For indigo-core
 
 # License
 

@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 
 local InApartment = false
 local ClosestHouse = nil
@@ -272,7 +272,7 @@ local function EnterApartment(house, apartmentId, new)
                 ClosestHouse = house
                 RangDoorbell = nil
                 Wait(500)
-                TriggerEvent('qb-weathersync:client:DisableSync')
+                TriggerEvent('indigo-weathersync:client:DisableSync')
                 Wait(100)
                 TriggerServerEvent('indigo-apartments:server:SetInsideMeta', house, apartmentId, true, false)
                 TriggerServerEvent("InteractSound_SV:PlayOnSource", "houses_door_close", 0.1)
@@ -294,7 +294,7 @@ local function EnterApartment(house, apartmentId, new)
             InApartment = true
             CurrentApartment = apartmentId
             Wait(500)
-            TriggerEvent('qb-weathersync:client:DisableSync')
+            TriggerEvent('indigo-weathersync:client:DisableSync')
             Wait(100)
             TriggerServerEvent('indigo-apartments:server:SetInsideMeta', house, apartmentId, true, true)
             TriggerServerEvent("InteractSound_SV:PlayOnSource", "houses_door_close", 0.1)
@@ -320,7 +320,7 @@ local function LeaveApartment(house)
     DoScreenFadeOut(500)
     while not IsScreenFadedOut() do Wait(10) end
     exports['indigo-interior']:DespawnInterior(HouseObj, function()
-        TriggerEvent('qb-weathersync:client:EnableSync')
+        TriggerEvent('indigo-weathersync:client:EnableSync')
         SetEntityCoords(PlayerPedId(), Apartments.Locations[house].coords.enter.x, Apartments.Locations[house].coords.enter.y,Apartments.Locations[house].coords.enter.z)
         SetEntityHeading(PlayerPedId(), Apartments.Locations[house].coords.enter.w)
         Wait(1000)
@@ -410,7 +410,7 @@ AddEventHandler('onResourceStop', function(resource)
         if HouseObj ~= nil then
             exports['indigo-interior']:DespawnInterior(HouseObj, function()
                 CurrentApartment = nil
-                TriggerEvent('qb-weathersync:client:EnableSync')
+                TriggerEvent('indigo-weathersync:client:EnableSync')
                 DoScreenFadeIn(500)
                 while not IsScreenFadedOut() do
                     Wait(10)
@@ -443,18 +443,18 @@ end)
 RegisterNetEvent('apartments:client:setupSpawnUI', function(cData)
     QBCore.Functions.TriggerCallback('apartments:GetOwnedApartment', function(result)
         if result then
-            --TriggerEvent('qb-spawn:client:setupSpawns', cData, false, nil)
-            --TriggerEvent('qb-spawn:client:openUI', true)
-            TriggerEvent('qb-spawn:client:luap:spawn')
+            --TriggerEvent('indigo-spawn:client:setupSpawns', cData, false, nil)
+            --TriggerEvent('indigo-spawn:client:openUI', true)
+            TriggerEvent('indigo-spawn:client:luap:spawn')
             TriggerEvent("apartments:client:SetHomeBlip", result.type)
         else
             if Apartments.Starting then
-                TriggerEvent('qb-spawn:client:setupSpawns', cData, true, Apartments.Locations)
-                TriggerEvent('qb-spawn:client:openUI', true)
+                TriggerEvent('indigo-spawn:client:setupSpawns', cData, true, Apartments.Locations)
+                TriggerEvent('indigo-spawn:client:openUI', true)
             else
-                --TriggerEvent('qb-spawn:client:setupSpawns', cData, false, nil)
-                --TriggerEvent('qb-spawn:client:openUI', true)
-                TriggerEvent('qb-spawn:client:luap:spawn')
+                --TriggerEvent('indigo-spawn:client:setupSpawns', cData, false, nil)
+                --TriggerEvent('indigo-spawn:client:openUI', true)
+                TriggerEvent('indigo-spawn:client:luap:spawn')
             end
         end
     end, cData.citizenid)
@@ -616,7 +616,7 @@ end)
 
 Citizen.CreateThread(function()
     for k,v in pairs(Apartments.Locations) do
-        exports['qb-target']:AddBoxZone('ApartmentRaid-'..k, vector3(v.coords.enter.x, v.coords.enter.y, v.coords.enter.z), 2.0, 2.0, {
+        exports['indigo-target']:AddBoxZone('ApartmentRaid-'..k, vector3(v.coords.enter.x, v.coords.enter.y, v.coords.enter.z), 2.0, 2.0, {
         name='ApartmentRaid-'..k,
         heading=v.coords.enter.h,
         debugPoly=false,
@@ -650,7 +650,7 @@ end)
 
 RegisterNetEvent("qbcore-apartments:client:TriggerMenu")
 AddEventHandler("qbcore-apartments:client:TriggerMenu", function(name)
-    local getInput = exports['qb-input']:ShowInput({
+    local getInput = exports['indigo-input']:ShowInput({
     header = "Raid Apartment",
     submitText = "Raid Apartment",
     inputs = {

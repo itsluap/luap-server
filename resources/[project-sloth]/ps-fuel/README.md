@@ -6,7 +6,7 @@ A NoPixel inspired functionality fuel system that uses PolyZones that target spe
 ![Project Sloth Buttons](https://user-images.githubusercontent.com/91661118/169454003-488c8994-eec9-4b92-9b0c-f3a675be7d1b.png)
 
 ### Dependencies:
-* [qb-target](https://github.com/BerkieBb/qb-target)
+* [indigo-target](https://github.com/BerkieBb/indigo-target)
 * [indigo-menu](https://github.com/qbcore-framework/indigo-menu)
 * [polyzone](https://github.com/qbcore-framework/PolyZone)
 
@@ -34,7 +34,7 @@ Open your entire resources folder with Visual Studio Code (or whichever program 
 ![explorer_vpSwery89h](https://user-images.githubusercontent.com/91661118/169423238-99659010-718d-4d95-a73e-8aa2b232ebb4.gif)
 
 ### Step 3: 
-First copy the snippet below and then navigate to your **qb-smallresources/client/ignore.lua**
+First copy the snippet below and then navigate to your **indigo-smallresources/client/ignore.lua**
 
 ```lua
 Citizen.CreateThread(function()
@@ -82,7 +82,7 @@ after it takes you to spot we need, copy this snippet and paste it over the few 
 ### Step 4:
 ```TriggerServerEvent("weapons:server:UpdateWeaponAmmo", CurrentWeaponData, tonumber(ammo))```
 
-Copy this line and then navigate to your **qb-weapons/client/main.lua** paste this in your Visual Studio Code search bar.
+Copy this line and then navigate to your **indigo-weapons/client/main.lua** paste this in your Visual Studio Code search bar.
 
 ```lua
 CreateThread(function()

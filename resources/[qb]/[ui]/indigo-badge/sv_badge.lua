@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 
 RegisterServerEvent('badge:open')
 AddEventHandler('badge:open', function(ID, targetID, type)

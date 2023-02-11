@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 local PlayerJob = {}
 
 AddEventHandler('onResourceStart', function(resourceName)
@@ -156,11 +156,11 @@ for k=1, #grapeLocations do
 			if k==random then
 				CreateThread(function()
 					while grapeZones[k].isInside and k==random do
-						exports['qb-core']:DrawText(Lang:t("task.start_task"),'right')
+						exports['indigo-core']:DrawText(Lang:t("task.start_task"),'right')
 						if not IsPedInAnyVehicle(PlayerPedId()) and IsControlJustReleased(0,38) then
 							PickAnim()
 							pickProcess()
-							exports['qb-core']:HideText()
+							exports['indigo-core']:HideText()
 							random = 0
 						end
 						Wait(1)
@@ -169,7 +169,7 @@ for k=1, #grapeLocations do
 			end
 		else
 			if Config.Debug then log(Lang:t("text.zone_exited",{zone=label})) end
-			exports['qb-core']:HideText()
+			exports['indigo-core']:HideText()
 		end
 	end)
 end
@@ -224,7 +224,7 @@ Zones[1].zone:onPlayerInOut(function(isPointInside)
 	if isPointInside then
 		if Config.Debug then log(Lang:t("text.zone_entered",{zone="Start"})) end
 		if not startVineyard and PlayerJob.name == "vineyard" then
-			exports['qb-core']:DrawText(Lang:t("task.start_task"),'right')
+			exports['indigo-core']:DrawText(Lang:t("task.start_task"),'right')
 			CreateThread(function()
 				while Zones[1].isInside do
 					if IsControlJustReleased(0,38) and not startVineyard then
@@ -238,7 +238,7 @@ Zones[1].zone:onPlayerInOut(function(isPointInside)
 		end
 	else
 		if Config.Debug then log(Lang:t("text.zone_exited",{zone="Start"})) end
-		exports['qb-core']:HideText()
+		exports['indigo-core']:HideText()
 	end
 end)
 
@@ -261,7 +261,7 @@ Zones[2].zone:onPlayerInOut(function(isPointInside)
 				while Zones[2].isInside do
 					if not wineStarted then
 						if not loadIngredients then
-							exports['qb-core']:DrawText(Lang:t("task.load_ingrediants"),'right')
+							exports['indigo-core']:DrawText(Lang:t("task.load_ingrediants"),'right')
 							if IsControlJustPressed(0, 38) and not LocalPlayer.state.inv_busy then
 								QBCore.Functions.TriggerCallback('indigo-vineyard:server:loadIngredients', function(result)
 									if result then loadIngredients = true end
@@ -270,12 +270,12 @@ Zones[2].zone:onPlayerInOut(function(isPointInside)
 							end
 						else
 							if not finishedWine then
-								exports['qb-core']:DrawText(Lang:t("task.wine_process"),'right')
+								exports['indigo-core']:DrawText(Lang:t("task.wine_process"),'right')
 								if IsControlJustPressed(0, 38) and not LocalPlayer.state.inv_busy then
 									StartWineProcess()
 								end
 							else
-								exports['qb-core']:DrawText(Lang:t("task.get_wine"),'right')
+								exports['indigo-core']:DrawText(Lang:t("task.get_wine"),'right')
 								if IsControlJustPressed(0, 38) and not LocalPlayer.state.inv_busy then
 									TriggerServerEvent("indigo-vineyard:server:receiveWine")
 									finishedWine = false
@@ -285,7 +285,7 @@ Zones[2].zone:onPlayerInOut(function(isPointInside)
 							end
 						end
 					else
-						exports['qb-core']:DrawText(Lang:t("task.countdown",{time=winetimer}),'right')
+						exports['indigo-core']:DrawText(Lang:t("task.countdown",{time=winetimer}),'right')
 						Wait(999)
 					end
 					Wait(1)
@@ -295,7 +295,7 @@ Zones[2].zone:onPlayerInOut(function(isPointInside)
 		end
 	else
 		if Config.Debug then log(Lang:t("text.zone_exited",{zone="Wine"})) end
-		exports['qb-core']:HideText()
+		exports['indigo-core']:HideText()
 	end
 end)
 
@@ -315,7 +315,7 @@ Zones[3].zone:onPlayerInOut(function(isPointInside)
 		if not startVineyard and PlayerJob.name == "vineyard" then
 			CreateThread(function()
 				while Zones[3].isInside do
-					exports['qb-core']:DrawText(Lang:t("task.make_grape_juice"),'right')
+					exports['indigo-core']:DrawText(Lang:t("task.make_grape_juice"),'right')
 					if IsControlJustPressed(0, 38) and not LocalPlayer.state.inv_busy then
 						QBCore.Functions.TriggerCallback('indigo-vineyard:server:grapeJuice', function(result)
 							if result then PrepareAnim() grapeJuiceProcess() end
@@ -327,6 +327,6 @@ Zones[3].zone:onPlayerInOut(function(isPointInside)
 		end
 	else
 		if Config.Debug then log(Lang:t("text.zone_exited",{zone="Juice"})) end
-		exports['qb-core']:HideText()
+		exports['indigo-core']:HideText()
 	end
 end)

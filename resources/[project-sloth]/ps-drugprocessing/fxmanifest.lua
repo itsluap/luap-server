@@ -11,7 +11,7 @@ version '1.0.0'
 shared_scripts {
 	'@PolyZone/client.lua',
     '@PolyZone/CircleZone.lua',
-	'@qb-core/shared/locale.lua',
+	'@indigo-core/shared/locale.lua',
 	'config.lua',
 	'locales/en.lua'
 }

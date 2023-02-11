@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 --========================================================== Horn
 RegisterNetEvent('jim-mechanic:client:Horn:Apply', function(data)
 	local vehicle = getClosest(GetEntityCoords(PlayerPedId())) lookVeh(vehicle)

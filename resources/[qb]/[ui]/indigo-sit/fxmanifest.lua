@@ -15,7 +15,7 @@ client_scripts {
 
 dependencies { 
   'PolyZone', 
-  'qb-target' 
+  'indigo-target' 
 }
 
 lua54 'yes'

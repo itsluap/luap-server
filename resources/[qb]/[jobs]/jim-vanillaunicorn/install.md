@@ -67,7 +67,7 @@ Update v1.4:
 	- Upgraded Crafting Systems
 	- Added simple Toy/Prize support, info in the config.lua
 	- Added support for indigo-menu icons
-	- Improved loading and unloading of qb-targets and props
+	- Improved loading and unloading of indigo-targets and props
 	- Added Job Garage for deliveries
 	- Change emotes in the install.md that require the contract dlc
 	- Added built-in custom DJ Booth to the stage
@@ -128,7 +128,7 @@ Add the item images to your inventory script
 
 -------------------------------------------------------------------------------------------------
 
-THESE GO IN YOUR SHARED.LUA IN qb-core:
+THESE GO IN YOUR SHARED.LUA IN indigo-core:
 
 Under the QBShared.Items = {
 

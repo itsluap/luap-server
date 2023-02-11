@@ -5,7 +5,7 @@ description 'indigo-towjob'
 version '1.1.0'
 
 shared_scripts {
-	'@qb-core/shared/locale.lua',
+	'@indigo-core/shared/locale.lua',
 	'config.lua',
 	'locales/en.lua',
 }

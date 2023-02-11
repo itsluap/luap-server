@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 local PlayerData = {}
 local ClosestTraphouse = nil
 local InsideTraphouse = false
@@ -22,7 +22,7 @@ local function RegisterTraphouseEntranceTarget(traphouseID, traphouseData)
     local coords = traphouseData.coords['enter']
     local boxName = 'traphouseEntrance' .. traphouseID
     local boxData = traphouseData.polyzoneBoxData['enter']
-    exports['qb-target']:AddBoxZone(boxName, coords, boxData.length, boxData.width, {
+    exports['indigo-target']:AddBoxZone(boxName, coords, boxData.length, boxData.width, {
         name = boxName,
         heading = boxData.heading,
         debugPoly = boxData.debug,
@@ -57,9 +57,9 @@ local function RegisterTraphouseEntranceZone(traphouseID, traphouseData)
 
     zone:onPlayerInOut(function (isPointInside)
         if isPointInside then
-            exports['qb-core']:DrawText('[E] ' .. Lang:t('targetInfo.enter'), 'left')
+            exports['indigo-core']:DrawText('[E] ' .. Lang:t('targetInfo.enter'), 'left')
         else
-            exports['qb-core']:HideText()
+            exports['indigo-core']:HideText()
         end
 
         isInsideEntranceTarget = isPointInside
@@ -98,9 +98,9 @@ local function RegisterTraphouseInteractionZone(traphouseID, traphouseData)
 
     zone:onPlayerInOut(function (isPointInside)
         if isPointInside then
-            exports['qb-core']:DrawText('[E] ' .. Lang:t('targetInfo.options'), 'left')
+            exports['indigo-core']:DrawText('[E] ' .. Lang:t('targetInfo.options'), 'left')
         else
-            exports['qb-core']:HideText()
+            exports['indigo-core']:HideText()
             TriggerEvent('indigo-traphouse:client:target:CloseMenu')
         end
 
@@ -148,7 +148,7 @@ local function RegisterTraphouseInteractionTarget(traphouseID, traphouseData)
         end
     end
 
-    exports['qb-target']:AddBoxZone(boxName, coords, boxData.length, boxData.width, {
+    exports['indigo-target']:AddBoxZone(boxName, coords, boxData.length, boxData.width, {
         name = boxName,
         heading = boxData.heading,
         debugPoly = boxData.debug,
@@ -174,9 +174,9 @@ local function RegisterTraphouseExitZone(coords, traphouseID, traphouseData)
 
     zone:onPlayerInOut(function (isPointInside)
         if isPointInside then
-            exports['qb-core']:DrawText('[E] ' .. Lang:t("targetInfo.leave"), 'left')
+            exports['indigo-core']:DrawText('[E] ' .. Lang:t("targetInfo.leave"), 'left')
         else
-            exports['qb-core']:HideText()
+            exports['indigo-core']:HideText()
         end
 
         isInsideExitTarget = isPointInside
@@ -189,7 +189,7 @@ end
 local function RegisterTraphouseExitTarget(coords, traphouseID, traphouseData)
     local boxName = 'traphouseExit' .. traphouseID
     local boxData = traphouseData.polyzoneBoxData['exit']
-    exports['qb-target']:AddBoxZone(boxName, coords, boxData.length, boxData.width, {
+    exports['indigo-target']:AddBoxZone(boxName, coords, boxData.length, boxData.width, {
         name = boxName,
         heading = boxData.heading,
         debugPoly = boxData.debug,
@@ -323,7 +323,7 @@ local function EnterTraphouse(data)
     POIOffsets = data[2]
     CurrentTraphouse = ClosestTraphouse
     InsideTraphouse = true
-    TriggerEvent('qb-weathersync:client:DisableSync')
+    TriggerEvent('indigo-weathersync:client:DisableSync')
     FreezeEntityPosition(TraphouseObj, true)
 end
 
@@ -333,7 +333,7 @@ local function LeaveTraphouse(k, data)
     DoScreenFadeOut(250)
     Wait(250)
     exports['indigo-interior']:DespawnInterior(TraphouseObj, function()
-        TriggerEvent('qb-weathersync:client:EnableSync')
+        TriggerEvent('indigo-weathersync:client:EnableSync')
         DoScreenFadeIn(250)
         SetEntityCoords(ped, data.coords["enter"].x, data.coords["enter"].y, data.coords["enter"].z + 0.5)
         SetEntityHeading(ped, 107.71)
@@ -344,10 +344,10 @@ local function LeaveTraphouse(k, data)
     end)
 
     if Config.UseTarget then
-        exports['qb-target']:RemoveZone('traphouseInteraction' .. k)
+        exports['indigo-target']:RemoveZone('traphouseInteraction' .. k)
         data.polyzoneBoxData['interaction'].created = false
 
-        exports['qb-target']:RemoveZone('traphouseExit' .. k)
+        exports['indigo-target']:RemoveZone('traphouseExit' .. k)
         data.polyzoneBoxData['exit'].created = false
     else
         if Config.TrapHouses[k] and Config.TrapHouses[k].polyzoneBoxData['interaction'] and Config.TrapHouses[k].polyzoneBoxData['interaction'].zone then
@@ -436,7 +436,7 @@ RegisterNetEvent('indigo-traphouse:client:SyncData', function(k, data)
     IsHouseOwner = IsOwner(PlayerData.citizenid)
 
     if Config.UseTarget then
-        exports['qb-target']:RemoveZone('traphouseInteraction' .. k)
+        exports['indigo-target']:RemoveZone('traphouseInteraction' .. k)
         Config.TrapHouses[k].polyzoneBoxData['interaction'].created = false
     else
         if Config.TrapHouses[k] and Config.TrapHouses[k].polyzoneBoxData['interaction'] and Config.TrapHouses[k].polyzoneBoxData['interaction'].zone then
@@ -574,7 +574,7 @@ CreateThread(function ()
                     wait = 0
                     if IsControlJustPressed(0, 38) then
                         TriggerEvent("indigo-traphouse:client:EnterTraphouse")
-                        exports['qb-core']:HideText()
+                        exports['indigo-core']:HideText()
                     end
                 end
             else
@@ -600,7 +600,7 @@ CreateThread(function ()
                     wait = 0
                     if IsControlJustPressed(0, 38) then
                         LeaveTraphouse(ClosestTraphouse, data)
-                        exports['qb-core']:HideText()
+                        exports['indigo-core']:HideText()
                     end
                 end
 
@@ -608,7 +608,7 @@ CreateThread(function ()
                     wait = 0
                     if IsControlJustPressed(0, 38) then
                         OpenHeaderMenu(data)
-                        exports['qb-core']:HideText()
+                        exports['indigo-core']:HideText()
                     end
                 end
             end

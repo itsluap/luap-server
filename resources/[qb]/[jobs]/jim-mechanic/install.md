@@ -14,7 +14,7 @@ https://discord.gg/xKgQZ6wZvS
 # Item installation
 - Add the image files from the zip to your `qb-inventory > html > images` folder
 
-- Add these lines to your qb-core > shared lua under the Items section
+- Add these lines to your indigo-core > shared lua under the Items section
 ```lua
 	--Jim-Mechanic Vehicles
 	["mechanic_tools"] 				= {["name"] = "mechanic_tools", 			["label"] = "Mechanic tools", 		    ["weight"] = 0, 		["type"] = "item", 		["image"] = "mechanic_tools.png", 		["unique"] = true, 		["useable"] = true, 	["shouldClose"] = true,   ["combinable"] = nil,   ["description"] = "Needed for vehicle repairs"},
@@ -83,8 +83,8 @@ https://discord.gg/xKgQZ6wZvS
 ----------------------
 # Dependancies
 
-- This script requires `indigo-menu` and `qb-input` for the menu systems
-- This script requires `qb-target` for opening stores, crafting tables, cash registers, going on duty, nos refill
+- This script requires `indigo-menu` and `indigo-input` for the menu systems
+- This script requires `indigo-target` for opening stores, crafting tables, cash registers, going on duty, nos refill
 
 - This script is also designed to use `jim-payments` (https://github.com/jimathy/jim-payments) for charging customs and sending money to the society accounts
 
@@ -176,7 +176,7 @@ When successfully added the mechboards will show the vehicle and plate number
 
 ## Updating core events
 
-To add the ability to save RGB paints, their colour finishes and drift/bulletproof tires you need to change two functions in your qb-core/client/functions.lua
+To add the ability to save RGB paints, their colour finishes and drift/bulletproof tires you need to change two functions in your indigo-core/client/functions.lua
 
 Replace GetVehicleProperties and SetVehicleProperties functions with these:
 ```lua
@@ -629,7 +629,7 @@ end
 
 ## Update v2.5.2:
 	- Updated default recipes to have the "rollcage" item - recipes.lua
-	- Removed Color1 print message from the "GetVehicleProperties" left in after testing - install.md/qb-core
+	- Removed Color1 print message from the "GetVehicleProperties" left in after testing - install.md/indigo-core
 	- Added fixFailure() event to attempt to reset "nil" values when trying to get/repair extra vehicle damages - repair.lua/functions.lua
 	- Enhanced updateCar() function to share the data between everyone
 		- Adds new functions to function.lua and functionserver.lua
@@ -642,7 +642,7 @@ end
 		- "ShowOdo" wether the odometer is on by default
 		- "OdoLocation" where the odometer shows on screen
 	- Fixed Odometer breaking the script if the car wasn't owned
-	- Moved drawtext files from qb-core over into this script
+	- Moved drawtext files from indigo-core over into this script
 		- This allows for customied Odometer popups and locations
 		- Changed popup text to be more like an actual odometer
 		- You can now change the location of it to: "left", "right", "top", "top-right", "top-left", "bottom", "bottom-left", "bottom-right"
@@ -664,7 +664,7 @@ end
 	- Added toggles for disabling NOS Trails and NOS Screen Effects
 	- Fixed RBG Paint issues not loading in the functions (mainly paint finishes but hopefully other issues)
 		- Update with the the functions below
-	- Added ability to show Mi/Km using qb-cores new built in "DrawText" export
+	- Added ability to show Mi/Km using indigo-cores new built in "DrawText" export
 		- This shows while driving and updates and hides when leaving the car
 		- This can be disabled by typing "/showodo"
 
@@ -678,7 +678,7 @@ end
 	- Fixed unessessary database checks being used by the odometer functions which were causing lag for some - extras.lua
 	- Added saving extra vehicle damages through restarts - extras.lua + functionserver.lua
 		- If "UseMechJob" is true it will attempt to save the damages the same time as the odometer and car customisations
-		- This requires updating the qb-core SetVehicleProperties function with the event: `TriggerServerEvent('jim-mechanic:server:loadStatus', props.plate)` (check the qb-core functions below)
+		- This requires updating the indigo-core SetVehicleProperties function with the event: `TriggerServerEvent('jim-mechanic:server:loadStatus', props.plate)` (check the indigo-core functions below)
 	- Updates are needed to locale files for garages
 
 ## Update v2.3.3:

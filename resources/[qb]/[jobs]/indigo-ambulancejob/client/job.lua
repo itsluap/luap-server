@@ -285,7 +285,7 @@ local function EMSControls(variable)
         check = true
         while check do
             if IsControlJustPressed(0, 38) then
-                exports['qb-core']:KeyPressed(38)
+                exports['indigo-core']:KeyPressed(38)
                 if variable == "sign" then
                     TriggerEvent('EMSToggle:Duty')
                 elseif variable == "stash" then
@@ -327,7 +327,7 @@ local function EMSVehicle(k)
     CreateThread(function()
         while CheckVehicle do
             if IsControlJustPressed(0, 38) then
-                exports['qb-core']:KeyPressed(38)
+                exports['indigo-core']:KeyPressed(38)
                 CheckVehicle = false
                 local ped = PlayerPedId()
                 if IsPedInAnyVehicle(ped, false) then
@@ -349,7 +349,7 @@ local function EMSHelicopter(k)
     CreateThread(function()
         while CheckHeli do
             if IsControlJustPressed(0, 38) then
-                exports['qb-core']:KeyPressed(38)
+                exports['indigo-core']:KeyPressed(38)
                 CheckHeli = false
                 local ped = PlayerPedId()
                 if IsPedInAnyVehicle(ped, false) then
@@ -431,11 +431,11 @@ CreateThread(function()
         })
         boxZone:onPlayerInOut(function(isPointInside)
             if isPointInside and PlayerJob.name == "ambulance" and onDuty then
-                exports['qb-core']:DrawText(Lang:t('text.veh_button'), 'left')
+                exports['indigo-core']:DrawText(Lang:t('text.veh_button'), 'left')
                 EMSVehicle(k)
             else
                 CheckVehicle = false
-                exports['qb-core']:HideText()
+                exports['indigo-core']:HideText()
             end
         end)
     end
@@ -450,11 +450,11 @@ CreateThread(function()
         })
         boxZone:onPlayerInOut(function(isPointInside)
             if isPointInside and PlayerJob.name == "ambulance" and onDuty then
-                exports['qb-core']:DrawText(Lang:t('text.heli_button'), 'left')
+                exports['indigo-core']:DrawText(Lang:t('text.heli_button'), 'left')
                 EMSHelicopter(k)
             else
                 CheckHeli = false
-                exports['qb-core']:HideText()
+                exports['indigo-core']:HideText()
             end
         end)
     end
@@ -464,7 +464,7 @@ end)
 if Config.UseTarget then
     CreateThread(function()
         for k, v in pairs(Config.Locations["duty"]) do
-            exports['qb-target']:AddBoxZone("duty" .. k, vector3(v.x, v.y, v.z), 1.5, 1, {
+            exports['indigo-target']:AddBoxZone("duty" .. k, vector3(v.x, v.y, v.z), 1.5, 1, {
                 name = "duty" .. k,
                 debugPoly = false,
                 heading = -20,
@@ -484,7 +484,7 @@ if Config.UseTarget then
             })
         end
         for k, v in pairs(Config.Locations["stash"]) do
-            exports['qb-target']:AddBoxZone("stash" .. k, vector3(v.x, v.y, v.z), 1, 1, {
+            exports['indigo-target']:AddBoxZone("stash" .. k, vector3(v.x, v.y, v.z), 1, 1, {
                 name = "stash" .. k,
                 debugPoly = false,
                 heading = -20,
@@ -504,7 +504,7 @@ if Config.UseTarget then
             })
         end
         for k, v in pairs(Config.Locations["armory"]) do
-            exports['qb-target']:AddBoxZone("armory" .. k, vector3(v.x, v.y, v.z), 1, 1, {
+            exports['indigo-target']:AddBoxZone("armory" .. k, vector3(v.x, v.y, v.z), 1, 1, {
                 name = "armory" .. k,
                 debugPoly = false,
                 heading = -20,
@@ -524,7 +524,7 @@ if Config.UseTarget then
             })
         end
         for k, v in pairs(Config.Locations["roof"]) do
-            exports['qb-target']:AddBoxZone("roof" .. k, vector3(v.x, v.y, v.z), 2, 2, {
+            exports['indigo-target']:AddBoxZone("roof" .. k, vector3(v.x, v.y, v.z), 2, 2, {
                 name = "roof" .. k,
                 debugPoly = false,
                 heading = -20,
@@ -544,7 +544,7 @@ if Config.UseTarget then
             })
         end
         for k, v in pairs(Config.Locations["main"]) do
-            exports['qb-target']:AddBoxZone("main" .. k, vector3(v.x, v.y, v.z), 1.5, 1.5, {
+            exports['indigo-target']:AddBoxZone("main" .. k, vector3(v.x, v.y, v.z), 1.5, 1.5, {
                 name = "main" .. k,
                 debugPoly = false,
                 heading = -20,
@@ -581,15 +581,15 @@ else
         signCombo:onPlayerInOut(function(isPointInside)
             if isPointInside and PlayerJob.name == "ambulance" then
                 if not onDuty then
-                    exports['qb-core']:DrawText(Lang:t('text.onduty_button'), 'left')
+                    exports['indigo-core']:DrawText(Lang:t('text.onduty_button'), 'left')
                     EMSControls("sign")
                 else
-                    exports['qb-core']:DrawText(Lang:t('text.offduty_button'), 'left')
+                    exports['indigo-core']:DrawText(Lang:t('text.offduty_button'), 'left')
                     EMSControls("sign")
                 end
             else
                 check = false
-                exports['qb-core']:HideText()
+                exports['indigo-core']:HideText()
             end
         end)
 
@@ -608,12 +608,12 @@ else
         stashCombo:onPlayerInOut(function(isPointInside)
             if isPointInside and PlayerJob.name == "ambulance" then
                 if onDuty then
-                    exports['qb-core']:DrawText(Lang:t('text.pstash_button'), 'left')
+                    exports['indigo-core']:DrawText(Lang:t('text.pstash_button'), 'left')
                     EMSControls("stash")
                 end
             else
                 check = false
-                exports['qb-core']:HideText()
+                exports['indigo-core']:HideText()
             end
         end)
 
@@ -632,12 +632,12 @@ else
         armoryCombo:onPlayerInOut(function(isPointInside)
             if isPointInside and PlayerJob.name == "ambulance" then
                 if onDuty then
-                    exports['qb-core']:DrawText(Lang:t('text.armory_button'), 'left')
+                    exports['indigo-core']:DrawText(Lang:t('text.armory_button'), 'left')
                     EMSControls("armory")
                 end
             else
                 check = false
-                exports['qb-core']:HideText()
+                exports['indigo-core']:HideText()
             end
         end)
 
@@ -656,14 +656,14 @@ else
         roofCombo:onPlayerInOut(function(isPointInside)
             if isPointInside and PlayerJob.name == "ambulance" then
                 if onDuty then
-                    exports['qb-core']:DrawText(Lang:t('text.elevator_main'), 'left')
+                    exports['indigo-core']:DrawText(Lang:t('text.elevator_main'), 'left')
                     EMSControls("main")
                 else
-                    exports['qb-core']:DrawText(Lang:t('error.not_ems'), 'left')
+                    exports['indigo-core']:DrawText(Lang:t('error.not_ems'), 'left')
                 end
             else
                 check = false
-                exports['qb-core']:HideText()
+                exports['indigo-core']:HideText()
             end
         end)
 
@@ -682,14 +682,14 @@ else
         mainCombo:onPlayerInOut(function(isPointInside)
             if isPointInside and PlayerJob.name == "ambulance" then
                 if onDuty then
-                    exports['qb-core']:DrawText(Lang:t('text.elevator_roof'), 'left')
+                    exports['indigo-core']:DrawText(Lang:t('text.elevator_roof'), 'left')
                     EMSControls("roof")
                 else
-                    exports['qb-core']:DrawText(Lang:t('error.not_ems'), 'left')
+                    exports['indigo-core']:DrawText(Lang:t('error.not_ems'), 'left')
                 end
             else
                 check = false
-                exports['qb-core']:HideText()
+                exports['indigo-core']:HideText()
             end
         end)
     end)

@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 local Countdown = 10
 local ToFarCountdown = 10
 local FinishedUITimeout = false

@@ -1,5 +1,5 @@
 # indigo-vehiclefailure
-Vehicle Failure For QB-Core
+Vehicle Failure For indigo-core
 
 # License
 

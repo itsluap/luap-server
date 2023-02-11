@@ -51,7 +51,7 @@ function Hang()
     end
 end
 
-exports['qb-target']:AddTargetModel({-1978741854, 2057317573, -232023078}, {
+exports['indigo-target']:AddTargetModel({-1978741854, 2057317573, -232023078}, {
     options = {
         {
             type = "client",

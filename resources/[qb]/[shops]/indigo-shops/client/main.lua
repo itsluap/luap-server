@@ -1,4 +1,4 @@
-local QBCore = exports["qb-core"]:GetCoreObject()
+local QBCore = exports["indigo-core"]:GetCoreObject()
 local PlayerData = QBCore.Functions.GetPlayerData()
 local inChips = false
 local currentShop, currentData
@@ -108,10 +108,10 @@ local function listenForControl()
         while listen do
             if IsControlJustPressed(0, 38) then -- E
                 if inChips then
-                    exports["qb-core"]:KeyPressed()
+                    exports["indigo-core"]:KeyPressed()
                     TriggerServerEvent("indigo-shops:server:sellChips")
                 else
-                    exports["qb-core"]:KeyPressed()
+                    exports["indigo-core"]:KeyPressed()
                     openShop(currentShop, currentData)
                 end
                 listen = false
@@ -140,7 +140,7 @@ local function createPeds()
         SetBlockingOfNonTemporaryEvents(ShopPed[k], true)
 
         if Config.UseTarget then
-            exports['qb-target']:AddTargetEntity(ShopPed[k], {
+            exports['indigo-target']:AddTargetEntity(ShopPed[k], {
                 options = {
                     {
                         label = v["targetLabel"],
@@ -171,7 +171,7 @@ local function createPeds()
     -- SetBlockingOfNonTemporaryEvents(ShopPed["casino"], true)
     --[[
     if Config.UseTarget then
-        exports['qb-target']:AddTargetEntity(ShopPed["casino"], {
+        exports['indigo-target']:AddTargetEntity(ShopPed["casino"], {
             options = {
                 {
                     label = 'Sell Chips',
@@ -258,10 +258,10 @@ if not Config.UseTarget then
             if isPointInside then
                 currentShop = zone.name
                 currentData = Config.Locations[zone.name]
-                exports["qb-core"]:DrawText(Lang:t("info.open_shop"))
+                exports["indigo-core"]:DrawText(Lang:t("info.open_shop"))
                 listenForControl()
             else
-                exports["qb-core"]:HideText()
+                exports["indigo-core"]:HideText()
                 listen = false
             end
         end)
@@ -270,10 +270,10 @@ if not Config.UseTarget then
         sellChips:onPlayerInOut(function(isPointInside)
             if isPointInside then
                 inChips = true
-                exports["qb-core"]:DrawText(Lang:t("info.sell_chips"))
+                exports["indigo-core"]:DrawText(Lang:t("info.sell_chips"))
             else
                 inChips = false
-                exports["qb-core"]:HideText()
+                exports["indigo-core"]:HideText()
             end
         end)
     end)

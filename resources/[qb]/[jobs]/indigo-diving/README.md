@@ -1,5 +1,5 @@
 # indigo-diving
-Diving Script For QB-Core
+Diving Script For indigo-core
 # [VIDEO]
 https://youtu.be/pPYsy1tKPVM 
 

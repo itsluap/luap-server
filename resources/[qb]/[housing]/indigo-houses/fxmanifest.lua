@@ -8,7 +8,7 @@ ui_page 'html/index.html'
 
 shared_scripts {
     'config.lua',
-    '@qb-core/shared/locale.lua',
+    '@indigo-core/shared/locale.lua',
     'locales/en.lua',
     'locales/*.lua'
 }
@@ -35,10 +35,10 @@ files {
 }
 
 dependencies {
-    'qb-core',
+    'indigo-core',
     'indigo-interior',
     'indigo-clothing',
-    'qb-weathersync'
+    'indigo-weathersync'
 }
 
 lua54 'yes'

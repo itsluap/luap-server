@@ -11,7 +11,7 @@ shared_scripts {
     '@PolyZone/EntityZone.lua',
     '@PolyZone/CircleZone.lua',
     '@PolyZone/ComboZone.lua',
-    '@qb-core/shared/locale.lua',
+    '@indigo-core/shared/locale.lua',
     'locale/en.lua', -- replace with desired language
     'config.lua'
 }

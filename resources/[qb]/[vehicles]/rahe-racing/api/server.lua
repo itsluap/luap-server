@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 
 QBCore.Functions.CreateUseableItem("racetablet", function(source, item)
     TriggerClientEvent("rahe-racing:client:openTablet", source)

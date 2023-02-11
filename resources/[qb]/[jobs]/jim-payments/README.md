@@ -1,6 +1,6 @@
 # jim-payments
 - QBCore based payment system
-- Enchanced QB-Input payment system from my other scripts now free on its own
+- Enchanced indigo-input payment system from my other scripts now free on its own
 
 ### If you need support I have a discord server available, it helps me keep track of issues and give better support.
 ## https://discord.gg/xKgQZ6wZvS
@@ -25,7 +25,7 @@
 - Example of my load order:
 ```CSS
 # QBCore & Extra stuff
-ensure qb-core
+ensure indigo-core
 ensure [qb]
 ensure [standalone]
 ensure [voice]
@@ -38,7 +38,7 @@ ensure [jim]
 ---
 ## Item installation
 - To make use of the ticket reward system for workers you need to add the ticket item to your shared items lua
-- Naviage to `[qb] > qb-core / shared / items.lua` and add this line
+- Naviage to `[qb] > indigo-core / shared / items.lua` and add this line
 ```lua
 ["payticket"] 					 = {["name"] = "payticket", 				["label"] = "Receipt", 	     			["weight"] = 150, 		["type"] = "item", 		["image"] = "ticket.png", 				["unique"] = false,   	["useable"] = false,    ["shouldClose"] = false,    ["combinable"] = nil,   ["description"] = "Cash these in at the bank!"},
 ```

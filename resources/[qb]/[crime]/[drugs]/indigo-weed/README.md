@@ -1,5 +1,5 @@
 # indigo-weed
-Weed Growing For QB-Core
+Weed Growing For indigo-core
 
 # License
 

@@ -36,4 +36,4 @@ files {
 
 lua54 'yes'
 
-dependency 'qb-target'
+dependency 'indigo-target'

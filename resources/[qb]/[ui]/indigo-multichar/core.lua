@@ -1,5 +1,5 @@
 CoreConfig = {
-    core = 'qb-core', -- your core name for the exports
+    core = 'indigo-core', -- your core name for the exports
     prefix = 'qb-', -- your trigger prefixes
     notify = 'QBCore:Notify', -- your notification trigger
     char_english_only = true, -- block to option to create character with non english names

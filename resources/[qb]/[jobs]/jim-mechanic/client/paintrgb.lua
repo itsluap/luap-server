@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 --========================================================== Paint
 
 local spraying = false
@@ -70,7 +70,7 @@ RegisterNetEvent('jim-mechanic:client:RGBPicker', function()
 	local r, g, b = GetVehicleCustomSecondaryColour(vehicle)
 	local secCol = "[<span style='color:#"..rgbToHex(GetVehicleCustomSecondaryColour(vehicle)):upper().."; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 0em 0em 0.5em white, 0em 0em 0.5em white'> "..r.." "..g.." "..b.." </span>]"
 	if DoesEntityExist(vehicle) then
-		local dialog = exports['qb-input']:ShowInput({
+		local dialog = exports['indigo-input']:ShowInput({
 			header = 	"<center>"..Loc[Config.Lan]["paintrgb"].rgb
 						.."<br><br>- "..Loc[Config.Lan]["paint"].primary.." -<br>"..priCol
 						.."<br>- "..Loc[Config.Lan]["paint"].secondary.." -<br>"..secCol,
@@ -103,7 +103,7 @@ RegisterNetEvent('jim-mechanic:client:HEXPicker', function()
 	local priCol = "[ #<span style='color:#"..rgbToHex(GetVehicleCustomPrimaryColour(vehicle)):upper().."; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 0em 0em 0.5em white, 0em 0em 0.5em white'>"..rgbToHex(GetVehicleCustomPrimaryColour(vehicle)):upper().." </span>]"
 	local secCol = "[ #<span style='color:#"..rgbToHex(GetVehicleCustomSecondaryColour(vehicle)):upper().."; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 0em 0em 0.5em white, 0em 0em 0.5em white'>"..rgbToHex(GetVehicleCustomSecondaryColour(vehicle)):upper().." </span>]"
 	if DoesEntityExist(vehicle) then
-		local dialog = exports['qb-input']:ShowInput({
+		local dialog = exports['indigo-input']:ShowInput({
 			header = 	"<center>"..Loc[Config.Lan]["paintrgb"].hex
 						.."<br><br>- "..Loc[Config.Lan]["paint"].primary.." -<br>"..priCol
 						.."<br>- "..Loc[Config.Lan]["paint"].secondary.." -<br>"..secCol,

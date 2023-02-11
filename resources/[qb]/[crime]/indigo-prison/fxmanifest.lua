@@ -6,7 +6,7 @@ description 'Custom Prison Script'
 version '1.3.0'
 
 shared_scripts {
-    '@qb-core/shared/locale.lua',
+    '@indigo-core/shared/locale.lua',
 	'locales/en.lua',
 	'config.lua'
 }

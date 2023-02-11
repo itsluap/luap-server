@@ -1,5 +1,5 @@
 local ApartmentObjects = {}
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 
 -- Functions
 

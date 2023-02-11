@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 local inside = false
 local currentHouse = nil
 local closestHouse
@@ -60,7 +60,7 @@ local function enterRobberyHouse(house)
     inside = true
     currentHouse = house
     Wait(500)
-    TriggerEvent('qb-weathersync:client:DisableSync')
+    TriggerEvent('indigo-weathersync:client:DisableSync')
 end
 
 local function leaveRobberyHouse(house)
@@ -71,7 +71,7 @@ local function leaveRobberyHouse(house)
     DoScreenFadeOut(250)
     Wait(500)
     exports['indigo-interior']:DespawnInterior(houseObj, function()
-        TriggerEvent('qb-weathersync:client:EnableSync')
+        TriggerEvent('indigo-weathersync:client:EnableSync')
         Wait(250)
         DoScreenFadeIn(250)
         SetEntityCoords(ped, Config.Houses[house]["coords"]["x"], Config.Houses[house]["coords"]["y"], Config.Houses[house]["coords"]["z"] + 0.5)

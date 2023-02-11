@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 
 QBCore.Functions.CreateUseableItem("fitbit", function(source)
     TriggerClientEvent('indigo-fitbit:use', source)

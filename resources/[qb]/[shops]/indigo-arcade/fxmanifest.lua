@@ -3,7 +3,7 @@ games { 'gta5' }
 
 dependencies {
 	--'MenuAPI',
-	'qb-target'
+	'indigo-target'
 }
 
 client_scripts {

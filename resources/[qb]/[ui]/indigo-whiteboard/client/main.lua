@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 
 local dui = nil
 local duiCounter = 0
@@ -49,7 +49,7 @@ Citizen.CreateThread(function()
             end
         end)
 
-        exports['qb-target']:AddBoxZone(k..'_Target', v.Target.coords, v.Target.length, v.Target.width, {
+        exports['indigo-target']:AddBoxZone(k..'_Target', v.Target.coords, v.Target.length, v.Target.width, {
             name = k..'_Target',
             heading = 0,
             debugPoly = false,
@@ -151,7 +151,7 @@ AddEventHandler("indigo-whiteboard:changewhiteboardurl", function(data)
     if data.url then
         TriggerServerEvent("indigo-whiteboard:changewhiteboard", data.url, data.location)
     else
-        local keyboard = exports['qb-input']:ShowInput({
+        local keyboard = exports['indigo-input']:ShowInput({
             header = "URL",
             submitText = "Confirm",
             inputs = {

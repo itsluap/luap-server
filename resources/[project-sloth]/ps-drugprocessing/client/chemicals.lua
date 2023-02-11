@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 local inChemicalField = false
 local SpawnedChemicals = 0
 local Chemicals = {}

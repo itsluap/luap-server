@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 local PlayerData = QBCore.Functions.GetPlayerData()
 local HotdogBlip = nil
 local IsWorking = false
@@ -305,8 +305,8 @@ end
 
 local function StartHotdogMinigame()
     PrepareAnim()
-    TriggerEvent('qb-keyminigame:show')
-    TriggerEvent('qb-keyminigame:start', FinishMinigame)
+    TriggerEvent('indigo-keyminigame:show')
+    TriggerEvent('indigo-keyminigame:start', FinishMinigame)
 end
 
 local function HotdogLoop()
@@ -411,7 +411,7 @@ local function StartWorking()
                 PlaceObjectOnGroundProperly(StandObject)
                 SetEntityHeading(StandObject, SpawnCoords.w - 90)
                 FreezeEntityPosition(StandObject, true)
-                exports['qb-target']:AddTargetEntity(StandObject, {
+                exports['indigo-target']:AddTargetEntity(StandObject, {
                     options = {
                         {
                             icon = "fas fa-hand",
@@ -617,7 +617,7 @@ local function SellToPed(ped)
                 if Config.UseTarget then
                     if not zoneMade then
                         zoneMade = true
-                        exports['qb-target']:AddEntityZone('sellingDogPed', ped, {
+                        exports['indigo-target']:AddEntityZone('sellingDogPed', ped, {
                             name = 'sellingDogPed',
                             debugPoly = false,
                         }, {
@@ -638,7 +638,7 @@ local function SellToPed(ped)
                                         SellingData.RecentPeds[#SellingData.RecentPeds+1] = entity
                                         Config.Stock[SellingData.Hotdog].Current = Config.Stock[SellingData.Hotdog].Current - HotdogsForSale
                                         SellingData.Hotdog = nil
-                                        exports['qb-target']:RemoveZone('sellingDogPed')
+                                        exports['indigo-target']:RemoveZone('sellingDogPed')
                                         zoneMade = false
                                     end,
                                 },
@@ -654,7 +654,7 @@ local function SellToPed(ped)
                                         ClearPedTasksImmediately(entity)
                                         SellingData.RecentPeds[#SellingData.RecentPeds+1] = entity
                                         SellingData.Hotdog = nil
-                                        exports['qb-target']:RemoveZone('sellingDogPed')
+                                        exports['indigo-target']:RemoveZone('sellingDogPed')
                                         zoneMade = false
                                     end,
                                 },
@@ -856,7 +856,7 @@ end)
 
 CreateThread(function()
     if Config.UseTarget then
-        exports['qb-target']:AddBoxZone('hotdog_start', vector3(Config.Locations["take"].coords.x, Config.Locations["take"].coords.y, Config.Locations["take"].coords.z), 1, 1, {
+        exports['indigo-target']:AddBoxZone('hotdog_start', vector3(Config.Locations["take"].coords.x, Config.Locations["take"].coords.y, Config.Locations["take"].coords.z), 1, 1, {
             name = 'hotdog_start',
             debugPoly = false,
             heading = Config.Locations["take"].coords.w,
@@ -893,7 +893,7 @@ CreateThread(function()
                 inZone = true
                 if PlayerData.job.name == 'hotdog' then
                     if not IsWorking then
-                        exports['qb-core']:DrawText(Lang:t("info.start_working"), 'left')
+                        exports['indigo-core']:DrawText(Lang:t("info.start_working"), 'left')
                         CreateThread(function()
                             while inZone do
                                 Wait(0)
@@ -903,7 +903,7 @@ CreateThread(function()
                             end
                         end)
                     else
-                        exports['qb-core']:DrawText(Lang:t("info.stop_working"), 'left')
+                        exports['indigo-core']:DrawText(Lang:t("info.stop_working"), 'left')
                         CreateThread(function()
                             while inZone do
                                 Wait(0)
@@ -916,7 +916,7 @@ CreateThread(function()
                 end
             else
                 inZone = false
-                exports['qb-core']:HideText()
+                exports['indigo-core']:HideText()
             end
         end)
     end

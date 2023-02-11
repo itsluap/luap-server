@@ -1,4 +1,4 @@
-QBCore = exports['qb-core']:GetCoreObject()
+QBCore = exports['indigo-core']:GetCoreObject()
 PlayerData = QBCore.Functions.GetPlayerData() -- Setting this for when you restart the resource in game
 local inRadialMenu = false
 
@@ -309,7 +309,7 @@ RegisterNetEvent('indigo-radialmenu:client:ChangeSeat', function(data)
     local Veh = GetVehiclePedIsIn(PlayerPedId())
     local IsSeatFree = IsVehicleSeatFree(Veh, data.id)
     local speed = GetEntitySpeed(Veh)
-    local HasHarnass = exports['qb-smallresources']:HasHarness()
+    local HasHarnass = exports['indigo-smallresources']:HasHarness()
     if not HasHarnass then
         local kmh = speed * 3.6
         if IsSeatFree then

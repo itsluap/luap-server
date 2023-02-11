@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 
 local CurrentCops = 0
 local PlayerData = QBCore.Functions.GetPlayerData()
@@ -49,7 +49,7 @@ CreateThread(function()
 	SetEntityInvincible(MethPed, true)
 	SetBlockingOfNonTemporaryEvents(MethPed, true)
 
-    exports['qb-target']:AddTargetEntity(MethPed, {
+    exports['indigo-target']:AddTargetEntity(MethPed, {
         options = {
             {
                 icon = 'fas fa-box',
@@ -150,7 +150,7 @@ RegisterNetEvent("ps-zones:enter", function(ZoneName, ZoneData)
         SetEntityInvincible(Supplier, true)
         SetBlockingOfNonTemporaryEvents(Supplier, true)
         CreateThread(function ()
-            exports['qb-target']:AddTargetEntity(Supplier, {
+            exports['indigo-target']:AddTargetEntity(Supplier, {
                 options = {
                     {
                         icon = 'fas fa-box',
@@ -186,7 +186,7 @@ RegisterNetEvent("ps-zones:enter", function(ZoneName, ZoneData)
                     FreezeEntityPosition(MethVehicle, true)
                     CanDropOff = true
                 end
-                exports['qb-target']:AddTargetEntity(DropOffPed, {
+                exports['indigo-target']:AddTargetEntity(DropOffPed, {
                     options = {
                         {
                             icon = 'fas fa-boxes-stacked',
@@ -288,7 +288,7 @@ RegisterNetEvent('kevin-methruns:client:CollectItems', function()
     CollectedItems = CollectedItems +1
     TriggerServerEvent('kevin-methruns:server:giveproducts')
     if CollectedItems == RecievedPackages then
-        exports['qb-target']:RemoveTargetEntity(Supplier, 'Pickup Goods')
+        exports['indigo-target']:RemoveTargetEntity(Supplier, 'Pickup Goods')
         GotPackages = true
         SetPedAsNoLongerNeeded(Supplier)
         RemoveBlip(SupplerBlip)
@@ -440,7 +440,7 @@ RegisterNetEvent('kevin-methruns:DropOffItems', function()
             elseif Config.Notify == 'qb' then
                 QBCore.Functions.Notify('Return to the boss for payment', 'primary', 4000)
             end
-            exports['qb-target']:RemoveTargetEntity(DropOffPed, 'Drop off goods')
+            exports['indigo-target']:RemoveTargetEntity(DropOffPed, 'Drop off goods')
             PedSpawned = false
             CanCollect = true
             FreezeEntityPosition(DropOffPed, false)

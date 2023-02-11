@@ -1,4 +1,4 @@
-QBCore = exports['qb-core']:GetCoreObject()
+QBCore = exports['indigo-core']:GetCoreObject()
 
 -- Oxy Run
 RegisterServerEvent('oxydelivery:server')

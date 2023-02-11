@@ -7,13 +7,13 @@ version '1.0.0'
 ui_page 'html/meter.html'
 
 shared_scripts {
-	'@qb-core/shared/locale.lua',
+	'@indigo-core/shared/locale.lua',
 	'locales/en.lua', -- Change to the language you want to use
 	'config.lua',
 }
 
 dependencies {
-	'qb-core',
+	'indigo-core',
 	'PolyZone',
 }
 

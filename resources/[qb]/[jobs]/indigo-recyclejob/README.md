@@ -1,5 +1,5 @@
 # indigo-recyclejob
-Recycling Job For QB-Core
+Recycling Job For indigo-core
 
 # License
 

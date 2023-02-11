@@ -33,7 +33,7 @@ end
 
 local function RobberyPed()
     if Config.UseTarget then
-        exports['qb-target']:AddEntityZone('stealingPed', stealingPed, {
+        exports['indigo-target']:AddEntityZone('stealingPed', stealingPed, {
             name = 'stealingPed',
             debugPoly = false,
         }, {
@@ -54,7 +54,7 @@ local function RobberyPed()
                         TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items[stealData.item], "add")
                         stealingPed = nil
                         stealData = {}
-                        exports['qb-target']:RemoveZone('stealingPed')
+                        exports['indigo-target']:RemoveZone('stealingPed')
                     end,
                     canInteract = function(entity)
                         if IsEntityDead(entity) then
@@ -74,7 +74,7 @@ local function RobberyPed()
                 if dist > 100 then
                     stealingPed = nil
                     stealData = {}
-                    exports['qb-target']:RemoveZone('stealingPed')
+                    exports['indigo-target']:RemoveZone('stealingPed')
                     break
                 end
                 Wait(0)
@@ -90,10 +90,10 @@ local function RobberyPed()
                     if not Config.UseTarget and #(pos - pedpos) < 1.5 then
                         if not textDrawn then
                             textDrawn = true
-                            exports['qb-core']:DrawText(Lang:t("info.pick_up_button"))
+                            exports['indigo-core']:DrawText(Lang:t("info.pick_up_button"))
                         end
                         if IsControlJustReleased(0, 38) then
-                            exports['qb-core']:KeyPressed()
+                            exports['indigo-core']:KeyPressed()
                             textDrawn = false
                             RequestAnimDict("pickup_object")
                             while not HasAnimDictLoaded("pickup_object") do
@@ -204,7 +204,7 @@ local function SellToPed(ped)
                 if pedDist2 < 1.5 and cornerselling then
                     if Config.UseTarget and not zoneMade then
                         zoneMade = true
-                        exports['qb-target']:AddEntityZone('sellingPed', ped, {
+                        exports['indigo-target']:AddEntityZone('sellingPed', ped, {
                             name = 'sellingPed',
                             debugPoly = false,
                         }, {
@@ -223,7 +223,7 @@ local function SellToPed(ped)
                                         SetEntityAsNoLongerNeeded(entity)
                                         ClearPedTasksImmediately(entity)
                                         lastPed[#lastPed + 1] = entity
-                                        exports['qb-target']:RemoveZone('sellingPed')
+                                        exports['indigo-target']:RemoveZone('sellingPed')
                                         PoliceCall()
                                     end,
                                 },
@@ -237,7 +237,7 @@ local function SellToPed(ped)
                                         SetEntityAsNoLongerNeeded(entity)
                                         ClearPedTasksImmediately(entity)
                                         lastPed[#lastPed + 1] = entity
-                                        exports['qb-target']:RemoveZone('sellingPed')
+                                        exports['indigo-target']:RemoveZone('sellingPed')
                                     end,
                                 },
                             },
@@ -246,10 +246,10 @@ local function SellToPed(ped)
                     elseif not Config.UseTarget then
                         if not textDrawn then
                             textDrawn = true
-                            exports['qb-core']:DrawText(Lang:t("info.drug_offer", {bags = bagAmount, drugLabel = currentOfferDrug.label, randomPrice = randomPrice}))
+                            exports['indigo-core']:DrawText(Lang:t("info.drug_offer", {bags = bagAmount, drugLabel = currentOfferDrug.label, randomPrice = randomPrice}))
                         end
                         if IsControlJustPressed(0, 38) then
-                            exports['qb-core']:KeyPressed()
+                            exports['indigo-core']:KeyPressed()
                             textDrawn = false
                             TriggerServerEvent('indigo-drugs:server:sellCornerDrugs', drugType, bagAmount, randomPrice)
                             hasTarget = false
@@ -264,7 +264,7 @@ local function SellToPed(ped)
                             break
                         end
                         if IsControlJustPressed(0, 47) then
-                            exports['qb-core']:KeyPressed()
+                            exports['indigo-core']:KeyPressed()
                             textDrawn = false
                             QBCore.Functions.Notify(Lang:t("error.offer_declined"), 'error')
                             hasTarget = false
@@ -278,10 +278,10 @@ local function SellToPed(ped)
                 else
                     if Config.UseTarget then
                         zoneMade = false
-                        exports['qb-target']:RemoveZone('sellingPed')
+                        exports['indigo-target']:RemoveZone('sellingPed')
                     else
                         if textDrawn then
-                            exports['qb-core']:HideText()
+                            exports['indigo-core']:HideText()
                             textDrawn = false
                         end
                     end

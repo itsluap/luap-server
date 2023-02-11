@@ -27,7 +27,7 @@ Coming soon...
 # Meth Preview
 https://streamable.com/0pcjlt
 
-# Add to qb-core > shared.lua
+# Add to indigo-core > shared.lua
 
 ```
     ["wet_weed"] 		 	 	 	 = {["name"] = "wet_weed",           			["label"] = "Moist Weed",	 			["weight"] = 3000, 		["type"] = "item", 		["image"] = "wet_weed.png", 			["unique"] = false, 	["useable"] = false, 	["shouldClose"] = false,   ["combinable"] = nil,   ["expire"] = 90,  ["description"] = "Wet weed that needs to be treated!"},
@@ -64,7 +64,7 @@ qb-inventory > html > images
 
 # Dependencies
 * [PolyZone](https://github.com/mkafrin/PolyZone)
-* [qb-target](https://github.com/BerkieBb/qb-target)
+* [indigo-target](https://github.com/BerkieBb/indigo-target)
 * [indigo-menu](https://github.com/qbcore-framework/indigo-menu)
 * [ps-ui](https://github.com/Project-Sloth/ps-ui)
 * [Meth Lab IPL](https://github.com/Bob74/bob74_ipl/tree/master/dlc_tuner)

@@ -7,7 +7,7 @@ game "gta5"
 
 dependencies {
 	'indigo-menu',
-	'qb-input',
+	'indigo-input',
 }
 
 shared_scripts {

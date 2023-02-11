@@ -1,5 +1,5 @@
-local QBCore = exports['qb-core']:GetCoreObject()
-RegisterNetEvent('QBCore:Client:UpdateObject', function() QBCore = exports['qb-core']:GetCoreObject() end)
+local QBCore = exports['indigo-core']:GetCoreObject()
+RegisterNetEvent('QBCore:Client:UpdateObject', function() QBCore = exports['indigo-core']:GetCoreObject() end)
 
 PlayerJob = {}
 PlayerGang = {}
@@ -29,7 +29,7 @@ CreateThread(function()
 	for k, v in pairs(Config.Jobs) do if v.gang then gangroles[tostring(k)] = 0 else jobroles[tostring(k)] = 0 end end
 	--Create Target at location
 	Targets["JimBank"] =
-	exports['qb-target']:AddCircleZone("JimBank", vector3(Config.CashInLocation.x, Config.CashInLocation.y, Config.CashInLocation.z), 2.0, { name="JimBank", debugPoly=Config.Debug, useZ=true, },
+	exports['indigo-target']:AddCircleZone("JimBank", vector3(Config.CashInLocation.x, Config.CashInLocation.y, Config.CashInLocation.z), 2.0, { name="JimBank", debugPoly=Config.Debug, useZ=true, },
 		{ options = {
 			{ event = "jim-payments:Tickets:Menu", icon = "fas fa-receipt", label = Loc[Config.Lan].target["cashin_boss"], job = jobroles, },
 			{ event = "jim-payments:Tickets:Menu", icon = "fas fa-receipt", label = Loc[Config.Lan].target["cashin_gang"], gang = gangroles, } },
@@ -47,7 +47,7 @@ CreateThread(function()
 			local gang = nil
 			if v[i].gang then job = nil gang = k end
 			Targets["CustomRegister: "..k..i] =
-			exports['qb-target']:AddBoxZone("CustomRegister: "..k..i, v[i].coords.xyz, 0.47, 0.34, { name="CustomRegister: "..k..i, heading = v[i].coords[4], debugPoly=Config.Debug, minZ=v[i].coords.z-0.1, maxZ=v[i].coords.z+0.4 },
+			exports['indigo-target']:AddBoxZone("CustomRegister: "..k..i, v[i].coords.xyz, 0.47, 0.34, { name="CustomRegister: "..k..i, heading = v[i].coords[4], debugPoly=Config.Debug, minZ=v[i].coords.z-0.1, maxZ=v[i].coords.z+0.4 },
 				{ options = { { event = "jim-payments:client:Charge", icon = "fas fa-credit-card", label = Loc[Config.Lan].target["charge"], job = job, gang = gang, img = "" }, },
 					distance = 2.0 })
 			if v[i].prop then
@@ -60,13 +60,13 @@ end)
 RegisterNetEvent('jim-payments:client:Charge', function(data, outside)
 	--Check if player is using /cashregister command
 	if not outside and not onDuty and data.gang == nil then triggerNotify(nil, Loc[Config.Lan].error["not_onduty"], "error") return end
-	local newinputs = {} -- Begin qb-input creation here.
+	local newinputs = {} -- Begin indigo-input creation here.
 	if Config.List then -- If nearby player list is wanted:
 		--Retrieve a list of nearby players from server
 		local p = promise.new() QBCore.Functions.TriggerCallback('jim-payments:MakePlayerList', function(cb) p:resolve(cb) end)
 		local onlineList = Citizen.Await(p)
 		local nearbyList = {}
-		--Convert list of players nearby into one qb-input understands + add distance info
+		--Convert list of players nearby into one indigo-input understands + add distance info
 		for _, v in pairs(QBCore.Functions.GetPlayersFromCoords(GetEntityCoords(PlayerPedId()), Config.PaymentRadius)) do
 			local dist = #(GetEntityCoords(GetPlayerPed(v)) - GetEntityCoords(PlayerPedId()))
 			for i = 1, #onlineList do
@@ -85,14 +85,14 @@ RegisterNetEvent('jim-payments:client:Charge', function(data, outside)
 	end
 	--Check if image was given when opening the regsiter
 	local img = data.img or ""
-	--Continue adding payment options to qb-input
+	--Continue adding payment options to indigo-input
 	newinputs[#newinputs+1] = { type = 'radio', name = 'billtype', text = Loc[Config.Lan].menu["type"], options = { { value = "cash", text = Loc[Config.Lan].menu["cash"] }, { value = "bank", text = Loc[Config.Lan].menu["card"] } } }
 	newinputs[#newinputs+1] = { type = 'number', isRequired = true, name = 'price', text = Loc[Config.Lan].menu["amount_charge"] }
 	--Grab Player Job name or Gang Name if needed
 	local label = PlayerJob.label
 	local gang = false
 	if data.gang then label = PlayerGang.label gang = true end
-	local dialog = exports['qb-input']:ShowInput({ header = img..label..Loc[Config.Lan].menu["cash_reg"], submitText = Loc[Config.Lan].menu["send"], inputs = newinputs})
+	local dialog = exports['indigo-input']:ShowInput({ header = img..label..Loc[Config.Lan].menu["cash_reg"], submitText = Loc[Config.Lan].menu["send"], inputs = newinputs})
 	if dialog then
 		if not dialog.citizen or not dialog.price then return end
 		TriggerServerEvent('jim-payments:server:Charge', dialog.citizen, dialog.price, dialog.billtype, data.img, outside, gang)
@@ -105,13 +105,13 @@ RegisterNetEvent('jim-payments:client:PolCharge', function()
 	for k in pairs(Config.FineJobs) do if k == PlayerJob.name then allowed = true end end
 	if not allowed then triggerNotify(nil, Loc[Config.Lan].error["no_job"], "error") return end
 
-	local newinputs = {} -- Begin qb-input creation here.
+	local newinputs = {} -- Begin indigo-input creation here.
 	if Config.FineJobList then -- If nearby player list is wanted:
 		--Retrieve a list of nearby players from server
 		local p = promise.new() QBCore.Functions.TriggerCallback('jim-payments:MakePlayerList', function(cb) p:resolve(cb) end)
 		local onlineList = Citizen.Await(p)
 		local nearbyList = {}
-		--Convert list of players nearby into one qb-input understands + add distance info
+		--Convert list of players nearby into one indigo-input understands + add distance info
 		for _, v in pairs(QBCore.Functions.GetPlayersFromCoords(GetEntityCoords(PlayerPedId()), Config.PaymentRadius)) do
 			local dist = #(GetEntityCoords(GetPlayerPed(v)) - GetEntityCoords(PlayerPedId()))
 			for i = 1, #onlineList do
@@ -128,12 +128,12 @@ RegisterNetEvent('jim-payments:client:PolCharge', function()
 	else -- If Config.List is false, create input text box for ID's
 		newinputs[#newinputs+1] = { type = 'text', isRequired = true, name = 'citizen', text = Loc[Config.Lan].menu["person_id"] }
 	end
-	--Continue adding payment options to qb-input
+	--Continue adding payment options to indigo-input
 	newinputs[#newinputs+1] = { type = 'number', isRequired = true, name = 'price', text = Loc[Config.Lan].menu["amount_charge"] }
 	--Grab Player Job name or Gang Name if needed
 	local label = PlayerJob.label
 	local gang = false
-	local dialog = exports['qb-input']:ShowInput({ header = label..Loc[Config.Lan].menu["charge"], submitText = Loc[Config.Lan].menu["send"], inputs = newinputs})
+	local dialog = exports['indigo-input']:ShowInput({ header = label..Loc[Config.Lan].menu["charge"], submitText = Loc[Config.Lan].menu["send"], inputs = newinputs})
 	if dialog then
 		if not dialog.citizen or not dialog.price then return end
 		TriggerServerEvent('jim-payments:server:PolCharge', dialog.citizen, dialog.price)
@@ -184,7 +184,7 @@ RegisterNetEvent('jim-payments:Tickets:Sell:yes', function() TriggerServerEvent(
 RegisterNetEvent('jim-payments:Tickets:Sell:no', function() exports['indigo-menu']:closeMenu() end)
 
 AddEventHandler('onResourceStop', function(r) if r ~= GetCurrentResourceName() then return end
-	for k in pairs(Targets) do exports['qb-target']:RemoveZone(k) end
+	for k in pairs(Targets) do exports['indigo-target']:RemoveZone(k) end
 	for i = 1, #Till do DeleteEntity(Till[i]) end
 	unloadModel(GetEntityModel(BankPed)) DeletePed(BankPed)
 end)

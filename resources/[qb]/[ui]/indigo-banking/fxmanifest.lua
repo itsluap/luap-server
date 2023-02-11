@@ -8,7 +8,7 @@ version '1.0.3'
 lua54 'yes'
 
 shared_scripts {
-    '@qb-core/shared/locale.lua',
+    '@indigo-core/shared/locale.lua',
     'locales/en.lua',
     'config.lua'
 }

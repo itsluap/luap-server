@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 
 local washers = {
     {x=1135.70, y=-992.30, z=46.11, h=99.29},
@@ -10,7 +10,7 @@ local washers = {
 Citizen.CreateThread(function()
 
     for k,v in pairs(washers) do 
-        exports['qb-target']:AddBoxZone("wash"..k, vector3(v.x, v.y, v.z), 0.8, 1.2, {
+        exports['indigo-target']:AddBoxZone("wash"..k, vector3(v.x, v.y, v.z), 0.8, 1.2, {
             name="wash"..k,
             heading=v.h,
             debugPoly=false,

@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 
 local isMelting = false
 local canTake = false
@@ -22,7 +22,7 @@ end)
 CreateThread(function()
     if Config.UseTarget then
         for key, value in pairs(Config.PawnLocation) do
-            exports['qb-target']:AddBoxZone('PawnShop'..key, value.coords, value.length, value.width, {
+            exports['indigo-target']:AddBoxZone('PawnShop'..key, value.coords, value.length, value.width, {
                 name = 'PawnShop'..key,
                 heading = value.heading,
                 minZ = value.minZ,
@@ -241,7 +241,7 @@ RegisterNetEvent('indigo-pawnshop:client:openMelt', function(data)
 end)
 
 RegisterNetEvent('indigo-pawnshop:client:pawnitems', function(item)
-    local sellingItem = exports['qb-input']:ShowInput({
+    local sellingItem = exports['indigo-input']:ShowInput({
         header = Lang:t('info.title'),
         submitText = Lang:t('info.sell'),
         inputs = {
@@ -267,7 +267,7 @@ RegisterNetEvent('indigo-pawnshop:client:pawnitems', function(item)
 end)
 
 RegisterNetEvent('indigo-pawnshop:client:meltItems', function(item)
-    local meltingItem = exports['qb-input']:ShowInput({
+    local meltingItem = exports['indigo-input']:ShowInput({
         header = Lang:t('info.melt'),
         submitText = Lang:t('info.submit'),
         inputs = {

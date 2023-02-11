@@ -5,7 +5,7 @@ description 'indigo-vineyard'
 version '1.1.0'
 
 shared_scripts {
-    '@qb-core/shared/locale.lua',
+    '@indigo-core/shared/locale.lua',
     'locales/en.lua',
     'config.lua'
 }
@@ -18,7 +18,7 @@ client_scripts {
 }
 
 dependencies {
-    'qb-core',
+    'indigo-core',
     'PolyZone'
 }
 

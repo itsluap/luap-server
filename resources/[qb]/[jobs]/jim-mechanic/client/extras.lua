@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 
 --Slow and visible cleaning command
 RegisterNetEvent('jim-mechanic:client:cleanVehicle', function(skip)
@@ -82,7 +82,7 @@ RegisterNetEvent("jim-mechanic:seat", function(seat)
 	local vehicle = GetVehiclePedIsIn(PlayerPedId())
 	local IsSeatFree = IsVehicleSeatFree(vehicle, tonumber(seat))
 	local speed = GetEntitySpeed(vehicle)
-	local HasHarnass = exports['qb-smallresources']:HasHarness()
+	local HasHarnass = exports['indigo-smallresources']:HasHarness()
 	if not HasHarnass then
 		local kmh = (speed * 3.6);
 		if IsSeatFree then

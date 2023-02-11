@@ -1,5 +1,5 @@
 # indigo-crypto
-Crypto Currency For QB-Core
+Crypto Currency For indigo-core
 
 # Dependency
 https://github.com/qbcore-framework/mhacking

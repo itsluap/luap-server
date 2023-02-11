@@ -179,7 +179,7 @@ Read this before opening a ticket.
 - The toolbox is only usable by mechanics, if `Config.RequiresJob` is enabled
 - This item can only be used **OUTSIDE** of a vehicle.
 - This displays information about the vehicle's currently installed peformance modifications
-	- It will attempt to grab information from qb-core's `vehicles.lua` to display vehicle names and the value, it does this by searching for a matching "model hash".
+	- It will attempt to grab information from indigo-core's `vehicles.lua` to display vehicle names and the value, it does this by searching for a matching "model hash".
 	- It will list the names and levels of each installed modification, and even if they can be installed on the vehicle at all.
 	- If there is an installed item you can select it in the shown menu, then you will be the given a confirmation option to remove it. Doing so will set it back to stock and place the specific upgrade in your inventory.
 - At the bottom of this menu is a quick shortcut to what is displayed by the `/checkmods` command, which displays a simple list of all possible cosmetic mods that can applied to the current vehicle
@@ -233,7 +233,7 @@ Read this before opening a ticket.
 
 - This file creates repair benches that can **ONLY** be used when there isn't any mechanics on duty.
 - The benches are added to set locations at the top of this file
-- They are activated by targetting with `qb-target` while in a car
+- They are activated by targetting with `indigo-target` while in a car
 - How the config.lua options are set will determine how the menu functions
 	- `Config.ManualRepairCost` - This is the **SET** amount a vehicle repair will cost
 	- `Config.ManualRepairBased` - when `true` this overrides the above and grabs the value of the vehicle from vehicles.lua
@@ -243,7 +243,7 @@ Read this before opening a ticket.
 	- `Config.dutyMessage` - The excuse for why people can't repair while mechanics are on duty.
 	- `Config.repairAnimate` - Animates the repair, better than a progress bar
 	- `Config.repairSpeed` - How fast each repair step takes
-- NOTE: People have reported this file causing issues with removing other qb-target locations in other files
+- NOTE: People have reported this file causing issues with removing other indigo-target locations in other files
 	- I have no idea how or why.
 	- Removing this file seems to fix it.
 
@@ -253,7 +253,7 @@ Read this before opening a ticket.
 - This file creates repair/customisation benches for police
 	- These are intended to be for Police/EMS players, but other job roles can be added easily
 - It adds a bench to the set locations where they can repair and change a handful of cosmetics/extras.
-- This is activated by using third eye/qb-target
+- This is activated by using third eye/indigo-target
 - Note: I have been asked several times to add more options to this
 	- There are so many different custom police cars that use a random modification to change a small thing on the vehicle.
 	- At that point if I added more/all options it would just be another version of `indigo-customs`
@@ -288,7 +288,7 @@ There is little snippets of information on each line for these, but this is a mo
 
 ### Config.img
 - Use this if if you are using an older/edited version of indigo-menu
-- This is for adding images of inventory items to indigo-menu and qb-input.
+- This is for adding images of inventory items to indigo-menu and indigo-input.
 - The default would be: `qb-inventory/html/images/`
 - I personally use LJ's inventory system which makes it: `lj-inventory/html/images/`. I imagine other's are pretty similar.
 
@@ -757,7 +757,7 @@ RepairFuelCost = 8,
 
 ### Item installation
 - Add the image files from the zip to your `qb-inventory > html > images` folder
-- Add these lines to your qb-core > shared lua under the Items section
+- Add these lines to your indigo-core > shared lua under the Items section
 
 ```lua
 --Jim-Mechanic Vehicles
@@ -825,8 +825,8 @@ RepairFuelCost = 8,
 ```
 
 ## Dependancies
-- This script requires `indigo-menu` and `qb-input` for the menu systems
-- This script requires `qb-target` for opening stores, crafting tables, cash registers, going on duty, nos refill
+- This script requires `indigo-menu` and `indigo-input` for the menu systems
+- This script requires `indigo-target` for opening stores, crafting tables, cash registers, going on duty, nos refill
 - This script is also designed to use [jim-payments](https://github.com/jimathy/jim-payments) for charging customers and sending money to the society accounts
 
 ## NOS + Odometer
@@ -863,7 +863,7 @@ RepairFuelCost = 8,
 - When successfully added the mechboards will show the vehicle and plate number
 
 ## Updating core events
-- To add the ability to save RGB paints, their colour finishes and drift/bulletproof tires you need to change two functions in your qb-core/client/functions.lua
+- To add the ability to save RGB paints, their colour finishes and drift/bulletproof tires you need to change two functions in your indigo-core/client/functions.lua
 - Replace `GetVehicleProperties` and `SetVehicleProperties` functions with these:
 ```lua
 function QBCore.Functions.GetVehicleProperties(vehicle)

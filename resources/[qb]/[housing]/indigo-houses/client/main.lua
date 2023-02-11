@@ -1,4 +1,4 @@
-QBCore = exports['qb-core']:GetCoreObject()
+QBCore = exports['indigo-core']:GetCoreObject()
 IsInside = false
 ClosestHouse = nil
 HasHouseKey = false
@@ -164,7 +164,7 @@ local function RegisterStashTarget()
 
     stashTargetBox:onPlayerInOut(function (isPointInside)
         if isPointInside and not entering and isOwned then
-             --exports['qb-core']:DrawText(Lang:t("target.open_stash"), 'left')
+             --exports['indigo-core']:DrawText(Lang:t("target.open_stash"), 'left')
             exports['ps-ui']:DisplayText(Lang:t("target.open_stash"), 'primary')
             --print('showing stash ui')
         else
@@ -470,7 +470,7 @@ local function FrontDoorCam(coords)
     cam = CreateCamWithParams("DEFAULT_SCRIPTED_CAMERA", coords.x, coords.y, coords.z + 0.5, 0.0, 0.00, coords.h - 180, 80.00, false, 0)
     SetCamActive(cam, true)
     RenderScriptCams(true, true, 500, true, true)
-    TriggerEvent('qb-weathersync:client:EnableSync')
+    TriggerEvent('indigo-weathersync:client:EnableSync')
     FrontCam = true
     FreezeEntityPosition(PlayerPedId(), true)
     Wait(500)
@@ -929,8 +929,8 @@ local function enterOwnedHouse(house)
     entering = true
     Wait(500)
     TriggerServerEvent('indigo-houses:server:SetInsideMeta', house, true)
-    TriggerEvent('qb-weathersync:client:DisableSync')
-    --TriggerEvent('qb-weathersync:client:EnableSync')
+    TriggerEvent('indigo-weathersync:client:DisableSync')
+    --TriggerEvent('indigo-weathersync:client:EnableSync')
     TriggerEvent('indigo-weed:client:getHousePlants', house)
     entering = false
     setHouseLocations()
@@ -951,7 +951,7 @@ local function LeaveHouse(house)
         Wait(500)
         exports['indigo-interior']:DespawnInterior(houseObj, function()
             UnloadDecorations()
-            TriggerEvent('qb-weathersync:client:EnableSync')
+            TriggerEvent('indigo-weathersync:client:EnableSync')
             Wait(250)
             DoScreenFadeIn(250)
             SetEntityCoords(PlayerPedId(), Config.Houses[CurrentHouse].coords.enter.x, Config.Houses[CurrentHouse].coords.enter.y, Config.Houses[CurrentHouse].coords.enter.z)
@@ -987,8 +987,8 @@ local function enterNonOwnedHouse(house)
     entering = true
     Wait(500)
     TriggerServerEvent('indigo-houses:server:SetInsideMeta', house, true)
-    --TriggerEvent('qb-weathersync:client:DisableSync')
-    TriggerEvent('qb-weathersync:client:EnableSync')
+    --TriggerEvent('indigo-weathersync:client:DisableSync')
+    TriggerEvent('indigo-weathersync:client:EnableSync')
     TriggerEvent('indigo-weed:client:getHousePlants', house)
     entering = false
     InOwnedHouse = true
@@ -1478,7 +1478,7 @@ RegisterNetEvent('indigo-houses:client:ChangeCharacter', function()
             Wait(10)
         end
         exports['indigo-interior']:DespawnInterior(houseObj, function()
-            TriggerEvent('qb-weathersync:client:EnableSync')
+            TriggerEvent('indigo-weathersync:client:EnableSync')
             SetEntityCoords(PlayerPedId(), Config.Houses[CurrentHouse].coords.enter.x, Config.Houses[CurrentHouse].coords.enter.y, Config.Houses[CurrentHouse].coords.enter.z + 0.5)
             SetEntityHeading(PlayerPedId(), Config.Houses[CurrentHouse].coords.enter.h)
             InOwnedHouse = false

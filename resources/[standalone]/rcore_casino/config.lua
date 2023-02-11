@@ -179,7 +179,7 @@ Framework = {
     BUILTIN_HUD_CHIPS = false,
     BUILTIN_HUD_CHIPS_ICON = "casinochip.png",
     -- qbcore resource name + shared object name
-    QB_CORE_RESOURCE_NAME = "qb-core",
+    QB_CORE_RESOURCE_NAME = "indigo-core",
     QBCORE_SHARED_OBJECT = "QBCore:GetObject"
 }
 

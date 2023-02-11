@@ -3,7 +3,7 @@ Config = {}
 Config.Mysql = 'oxmysql' -- mysql-async, ghmattisql, oxmysql
 Config.FixedCamera = true
 
-Config.DrawText = "qb-core" -- Define the export resource accordingly | qb-core, qb-drawtext
+Config.DrawText = "indigo-core" -- Define the export resource accordingly | indigo-core, qb-drawtext
 
 Config.StanceLocations = {
   ["customsMain"] = { -- THis name should be unique no duplicates

@@ -1,7 +1,7 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 
 CreateThread(function()
-    exports['qb-target']:SpawnPed({
+    exports['indigo-target']:SpawnPed({
         model = 'a_m_m_hillbilly_02',
         coords = vector4(-1187.73, -445.27, 43.91, 289.45), 
         minusOne = true, 
@@ -20,7 +20,7 @@ CreateThread(function()
           distance = 2.5,
         },
     })
-    exports['qb-target']:SpawnPed({
+    exports['indigo-target']:SpawnPed({
         model = 'a_m_m_mlcrisis_01',
         coords = vector4(812.49, -2399.59, 23.66, 223.1), 
         minusOne = true, 
@@ -42,7 +42,7 @@ CreateThread(function()
 end)
 
 CreateThread(function()
-    exports["qb-target"]:AddBoxZone("chemmenu", vector3(3535.66, 3661.69, 28.12), 1.65, 2.4, {
+    exports["indigo-target"]:AddBoxZone("chemmenu", vector3(3535.66, 3661.69, 28.12), 1.65, 2.4, {
         name = "chemmenu",
         heading = 350.0,
         debugPoly = false,
@@ -60,7 +60,7 @@ CreateThread(function()
         },
     distance = 2.5
     })
-    exports["qb-target"]:AddBoxZone("methprocess", vector3(978.22, -147.1, -48.53), 1.6, 1.8, {
+    exports["indigo-target"]:AddBoxZone("methprocess", vector3(978.22, -147.1, -48.53), 1.6, 1.8, {
         name = "methprocess",
         heading = 0,
         debugPoly = false,
@@ -78,7 +78,7 @@ CreateThread(function()
         },
     distance = 3.5
     })
-    exports["qb-target"]:AddBoxZone("methtempup", vector3(982.56, -145.59, -49.0), 1.2, 1.4, {
+    exports["indigo-target"]:AddBoxZone("methtempup", vector3(982.56, -145.59, -49.0), 1.2, 1.4, {
         name = "methtempup",
         heading = 0,
         debugPoly = false,
@@ -96,7 +96,7 @@ CreateThread(function()
         },
     distance = 3.5
     })
-    exports["qb-target"]:AddBoxZone("methtempdown", vector3(979.59, -144.14, -49.0), 1.2, 0.5, {
+    exports["indigo-target"]:AddBoxZone("methtempdown", vector3(979.59, -144.14, -49.0), 1.2, 0.5, {
         name = "methtempdown",
         heading = 354,
         debugPoly = false,
@@ -114,7 +114,7 @@ CreateThread(function()
         },
     distance = 3.5
     })
-    exports["qb-target"]:AddBoxZone("methbagging", vector3(987.44, -140.5, -49.0), 0.5, 0.7, {
+    exports["indigo-target"]:AddBoxZone("methbagging", vector3(987.44, -140.5, -49.0), 0.5, 0.7, {
         name = "methbagging",
         heading = 1,
         debugPoly = false,
@@ -132,7 +132,7 @@ CreateThread(function()
         },
     distance = 3.5
     })
-    exports["qb-target"]:AddBoxZone("methkeypad", vector3(969.04, -146.17, -46.4), 0.4, 0.2, {
+    exports["indigo-target"]:AddBoxZone("methkeypad", vector3(969.04, -146.17, -46.4), 0.4, 0.2, {
         name = "methkeypad",
         heading = 0,
         debugPoly = false,
@@ -150,7 +150,7 @@ CreateThread(function()
         },
     distance = 3.5
     })
-    exports["qb-target"]:AddBoxZone("cokeleave", vector3(1088.56, -3187.02, -38.67), 1, 1, {
+    exports["indigo-target"]:AddBoxZone("cokeleave", vector3(1088.56, -3187.02, -38.67), 1, 1, {
         name = "cokeleave",
         heading = 0,
         debugPoly = false,
@@ -168,7 +168,7 @@ CreateThread(function()
         },
     distance = 3.5
     })
-    exports["qb-target"]:AddBoxZone("cokeleafproc", vector3(1086.2, -3194.9, -38.99), 2.5, 1.4, {
+    exports["indigo-target"]:AddBoxZone("cokeleafproc", vector3(1086.2, -3194.9, -38.99), 2.5, 1.4, {
         name = "cokeleafproc",
         heading = 0,
         debugPoly = false,
@@ -186,7 +186,7 @@ CreateThread(function()
         },
     distance = 3.5
     })
-    exports["qb-target"]:AddBoxZone("cokepowdercut", vector3(1092.89, -3195.78, -38.99), 7.65, 1.2, {
+    exports["indigo-target"]:AddBoxZone("cokepowdercut", vector3(1092.89, -3195.78, -38.99), 7.65, 1.2, {
         name = "cokepowdercut",
         heading = 90,
         debugPoly = false,
@@ -204,7 +204,7 @@ CreateThread(function()
         },
     distance = 3.5
     })
-    exports["qb-target"]:AddBoxZone("cokebricked", vector3(1100.51, -3199.46, -38.93), 2.6, 1.0, {
+    exports["indigo-target"]:AddBoxZone("cokebricked", vector3(1100.51, -3199.46, -38.93), 2.6, 1.0, {
         name = "cokebricked",
         heading = 90,
         debugPoly = false,
@@ -222,7 +222,7 @@ CreateThread(function()
         },
     distance = 3.5
     })
-    exports["qb-target"]:AddBoxZone("weedproces", vector3(2328.53, 2570.99, 46.61), 2.5, 2.5, {
+    exports["indigo-target"]:AddBoxZone("weedproces", vector3(2328.53, 2570.99, 46.61), 2.5, 2.5, {
         name = "weedproces",
         heading = 331.74,
         debugPoly = false,
@@ -239,7 +239,7 @@ CreateThread(function()
         },
     distance = 3.5
     })
-	exports["qb-target"]:AddBoxZone("heroinproces", vector3(1384.9, -2080.61, 52.21), 2.5, 2.5, {
+	exports["indigo-target"]:AddBoxZone("heroinproces", vector3(1384.9, -2080.61, 52.21), 2.5, 2.5, {
         name = "heroinproces",
         heading = 223.98,
         debugPoly = false,
@@ -256,7 +256,7 @@ CreateThread(function()
         },
     distance = 3.5
     })
-    exports['qb-target']:AddBoxZone("thychloride", vector3(-679.77, 5800.7, 17.33), 1, 1, {
+    exports['indigo-target']:AddBoxZone("thychloride", vector3(-679.77, 5800.7, 17.33), 1, 1, {
 		name="thychloride",
 		heading=340.0,
 		debugPoly=false,
@@ -273,7 +273,7 @@ CreateThread(function()
 		},
 	distance = 2.5
 	})
-    exports['qb-target']:AddBoxZone("heroinproc", vector3(1413.7, -2041.77, 52.0), 1, 1, {
+    exports['indigo-target']:AddBoxZone("heroinproc", vector3(1413.7, -2041.77, 52.0), 1, 1, {
 		name="heroinproc",
 		heading=352.15,
 		debugPoly=false,
@@ -293,7 +293,7 @@ CreateThread(function()
 end)
 
 CreateThread(function()
-    exports['qb-target']:AddTargetModel("h4_prop_bush_cocaplant_01", {
+    exports['indigo-target']:AddTargetModel("h4_prop_bush_cocaplant_01", {
         options = {
             {
                 type = "client",
@@ -304,7 +304,7 @@ CreateThread(function()
         },
         distance = 4.0
     })
-    exports['qb-target']:AddTargetModel("prop_plant_01b", {
+    exports['indigo-target']:AddTargetModel("prop_plant_01b", {
         options = {
             {
                 type = "client",
@@ -315,7 +315,7 @@ CreateThread(function()
         },
         distance = 4.0
     })
-    exports['qb-target']:AddTargetModel("mw_weed_plant", {
+    exports['indigo-target']:AddTargetModel("mw_weed_plant", {
         options = {
             {
                 type = "client",
@@ -326,7 +326,7 @@ CreateThread(function()
         },
         distance = 4.0
     })
-    exports['qb-target']:AddTargetModel("mw_sodium_barrel", {
+    exports['indigo-target']:AddTargetModel("mw_sodium_barrel", {
         options = {
             {
                 type = "client",
@@ -337,7 +337,7 @@ CreateThread(function()
         },
         distance = 4.0
     })
-    exports['qb-target']:AddTargetModel("mw_sulfuric_barrel", {
+    exports['indigo-target']:AddTargetModel("mw_sulfuric_barrel", {
         options = {
             {
                 type = "client",
@@ -348,7 +348,7 @@ CreateThread(function()
         },
         distance = 4.0
     })
-    exports['qb-target']:AddTargetModel("mw_chemical_barrel", {
+    exports['indigo-target']:AddTargetModel("mw_chemical_barrel", {
         options = {
             {
                 type = "client",
@@ -359,7 +359,7 @@ CreateThread(function()
         },
         distance = 4.0
     })
-    exports['qb-target']:AddTargetModel("mw_hydro_barrel", {
+    exports['indigo-target']:AddTargetModel("mw_hydro_barrel", {
         options = {
             {
                 type = "client",

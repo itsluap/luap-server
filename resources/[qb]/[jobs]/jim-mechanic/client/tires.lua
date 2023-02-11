@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 --========================================================== Drift
 RegisterNetEvent('jim-mechanic:client:applyDrift', function()
 	if GetGameBuildNumber() < 2372 then return end

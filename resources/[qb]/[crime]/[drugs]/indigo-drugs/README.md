@@ -1,5 +1,5 @@
 # indigo-drugs
-Drugs Script For QB-Core
+Drugs Script For indigo-core
 
 # License
 

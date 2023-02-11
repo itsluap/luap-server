@@ -1,5 +1,5 @@
 # indigo-vehiclekeys
-Vehicle Keys System For QB-Core
+Vehicle Keys System For indigo-core
 
 # License
 

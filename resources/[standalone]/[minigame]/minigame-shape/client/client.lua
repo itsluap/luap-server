@@ -1,4 +1,4 @@
-Framework = exports["qb-core"]:GetCoreObject()
+Framework = exports["indigo-core"]:GetCoreObject()
 RegisterNetEvent('Framework:Client:CloseNui')
 AddEventHandler('Framework:Client:CloseNui', function()
     SetNuiFocus(false, false)

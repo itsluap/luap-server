@@ -18,8 +18,8 @@ Black Market Script For QBCore
 - Organized Shop
 
 # Dependencies
-- [qb-core](https://github.com/qbcore-framework/qb-core)
-- [qb-target](https://github.com/qbcore-framework/qb-target)
+- [indigo-core](https://github.com/qbcore-framework/indigo-core)
+- [indigo-target](https://github.com/qbcore-framework/indigo-target)
 - [indigo-menu](https://github.com/qbcore-framework/indigo-menu)
 
 # Previews

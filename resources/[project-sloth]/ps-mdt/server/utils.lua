@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 
 function GetPlayerData(source)
 	local Player = QBCore.Functions.GetPlayer(source)

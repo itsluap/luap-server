@@ -1,5 +1,5 @@
 # indigo-houserobbery
-House Robberies For QB-Core
+House Robberies For indigo-core
 
 ## Dependencies
 - indigo-lockpick: https://github.com/qbcore-framework/indigo-lockpick

@@ -1,7 +1,7 @@
 Config = {}
 
 Config.Framework = "qbcore" -- Set you framework "qbcore" or "esx" or "" if you use standalone framework and use /drone 1 or 2 command to use the Drone
-Config.QBCoreName = "qb-core" -- You QBCore script name must be correct to work (only if you use QBCore Framework)
+Config.QBCoreName = "indigo-core" -- You QBCore script name must be correct to work (only if you use QBCore Framework)
 Config.IsESXLegacy = false -- Set it true is you're using esx legacy (only if you use ESX Framework)
 
 Config.Controls = { -- FiveM Controls: https://docs.fivem.net/docs/game-references/controls/

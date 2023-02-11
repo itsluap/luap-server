@@ -6,7 +6,7 @@ version '1.0'
 
 shared_scripts {
 	'config.lua',
-	'@qb-weapons/config.lua'
+	'@indigo-weapons/config.lua'
 }
 
 server_scripts {

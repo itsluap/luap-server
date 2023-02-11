@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 local PlayerJob = QBCore.Functions.GetPlayerData().job
 local shownBossMenu = false
 local DynamicMenuItems = {}
@@ -6,7 +6,7 @@ local DynamicMenuItems = {}
 -- UTIL
 local function CloseMenuFull()
     exports['indigo-menu']:closeMenu()
-    exports['qb-core']:HideText()
+    exports['indigo-core']:HideText()
     shownBossMenu = false
 end
 
@@ -239,7 +239,7 @@ CreateThread(function()
     if Config.UseTarget then
         for job, zones in pairs(Config.BossMenuZones) do
             for index, data in ipairs(zones) do
-                exports['qb-target']:AddBoxZone(job.."-BossMenu-"..index, data.coords, data.length, data.width, {
+                exports['indigo-target']:AddBoxZone(job.."-BossMenu-"..index, data.coords, data.length, data.width, {
                     name = job.."-BossMenu-"..index,
                     heading = data.heading,
                     -- debugPoly = true,
@@ -275,11 +275,11 @@ CreateThread(function()
                                 if #(pos - coords) <= 1.5 then
                                     nearBossmenu = true
                                     if not shownBossMenu then
-                                        exports['qb-core']:DrawText('[E] Open Job Management', 'left')
+                                        exports['indigo-core']:DrawText('[E] Open Job Management', 'left')
                                         shownBossMenu = true
                                     end
                                     if IsControlJustReleased(0, 38) then
-                                        exports['qb-core']:HideText()
+                                        exports['indigo-core']:HideText()
                                         TriggerEvent("qb-bossmenu:client:OpenMenu")
                                     end
                                 end

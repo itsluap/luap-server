@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 
 local cancarry = false
 local TruckBones
@@ -47,7 +47,7 @@ CreateThread(function()
 	SetEntityInvincible(RoadRunnerPed, true)
 	SetBlockingOfNonTemporaryEvents(RoadRunnerPed, true)
 
-    exports['qb-target']:AddTargetEntity(RoadRunnerPed, {
+    exports['indigo-target']:AddTargetEntity(RoadRunnerPed, {
         options = {
             {
                 icon = Config.CheckInTargetIcon,
@@ -161,7 +161,7 @@ RegisterNetEvent('kevin-deliveries:StartDelivery', function (DeliveryTruckId, Co
             'seat_dside_r',
             'seat_pside_r'
         }
-        exports['qb-target']:AddTargetBone(TruckBones, {
+        exports['indigo-target']:AddTargetBone(TruckBones, {
             options = {
                 {
                     icon = Config.TruckTargetIcon,
@@ -178,7 +178,7 @@ RegisterNetEvent('kevin-deliveries:StartDelivery', function (DeliveryTruckId, Co
         })
     end
 
-    exports['qb-target']:AddBoxZone('Delivery-TargetZone', vector3(ShopCoords.x, ShopCoords.y, ShopCoords.z), 3.5, 2.0, {
+    exports['indigo-target']:AddBoxZone('Delivery-TargetZone', vector3(ShopCoords.x, ShopCoords.y, ShopCoords.z), 3.5, 2.0, {
         name='Delivery-TargetZone',
         debugPoly= false,
         heading= ShopCoords.w,
@@ -202,7 +202,7 @@ RegisterNetEvent('kevin-deliveries:StartDelivery', function (DeliveryTruckId, Co
 end)
 
 RegisterNetEvent('kevin-deliveries:RemoveTarget', function ()
-    exports['qb-target']:RemoveTargetBone(TruckBones, Config.TruckTargetLabel)
+    exports['indigo-target']:RemoveTargetBone(TruckBones, Config.TruckTargetLabel)
 end)
 
 RegisterNetEvent('kevin-deliveries:CanReturn', function ()

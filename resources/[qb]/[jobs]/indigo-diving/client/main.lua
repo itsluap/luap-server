@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 local isLoggedIn = LocalPlayer.state['isLoggedIn']
 local zones = {}
 local currentArea = 0
@@ -79,7 +79,7 @@ local function setDivingLocation(divingLocation)
     if currentDivingLocation.area ~= 0 then
         for k in pairs(Config.CoralLocations[currentDivingLocation.area].coords.Coral) do
             if Config.UseTarget then
-                exports['qb-target']:RemoveZone(k)
+                exports['indigo-target']:RemoveZone(k)
             else
                 if next(zones) then zones[k]:destroy() end
             end
@@ -103,7 +103,7 @@ local function setDivingLocation(divingLocation)
     currentDivingLocation.blip.label = labelBlip
     for k, v in pairs(Config.CoralLocations[currentDivingLocation.area].coords.Coral) do
         if Config.UseTarget then
-            exports['qb-target']:AddBoxZone('diving_coral_zone_'..k, v.coords, v.length, v.width, {
+            exports['indigo-target']:AddBoxZone('diving_coral_zone_'..k, v.coords, v.length, v.width, {
                 name = 'diving_coral_zone_'..k,
                 heading = v.heading,
                 debugPoly = false,
@@ -132,10 +132,10 @@ local function setDivingLocation(divingLocation)
             zones[k]:onPlayerInOut(function(inside)
                 if inside then
                     currentArea = k
-                    exports['qb-core']:DrawText(Lang:t("info.collect_coral_dt"))
+                    exports['indigo-core']:DrawText(Lang:t("info.collect_coral_dt"))
                 else
                     currentArea = 0
-                    exports['qb-core']:HideText()
+                    exports['indigo-core']:HideText()
                 end
             end)
         end
@@ -171,7 +171,7 @@ local function createSeller()
         SetEntityInvincible(ped, true)
         SetBlockingOfNonTemporaryEvents(ped, true)
         if Config.UseTarget then
-            exports['qb-target']:AddTargetEntity(ped, {
+            exports['indigo-target']:AddTargetEntity(ped, {
                 options = {
                     {
                         label = Lang:t("info.sell_coral"),
@@ -194,10 +194,10 @@ local function createSeller()
             zone:onPlayerInOut(function(inside)
                 if inside then
                     inSellerZone = true
-                    exports['qb-core']:DrawText(Lang:t("info.sell_coral_dt"))
+                    exports['indigo-core']:DrawText(Lang:t("info.sell_coral_dt"))
                 else
                     inSellerZone = false
-                    exports['qb-core']:HideText()
+                    exports['indigo-core']:HideText()
                 end
             end)
         end
@@ -387,9 +387,9 @@ CreateThread(function()
                 sleep = 0
                 if IsControlJustPressed(0, 51) then -- E
                     takeCoral(currentArea)
-                    exports['qb-core']:KeyPressed()
+                    exports['indigo-core']:KeyPressed()
                     Wait(500)
-                    exports['qb-core']:HideText()
+                    exports['indigo-core']:HideText()
                     sleep = 3000
                 end
             end
@@ -398,9 +398,9 @@ CreateThread(function()
                 sleep = 0
                 if IsControlJustPressed(0, 51) then -- E
                     sellCoral()
-                    exports['qb-core']:KeyPressed()
+                    exports['indigo-core']:KeyPressed()
                     Wait(500)
-                    exports['qb-core']:HideText()
+                    exports['indigo-core']:HideText()
                     sleep = 3000
                 end
             end

@@ -1,6 +1,6 @@
 -- Variables
 
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 local Drops = {}
 local Trunks = {}
 local Gloveboxes = {}
@@ -1019,7 +1019,7 @@ end)
 
 RegisterNetEvent('QBCore:Server:UpdateObject', function()
     if source ~= '' then return end -- Safety check if the event was not called from the server.
-    QBCore = exports['qb-core']:GetCoreObject()
+    QBCore = exports['indigo-core']:GetCoreObject()
 end)
 
 RegisterNetEvent('inventory:server:addTrunkItems', function(plate, items)

@@ -1,5 +1,5 @@
 # indigo-houses
-Real Estate for QB-Core Framework :house_with_garden:
+Real Estate for indigo-core Framework :house_with_garden:
 
 # License
 
@@ -20,7 +20,7 @@ Real Estate for QB-Core Framework :house_with_garden:
     along with this program.  If not, see <https://www.gnu.org/licenses/>
 
 ## Dependencies
-- [qb-core](https://github.com/qbcore-framework/qb-core)
+- [indigo-core](https://github.com/qbcore-framework/indigo-core)
 - [indigo-radialmenu](https://github.com/qbcore-framework/indigo-radialmenu) - For the menu in screenshots
 - [qb-anticheat](https://github.com/qbcore-framework/qb-anticheat) - Anti Cheat 
 - [indigo-phone](https://github.com/qbcore-framework/indigo-phone) - Houses app
@@ -28,7 +28,7 @@ Real Estate for QB-Core Framework :house_with_garden:
 - [indigo-garages](https://github.com/qbcore-framework/indigo-garages) - House Garage
 - [indigo-interior](https://github.com/qbcore-framework/indigo-interior) - Necessary for house interiors
 - [indigo-clothing](https://github.com/qbcore-framework/indigo-clothing) - Outfits
-- [qb-weathersync](https://github.com/qbcore-framework/qb-weathersync) - Desync weather inside house
+- [indigo-weathersync](https://github.com/qbcore-framework/indigo-weathersync) - Desync weather inside house
 - [indigo-weed](https://github.com/qbcore-framework/indigo-weed) - Weed plant
 - [indigo-skillbar](https://github.com/qbcore-framework/indigo-skillbar) - Skills
 
@@ -89,7 +89,7 @@ Real Estate for QB-Core Framework :house_with_garden:
 - Import `indigo-houses.sql` in your database
 - Add the following code to your server.cfg/resouces.cfg
 ```
-ensure qb-core
+ensure indigo-core
 ensure indigo-radialmenu
 ensure qb-anticheat
 ensure indigo-phone
@@ -97,7 +97,7 @@ ensure qb-multicharacter
 ensure indigo-garages
 ensure indigo-interior
 ensure indigo-clothing
-ensure qb-weathersync
+ensure indigo-weathersync
 ensure indigo-weed
 ensure indigo-skillbar
 ```

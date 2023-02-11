@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 
 local Targets = {}
 local parking = {}
@@ -8,7 +8,7 @@ CreateThread(function()
 		if v.garage then
 			local out = v.garage.out
 			Targets["BurgerGarage: "..k] =
-				exports['qb-target']:AddBoxZone("BurgerGarage: "..k, vector3(out.x, out.y, out.z-1.03), 0.8, 0.5, { name="BurgerGarage: "..k, heading = out[4]+180.0, debugPoly=Config.Debug, minZ=(out.z-1.03)-0.1, maxZ=(out.z-1.03)+1.3 },
+				exports['indigo-target']:AddBoxZone("BurgerGarage: "..k, vector3(out.x, out.y, out.z-1.03), 0.8, 0.5, { name="BurgerGarage: "..k, heading = out[4]+180.0, debugPoly=Config.Debug, minZ=(out.z-1.03)-0.1, maxZ=(out.z-1.03)+1.3 },
 					{ options = { { event = "jim-burgershot:client:Garage:Menu", icon = "fas fa-clipboard", label = Loc[Config.Lan].targetinfo["job_vehicles"], job = v.job, coords = v.garage.spawn, list = v.garage.list }, },
 					distance = 2.0 })
 			parking[#parking+1] = makeProp({ prop = `prop_parkingpay`, coords = vector4(out.x, out.y, out.z, out.w+180.0)}, 1, false)
@@ -110,6 +110,6 @@ RegisterNetEvent("jim-burgershot:client:Garage:Blip", function(data)
 end)
 
 AddEventHandler('onResourceStop', function(r) if r ~= GetCurrentResourceName() then return end
-	for k in pairs(Targets) do exports['qb-target']:RemoveZone(k) end
+	for k in pairs(Targets) do exports['indigo-target']:RemoveZone(k) end
 	for i = 1, #parking do DeleteEntity(parking[i]) end
 end)

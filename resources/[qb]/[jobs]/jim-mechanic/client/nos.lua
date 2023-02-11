@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 --========================================================== NOS
 
 --Leave alone--
@@ -669,7 +669,7 @@ RegisterNetEvent('jim-mechanic:client:NOS:RGBPicker', function()
 		currentCol = "[ <span style='color:#"..rgbToHex(table.unpack(nosColour[plate])):upper().."; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 0em 0em 0.5em white, 0em 0em 0.5em white'> "..r.." "..g.." "..b.." </span>]"
 	else currentCol = "[ <span style='color:#FFFFFF; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 0em 0em 0.5em white, 0em 0em 0.5em white'> 255 255 255 </span>]" end
 	if DoesEntityExist(vehicle) then
-		local dialog = exports['qb-input']:ShowInput({
+		local dialog = exports['indigo-input']:ShowInput({
 			header = 	"<center>"..Loc[Config.Lan]["nos"].nosColour
 						.."<br>"..Loc[Config.Lan]["paintrgb"].rgb
 						.."<br><br>- "..Loc[Config.Lan]["common"].current.." -<br>"..currentCol,
@@ -698,7 +698,7 @@ RegisterNetEvent('jim-mechanic:client:NOS:HEXPicker', function()
 		currentCol = "[ #<span style='color:#"..rgbToHex(table.unpack(nosColour[plate])):upper().."; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 0em 0em 0.5em white, 0em 0em 0.5em white'>"..rgbToHex(table.unpack(nosColour[plate])):upper().." </span>]"
 	else currentCol = "[ #<span style='color:#FFFFFF; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 0em 0em 0.5em white, 0em 0em 0.5em white'>FFFFFF </span>]" end
 	if DoesEntityExist(vehicle) then
-		local dialog = exports['qb-input']:ShowInput({
+		local dialog = exports['indigo-input']:ShowInput({
 			header = 	"<center>"..Loc[Config.Lan]["nos"].nosColour
 						.."<br>"..Loc[Config.Lan]["paintrgb"].hex
 						.."<br><br>- "..Loc[Config.Lan]["common"].current.." -<br>"..currentCol,

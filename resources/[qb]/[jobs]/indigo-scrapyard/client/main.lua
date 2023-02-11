@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 local emailSend = false
 local isBusy = false
 
@@ -26,7 +26,7 @@ local function KeyListener(type)
         listen = true
         while listen do
             if IsControlPressed(0, 38) then
-                exports['qb-core']:KeyPressed()
+                exports['indigo-core']:KeyPressed()
             if type == 'deliver' then
                 ScrapVehicle()
             else
@@ -48,7 +48,7 @@ CreateThread(function()
             if k ~= 'main' then
                 if Config.UseTarget then
                     if k == 'deliver' then
-                        exports["qb-target"]:AddBoxZone("yard"..i, v.coords, v.length, v.width, {
+                        exports["indigo-target"]:AddBoxZone("yard"..i, v.coords, v.length, v.width, {
                             name = "yard"..i,
                             heading = v.heading,
                             minZ = v.coords.z - 1,
@@ -66,7 +66,7 @@ CreateThread(function()
                             distance = 3
                         })
                     else
-                        exports["qb-target"]:AddBoxZone("list"..i, v.coords, v.length, v.width, {
+                        exports["indigo-target"]:AddBoxZone("list"..i, v.coords, v.length, v.width, {
                             name = "list"..i,
                             heading = v.heading,
                             minZ = v.coords.z - 1,
@@ -99,15 +99,15 @@ CreateThread(function()
                         if isPointInside then
                             if not isBusy then
                                 if k == 'deliver' then
-                                    exports['qb-core']:DrawText(Lang:t('text.disassemble_vehicle'),'left')
+                                    exports['indigo-core']:DrawText(Lang:t('text.disassemble_vehicle'),'left')
                                 else
-                                    exports['qb-core']:DrawText(Lang:t('text.email_list'),'left')
+                                    exports['indigo-core']:DrawText(Lang:t('text.email_list'),'left')
                                 end
                                 KeyListener(k)
                             end
                         else
                             listen = false
-                            exports['qb-core']:HideText()
+                            exports['indigo-core']:HideText()
                         end
                     end)
                 end

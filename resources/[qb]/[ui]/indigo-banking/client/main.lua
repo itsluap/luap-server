@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 local isVisible = false
 
 local FullyLoaded = LocalPlayer.state.isLoggedIn
@@ -83,7 +83,7 @@ CreateThread(function ()
         }})
         return
     end
-    exports['qb-target']:AddTargetModel(config.atms,{
+    exports['indigo-target']:AddTargetModel(config.atms,{
         options = {{
             type = "client",
             event = "indigo-banking:client:openBankUI",
@@ -150,7 +150,7 @@ local function createPeds()
         }
         exports.ox_target:addLocalEntity(peds.adv, targetOpts)
     else
-        exports['qb-target']:AddTargetEntity(peds.basic, {
+        exports['indigo-target']:AddTargetEntity(peds.basic, {
             options = {
                 {
                     type = "client",
@@ -162,7 +162,7 @@ local function createPeds()
             },
             distance = 2.0
         })
-        exports['qb-target']:AddTargetEntity(peds.adv, {
+        exports['indigo-target']:AddTargetEntity(peds.adv, {
             options = {
                 {
                     type = "client",
@@ -217,9 +217,9 @@ AddEventHandler('onResourceStop', function(resource)
         exports.ox_target:removeEntity(peds.basic, {'renewed_banking_openui'})
         exports.ox_target:removeEntity(peds.adv, {'renewed_banking_openui','renewed_banking_accountmng'})
     else
-        exports['qb-target']:RemoveTargetModel(config.atms, Lang:t("menu.view_bank"))
-        exports['qb-target']:RemoveTargetEntity(peds.basic, Lang:t("menu.view_bank"))
-        exports['qb-target']:RemoveTargetEntity(peds.adv, {Lang:t("menu.view_bank"), Lang:t("menu.manage_bank")})
+        exports['indigo-target']:RemoveTargetModel(config.atms, Lang:t("menu.view_bank"))
+        exports['indigo-target']:RemoveTargetEntity(peds.basic, Lang:t("menu.view_bank"))
+        exports['indigo-target']:RemoveTargetEntity(peds.adv, {Lang:t("menu.view_bank"), Lang:t("menu.manage_bank")})
     end
     deletePeds()
 end)
@@ -300,7 +300,7 @@ local bankingMenus = {
     [2] = {
         event = "indigo-banking:client:createAccountMenu",
         menu = function()
-            local dialog = exports["qb-input"]:ShowInput({
+            local dialog = exports["indigo-input"]:ShowInput({
                 header = Lang:t("menu.bank_name"),
                 submitText = Lang:t("menu.create_account"),
                 inputs = {
@@ -557,7 +557,7 @@ local bankingMenus = {
     [7] = {
         event = "indigo-banking:client:addAccountMember",
         menu = function(data)
-            local dialog = exports["qb-input"]:ShowInput({
+            local dialog = exports["indigo-input"]:ShowInput({
                 header = Lang:t("menu.bank_name"),
                 submitText = Lang:t("menu.add_account_member"),
                 inputs = {
@@ -589,7 +589,7 @@ local bankingMenus = {
     [8] = {
         event = "indigo-banking:client:changeAccountName",
         menu = function(data)
-            local dialog = exports["qb-input"]:ShowInput({
+            local dialog = exports["indigo-input"]:ShowInput({
                 header = Lang:t("menu.bank_name"),
                 submitText = Lang:t("menu.change_account_name"),
                 inputs = {

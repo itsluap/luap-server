@@ -34,7 +34,7 @@
         - Uses PS-UI, QB-Lock, and indigo-skillbar
         - All configurable from the config
 - Prison break!
-	- qb-target at gate panels
+	- indigo-target at gate panels
 	- PS-Var or PS-Thermite Minigames
 - Lockers for prisoners!
     - Adds lockers to every cell
@@ -49,7 +49,7 @@
 - Debug Configs
     - Prints for debugging
     - Polyzoine Debug
-- Create/Destroy all qb-target zones
+- Create/Destroy all indigo-target zones
     - Resource Start/Stop
     - Player Loaded/Unloaded
 - Choose to remove player jobs when entering prison
@@ -66,12 +66,12 @@
 
 ## Installation:
 - Add slushy.png to your inventory/html/images folder
-- Add 'slushy' to qb-core/shared/items.lua
+- Add 'slushy' to indigo-core/shared/items.lua
 ```lua
 ['slushy']                      = {['name'] = 'slushy',                     ['label'] = 'Slushy',                   ['weight'] = 750,       ['type'] = 'item',      ['image'] = 'slushy.png',       ['unique'] = true,      ['useable'] = true,     ['shouldClose'] = true,     ['combinable'] = nil,   ['description'] = 'A nice cold drink in the coldest place in San Andreas'},
 ```
 - Add to qb-smallreources/config.lua ```["slushy"] = math.random(35, 54),```
-- Add to qb-smallresources/server/consumables.lua
+- Add to indigo-smallresources/server/consumables.lua
 ```lua
 QBCore.Functions.CreateUseableItem("slushy", function(source, item)
     local src = source
@@ -81,11 +81,11 @@ QBCore.Functions.CreateUseableItem("slushy", function(source, item)
     end
 end)
 ```
-- Add this to qb-smallresources/config.lua under ConsumeablesDrink = { ```["slushy"] = math.random(35, 54),```
+- Add this to indigo-smallresources/config.lua under ConsumeablesDrink = { ```["slushy"] = math.random(35, 54),```
 
 -----------------------------------------------------------------------------------------------------------------
 
-### Optional: If you have ps-buffs, add this to qb-smallresources/client/consumables.lua after the SetMetaData Server Event (OLD qb-smallresources)
+### Optional: If you have ps-buffs, add this to indigo-smallresources/client/consumables.lua after the SetMetaData Server Event (OLD indigo-smallresources)
 
 ```lua
         if itemName == "slushy" then
@@ -93,7 +93,7 @@ end)
         end
 ```
 
-### OLD qb-smallresources
+### OLD indigo-smallresources
 
 ```lua
 RegisterNetEvent('consumables:client:Drink', function(itemName)
@@ -116,7 +116,7 @@ RegisterNetEvent('consumables:client:Drink', function(itemName)
 end)
 ```
 
-### NEW qb-smallresources
+### NEW indigo-smallresources
 
 ```lua
 RegisterNetEvent('consumables:client:Drink', function(itemName)
@@ -143,7 +143,7 @@ end)
 ## Dependencies:
 
 - indigo-policejob https://github.com/qbcore-framework/indigo-policejob
-- qb-target https://github.com/qbcore-framework/qb-target
+- indigo-target https://github.com/qbcore-framework/indigo-target
 - indigo-menu https://github.com/qbcore-framework/indigo-menu
 - qb-lock https://github.com/Tex27/qb-lock
 - OPTIONAL FOR PRISON SHIV: Custom-Weapons https://github.com/NoobySloth/Custom-Weapons
@@ -162,7 +162,7 @@ end)
 - xViperAG https://github.com/xViperAG - New rework
 - xThrasherrr https://github.com/xThrasherrr - New Rework
 - NoobySloth - Created Prison Shank Model
-- QB-Core Framework - For creating the framework!
+- indigo-core Framework - For creating the framework!
 - Jimathy666 - Inspiration on the Locker Spawn (jim-mechanic)
 
 -----------------------------------------------------------------------------------------------------------------

@@ -111,7 +111,7 @@ CreateThread(function()
                             }, {}, {}, function()
                                 Shown = false
                                 inDistance = false
-                                exports['qb-core']:HideText()
+                                exports['indigo-core']:HideText()
 
                                 isWorking = false
                                 StopAnimTask(PlayerPedId(), "anim@gangops@facility@servers@", "hotwire", 1.0)
@@ -129,10 +129,10 @@ CreateThread(function()
 
                     -- DrawText
                     if not Shown and inDistance then
-                        exports['qb-core']:DrawText('[E] Fix Electrical')
+                        exports['indigo-core']:DrawText('[E] Fix Electrical')
                         Shown = true
                     elseif Shown and not inDistance then
-                        exports['qb-core']:HideText()
+                        exports['indigo-core']:HideText()
                         Shown = false
                     end
                 end
@@ -166,7 +166,7 @@ CreateThread(function()
                             }, {}, {}, function()
                                 Shown = false
                                 inDistance = false
-                                exports['qb-core']:HideText()
+                                exports['indigo-core']:HideText()
 
                                 isWorking = false
                                 StopAnimTask(PlayerPedId(), "amb@prop_human_bbq@male@idle_a", "idle_a", 1.0)
@@ -184,10 +184,10 @@ CreateThread(function()
 
                     -- DrawText
                     if not Shown and inDistance then
-                        exports['qb-core']:DrawText('[E] Prep Slop')
+                        exports['indigo-core']:DrawText('[E] Prep Slop')
                         Shown = true
                     elseif Shown and not inDistance then
-                        exports['qb-core']:HideText()
+                        exports['indigo-core']:HideText()
                         Shown = false
                     end
                 end
@@ -238,7 +238,7 @@ CreateThread(function()
                             }, {}, {}, function()
                                 Shown = false
                                 inDistance = false
-                                exports['qb-core']:HideText()
+                                exports['indigo-core']:HideText()
 
                                 isWorking = false
                                 DeleteEntity(BroomObject) -- Removes the Broom From Hands
@@ -258,10 +258,10 @@ CreateThread(function()
 
                     -- DrawText
                     if not Shown and inDistance then
-                        exports['qb-core']:DrawText('[E] Start Cleaning')
+                        exports['indigo-core']:DrawText('[E] Start Cleaning')
                         Shown = true
                     elseif Shown and not inDistance then
-                        exports['qb-core']:HideText()
+                        exports['indigo-core']:HideText()
                         Shown = false
                     end
                 end

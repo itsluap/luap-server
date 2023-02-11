@@ -1,7 +1,7 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 
 Config.RepairLocations = {
-    --Add your poly zone box locations and job name for each store and it will add it to the qb-target loop above
+    --Add your poly zone box locations and job name for each store and it will add it to the indigo-target loop above
     { coords = vector4(121.0, -3047.69, 7.04, 270.11), }, -- TUNERS GARAGE
 	{ coords = vector4(-45.27, -1048.43, 28.4, 250.0), }, -- BENNYS NEXT TO PDM
 	{ coords = vector4(-1164.42, -2018.84, 13.18, 313.67), }, -- AIRPORT LSCUSTOMS
@@ -18,7 +18,7 @@ CreateThread(function()
 		SetEntityHeading(bench[#bench], v.coords.a-180)
 		FreezeEntityPosition(bench[#bench], true)
 		Targets["repairbench"..k] =
-		exports['qb-target']:AddBoxZone("repairbench"..k, v.coords, 1.2, 4.2, { name="repairbench"..k, heading = v.coords.a, debugPoly=Config.Debug, minZ = v.coords.z-1, maxZ = v.coords.z+1.4, },
+		exports['indigo-target']:AddBoxZone("repairbench"..k, v.coords, 1.2, 4.2, { name="repairbench"..k, heading = v.coords.a, debugPoly=Config.Debug, minZ = v.coords.z-1, maxZ = v.coords.z+1.4, },
 			{ options = { { event = "jim-mechanic:client:Manual:Menu", icon = "fas fa-cogs", label = Loc[Config.Lan]["police"].userepair, }, }, distance = 5.0 })
 	end
 end)
@@ -145,6 +145,6 @@ RegisterNetEvent('jim-mechanic:client:Manual:Repair', function(data)
 end)
 
 AddEventHandler('onResourceStop', function(r) if r ~= GetCurrentResourceName() then return end
-	for k in pairs(Targets) do exports['qb-target']:RemoveZone(k) end
+	for k in pairs(Targets) do exports['indigo-target']:RemoveZone(k) end
 	for i = 1, #bench do DeleteEntity(bench[i])	end
 end)

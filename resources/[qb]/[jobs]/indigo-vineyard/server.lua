@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 
 RegisterNetEvent('indigo-vineyard:server:getGrapes', function()
     local Player = QBCore.Functions.GetPlayer(source)

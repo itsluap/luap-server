@@ -25,7 +25,7 @@ If applicable, add screenshots to help explain your problem.
 
 **Questions (please complete the following information):**
  - When you last updated: [e.g. last week]
- - Are you using custom resource? which ones? [e.g. zdiscord, qb-target]
+ - Are you using custom resource? which ones? [e.g. zdiscord, indigo-target]
  - Have you renamed `qb-` to something custom? [e.g. yes/no]
 
 **Additional context**

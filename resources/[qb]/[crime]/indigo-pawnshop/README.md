@@ -1,5 +1,5 @@
 # indigo-pawnshop
-Pawn Shop For QB-Core
+Pawn Shop For indigo-core
 
 # License
 

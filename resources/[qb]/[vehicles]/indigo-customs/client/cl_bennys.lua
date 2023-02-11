@@ -1,7 +1,7 @@
 -----------------------
 ----   Variables   ----
 -----------------------
-QBCore = exports['qb-core']:GetCoreObject()
+QBCore = exports['indigo-core']:GetCoreObject()
 local PlayerData = QBCore.Functions.GetPlayerData()
 local CustomsData = {}
 
@@ -773,7 +773,7 @@ function EnterLocation(override)
         radialMenuItemId = nil
     end
 
-    exports['qb-core']:HideText()
+    exports['indigo-core']:HideText()
 
     local plyPed = PlayerPedId()
     local plyVeh = GetVehiclePedIsIn(plyPed, false)
@@ -926,7 +926,7 @@ function SetupInteraction()
                 CheckForKeypress()
             end
         end
-        exports['qb-core']:DrawText(text, 'left')
+        exports['indigo-core']:DrawText(text, 'left')
     end)
 end
 
@@ -968,7 +968,7 @@ CreateThread(function()
                         radialMenuItemId = nil
                     end
 
-                    exports['qb-core']:HideText()
+                    exports['indigo-core']:HideText()
                 end
             end)
         end

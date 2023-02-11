@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 local PlayerData = QBCore.Functions.GetPlayerData()
 local isLoggedIn = LocalPlayer.state['isLoggedIn']
 local Config = Config
@@ -492,7 +492,7 @@ RegisterNetEvent('indigo-doorlock:client:addNewDoor', function()
 	canContinue = false
 	hideNUI()
 	if not Config.SaveDoorDialog then doorData = {} end
-	local dialog = exports['qb-input']:ShowInput({
+	local dialog = exports['indigo-input']:ShowInput({
 		header = Lang:t("general.newdoor_menu_title"),
 		submitText = Lang:t("general.submit_text"),
 		inputs = {

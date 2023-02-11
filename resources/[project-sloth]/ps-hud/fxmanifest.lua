@@ -5,7 +5,7 @@ description 'ps-hud'
 version '2.1.0'
 
 shared_scripts {
-	'@qb-core/shared/locale.lua',
+	'@indigo-core/shared/locale.lua',
 	'locales/en.lua',
 	'config.lua',
 	'uiconfig.lua'

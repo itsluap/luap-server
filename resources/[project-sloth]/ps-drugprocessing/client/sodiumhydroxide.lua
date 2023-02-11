@@ -1,7 +1,7 @@
 local spawnedSodiumHydroxideBarrels = 0
 local SodiumHydroxideBarrels = {}
 local inSodiumFarm = false
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['indigo-core']:GetCoreObject()
 
 local function ValidateSodiumHydroxideCoord(plantCoord)
 	local validate2 = true
