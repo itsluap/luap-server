@@ -52,14 +52,14 @@
     },
 ]]
 -- NEW
-SpawnVehicleServerside = false -- REQUIRES THE ABSOLUTE LATEST VERSION OF QBCORE, OR MAKE SURE YOU HAVE THESE: https://github.com/qbcore-framework/qb-core/blob/81ffd872319d2eb8e496c3b3faaf37e791912c84/server/events.lua#L252
+SpawnVehicleServerside = false -- REQUIRES THE ABSOLUTE LATEST VERSION OF QBCORE, OR MAKE SURE YOU HAVE THESE: https://github.com/qbcore-framework/indigo-core/blob/81ffd872319d2eb8e496c3b3faaf37e791912c84/server/events.lua#L252
 -- NEW 
 
 -- NEW --
 SpawnAtFreeParkingSpot = true
 -- NEW --
 
-StoreDamageAccuratly = true -- Do not use, if on latest qb-core, if set to true, make sure to apply / run patch1.sql
+StoreDamageAccuratly = true -- Do not use, if on latest indigo-core, if set to true, make sure to apply / run patch1.sql
 StoreParkinglotAccuratly = false  -- store the last parking lot in the DB, if set to true, make sure to apply / run patch1.sql, I recommend applying the tracking snippet for indigo-phone from the ReadMe to the phone so you can track the vehicle to the exact parking lot
 SpawnAtLastParkinglot = false -- spawn the vehicle at hte last parked location if StoreParkinglotAccuratly = true, if set to true, make sure to apply / run patch1.sql, I recommend applying the tracking snippet from the ReadMe to the phone so you can track the vehicle to the exact parking lot
 GarageNameAsBlipName = true -- if set to true, the blips name will match the garage name
@@ -1818,7 +1818,7 @@ Garages = {
         },
         label = 'Boat House',
         type = 'public',
-        vehicleCategories = {'boat'},
+        vehicleCategories = {'sea'},
         drawText = 'BOAT HOUSE',
         showBlip = true,
         blipName = 'Boat House',
