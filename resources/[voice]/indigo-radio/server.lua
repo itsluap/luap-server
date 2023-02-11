@@ -1,7 +1,7 @@
 local QBCore = exports['indigo-core']:GetCoreObject()
 
 QBCore.Functions.CreateUseableItem("radio", function(source)
-    TriggerClientEvent('qb-radio:use', source)
+    TriggerClientEvent('indigo-radio:use', source)
 end)
 
 for channel, config in pairs(Config.RestrictedChannels) do

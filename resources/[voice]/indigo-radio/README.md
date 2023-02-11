@@ -1,4 +1,4 @@
-# qb-radio
+# indigo-radio
 Radio Script With UI
 
 # License

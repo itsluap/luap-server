@@ -135,11 +135,11 @@ AddEventHandler('onResourceStart', function(resource)
     end
 end)
 
-RegisterNetEvent('qb-radio:use', function()
+RegisterNetEvent('indigo-radio:use', function()
     toggleRadio(not radioMenu)
 end)
 
-RegisterNetEvent('qb-radio:onRadioDrop', function()
+RegisterNetEvent('indigo-radio:onRadioDrop', function()
     if RadioChannel ~= 0 then
         leaveradio()
     end

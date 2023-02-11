@@ -16,7 +16,7 @@ In collaboration with [OnlyCats](https://github.com/onlycats) who helped reorgan
 * [indigo-core](https://github.com/qbcore-framework/indigo-core)
 * [qb-logs](https://github.com/qbcore-framework/qb-logs)
 * [indigo-traphouse](https://github.com/qbcore-framework/indigo-traphouse)
-* [qb-radio](https://github.com/qbcore-framework/qb-radio)
+* [indigo-radio](https://github.com/qbcore-framework/indigo-radio)
 * [indigo-drugs](https://github.com/qbcore-framework/indigo-drugs)
 * [indigo-shops](https://github.com/qbcore-framework/indigo-shops)
 
