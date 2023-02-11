@@ -1,4 +1,4 @@
-# qb-core
+# indigo-core
 
 ### [Official QBCore Documentation](https://docs.qbcore.org)
 
