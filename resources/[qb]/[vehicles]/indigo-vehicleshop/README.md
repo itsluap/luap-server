@@ -18,7 +18,7 @@
 * Vehicle sale amount gets deposited into the cardealer society fund for private dealer
 
 **Planned Updates**
-* QB-Phone support to make payments
+* indigo-phone support to make payments
 
 **Preview header when near a vehicle at the public dealership:**
 

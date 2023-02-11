@@ -1,5 +1,5 @@
 config = {
-    renewedMultiJob = false, -- https://github.com/Renewed-Scripts/qb-phone Built into the qb-phone edit.
+    renewedMultiJob = false, -- https://github.com/Renewed-Scripts/indigo-phone Built into the indigo-phone edit.
     atms = {
         `prop_atm_01`,
         `prop_atm_02`,

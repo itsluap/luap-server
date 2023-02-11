@@ -5,5 +5,5 @@ CoreConfig = {
     char_english_only = true, -- block to option to create character with non english names
 
     clothing_base = 'qb', -- Whether "qb", "raid", "fivem-appearance" or "other"
-    clothing_name = 'qb-clothing' -- Your clothing resource name
+    clothing_name = 'indigo-clothing' -- Your clothing resource name
 }

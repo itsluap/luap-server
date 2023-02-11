@@ -17,7 +17,7 @@ local currentCops = 0
 
 local function Notify(text, type, time)
     if Config.Boosting.Notifications == "phone" then
-        TriggerEvent('qb-phone:client:CustomNotification',
+        TriggerEvent('indigo-phone:client:CustomNotification',
             Lang:t('boosting.info.phonenotify'),
             text,
             "fas fa-user-secret",
@@ -25,7 +25,7 @@ local function Notify(text, type, time)
             time
         )
     elseif Config.Boosting.Notifications == "npwd" then
-        TriggerServerEvent('qb-phone:server:sendNewMail', {
+        TriggerServerEvent('indigo-phone:server:sendNewMail', {
             sender = Lang:t('boosting.info.phonenotify'),
             subject = 'Boosting',
             message = text,

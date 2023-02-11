@@ -127,7 +127,7 @@ RegisterNetEvent('qb-storerobbery:server:callCops', function(type, safe, streetL
         description = Lang:t("email.someone_is_trying_to_rob_a_store",{street = streetLabel, cameraId1 = cameraId})
     }
     TriggerClientEvent("qb-storerobbery:client:robberyCall", -1, type, safe, streetLabel, coords)
-    TriggerClientEvent("qb-phone:client:addPoliceAlert", -1, alertData)
+    TriggerClientEvent("indigo-phone:client:addPoliceAlert", -1, alertData)
 end)
 
 RegisterNetEvent('qb-storerobbery:server:removeAdvancedLockpick', function()

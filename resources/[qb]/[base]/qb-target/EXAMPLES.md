@@ -23,7 +23,7 @@ exports['qb-target']:AddBoxZone("MissionRowDutyClipboard", vector3(441.7989, -98
 	options = {
 		{
             type = "client",
-            event = "qb-policejob:ToggleDuty",
+            event = "indigo-policejob:ToggleDuty",
 			icon = "fas fa-sign-in-alt",
 			label = "Sign In",
 			job = "police",
@@ -51,7 +51,7 @@ Config.BoxZones = {
         options = {
             {
                 type = "client",
-                event = "qb-policejob:ToggleDuty",
+                event = "indigo-policejob:ToggleDuty",
                 icon = "fas fa-sign-in-alt",
                 label = "Sign In",
                 job = "police",
@@ -206,7 +206,7 @@ Config.Peds = {
             options = {
                 {
                     type = "client",
-                    event = "qb-policejob:ToggleDuty",
+                    event = "indigo-policejob:ToggleDuty",
                     icon = "fas fa-sign-in-alt",
                     label = "Sign In",
                     job = "police",

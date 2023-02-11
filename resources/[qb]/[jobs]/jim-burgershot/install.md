@@ -63,7 +63,7 @@ Under the QBShared.Jobs in jobs.lua
 
 --------------------------------------------------------------------------------------------------
 
-## QB-Management:
+## indigo-management:
 
 	- Update to the latest github version
 	- Make sure the job "burgershot" has been added to the database

@@ -2,7 +2,7 @@
 - QBCore (latest)
 - qb-target https://github.com/qbcore-framework/qb-target
 - polyzone
-- qb-phone
+- indigo-phone
 - qb-inventory/lj-inventory
 
 ------------------------------------------------------------------------------------

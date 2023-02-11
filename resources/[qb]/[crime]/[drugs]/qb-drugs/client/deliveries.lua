@@ -142,7 +142,7 @@ local function RequestDelivery()
         QBCore.Functions.Notify(Lang:t("info.sending_delivery_email"), 'success')
         TriggerServerEvent('qb-drugs:server:giveDeliveryItems', waitingDelivery)
         SetTimeout(2000, function()
-            TriggerServerEvent('qb-phone:server:sendNewMail', {
+            TriggerServerEvent('indigo-phone:server:sendNewMail', {
                 sender = Config.Dealers[currentDealer]["name"],
                 subject = "Delivery Location",
                 message = Lang:t("info.delivery_info_email", {itemAmount = amount, itemLabel = QBCore.Shared.Items[waitingDelivery["itemData"]["item"]]["label"]}),
@@ -422,19 +422,19 @@ end)
 
 RegisterNetEvent('qb-drugs:client:sendDeliveryMail', function(type, deliveryData)
     if type == 'perfect' then
-        TriggerServerEvent('qb-phone:server:sendNewMail', {
+        TriggerServerEvent('indigo-phone:server:sendNewMail', {
             sender = Config.Dealers[deliveryData["dealer"]]["name"],
             subject = "Delivery",
             message = Lang:t("info.perfect_delivery", {dealerName = Config.Dealers[deliveryData["dealer"]]["name"]})
         })
     elseif type == 'bad' then
-        TriggerServerEvent('qb-phone:server:sendNewMail', {
+        TriggerServerEvent('indigo-phone:server:sendNewMail', {
             sender = Config.Dealers[deliveryData["dealer"]]["name"],
             subject = "Delivery",
             message = Lang:t("info.bad_delivery")
         })
     elseif type == 'late' then
-        TriggerServerEvent('qb-phone:server:sendNewMail', {
+        TriggerServerEvent('indigo-phone:server:sendNewMail', {
             sender = Config.Dealers[deliveryData["dealer"]]["name"],
             subject = "Delivery",
             message = Lang:t("info.late_delivery")

@@ -72,12 +72,12 @@ exports['indigo-banking']:removeAccountMoney(account, amount)
 
 ## qb-managment conversion
 ```lua
-exports['qb-management']:GetAccount => exports['indigo-banking']:getAccountMoney
-exports['qb-management']:AddMoney => exports['indigo-banking']:addAccountMoney
-exports['qb-management']:RemoveMoney => exports['indigo-banking']:removeAccountMoney
-exports['qb-management']:GetGangAccount=> exports['indigo-banking']:getAccountMoney
-exports['qb-management']:AddGangMoney=> exports['indigo-banking']:addAccountMoney
-exports['qb-management']:RemoveGangMoney=> exports['indigo-banking']:removeAccountMoney
+exports['indigo-management']:GetAccount => exports['indigo-banking']:getAccountMoney
+exports['indigo-management']:AddMoney => exports['indigo-banking']:addAccountMoney
+exports['indigo-management']:RemoveMoney => exports['indigo-banking']:removeAccountMoney
+exports['indigo-management']:GetGangAccount=> exports['indigo-banking']:getAccountMoney
+exports['indigo-management']:AddGangMoney=> exports['indigo-banking']:addAccountMoney
+exports['indigo-management']:RemoveGangMoney=> exports['indigo-banking']:removeAccountMoney
 ```
 
  ## Change Logs

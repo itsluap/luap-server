@@ -560,7 +560,7 @@ end)
 
 RegisterNetEvent('apartments:client:ChangeOutfit', function()
     TriggerServerEvent("InteractSound_SV:PlayOnSource", "Clothes1", 0.4)
-    TriggerEvent('qb-clothing:client:openOutfitMenu')
+    TriggerEvent('indigo-clothing:client:openOutfitMenu')
 end)
 
 RegisterNetEvent('apartments:client:Logout', function()
@@ -634,7 +634,7 @@ Citizen.CreateThread(function()
         TriggerEvent("qbcore-apartments:client:TriggerMenu", v.name)
     end,
     canInteract = function(entity)
-    return exports['qb-policejob']:CanRaid()
+    return exports['indigo-policejob']:CanRaid()
     end
     }
     },

@@ -293,7 +293,7 @@ There is little snippets of information on each line for these, but this is a mo
 - I personally use LJ's inventory system which makes it: `lj-inventory/html/images/`. I imagine other's are pretty similar.
 
 ### Config.JimShops
-- Set this to true if you are using my free qb-shops alternative, [jim-shops](https://github.com/jimathy/jim-shops)
+- Set this to true if you are using my free indigo-shops alternative, [jim-shops](https://github.com/jimathy/jim-shops)
 - Set to false to use default inventory style shops
 
 ### Config.JimMenu
@@ -357,7 +357,7 @@ There is little snippets of information on each line for these, but this is a mo
 ### Config.PhoneMail
 - This is used to determine your which phone script you use to send an email with preview details to your players
 - This is only used if `Config.PreviewPhone` is true
-- This currently as of writing this only supports `qb-phone` and `gks-phone`
+- This currently as of writing this only supports `indigo-phone` and `gks-phone`
 
 ### Config.CosmeticRemoval
 - This simply, when enabled, will remove the cosmetic items (listed above) from your inventory when successfully added to the vehicle

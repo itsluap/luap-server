@@ -14,7 +14,7 @@ Config.MenuItems = {
                 title = 'Give Contact Details',
                 icon = 'address-book',
                 type = 'client',
-                event = 'qb-phone:client:GiveContactDetails',
+                event = 'indigo-phone:client:GiveContactDetails',
                 shouldClose = true
             }, {
                 id = 'getintrunk',
@@ -35,7 +35,7 @@ Config.MenuItems = {
                 title = 'Hotdog Selling',
                 icon = 'hotdog',
                 type = 'client',
-                event = 'qb-hotdogjob:client:ToggleSell',
+                event = 'indigo-hotdogjob:client:ToggleSell',
                 shouldClose = true
             }, {
                 id = 'interactions',
@@ -899,7 +899,7 @@ Config.JobInteractions = {
             title = 'Toggle sell',
             icon = 'hotdog',
             type = 'client',
-            event = 'qb-hotdogjob:client:ToggleSell',
+            event = 'indigo-hotdogjob:client:ToggleSell',
             shouldClose = true
         }
     }

@@ -9,7 +9,7 @@ QBConfig.Money = {}
 QBConfig.Money.MoneyTypes = { cash = 2500, bank = 35000, crypto = 0 } -- type = startamount - Add or remove money types for your server (for ex. blackmoney = 0), remember once added it will not be removed from the database!
 QBConfig.Money.DontAllowMinus = { 'cash', 'bank', 'crypto' } -- Money that is not allowed going in minus
 QBConfig.Money.PayCheckTimeOut = 10 -- The time in minutes that it will give the paycheck
-QBConfig.Money.PayCheckSociety = true -- If true paycheck will come from the society account that the player is employed at, requires qb-management
+QBConfig.Money.PayCheckSociety = true -- If true paycheck will come from the society account that the player is employed at, requires indigo-management
 
 QBConfig.Player = {}
 QBConfig.Player.HungerRate = 4.2 -- Rate at which hunger goes down.

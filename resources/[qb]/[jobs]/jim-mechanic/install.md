@@ -655,7 +655,7 @@ end
 	- Added checks to all items wether vehicle is locked or not
 		- `if lockedCar(vehicle) then return end`
 		- This line has been added to all items and events, can't do any work on a vehicle until is unlocked
-	- Added support for toggling between gks-phone and qb-phone for the preview emails in the config
+	- Added support for toggling between gks-phone and indigo-phone for the preview emails in the config
 	- Repairs now uses custom stash event, not requiring qb-inventory default events anymore.
 		- This hopefully fixes a couple issues with certain different inventories
 	- Add new strings to locales, don't forget to update these and make a github pull request

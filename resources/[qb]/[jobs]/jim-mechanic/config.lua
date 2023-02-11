@@ -22,7 +22,7 @@ Config = {
 	PreviewLocation = false, -- Enable this if you want to lock /preview to a job location (ignored if LocationRequired is false)
 
 	PhoneMail = "qb", 	-- If PreviewPhone is true, change this to choose the correct phone system
-						-- "qb" = use qb-phone for emails
+						-- "qb" = use indigo-phone for emails
 						-- "gks" = use gks-phone for emails
 
 	CosmeticRemoval = true, -- If "true" items will be removed on successful application of a mod

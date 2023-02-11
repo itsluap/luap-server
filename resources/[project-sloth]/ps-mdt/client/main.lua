@@ -323,7 +323,7 @@ RegisterNUICallback("getProfileData", function(data, cb)
     --[[ local getProfileProperties = function(data)
         if pP then return end
         pP = promise.new()
-        QBCore.Functions.TriggerCallback('qb-phone:server:MeosGetPlayerHouses', function(result)
+        QBCore.Functions.TriggerCallback('indigo-phone:server:MeosGetPlayerHouses', function(result)
             pP:resolve(result)
         end, data)
         return Citizen.Await(pP)

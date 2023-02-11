@@ -22,7 +22,7 @@ Apartments System for QB-Core Framework :office:
 
 ## Dependencies
 - [qb-core](https://github.com/qbcore-framework/qb-core)
-- [qb-clothing](https://github.com/qbcore-framework/qb-clothing) - To save outfits
+- [indigo-clothing](https://github.com/qbcore-framework/indigo-clothing) - To save outfits
 - [qb-houses](https://github.com/qbcore-framework/qb-houses) - House logic
 - [qb-interior](https://github.com/qbcore-framework/qb-interior) - Interior logic
 - [qb-weathersync](https://github.com/qbcore-framework/qb-weathersync) - To desync weather while inside
@@ -51,7 +51,7 @@ Apartments System for QB-Core Framework :office:
 ensure qb-core
 ensure qb-interior
 ensure qb-weathersync
-ensure qb-clothing
+ensure indigo-clothing
 ensure qb-houses
 ensure qb-spawn
 ensure qb-apartments

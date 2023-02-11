@@ -142,7 +142,7 @@ end)
 
 ## Dependencies:
 
-- qb-policejob https://github.com/qbcore-framework/qb-policejob
+- indigo-policejob https://github.com/qbcore-framework/indigo-policejob
 - qb-target https://github.com/qbcore-framework/qb-target
 - indigo-menu https://github.com/qbcore-framework/indigo-menu
 - qb-lock https://github.com/Tex27/qb-lock

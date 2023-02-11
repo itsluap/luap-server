@@ -127,9 +127,9 @@ Config = {
     SocietyLimitFromBalance = 10000, -- if society account has less money than this, it will start paying out reduced money, (SocietyLimitPayoutPercentage)
     SocietyLimitPayoutPercentage = 35, -- example: if SocietyLimitPayoutPercentage is 35%, and SocietyLimitFromBalance is 10000 => 1000 payout at the Cashier will be limited to 350, if the society bank account balance is less than 10 000
     -- when enabled, all casino payments (Cashier, Bar, Lucky Wheel) go through the society account, players don't get paid if there's not enough money in the 
-    SocietyFramework = "qb-management",
+    SocietyFramework = "indigo-management",
     --[[
-    'default': default, using events, qb-bossmenu/qb-management for QB, esx_addonaccount:getSharedAccount for ESX
+    'default': default, using events, qb-bossmenu/indigo-management for QB, esx_addonaccount:getSharedAccount for ESX
     'okokbanking': editing the society row using mysql, table okokbanking_societies
     'addon_account_data': editing the society row using mysql, table addon_account_data
     '710-Management': using 710-Management export functions

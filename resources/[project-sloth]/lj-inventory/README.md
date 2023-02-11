@@ -18,7 +18,7 @@ In collaboration with [OnlyCats](https://github.com/onlycats) who helped reorgan
 * [qb-traphouse](https://github.com/qbcore-framework/qb-traphouse)
 * [qb-radio](https://github.com/qbcore-framework/qb-radio)
 * [qb-drugs](https://github.com/qbcore-framework/qb-drugs)
-* [qb-shops](https://github.com/qbcore-framework/qb-shops)
+* [indigo-shops](https://github.com/qbcore-framework/indigo-shops)
 
 # How to install lj-inventory (Latest QBCore Update)
 * Download source files from github

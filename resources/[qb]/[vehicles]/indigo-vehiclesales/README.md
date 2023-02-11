@@ -23,7 +23,7 @@ Used Car Sale for QB-Core Framework :blue_car:
 ## Dependencies
 - [qb-core](https://github.com/qbcore-framework/qb-core)
 - [indigo-garages](https://github.com/qbcore-framework/indigo-garages) - Vehicle ownership
-- [qb-phone](https://github.com/qbcore-framework/qb-phone) - For the e-mail
+- [indigo-phone](https://github.com/qbcore-framework/indigo-phone) - For the e-mail
 - [qb-logs](https://github.com/qbcore-framework/qb-logs) - Keep event logs
 
 ## Screenshots
@@ -47,7 +47,7 @@ Used Car Sale for QB-Core Framework :blue_car:
 ```
 ensure qb-core
 ensure indigo-garages
-ensure qb-phone
+ensure indigo-phone
 ensure qb-logs
 ensure indigo-vehiclesales
 ```

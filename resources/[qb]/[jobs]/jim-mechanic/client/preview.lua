@@ -266,7 +266,7 @@ local function printDifferences(vehicle, properties, newproperties)
 				newlist = newlist.."<br>"..vehlist[i]
 			end
 			if Config.PhoneMail == "gks" then event = 'gksphone:NewMail'
-			elseif Config.PhoneMail == "qb" then event = 'qb-phone:server:sendNewMail' end
+			elseif Config.PhoneMail == "qb" then event = 'indigo-phone:server:sendNewMail' end
 			TriggerServerEvent(event, {
 				sender = vehplate,
 				subject = veh,

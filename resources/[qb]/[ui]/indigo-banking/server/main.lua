@@ -96,7 +96,7 @@ local function getBankData(source)
     end
 
     if config.renewedMultiJob then
-        local jobs = exports['qb-phone']:getJobs(cid)
+        local jobs = exports['indigo-phone']:getJobs(cid)
 
         for k,v in pairs(jobs) do
             if cachedAccounts[k] then
