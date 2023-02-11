@@ -872,7 +872,7 @@ RegisterNetEvent('indigo-garages:client:OpenHouseGarage', function()
             QBCore.Functions.Notify(Lang:t("error.no_house_keys"))
         end
     else
-        QBCore.Functions.TriggerCallback('qb-houses:server:hasKey', function(hasKey)
+        QBCore.Functions.TriggerCallback('indigo-houses:server:hasKey', function(hasKey)
             if hasKey then
                 MenuHouseGarage()
             else

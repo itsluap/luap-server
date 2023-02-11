@@ -22,7 +22,7 @@ Spawn Selector for QB-Core Framework :eagle:
 
 ## Dependencies
 - [qb-core](https://github.com/qbcore-framework/qb-core)
-- [qb-houses](https://github.com/qbcore-framework/qb-houses) - Lets player select the house
+- [indigo-houses](https://github.com/qbcore-framework/indigo-houses) - Lets player select the house
 - [qb-apartment](https://github.com/qbcore-framework/qb-apartment) - Lets player select the apartment
 - [indigo-garages](https://github.com/qbcore-framework/indigo-garages) - For house garages
 
@@ -39,7 +39,7 @@ Spawn Selector for QB-Core Framework :eagle:
 ```
 ensure qb-core
 ensure qb-spawn
-ensure qb-apartments
+ensure indigo-apartments
 ensure indigo-garages
 ```
 

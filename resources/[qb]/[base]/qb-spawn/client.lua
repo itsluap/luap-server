@@ -37,7 +37,7 @@ RegisterNetEvent('qb-spawn:client:openUI', function(value)
     SetDisplay(value)
 end)
 
-RegisterNetEvent('qb-houses:client:setHouseConfig', function(houseConfig)
+RegisterNetEvent('indigo-houses:client:setHouseConfig', function(houseConfig)
     Houses = houseConfig
 end)
 
@@ -175,22 +175,22 @@ RegisterNUICallback('spawnplayer', function(data, cb)
 
         if insideMeta.house ~= nil then
             local houseId = insideMeta.house
-            TriggerEvent('qb-houses:client:LastLocationHouse', houseId)
+            TriggerEvent('indigo-houses:client:LastLocationHouse', houseId)
         elseif insideMeta.apartment.apartmentType ~= nil or insideMeta.apartment.apartmentId ~= nil then
             local apartmentType = insideMeta.apartment.apartmentType
             local apartmentId = insideMeta.apartment.apartmentId
-            TriggerEvent('qb-apartments:client:LastLocationHouse', apartmentType, apartmentId)
+            TriggerEvent('indigo-apartments:client:LastLocationHouse', apartmentType, apartmentId)
         end
         TriggerServerEvent('QBCore:Server:OnPlayerLoaded')
         TriggerEvent('QBCore:Client:OnPlayerLoaded')
         PostSpawnPlayer()
     elseif type == "house" then
         PreSpawnPlayer()
-        TriggerEvent('qb-houses:client:enterOwnedHouse', location)
+        TriggerEvent('indigo-houses:client:enterOwnedHouse', location)
         TriggerServerEvent('QBCore:Server:OnPlayerLoaded')
         TriggerEvent('QBCore:Client:OnPlayerLoaded')
-        TriggerServerEvent('qb-houses:server:SetInsideMeta', 0, false)
-        TriggerServerEvent('qb-apartments:server:SetInsideMeta', 0, 0, false)
+        TriggerServerEvent('indigo-houses:server:SetInsideMeta', 0, false)
+        TriggerServerEvent('indigo-apartments:server:SetInsideMeta', 0, 0, false)
         PostSpawnPlayer()
     elseif type == "normal" then
         local pos = QB.Spawns[location].coords
@@ -198,8 +198,8 @@ RegisterNUICallback('spawnplayer', function(data, cb)
         SetEntityCoords(ped, pos.x, pos.y, pos.z)
         TriggerServerEvent('QBCore:Server:OnPlayerLoaded')
         TriggerEvent('QBCore:Client:OnPlayerLoaded')
-        TriggerServerEvent('qb-houses:server:SetInsideMeta', 0, false)
-        TriggerServerEvent('qb-apartments:server:SetInsideMeta', 0, 0, false)
+        TriggerServerEvent('indigo-houses:server:SetInsideMeta', 0, false)
+        TriggerServerEvent('indigo-apartments:server:SetInsideMeta', 0, 0, false)
         Wait(500)
         SetEntityCoords(ped, pos.x, pos.y, pos.z)
         SetEntityHeading(ped, pos.w)
@@ -235,11 +235,11 @@ RegisterNetEvent('qb-spawn:client:luap:spawn', function()
 
     if insideMeta.house ~= nil then
         local houseId = insideMeta.house
-        TriggerEvent('qb-houses:client:LastLocationHouse', houseId)
+        TriggerEvent('indigo-houses:client:LastLocationHouse', houseId)
     elseif insideMeta.apartment.apartmentType ~= nil or insideMeta.apartment.apartmentId ~= nil then
         local apartmentType = insideMeta.apartment.apartmentType
         local apartmentId = insideMeta.apartment.apartmentId
-        TriggerEvent('qb-apartments:client:LastLocationHouse', apartmentType, apartmentId)
+        TriggerEvent('indigo-apartments:client:LastLocationHouse', apartmentType, apartmentId)
     end
     TriggerServerEvent('QBCore:Server:OnPlayerLoaded')
     TriggerEvent('QBCore:Client:OnPlayerLoaded')

@@ -455,7 +455,7 @@ end)
 RegisterNetEvent('lockpicks:UseLockpick', function(isAdvanced)
 	if not closestDoor.data or not next(closestDoor.data) or PlayerData.metadata['isdead'] or PlayerData.metadata['ishandcuffed'] or (not closestDoor.data.pickable and not closestDoor.data.lockpick) or not closestDoor.data.locked then return end
 	usingAdvanced = isAdvanced
-	--TriggerEvent('qb-lockpick:client:openLockpick', lockpickFinish)
+	--TriggerEvent('indigo-lockpick:client:openLockpick', lockpickFinish)
 	exports['ps-ui']:Circle(function(success)
 		if success then
 			QBCore.Functions.Notify(Lang:t("success.lockpick_success"), 'success', 2500)

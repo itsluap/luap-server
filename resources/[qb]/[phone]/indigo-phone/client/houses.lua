@@ -21,7 +21,7 @@ RegisterNUICallback('SetHouseLocation', function(data, cb)
 end)
 
 RegisterNUICallback('RemoveKeyholder', function(data, cb)
-    TriggerServerEvent('qb-houses:server:removeHouseKey', data.HouseData.name, {
+    TriggerServerEvent('indigo-houses:server:removeHouseKey', data.HouseData.name, {
         citizenid = data.HolderData.citizenid,
         firstname = data.HolderData.charinfo.firstname,
         lastname = data.HolderData.charinfo.lastname,

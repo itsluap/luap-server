@@ -28,7 +28,7 @@ Config.MenuItems = {
                 title = 'Corner Selling',
                 icon = 'cannabis',
                 type = 'client',
-                event = 'qb-drugs:client:cornerselling',
+                event = 'indigo-drugs:client:cornerselling',
                 shouldClose = true
             }, {
                 id = 'togglehotdogsell',
@@ -111,28 +111,28 @@ Config.MenuItems = {
                         title = 'Give House Keys',
                         icon = 'key',
                         type = 'client',
-                        event = 'qb-houses:client:giveHouseKey',
+                        event = 'indigo-houses:client:giveHouseKey',
                         shouldClose = true
                     }, {
                         id = 'removehousekey',
                         title = 'Remove House Keys',
                         icon = 'key',
                         type = 'client',
-                        event = 'qb-houses:client:removeHouseKey',
+                        event = 'indigo-houses:client:removeHouseKey',
                         shouldClose = true
                     }, {
                         id = 'togglelock',
                         title = 'Toggle Doorlock',
                         icon = 'door-closed',
                         type = 'client',
-                        event = 'qb-houses:client:toggleDoorlock',
+                        event = 'indigo-houses:client:toggleDoorlock',
                         shouldClose = true
                     }, {
                         id = 'decoratehouse',
                         title = 'Decorate House',
                         icon = 'box',
                         type = 'client',
-                        event = 'qb-houses:client:decorate',
+                        event = 'indigo-houses:client:decorate',
                         shouldClose = true
                     }, {
                         id = 'houseLocations',
@@ -144,21 +144,21 @@ Config.MenuItems = {
                                 title = 'Set Stash',
                                 icon = 'box-open',
                                 type = 'client',
-                                event = 'qb-houses:client:setLocation',
+                                event = 'indigo-houses:client:setLocation',
                                 shouldClose = true
                             }, {
                                 id = 'setoutift',
                                 title = 'Set Wardrobe',
                                 icon = 'shirt',
                                 type = 'client',
-                                event = 'qb-houses:client:setLocation',
+                                event = 'indigo-houses:client:setLocation',
                                 shouldClose = true
                             }, {
                                 id = 'setlogout',
                                 title = 'Set Logout',
                                 icon = 'door-open',
                                 type = 'client',
-                                event = 'qb-houses:client:setLocation',
+                                event = 'indigo-houses:client:setLocation',
                                 shouldClose = true
                             }
                         }
@@ -526,7 +526,7 @@ Config.JobInteractions = {
             title = 'Reset house lock',
             icon = 'key',
             type = 'client',
-            event = 'qb-houses:client:ResetHouse',
+            event = 'indigo-houses:client:ResetHouse',
             shouldClose = true
         }, {
             id = 'takedriverlicense',
@@ -655,7 +655,7 @@ Config.JobInteractions = {
             title = 'Reset house lock',
             icon = 'key',
             type = 'client',
-            event = 'qb-houses:client:ResetHouse',
+            event = 'indigo-houses:client:ResetHouse',
             shouldClose = true
         }, {
             id = 'takedriverlicense',
@@ -784,7 +784,7 @@ Config.JobInteractions = {
             title = 'Reset house lock',
             icon = 'key',
             type = 'client',
-            event = 'qb-houses:client:ResetHouse',
+            event = 'indigo-houses:client:ResetHouse',
             shouldClose = true
         }, {
             id = 'takedriverlicense',

@@ -7,7 +7,7 @@ This doorlock system is based on [nui_doorlock by thelindat](https://github.com/
 
 * [qb-core](https://github.com/qbcore-framework/qb-core)
 * [qb-input](https://github.com/qbcore-framework/qb-input) - For Making New Doors
-* [qb-lockpick](https://github.com/qbcore-framework/qb-lockpick) - For Lockpicking Doors
+* [indigo-lockpick](https://github.com/qbcore-framework/indigo-lockpick) - For Lockpicking Doors
 
 ## Features
 
@@ -15,7 +15,7 @@ This doorlock system is based on [nui_doorlock by thelindat](https://github.com/
 * Multiple door types to support all possible doors
 * Support for item checking, multiple or single items
 * Support for citizenid, gang and job checking
-* Support for qb-lockpick
+* Support for indigo-lockpick
 * NUI Text as interaction text
 * Great performance
 * Uses the native door system
