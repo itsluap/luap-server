@@ -11,11 +11,11 @@ Translations = {
         secs = "Några sekunder sedan"
     },
     logs = {
-        invalid_account = "^6[^4indigo-banking^6] ^0 Inget konto hittades (%{account})",
-        broke_account = "^6[^4indigo-banking^6] ^0 Konto(%{account}) har för låg balans. Nuvarande balans: $%{amount}",
-        illegal_action = "^6[^4indigo-banking^6] ^0 %{name} har försökt göra något mot ett konto dom inte skapat.",
-        no_account = "^6[^4indigo-banking^6] ^0 %{name} har försökt göra något mot ett konto dom inte skapat.",
-        existing_account = "^6[^4indigo-banking^6] ^0 Konto %{account} finns redan!"
+        invalid_account = "^6[^4Renwed-Banking^6] ^0 Inget konto hittades (%{account})",
+        broke_account = "^6[^4Renwed-Banking^6] ^0 Konto(%{account}) har för låg balans. Nuvarande balans: $%{amount}",
+        illegal_action = "^6[^4Renwed-Banking^6] ^0 %{name} har försökt göra något mot ett konto dom inte skapat.",
+        no_account = "^6[^4Renwed-Banking^6] ^0 %{name} har försökt göra något mot ett konto dom inte skapat.",
+        existing_account = "^6[^4Renwed-Banking^6] ^0 Konto %{account} finns redan!"
     },
     notify = {
         invalid_amount = "Ogiltig summa till %{type}",

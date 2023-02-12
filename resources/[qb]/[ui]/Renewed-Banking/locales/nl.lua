@@ -11,11 +11,11 @@ Translations = {
         secs = "Een paar seconden geleden",
     },
     logs = {
-        invalid_account = "^6[^4indigo-banking^6] ^0 Acount niet gevonden (%{account})",
-        broke_account = "^6[^4indigo-banking^6] ^0 Acount(%{account}) is te arm, met saldo van €%{amount}",
-        illegal_action = "^6[^4indigo-banking^6] ^0 %{name} heeft geprobeerd een actie uit te voeren op een acount dat niet door deze persoon is gemaakt.",
-        no_account = "^6[^4indigo-banking^6] ^0 %{name} heeft geprobeerd een actie uit te voeren op een acount dat niet door deze persoon is gemaakt.",
-        existing_account = "^6[^4indigo-banking^6] ^0 Acount %{account} bestaat al"
+        invalid_account = "^6[^4Renwed-Banking^6] ^0 Acount niet gevonden (%{account})",
+        broke_account = "^6[^4Renwed-Banking^6] ^0 Acount(%{account}) is te arm, met saldo van €%{amount}",
+        illegal_action = "^6[^4Renwed-Banking^6] ^0 %{name} heeft geprobeerd een actie uit te voeren op een acount dat niet door deze persoon is gemaakt.",
+        no_account = "^6[^4Renwed-Banking^6] ^0 %{name} heeft geprobeerd een actie uit te voeren op een acount dat niet door deze persoon is gemaakt.",
+        existing_account = "^6[^4Renwed-Banking^6] ^0 Acount %{account} bestaat al"
     },
     notify = {
         invalid_amount = "Ongeldig bedrag voor %{type}",

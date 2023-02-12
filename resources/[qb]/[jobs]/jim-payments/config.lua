@@ -13,7 +13,7 @@ Config = {
 	-- Default Job Payment Systems --
 	---------------------------------
 
-	RenewedBanking = true, -- Enable if using indigo-banking false if using indigo-management
+	RenewedBanking = true, -- Enable if using Renwed-Banking false if using indigo-management
 
 	ApGov = false, -- Toggle support for AP-Goverment Tax
 

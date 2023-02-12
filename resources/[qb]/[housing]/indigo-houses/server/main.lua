@@ -237,7 +237,7 @@ RegisterNetEvent('indigo-houses:server:buyHouse', function(house)
         TriggerClientEvent('indigo-houses:client:SetClosestHouse', src)
         TriggerClientEvent('qb-house:client:RefreshHouseTargets', src)
         pData.Functions.RemoveMoney('bank', HousePrice, "bought-house") -- 21% Extra house costs
-        exports['indigo-banking']:addAccountMoney("realestate", (HousePrice / 100) * math.random(18, 25))
+        exports['Renwed-Banking']:addAccountMoney("realestate", (HousePrice / 100) * math.random(18, 25))
         TriggerEvent('qb-log:server:CreateLog', 'house', Lang:t("log.house_purchased"), 'green', Lang:t("log.house_purchased_by", {house = house:upper(), price = HousePrice, firstname = pData.PlayerData.charinfo.firstname, lastname = pData.PlayerData.charinfo.lastname}))
         TriggerClientEvent('QBCore:Notify', src, Lang:t("success.house_purchased"), 'success', 5000)
     else

@@ -67,8 +67,8 @@ RegisterNetEvent('indigo-customs:server:attemptPurchase', function(type, upgrade
         end
     end
     if paidBySociety then
-        if exports['indigo-banking']:getAccountMoney(job) >= price then
-            exports['indigo-banking']:removeAccountMoney(job, price)
+        if exports['Renwed-Banking']:getAccountMoney(job) >= price then
+            exports['Renwed-Banking']:removeAccountMoney(job, price)
         else
             paidBySociety = false
             TriggerClientEvent('QBCore:Notify', source, "Your job society can't pay for this. You will be charged instead.")
@@ -79,7 +79,7 @@ RegisterNetEvent('indigo-customs:server:attemptPurchase', function(type, upgrade
             Player.Functions.RemoveMoney(moneyType, price, "bennys")
         end
         if jobRestricted and job ~= 'mechanic' then
-            exports['indigo-banking']:addAccountMoney("mechanic", price)
+            exports['Renwed-Banking']:addAccountMoney("mechanic", price)
         end
         TriggerClientEvent('indigo-customs:client:purchaseSuccessful', source)
     else

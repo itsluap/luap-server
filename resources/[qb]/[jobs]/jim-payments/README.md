@@ -188,7 +188,7 @@ FineJobList = true, -- "true" to use nearby player list feature in the cash regi
   - `Gabz` Enable to change to Gabz Bank locations, this corrects the ATM/Bank Cashier + Ticket Cash in
 ---
 ## Support for other scripts
-### indigo-banking
+### Renwed-Banking
   - Support for renewed banking added
   - Toggle `RenewedBanking` in the config.lua to enable this
 

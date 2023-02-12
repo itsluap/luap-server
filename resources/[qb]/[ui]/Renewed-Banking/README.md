@@ -1,4 +1,4 @@
-# indigo-banking
+# Renwed-Banking
 <a href='https://ko-fi.com/ushifty' target='_blank'><img height='35' style='border:0px;height:46px;' src='https://az743702.vo.msecnd.net/cdn/kofi3.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' />
  
  [Renewed Discord](https://discord.gg/P3RMrbwA8n)
@@ -31,7 +31,7 @@ This resource is a replacement for qb-banking, qb-atm, qb-managment
 ## Transaction Integrations
 
 ```lua
-exports['indigo-banking']:handleTransaction(account, title, amount, message, issuer, receiver, type, transID)
+exports['Renwed-Banking']:handleTransaction(account, title, amount, message, issuer, receiver, type, transID)
  ---@param account<string> - job name or citizenid
  ---@param title<string> - Title of transaction example `Personal Account / ${Player.PlayerData.citizenid}`
  ---@param amount<number> - Amount of money being transacted
@@ -52,18 +52,18 @@ exports['indigo-banking']:handleTransaction(account, title, amount, message, iss
 ---}
 
 
-exports['indigo-banking']:getAccountMoney(account)
+exports['Renwed-Banking']:getAccountMoney(account)
  ---@param account<string> - Job Name | Custom Account Name
 
 ---@return amount<number> - Amount of money account has or false
 
-exports['indigo-banking']:addAccountMoney(account, amount)
+exports['Renwed-Banking']:addAccountMoney(account, amount)
  ---@param account<string> - Job Name | Custom Account Name
   ---@param amount<number> - Amount of money being transacted
 
 ---@return complete<boolean> - true | false
 
-exports['indigo-banking']:removeAccountMoney(account, amount)
+exports['Renwed-Banking']:removeAccountMoney(account, amount)
  ---@param account<string> - Job Name | Custom Account Name
   ---@param amount<number> - Amount of money being transacted
 
@@ -72,12 +72,12 @@ exports['indigo-banking']:removeAccountMoney(account, amount)
 
 ## qb-managment conversion
 ```lua
-exports['indigo-management']:GetAccount => exports['indigo-banking']:getAccountMoney
-exports['indigo-management']:AddMoney => exports['indigo-banking']:addAccountMoney
-exports['indigo-management']:RemoveMoney => exports['indigo-banking']:removeAccountMoney
-exports['indigo-management']:GetGangAccount=> exports['indigo-banking']:getAccountMoney
-exports['indigo-management']:AddGangMoney=> exports['indigo-banking']:addAccountMoney
-exports['indigo-management']:RemoveGangMoney=> exports['indigo-banking']:removeAccountMoney
+exports['indigo-management']:GetAccount => exports['Renwed-Banking']:getAccountMoney
+exports['indigo-management']:AddMoney => exports['Renwed-Banking']:addAccountMoney
+exports['indigo-management']:RemoveMoney => exports['Renwed-Banking']:removeAccountMoney
+exports['indigo-management']:GetGangAccount=> exports['Renwed-Banking']:getAccountMoney
+exports['indigo-management']:AddGangMoney=> exports['Renwed-Banking']:addAccountMoney
+exports['indigo-management']:RemoveGangMoney=> exports['Renwed-Banking']:removeAccountMoney
 ```
 
  ## Change Logs

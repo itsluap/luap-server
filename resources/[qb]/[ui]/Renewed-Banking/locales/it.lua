@@ -11,11 +11,11 @@ Translations = {
         secs = "Alcuni secondi fà",
     },
     logs = {
-        invalid_account = "^6[^4indigo-banking^6] ^0 Il conto non è stato trovato (%{account})",
-        broke_account = "^6[^4indigo-banking^6] ^0 Il conto (%{account}) è troppo in negativo, ha un saldo di $%{amount}",
-        illegal_action = "^6[^4indigo-banking^6] ^0 %{name} ha tentato di eseguire un'azione su un account non creato.",
-        no_account = "^6[^4indigo-banking^6] ^0 %{name} ha tentato di eseguire un'azione su un account non creato.",
-        existing_account = "^6[^4indigo-banking^6] ^0 Il conto %{account} è già esistente."
+        invalid_account = "^6[^4Renwed-Banking^6] ^0 Il conto non è stato trovato (%{account})",
+        broke_account = "^6[^4Renwed-Banking^6] ^0 Il conto (%{account}) è troppo in negativo, ha un saldo di $%{amount}",
+        illegal_action = "^6[^4Renwed-Banking^6] ^0 %{name} ha tentato di eseguire un'azione su un account non creato.",
+        no_account = "^6[^4Renwed-Banking^6] ^0 %{name} ha tentato di eseguire un'azione su un account non creato.",
+        existing_account = "^6[^4Renwed-Banking^6] ^0 Il conto %{account} è già esistente."
     },
     notify = {
         invalid_amount = "Importo non valido per %{type}",

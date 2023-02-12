@@ -11,11 +11,11 @@ Translations = {
         secs = "Et par sekudner siden",
     },
     logs = {
-        invalid_account = "^6[^4indigo-banking^6] ^0 Konto fundet (%{account})",
-        broke_account = "^6[^4indigo-banking^6] ^0 Konto(%{account}) er for fattig med %{amount} DKK",
-        illegal_action = "^6[^4indigo-banking^6] ^0 %{name} Prøvede at udføre en aktion på en konto han ikke har lavet.",
-        no_account = "^6[^4indigo-banking^6] ^0 %{name} Prøvede at udføre en aktion på en konto han ikke har lavet.",
-        existing_account = "^6[^4indigo-banking^6] ^0 Konto %{account} eksistere allerede."
+        invalid_account = "^6[^4Renwed-Banking^6] ^0 Konto fundet (%{account})",
+        broke_account = "^6[^4Renwed-Banking^6] ^0 Konto(%{account}) er for fattig med %{amount} DKK",
+        illegal_action = "^6[^4Renwed-Banking^6] ^0 %{name} Prøvede at udføre en aktion på en konto han ikke har lavet.",
+        no_account = "^6[^4Renwed-Banking^6] ^0 %{name} Prøvede at udføre en aktion på en konto han ikke har lavet.",
+        existing_account = "^6[^4Renwed-Banking^6] ^0 Konto %{account} eksistere allerede."
     },
     notify = {
         invalid_amount = "Ugyldig mængde %{type}",

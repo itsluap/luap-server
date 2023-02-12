@@ -11,11 +11,11 @@ Translations = {
         secs = "Hace unos segundos",
     },
     logs = {
-        invalid_account = "^6[^4indigo-banking^6] ^0 Cuenta no encontrada (%{account})",
-        broke_account = "^6[^4indigo-banking^6] ^0 Cuenta(%{account}) está demasiado arruinado con el saldo de $%{amount}",
-        illegal_action = "^6[^4indigo-banking^6] ^0 %{name} ha intentado realizar una acción en una cuenta que no creó.",
-        no_account = "^6[^4indigo-banking^6] ^0 %{name} ha intentado realizar una acción en una cuenta que no creó.",
-        existing_account = "^6[^4indigo-banking^6] ^0 Cuenta %{account} ya existe"
+        invalid_account = "^6[^4Renwed-Banking^6] ^0 Cuenta no encontrada (%{account})",
+        broke_account = "^6[^4Renwed-Banking^6] ^0 Cuenta(%{account}) está demasiado arruinado con el saldo de $%{amount}",
+        illegal_action = "^6[^4Renwed-Banking^6] ^0 %{name} ha intentado realizar una acción en una cuenta que no creó.",
+        no_account = "^6[^4Renwed-Banking^6] ^0 %{name} ha intentado realizar una acción en una cuenta que no creó.",
+        existing_account = "^6[^4Renwed-Banking^6] ^0 Cuenta %{account} ya existe"
     },
     notify = {
         invalid_amount = "Cantidad Invalida para %{type}",
