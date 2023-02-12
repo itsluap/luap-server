@@ -341,7 +341,7 @@ Config.Shops = {
         ['TestDriveSpawn'] = vector3(-1360.24, -444.11, 34.69), -- Spawn location for test drive
         ['ShowroomVehicles'] = {
             [1] = {
-                coords = vector4(-1379.29, -450.82, 34.48, 214.57),
+                coords = vector4(-1379.29, -450.82, 33.48, 214.57),
                 defaultVehicle = '22m5',
                 chosenVehicle = '22m5'
             },
