@@ -237,7 +237,7 @@ RegisterNetEvent('seatbelt:client:UseHarness', function(ItemData) -- On Item Use
             }, {}, {}, {}, function()
                 LocalPlayer.state:set("inv_busy", false, true)
                 ToggleHarness()
-                TriggerServerEvent('equip:harness', ItemData)
+                -- TriggerServerEvent('equip:harness', ItemData)
             end)
             harnessHp = ItemData.info.uses
             harnessData = ItemData
@@ -252,6 +252,7 @@ RegisterNetEvent('seatbelt:client:UseHarness', function(ItemData) -- On Item Use
             }, {}, {}, {}, function()
                 LocalPlayer.state:set("inv_busy", false, true)
                 ToggleHarness()
+                TriggerServerEvent('equip:harness', ItemData) -- moving these here so the harness does damage on removal instead of on equip
             end)
         end
     else

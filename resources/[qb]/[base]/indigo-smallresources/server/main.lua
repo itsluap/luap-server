@@ -26,9 +26,9 @@ RegisterNetEvent('equip:harness', function(item)
     if not Player.PlayerData.items[item.slot].info.uses then
         Player.PlayerData.items[item.slot].info.uses = 19
         Player.Functions.SetInventory(Player.PlayerData.items)
-    elseif Player.PlayerData.items[item.slot].info.uses == 1 then
+    elseif Player.PlayerData.items[item.slot].info.uses == 0 then
         TriggerClientEvent("inventory:client:ItemBox", src, QBCore.Shared.Items['harness'], "remove")
-        Player.Functions.RemoveItem('harness', 1)
+        exports['lj-inventory']:RemoveItem('harness', 1)
     else
         Player.PlayerData.items[item.slot].info.uses -= 1
         Player.Functions.SetInventory(Player.PlayerData.items)
@@ -43,7 +43,7 @@ RegisterNetEvent('seatbelt:DoHarnessDamage', function(hp, data)
 
     if hp == 0 then
         --Player.Functions.RemoveItem('harness', 1, data.slot)
-        exports['lj-inventory']:RemoveItem('harness')
+        exports['lj-inventory']:RemoveItem('harness', 1, data.slot)
     else
         Player.PlayerData.items[data.slot].info.uses -= 1
         Player.Functions.SetInventory(Player.PlayerData.items)
