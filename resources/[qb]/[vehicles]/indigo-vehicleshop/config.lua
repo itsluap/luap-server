@@ -311,6 +311,42 @@ Config.Shops = {
             },
         }
     }, -- Add your next table under this comma
+    ['hayes'] = {
+        ['Type'] = 'managed', -- meaning a real player has to sell the car
+        ['Zone'] = {
+            ['Shape'] = {
+                vector2(-1372.6129150391, -441.63690185547),
+                vector2(-1367.9965820312, -447.98233032227),
+                vector2(-1381.0081787109, -457.34820556641),
+                vector2(-1385.5960693359, -450.94409179688)
+            },
+            ['minZ'] = 34.0,
+            ['maxZ'] = 37.0,
+            ['size'] = 3.10, -- size of the vehicles zones
+        },
+        ['Job'] = 'hayes', -- Name of job or none
+        ['ShopLabel'] = 'Hayes',
+        ['showBlip'] = false, -- true or false
+        ['blipSprite'] = 326, -- Blip sprite
+        ['blipColor'] = 3, -- Blip color
+        ['Categories'] = {
+            ['super'] = 'Super',
+            ['sports'] = 'Sports',
+            ['imports'] = 'Imports',
+        },
+        ['TestDriveTimeLimit'] = 0.5,
+        ['Location'] = vector3(-1378.12, -449.91, 34.48),
+        ['ReturnLocation'] = vector3(-1372.24, -446.38, 34.48),
+        ['VehicleSpawn'] = vector4(543.19, -208.2, 53.87, 176.31),
+        ['TestDriveSpawn'] = vector3(-1360.24, -444.11, 34.69), -- Spawn location for test drive
+        ['ShowroomVehicles'] = {
+            [1] = {
+                coords = vector4(-1379.29, -450.82, 34.48, 214.57),
+                defaultVehicle = '22m5',
+                chosenVehicle = '22m5'
+            },
+        }
+    }, -- Add your next table under this comma
     ['sea'] = {
         ['Type'] = 'free-use', -- no player interaction is required to purchase a vehicle
         ['Zone'] = {
