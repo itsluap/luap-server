@@ -57,6 +57,20 @@ local props = {
 	["weapon_compactrifle"]  = { model = "w_ar_draco", hash = joaat("weapon_compactrifle"), tier = 1 },
 	["weapon_m4"]            = { model = "w_ar_m4", hash = joaat("weapon_m4"), tier = 1 },
 
+	-- addon weapons --
+	["weapon_ak47"]            = { model = "w_ar_ak47", hash = joaat("weapon_ak47"), tier = 1 },
+	["weapon_ar15"]            = { model = "w_ar_ar15", hash = joaat("weapon_ar15"), tier = 1 },
+	["weapon_hk416"]            = { model = "w_ar_hk416", hash = joaat("weapon_hk416"), tier = 1 },
+	["weapon_huntingrifle"]            = { model = "w_sr_huntingrifle", hash = joaat("weapon_huntingrifle"), tier = 1 },
+	["weapon_m4"]            = { model = "w_ar_m4", hash = joaat("weapon_m4"), tier = 1 },
+	["weapon_m70"]            = { model = "w_ar_m70", hash = joaat("weapon_m70"), tier = 1 },
+	["weapon_m110"]            = { model = "w_sr_m110", hash = joaat("weapon_m110"), tier = 1 },
+	["weapon_mk14"]            = { model = "w_sr_mk14", hash = joaat("weapon_mk14"), tier = 1 },
+	["weapon_mossberg"]            = { model = "w_sg_mossberg", hash = joaat("weapon_mossberg"), tier = 1 },
+	["weapon_remington"]            = { model = "w_sg_remington", hash = joaat("weapon_remington"), tier = 1 },
+	["weapon_scarh"]            = { model = "w_ar_scarh", hash = joaat("weapon_scarh"), tier = 1 },
+	--tier2 addon
+	["weapon_sledgehammer"]            = { model = "w_me_sledgehammer", hash = joaat("weapon_sledgehammer"), tier = 2 },
 
 	-- tier2
 	["weapon_bats"]      = { model = "w_me_baseball_bat_barbed", hash = joaat("weapon_bats"), tier = 2 },
