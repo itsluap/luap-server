@@ -70,26 +70,6 @@ local function _710_RemoveMoney(money)
 end
 
 function RemoveMoneyFromSociety(money)
-    if Config.SocietyFramework == "okokbanking" then
-        local b = OkOk_GetBalance()
-        b = b - money
-        if b < 0 then
-            b = 0
-        end
-        OkOk_UpdateBalance(b)
-        return
-    elseif Config.SocietyFramework == "710-Management" then
-        _710_RemoveMoney(money)
-        return
-    elseif Config.SocietyFramework == "addon_account_data" then
-        local b = AddonAccount_GetBalance()
-        b = b - money
-        if b < 0 then
-            b = 0
-        end
-        AddonAccount_UpdateBalance(b)
-        return
-    end
     if Framework.Active == 2 then
         local moneyNow = exports['Renwed-Banking']:getAccountMoney(Config.SocietyName)
         --print(moneyNow)
@@ -125,20 +105,6 @@ function RemoveMoneyFromSociety(money)
 end
 
 function GiveMoneyToSociety(money)
-    if Config.SocietyFramework == "okokbanking" then
-        local b = OkOk_GetBalance()
-        b = b + money
-        OkOk_UpdateBalance(b)
-        return
-    elseif Config.SocietyFramework == "710-Management" then
-        _710_AddMoney(money)
-        return
-    elseif Config.SocietyFramework == "addon_account_data" then
-        local b = AddonAccount_GetBalance()
-        b = b + money
-        AddonAccount_UpdateBalance(b)
-        return
-    end
     if Framework.Active == 2 then
         xpcall(function()
             exports['Renwed-Banking']:addAccountMoney(Config.SocietyName, money)
@@ -161,13 +127,6 @@ function GiveMoneyToSociety(money)
 end
 
 function GetMoneyFromSociety()
-    if Config.SocietyFramework == "okokbanking" then
-        return OkOk_GetBalance()
-    elseif Config.SocietyFramework == "710-Management" then
-        return _710_GetBalance()
-    elseif Config.SocietyFramework == "addon_account_data" then
-        return AddonAccount_GetBalance()
-    end
     local result = nil
     local promise = promise:new()
 
