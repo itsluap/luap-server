@@ -18,3 +18,4 @@ resources/.DS_Store
 resources/\[project-sloth\]/lj-loading/assets/indigo_loadingscreen.mp4
 resources/\[project-sloth\]/lj-loading/assets/indigo_loadingvideo.mp4
 resources/.vscode/
+*.ignore
