@@ -1,25 +1,26 @@
 ## You CAN edit the following:
 endpoint_add_tcp "0.0.0.0:30120"
 endpoint_add_udp "0.0.0.0:30120"
-sv_maxclients 120
+sv_maxclients 8
 set steam_webApiKey "AF94A1DB58A91D044F2A6A3E0C7A444D"
-sets tags "qbcore, roleplay, police, ems, rp, drugs"
+sets tags " "
 #set onesync on
 
 ## You MAY edit the following:
-sv_licenseKey "cfxk_1jasI5Iq0ivSo4mQ6FsdF_MvJ84"
-sv_hostname "^6Indigo RP ^7| ^4discord.gg/indigorp ^7| ^8Custom Drugs & Heists ^7| ^2Player Owned Businesses"
-sets sv_projectName "^5Indigo RP"
-sets sv_projectDesc "discord.gg/indigorp"
+sv_licenseKey "cfxk_qZvsSR0vv7bXzZxlptuP_1UNbnj"
+sv_hostname "luap dev"
+sets sv_projectName "luap dev"
+sets sv_projectDesc " "
 sets locale "en-US" 
-sets activitypubFeed indigorp@mstdn.social
-sets Discord "discord.gg/indigorp"
-sets Website "indigorp.net"
+#sets activitypubFeed indigorp@mstdn.social
+sets Discord " "
+sets Website " "
 load_server_icon myLogo.png
-#set sv_enforceGameBuild 2545
+set sv_enforceGameBuild 2944
 #set mysql_connection_string "mysql://root@localhost/QBCoreFramework_313C4A?charset=utf8mb4"
-set mysql_connection_string "user=root;password=Honda710;host=localhost;port=3306;database=indigo_db;charset=utf8mb4"
-sv_tebexSecret 9ece67381cffad8ef67ec7d10f20b2b0b41b86b6
+#set mysql_connection_string "user=root;password=Honda710;host=localhost;port=3306;database=indigo_db;charset=utf8mb4"
+set mysql_connection_string "mysql://root@localhost/fivem-dev?charset=utf8mb4" #local to my pc (use only for dev)
+#sv_tebexSecret 9ece67381cffad8ef67ec7d10f20b2b0b41b86b6
 
 # Voice config
 setr voice_useNativeAudio true
@@ -45,72 +46,72 @@ ensure basic-gamemode
 ensure hardcap
 
 # QBCore & Extra stuff
-ensure cfx-gabz-mapdata         #*THIS RESOURCE IS REQUIRED FOR ALL RESOURCES TO WORK. IT MUST BE STARTED FIRST*
-ensure cfx-gabz-scenarios       #*THIS RESOURCE IS OPTIONAL, IT REMOVES CONFLICTING PEDS SPAWNS*
-ensure cfx-gabz-pdprops         #*THIS RESOURCE IS REQUIRED IF YOU USE ANY PD. IT MUST BE START BEFORE PD'S*
-ensure cfx-gabz-247             #*THIS RESOURCE IS MANDATORY IF YOU USE [CFX-GABZ-OTTOS]*
+#ensure cfx-gabz-mapdata         #*THIS RESOURCE IS REQUIRED FOR ALL RESOURCES TO WORK. IT MUST BE STARTED FIRST*
+#ensure cfx-gabz-scenarios       #*THIS RESOURCE IS OPTIONAL, IT REMOVES CONFLICTING PEDS SPAWNS*
+#ensure cfx-gabz-pdprops         #*THIS RESOURCE IS REQUIRED IF YOU USE ANY PD. IT MUST BE START BEFORE PD'S*
+#ensure cfx-gabz-247             #*THIS RESOURCE IS MANDATORY IF YOU USE [CFX-GABZ-OTTOS]*
 #ensure cfx-gabz-altruists
 #ensure cfx-gabz-ammunation
-ensure cfx-gabz-arcade
-ensure cfx-gabz-aztecas
-ensure cfx-gabz-bahama
-ensure cfx-gabz-ballas
-ensure cfx-gabz-barber
-ensure cfx-gabz-beanmachine
-ensure cfx-gabz-bennys         #*READ BELOW*!
-ensure cfx-gabz-binco
-ensure cfx-gabz-bobcat
-ensure cfx-gabz-bowling
-ensure cfx-gabz-carmeet
-ensure cfx-gabz-casino
-ensure cfx-gabz-catcafe
+#ensure cfx-gabz-arcade
+#ensure cfx-gabz-aztecas
+#ensure cfx-gabz-bahama
+#ensure cfx-gabz-ballas
+#ensure cfx-gabz-barber
+#ensure cfx-gabz-beanmachine
+#ensure cfx-gabz-bennys         #*READ BELOW*!
+#ensure cfx-gabz-binco
+#ensure cfx-gabz-bobcat
+#ensure cfx-gabz-bowling
+#ensure cfx-gabz-carmeet
+#ensure cfx-gabz-casino
+#ensure cfx-gabz-catcafe
 #ensure cfx-gabz-davispd         #*THIS RESOURCE REQUIRES [CFX-GABZ-PDPROPS] TO WORK PROPERLY*
-ensure cfx-gabz-diner
+#ensure cfx-gabz-diner
 #ensure cfx-gabz-esbltd
-ensure cfx-gabz-families
-ensure cfx-gabz-firedept
-ensure cfx-gabz-fleeca
-ensure cfx-gabz-harmony
-ensure cfx-gabz-haters
-ensure cfx-gabz-hayes
+#ensure cfx-gabz-families
+#ensure cfx-gabz-firedept
+#ensure cfx-gabz-fleeca
+#ensure cfx-gabz-harmony
+#ensure cfx-gabz-haters
+#ensure cfx-gabz-hayes
 #ensure cfx-gabz-hub            #*READ BELOW*!
-ensure cfx-gabz-import
-ensure cfx-gabz-impound        #*READ BELOW*!
+#ensure cfx-gabz-import
+#ensure cfx-gabz-impound        #*READ BELOW*!
 #ensure cfx-gabz-lamesapd        #*THIS RESOURCE REQUIRES [CFX-GABZ-PDPROPS] TO WORK PROPERLY*
-ensure cfx-gabz-lost
-ensure cfx-gabz-lostsc
-ensure cfx-gabz-lscustoms
-ensure cfx-gabz-marabunta
-ensure cfx-gabz-mirrorpark1
-ensure cfx-gabz-mirrorpark2
-ensure cfx-gabz-mrpd
-ensure cfx-gabz-ottos
-ensure cfx-gabz-pacificbank     #*THIS RESOURCE REQUIRES [CFX-GABZ-PDPROPS] TO WORK PROPERLY*
-ensure cfx-gabz-paletobank
-ensure cfx-gabz-paletoliquor
-ensure cfx-gabz-paletopd        #*THIS RESOURCE REQUIRES [CFX-GABZ-PDPROPS] TO WORK PROPERLY*
-ensure cfx-gabz-parkranger
-ensure cfx-gabz-pdm            #*READ BELOW*!
-ensure cfx-gabz-pillbox
-ensure cfx-gabz-pinkcage
-ensure cfx-gabz-pizzeria        #*THIS RESOURCE IS MANDATORY IF YOU USE [CFX-GABZ-OTTOS]*
-ensure cfx-gabz-ponsonbys
-ensure cfx-gabz-prison
-ensure cfx-gabz-records
-ensure cfx-gabz-sandypd         #*THIS RESOURCE REQUIRES [CFX-GABZ-PDPROPS] TO WORK PROPERLY*
-ensure cfx-gabz-studio
-ensure cfx-gabz-suburban
-ensure cfx-gabz-tattoo
-ensure cfx-gabz-townhall        #*THIS RESOURCE REQUIRES [CFX-GABZ-PDPROPS] TO WORK PROPERLY*
-ensure cfx-gabz-triads
-ensure cfx-gabz-tuners
-ensure cfx-gabz-vagos
-ensure cfx-gabz-vbmarket
-ensure cfx-gabz-vu
-ensure cfx-gabz-yachts
-ensure cfx-gabz-mba
-ensure cfx-gabz-paletocamp
-ensure cfx-gabz-weedcamp
+#ensure cfx-gabz-lost
+#ensure cfx-gabz-lostsc
+#ensure cfx-gabz-lscustoms
+#ensure cfx-gabz-marabunta
+#ensure cfx-gabz-mirrorpark1
+#ensure cfx-gabz-mirrorpark2
+#ensure cfx-gabz-mrpd
+#ensure cfx-gabz-ottos
+#ensure cfx-gabz-pacificbank     #*THIS RESOURCE REQUIRES [CFX-GABZ-PDPROPS] TO WORK PROPERLY*
+#ensure cfx-gabz-paletobank
+#ensure cfx-gabz-paletoliquor
+#ensure cfx-gabz-paletopd        #*THIS RESOURCE REQUIRES [CFX-GABZ-PDPROPS] TO WORK PROPERLY*
+#ensure cfx-gabz-parkranger
+#ensure cfx-gabz-pdm            #*READ BELOW*!
+#ensure cfx-gabz-pillbox
+#ensure cfx-gabz-pinkcage
+#ensure cfx-gabz-pizzeria        #*THIS RESOURCE IS MANDATORY IF YOU USE [CFX-GABZ-OTTOS]*
+#ensure cfx-gabz-ponsonbys
+#ensure cfx-gabz-prison
+#ensure cfx-gabz-records
+#ensure cfx-gabz-sandypd         #*THIS RESOURCE REQUIRES [CFX-GABZ-PDPROPS] TO WORK PROPERLY*
+#ensure cfx-gabz-studio
+#ensure cfx-gabz-suburban
+#ensure cfx-gabz-tattoo
+#ensure cfx-gabz-townhall        #*THIS RESOURCE REQUIRES [CFX-GABZ-PDPROPS] TO WORK PROPERLY*
+#ensure cfx-gabz-triads
+#ensure cfx-gabz-tuners
+#ensure cfx-gabz-vagos
+#ensure cfx-gabz-vbmarket
+#ensure cfx-gabz-vu
+#ensure cfx-gabz-yachts
+#ensure cfx-gabz-mba
+#ensure cfx-gabz-paletocamp
+#ensure cfx-gabz-weedcamp
 #ensure cfx-gabz-xmas
 ensure [assets]
 ##########################
@@ -124,18 +125,18 @@ ensure [qb]
 ensure [project-sloth]
 ensure [standalone]
 ensure [voice]
-ensure gabz-chairs
+#ensure gabz-chairs
 #ensure gabz-pedspawner
 
 ## Permissions ##
 add_ace group.admin command allow # allow all commands
 #add_principal identifier.{{principalMasterIdentifier}} qbcore.god <- doesn't exist yet, change the generated one below to qbcore.god
 add_principal identifier.fivem:2448277 qbcore.god #luap2
-add_principal identifier.discord:353767887305048064 group.admin #lin
+#add_principal identifier.discord:353767887305048064 group.admin #lin
 add_principal identifier.discord:406599443601817650 group.admin #mediumking
 #add_principal identifier.discord:548070310734200832 group.admin #icey
 #add_principal identifier.discord:343161050163707904 group.admin #nodeth
-add_principal identifier.discord:325010690148663296 group.admin #learning life
+#add_principal identifier.discord:325010690148663296 group.admin #learning life
 
 # Resources
 add_ace resource.qb-core command allow # Allow qb-core to execute commands
