@@ -3,7 +3,7 @@ local cachedAccounts = {}
 local cachedPlayers = {}
 
 CreateThread(function()
-    MySQL.query('SELECT * FROM bank_accounts_new', {}, function(accounts)
+    MySQL.query('SELECT * FROM bank_accounts', {}, function(accounts)
         for _,v in pairs (accounts) do
             local job = v.id
             v.auth = json.decode(v.auth)
@@ -58,7 +58,7 @@ end
 local function updatePlayerAccount(cid)
     MySQL.query('SELECT * FROM player_transactions WHERE id = @id ', {['@id'] = cid}, function(account)
         local query = '%' .. cid .. '%'
-        MySQL.query("SELECT * FROM bank_accounts_new WHERE auth LIKE ? ", {query}, function(shared)
+        MySQL.query("SELECT * FROM bank_accounts WHERE auth LIKE ? ", {query}, function(shared)
             cachedPlayers[cid] = {
                 isFrozen = 0,
                 transactions = #account > 0 and json.decode(account[1].transactions) or {},
@@ -184,7 +184,7 @@ local function handleTransaction(account, title, amount, message, issuer, receiv
     }
     if cachedAccounts[account] then
         table.insert(cachedAccounts[account].transactions, 1, transaction)
-        MySQL.query("INSERT INTO bank_accounts_new (id, transactions) VALUES (:id, :transactions) ON DUPLICATE KEY UPDATE transactions = :transactions",{
+        MySQL.query("INSERT INTO bank_accounts (id, transactions) VALUES (:id, :transactions) ON DUPLICATE KEY UPDATE transactions = :transactions",{
             ['id'] = account,
             ['transactions'] = json.encode(cachedAccounts[account].transactions)
         })
@@ -209,7 +209,7 @@ local function getAccountMoney(account)
 end exports('getAccountMoney', getAccountMoney)
 
 local function updateBalance(account)
-    MySQL.query("UPDATE bank_accounts_new SET amount = ? WHERE id = ?",{ cachedAccounts[account].amount, account })
+    MySQL.query("UPDATE bank_accounts SET amount = ? WHERE id = ?",{ cachedAccounts[account].amount, account })
 end
 
 local function addAccountMoney(account, amount)
@@ -408,7 +408,7 @@ RegisterNetEvent('Renwed-Banking:server:createNewAccount', function(accountid)
 
     }
     cachedPlayers[Player.PlayerData.citizenid].accounts[#cachedPlayers[Player.PlayerData.citizenid].accounts+1] = accountid
-    MySQL.query("INSERT INTO bank_accounts_new (id, amount, transactions, auth, isFrozen, creator) VALUES (:id, :amount, :transactions, :auth, :isFrozen, :creator) ",{
+    MySQL.query("INSERT INTO bank_accounts (id, amount, transactions, auth, isFrozen, creator) VALUES (:id, :amount, :transactions, :auth, :isFrozen, :creator) ",{
         ['id'] = accountid,
         ['amount'] = cachedAccounts[accountid].amount,
         ['transactions'] = json.encode(cachedAccounts[accountid].transactions),
@@ -468,7 +468,7 @@ RegisterNetEvent('Renwed-Banking:server:addAccountMember', function(account, mem
     for k in pairs(cachedAccounts[account].auth) do auth[#auth+1] = k end
     auth[#auth+1] = targetCID
     cachedAccounts[account].auth[targetCID] = true
-    MySQL.update('UPDATE bank_accounts_new SET auth = ? WHERE id = ?',{json.encode(auth), account})
+    MySQL.update('UPDATE bank_accounts SET auth = ? WHERE id = ?',{json.encode(auth), account})
 end)
 
 RegisterNetEvent('Renwed-Banking:server:removeAccountMember', function(data)
@@ -497,7 +497,7 @@ RegisterNetEvent('Renwed-Banking:server:removeAccountMember', function(data)
         cachedPlayers[targetCID].accounts = newAccount
     end
     cachedAccounts[data.account].auth[targetCID] = nil
-    MySQL.update('UPDATE bank_accounts_new SET auth = ? WHERE id = ?',{json.encode(tmp), data.account})
+    MySQL.update('UPDATE bank_accounts SET auth = ? WHERE id = ?',{json.encode(tmp), data.account})
 end)
 
 local split = QBCore.Shared.SplitStr
@@ -546,7 +546,7 @@ local function updateAccountName(account, newName, src)
         end
     end
 
-    MySQL.update('UPDATE bank_accounts_new SET id = ? WHERE id = ?',{newName, account})
+    MySQL.update('UPDATE bank_accounts SET id = ? WHERE id = ?',{newName, account})
     return true
 end
 
@@ -571,7 +571,7 @@ local function addAccountMember(account, member)
     for k, _ in pairs(cachedAccounts[account].auth) do auth[#auth+1] = k end
     auth[#auth+1] = targetCID
     cachedAccounts[account].auth[targetCID] = true
-    MySQL.update('UPDATE bank_accounts_new SET auth = ? WHERE id = ?',{json.encode(auth), account})
+    MySQL.update('UPDATE bank_accounts SET auth = ? WHERE id = ?',{json.encode(auth), account})
 
 end exports("addAccountMember", addAccountMember)
 
@@ -604,7 +604,7 @@ local function removeAccountMember(account, member)
 
     cachedAccounts[account].auth[targetCID] = nil
 
-    MySQL.update('UPDATE bank_accounts_new SET auth = ? WHERE id = ?',{json.encode(tmp), account})
+    MySQL.update('UPDATE bank_accounts SET auth = ? WHERE id = ?',{json.encode(tmp), account})
 end exports("removeAccountMember", removeAccountMember)
 
 exports("getAccountTransactions", function(account)
