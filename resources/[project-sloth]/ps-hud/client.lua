@@ -441,17 +441,17 @@ RegisterNetEvent("hud:client:LoadMap", function()
             showSquareB = true
         end
         Wait(1200)
-        if Menu.isMapNotifChecked then
-            QBCore.Functions.Notify(Lang:t("notify.loaded_square_map"))
-        end
+        --if Menu.isMapNotifChecked then
+        --    QBCore.Functions.Notify(Lang:t("notify.loaded_square_map"))
+        --end
     elseif Menu.isToggleMapShapeChecked == "circle" then
         RequestStreamedTextureDict("circlemap", false)
         if not HasStreamedTextureDictLoaded("circlemap") then
             Wait(150)
         end
-        if Menu.isMapNotifChecked then
-            QBCore.Functions.Notify(Lang:t("notify.load_circle_map"))
-        end
+        --if Menu.isMapNotifChecked then
+        --    QBCore.Functions.Notify(Lang:t("notify.load_circle_map"))
+        --end
         SetMinimapClipType(1)
         AddReplaceTexture("platform:/textures/graphics", "radarmasksm", "circlemap", "radarmasksm")
         AddReplaceTexture("platform:/textures/graphics", "radarmask1g", "circlemap", "radarmasksm")
