@@ -478,9 +478,9 @@ RegisterNetEvent("hud:client:LoadMap", function()
             showCircleB = true
         end
         Wait(1200)
-        if Menu.isMapNotifChecked then
-            QBCore.Functions.Notify(Lang:t("notify.loaded_circle_map"))
-        end
+        --if Menu.isMapNotifChecked then
+        --    QBCore.Functions.Notify(Lang:t("notify.loaded_circle_map"))
+        --end
     end
 end)
 
