@@ -13,3 +13,5 @@ resources/\[qb\]/\[ui\]/qb-doorlock/saves/doorstates.json
 polyzone_created_zones.txt
 resources/\[qb\]/\[base\]/lj-loading/assets/changethisvideo.mp4
 resources.rar
+resources/.DS_Store
+.DS_Store
