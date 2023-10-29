@@ -1,12 +1,12 @@
 ESX = nil
 CachedOwners = {}
 
-if Config.FrameWork == 1 then
+if Config.Framework == 1 then
     ESX = GetEsxObject()
 end
 
-if Config.FrameWork == 2 then
-    QBCore = exports['qb-core']:GetCoreObject()
+if Config.Framework == 2 then
+    QBCore = Config.GetQBCoreObject()
     ESX = {}
 
     ESX.GetPlayerFromId = function(source)
@@ -29,14 +29,14 @@ function IsVehiclePlayer(source, licensePlate, cb)
         licensePlate = Trim(licensePlate)
     end
 
-    if Config.FrameWork == 0 then
+    if Config.Framework == 0 then
         cb(true)
         return true
     end
 
     local sql = "SELECT * FROM player_vehicles WHERE plate = @spz"
 
-    if Config.FrameWork == 1 then
+    if Config.Framework == 1 then
         sql = "SELECT * FROM owned_vehicles WHERE plate = @spz"
     end
 
@@ -76,7 +76,7 @@ AddEventHandler("rcore_radiocar:openUI", function(spz)
         if ESX then
             if not CachedOwners[spz] then
                 local sql = "SELECT * FROM owned_vehicles WHERE plate = @plate AND owner = @identifier"
-                if Config.FrameWork == 2 then
+                if Config.Framework == 2 then
                     sql = "SELECT * FROM player_vehicles WHERE plate = @plate AND citizenid = @identifier"
                 end
 
@@ -86,7 +86,7 @@ AddEventHandler("rcore_radiocar:openUI", function(spz)
                 end
                 CachedOwners[spz] = result[1] or result
             else
-                if Config.FrameWork == 2 then
+                if Config.Framework == 2 then
                     if CachedOwners[spz].plate == spz and CachedOwners[spz].citizenid == xPlayer.identifier then
                         TriggerClientEvent("rcore_radiocar:openUI", player)
                     end
@@ -103,7 +103,7 @@ AddEventHandler("rcore_radiocar:openUI", function(spz)
         if ESX then
             if not CachedOwners[spz] then
                 local sql = "SELECT * FROM owned_vehicles WHERE plate = @plate"
-                if Config.FrameWork == 2 then
+                if Config.Framework == 2 then
                     sql = "SELECT * FROM player_vehicles WHERE plate = @plate"
                 end
 
@@ -141,6 +141,30 @@ if Config.MysqlType ~= 0 then
             `spz` VARCHAR(32) NOT NULL ,
             PRIMARY KEY (`id`));
         ]], {})
+
+            MySQLSyncexecute([[
+            CREATE TABLE IF NOT EXISTS `radiocar_playlist`
+            (`id` INT(11) NOT NULL AUTO_INCREMENT ,
+            `playlist` TEXT NOT NULL ,
+            `plate` VARCHAR(32) NOT NULL ,
+            PRIMARY KEY (`id`));
+        ]], {})
         end)
+    end)
+end
+
+if Config.Debug then
+    RegisterCommand("dumpradio", function()
+        print("cachedCars")
+        dump(cachedCars)
+
+        print("CachedRadiosInCar")
+        dump(CachedRadiosInCar)
+
+        print("QueMusicCache")
+        dump(QueMusicCache)
+
+        print("CachedVolumeMusic")
+        dump(CachedVolumeMusic)
     end)
 end

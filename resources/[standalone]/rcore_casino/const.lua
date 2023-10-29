@@ -1035,7 +1035,7 @@ LuckyWheelItems["Vehicle"] = {
 
 LuckyWheelItems["Nothing"] = {
     rotation = 289.0,
-    posibility = 1000,
+    posibility = 100,
     soundName = nil,
     animName = "Nothing"
 }
@@ -2490,6 +2490,7 @@ BAR_CAMERA_POS_BEFORE = vector3(932.636902, 38.688480, 74.394287)
 BAR_CAMERA_POS = vector3(935.007813, 33.887733, 73.609909)
 
 CasinoBlips = {}
+MissionBlips = {}
 BLIP_POS_INSIDETRACK = vector(954.561646, 72.986542)
 BLIP_POS_TABLEGAMES = vector(989.810486, 53.888123)
 BLIP_POS_EXTERIORBLIP = vector(928.574463, 47.377232)

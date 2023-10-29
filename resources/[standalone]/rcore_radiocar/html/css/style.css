@@ -10,6 +10,11 @@
    -ms-user-select: none; /* Internet Explorer/Edge */
 }
 
+.fa-headphones{
+	background: url(./img/headphones.png);
+    background-size: 100% 100%;
+}
+
 @font-face {
     font-family: 'digital-7regular';
     src: url('digital-7.regular-webfont.woff2') format('woff2'),
@@ -64,17 +69,15 @@ body{
 }
 
 
-#playSong i{
+#playSong svg{
     text-align: center;
+    height: 40px;
+    fill: white;
 }
 
-#playSong i:hover{
-	color: #ff7878;
-}
-
-#playSong:hover{
-	color: #ff7878;
-	cursor: pointer;
+#playSong svg:hover{
+	fill: #ff7878;
+    cursor: pointer;
 }
 
 .playCustom input{
@@ -116,8 +119,20 @@ body{
     right: 81px;
 }
 
-i.far.fa-trash-alt.active {
-    color: #08ff08;
+.non_active_que {
+    fill: white !important;
+}
+
+.active_que {
+    fill: #08ff08 !important;
+}
+
+.non_active_que:hover {
+    fill: #ff7878 !important;
+}
+
+.active_que:hover {
+    fill: #ff7878 !important;
 }
 
 #AddName {
@@ -142,15 +157,21 @@ i.far.fa-trash-alt.active {
 	text-align: center;
 }
 
-.editSong span{
-	font-size: 45px;
+.editSong svg{
+    fill: white;
+	height: 45px;
     position: relative;
     top: 15px;
     left: 36px;
 }
 
-.editSong span:hover{
-	color: #30f96e;
+.trash{
+	height: 60px !important;
+	top: 21px !important;
+}
+
+.editSong svg:hover{
+	fill: #30f96e;
 	cursor: pointer;
 }
 
@@ -171,6 +192,10 @@ i.far.fa-trash-alt.active {
     position: absolute;
     bottom: 92px;
     right: 84px;
+}
+
+#menu svg{
+    height: 40px;
 }
 
 #musicList{
@@ -225,8 +250,16 @@ i.far.fa-trash-alt.active {
     height: 45px;
 }
 
-.music i:hover{
-	color: #ff7878;
+.music svg{
+    height: 60px;
+}
+
+.music svg{
+	fill: white;
+}
+
+.music svg:hover{
+	fill: #ff7878;
 	cursor: pointer;
 }
 
@@ -245,6 +278,10 @@ i.far.fa-trash-alt.active {
 	
 }
 
+.box svg{
+    fill: white;
+}
+
 .box{
     height: 63px;
     width: 110.1px;
@@ -256,6 +293,12 @@ i.far.fa-trash-alt.active {
     align-items: center;
 }
 
+.box.full svg{
+    height: 60px;
+    display: unset;
+}
+
+
 .box.full{
     height: 210px;
     width: 50%;
@@ -263,8 +306,11 @@ i.far.fa-trash-alt.active {
 }
 
 .box:hover{
-	/* background: url(./img/menu_activate.png) repeat; */
-	color: #ff7878;
+	cursor: pointer;
+}
+
+.box:hover svg{
+	fill: #ff7878;
 	cursor: pointer;
 }
 

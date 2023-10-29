@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gunrange</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    
+    <script src="js/jquery-3.6.1.min.js" type="text/javascript"></script>
+    <script>
+      function op(elem){return document.querySelector(elem)}
+      function opp(elem){return document.querySelectorAll(elem)}
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Kanit:wght@400;500&display=swap&family=Orbitron" rel="stylesheet">  
+  </head>
+  
+  <body>
+    <div class="flex">
+      <div class="box">
+    <div class="count"></div>
+      </div>
+    </div>
+    <div id="control-wrapper">
+      <div id="control">
+        <div class="button-up button-style" onclick="move('up')">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-short" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"/>
+          </svg>
+        </div>
+        <div class="button-stop" onclick="move('stop')" data-locales="stop">
+          STOP
+        </div>
+        <div class="button-down button-style" onclick="move('down')">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-short" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="container controlPanel" id="gun-controlPanel">
+        <div class="row h-100 d-flex align-items-center justify-content-center">
+            <div class="col-2 button-system" id="gun-buttons">
+                <div class="button-placement">
+                    <div class="up" onclick="move('up')"></div>
+                    <div class="stop" onclick="move('stop')"></div>
+                    <div class="down" onclick="move('down')"></div>
+                </div>
+            </div>
+            <div class="col-3"></div>
+            <div class="col-3"></div>
+        </div>
+    </div> -->
+    <div class="container gunTarget" id="guntargets">
+      <div class="row h-100 d-flex align-items-center justify-content-center">
+          <div class="col-2 gun-targets" id="gun-target">
+              <div class="gun-thing">
+                <div class="shot" id="shot"></div>
+              </div>
+          </div>
+          <div class="col-3"></div>
+          <div class="col-3"></div>
+      </div>
+  </div>
+  <div class="fixed-Highscore shadow" id="highScore">
+    <div class="fhbw">
+      <h1 class="textHigh" id="textHigh" data-locales="yourScore"> Your score is:</h1>
+      <h1 id="score" class="shadow">1234</h1>
+      <h2 class="textPosition" id="textPosition"> You are number x on the scoreboard!</h2>
+    </div>
+  </div>
+    <div id="scoreboard-wrapper" style="display:none">
+      <div id="scoreboard">
+        <div id="scoreboard-header">
+          <img src="img/ammunation-optimized.svg">
+
+          <div id="scoreboard-header-text">
+            Scoreboard
+          </div>
+        </div>
+        <div id="scoreboard-content">
+          <div class="card shadow-sm">
+            <div class="card-header p-0 border-0">
+              <ul class="nav nav-tabs ps-3 pt-1 pe-3">
+                <li class="nav-item" >
+                  <span class="nav-link active" aria-current="page" data-tab="ar">
+                    <img src="img/icons/assault_rifle.svg">
+                    <span data-locales="ar">Assault Rifles</span>
+                  </span>
+                </li>
+                <li class="nav-item">
+                  <span class="nav-link" data-tab="hg" >
+                    <img src="img/icons/handgun.svg">
+                    <span data-locales="hg">Handguns</span>
+                  </span>
+                </li>
+                <li class="nav-item">
+                  <span class="nav-link" data-tab="lmg" >
+                    <img src="img/icons/lmg.svg" alt="">
+                    <span data-locales="lmg">LMG</span>
+                  </span>
+                </li>
+                <li class="nav-item">
+                  <span class="nav-link" data-tab="sg">
+                    <img src="img/icons/shotgun.svg" alt="">
+                    <span data-locales="sg">Shotguns</span>
+                  </span>
+                </li>
+                <li class="nav-item">
+                  <span class="nav-link" data-tab="smg">
+                    <img src="img/icons/smg.svg" alt="">
+                    <span data-locales="smg">SMG</span>
+                  </span>
+                </li>
+                <li class="nav-item">
+                  <span class="nav-link" data-tab="sn">
+                    <img src="img/icons/sniper.svg" alt="">
+                    <span data-locales="sn">Snipers</span>
+                  </span>
+                </li>
+                <li class="nav-item">
+                  <span class="nav-link" data-tab="sw">
+                    <img src="img/icons/special.svg" alt="">
+                    <span data-locales="sw">Special</span>
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <div class="card-body p-0">
+              <p id="sb-title" class="fw-bold fs-4 pt-3 ps-4 pb-3 m-0 border-bottom">
+                Assault Rifles
+              </p>
+              <ul id="scoreboard-list" class="list-group list-group-flush p-3">
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="scoreboard-footer"></div>
+      </div>
+    </div>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="../configs/locales_ui.js"></script>
+    <script src="js/range.js" crossorigin="anonymous"></script>
+  </body>
+</html>

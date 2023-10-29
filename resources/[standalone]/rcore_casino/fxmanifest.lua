@@ -5,9 +5,10 @@ dependencies {
     '/server:4752',
     '/onesync',
     '/gameBuild:2060',
+    'rcore_casino_assets',
 }
 
-version '1.0.37'
+version '1.0.51'
 
 client_scripts {
     -- Rage UI
@@ -19,7 +20,7 @@ client_scripts {
     'client/ui/items/*.lua',
 
     "config.lua",
-    "config_jobs.lua",
+    --"config_jobs.lua",
     "reporter.lua",
     "client/framework/*.lua",
     "const.lua",
@@ -49,19 +50,18 @@ client_scripts {
 
     "client/utils/*.lua",
     "client/job/*.lua",
-    "client/games/missions.lua",
+    --"client/games/missions.lua",
     "xmas/xmas_cl.lua",
 }
 
 server_scripts {
     "@mysql-async/lib/MySQL.lua",
     "config.lua",
-    "config_jobs.lua",
+    --"config_jobs.lua",
     "config_server.lua",
     "reporter.lua",
     "const.lua",
     "server/framework/*.lua",
-    "server/utils.lua",
     "server/games/slots.lua",
     "server/games/insidetrack.lua",
     "server/main/casino.lua",
@@ -76,7 +76,7 @@ server_scripts {
     "server/main/casinocontrol.lua",
     "server/main/log.lua",
     "server/utils/*.lua",
-    "server/games/missions.lua",
+    --"server/games/missions.lua",
     "xmas/xmas_sv.lua",
 }
 

@@ -952,6 +952,11 @@
 	  <installPartition>PARTITION_2</installPartition>
 	</Item>
 	<Item>
+	  <filename>platform:/levels/gta5/destruction/interior/int_props/int_retail.ityp</filename>
+	  <fileType>PERMANENT_ITYP_FILE</fileType>
+	  <installPartition>PARTITION_2</installPartition>
+	</Item>
+	<Item>
 	  <filename>platform:/levels/gta5/destruction/exterior/des_setpiece2.ityp</filename>
 	  <fileType>PERMANENT_ITYP_FILE</fileType>
 	  <installPartition>PARTITION_2</installPartition>

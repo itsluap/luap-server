@@ -1,0 +1,6 @@
+winner.ogg - "Party Pack, Horn Coil 01, Long, 01.wav" by InspectorJ (www.jshaw.co.uk) of Freesound.org
+
+loser.ogg - "Retro Strikes" by MATRIXXX_ of Freesound.org
+
+beep.ogg - "Select Granted 06" by MATRIXXX_ of Freesound.org
+beep_go.ogg - Edited version of beep.ogg

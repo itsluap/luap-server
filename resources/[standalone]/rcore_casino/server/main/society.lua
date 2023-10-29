@@ -70,21 +70,46 @@ local function _710_RemoveMoney(money)
 end
 
 function RemoveMoneyFromSociety(money)
+    if Framework.Active == 3 or Framework.Active == 4 then
+        --[[ add your own method to handle society money in here:
+        ...
+        ]]
+        return
+    end
+    if Config.SocietyFramework == "okokbanking" then
+        local b = OkOk_GetBalance()
+        b = b - money
+        if b < 0 then
+            b = 0
+        end
+        OkOk_UpdateBalance(b)
+        return
+    elseif Config.SocietyFramework == "710-Management" then
+        _710_RemoveMoney(money)
+        return
+    elseif Config.SocietyFramework == "addon_account_data" then
+        local b = AddonAccount_GetBalance()
+        b = b - money
+        if b < 0 then
+            b = 0
+        end
+        AddonAccount_UpdateBalance(b)
+        return
+    end
     if Framework.Active == 2 then
-        local moneyNow = exports['Renwed-Banking']:getAccountMoney(Config.SocietyName)
-        --print(moneyNow)
+        local moneyNow = GetMoneyFromSociety()
         if (moneyNow - money) < 0 then
             money = moneyNow
         end
         xpcall(function()
-            local societyMoney = exports['Renwed-Banking']:getAccountMoney(Config.SocietyName)
+            local societyMoney = exports["qb-bossmenu"]:GetAccount(Config.SocietyName)
             -- if societyMoney >= money then
             TriggerEvent("qb-bossmenu:server:removeAccountMoney", Config.SocietyName, money)
             -- end
         end, function(error)
-            local societyMoney = exports['Renwed-Banking']:getAccountMoney(Config.SocietyName)
+            local societyMoney = exports["qb-management"]:GetAccount(Config.SocietyName)
             -- if societyMoney >= money then
-            exports['Renwed-Banking']:removeAccountMoney(Config.SocietyName, money)
+            exports["qb-management"]:RemoveMoney(Config.SocietyName, money)
             -- end
         end)
     end
@@ -105,9 +130,29 @@ function RemoveMoneyFromSociety(money)
 end
 
 function GiveMoneyToSociety(money)
+    if Framework.Active == 3 or Framework.Active == 4 then
+        --[[ add your own method to handle society money in here:
+        ...
+        ]]
+        return
+    end
+    if Config.SocietyFramework == "okokbanking" then
+        local b = OkOk_GetBalance()
+        b = b + money
+        OkOk_UpdateBalance(b)
+        return
+    elseif Config.SocietyFramework == "710-Management" then
+        _710_AddMoney(money)
+        return
+    elseif Config.SocietyFramework == "addon_account_data" then
+        local b = AddonAccount_GetBalance()
+        b = b + money
+        AddonAccount_UpdateBalance(b)
+        return
+    end
     if Framework.Active == 2 then
         xpcall(function()
-            exports['Renwed-Banking']:addAccountMoney(Config.SocietyName, money)
+            exports["qb-management"]:AddMoney(Config.SocietyName, money)
         end, function(error)
             TriggerEvent("qb-bossmenu:server:addAccountMoney", Config.SocietyName, money)
         end)
@@ -127,16 +172,32 @@ function GiveMoneyToSociety(money)
 end
 
 function GetMoneyFromSociety()
+    if not Config.EnableSociety then
+        return 0
+    end
+    if Framework.Active == 3 or Framework.Active == 4 then
+        --[[ add your own method to handle society money in here:
+        ...
+        ]]
+        return 1000000
+    end
+    if Config.SocietyFramework == "okokbanking" then
+        return OkOk_GetBalance()
+    elseif Config.SocietyFramework == "710-Management" then
+        return _710_GetBalance()
+    elseif Config.SocietyFramework == "addon_account_data" then
+        return AddonAccount_GetBalance()
+    end
     local result = nil
     local promise = promise:new()
 
     if Framework.Active == 2 then
         xpcall(function()
-            local societyMoney = exports['Renwed-Banking']:getAccountMoney(Config.SocietyName)
+            local societyMoney = exports["qb-bossmenu"]:GetAccount(Config.SocietyName)
             result = societyMoney
             promise:resolve(result)
         end, function(error)
-            local societyMoney = exports['Renwed-Banking']:getAccountMoney(Config.SocietyName)
+            local societyMoney = exports["qb-management"]:GetAccount(Config.SocietyName)
             result = societyMoney
             promise:resolve(result)
         end)

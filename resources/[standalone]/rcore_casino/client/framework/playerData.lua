@@ -2,16 +2,15 @@ QBCore = nil
 ESX = nil
 PlayerData = {}
 
---- will return player data
-function GetPlayerData()
-    return PlayerData
-end
-
 function RefreshPlayerData()
     if Framework.Active == 1 then
         PlayerData = ESX.GetPlayerData()
     elseif Framework.Active == 2 then
         PlayerData = UpdatePlayerDataForQBCore()
+    elseif Framework.Active == 3 then
+        PlayerData = UpdatePlayerDataForStandalone()
+    elseif Framework.Active == 4 then
+        PlayerData = UpdatePlayerDataForCustomFramework()
     end
     return PlayerData
 end
@@ -41,7 +40,8 @@ function IsAtJob(job, GradeArray, MinGrade, MaxGrade)
         return PlayerData.job.name == job and gradeLevel >= MinGrade and gradeLevel <= MaxGrade
     end
 
-    return PlayerData.job.name == job and (GradeArray[PlayerData.job.grade_name] or (gradeLevel >= MinGrade and gradeLevel <= MaxGrade))
+    return PlayerData.job.name == job and
+               (GradeArray[PlayerData.job.grade_name] or (gradeLevel >= MinGrade and gradeLevel <= MaxGrade))
 end
 
 function RemovePlayerHunger(itemName)
@@ -51,6 +51,9 @@ function RemovePlayerHunger(itemName)
     if Framework.Active == 2 then
         TriggerEvent("consumables:client:Eat", itemName)
     end
+    if Framework.Active == 4 then
+        -- implement function that removes player hunger 
+    end
 end
 
 function RemovePlayerThirst(itemName)
@@ -59,6 +62,9 @@ function RemovePlayerThirst(itemName)
     end
     if Framework.Active == 2 then
         TriggerEvent("consumables:client:Drink", itemName)
+    end
+    if Framework.Active == 4 then
+        -- implement function that removes player thirst 
     end
 end
 
@@ -84,21 +90,98 @@ if Framework.Active == 1 then
     end)
 end
 
+if Framework.Active == 4 then
+    function UpdatePlayerDataForCustomFramework()
+        local inventory = {}
+        local accounts = {}
+        local job = {}
+
+        -- client side player inventory
+        table.insert(inventory, {
+            name = "casino_chips",
+            count = 123
+        })
+
+        -- client side player accounts
+        table.insert(accounts, {
+            money = 123,
+            name = "cash",
+            label = "cash"
+        })
+        table.insert(accounts, {
+            money = 123,
+            name = "bank",
+            label = "bank"
+        })
+
+        -- client side player job data
+        job = {
+            id = -1,
+            name = "unemployed",
+            label = "unemployed",
+            grade_name = "unemployed",
+            grade = 0,
+        }
+
+        local structure = {
+            job = job,
+            inventory = inventory,
+            accounts = accounts
+        }
+        return structure
+    end
+    PlayerData = UpdatePlayerDataForCustomFramework()
+end
+
+if Framework.Active == 3 then
+    function UpdatePlayerDataForStandalone()
+        if not PLAYER_CACHE then
+            return {}
+        end
+        local inventory = {}
+        for k, v in pairs(PLAYER_CACHE.fakeInventory) do
+            table.insert(inventory, {
+                name = k,
+                count = v
+            })
+        end
+
+        local accounts = {}
+        for k, v in pairs(PLAYER_CACHE.fakeAccounts or {}) do
+            table.insert(accounts, {
+                money = v,
+                name = k,
+                label = k
+            })
+        end
+
+        local x = {
+            job = {
+                id = -1,
+                name = PLAYER_CACHE.jobGrade and "casino" or "unemployed",
+                label = PLAYER_CACHE.jobGrade and "casino" or "unemployed",
+
+                grade_name = PLAYER_CACHE.jobGrade,
+                grade = PLAYER_CACHE.jobGrade
+            },
+            inventory = inventory,
+            accounts = accounts
+        }
+        return x
+    end
+    PlayerData = UpdatePlayerDataForStandalone()
+end
+
 if Framework.Active == 2 then
     function UpdatePlayerDataForQBCore()
         local pData = QBCore.Functions.GetPlayerData()
 
-        local jobLabel = "none"
         local jobName = "none"
         local gradeName = "none"
         local grade = 0
 
-        local grade_label = "none"
-        local grade_salary = 0
-
         if pData.job then
             jobName = pData.job.name or "none"
-            jobLabel = pData.job.label or "none"
 
             -- I am not sure if I should check if its nil or not so I will just make sure so it wont break anything.
             if pData.job.grade then
@@ -107,14 +190,6 @@ if Framework.Active == 2 then
 
                 if gradeData.level then
                     grade = gradeData.level
-                end
-
-                if gradeData.grade_label then
-                    grade_label = gradeData.grade_label or "none"
-                end
-
-                if gradeData.grade_salary then
-                    grade_salary = gradeData.grade_salary or 0
                 end
             elseif pData.job.grades then
                 grade = GetGreatestNumber(pData.job.grades)
@@ -129,9 +204,9 @@ if Framework.Active == 2 then
                 local v = pData.items[slot]
                 if v then
                     if stacked[v.name] then
-                        stacked[v.name] = stacked[v.name] + v.amount
+                        stacked[v.name] = stacked[v.name] + (v.amount or v.count)
                     else
-                        stacked[v.name] = v.amount
+                        stacked[v.name] = (v.amount or v.count)
                     end
                 end
             end
@@ -156,15 +231,8 @@ if Framework.Active == 2 then
             job = {
                 id = -1,
                 name = jobName,
-                label = jobLabel,
-
                 grade_name = gradeName,
-                grade_label = grade_label,
-                grade_salary = grade_salary,
-                grade = grade,
-
-                skin_male = {},
-                skin_female = {}
+                grade = grade
             },
             inventory = inventory,
             accounts = accounts

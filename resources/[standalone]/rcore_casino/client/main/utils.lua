@@ -34,6 +34,9 @@ function UnloadCasinoAssets()
     for k, v in pairs(CasinoBlips) do
         RemoveBlip(v)
     end
+    for k, v in pairs(MissionBlips) do
+        RemoveBlip(v)
+    end
     Debug("Unloaded " .. u .. " Casino assets.")
 end
 
@@ -179,6 +182,12 @@ function CreateSceneEndEvent(scene, reachTime, onEnd, waitFor, initialDelay)
         end
     end)
     return o
+end
+
+function FormatMMSS(time)
+    local minutes = math.floor(time / 60)
+    local seconds = time % 60
+    return string.format("%02d:%02d", minutes, seconds)
 end
 
 function FormatTimestamp(time)
@@ -1034,6 +1043,11 @@ function IsEntityInCasino(entity)
         return false
     end
 
+    -- custom casino
+    if Config.MapType == 6 then
+        return roomCount == 5
+    end
+
     -- k4casino
     if Config.MapType == 4 then
         local c = int ~= 0 and roomCount == 10 and
@@ -1095,11 +1109,28 @@ function WaitForPlayerOnCoords(coords, maxTimeMs)
     WaitForPedOnCoords(PlayerPedId(), coords, 0.05, maxTimeMs)
 end
 
+function removePlaceholderText(inputString)
+    local outputString = inputString:gsub("~.-~", "")
+    return outputString
+end
+
 function ShowHelpNotification(text)
     if not ENABLE_HUD then
         return
     end
+    if Config.NotifySystem then
+        if Config.NotifySystem == 2 and text and text ~= "" then
+            exports['okokNotify']:Alert("", removePlaceholderText(text), 3000, 'info', true)
+            return
+        elseif Config.NotifySystem == 3 and newNotification and newNotification ~= "" then
+            exports['esx_notify']:Notify("info", 3000, removePlaceholderText(text))
+            return
+        end
+    end
     BeginTextCommandDisplayHelp("THREESTRINGS")
+    if Config.UIFontName and text then
+        text = "<font face=\"" .. Config.UIFontName .. "\">" .. text .. "</font>"
+    end
     AddTextComponentSubstringPlayerName(text)
     EndTextCommandDisplayHelp(0, false, true, 5000)
 end
@@ -1703,12 +1734,20 @@ function _ClonePed(ped)
         local headStructure = GetHeadStructure(ped)
         local hairColor = GetPedHair(ped)
 
-        SetPedHeadBlendData(clone, headBlend.shapeFirst, headBlend.shapeSecond, headBlend.shapeThird,
-            headBlend.skinFirst, headBlend.skinSecond, headBlend.skinThird, headBlend.shapeMix, headBlend.skinMix,
-            headBlend.thirdMix, false)
-        SetHeadStructure(clone, headStructure)
-        SetPedHairColor(clone, tonumber(hairColor[1]), tonumber(hairColor[2]))
-        SetHeadOverlayData(clone, headOverlay)
+        if headBlend then
+            SetPedHeadBlendData(clone, headBlend.shapeFirst, headBlend.shapeSecond, headBlend.shapeThird,
+                headBlend.skinFirst, headBlend.skinSecond, headBlend.skinThird, headBlend.shapeMix, headBlend.skinMix,
+                headBlend.thirdMix, false)
+        end
+        if headStructure then
+            SetHeadStructure(clone, headStructure)
+        end
+        if hairColor then
+            SetPedHairColor(clone, tonumber(hairColor[1]), tonumber(hairColor[2]))
+        end
+        if headOverlay then
+            SetHeadOverlayData(clone, headOverlay)
+        end
     end
 
     return clone

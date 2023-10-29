@@ -7,12 +7,15 @@ function Distance(name, distance_)
         exports[Config.xSoundName]:Distance(name, distance_)
         return
     end
-    SendNUIMessage({
-        type = "distance",
-        name = name,
-        distance = distance_,
-    })
-    soundInfo[name].distance = distance_
+	if soundInfo[name] then
+		SendNUIMessage({
+			type = "distance",
+			name = name,
+			distance = distance_,
+		})
+		
+		soundInfo[name].distance = distance_
+	end
 end
 
 function Position(name, pos)

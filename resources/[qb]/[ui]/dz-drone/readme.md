@@ -19,5 +19,12 @@
 		('drone_lspd', 'LSPD Drone', 1),
 	;
 
+### New client events triggerd while usging Drone ###
+
+1) `dz-drone:DoneActivated` when the drone is activated
+2) `dz-drone:DoneDeactivated` when the drone is deactivated
+
+Those two events can be used for example to show/hide the status hud when you're using the drone
+
 ### SUPPORT ###
 https://discord.gg/8nFqCR4xVC

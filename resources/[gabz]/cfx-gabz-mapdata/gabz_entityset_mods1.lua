@@ -328,6 +328,9 @@ local interiors = {
             { name = 'store_cafe_a', enable = false },
             { name = 'store_cafe_b', enable = false },
             { name = 'store_cafe_c', enable = false },
+            { name = 'store_custom_a', enable = false },
+            { name = 'store_custom_b', enable = false },
+            { name = 'store_custom_c', enable = false },
         }
     },
     {
@@ -360,6 +363,9 @@ local interiors = {
             { name = 'store_cafe_a', enable = false },
             { name = 'store_cafe_b', enable = false },
             { name = 'store_cafe_c', enable = false },
+            { name = 'store_custom_a', enable = false },
+            { name = 'store_custom_b', enable = false },
+            { name = 'store_custom_c', enable = false },
         }
     },
     {
@@ -392,6 +398,9 @@ local interiors = {
             { name = 'store_cafe_a', enable = false },
             { name = 'store_cafe_b', enable = false },
             { name = 'store_cafe_c', enable = false },
+            { name = 'store_custom_a', enable = false },
+            { name = 'store_custom_b', enable = false },
+            { name = 'store_custom_c', enable = false },
         }
     },
     {
@@ -424,6 +433,9 @@ local interiors = {
             { name = 'store_cafe_a', enable = false },
             { name = 'store_cafe_b', enable = false },
             { name = 'store_cafe_c', enable = false },
+            { name = 'store_custom_a', enable = false },
+            { name = 'store_custom_b', enable = false },
+            { name = 'store_custom_c', enable = false },
         }
     },
     {
@@ -456,6 +468,9 @@ local interiors = {
             { name = 'store_cafe_a', enable = false },
             { name = 'store_cafe_b', enable = false },
             { name = 'store_cafe_c', enable = false },
+            { name = 'store_custom_a', enable = false },
+            { name = 'store_custom_b', enable = false },
+            { name = 'store_custom_c', enable = false },
         }
     },
     {
@@ -488,6 +503,9 @@ local interiors = {
             { name = 'store_cafe_a', enable = false },
             { name = 'store_cafe_b', enable = false },
             { name = 'store_cafe_c', enable = false },
+            { name = 'store_custom_a', enable = false },
+            { name = 'store_custom_b', enable = false },
+            { name = 'store_custom_c', enable = false },
         }
     },
     {
@@ -520,6 +538,9 @@ local interiors = {
             { name = 'store_cafe_a', enable = false },
             { name = 'store_cafe_b', enable = false },
             { name = 'store_cafe_c', enable = false },
+            { name = 'store_custom_a', enable = false },
+            { name = 'store_custom_b', enable = false },
+            { name = 'store_custom_c', enable = false },
         }
     },
     {
@@ -552,6 +573,9 @@ local interiors = {
             { name = 'store_cafe_a', enable = true },
             { name = 'store_cafe_b', enable = false },
             { name = 'store_cafe_c', enable = false },
+            { name = 'store_custom_a', enable = false },
+            { name = 'store_custom_b', enable = false },
+            { name = 'store_custom_c', enable = false },
         }
     },
     {
@@ -584,6 +608,9 @@ local interiors = {
             { name = 'store_cafe_a', enable = false },
             { name = 'store_cafe_b', enable = false },
             { name = 'store_cafe_c', enable = false },
+            { name = 'store_custom_a', enable = false },
+            { name = 'store_custom_b', enable = false },
+            { name = 'store_custom_c', enable = false },
         }
     },
     {
@@ -616,6 +643,9 @@ local interiors = {
             { name = 'store_cafe_a', enable = false },
             { name = 'store_cafe_b', enable = false },
             { name = 'store_cafe_c', enable = false },
+            { name = 'store_custom_a', enable = false },
+            { name = 'store_custom_b', enable = false },
+            { name = 'store_custom_c', enable = false },
         }
     },
     {
@@ -648,6 +678,9 @@ local interiors = {
             { name = 'store_cafe_a', enable = false },
             { name = 'store_cafe_b', enable = false },
             { name = 'store_cafe_c', enable = false },
+            { name = 'store_custom_a', enable = false },
+            { name = 'store_custom_b', enable = false },
+            { name = 'store_custom_c', enable = false },
         }
     },
     {
@@ -680,6 +713,9 @@ local interiors = {
             { name = 'store_cafe_a', enable = false },
             { name = 'store_cafe_b', enable = false },
             { name = 'store_cafe_c', enable = false },
+            { name = 'store_custom_a', enable = false },
+            { name = 'store_custom_b', enable = false },
+            { name = 'store_custom_c', enable = false },
         }
     },
     {
@@ -712,6 +748,9 @@ local interiors = {
             { name = 'store_cafe_a', enable = false },
             { name = 'store_cafe_b', enable = false },
             { name = 'store_cafe_c', enable = false },
+            { name = 'store_custom_a', enable = false },
+            { name = 'store_custom_b', enable = false },
+            { name = 'store_custom_c', enable = false },
         }
     },
     {
@@ -744,6 +783,9 @@ local interiors = {
             { name = 'store_cafe_a', enable = false },
             { name = 'store_cafe_b', enable = false },
             { name = 'store_cafe_c', enable = false },
+            { name = 'store_custom_a', enable = false },
+            { name = 'store_custom_b', enable = false },
+            { name = 'store_custom_c', enable = false },
         }
     },
     {
@@ -776,6 +818,9 @@ local interiors = {
             { name = 'store_cafe_a', enable = false },
             { name = 'store_cafe_b', enable = false },
             { name = 'store_cafe_c', enable = false },
+            { name = 'store_custom_a', enable = false },
+            { name = 'store_custom_b', enable = false },
+            { name = 'store_custom_c', enable = false },
         }
     },
     {
@@ -808,6 +853,9 @@ local interiors = {
             { name = 'store_cafe_a', enable = false },
             { name = 'store_cafe_b', enable = true },
             { name = 'store_cafe_c', enable = false },
+            { name = 'store_custom_a', enable = false },
+            { name = 'store_custom_b', enable = false },
+            { name = 'store_custom_c', enable = false },
         }
     },
     {
@@ -840,6 +888,9 @@ local interiors = {
             { name = 'store_cafe_a', enable = false },
             { name = 'store_cafe_b', enable = false },
             { name = 'store_cafe_c', enable = false },
+            { name = 'store_custom_a', enable = false },
+            { name = 'store_custom_b', enable = false },
+            { name = 'store_custom_c', enable = false },
         }
     },
     {
@@ -872,6 +923,9 @@ local interiors = {
             { name = 'store_cafe_a', enable = false },
             { name = 'store_cafe_b', enable = false },
             { name = 'store_cafe_c', enable = false },
+            { name = 'store_custom_a', enable = false },
+            { name = 'store_custom_b', enable = false },
+            { name = 'store_custom_c', enable = false },
         }
     },
     {
@@ -904,6 +958,9 @@ local interiors = {
             { name = 'store_cafe_a', enable = false },
             { name = 'store_cafe_b', enable = false },
             { name = 'store_cafe_c', enable = false },
+            { name = 'store_custom_a', enable = false },
+            { name = 'store_custom_b', enable = false },
+            { name = 'store_custom_c', enable = false },
         }
     },
     {
@@ -936,6 +993,9 @@ local interiors = {
             { name = 'store_cafe_a', enable = false },
             { name = 'store_cafe_b', enable = false },
             { name = 'store_cafe_c', enable = true },
+            { name = 'store_custom_a', enable = false },
+            { name = 'store_custom_b', enable = false },
+            { name = 'store_custom_c', enable = false },
         }
     },
     {
@@ -968,6 +1028,9 @@ local interiors = {
             { name = 'store_cafe_a', enable = false },
             { name = 'store_cafe_b', enable = false },
             { name = 'store_cafe_c', enable = false },
+            { name = 'store_custom_a', enable = false },
+            { name = 'store_custom_b', enable = false },
+            { name = 'store_custom_c', enable = false },
         }
     },
     {
@@ -1000,6 +1063,9 @@ local interiors = {
             { name = 'store_cafe_a', enable = false },
             { name = 'store_cafe_b', enable = false },
             { name = 'store_cafe_c', enable = false },
+            { name = 'store_custom_a', enable = false },
+            { name = 'store_custom_b', enable = false },
+            { name = 'store_custom_c', enable = false },
         }
     },
     {
@@ -1032,6 +1098,9 @@ local interiors = {
             { name = 'store_cafe_a', enable = false },
             { name = 'store_cafe_b', enable = false },
             { name = 'store_cafe_c', enable = false },
+            { name = 'store_custom_a', enable = false },
+            { name = 'store_custom_b', enable = false },
+            { name = 'store_custom_c', enable = false },
         }
     },
     {
@@ -1064,102 +1133,138 @@ local interiors = {
             { name = 'store_cafe_a', enable = false },
             { name = 'store_cafe_b', enable = false },
             { name = 'store_cafe_c', enable = false },
+            { name = 'store_custom_a', enable = false },
+            { name = 'store_custom_b', enable = false },
+            { name = 'store_custom_c', enable = false },
         }
     },
     {
-        ipl = 'gabz_mba_milo_', --enable all of the entitySets below if you want BASKETBALL
+        ipl = 'gabz_mba_milo_', 
         coords = { x = -324.22030000, y = -1968.49300000, z = 20.60336000 },
         entitySets = {
+            -- BASKETBALL - enable all of the entitySets below
             --{ name = 'mba_tribune', enable = true },
             --{ name = 'mba_tarps', enable = true },
             --{ name = 'mba_basketball', enable = true },
             --{ name = 'mba_jumbotron', enable = true },
-        }
-    },
-    {
-        ipl = 'gabz_mba_milo_', --enable all of the entitySets below if you want DERBY
-        coords = { x = -324.22030000, y = -1968.49300000, z = 20.60336000 },
-        entitySets = {
+
+            -- DERBY - enable all of the entitySets below
             --{ name = 'mba_cover', enable = true },
             --{ name = 'mba_terrain', enable = true },
             --{ name = 'mba_derby', enable = true },
             --{ name = 'mba_ring_of_fire', enable = true },
-        }
-    },
-    {
-        ipl = 'gabz_mba_milo_', --enable all of the entitySets below if you want PAINTBALL
-        coords = { x = -324.22030000, y = -1968.49300000, z = 20.60336000 },
-        entitySets = {
+
+            -- PAINTBALL - enable all of the entitySets below
             --{ name = 'mba_tribune', enable = true },
             --{ name = 'mba_chairs', enable = true },
             --{ name = 'mba_paintball', enable = true },
             --{ name = 'mba_jumbotron', enable = true },
-        }
-    },
-    {
-        ipl = 'gabz_mba_milo_', --enable all of the entitySets below if you want CONCERT
-        coords = { x = -324.22030000, y = -1968.49300000, z = 20.60336000 },
-        entitySets = {
+
+            -- CONCERT - enable all of the entitySets below
             --{ name = 'mba_tribune', enable = true },
             --{ name = 'mba_tarps', enable = true },
             --{ name = 'mba_backstage', enable = true },
             --{ name = 'mba_concert', enable = true },
             --{ name = 'mba_jumbotron', enable = true },
-        }
-    },
-    {
-        ipl = 'gabz_mba_milo_', --enable all of the entitySets below if you want FASHION
-        coords = { x = -324.22030000, y = -1968.49300000, z = 20.60336000 },
-        entitySets = {
+            
+            -- FASHION - enable all of the entitySets below
             --{ name = 'mba_tribune', enable = true },
             --{ name = 'mba_tarps', enable = true },
             --{ name = 'mba_backstage', enable = true },
             --{ name = 'mba_fashion', enable = true },
             --{ name = 'mba_jumbotron', enable = true },
-        }
-    },
-    {
-        ipl = 'gabz_mba_milo_', --enable all of the entitySets below if you want FAME OR SHAME
-        coords = { x = -324.22030000, y = -1968.49300000, z = 20.60336000 },
-        entitySets = {
+
+            -- FAME OR SHAME - enable all of the entitySets below
             --{ name = 'mba_tribune', enable = true },
             --{ name = 'mba_tarps', enable = true },
             --{ name = 'mba_backstage', enable = true },
             --{ name = 'mba_fameorshame', enable = true },
             --{ name = 'mba_jumbotron', enable = true },
-        }
-    },
-    {
-        ipl = 'gabz_mba_milo_', --enable all of the entitySets below if you want WRESTLING
-        coords = { x = -324.22030000, y = -1968.49300000, z = 20.60336000 },
-        entitySets = {
+
+            -- WRESTLING - enable all of the entitySets below
             --{ name = 'mba_tribune', enable = true },
             --{ name = 'mba_tarps', enable = true },
             --{ name = 'mba_fighting', enable = true },
             --{ name = 'mba_wrestling', enable = true },
             --{ name = 'mba_jumbotron', enable = true },
-        }
-    },
-    {
-        ipl = 'gabz_mba_milo_', --enable all of the entitySets below if you want MMA
-        coords = { x = -324.22030000, y = -1968.49300000, z = 20.60336000 },
-        entitySets = {
+
+            -- MMA - enable all of the entitySets below
             { name = 'mba_tribune', enable = true },
             { name = 'mba_tarps', enable = true },
             { name = 'mba_fighting', enable = true },
             { name = 'mba_mma', enable = true },
             { name = 'mba_jumbotron', enable = true },
-        }
-    },
-    {
-        ipl = 'gabz_mba_milo_', --enable all of the entitySets below if you want BOXING
-        coords = { x = -324.22030000, y = -1968.49300000, z = 20.60336000 },
-        entitySets = {
+
+            -- BOXING - enable all of the entitySets below
             --{ name = 'mba_tribune', enable = true },
             --{ name = 'mba_tarps', enable = true },
             --{ name = 'mba_fighting', enable = true },
             --{ name = 'mba_boxing', enable = true },
             --{ name = 'mba_jumbotron', enable = true },
+
+            -- CURLING - enable all of the entitySets below
+            --{ name = 'mba_tribune', enable = true },
+            --{ name = 'mba_chairs', enable = true },
+            --{ name = 'mba_curling', enable = true },
+
+            -- ROCKET LEAGUE - enable all of the entitySets below
+            --{ name = 'mba_tribune', enable = true },
+            --{ name = 'mba_chairs', enable = true },
+            --{ name = 'mba_rocketleague', enable = true },
+
+            -- SOCCER/FOOTBALL - enable all of the entitySets below
+            --{ name = 'mba_tribune', enable = true },
+            --{ name = 'mba_chairs', enable = true },
+            --{ name = 'mba_field', enable = true },
+            --{ name = 'mba_soccer', enable = true },
+
+            -- ICE HOCKEY - enable all of the entitySets below
+            --{ name = 'mba_tribune', enable = true },
+            --{ name = 'mba_chairs', enable = true },
+            --{ name = 'mba_field', enable = true },
+            --{ name = 'mba_hockey', enable = true },
+
+            -- GOKART TRACK 1 - enable all of the entitySets below
+            --{ name = 'mba_cover', enable = true },
+            --{ name = 'mba_gokart_01', enable = true },
+
+            -- GOKART TRACK 2 - enable all of the entitySets below
+            --{ name = 'mba_cover', enable = true },
+            --{ name = 'mba_gokart_02', enable = true },
+
+            -- TRACKMANIA TRACK 1 - enable all of the entitySets below
+            --{ name = 'mba_cover', enable = true },
+            --{ name = 'mba_trackmania_01', enable = true },
+
+            -- TRACKMANIA TRACK 2 - enable all of the entitySets below
+            --{ name = 'mba_cover', enable = true },
+            --{ name = 'mba_trackmania_02', enable = true },
+
+            -- TRACKMANIA TRACK 3 - enable all of the entitySets below
+            --{ name = 'mba_cover', enable = true },
+            --{ name = 'mba_trackmania_03', enable = true },
+
+            -- TRACKMANIA TRACK 4 - enable all of the entitySets below
+            --{ name = 'mba_cover', enable = true },
+            --{ name = 'mba_trackmania_04', enable = true },
+        },
+        -- This sets what sign to display outside the arena, enable the sign you want for the entityset you are using
+        exterior_ipl = {
+            --"gabz_ipl_mba_sign_basketball",
+            --"gabz_ipl_mba_sign_derby",
+            --"gabz_ipl_mba_sign_paintball",
+            --"gabz_ipl_mba_sign_concert",
+            --"gabz_ipl_mba_sign_fashion",
+            --"gabz_ipl_mba_sign_fameorshame",
+            --"gabz_ipl_mba_sign_wrestling",
+            --"gabz_ipl_mba_sign_boxing",
+            "gabz_ipl_mba_sign_mma",
+            --"gabz_ipl_mba_sign_curling",
+            --"gabz_ipl_mba_sign_soccer",
+            --"gabz_ipl_mba_sign_icehockey",
+            --"gabz_ipl_mba_sign_gokart",
+            --"gabz_ipl_mba_sign_banditoleague",
+            --"gabz_ipl_mba_sign_banditomania",
         }
     },
     {
@@ -1192,6 +1297,11 @@ CreateThread(function()
                 end
             end
             RefreshInterior(interiorID)
+        end
+        if interior.exterior_ipl ~= nil then
+            for __, ext_ipl in ipairs(interior.exterior_ipl) do
+                RequestIpl(ext_ipl)
+            end
         end
     end
     print("^5[GABZ]^7 Interiors datas loaded.")

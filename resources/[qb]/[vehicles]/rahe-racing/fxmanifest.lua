@@ -1,65 +1,57 @@
+--[[ FX Information ]]--
 fx_version 'cerulean'
+lua54 'yes'
 game 'gta5'
 
-lua54 'yes'
-use_fxv2_oal 'yes'
+--[[ Resource Information ]]--
+name 'RAHE Racing System'
+author 'Edward'
+description 'A feature-rich racing system by RAHE Development.'
+version '2.0.3'
 
-author 'RAHE'
-description 'RAHE Racing system'
-version '1.0.0'
+--[[ Manifest ]]--
+dependencies {
+    'oxmysql',
+    'ox_lib',
+    '/server:5848',
+    '/onesync',
+}
 
+--[[ Exports ]]--
 export 'openRacingTablet'
 server_export 'openRacingTablet'
 
+shared_scripts {
+    '@ox_lib/init.lua',
+    'public/**/shared.lua',
+    'resource/util/shared.lua'
+}
+
 client_scripts {
-    'tablet/tabs/**/client.lua',
-    'tablet/client.lua',
-
-    'game/**/client.lua',
-
-    'config/client.lua',
-    'config/cl_translations.lua',
-    'api/client.lua',
+    'public/**/client.lua',
+    'resource/**/client.lua'
 }
 
 server_scripts {
     '@oxmysql/lib/MySQL.lua',
-    'config/server.lua',
-    'config/sv_translations.lua',
-    'tablet/tabs/**/server.lua',
-    'tablet/server.lua',
-    'tablet/tabs/leaderboard/ratings.js',
-    'game/**/server.lua',
-    'api/server.lua',
+    'public/**/server.lua',
+    'resource/**/server.lua',
+    'resource/tablet/tabs/leaderboard/ratings.js'
 }
 
-shared_scripts {
-    'config/shared.lua'
-}
-
-ui_page 'tablet/nui/index.html'
+ui_page 'resource/tablet/nui/index.html'
 
 files {
-    'tablet/nui/img/background-frame.png',
-    'tablet/nui/index.html',
-    'tablet/nui/style.css',
-    'tablet/nui/tailwind.css',
-    'tablet/nui/app.js',
-    'tablet/nui/alpine.js',
-    'tablet/nui/translations.js',
-    'tablet/nui/translations_en.js',
-    'tablet/nui/tailwind.css',
-    'tablet/nui/img/track.png',
+    'locales/*.json',
+
+    'resource/tablet/nui/css/*.css',
+    'resource/tablet/nui/img/*.png',
+    'resource/tablet/nui/js/*.js',
+
+    'resource/tablet/nui/index.html'
 }
 
 escrow_ignore {
-    'api/esx/client.lua',
-    'api/esx/server.lua',
-    'api/qb/client.lua',
-    'api/qb/server.lua',
-    'api/standalone/client.lua',
-    'api/standalone/server.lua',
-    'config/*.lua',
+    'public/**/*.lua'
 }
-
 dependency '/assetpacks'

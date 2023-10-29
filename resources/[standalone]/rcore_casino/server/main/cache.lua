@@ -215,6 +215,10 @@ function Cache:GetPlayerState(playerId, stateKey, defaultValue)
     return PlayerState[playerId][stateKey]
 end
 
+function Cache:ClearPlayerState(playerId)
+    PlayerState[playerId] = nil
+end
+
 function Cache:SetPlayerState(playerId, stateKey, stateValue)
     if not playerId or not stateKey then
         return
@@ -281,14 +285,24 @@ function Cache:BlacklistRemove(identifier)
     return true
 end
 
-function Cache:Get(identifier, onFinish)
+function Cache:Get(identifier, onFinish, dontCreate)
     DebugStart("Cache:Get")
+    if not identifier or identifier == -1 then
+        onFinish(nil)
+        return
+    end
     -- check & return, if already cached
     if PlayerCache[identifier] then
         if onFinish then
             PlayerCache[identifier].activeTime = GetGameTimer()
             onFinish(PlayerCache[identifier])
         end
+        return
+    end
+
+    -- don't create a new one, if not needed
+    if dontCreate then
+        onFinish(nil)
         return
     end
 
@@ -341,14 +355,14 @@ function Cache:Get(identifier, onFinish)
     end
 end
 
-function Cache:GetNow(identifier)
+function Cache:GetNow(identifier, dontCreate)
     local result = nil
     local promise = promise:new()
 
     Cache:Get(identifier, function(p)
         result = p
         promise:resolve(result)
-    end)
+    end, dontCreate)
 
     Citizen.Await(promise)
     return result
@@ -422,7 +436,16 @@ end
 
 function Cache:PlayerOwnsVehicle(identifier, plate)
     DebugStart("Cache:PlayerOwnsVehicle")
-    local result = 0
+    local result = {}
+
+    if Framework.Active == 4 then
+        -- implement function that checks for car ownership
+        return true
+    end
+
+    if Framework.Active == 3 then
+        return true
+    end
 
     if Config.MongoDB then
         -- MongoDB
@@ -433,20 +456,25 @@ function Cache:PlayerOwnsVehicle(identifier, plate)
     else
         -- Mysql
         if Framework.Active == 1 then
-            result = MySQL.Sync.fetchAll("SELECT * FROM owned_vehicles WHERE plate = @plate AND owner = @identifier", {
-                ['@plate'] = plate,
+            result = MySQL.Sync.fetchAll("SELECT * FROM owned_vehicles WHERE owner = @identifier", {
                 ['@identifier'] = identifier
             })
         elseif Framework.Active == 2 then
-            result = MySQL.Sync.fetchAll(
-                "SELECT * FROM player_vehicles WHERE plate = @plate AND citizenid = @identifier", {
-                    ['@plate'] = plate,
-                    ['@identifier'] = identifier
-                })
+            result = MySQL.Sync.fetchAll("SELECT * FROM player_vehicles WHERE citizenid = @identifier", {
+                ['@identifier'] = identifier
+            })
+        end
+    end
+    
+    if type(result) == "table" and #result > 0 then
+        for k, v in pairs(result) do
+            if v.plate and (v.plate == plate or removeSpaces(v.plate) == plate) then
+                return true
+            end
         end
     end
 
-    return result and #result ~= 0
+    return false
 end
 
 function Cache:LoadSettings()
@@ -496,19 +524,28 @@ end
 
 function Cache:GiveVehicle(playerId, vehicleProps)
     DebugStart("Cache:GiveVehicle")
-    vehicleProps.plate = VehiclePlate().GeneratePlate()
-    if vehicleProps.plate == nil then
-        return
-    end
 
-    --[[ engine fix?
+    -- engine fix?
     vehicleProps.engineHealth = 1000.0
     vehicleProps.bodyHealth = 1000.0
     vehicleProps.fuelLevel = 100.0
-    ]]
 
     vehicleProps.podiumName = vehicleProps.podiumName:lower()
+
     local p = ESX.GetPlayerFromId(playerId)
+
+    if Framework.Active == 4 then
+        -- implement function that gives player the podium vehicle
+        -- ...
+        return
+    end
+
+    if Framework.Active == 1 or Framework.Active == 2 then
+        vehicleProps.plate = VehiclePlate().GeneratePlate()
+        if vehicleProps.plate == nil then
+            return
+        end
+    end
 
     if Config.MongoDB then
         MongoDB:Insert("player_vehicles", {
@@ -544,6 +581,57 @@ function Cache:GiveVehicle(playerId, vehicleProps)
                     ['@state'] = 1,
                     ['@garage'] = "motelgarage"
                 }, nil)
+        elseif Framework.Active == 3 then
+            CreateThread(function()
+                Wait(7000)
+                -- spawn the vehicle, server side
+                local tempVehicle = CreateVehicle(vehicleProps.model, 0, 0, 0, 0, true, true)
+                while not DoesEntityExist(tempVehicle) do
+                    Wait(0)
+                end
+                local vehicleType = GetVehicleType(tempVehicle)
+                DeleteEntity(tempVehicle)
+                local priceEntity = CreateVehicleServerSetter(vehicleProps.model, vehicleType, 915.544189, 52.596317,
+                    80.465546, 147.50155639648)
+                while not DoesEntityExist(priceEntity) do
+                    Wait(0)
+                end
+                SetVehicleDoorsLocked(priceEntity, 2)
+                local priceNet = NetworkGetNetworkIdFromEntity(priceEntity)
+                TriggerClientEvent("Casino:StandaloneVehicleSpawned", playerId, priceNet, vehicleProps)
+            end)
+        end
+    end
+end
+
+local function Framework_Check()
+    -- check for inventory items
+    if not Config.UseOnlyMoney then
+        if Framework.Active == 1 then
+            if ESX and ESX.GetItemLabel then
+                local label = ESX.GetItemLabel(Config.ChipsInventoryItem)
+                if not label then
+                    print("^3[Casino][Warning] It looks like the '" .. Config.ChipsInventoryItem ..
+                              "' inventory item doesn't exist! Import the included .sql file in your MYSQL database, or install the inventory items manually in your inventory system.^0")
+                end
+            end
+        elseif Framework.Active == 2 then
+            local invState = GetResourceState("qb-inventory")
+            if (invState == "starting" or invState == "started") and ESX and ESX.QBCore and ESX.QBCore.Shared and
+                ESX.QBCore.Shared.Items and not ESX.QBCore.Shared.Items[Config.ChipsInventoryItem] then
+                print("^3[Casino][Warning] It looks like the '" .. Config.ChipsInventoryItem ..
+                          "' inventory item doesn't exist! Please follow the installation instructions at https://documentation.rcore.cz/paid-resources/rcore_casino/installing-on-qbcore^0")
+            end
+        end
+    end
+    -- replace "society_casino" to "casino" for SocietyName, if "casino" exists
+    if Framework.Active == 2 and Config.SocietyName == "society_casino" and Config.EnableSociety then
+        local mState = GetResourceState("qb-management")
+        if (mState == "starting" or mState == "started") and ESX and ESX.QBCore and ESX.QBCore.Shared and
+            ESX.QBCore.Shared.Jobs and not ESX.QBCore.Shared.Jobs["society_casino"] and ESX.QBCore.Shared.Jobs["casino"] then
+            print(
+                "^3[Casino][Warning] It looks like the society 'society_casino' doesn't exist, but society 'casino' does, changing Config.SocietyName to 'casino' in config.lua^0")
+            Config.SocietyName = "casino"
         end
     end
 end
@@ -595,6 +683,8 @@ local function Start()
     Mysql_Check()
     Cache:LoadSettings()
     CreateThread(function()
+        Wait(1000)
+        Framework_Check()
         if Config.EnableSociety then
             if Framework.Active == 1 then
                 local esx_society = false
@@ -648,6 +738,9 @@ else
 end
 
 RegisterCommand("casinoinstall", function(source, args, rawCommand)
+    if source ~= 0 and not IsPlayerAdmin(source) then
+        return
+    end
     if Framework.Active ~= 1 then
         return
     end
@@ -665,6 +758,9 @@ RegisterCommand("casinoinstall", function(source, args, rawCommand)
 end)
 
 RegisterCommand("casinogivevehicle", function(source, args, rawCommand)
+    if source ~= 0 and not IsPlayerAdmin(source) then
+        return
+    end
     local playerId = args[1]
     if not playerId or not tonumber(playerId) then
         print("usage: /casinogivevehicle PLAYERID")
@@ -678,6 +774,9 @@ RegisterCommand("casinogivevehicle", function(source, args, rawCommand)
 end)
 
 RegisterCommand("casinoban", function(source, args, rawCommand)
+    if source ~= 0 and not IsPlayerAdmin(source) then
+        return
+    end
     local playerId = args[1]
     local id = nil
     if not playerId then
@@ -685,7 +784,7 @@ RegisterCommand("casinoban", function(source, args, rawCommand)
         return
     end
     if tonumber(playerId) then
-        id = GetPlayerIdentifier(playerId)
+        id = GetPlayerIdentifier(tonumber(playerId))
         if not id or id == -1 then
             print("player not connected")
             return
@@ -704,6 +803,9 @@ RegisterCommand("casinoban", function(source, args, rawCommand)
 end)
 
 RegisterCommand("casinounban", function(source, args, rawCommand)
+    if source ~= 0 and not IsPlayerAdmin(source) then
+        return
+    end
     local playerId = args[1]
     local id = nil
     if not playerId then
@@ -711,7 +813,7 @@ RegisterCommand("casinounban", function(source, args, rawCommand)
         return
     end
     if tonumber(playerId) then
-        id = GetPlayerIdentifier(playerId)
+        id = GetPlayerIdentifier(tonumber(playerId))
         if not id or id == -1 then
             print("player not connected")
             return

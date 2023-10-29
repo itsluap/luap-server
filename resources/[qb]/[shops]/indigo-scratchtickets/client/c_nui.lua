@@ -1,7 +1,7 @@
 local inMenu = false
 
-RegisterNetEvent("dr-scratching:nuiOpenCard")
-AddEventHandler("dr-scratching:nuiOpenCard", function(key, price, amount, price_type, price_label)
+RegisterNetEvent("indigo-scratchtickets:nuiOpenCard")
+AddEventHandler("indigo-scratchtickets:nuiOpenCard", function(key, price, amount, price_type, price_label)
   if inMenu then return end
   SetNuiFocus(true, true)
   SendNUIMessage({
@@ -24,7 +24,7 @@ end)
 RegisterNUICallback('nuiCloseCard', function(data)
 	SetNuiFocus(false, false)
 	SendNUIMessage({type = 'closeScratch'})
-  TriggerEvent("dr-scratching:stopScratchingEmote")
-  TriggerServerEvent('dr-scratching:stopScratching', data.price, data.amount, data.type)
+  TriggerEvent("indigo-scratchtickets:stopScratchingEmote")
+  TriggerServerEvent('indigo-scratchtickets:stopScratching', data.price, data.amount, data.type)
   inMenu = false
 end)

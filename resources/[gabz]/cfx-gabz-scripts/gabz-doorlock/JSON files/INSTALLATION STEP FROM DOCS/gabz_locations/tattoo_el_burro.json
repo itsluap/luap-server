@@ -1,0 +1,5 @@
+{
+    "imported": false,
+    "data": [{"state":false,"door_sound":"door_wooden.ogg","default_state":false,"camera":false,"perms":{"job":[{"name":"police","grade":0}],"identifier":[]},"lockpickable":false,"id":1,"door_type":"single","door_data":[{"model_hash":543652229,"unique_id":"gHa0rHROMp0wgMZeJfadf","text_dimensions":-1.30098725110292,"door_coords":{"x":1321.281982421875,"y":-1650.59228515625,"z":52.38686370849609}}],"location_group":"Tattoo El Burro","distance":2,"secret":false,"door_name":"Entrance"},{"state":true,"perms":{"job":[{"name":"police","grade":0}],"identifier":[]},"default_state":true,"door_name":"Office","door_type":"single","lockpickable":false,"id":2,"secret":false,"door_data":[{"model_hash":1243635233,"unique_id":"Q-aq5dkrNGn6ZAUs97r5Q","door_coords":{"x":1325.27880859375,"y":-1654.8157958984376,"z":52.44652938842773},"text_dimensions":-1.30148995254421}],"camera":false,"distance":2,"location_group":"Tattoo El Burro","door_sound":"door_metal.ogg"}],
+    "name": "tattoo_el_burro.json"
+}

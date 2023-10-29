@@ -334,14 +334,32 @@ string.startswith = function(self, str)
     return self:find('^' .. str) ~= nil
 end
 
+function removeSpaces(inputString)
+    local outputString = inputString:gsub(" ", "")
+    return outputString
+end
+
 function CommaValue(amount)
-    local formatted = amount
-    while true do
-        formatted, k = string.gsub(formatted, "^(-?%d+)(%d%d%d)", '%1,%2')
-        if (k == 0) then
-            break
-        end
+    if type(amount) ~= "number" then
+        return amount
     end
+    
+    local formatted = tostring(amount)
+    
+    local function InsertCommas(str)
+        return string.gsub(str, "^(-?%d+)(%d%d%d)", '%1,%2')
+    end
+    
+    if formatted:len() > 9 then
+        local billions = tonumber(formatted) / 1e9
+        formatted = string.format('%.1fB', billions)
+    elseif formatted:len() > 6 then
+        local millions = tonumber(formatted) / 1e6
+        formatted = string.format('%.1fM', millions)
+    else
+        formatted = InsertCommas(formatted)
+    end
+    
     return formatted
 end
 

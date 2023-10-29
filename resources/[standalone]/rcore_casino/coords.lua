@@ -1481,16 +1481,11 @@ if Config.MapType == 4 then
         radius = 2.0,
         safearea = vector3(944.653320, 39.524738, 80.999847),
         type = 1
-    }, {
-        coords = vector3(0, 0, 0),
-        radius = 4,
-        safearea = vector3(0, 0, 0),
-        type = 2 -- boss area
     }}
 
     -- Overwrite Wheel Coords
     LUCKY_WHEEL_COORDS = vector3(964.643250, 49.322929, 80.556282)
-
+    LUCKY_WHEEL_HEADING = 58.0
     -- Owerwrite Other Coords
     INSIDE_TRACK_AREA = vector3(973.226807, 74.502411, 81.000549)
     CASINO_SECOND_ROOM_COORDS = vector3(992.216064, 57.604828, 81.000496)
@@ -1767,6 +1762,25 @@ if Config.MapType == 4 then
     OfficeTableAnimPosition = vector3(932.753723 - 0.5, 11.418709, 80.098335 + 1.0)
     OfficeTableAnimHeading = 238.0
     PODIUMOBJECT_POS = vector3(970.0500, 46.0283, 80.3266)
+
+    k4HorseScreens = {}
+    k4HorseScreens[1] = vector3(-0.70399451255798, 0.43699792027473, 1.0429927110672)
+    k4HorseScreens[2] = vector3(-0.70399451255798, 0.43699792027473, 1.0429927110672)
+    k4HorseScreens[3] = vector3(-0.70399451255798, 0.44499781727791, 1.0429927110672)
+    k4HorseScreens[4] = vector3(-0.71199440956116, 0.42799803614616, 1.0429927110672)
+    k4HorseScreens[5] = vector3(-0.71299439668655, 0.41999813914299, 1.0429927110672)
+    k4HorseScreens[6] = vector3(-0.70999443531036, 0.43199798464775, 1.0429927110672)
+    k4HorseScreens[7] = vector3(-0.70299452543259, 0.44099786877632, 1.0429927110672)
+    k4HorseScreens[8] = vector3(-0.71099442243576, 0.43399795889854, 1.0429927110672)
+    k4HorseScreens[9] = vector3(-0.77699357271194, 0.46899750828743, 1.0429927110672)
+    k4HorseScreens[10] = vector3(-0.77699357271194, 0.46899750828743, 1.0429927110672)
+    k4HorseScreens[11] = vector3(-0.85399258136749, 0.50799703598022, 1.0429927110672)
+    k4HorseScreens[12] = vector3(-0.85699254274368, 0.50199711322784, 1.0429927110672)
+    k4HorseScreens[13] = vector3(-0.84099274873734, 0.52799677848816, 1.0429927110672)
+    k4HorseScreens[14] = vector3(-0.86299246549606, 0.49299722909927, 1.0429927110672)
+    k4HorseScreens[15] = vector3(-0.8529925942421, 0.50799703598022, 1.0429927110672)
+    k4HorseScreens[16] = vector3(-0.83499282598495, 0.53799664974213, 1.0429927110672)
+    k4HorseHeading = 12.5
 end
 
 if Config.MapType == 2 or Config.MapType == 3 then
@@ -2418,9 +2432,9 @@ if Config.MapType == 2 or Config.MapType == 3 then
                          vector3(1029.263916, 63.052765, 68.860077), vector3(1025.663696, 65.073303, 68.860077),
                          vector3(1029.348389, 43.790695, 68.860077), vector3(1027.572998, 40.281754, 68.860008)}
 
-    -- Config.BLACKJACK_JUNIOR_COORDS = {1036.812988, 50.905663, 68.060074}
-    -- Config.POKER_JUNIOR_COORDS = {1041.376587, 49.616318, 67.873756}
-    -- Config.ROULETTE_JUNIOR_COORDS = {1044.392456, 52.664093, 68.060074}
+    Config.BLACKJACK_JUNIOR_COORDS = {1036.812988, 50.905663, 68.060074}
+    Config.POKER_JUNIOR_COORDS = {1041.376587, 49.616318, 68.060074}
+    Config.ROULETTE_JUNIOR_COORDS = {1044.392456, 52.664093, 68.060074}
 
     -- Poker (???)
 
@@ -2488,4 +2502,319 @@ if Config.MapType == 2 or Config.MapType == 3 then
     INSIDE_TRACK_WALL.coords = Convert2Gabz(INSIDE_TRACK_WALL.coords)
     -- jobs
     PODIUMOBJECT_POS = Convert2Gabz(PODIUMOBJECT_POS)
+end
+
+if Config.MapType == 6 then
+    local playerPos = GetEntityCoords(PlayerPedId())
+    local playerHead = GetEntityHeading(PlayerPedId())
+
+    -- Overwrite Cashier
+    CashierDatas = {{
+        coords = vector3(-127.574356, 6381.849121, 28.774433),
+        heading = 214.58776855469 + 35.0,
+        model = "a_f_y_bevhills_02",
+        enabled = true
+    }}
+
+    -- Overwrite bartenders
+    DrinkingBar_Bartenders = {{
+        id = 1,
+        model = "a_f_y_juggalo_01",
+        animCoords = vector3(0, 0, 0),
+        animRot = vector3(0, 0, 0),
+
+        pedCoords = vector3(-115.717056, 6390.829102, 28.195732),
+        heading = 130.0,
+
+        initialPos = vector3(0, 0, 0),
+        initialHeading = 0,
+        ped = nil,
+        beingUsed = false
+    }}
+
+    for i = 1, #DrinkingBar_Bartenders do
+        local b = DrinkingBar_Bartenders[i]
+        b.initialPos = GetObjectOffsetFromCoords(b.pedCoords, b.heading, 0.0, 1.5, 0.0)
+        b.initialHeading = b.heading - 180.0
+        b.animCoords = GetObjectOffsetFromCoords(b.pedCoords, b.heading, 0.2, 0.9, 0.264)
+        b.animRot = vector3(0, 0, b.heading - 180.0)
+    end
+
+    -- Overwrite Drinking Bar Chairs
+    DrinkingBarChairs = {{
+        coords = {-116.059998, 6388.839844, 27.181566},
+        rotation = {0.0, 0.0, 134.83277893066 + 180.0},
+        heading = 134.83277893066 + 180.0
+    }, {
+        coords = {-117.737778, 6390.527344, 27.181566},
+        rotation = {0.0, 0.0, 134.83277893066 + 180.0},
+        heading = 134.83277893066 + 180.0
+    }}
+
+    -- Overwrite Ambient Slots
+
+    SLOT_MACHINE_COORDS = {{207578973, vector3(0, 0, 0), 0.0, vector3(0.0, 0.0, 0.0)}}
+
+    -- Overwrite Poker Ambient Coords
+    AMBIENT_POKER_COORDS = {vector3(0.0, 0.0, 0.0)}
+
+    -- Overwrite Blackjack Ambient Coords
+
+    AMBIENT_BJ_COORDS = {vector3(0.0, 0.0, 0.0)}
+
+    -- Overwrite Roulette Ambient Coords
+    AMBIENT_RL_COORDS = {vector3(0.0, 0.0, 0.0)}
+
+    -- Overwrite Casino Seating
+
+    CasinoSeating = {{
+        type = "main",
+        coords = vector3(-121.2409362793, 6389.1162109375, 27.644985198975),
+        heading = 223.0
+    }, {
+        type = "main",
+        coords = vector3(-120.69081878662, 6389.6728515625, 27.644985198975),
+        heading = 227.0
+    }, {
+        type = "main",
+        coords = vector3(-119.6005859375, 6390.6982421875, 27.644985198975),
+        heading = 223.0
+    }, {
+        type = "main",
+        coords = vector3(-118.96044921875, 6391.4013671875, 27.644985198975),
+        heading = 227.0
+    }, {
+        type = "main",
+        coords = vector3(-113.20922088623, 6388.2080078125, 27.673357009888),
+        heading = 133.0
+    }, {
+        type = "main",
+        coords = vector3(-112.74912261963, 6387.7294921875, 27.673357009888),
+        heading = 133.0
+    }, {
+        type = "main",
+        coords = vector3(-112.19900512695, 6387.2314453125, 27.673357009888),
+        heading = 133.0
+    }, {
+        type = "main",
+        coords = vector3(-111.70890045166, 6386.4013671875, 27.673357009888),
+        heading = 95.0
+    }, {
+        type = "main",
+        coords = vector3(-112.15899658203, 6385.5224609375, 27.673357009888),
+        heading = 44.0
+    }, {
+        type = "main",
+        coords = vector3(-112.65910339355, 6385.0634765625, 27.673357009888),
+        heading = 44.0
+    }, {
+        type = "main",
+        coords = vector3(-113.28923797607, 6384.4384765625, 27.673357009888),
+        heading = 44.0
+    }, {
+        type = "main",
+        coords = vector3(-124.29222106934, 6384.9946289063, 28.254613876343),
+        heading = 157.0
+    }, {
+        type = "main",
+        coords = vector3(-129.0718536377, 6373.8486328125, 28.253908157349),
+        heading = -163.0
+    }, {
+        type = "main",
+        coords = vector3(-129.90139770508, 6372.9208984375, 28.253908157349),
+        heading = -103.0
+    }, {
+        type = "main",
+        coords = vector3(-131.76037597656, 6372.5205078125, 28.253908157349),
+        heading = -41.0
+    }, {
+        type = "main",
+        coords = vector3(-133.64222717285, 6368.55859375, 28.242990493774),
+        heading = 35.0
+    }, {
+        type = "main",
+        coords = vector3(-120.71878814697, 6384.8940429688, 27.718381881714),
+        heading = -41.0
+    }}
+    -- Overwrite Restricted Areas
+    RestrictedAreas = {{
+        coords = vector3(-131.406097, 6374.479492, 28.784439),
+        radius = 3.0,
+        safearea = vector3(-127.128807, 6378.290527, 28.784443),
+        type = 2 -- boss area
+    }, {
+        coords = vector3(-116.421890, 6387.106934, 28.195732),
+        radius = 5.0,
+        safearea = vector3(-124.094124, 6384.326660, 28.784424),
+        type = 1 -- vip area
+    }}
+
+    -- Overwrite Wheel Coords
+    LUCKY_WHEEL_COORDS = vector3(0.0, 0.0, 0.0)
+    LUCKY_WHEEL_HEADING = 0.0
+    -- Owerwrite Other Coords
+    INSIDE_TRACK_AREA = vector3(0.0, 0.0, 0.0)
+    CASINO_SECOND_ROOM_COORDS = vector3(0.0, 0.0, 0.0)
+
+    CASINO_AREA_MIN = vector3(-136.253311, 6366.049316, 28.176126) - vector3(10.0, 10.0, 10.0)
+    CASINO_AREA_MAX = vector3(-114.021904, 6393.334961, 31.590612) + vector3(10.0, 10.0, 10.0)
+
+    -- Owerwrite Bar Camera Animation (calculated from bartender pos)
+    BAR_CAMERA_POS_BEFORE = GetObjectOffsetFromCoords(DrinkingBar_Bartenders[1].pedCoords,
+        DrinkingBar_Bartenders[1].heading, 7.0, 7.0, 3.0)
+    BAR_CAMERA_POS = GetObjectOffsetFromCoords(DrinkingBar_Bartenders[1].pedCoords, DrinkingBar_Bartenders[1].heading,
+        5.0, 5.0, 3.0)
+
+    CasinoBlips = {}
+    BLIP_POS_INSIDETRACK = vector(INSIDE_TRACK_AREA.x, INSIDE_TRACK_AREA.y)
+    BLIP_POS_TABLEGAMES = vector(-124.760178, 6378.979492, 28.784428)
+    BLIP_POS_EXTERIORBLIP = vector(-113.950554, 6367.995605, 31.471020)
+
+    RADAR_MAP_POS = vector(974.893921, 22.800049)
+
+    WAITRESS_MODEL = "a_f_y_juggalo_01" -- set to nil if you want to disable the walking waitress
+    WAITRESS_PATH = {{-134.7251739502, 6370.658203125, 28.784442901611},
+                     {-134.7251739502, 6370.658203125, 28.784442901611},
+                     {-134.25405883789, 6371.2744140625, 28.784442901611},
+                     {-133.19721984863, 6372.6845703125, 28.784442901611},
+                     {-131.99375915527, 6373.9248046875, 28.784511566162},
+                     {-130.6879119873, 6375.11328125, 28.78444480896},
+                     {-129.43515014648, 6376.3193359375, 28.78444480896},
+                     {-128.14730834961, 6377.50390625, 28.784698486328},
+                     {-126.71562194824, 6378.4838867188, 28.784442901611},
+                     {-125.91302490234, 6379.96875, 28.784442901611},
+                     {-125.82525634766, 6381.6982421875, 28.78444480896},
+                     {-124.85308837891, 6383.1337890625, 28.78444480896},
+                     {-123.53662872314, 6384.3081054688, 28.784425735474},
+                     {-122.18842315674, 6385.3916015625, 28.256870269775},
+                     {-120.83569335938, 6386.5336914063, 28.19607925415},
+                     {-119.46910095215, 6387.6513671875, 28.195735931396},
+                     {-118.04995727539, 6388.7094726563, 28.195722579956},
+                     {-117.52676391602, 6389.119140625, 28.195722579956},
+                     {-117.50351715088, 6389.1079101563, 28.195722579956},
+                     {-116.95666503906, 6388.21484375, 28.195722579956},
+                     {-115.9259185791, 6386.822265625, 28.195722579956},
+                     {-115.737159729, 6386.3237304688, 28.195722579956},
+                     {-115.9529876709, 6386.5053710938, 28.195722579956},
+                     {-117.20519256592, 6387.2612304688, 28.195722579956},
+                     {-118.9263458252, 6387.6787109375, 28.195722579956},
+                     {-120.48223876953, 6387.0439453125, 28.195722579956},
+                     {-121.77462005615, 6385.8759765625, 28.195722579956},
+                     {-122.98026275635, 6384.7705078125, 28.799192428589},
+                     {-124.28741455078, 6383.5805664063, 28.784397125244},
+                     {-125.69215393066, 6382.5551757813, 28.78443145752},
+                     {-126.16464233398, 6380.9243164063, 28.784427642822},
+                     {-125.2550201416, 6379.4604492188, 28.78443145752}, {-124.57720947266, 6378.75, 28.784439086914},
+                     {-124.57720947266, 6378.75, 28.784439086914}, {-125.25505828857, 6379.189453125, 28.784435272217},
+                     {-126.7540435791, 6378.6518554688, 28.784433364868},
+                     {-128.15892028809, 6377.5776367188, 28.784433364868},
+                     {-129.39833068848, 6376.3779296875, 28.785734176636},
+                     {-130.68782043457, 6375.1708984375, 28.784442901611},
+                     {-131.92274475098, 6373.951171875, 28.784442901611},
+                     {-133.21411132813, 6372.775390625, 28.786735534668},
+                     {-134.35537719727, 6371.4379882813, 28.784448623657},
+                     {-134.68486022949, 6370.8295898438, 28.784437179565},
+                     {-134.73599243164, 6370.8486328125, 28.784437179565},
+                     {-134.74816894531, 6370.8583984375, 28.784437179565},
+                     {-134.74816894531, 6370.8583984375, 28.784437179565}}
+
+    INSIDE_TRACK_CAM_POS = vector3(0.0, 0.0, 0.0)
+    INSIDE_TRACK_CAM_ROT = vector3(0.0, 0.0, 0.0)
+
+    CASINO_TOILET_POS = vector3(-134.497635, 6369.146973, 28.784437)
+    CASINO_TOILET_HEADING = 223.1178894043
+
+    PRICE_ANIM_HEADING = 0
+
+    horseChairs = {{0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0},
+                   {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0},
+                   {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}}
+    horseChairsHeading = 0
+    DIGITAL_WALL_MODEL = "k4mb1_casino2_screen1"
+    INSIDE_TRACK_WALL.coords = vector3(0.0, 0.0, 0.0)
+
+    OfficeCameraDevices = {{
+        coords = vec3(-124.236649, 6385.478516, 30.332125),
+        rotation = vec3(-18.237963, 0.058483, -178.058411)
+    }, {
+        coords = vec3(-118.945053, 6378.952637, 30.248960),
+        rotation = vec3(-14.133687, 0.059629, 83.560654)
+    }, {
+        coords = vec3(-130.784760, 6375.003906, 30.187117),
+        rotation = vec3(-23.877527, 0.059111, -135.690491)
+    }, {
+        coords = vec3(-122.519348, 6387.108398, 29.618637),
+        rotation = vec3(-15.160977, 0.058926, -96.504570)
+    }, {
+        coords = vec3(-111.490997, 6386.706055, 29.320728),
+        rotation = vec3(-8.246815, 0.058303, 90.697289)
+    }}
+
+    OfficeBossMarkerPosition = vector3(-130.479156, 6371.569824, 27.774418)
+    OfficeTableEnterPosition = vector3(-126.961899, 6372.929688, 28.774431)
+
+    OfficeTableAnimPosition = vector3(-128.248489, 6371.967773, 27.771961 + 1.0)
+    OfficeTableAnimHeading = 221.27363586426
+
+    PODIUMOBJECT_POS = vector3(0.0, 0.0, 0.0)
+
+    k4HorseScreens = {}
+    k4HorseScreens[1] = vector3(0.0, 0.0, 0.0)
+    k4HorseScreens[2] = vector3(0.0, 0.0, 0.0)
+    k4HorseScreens[3] = vector3(0.0, 0.0, 0.0)
+    k4HorseScreens[4] = vector3(0.0, 0.0, 0.0)
+    k4HorseScreens[5] = vector3(0.0, 0.0, 0.0)
+    k4HorseScreens[6] = vector3(0.0, 0.0, 0.0)
+    k4HorseScreens[7] = vector3(0.0, 0.0, 0.0)
+    k4HorseScreens[8] = vector3(0.0, 0.0, 0.0)
+    k4HorseScreens[9] = vector3(0.0, 0.0, 0.0)
+    k4HorseScreens[10] = vector3(0.0, 0.0, 0.0)
+    k4HorseScreens[11] = vector3(0.0, 0.0, 0.0)
+    k4HorseScreens[12] = vector3(0.0, 0.0, 0.0)
+    k4HorseScreens[13] = vector3(0.0, 0.0, 0.0)
+    k4HorseScreens[14] = vector3(0.0, 0.0, 0.0)
+    k4HorseScreens[15] = vector3(0.0, 0.0, 0.0)
+    k4HorseScreens[16] = vector3(0.0, 0.0, 0.0)
+    k4HorseHeading = 0.0
+end
+
+function ReplaceMap6Props()
+    local rouletteToRotate = GetClosestObjectOfType(-120.191299, 6378.024902, 27.772196, 2.0,
+        GetHashKey("gigz_prop_casino_roulette_01b"))
+    if rouletteToRotate ~= 0 then
+        SetEntityHeading(rouletteToRotate, 44.68 + 180.0)
+    end
+
+    -- replace props
+    CreateModelSwap(-122.225716, 6374.341797, 27.778168, 1.0, GetHashKey("gigz_prop_casino_slot_01a"),
+        GetHashKey("vw_prop_casino_slot_01a"), 0)
+    CreateModelSwap(-124.971489, 6376.555176, 27.778255, 1.0, GetHashKey("gigz_prop_casino_slot_02a"),
+        GetHashKey("vw_prop_casino_slot_02a"), 0)
+    CreateModelSwap(-125.517853, 6377.110840, 27.778255, 1.0, GetHashKey("gigz_prop_casino_slot_06a"),
+        GetHashKey("vw_prop_casino_slot_06a"), 0)
+    CreateModelSwap(-123.050362, 6373.526367, 27.778255, 1.0, GetHashKey("gigz_prop_casino_slot_02a"),
+        GetHashKey("vw_prop_casino_slot_02a"), 0)
+    CreateModelSwap(-125.550148, 6375.994629, 27.777689, 1.0, GetHashKey("gigz_prop_casino_slot_01a"),
+        GetHashKey("vw_prop_casino_slot_01a"), 0)
+    CreateModelSwap(-126.104309, 6376.582520, 27.778738, 1.0, GetHashKey("gigz_prop_casino_slot_02a"),
+        GetHashKey("vw_prop_casino_slot_02a"), 0)
+    CreateModelSwap(-123.447456, 6387.741211, 27.188959, 1.0, GetHashKey("gigz_prop_casino_slot_06a"),
+        GetHashKey("vw_prop_casino_slot_06a"), 0)
+    CreateModelSwap(-122.657890, 6388.526367, 27.188959, 1.0, GetHashKey("gigz_prop_casino_slot_01a"),
+        GetHashKey("vw_prop_casino_slot_01a"), 0)
+    CreateModelSwap(-123.805580, 6372.772949, 27.779331, 1.0, GetHashKey("gigz_prop_casino_slot_03a"),
+        GetHashKey("vw_prop_casino_slot_03a"), 0)
+
+    CreateModelSwap(-120.191299, 6378.024902, 27.772196, 1.0, GetHashKey("gigz_prop_casino_roulette_01b"),
+        GetHashKey("vw_prop_casino_roulette_01b"), 0)
+    CreateModelSwap(-122.046768, 6380.008301, 27.771685, 1.0, GetHashKey("gigz_prop_casino_blckjack_01e"),
+        GetHashKey("vw_prop_casino_blckjack_01"), 0)
+    CreateModelSwap(-123.721054, 6381.708984, 27.774820, 1.0, GetHashKey("gigz_prop_casino_blckjack_01e"),
+        GetHashKey("vw_prop_casino_blckjack_01b"), 0)
+    CreateModelSwap(-128.658524, 6379.466309, 27.775881, 1.0, GetHashKey("gigz_prop_casino_3cardpoker_01b"),
+        GetHashKey("vw_prop_casino_3cardpoker_01"), 0)
+    CreateModelSwap(-116.225044, 6382.831055, 27.194048, 1.0, GetHashKey("gigz_prop_casino_blckjack_01e"),
+        GetHashKey("vw_prop_casino_3cardpoker_01b"), 0)
+    CreateModelSwap(-117.899330, 6384.531738, 27.194742, 1.0, GetHashKey("gigz_prop_casino_blckjack_01e"),
+        GetHashKey("vw_prop_casino_roulette_01"), 0)
 end

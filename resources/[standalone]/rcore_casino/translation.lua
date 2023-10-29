@@ -13,7 +13,7 @@ Translation = {
     BAR_PRESS_TO_ORDER = "Press ~INPUT_TALK~ to order a drink",
     BAR_PRESS_TO_SIT_DOWN = "Press ~INPUT_TALK~ to sit down",
     BAR_SIT_FUNCTIONS = "Press ~INPUT_TALK~ to use your casino snacks\nPress ~INPUT_CELLPHONE_CANCEL~ to leave your chair",
-    BAR_SIT_NOSNACKS = "You don't have any snacks. Buy some from one of the bartenders",
+    BAR_SIT_NOSNACKS = "You don't have any snacks. Buy some from one of the bartenders. Press ~INPUT_CELLPHONE_CANCEL~ to leave your chair.",
     UI_PRESS_TO_PLAY = "Press ~INPUT_TALK~ to play",
     ROULETTE_WELCOME_PART1 = "The objective if Roulette is to predict which number and/or color the ball will land on. This can be done by placing a single bet on a color, individual number, or by placing bets that cover a range of numbers, or whether the number will be an even/odd number.\n",
     ROULETTE_WELCOME_PART2 = "A maximum of 10 bets can be placed at a time on the table.\n\nThis table uses the American style layout, which includes double zero.\n",
@@ -256,6 +256,8 @@ Translation = {
     LUCKYWHEEL_YOU_GOT_CHIPS = "You have won %s chips!",
     LUCKYWHEEL_YOU_GOT_CAR = "You have won the podium vehicle!",
     LUCKYWHEEL_YOU_GOT_NOTHING = "You have won nothing!",
+    AVAIABLE_SOCIETY_BALANCE = "Society balance: %s",
+    CASINO_TEMPORARY_CLOSED = "Casino is temporary closed.",
 }
 
 Translation.POKER_HAND_NAMES["STRAIGHT_FLUSH"] = "a Straight Flush"

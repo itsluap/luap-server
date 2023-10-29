@@ -18,7 +18,7 @@ function sendWebhook(name, identifier, type, value, amount, early)
         ["color"] = 11267014, -- https://www.spycolor.com/ Decimal Value
         ["author"] = {
           ["name"] = "[ " .. currentResourceName .. " ]",
-          ["url"] = "https://github.com/xDreamLand/dr-scratching"
+          ["url"] = "https://github.com/xDreamLand/indigo-scratchtickets"
         },
         ["timestamp"] = os.date("!%Y%m%dT%H%M%S")
       }
@@ -39,7 +39,7 @@ function sendWebhook(name, identifier, type, value, amount, early)
         ["color"] = 16440280, -- https://www.spycolor.com/ Decimal Value
         ["author"] = {
           ["name"] = "[ " .. currentResourceName .. " ]",
-          ["url"] = "https://github.com/xDreamLand/dr-scratching"
+          ["url"] = "https://github.com/xDreamLand/indigo-scratchtickets"
         },
         ["timestamp"] = os.date("!%Y%m%dT%H%M%S")
       }
@@ -64,7 +64,7 @@ function sendWebhook(name, identifier, type, value, amount, early)
         ["color"] = 11088422, -- https://www.spycolor.com/ Decimal Value
         ["author"] = {
           ["name"] = "[ " .. currentResourceName .. " ]",
-          ["url"] = "https://github.com/xDreamLand/dr-scratching"
+          ["url"] = "https://github.com/xDreamLand/indigo-scratchtickets"
         },
         ["timestamp"] = os.date("!%Y%m%dT%H%M%S")
       }
@@ -84,7 +84,7 @@ function sendWebhook(name, identifier, type, value, amount, early)
         ["color"] = 15774330, -- https://www.spycolor.com/ Decimal Value
         ["author"] = {
           ["name"] = "[ " .. currentResourceName .. " ]",
-          ["url"] = "https://github.com/xDreamLand/dr-scratching"
+          ["url"] = "https://github.com/xDreamLand/indigo-scratchtickets"
         },
         ["timestamp"] = os.date("!%Y%m%dT%H%M%S")
       }

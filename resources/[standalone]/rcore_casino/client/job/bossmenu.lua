@@ -50,6 +50,8 @@ CreateThread(function()
             })
         elseif Framework.Active == 2 then
             TriggerEvent(Events.QB_BOSS_MENU)
+        elseif Framework.Active == 4 then
+            -- implement function that opens bossmenu
         end
     end)
 
@@ -116,6 +118,9 @@ CreateThread(function()
                 ShowHelpNotification(Translation.Get("PRESS_TO_ENTER_CASINO"))
             else
                 local m = string.format(Translation.Get("OPENINGHOURS_CLOSED"), OPEN_STATE[2])
+                if FORCE_CLOSED then
+                    m = Translation.Get("CASINO_TEMPORARY_CLOSED")
+                end
                 ShowHelpNotification(m)
             end
         end)

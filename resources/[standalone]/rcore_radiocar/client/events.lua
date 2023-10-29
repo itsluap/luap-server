@@ -1,4 +1,4 @@
-RegisterNUICallback("data_status", function(data)
+RegisterNUICallback("data_status", function(data, cb)
     if soundInfo[data.id] ~= nil then
         if data.type == "finished" then
             if not soundInfo[data.id].loop then
@@ -14,9 +14,11 @@ RegisterNUICallback("data_status", function(data)
             soundInfo[data.id].skipTimestamp = nil
         end
     end
+
+    if cb then cb('ok') end
 end)
 
-RegisterNUICallback("events", function(data)
+RegisterNUICallback("events", function(data, cb)
     local id = data.id
     local type = data.type
     if type == "resetTimeStamp" then
@@ -55,4 +57,6 @@ RegisterNUICallback("events", function(data)
             end
         end
     end
+
+    if cb then cb('ok') end
 end)

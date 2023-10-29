@@ -1,6 +1,6 @@
 Config = {
     -- Map
-    MapType = 2, -- 1: for DLCiplLoader, 2: Gabz Casino, 3: NoPixel Casino, 4: k4mb1 casino, 5: GTA:O Interior (rcore_casino_interior)
+    MapType = 2, -- 1: for DLCiplLoader, 2: Gabz Casino, 3: NoPixel Casino, 4: k4mb1 casino, 5: GTA:O Interior (rcore_casino_interior), 6: Underground Casino PALETO
 
     --[[
     Gabz Casino
@@ -19,10 +19,10 @@ Config = {
     Xmas = false,
 
     -- Money Or Casino Chips? 
+    MoneyInventoryItemName = nil, -- name of the money inventory item, set to nil, if you don't want to use inventory item as the money
     UseOnlyMoney = false, -- set to true if you wanna disable using casino chips and use money instead
     ExchangeRate = 1, -- set value of one casino chip, for example, set to 5, if 1 chip equals to 5$ (minimum: 0.1, rounded by 0.1, 0.5 or 1)
-    ShowChipsHud = true, -- show/hide the chips hud on the top-right corner
-    ChipsInventoryItem = "casinochips",
+    ChipsInventoryItem = "casino_chips",
     UseBankMoney = false, -- cash or bank?
 
     -- Behave in casino?
@@ -53,12 +53,9 @@ Config = {
     -- Roulette
     ROULETTE_JUNIOR_ENABLED = true, -- set if you want to have Roulette Junior (blue) table for newbies (low stakes)
     ROULETTE_JUNIOR_COORDS = {1004.790, 57.295, 68.432},
-    CASHIER_DAILY_BONUS = 1000, -- daily visitor bonus that players can request at the Cashier, set to 0 if you don't want any daily bonuses. def: 1000
-    CASHIER_VIP_PRICE = 50000, -- price of the VIP casino membership, def: 50000
-    CASHIER_VIP_DURATION = (60 * 60 * 24) * 7, -- VIP for player resets after this time, def: 7 days
 
     -- Slots
-    SLOTS_1ST_PERSON = false, -- switch to 1st person when spinning slots
+    SLOTS_1ST_PERSON = true, -- switch to 1st person when spinning slots
 
     -- Lucky Wheel
     LUCKY_WHEEL_FREE_DRINKS_FOR = (60 * 60 * 24), -- when someone spins "Free Drinks" at the Lucky Wheel, how long they get free drinks for. def: 24 hours (60 * 60 * 24)
@@ -75,6 +72,12 @@ Config = {
     -- Poker
     POKER_JUNIOR_ENABLED = true, -- set if you want to have Poker Junior (blue) table for newbies (low stakes)
     POKER_JUNIOR_COORDS = {998.439, 61.031, 68.432},
+
+    -- Cashier
+    CASHIER_DAILY_BONUS = 1000, -- daily visitor bonus that players can request at the Cashier, set to 0 if you don't want any daily bonuses. def: 1000
+    CASHIER_VIP_PRICE = 50000, -- price of the VIP casino membership, def: 50000
+    CASHIER_VIP_DURATION = (60 * 60 * 24) * 7, -- VIP for player resets after this time, def: 7 days
+    CASHIER_SHOW_SOCIETY_BALANCE = false, -- whether to show avaiable society balance in cashier UI
 
     -- Casino Settings (don't change unless you're told to :)
     CAS_DOUBLECHECK_COORDS = vector3(984.528, 52.299, 70.238),
@@ -113,7 +116,7 @@ Config = {
 
     -- Drinking
     DrunkSystem = 1,
-    -- 1 = built-in, resets drunk level after leaving casino
+    -- 1 = auto-detect / built-in, resets drunk level after leaving casino
     -- 2 = esx_status
     -- 3 = evidence:client:SetStatus
     -- 4 = rcore_drunk -- https://store.rcore.cz/package/5161129
@@ -122,25 +125,34 @@ Config = {
     EnableGuidebookIntegration = false, -- https://store.rcore.cz/package/5041989
 
     -- Society
-    EnableSociety = true, -- whether to enable society account
-    SocietyName = "casino",
+    -- ⚠️ In order to make society work, please follow these instructions: https://documentation.rcore.cz/paid-resources/rcore_casino/society
+    EnableSociety = false, -- whether to enable society account
+    SocietyName = "society_casino",
     SocietyLimitFromBalance = 10000, -- if society account has less money than this, it will start paying out reduced money, (SocietyLimitPayoutPercentage)
     SocietyLimitPayoutPercentage = 35, -- example: if SocietyLimitPayoutPercentage is 35%, and SocietyLimitFromBalance is 10000 => 1000 payout at the Cashier will be limited to 350, if the society bank account balance is less than 10 000
     -- when enabled, all casino payments (Cashier, Bar, Lucky Wheel) go through the society account, players don't get paid if there's not enough money in the 
     SocietyFramework = "default",
     --[[
-    'default': default, using events, qb-bossmenu/indigo-management for QB, esx_addonaccount:getSharedAccount for ESX
+    'default': default, using events, qb-bossmenu/qb-management for QB, esx_addonaccount:getSharedAccount for ESX
     'okokbanking': editing the society row using mysql, table okokbanking_societies
     'addon_account_data': editing the society row using mysql, table addon_account_data
     '710-Management': using 710-Management export functions
     for more details open /server/main/society.lua
     ]]
 
+    -- Notifications
+    NotifySystem = 1,
+    --[[
+    1: default GTAV style notifications
+    2: okokNotify
+    3: esx_notify
+    ]]
+
     -- Job
     BossGrade = 2, -- the max grade (boss) for the casino job
     BossName = "boss",
     JobName = "casino", -- id of the job (not a title, I guess, don't change it)
-    
+
     -- Teleport In & Out
     LeaveThroughTeleport = false, -- if enabled, people won't be able to leave the casino building, instead, they get prompted once they come near the entrance (useful if your map is too far from Los Santos)
     EnterPosition = vector3(2469.584473, -280.015869, -58.267620),
@@ -151,6 +163,8 @@ Config = {
     -- Ui
     UIFontName = nil, -- font for the UI, set to nil, if you don't want to use a custom font, set to a font name (with ""), if you wanna register and use a font that's inside your /stream/fonts folder
     ShowHowToPlayUI = 1, -- How to play/Info about the game UI (Menu that shows after pressing 'E' to play. (0: disabled, 1: only once, 2: every time after pressing 'E')
+    ShowChipsHud = true, -- whether to use the built-in chips hud on the top-right corner
+    UseNUIHUD = false, -- whether to use chips hud on NUI (you can customize it in 'html/index.html')
 
     -- Database
     MongoDB = false, -- if you decide to use MongoDB instead of MYSQL, don't forget to edit your MongoDB queries in: server/main/cache.lua, server/main/casino.lua and server/utils/plateGenerator.lua
@@ -164,11 +178,10 @@ Config = {
 }
 
 Framework = {
-    -- 1 = es_extended
-    -- 2 = QBcore / custom
-    -- for custom frameworks, also use option *2*, and rewrite all the qbcore functions
+    -- ⚠️ For Standalone version docs visit https://documentation.rcore.cz/paid-resources/rcore_casino/standalone-version
+    -- ⚠️ For Custom framework version docs visit https://documentation.rcore.cz/paid-resources/rcore_casino/custom-framework
 
-    Active = 2,
+    Active = 5, -- Choose 1 for ESX, 2 for QBCore, 3 for Standalone, 4 for Custom, 5 for auto detect
     -- Please follow the installation tutorial: --
     -- https://documentation.rcore.cz/paid-resources/rcore_casino
 
@@ -180,7 +193,9 @@ Framework = {
     BUILTIN_HUD_CHIPS_ICON = "casinochip.png",
     -- qbcore resource name + shared object name
     QB_CORE_RESOURCE_NAME = "qb-core",
-    QBCORE_SHARED_OBJECT = "QBCore:GetObject"
+    QBCORE_SHARED_OBJECT = "QBCore:GetObject",
+    -- standalone settings
+    STANDALONE_INITIAL_CHIPS = 100000 -- chips that everyone gets after first enter
 }
 
 if Framework.Active == 2 then
@@ -193,7 +208,7 @@ Events = {
     QB_PLAYER_LOADED = "QBCore:Client:OnPlayerLoaded",
     QB_PLAYER_JOB_UPDATE = "QBCore:Client:OnJobUpdate",
     QB_BOSS_MENU = "qb-bossmenu:client:OpenMenu",
-    -- use "qb-bossmenu:client:OpenMenu" for qb-managment and "qb-bossmenu:client:openMenu" for qb-bossmenu
+    -- use "qb-bossmenu:client:OpenMenu" for qb-management and "qb-bossmenu:client:openMenu" for qb-bossmenu
 
     ES_PLAYER_LOADED = "esx:playerLoaded",
     ES_PLAYER_JOB_UPDATE = "esx:setJob",
@@ -272,14 +287,22 @@ GameStates = {{
     enabled = true
 }}
 
-Config.OpeningHours = {{0, 23}, -- Sunday (Open all day)
-{0, 23}, -- Monday
-{0, 23}, -- Thuesday
-{0, 23}, -- Wednesday
-{0, 23}, -- Thursday
-{0, 23}, -- Friday
-{0, 23} -- Saturday
+-- opening hours
+-- examples:
+-- [1] = {0, 1, 2, 3, 4, 5, 6} -- From 0:00 til 6 AM 
+-- [1] = {-1} -- Open all day
+
+Config.OpeningHours = {
+    [1] = {-1}, -- Sunday
+    [2] = {-1}, -- Monday
+    [3] = {-1}, -- Tuesday
+    [4] = {-1}, -- Wednesday
+    [5] = {-1}, -- Thursday
+    [6] = {-1}, -- Friday
+    [7] = {-1} -- Saturday
 }
+
+Config.ServerTimezoneOffsetHours = 0 -- Adjusts the server time based on the timezone difference
 
 -- customize the blip function here
 -- used blip icon ids: 
@@ -302,4 +325,43 @@ function SetCasinoBlip(coords, blipIcon, blipName, exterior)
         table.insert(CasinoBlips, blip)
     end
     return blip
+end
+
+function RemoveMissionBlip(name)
+    if MissionBlips[name] then
+        RemoveBlip(MissionBlips[name])
+        MissionBlips[name] = nil
+    end
+end
+
+-- auto-detect framework
+if Framework.Active == 5 then
+    local esxState = GetResourceState(Framework.ES_EXTENDED_RESOURCE_NAME)
+    local qbState = GetResourceState(Framework.QB_CORE_RESOURCE_NAME)
+
+    if esxState == "starting" or esxState == "started" then
+        print("^3[Casino] Framework ^2ESX^3 detected.^7")
+        Framework.Active = 1
+    elseif qbState == "starting" or qbState == "started" then
+        print("^3[Casino] Framework ^2QBCore^3 detected.^7")
+        Framework.Active = 2
+    else
+        Framework.Active = 3
+    end
+end
+
+if Config.DrunkSystem == 1 then
+    local rcoreDrunkState = GetResourceState("rcore_drunk")
+    local esxStatusState = GetResourceState("esx_status")
+
+    if rcoreDrunkState == "starting" or rcoreDrunkState == "started" then
+        Config.DrunkSystem = 4
+        print("^3[Casino] ^2rcore_drunk^3 detected.^7")
+    elseif esxStatusState == "starting" or esxStatusState == "started" then
+        Config.DrunkSystem = 2
+        print("^3[Casino] ^2esx_status^3 detected.^7")
+    elseif Framework.Active == 2 then
+        Config.DrunkSystem = 3
+        print("^3[Casino] drunk system set to ^2evidence:^3.^7")
+    end
 end

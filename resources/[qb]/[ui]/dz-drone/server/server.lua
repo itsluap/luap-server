@@ -13,7 +13,7 @@ if Config.Framework == "qbcore" then
 	end)
 elseif Config.Framework == "esx" then
 	if Config.IsESXLegacy then
-		ESX = exports['es_extended']:getSharedObject()
+		ESX = exports[Config.ESXLegacyName]:getSharedObject()
 	else
 		ESX = nil
 		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
@@ -26,7 +26,12 @@ elseif Config.Framework == "esx" then
 	
 	ESX.RegisterUsableItem("drone_lspd", function(source)
 		local src = source
-		TriggerClientEvent('dz-drone:client:InitiateDroneLSPD', src)
+		local Player = ESX.GetPlayerFromId(src)
+		if (Player.job.name == "admin") or (Player.job.name == "agent") or (Player.job.name == "police") then
+			TriggerClientEvent('dz-drone:client:InitiateDroneLSPD', src)
+		else
+			TriggerClientEvent('dz-drone:client:Notify', src, 'You\'re not authorised to use this drone', 2)
+		end
 	end)
 end
 
@@ -61,22 +66,49 @@ RegisterNetEvent('dz-drone:server:GetTargetPlayerInformations', function(target)
 	elseif (Config.Framework == "esx") and (ESX ~= nil) then
 		local Player = ESX.GetPlayerFromId(Target)
 		if Player then
-			MySQL.Async.fetchAll('SELECT * FROM users WHERE identifier = ?', {Player.identifier}, function(result)
-				if result[1] and result[1].firstname then
-					TargetInfo = {
-						Title = result[1].firstname,
-						SubTitle = "Target ID: "..Target,
-						Infos = {
-							'Firstname: '..result[1].firstname,
-							'Lastname: '..result[1].lastname,
-							'Birthdate: '..result[1].dateofbirth,
-							'Gender: '..(result[1].sex == "m" and "Male" or "Female"),
-							'Height: '..result[1].height,
+			if Config.SQL == "oxmysql" then
+				MySQL.Async.fetchAll('SELECT * FROM users WHERE identifier = ?', {Player.identifier}, function(result)
+					if result[1] and result[1].firstname then
+						TargetInfo = {
+							Title = result[1].firstname,
+							SubTitle = "Target ID: "..Target,
+							Infos = {
+								'Firstname: '..result[1].firstname,
+								'Lastname: '..result[1].lastname,
+								'Birthdate: '..result[1].dateofbirth,
+								'Gender: '..(result[1].sex == "m" and "Male" or "Female"),
+								'Height: '..result[1].height,
+							}
 						}
-					}
-				end
-				TriggerClientEvent('dz-drone:client:TargetPlayerInformations', src, TargetInfo)
-			end)
+					end
+					TriggerClientEvent('dz-drone:client:TargetPlayerInformations', src, TargetInfo)
+				end)
+			elseif Config.SQL == "mysql-async" then
+				MySQL.Async.fetchAll('SELECT * FROM `users` WHERE `identifier` = @identifier', {
+					['@identifier'] = Player.identifier
+				}, function(result)
+					if result[1] and result[1].firstname then
+						TargetInfo = {
+							Title = result[1].firstname,
+							SubTitle = "Target ID: "..Target,
+							Infos = {
+								'Firstname: '..result[1].firstname,
+								'Lastname: '..result[1].lastname,
+								'Birthdate: '..result[1].dateofbirth,
+								'Gender: '..(result[1].sex == "m" and "Male" or "Female"),
+								'Height: '..result[1].height,
+							}
+						}
+					end
+					TriggerClientEvent('dz-drone:client:TargetPlayerInformations', src, TargetInfo)
+				end)
+			else
+				print('^2[dz-drone] ^1Wrong SQL, script allows only \'oxmysql\' or \'mysql-async\'')
+				print('^2[dz-drone] ^1Wrong SQL, script allows only \'oxmysql\' or \'mysql-async\'')
+				print('^2[dz-drone] ^1Wrong SQL, script allows only \'oxmysql\' or \'mysql-async\'')
+				print('^2[dz-drone] ^1Wrong SQL, script allows only \'oxmysql\' or \'mysql-async\'')
+				print('^2[dz-drone] ^1Wrong SQL, script allows only \'oxmysql\' or \'mysql-async\'')
+			end
 		end
 	else
 		TargetInfo = {

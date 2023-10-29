@@ -128,7 +128,6 @@ if not Config.UseExternalxSound then
                             PlayUrlPos(v.id, v.url, v.volume, v.position, v.loop)
                             onPlayStart(v.id, function()
                                 if getInfo(v.id).maxDuration then
-                                    print("v.time", v.timeStamp)
                                     setTimeStamp(v.id, v.timeStamp or 0)
                                 end
                                 Distance(v.id, v.distance)

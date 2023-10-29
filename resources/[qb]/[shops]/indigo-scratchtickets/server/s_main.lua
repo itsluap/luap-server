@@ -12,10 +12,10 @@ end)
 QBCore.Functions.CreateUseableItem('scratch_ticket', function(source)
   local _source = source
   DebugPrint(('%s just used a scratching ticket.'):format(GetPlayerName(_source)))
-  TriggerClientEvent("dr-scratching:isActiveCooldown", source)
+  TriggerClientEvent("indigo-scratchtickets:isActiveCooldown", source)
 end)
 
-RegisterNetEvent("dr-scratching:handler", function(returncooldown, cooldown)
+RegisterNetEvent("indigo-scratchtickets:handler", function(returncooldown, cooldown)
   local _source <const> = source
   local tempsrc <const> = tonumber(_source)
   local playerName, playerIdentifier = GetPlayerName(_source), GetPlayerIdentifier(_source, 0)
@@ -34,7 +34,7 @@ RegisterNetEvent("dr-scratching:handler", function(returncooldown, cooldown)
   if count >= 1 then
     xPlayer.Functions.RemoveItem('scratch_ticket', 1)
     DebugPrint(('Succesfully removed scratching ticket of %s (%s).'):format(playerName, playerIdentifier))
-    TriggerClientEvent("dr-scratching:setCooldown", _source)
+    TriggerClientEvent("indigo-scratchtickets:setCooldown", _source)
     if Config.ShowUsedTicketNotification then
       TriggerClientEvent('QBCore:Notify', _source, 'Succesfully used a scratching ticket', 'success')
     end
@@ -44,7 +44,7 @@ RegisterNetEvent("dr-scratching:handler", function(returncooldown, cooldown)
     return
   end
 
-  TriggerClientEvent("dr-scratching:startScratchingEmote", _source)
+  TriggerClientEvent("indigo-scratchtickets:startScratchingEmote", _source)
 
   for key,priceInfo in pairs(Config.Prices) do
     local chance = priceInfo['chance']
@@ -62,14 +62,14 @@ RegisterNetEvent("dr-scratching:handler", function(returncooldown, cooldown)
         price_label = priceInfo['price']['item']['item_label']
       end
       players[tempsrc] = tostring(price)
-      TriggerClientEvent("dr-scratching:nuiOpenCard", _source, key, price, amount, price_type, price_label)
+      TriggerClientEvent("indigo-scratchtickets:nuiOpenCard", _source, key, price, amount, price_type, price_label)
       return price
     end
     add = add + chance
   end
 end)
 
-RegisterNetEvent("dr-scratching:deposit", function(key, price, amount, type)
+RegisterNetEvent("indigo-scratchtickets:deposit", function(key, price, amount, type)
   local _source = source
   local playerName, playerIdentifier = GetPlayerName(_source), GetPlayerIdentifier(_source, 0)
   local xPlayer = QBCore.Functions.GetPlayer(_source)
@@ -140,7 +140,7 @@ RegisterNetEvent("dr-scratching:deposit", function(key, price, amount, type)
   return
 end)
 
-RegisterNetEvent("dr-scratching:stopScratching", function(price, amount, type)
+RegisterNetEvent("indigo-scratchtickets:stopScratching", function(price, amount, type)
   local _source = source
   local playerName, playerIdentifier = GetPlayerName(_source), GetPlayerIdentifier(_source, 0)
   local tempsrc = tonumber(_source)

@@ -7,15 +7,20 @@ Config = {}
 -- 1 oxmysql (if you have older version where mysql-async bridge does not exists turn this on)
 -- 2 Mysql async
 -- 3 ghmattimysql
-Config.MysqlType = 1
+Config.MysqlType = 0
 
 -- 0 standalone
 -- 1 ESX
 -- 2 QBCore
-Config.FrameWork = 2
+Config.Framework = 0
 
 -- will force trim even on standalone
 Config.ForceTrim = false
+
+-- force vip
+-- you will need this "add_ace" permission and "add_principal" -> you can find them in readme.md
+-- you can view more what the ace is here: https://forum.cfx.re/t/basic-aces-principals-overview-guide/90917
+Config.ForceVip = false
 
 -- well.. Do i have to explain what this blacklist?
 Config.BlacklistedURL = {
@@ -23,41 +28,37 @@ Config.BlacklistedURL = {
     "https://www.youtube.com/watch?v=o-YBDTqX_ZU",
 }
 
+-- do you want to disable saving this stuff to the mysql?
+-- when you create your own playlist it will be there even after restart
+Config.DisableLoadingOfPlayList = false
+
+-- save interval for the playlist
+Config.AutoSaveInterval = 1000 * 60 * 15
+
 -- esx object share
-Config.ESX_Object = "esx:getSharedObject"
+Config.ESX = "esx:getSharedObject"
 
-Config.GetQBCoreObject = function()
-    -- Choose your objectType or made here your own.
-    local objectType = 1
+-- es_extended resource name
+Config.esx_resource_name = "es_extended"
 
-    if objectType == 1 then
-        return exports['qb-core']:GetCoreObject()
-    end
+-- qbcore object
+Config.QBCore = "QBCore:GetObject"
 
-    if objectType == 2 then
-        return exports['qb-core']:GetSharedObject()
-    end
-
-    if objectType == 3 then
-        local QBCore = nil
-        local breakPoint = 0
-        while not QBCore do
-            Wait(100)
-            TriggerEvent("QBCore:GetObject", function(obj) QBCore = obj end)
-
-            breakPoint = breakPoint + 1
-            if breakPoint == 25 then
-                print(string.format("^1[%s]^7 Could not load the sharedobject, are you sure it is called ^1˙QBCore:GetObject˙^7?", GetCurrentResourceName()))
-                break
-            end
-        end
-
-        return QBCore
-    end
-end
+-- es_extended resource name
+Config.qbcore_resource_name = "qb-core"
 
 -- Debug
 Config.Debug = false
+
+-- enable playing music after reconnect for all cars
+-- a few more notes this will just play the same music player heard before on the same time
+Config.PlayMusicAfterReconnect = false
+
+-- Thread Debug
+Config.ThreadDebug = false
+
+-- Function Debug
+Config.FunctionDebug = false
 
 -- this will disable radio for all vehicles no expection even police etc.
 Config.DisableGTARadio = false
@@ -72,16 +73,19 @@ Config.EnableCommand = false
 Config.CommandLabel = "radiocar"
 
 -- Key to open radio
-Config.KeyForRadio = "U"
+Config.KeyForRadio = "G"
+
+-- description of the key
+Config.KeyDescription = "this will open a radio vehicle (can be rebinded)"
 
 -- Distance playing from car
-Config.DistancePlaying = 7.0
+Config.DistancePlaying = 4.0
 
 -- Distance playing from car if windows are closed / or if he has open any door
-Config.DistancePlayingWindowsOpen  = 12.0
+Config.DistancePlayingWindowsOpen  = 10.0
 
 --  if the engine is off the music will be disabled until the engine is on
-Config.DisableMusicAfterEngineIsOFF = true
+Config.DisableMusicAfterEngineIsOFF = false
 
 -- Only owner of the car can play a music from the vehicle.
 Config.OnlyOwnerOfTheCar = false
@@ -89,7 +93,7 @@ Config.OnlyOwnerOfTheCar = false
 -- Radio in car can be used only for people who own the car
 -- this can prevent from trolling streamers, i believe many kids
 -- will try play some troll music and try to get streamer banned.
-Config.OnlyOwnedCars = true
+Config.OnlyOwnedCars = false
 
 -- this will only let use cars that have installed radio as an item in the car
 -- means no car without installed radio before can use it..
@@ -135,6 +139,8 @@ Config.whitelistedCars = {-- car
     --GetHashKey("car name here"),
 }
 
+-- true  = enabled
+-- false = disabled
 -- Blacklisted categories vehicles
 Config.blackListedCategories = {
     anyVehicle = true,
@@ -148,7 +154,6 @@ Config.blackListedCategories = {
 }
 
 -- List default station for radio
--- please dont add more than 6.. if you add more than 6 you need to edit html
 Config.defaultList = {
     {
         label = "Good life radio",
@@ -177,7 +182,7 @@ Config.defaultList = {
 }
 
 -- How much ofter the player position is updated ?
-Config.RefreshTime = 200
+Config.RefreshTime = 300
 
 -- how much close player has to be to the sound before starting updating position ?
 Config.distanceBeforeUpdatingPos = 40

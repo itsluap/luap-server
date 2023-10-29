@@ -1,0 +1,5 @@
+{
+    "imported": false,
+    "data": [{"location_group":"MBA MMA","door_sound":"door_click.ogg","lockpickable":false,"default_state":false,"id":1,"door_type":"single","door_data":[{"model_hash":123879009,"unique_id":"BeGLQbkb97y6PQYyTjjr3","door_coords":{"y":-1972.3277587890626,"z":22.34663963317871,"x":-326.7613830566406},"text_dimensions":-1.17614130675792}],"perms":{"job":[{"name":"police","grade":0}],"identifier":[]},"distance":2,"secret":false,"camera":true,"door_name":"Ring Entrance","state":false}],
+    "name": "mba_mma.json"
+}

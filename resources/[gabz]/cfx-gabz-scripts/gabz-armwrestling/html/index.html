@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armwrestling</title>
+
+    <link rel="stylesheet" href="./css/stylesheet.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <div id="winner-screen">
+        <canvas id="confetti"></canvas>
+        <div id="winner-text" >
+            YOU WIN
+        </div>
+    </div>
+    <div id="loser-screen">
+        <div id="loser-text" data-text="YOU LOSE">
+            YOU LOSE
+        </div>
+    </div>
+    <div id="countdown-screen">
+        <div id="countdown-number">
+            3
+        </div>
+    </div>
+
+    <div id="game-instructions">
+        <div id="game-start" class="instructions hide">
+            Press <kbd>E</kbd> to arm wrestle
+        </div>
+        <div id="game-play" class="instructions hide">
+            Spam <kbd>E</kbd> to win
+        </div>
+        <div id="game-leave" class="instructions hide">
+            Wait for another player or press <kbd>X</kbd> to leave
+        </div>
+    </div>
+
+    <script src="../configs/locales_ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>

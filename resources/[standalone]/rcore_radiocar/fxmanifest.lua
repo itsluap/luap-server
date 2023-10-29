@@ -46,5 +46,9 @@ escrow_ignore {
     "client/commands.lua",
     "client/events.lua",
     "client/main.lua",
+    "shared.lua",
+
+    "server/timers.lua",
+    "server/savingQue.lua",
 }
 dependency '/assetpacks'

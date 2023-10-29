@@ -2,11 +2,11 @@ ESX = nil
 QBCore = nil
 
 CreateThread(function()
-    if Config.FrameWork == 1 then
+    if Config.Framework == 1 then
         ESX = GetEsxObject()
     end
 
-    if Config.FrameWork == 2 then
+    if Config.Framework == 2 then
         QBCore = Config.GetQBCoreObject()
 
         ESX = {}
@@ -64,7 +64,7 @@ AddEventHandler("rcore_radiocar:updateMusicInfo", function(data)
     end
 end)
 
-RegisterNUICallback("removeSong", function(data)
+RegisterNUICallback("removeSong", function(data, cb)
     if ESX then
         local spz = ESX.Game.GetVehicleProperties(GetVehiclePedIsIn(PlayerPedId())).plate
         TriggerServerEvent("rcore_radiocar:removeMusic", spz, data.oldLabel, data.oldURL)
@@ -77,4 +77,6 @@ RegisterNUICallback("removeSong", function(data)
 
         TriggerServerEvent("rcore_radiocar:removeMusic", plate, data.oldLabel, data.oldURL)
     end
+
+    if cb then cb('ok') end
 end)

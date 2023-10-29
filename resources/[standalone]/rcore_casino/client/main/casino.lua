@@ -33,6 +33,7 @@ PLAYING_HISTORY = {}
 PODIUM_PROPS = nil
 IN_TP_SCENE = false
 OPEN_STATE = {"", ""}
+FORCE_CLOSED = false
 
 local PLAYER_CHIPS_ANIMATED = -1
 local LastCasinoUpdate = 0
@@ -61,7 +62,7 @@ GAME_INFO_PANEL = nil
 -- digital wall
 local DigitalWall_Themes = {"CASINO_DIA_PL", "CASINO_HLW_PL", "CASINO_SNWFLK_PL", "CASINO_WIN_PL"}
 local DigitalWall_RenderTarget = nil
-local DigitalWall_Theme = 3 -- *winter* :OH_pepePleading:
+local DigitalWall_Theme = 1 -- *winter* :OH_pepePleading:
 local DigitalWall_ClipTime = 0
 local DigitalWall_PlayingConfetti = false
 local DigitalWall_Alpha = 0
@@ -114,6 +115,8 @@ function SetInventoryBusy(isBusy)
             TriggerEvent("esx_inventoryhud:closeInventory")
         elseif Framework.Active == 2 then
             ExecuteCommand("closeinv")
+        elseif Framework.Active == 4 then
+            -- implement function that locks/unlocks the inventory
         end
     end
     LocalPlayer.state:set("inv_busy", isBusy, true)
@@ -248,6 +251,12 @@ local payCallback = nil
 
 function Casino_AnimateBalance()
     UpdateBuiltInHud()
+    if Config.UseNUIHUD then
+        SendNUIMessage({
+            chips = PLAYER_CHIPS,
+            action = "chipshud"
+        })
+    end
     if not ENABLE_HUD then
         return
     end
@@ -279,7 +288,7 @@ function Casino_AnimateBalance()
         if PLAYER_CHIPS_ANIMATED == -1 then
             PLAYER_CHIPS_ANIMATED = PLAYER_CHIPS
             BeginScaleformScriptHudMovieMethod(21, "SET_PLAYER_CHIPS")
-            ScaleformMovieMethodAddParamInt(PLAYER_CHIPS)
+            PushScaleformMovieMethodParameterString(CommaValue(PLAYER_CHIPS))
             EndScaleformMovieMethod()
             return
         end
@@ -292,7 +301,7 @@ function Casino_AnimateBalance()
         PLAYER_CHIPS_ANIMATED = PLAYER_CHIPS
 
         BeginScaleformScriptHudMovieMethod(22, "SET_PLAYER_CHIP_CHANGE")
-        ScaleformMovieMethodAddParamInt(math.ceil(diff))
+        PushScaleformMovieMethodParameterString(CommaValue(math.ceil(diff)))
         ScaleformMovieMethodAddParamBool(append)
         EndScaleformMovieMethod()
 
@@ -303,13 +312,13 @@ function Casino_AnimateBalance()
             local i = actualStep < 0.5 and 0 or math.floor(actualStep)
 
             BeginScaleformScriptHudMovieMethod(21, "SET_PLAYER_CHIPS")
-            ScaleformMovieMethodAddParamInt(math.ceil(i))
+            PushScaleformMovieMethodParameterString(CommaValue(math.ceil(i)))
             EndScaleformMovieMethod()
             Wait(0)
         end
 
         BeginScaleformScriptHudMovieMethod(21, "SET_PLAYER_CHIPS")
-        ScaleformMovieMethodAddParamInt(PLAYER_CHIPS)
+        PushScaleformMovieMethodParameterString(CommaValue(PLAYER_CHIPS))
         EndScaleformMovieMethod()
 
         Wait(1000)
@@ -462,6 +471,7 @@ function StopFromPlaying()
         -- leave chairs
         CAN_INTERACT = true
         LeaveKeyPressed()
+        LAST_STARTED_GAME_TYPE = nil
     end
 end
 
@@ -484,6 +494,16 @@ function InfoPanel_UpdateNotification(newNotification)
         return
     end
     DebugStart("InfoPanel_UpdateNotification")
+
+    if Config.NotifySystem then
+        if Config.NotifySystem == 2 and newNotification and newNotification ~= "" then
+            exports['okokNotify']:Alert("", removePlaceholderText(newNotification), 3000, 'info', true)
+            return
+        elseif Config.NotifySystem == 3 and newNotification and newNotification ~= "" then
+            exports['esx_notify']:Notify("info", 3000, removePlaceholderText(newNotification))
+            return
+        end
+    end
 
     if Config.UIFontName and newNotification then
         newNotification = "<font face=\"" .. Config.UIFontName .. "\">" .. newNotification .. "</font>"
@@ -562,7 +582,7 @@ local function InteractableObjectFound(game, entity, coords, model)
         return
     end
 
-    if PLAYER_DRUNK_LEVEL >= 0.9 then
+    if PLAYER_DRUNK_LEVEL >= 0.9 and game ~= "casinoleaving" then
         InfoPanel_UpdateNotification(Translation.Get("DRUNK_MESSAGE"))
         return
     end
@@ -632,7 +652,6 @@ local function InteractableObjectFound(game, entity, coords, model)
 
     elseif game == "xmastree" then
         Xmas_ShowNotify(entity)
-    
     end
 end
 
@@ -861,7 +880,7 @@ local function CheckForInteractions()
                         WaitForPlayerOnCoords(o.safearea, 5000)
                         SetEntityCoordsNoOffset(PlayerPedId(), o.safearea, true, true, true, true)
                         Wait(3000)
-                        InfoPanel_UpdateNotification("")
+                        InfoPanel_UpdateNotification(nil)
                     end)
                 end
             end
@@ -1400,6 +1419,8 @@ function OnEnterCasino()
             ActivateInteriorEntitySet(interiorid, "horse_bettings")
             RefreshInterior(interiorid)
         end
+    elseif Config.MapType == 6 then
+        ReplaceMap6Props()
     end
 
     -- get initial drunk level
@@ -1409,6 +1430,13 @@ function OnEnterCasino()
     if Config.RestrictControls then
         SetCurrentPedWeapon(PlayerPedId(), GetHashKey("weapon_unarmed"), true)
     end
+
+    -- prepare Inside Track black wall
+    if IsNamedRendertargetRegistered("casinoscreen_02") then
+        ReleaseNamedRendertarget("casinoscreen_02")
+    end
+    screenTargetGlobal = CreateScaleformHandle("casinoscreen_02", (Config.MapType == 5 and
+        "rcore_vw_vwint01_betting_screen" or "vw_vwint01_betting_screen"))
 
     -- hide exterior icon
     RemoveBlip(CASINO_BLIP)
@@ -1568,6 +1596,20 @@ function OnEnterCasino()
             StartCasinoBouncerScene()
         end
     end
+
+    -- Missions
+    -- create the green blip icon near the cashier
+    if MONEYLOAD_TAKE then
+        local blip = AddBlipForCoord(CashierDatas[1].coords)
+        SetBlipSprite(blip, 1)
+        SetBlipScale(blip, 1.0)
+        SetBlipAsFriendly(blip, false)
+        SetBlipColour(blip, 2)
+        BeginTextCommandSetBlipName("STRING")
+        AddTextComponentString(Translation.Get("CASHIER_CAPT"))
+        EndTextCommandSetBlipName(blip)
+        MissionBlips["cashier"] = blip
+    end
 end
 
 function PlayCasinoInteriorSound()
@@ -1619,6 +1661,14 @@ end
 function OnLeaveCasino()
     DebugStart("OnLeaveCasino")
     Debug("Left casino. Unloading stuff")
+
+    -- unload Inside Track wall
+    if IsNamedRendertargetRegistered("casinoscreen_02") then
+        ReleaseNamedRendertarget("casinoscreen_02")
+    end
+
+    -- stop inside track
+    InsideTrackDestroy()
 
     -- stop scene
     NewLoadSceneStop()
@@ -1754,6 +1804,14 @@ function OnLeaveCasino()
     -- reset radar zoom
     Wait(100)
     SetRadarZoom(1100)
+
+    -- hide nui hud
+    if Config.UseNUIHUD then
+        SendNUIMessage({
+            chips = -1,
+            action = "chipshud"
+        })
+    end
 end
 
 function OnLeaveInsideTrack()
@@ -1805,6 +1863,9 @@ AddEventHandler("Casino:Progress", function(balance, sTime, sDate, cache, gameSt
 
     RegisterBuiltInHud()
     Casino_AnimateBalance()
+    if Framework.Active == 3 then
+        PlayerData = UpdatePlayerDataForStandalone()
+    end
 end)
 
 -- casino garage callback
@@ -1937,6 +1998,12 @@ AddEventHandler("Casino:AdminShowMenu", function(states)
     GameStates_ShowMenu()
 end)
 
+-- standalone: server allows player to open the workers menu & edit workers
+RegisterNetEvent("Casino:AdminShowWorkers")
+AddEventHandler("Casino:AdminShowWorkers", function(workers)
+    Workers_ShowMenu(workers)
+end)
+
 -- server stop me from playing
 RegisterNetEvent("Casino:StopPlaying")
 AddEventHandler("Casino:StopPlaying", function()
@@ -1979,6 +2046,13 @@ AddEventHandler("Casino:PodiumVehicleChanged", function(podiumProps)
     AnimatePodium(PODIUM_PROPS)
 end)
 
+-- force closed state changed
+RegisterNetEvent("Casino:ToggleForceCloseChanged")
+AddEventHandler("Casino:ToggleForceCloseChanged", function(state)
+    FORCE_CLOSED = state
+    NextOpenCheck = 0
+end)
+
 -- destroys all objects if the resource stops
 AddEventHandler('onResourceStop', function(resourceName)
     if (GetCurrentResourceName() ~= resourceName) then
@@ -1992,6 +2066,11 @@ end)
 
 RegisterCommand("casinoadmin", function(source, args, rawCommand)
     TriggerServerEvent("Casino:AdminShowMenu")
+end)
+
+-- standalone: manage casino workers
+RegisterCommand("casinoworkers", function(source, args, rawCommand)
+    TriggerServerEvent("Casino:AdminShowWorkers")
 end)
 
 RegisterCommand("casinokick", function(source, args, rawCommand)
@@ -2061,6 +2140,39 @@ AddEventHandler("Casino:FuseBoxStateChanged", function(wallBroken, electricityBr
     end
 end)
 
+-- standalone: lucky wheel vehicle spawned, let's find it & customize it
+RegisterNetEvent("Casino:StandaloneVehicleSpawned")
+AddEventHandler("Casino:StandaloneVehicleSpawned", function(vehicle, vehicleProps)
+    if Framework.Active ~= 3 then
+        return
+    end
+
+    -- look for entity
+    local vehicleEntity = nil
+    for i = 1, 10, 1 do
+        local vehId = NetToVeh(vehicle)
+        if vehId ~= 0 then
+            vehicleEntity = vehId
+            break
+        end
+        Wait(1000)
+    end
+
+    if vehicleEntity then
+        NetworkRequestControlOfEntity(vehicleEntity)
+        for i = 1, 10, 1 do
+            if NetworkHasControlOfEntity(vehicleEntity) then
+                break
+            end
+            Wait(1000)
+        end
+        SetVehicleProperties(vehicleEntity, vehicleProps)
+        SetVehicleDoorsLockedForAllPlayers(vehicleEntity, false)
+        SetVehicleDoorsLocked(vehicleEntity, 1)
+        SetVehicleDoorsLockedForPlayer(vehicleEntity, PlayerId(), false)
+    end
+end)
+
 if Config.Debug then
     RegisterCommand("office", function(source, args, rawCommand)
         SetEntityCoordsNoOffset(PlayerPedId(), 959.038757, 55.897293, 75.442551)
@@ -2069,8 +2181,9 @@ end
 
 -- money callback
 RegisterNetEvent("Casino:CheckOpenState")
-AddEventHandler("Casino:CheckOpenState", function(isOpen, nextOpenTime)
+AddEventHandler("Casino:CheckOpenState", function(isOpen, nextOpenTime, forceClosed)
     OPEN_STATE = {isOpen, nextOpenTime}
+    FORCE_CLOSED = forceClosed
     if not OPEN_STATE[1] and IsEntityInCasino(PlayerPedId()) then
         Casino_ShowNotInOpenHoursPrompt(true)
         StopFromPlaying()
@@ -2079,6 +2192,9 @@ end)
 
 function Casino_ShowNotInOpenHoursPrompt(tp)
     local m = string.format(Translation.Get("OPENINGHOURS_CLOSED"), OPEN_STATE[2])
+    if FORCE_CLOSED then
+        m = Translation.Get("CASINO_TEMPORARY_CLOSED")
+    end
     FullscreenPrompt(Translation.Get("OPENINGHOURS_CLOSED_TITLE"), m, function()
         if tp then
             SetEntityCoordsNoOffset(PlayerPedId(), Config.LeavePosition)
@@ -2090,6 +2206,33 @@ function StartGTAOTPScene()
     if IN_TP_SCENE then
         return
     end
+
+    -- look for door automatically
+    local pool = GetGamePool("CObject")
+    local doorObject = nil
+    for k, v in pairs(pool) do
+        if DoesEntityExist(v) and GetEntityModel(v) == 21324050 then
+            doorObject = v
+        end
+    end
+
+    -- if no door, tp without animation
+    if not doorObject then
+        DoScreenFadeOut(2000)
+        Wait(2000)
+        FreezeEntityPosition(PlayerPedId(), true)
+        RequestCollisionAtCoord(Config.EnterPosition)
+        SetEntityCoordsNoOffset(PlayerPedId(), Config.EnterPosition)
+        SetEntityHeading(PlayerPedId(), 247.53414916992)
+        Wait(500)
+        t = GetGameTimer() + 5000
+        while not HasCollisionLoadedAroundEntity(PlayerPedId()) and GetGameTimer() < t do
+            Wait(33)
+        end
+        FreezeEntityPosition(PlayerPedId(), false)
+        return
+    end
+
     IN_TP_SCENE = true
     CreateThread(function()
         while IN_TP_SCENE do
@@ -2104,9 +2247,9 @@ function StartGTAOTPScene()
         local playerClone = ClonePed(PlayerPedId(), 0.0, false)
         local introDict = "anim@amb@casino@valet@intro@"
         local valetModel = GetHashKey("s_m_y_valet_01")
-        local introCoords = vector3(926.2393, 47.2141, 81.5419)
-        local introRot = vector3(0.0, 0.0, -122.0)
-        local introDoor = GetClosestObjectOfType(926.23, 47.21, 81.54, 1.0, 21324050)
+        local introCoords = GetEntityCoords(doorObject)
+        local introDoor = doorObject
+        local introRot = GetEntityRotation(introDoor)
         local introCamera = CreateCamWithParams("DEFAULT_ANIMATED_CAMERA", introCoords, introRot, 50.0, true, 2)
         local t = GetGameTimer() + 1500
 
@@ -2143,8 +2286,18 @@ function StartGTAOTPScene()
         Wait(100)
         DoScreenFadeIn(2000)
 
-        SetEntityCoordsNoOffset(PlayerPedId(), 2469.584473, -280.015869, -58.267620)
+        FreezeEntityPosition(PlayerPedId(), true)
+        RequestCollisionAtCoord(Config.EnterPosition)
+        SetEntityCoordsNoOffset(PlayerPedId(), Config.EnterPosition)
         SetEntityHeading(PlayerPedId(), 247.53414916992)
+
+        Wait(500)
+        t = GetGameTimer() + 5000
+        while not HasCollisionLoadedAroundEntity(PlayerPedId()) and GetGameTimer() < t do
+            Wait(33)
+        end
+
+        FreezeEntityPosition(PlayerPedId(), false)
 
         if GetSynchronizedScenePhase(s) > 0.0 and DoesEntityExist(valetPed) and DoesEntityExist(playerClone) then
             t = GetGameTimer() + 10000
@@ -2346,13 +2499,13 @@ if Config.MapType ~= 5 then
                 if dc then
                     -- dc.Ipl.Building.Remove()
                     dc.Ipl.Main.Remove()
-                    dc.Ipl.Carpark.Remove()
-                    dc.Ipl.Garage.Remove()
+                    -- dc.Ipl.Carpark.Remove()
+                    -- dc.Ipl.Garage.Remove()
                 end
                 local dm = exports["bob74_ipl"]:GetBikerGangObject()
                 if dm then
-                    dm.Clubhouse.MissionsWall.Clear()
-                    dm.Clubhouse.ClearAll()
+                    --  dm.Clubhouse.MissionsWall.Clear()
+                    --  dm.Clubhouse.ClearAll()
                 end
             end)
         end
@@ -2374,3 +2527,10 @@ else
     RequestIpl("vw_casino_garage")
     RequestIpl("vw_casino_carpark")
 end
+
+-- standalone: get saved progress after player joins the server
+if Framework.Active == 3 then
+    TriggerServerEvent("Casino:GetProgress")
+end
+
+-- AddTextEntry("ITH_NAME_056", "Miss Triggered") -- replace the name here

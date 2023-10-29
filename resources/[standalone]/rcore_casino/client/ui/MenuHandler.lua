@@ -14,9 +14,10 @@ local withdrawBadge = RageUI.BadgeStyle.None
 local withdrawDesc = Translation.Get("CASHIER_TRADEIN_DESC")
 local canPurchaseVIP = true
 local extraTransferInfo = nil
+local maxSocietyMoney = 0
 
 local function RefreshCashierVIPItem()
-    vipItemEnabled = false
+    vipItemEnabled = true
     if PLAYER_IS_VIP then
         vipItemDescription = string.format(Translation.Get("CASHIER_VIP_PURCHASE_COMPLETE"),
             CommaValue(Config.CASHIER_VIP_PRICE), Config.PRICES_CURRENCY)
@@ -26,11 +27,12 @@ local function RefreshCashierVIPItem()
                                      string.format(" " .. Translation.Get("CASHIER_VIP_VALID_FOR"),
                     FormatTimestamp(PLAYER_CACHE.vipUntil - SERVER_TIMER))
         end
+        vipItemEnabled = false
     else
         if PLAYER_MONEY < Config.CASHIER_VIP_PRICE then
             vipItemDescription = Translation.Get("CASHIER_VIP_NO_MONEY")
-        else
             vipItemEnabled = true
+        else
             vipItemDescription = string.format(Translation.Get("CASHIER_VIP_MEMBERSHIP_DESC"),
                 CommaValue(Config.CASHIER_VIP_PRICE), Config.PRICES_CURRENCY)
         end
@@ -48,14 +50,15 @@ function ResetCashierUISelection(moneyLimit)
     menu_AcquireListIndex = 1
     menu_confirmedIndex = -1
     moneyOptions = CashierGetMoneyBalanceOptions(PLAYER_MONEY)
-    chipsOptions = CashierGetBalanceOptions(PLAYER_CHIPS)
+    chipsOptions = CashierGetBalanceOptions(PLAYER_CHIPS, maxSocietyMoney)
 
     withdrawBadge = moneyPercentage == 100 and RageUI.BadgeStyle.None or RageUI.BadgeStyle.Alert
     withdrawDesc = Translation.Get("CASHIER_TRADEIN_DESC")
     if moneyPercentage == 0 then
         withdrawDesc = Translation.Get("SOCIETY_CASHIER_MONEY_LIMIT_3")
     elseif moneyPercentage < 100 then
-        withdrawDesc = withdrawDesc .. " " .. string.format(Translation.Get("SOCIETY_CASHIER_MONEY_LIMIT"), moneyPercentage)
+        withdrawDesc = withdrawDesc .. " " ..
+                           string.format(Translation.Get("SOCIETY_CASHIER_MONEY_LIMIT"), moneyPercentage)
     end
 
     dailyBonusUsed = PLAYER_CACHE.lastDailyBonus and PLAYER_CACHE.lastDailyBonus == SERVER_DATE
@@ -64,8 +67,9 @@ function ResetCashierUISelection(moneyLimit)
 end
 
 -- show cashier ui
-function Cashier_ShowMenu(moneyLimit, vipAllowed)
+function Cashier_ShowMenu(moneyLimit, vipAllowed, maxMoney)
     canPurchaseVIP = vipAllowed
+    maxSocietyMoney = Config.EnableSociety and maxMoney or 2147483647
     ResetCashierUISelection(moneyLimit)
     InfoPanel_UpdateNotification(nil)
 
@@ -82,9 +86,9 @@ function Cashier_ShowMenu(moneyLimit, vipAllowed)
             RefreshCashierVIPItem()
             if not Config.UseOnlyMoney then
                 i:AddList(Translation.Get("CASHIER_ACQUIRE_CAPT"), moneyOptions, menu_AcquireListIndex,
-                    (menu_AcquireListIndex == menu_confirmedIndex and confirmMessage or Translation.Get("CASHIER_ACQUIRE_DESC")),
-                    {
-                        IsDisabled = moneyOptions[menu_AcquireListIndex] == 0
+                    (menu_AcquireListIndex == menu_confirmedIndex and confirmMessage or
+                        Translation.Get("CASHIER_ACQUIRE_DESC")), {
+                        IsDisabled = moneyOptions[menu_AcquireListIndex] == 0 or not CAN_INTERACT
                     }, function(Index, onSelected, onListChange)
                         if (onListChange) then
                             menu_AcquireListIndex = Index;
@@ -116,7 +120,8 @@ function Cashier_ShowMenu(moneyLimit, vipAllowed)
                     end)
                 i:AddList(Translation.Get("CASHIER_TRADEIN_CAPT"), chipsOptions, menu_TradeInListIndex,
                     (menu_TradeInListIndex == menu_confirmedIndex and confirmMessage or withdrawDesc), {
-                        IsDisabled = chipsOptions[menu_TradeInListIndex] == 0 or moneyPercentage <= 0,
+                        IsDisabled = chipsOptions[menu_TradeInListIndex] == 0 or moneyPercentage <= 0 or
+                            not CAN_INTERACT,
                         LeftBadge = withdrawBadge
                     }, function(Index, onSelected, onListChange)
                         if (onListChange) then
@@ -172,8 +177,45 @@ function Cashier_ShowMenu(moneyLimit, vipAllowed)
                 Cashier_RequestVIP()
             end)
 
+            if MONEYLOAD_TAKE then
+                i:AddSeparator("Mission Options")
+                i:AddButton(Translation.Get("MONEYLOAD_CASHIER_CAPTION"),
+                    string.format(Translation.Get("MONEYLOAD_CASHIER_DESC"), FormatPrice(MONEYLOAD_TAKE)), {
+                        IsDisabled = dailyBonusUsed,
+                        RightLabelColor = RageUI.ItemsColour.White,
+                        RightBadge = RageUI.BadgeStyle.Package
+                    }, nil, function()
+                        MONEYLOAD_TAKE = nil
+                        TriggerServerEvent("CasinoMission:MoneyLoad:DeliverMoney")
+                        Cashier_OnQuit()
+                        RemoveMissionBlip("cashier")
+                        -- give take animation
+                        Citizen.CreateThread(function()
+                            RequestAnimDictAndWait("mp_common")
+                            if HasAnimDictLoaded("mp_common") then
+                                TaskPlayAnim(PlayerPedId(), "mp_common", "givetake2_b", 3.0, 3.0, -1, 0, 0, true, true,
+                                    true)
+                                for k, v in pairs(CashierDatas) do
+                                    if v.enabled and v.ped then
+                                        PlayPedAmbientSpeechWithVoiceNative(v.ped, "WELCOME_BACK_WINNER",
+                                            "u_f_m_casinocash_01", "SPEECH_PARAMS_FORCE_NORMAL", 0)
+                                        TaskPlayAnim(v.ped, "mp_common", "givetake2_a", 3.0, 3.0, -1, 0, 0, true, true,
+                                            true)
+                                        break
+                                    end
+                                end
+                            end
+                        end)
+                    end)
+            end
+
             if exchangeRateDesc then
                 i:AddSeparator(exchangeRateDesc, RageUI.ItemsColour.Yellow)
+            end
+
+            if Config.EnableSociety and Config.CASHIER_SHOW_SOCIETY_BALANCE then
+                i:AddSeparator(string.format(Translation.AVAIABLE_SOCIETY_BALANCE, FormatPrice(maxMoney)),
+                    RageUI.ItemsColour.Yellow)
             end
 
         end, function(Panels)
@@ -279,8 +321,8 @@ end
 function GameStates_ShowMenu()
     InfoPanel_UpdateNotification(nil)
     CloseAllMenus()
-    local statesMenu = RageUI.CreateMenu("", Translation.Get("GAME_STATE_MENU_TITLE"), 25, 25, "shopui_title_casino_banner",
-        "shopui_title_casino_banner")
+    local statesMenu = RageUI.CreateMenu("", Translation.Get("GAME_STATE_MENU_TITLE"), 25, 25,
+        "shopui_title_casino_banner", "shopui_title_casino_banner")
 
     function RageUI.PoolMenus:CashierUI()
         statesMenu:IsVisible(function(i)
@@ -312,6 +354,37 @@ function GameStates_ShowMenu()
         end)
     end
     RageUI.Visible(statesMenu, true)
+end
+
+-- standalone: manage casino workers menu
+function Workers_ShowMenu(workers)
+    InfoPanel_UpdateNotification(nil)
+    CloseAllMenus()
+    
+    local gradeOptions = {"Unemployed", "Grade 0", "Grade 1", "Grade 2 (Boss)"}
+    local workersMenu = RageUI.CreateMenu("", "Casino Workers", 25, 25, "shopui_title_casino_banner",
+        "shopui_title_casino_banner")
+
+    function RageUI.PoolMenus:CashierUI()
+        workersMenu:IsVisible(function(i)
+            for k, v in pairs(workers) do
+                i:AddList(v.name, gradeOptions, v.actual, nil, {
+                    IsDisabled = false
+                }, function(Index, onSelected, onListChange)
+                    if (onListChange) then
+                        v.actual = Index
+                        local newGrade = v.actual - 2
+                        TriggerServerEvent("Casino:AdminEditWorkerGrade", v.playerId, newGrade)
+                    end
+                    if onSelected then
+                        CloseAllMenus()
+                    end
+                end)
+            end
+        end, function(Panels)
+        end)
+    end
+    RageUI.Visible(workersMenu, true)
 end
 
 function CloseAllMenus()

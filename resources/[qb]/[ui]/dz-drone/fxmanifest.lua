@@ -3,7 +3,7 @@ game 'gta5'
 
 author 'Danzo'
 description 'Advanced Drone - Made by Danzo - Discord: https://discord.gg/8nFqCR4xVC'
-version '1.0.4'
+version '1.1.0'
 
 shared_script "config.lua"
 
@@ -13,6 +13,7 @@ client_scripts {
 }
 
 server_scripts {
+	'@mysql-async/lib/MySQL.lua',
 	'@oxmysql/lib/MySQL.lua',
 	'server/server.lua',
 }

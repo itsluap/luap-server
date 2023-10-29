@@ -1,6 +1,7 @@
 if Framework.Active == 2 then
     ESX = {}
     GetCoreObject(Framework.Active, Framework.QB_CORE_RESOURCE_NAME, function(object)
+        ESX.QBCore = object
         QBCore = object
 
         ESX.RegisterUsableItem = function(itemName, callBack)
@@ -80,7 +81,7 @@ if Framework.Active == 2 then
             ---------
             xPlayer.setInventoryItem = function(item, count)
                 local qbItem = qbPlayer.Functions.GetItemByName(item) or {}
-                qbPlayer.Functions.RemoveItem(item, qbItem.amount or 0)
+                qbPlayer.Functions.RemoveItem(item, qbItem.amount or qbItem.count or 0)
                 qbPlayer.Functions.AddItem(item, count)
             end
             ---------
@@ -88,8 +89,8 @@ if Framework.Active == 2 then
                 local totalAmount = 0
                 for slot = 1, 50, 1 do
                     local i = qbPlayer.PlayerData.items[slot]
-                    if i and i.name == item then
-                        totalAmount = totalAmount + i.amount
+                    if i and i.name == item and (i.amount or i.count) then
+                        totalAmount = totalAmount + (i.amount or i.count)
                     end
                 end
                 return totalAmount
@@ -101,12 +102,12 @@ if Framework.Active == 2 then
                 local totalAmount = 0
                 for slot = 1, 50, 1 do
                     local i = qbPlayer.PlayerData.items[slot]
-                    if i and i.name == item then
+                    if i and i.name == item and (i.amount or i.count) then
                         if not firstSlot then
                             firstSlot = slot
                         end
-                        totalAmount = totalAmount + i.amount
-                        qbPlayer.Functions.RemoveItem(item, i.amount, slot)
+                        totalAmount = totalAmount + (i.amount or i.count)
+                        qbPlayer.Functions.RemoveItem(item, i.amount or i.count, slot)
                     end
                 end
                 totalAmount = totalAmount + append
@@ -157,7 +158,7 @@ if Framework.Active == 2 then
 
                 local ItemInfo = {
                     name = itemName,
-                    count = item.amount or 0,
+                    count = item.amount or item.count or 0,
                     label = item.label or "none",
                     weight = item.weight or 0,
                     usable = item.useable or false,

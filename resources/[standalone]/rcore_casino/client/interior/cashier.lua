@@ -1,6 +1,7 @@
 -- cashier instances
 local cashiers = {}
 local history = {}
+
 -- session
 local s_cashierCoords = nil
 local s_myCashier = nil
@@ -21,8 +22,11 @@ local function GetCashierFromCoords(coords)
 end
 
 -- generate list of balances (rageui)
-function CashierGetBalanceOptions(balance)
+function CashierGetBalanceOptions(balance, max)
     DebugStart("CashierGetBalanceOptions")
+    if max < balance then
+        balance = max
+    end
     local options = {}
     local c = 0
     local x = 0
@@ -106,14 +110,14 @@ end
 -- get chips, pay with money
 function Cashier_AcquireChips(amount)
     DebugStart("Cashier_AcquireChips")
-    BlockPlayerInteraction(500)
+    BlockPlayerInteraction(1500)
     TriggerServerEvent("Casino:AcquireChips", amount)
 end
 
 -- get money, pay with chips
 function Cashier_TradeInChips(amount)
     DebugStart("Cashier_TradeInChips")
-    BlockPlayerInteraction(500)
+    BlockPlayerInteraction(1500)
     TriggerServerEvent("Casino:TradeInChips", amount)
 end
 
@@ -201,6 +205,7 @@ function Cashier_Load()
             cashier.playerId = -1
             cashier.coords = coords
             cashier.ped = CreatePed(2, model, coords, head, false, false)
+            o.ped = cashier.ped
             SetPedBrave(cashier.ped)
             table.insert(cashiers, cashier)
         end
@@ -209,7 +214,7 @@ function Cashier_Load()
 end
 
 RegisterNetEvent("Cashier:Use")
-AddEventHandler("Cashier:Use", function(coords, playerId, greetings, moneyLimit, canPurchaseVIP)
+AddEventHandler("Cashier:Use", function(coords, playerId, greetings, moneyLimit, canPurchaseVIP, maxMoney)
     local cashier = GetCashierFromCoords(coords)
     if not cashier then
         return
@@ -217,9 +222,10 @@ AddEventHandler("Cashier:Use", function(coords, playerId, greetings, moneyLimit,
     cashier.playerId = playerId
     PlayPedAmbientSpeechWithVoiceNative(cashier.ped, greetings, "u_f_m_casinocash_01", "SPEECH_PARAMS_FORCE_NORMAL", 0)
     if playerId == GetMyPlayerId() then
+        UnblockPlayerInteraction()
         SetInventoryBusy(true)
         LAST_STARTED_GAME_TYPE = "cashier"
-        Cashier_ShowMenu(moneyLimit, canPurchaseVIP)
+        Cashier_ShowMenu(moneyLimit, canPurchaseVIP, maxMoney)
         s_lastMoneyLimit = moneyLimit
         s_cashierCoords = coords
         s_myCashier = cashier
@@ -286,9 +292,8 @@ function Cashier_OnQuit()
         if cashier then
             cashier.playerId = -1
         end
-    else
-        TriggerServerEvent("Cashier:Quit")
     end
+    TriggerServerEvent("Cashier:Quit")
     CloseAllMenus()
     CAN_MOVE = true
     SetInventoryBusy(false)

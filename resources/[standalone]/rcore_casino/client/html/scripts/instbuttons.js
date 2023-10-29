@@ -91,17 +91,21 @@ window.addEventListener('message', (event) => {
     if (action == "drawInstButtons") {
         container.innerHTML = "";
         var buttons = event.data.buttons;
-       
+        
         inputId = event.data.isGamepad == true ? 2 : 0;
 
         container.style.display = (buttons && buttons.length > 0 ? "flex" : "none");
 
-        if(buttons)
-        {
+        if (buttons) {
             for (let index = buttons.length - 1; index >= 0; index--) {
                 const el = buttons[index];
                 AppendKey(el.key, el.title, el.extraKey)
             }
         }
+    }
+
+    if (action == "chipshud") {
+        document.getElementById("nuichipsvalue").innerHTML = event.data.chips;
+        document.getElementById("nuichips").style.display = event.data.chips != -1 ? "block" : "none";
     }
 })

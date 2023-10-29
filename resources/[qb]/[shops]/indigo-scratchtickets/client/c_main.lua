@@ -1,10 +1,10 @@
 local cooldown = 0
 
-RegisterNetEvent("dr-scratching:isActiveCooldown", function()
-	TriggerServerEvent("dr-scratching:handler", cooldown > 0 and true or false, cooldown)
+RegisterNetEvent("indigo-scratchtickets:isActiveCooldown", function()
+	TriggerServerEvent("indigo-scratchtickets:handler", cooldown > 0 and true or false, cooldown)
 end)
 
-RegisterNetEvent("dr-scratching:setCooldown", function()
+RegisterNetEvent("indigo-scratchtickets:setCooldown", function()
   cooldown = Config.ScratchCooldownInSeconds
 	CreateThread(function()
 		while (cooldown ~= 0) do
@@ -14,18 +14,18 @@ RegisterNetEvent("dr-scratching:setCooldown", function()
 	end)
 end)
 
-RegisterNetEvent("dr-scratching:startScratchingEmote", function()
+RegisterNetEvent("indigo-scratchtickets:startScratchingEmote", function()
   if not IsPedInAnyVehicle(PlayerPedId()) then
 	  TaskStartScenarioInPlace(PlayerPedId(), "PROP_HUMAN_PARKING_METER", 0, true)
   end
 end)
 
-RegisterNetEvent("dr-scratching:stopScratchingEmote", function()
+RegisterNetEvent("indigo-scratchtickets:stopScratchingEmote", function()
   if not IsPedInAnyVehicle(PlayerPedId()) then
 	  ClearPedTasksImmediately(PlayerPedId())
   end
 end)
 
 RegisterNUICallback('deposit', function(data)
-	TriggerServerEvent('dr-scratching:deposit', data.key, data.price, data.amount, data.type)
+	TriggerServerEvent('indigo-scratchtickets:deposit', data.key, data.price, data.amount, data.type)
 end)

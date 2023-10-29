@@ -3,7 +3,7 @@ if Config.Framework == "qbcore" then
 	QBCore = exports[Config.QBCoreName]:GetCoreObject()
 elseif Config.Framework == "esx" then
 	if Config.IsESXLegacy then
-		ESX = exports['es_extended']:getSharedObject()
+		ESX = exports[Config.ESXLegacyName]:getSharedObject()
 	else
 		ESX = nil
 		CreateThread(function()
@@ -39,10 +39,14 @@ function Notify(msg, type)
 	end
 end
 
+RegisterNetEvent("dz-drone:client:Notify", function(msg, type)
+	Notify(msg, type)
+end)
+
 RegisterNetEvent("dz-drone:client:InitiateDrone", function()
 	InitiateDrone({
 		speed		= 2,			-- Drone movement speed - usage: 2.5 / 15 / 100
-		range		= 1000,			-- Drone max range length before loses signal - usage: 100 / 350 / 1000
+		range		= 350,			-- Drone max range length before loses signal - usage: 100 / 350 / 1000
 		sphere		= true,			-- Drone max range zone red walls sphere - usage: true / false
 		health		= 100,			-- Drone health value - usage: 50 / 100 / 250 or "false" if you don't want the drone to have health (invincible)
 		explode		= false,		-- Drone explode when its health reaches 0 - usage: true / false
@@ -51,6 +55,7 @@ RegisterNetEvent("dz-drone:client:InitiateDrone", function()
 		spotlight	= false,		-- Drone has spotlight - usage: true / false
 		sound		= true,			-- Drone make sound - usage: true / false
 		scanner		= false,		-- Using players scanner - usage: true / false
+		release		= false,		-- Release Drone option - keep the drone running in air, disconnect from it the reconnect - usage: true / false
 		item		= 'drone'		-- Inventory item name, used to return the item name after the drone is stopped
 	})
 end)
@@ -67,6 +72,7 @@ RegisterNetEvent("dz-drone:client:InitiateDroneLSPD", function()
 		spotlight	= true,			-- Drone has spotlight - usage: true / false
 		sound		= true,			-- Drone make sound - usage: true / false
 		scanner		= true,			-- Using players scanner - usage: true / false
+		release		= true,			-- Release Drone option - keep the drone running in air, disconnect from it the reconnect - usage: true / false
 		item		= 'drone_lspd'	-- Inventory item name, used to return the item name after the drone is stopped
 	})
 end)
@@ -103,13 +109,31 @@ RegisterCommand('stopdrone', function(source,args)
 	StopDrone() -- You can use this function to stop the drone. for example when player die
 end)
 
+CreateThread(function()
+	while true do
+		Wait(500)
+		if (Drones ~= nil) and (Drones.DroneObj ~= nil) and (DoesEntityExist(Drones.DroneObj)) then
+			local IsTouchingEntity = false
+			for k,v in pairs(GetActivePlayers()) do
+				local Ped = GetPlayerPed(v)
+				if (IsEntityTouchingEntity(Drones.DroneObj, Ped)) and (Ped ~= PlayerPedId()) then
+					IsTouchingEntity = true
+				end
+			end
+			if IsTouchingEntity then
+				SetEntityHealth(Drones.DroneObj, GetEntityHealth(Drones.DroneObj) - 5)
+			end
+		end
+	end
+end)
+
 -------------------------------------------------------------------------------------
 ----------------------------------- Test Command ------------------------------------
 --------------- You can comment it or remove it if you use UsableItem ---------------
 
 RegisterCommand('drone', function(source, args)
 	local Argument = tonumber(args[1])
-	if args[1] == nil or Argument == 1 then	-- Command: /drone or /drone 1
+	if (Argument == nil) or (Argument == 1) then	-- Command: /drone or /drone 1
 		InitiateDrone({
 			speed		= 2,		-- Drone movement speed - usage: 2.5 / 15 / 100
 			range		= 350,		-- Drone max range length before loses signal - usage: 100 / 350 / 1000
@@ -121,8 +145,9 @@ RegisterCommand('drone', function(source, args)
 			spotlight	= false,	-- Drone has spotlight - usage: true / false
 			sound		= true,		-- Drone make sound - usage: true / false
 			scanner		= false,	-- Using players scanner - usage: true / false
+			release		= false,	-- Release Drone option - keep the drone running in air, disconnect from it the reconnect - usage: true / false
 		})
-	elseif Argument == 2 then		-- Command: /drone 2
+	elseif (Argument == 2) then		-- Command: /drone 2
 		InitiateDrone({
 			speed		= 4,		-- Drone movement speed - usage: 2.5 / 15 / 100
 			range		= 600,		-- Drone max range length before loses signal - usage: 100 / 350 / 1000
@@ -134,6 +159,7 @@ RegisterCommand('drone', function(source, args)
 			spotlight	= true,		-- Drone has spotlight - usage: true / false
 			sound		= true,		-- Drone make sound - usage: true / false
 			scanner		= true,		-- Using players scanner - usage: true / false
+			release		= true,		-- Release Drone option - keep the drone running in air, disconnect from it the reconnect - usage: true / false
 		})
 	end
 end)
