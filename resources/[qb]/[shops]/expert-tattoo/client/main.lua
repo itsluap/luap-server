@@ -492,7 +492,7 @@ CreateThread(function()
             for k, v in pairs(Config.Shops) do
                 local dist = #(pos - v)
                 if dist < 15 then
-					DrawMarker(2, v, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.4, 0.4, 0.2, 255, 255, 255, 255, 0, 0, 0, 1, 0, 0, 0)
+					-- DrawMarker(2, v, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.4, 0.4, 0.2, 255, 255, 255, 255, 0, 0, 0, 1, 0, 0, 0)
 					if dist < 2 then
 						-- DrawText3Ds(v[1], v[2], v[3], '~g~E~w~ - Tattoo')
 						if IsControlJustPressed(0, 38) then -- E
