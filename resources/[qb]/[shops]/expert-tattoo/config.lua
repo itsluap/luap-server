@@ -2,7 +2,7 @@ Config = {}
 
 Config.Core = 'QBCore'
 Config.CoreObject = 'qb-core'
-Config.TriggerName = 'qb-'
+Config.TriggerName = 'indigo-'
 Config.ScriptName = 'tattoo'
 
 Config.AllTattooList = json.decode(LoadResourceFile(GetCurrentResourceName(), 'tattoos.json'))
