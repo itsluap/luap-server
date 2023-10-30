@@ -48,7 +48,7 @@ ensure cfx-gabz-scenarios       #*THIS RESOURCE IS OPTIONAL, IT REMOVES CONFLICT
 ensure cfx-gabz-pdprops         #*THIS RESOURCE IS REQUIRED IF YOU USE ANY PD. IT MUST BE START BEFORE PD'S*
 ensure cfx-gabz-247             #*THIS RESOURCE IS MANDATORY IF YOU USE [CFX-GABZ-OTTOS]*
 ensure cfx-gabz-altruists
-ensure cfx-gabz-ammunation
+#ensure cfx-gabz-ammunation
 ensure cfx-gabz-arcade
 ensure cfx-gabz-atom
 ensure cfx-gabz-aztecas
