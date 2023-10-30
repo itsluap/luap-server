@@ -48,3 +48,4 @@ server_scripts {
     'resource/**/server/*.lua',
 }
 
+export "cache"

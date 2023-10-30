@@ -1,0 +1,31 @@
+Police Department (PD) Commands:
+
+/spikestrip - Places a spike strip on the ground.
+/pobject [pion/barier/schotten/tent/light/delete] - Places or deletes an object on/from the ground.
+/cuff - Cuffs/Uncuffs a nearby player.
+/escort - Escorts a nearby player.
+/callsign [text] - Sets the player a callsign on the database.
+/clearcasings - Clears nearby bullet casings.
+/jail [id] [time] - Sends a player to jail.
+/unjail [id] - Takes the player out of jail.
+/clearblood - Clears nearby blood drops.
+/seizecash - Seizes nearby player's cash (puts it in a money bag).
+/sc - Puts a soft cuff on a nearby player.
+/cam [cam] - Shows the selected security cam display.
+/flagplate [plate] [reason] - Flags the vehicle.
+/unflagplate [plate] - Removes the flag of a vehicle.
+/plateinfo [plate] - Displays if a vehicle is marked or not.
+/depot [price] - Depots a nearby vehicle. Players can take it after paying the cost.
+/impound - Impounds a nearby vehicle permanently.
+/paytow [id] - Makes payment to the tow driver.
+/paylawyer [id] - Makes payment to the lawyer.
+/radar - Toggles the police radar.
+/911 [message] - Sends a report to emergency services.
+/911r [id] - Used to respond to emergency alerts.
+/911a [message] - Sends an anonymous report to emergency services (gives no location).
+/anklet - Places an anklet (tracking device) on a nearby player.
+/removeanklet [citizenid] - Removes the anklet from a player.
+/ebutton - Used to respond to an emergency alert.
+/takedrivinglicense - Takes the driving license from a nearby player.
+/takedna [id] - Takes a DNA sample from the player.
+
