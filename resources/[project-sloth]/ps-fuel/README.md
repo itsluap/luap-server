@@ -6,7 +6,7 @@ A NoPixel inspired functionality fuel system that uses PolyZones that target spe
 ![Project Sloth Buttons](https://user-images.githubusercontent.com/91661118/169454003-488c8994-eec9-4b92-9b0c-f3a675be7d1b.png)
 
 ### Dependencies:
-* [qb-target](https://github.com/BerkieBb/qb-target)
+* [indigo-target](https://github.com/BerkieBb/indigo-target)
 * [indigo-menu](https://github.com/qbcore-framework/indigo-menu)
 * [qb-input](https://github.com/qbcore-framework/qb-input)
 * [polyzone](https://github.com/qbcore-framework/PolyZone)
