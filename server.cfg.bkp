@@ -41,6 +41,8 @@ ensure chat
 ensure spawnmanager
 ensure sessionmanager
 ensure hardcap
+ensure ox_lib
+ensure illenium-appearance
 
 # QBCore & Extra stuff
 ensure cfx-gabz-mapdata         #*THIS RESOURCE IS REQUIRED FOR ALL RESOURCES TO WORK. IT MUST BE STARTED FIRST*
