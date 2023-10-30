@@ -37,7 +37,6 @@ files {
 dependencies {
     'qb-core',
     'indigo-interior',
-    'indigo-clothing',
     'indigo-weathersync'
 }
 
