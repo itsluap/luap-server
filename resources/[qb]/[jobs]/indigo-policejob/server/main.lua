@@ -485,7 +485,7 @@ QBCore.Functions.CreateUseableItem("handcuffs", function(source)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     if not Player.Functions.GetItemByName("handcuffs") then return end
-    TriggerClientEvent("police:client:CuffPlayerSoft", src)
+    TriggerClientEvent("police:client:CuffPlayerHard", src)
 end)
 
 QBCore.Functions.CreateUseableItem("moneybag", function(source, item)
