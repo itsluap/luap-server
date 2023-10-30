@@ -20,9 +20,9 @@ RegisterNetEvent('police:client:SetTracker', function(bool)
             ["accessory"] = { item = 13, texture = 0}
         }
 
-        TriggerEvent('indigo-clothing:client:loadOutfit', trackerClothingData)
+        TriggerEvent('qb-clothing:client:loadOutfit', trackerClothingData)
     else
-        TriggerEvent('indigo-clothing:client:loadOutfit', trackerClothingData)
+        TriggerEvent('qb-clothing:client:loadOutfit', trackerClothingData)
     end
 end)
 

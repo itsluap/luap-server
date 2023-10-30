@@ -27,7 +27,7 @@ Real Estate for qb-core Framework :house_with_garden:
 - [qb-multicharacter](https://github.com/qbcore-framework/qb-multicharacter) - Checking if player is inside after character chosen (You need to edit the lines if you don't use this)
 - [indigo-garages](https://github.com/qbcore-framework/indigo-garages) - House Garage
 - [indigo-interior](https://github.com/qbcore-framework/indigo-interior) - Necessary for house interiors
-- [indigo-clothing](https://github.com/qbcore-framework/indigo-clothing) - Outfits
+- [qb-clothing](https://github.com/qbcore-framework/qb-clothing) - Outfits
 - [indigo-weathersync](https://github.com/qbcore-framework/indigo-weathersync) - Desync weather inside house
 - [indigo-weed](https://github.com/qbcore-framework/indigo-weed) - Weed plant
 - [indigo-skillbar](https://github.com/qbcore-framework/indigo-skillbar) - Skills
@@ -96,7 +96,7 @@ ensure indigo-phone
 ensure qb-multicharacter
 ensure indigo-garages
 ensure indigo-interior
-ensure indigo-clothing
+ensure qb-clothing
 ensure indigo-weathersync
 ensure indigo-weed
 ensure indigo-skillbar

@@ -6,8 +6,8 @@
 3.  Enjoy.
 
 # Clothing
-Default support for 2 clothing stores: indigo-clothing & raid-clothing.
--   If youre using indigo-clothing make sure to set it to "qb" even if your core name is different.
+Default support for 2 clothing stores: qb-clothing & raid-clothing.
+-   If youre using qb-clothing make sure to set it to "qb" even if your core name is different.
 -   If youre using raid-clothing, make sure to add the following function to your client.
     [1] Paste the following code to the bottom of your "raid-clothing/client/client.lua":
 

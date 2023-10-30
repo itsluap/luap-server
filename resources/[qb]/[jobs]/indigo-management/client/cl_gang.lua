@@ -47,7 +47,7 @@ RegisterNetEvent('qb-gangmenu:client:Stash', function()
 end)
 
 RegisterNetEvent('qb-gangmenu:client:Warbobe', function()
-    TriggerEvent('indigo-clothing:client:openOutfitMenu')
+    TriggerEvent('qb-clothing:client:openOutfitMenu')
 end)
 
 local function AddGangMenuItem(data, id)

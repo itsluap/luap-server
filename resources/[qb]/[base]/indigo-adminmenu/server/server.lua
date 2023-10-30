@@ -153,7 +153,7 @@ RegisterNetEvent('qb-admin:server:inventory', function(player)
 end)
 
 RegisterNetEvent('qb-admin:server:cloth', function(player)
-    TriggerClientEvent('indigo-clothing:client:openMenu', player.id)
+    TriggerClientEvent('qb-clothing:client:openMenu', player.id)
 end)
 
 RegisterNetEvent('qb-admin:server:setPermissions', function(targetId, group)

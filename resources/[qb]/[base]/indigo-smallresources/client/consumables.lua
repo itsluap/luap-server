@@ -538,7 +538,7 @@ RegisterNetEvent('consumables:client:UseParachute', function()
                 ["bag"]   = { item = 7, texture = 0},  -- Adding Parachute Clothing
             }
         }
-        TriggerEvent('indigo-clothing:client:loadOutfit', ParachuteData)
+        TriggerEvent('qb-clothing:client:loadOutfit', ParachuteData)
         ParachuteEquiped = true
         TaskPlayAnim(ped, "clothingshirt", "exit", 8.0, 1.0, -1, 49, 0, false, false, false)
     end)
@@ -560,7 +560,7 @@ RegisterNetEvent('consumables:client:ResetParachute', function()
                     ["bag"] = { item = 0, texture = 0} -- Removing Parachute Clothing
                 }
             }
-            TriggerEvent('indigo-clothing:client:loadOutfit', ParachuteRemoveData)
+            TriggerEvent('qb-clothing:client:loadOutfit', ParachuteRemoveData)
             TaskPlayAnim(ped, "clothingshirt", "exit", 8.0, 1.0, -1, 49, 0, false, false, false)
             TriggerServerEvent("qb-smallpenis:server:AddParachute")
             ParachuteEquiped = false

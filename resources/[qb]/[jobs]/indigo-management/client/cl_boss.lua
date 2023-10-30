@@ -197,7 +197,7 @@ RegisterNetEvent('qb-bossmenu:client:Stash', function()
 end)
 
 RegisterNetEvent('qb-bossmenu:client:Wardrobe', function()
-    TriggerEvent('indigo-clothing:client:openOutfitMenu')
+    TriggerEvent('qb-clothing:client:openOutfitMenu')
 end)
 
 RegisterNetEvent('qb-bossmenu:client:HireMenu', function()

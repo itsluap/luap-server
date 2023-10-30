@@ -58,7 +58,7 @@ AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
                 }
             }
         }
-        TriggerEvent('indigo-clothing:client:loadOutfit', trackerClothingData)
+        TriggerEvent('qb-clothing:client:loadOutfit', trackerClothingData)
     else
         local trackerClothingData = {
             outfitData = {
@@ -68,7 +68,7 @@ AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
                 }
             }
         }
-        TriggerEvent('indigo-clothing:client:loadOutfit', trackerClothingData)
+        TriggerEvent('qb-clothing:client:loadOutfit', trackerClothingData)
     end
 
     if not GlobalState.isLEO then
