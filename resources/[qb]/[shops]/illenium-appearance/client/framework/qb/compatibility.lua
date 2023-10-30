@@ -4,7 +4,7 @@ local client = client
 
 -- Backwards Compatible Events
 
-RegisterNetEvent("indigo-clothing:client:openMenu", function()
+RegisterNetEvent("qb-clothing:client:openMenu", function()
     local config = GetDefaultConfig()
     config.ped = true
     config.headBlend = true
@@ -16,11 +16,11 @@ RegisterNetEvent("indigo-clothing:client:openMenu", function()
     OpenShop(config, true, "all")
 end)
 
-RegisterNetEvent("indigo-clothing:client:openOutfitMenu", function()
+RegisterNetEvent("qb-clothing:client:openOutfitMenu", function()
     OpenMenu(nil, "outfit")
 end)
 
-RegisterNetEvent("indigo-clothing:client:loadOutfit", LoadJobOutfit)
+RegisterNetEvent("qb-clothing:client:loadOutfit", LoadJobOutfit)
 
 RegisterNetEvent("qb-multicharacter:client:chooseChar", function()
     client.setPedTattoos(cache.ped, {})
