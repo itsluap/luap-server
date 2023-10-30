@@ -1,6 +1,6 @@
 QBCore = exports['qb-core']:GetCoreObject()
 
-lib.addCommand('adminmenu', {
+lib.addCommand('admin', {
     help = 'Open the admin menu',
     restricted = 'qbcore.mod'
 }, function(source)
