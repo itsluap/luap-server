@@ -156,5 +156,3 @@ add_ace resource.ox_lib command.add_ace allow
 add_ace resource.ox_lib command.remove_ace allow
 add_ace resource.ox_lib command.add_principal allow
 add_ace resource.ox_lib command.remove_principal allow
-
-setr illenium-appearance:locale "en"
