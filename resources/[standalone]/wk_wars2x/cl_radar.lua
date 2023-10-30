@@ -30,6 +30,8 @@
 
 ---------------------------------------------------------------------------------------]]--
 
+QBCore = exports['qb-core']:GetCoreObject()
+
 -- Cache some of the main Lua functions and libraries
 local next = next
 local dot = dot

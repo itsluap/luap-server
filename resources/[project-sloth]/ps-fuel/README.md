@@ -10,11 +10,11 @@ A NoPixel inspired functionality fuel system that uses PolyZones that target spe
 <<<<<<< HEAD
 * [indigo-target](https://github.com/BerkieBb/indigo-target)
 =======
-* [qb-target](https://github.com/BerkieBb/qb-target)
+* [indigo-target](https://github.com/BerkieBb/indigo-target)
 >>>>>>> parent of 1dbf3d257 (.)
 * [indigo-menu](https://github.com/qbcore-framework/indigo-menu)
 =======
-* [qb-target](https://github.com/BerkieBb/qb-target)
+* [indigo-target](https://github.com/BerkieBb/indigo-target)
 * [indigo-menu](https://github.com/qbcore-framework/indigo-menu)
 >>>>>>> parent of cd8b9a0ee (.)
 * [qb-input](https://github.com/qbcore-framework/qb-input)
