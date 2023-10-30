@@ -3563,6 +3563,18 @@ QBShared.Vehicles = {
 
 	------ END OF PDM ------------
 
+	-- PD CARS --
+	
+	['poldemonrb'] = {
+        ['name'] = 'Police Demon',
+        ['brand'] = 'Dodge',
+        ['model'] = 'poldemonrb',
+        ['price'] = 1000000,
+        ['category'] = 'muscle',
+        ['hash'] = `poldemonrb`,
+        ['shop'] = 'luap',
+    },
+
 	-- LUAP VEHICELS --
 	['chr20'] = {
         ['name'] = '2020 Hellcat',
