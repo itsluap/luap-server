@@ -1,40 +1,42 @@
 Config = Config or {}
-Config.UseMethCooldown = true -- true/false
+
+Config.Inventory = 'qb' -- qb/lj , ox = ox_inventory
+Config.UseMethCooldown = false -- true/false
 Config.CoolDown = 10 --- Cooldown until can start next run default is 10 minutes
 Config.CopNeeded = 0 -- Cops needed to do the runs
-Config.PoliceJobName = 'police', 'sheriff', 'trooper'
+Config.PoliceJobName = 'police'
 Config.Dispatch = 'ps-dispatch'  -- ps-dispatch / cd-dispatch  (type of dispatch you use)
 Config.PedHash = `g_m_y_lost_02` -- Ped model of the starting ped
 Config.PedPos = vector4(923.02, -1304.02, 26.07, 215.21) -- Starting ped location
-Config.Notify = 'phone' -- can be phone/qb (this is what notifications you want to use for the run)
+Config.PhoneItemName = 'phone'
 Config.Phone = 'qb' -- qb / gks / qs
-Config.MinRep = 5 -- Rep given at the end ( this is a random between Config.MinRep and Config.MaxRep)
-Config.MaxRep = 8
+Config.MinRep = 3 -- Rep given at the end ( this is a random between Config.MinRep and Config.MaxRep)
+Config.MaxRep = 5
 Config.LevelRep = 100-- Amount of reputation needed to get higher rewards etc
 Config.StartItem = 'meth'-- Item needed to start the runs
-Config.UseItemsStacked = true -- have the items you put in the start ped inventory stackeds
+Config.UseItemsStacked = false -- have the items you put in the start ped inventory stackeds
 Config.Caseitem = 'methcase'
-Config.RequiredAmount = 5 -- Amount of the starting item you need
+Config.RequiredAmount = 20 -- Amount of the starting item you need
 ----Low Rep Settings----
 Config.LowRepItem = 'floor-cleaner'
 Config.MinMethPayoutLowRep = 25000
 Config.MaxMethPayoutLowRep = 50000
-Config.LowRepPedHealth = 175
-Config.LowRepPedArmor = 50
+Config.LowRepPedHealth = 200
+Config.LowRepPedArmor = 100
 Config.LowRepPedAccuracy = 45
 Config.LowRepPedWeapon = `WEAPON_PISTOL`
 ----End of Low Rep Settings----
 
 ----High Rep Settings----
 Config.HighRepItem = 'methcontainer'
-Config.MinMethPayoutHighRep = 100000
-Config.MaxMethPayoutHighRep = 250000
+Config.MinMethPayoutHighRep = 250000
+Config.MaxMethPayoutHighRep = 500000
 Config.HighRepPedHealth = 200
-Config.HighRepPedArmor = 75
+Config.HighRepPedArmor = 350
 Config.HighRepPedAccuracy = 80
 Config.HighRepPedWeapon = `WEAPON_SMG`
 ----End of Hugh Rep Settings----
-Config.Items = math.random(4, 6) -- Amount of items given when you pickup from the ped
+Config.ItemAmount = math.random(4, 6) -- Amount of items given when you pickup from the ped
 Config.LocationTimer = 3 -- Timer till you get a drop off location default is 3 minutes
 
 ----Meth Vehicle Settings----
@@ -52,7 +54,8 @@ Config.VehicleNames = {
     `kuruma2`,
     `cog552`,
     `paragon2`,
-    `schafter6`
+    `schafter6`,
+    `xls2`
 }
 ----End of Meth Vehicle Settings----
 
@@ -101,12 +104,18 @@ Config.PickupLocations = {
 
 ----DropLocation Settings----
 Config.DropLocations = {
-    vector4(125.69, 6644.13, 31.8, 54.33),
-    vector4(1522.59, 6329.12, 24.61, 332.71),
-    vector4(2019.89, 4984.57, 41.22, 132.23),
-    vector4(3806.86, 4447.82, 3.94, 47.37),
-    vector4(2784.07, -710.41, 4.91, 108.03),
-    vector4(1252.13, -2567.04, 42.72, 292.49),
+    vector4(2007.69, 4986.01, 41.38, 33.12),
+    vector4(-1131.57, 2694.76, 18.8, 324.08),
+    vector4(-1168.62, -2021.93, 13.16, 322.51),
+    vector4(-907.65, -1514.36, 5.02, 19.19),
+    vector4(703.53, -1143.09, 23.61, 270.95),
+    vector4(1597.51, -1709.84, 88.13, 298.06),
+    vector4(1132.67, -2339.57, 30.68, 261.66),
+    vector4(471.76, -1873.69, 26.87, 119.23),
+    vector4(-563.09, 311.26, 84.42, 177.92),
+    vector4(250.1, 379.32, 105.53, 250.64),
+    vector4(1129.49, -443.92, 66.49, 341.04),
+    vector4(962.36, -1155.93, 25.59, 92.14)
 }
 ----End of Drop Location Settings----
 

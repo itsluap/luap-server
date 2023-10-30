@@ -22,7 +22,7 @@ lua54 'yes'
 
 escrow_ignore { 
     'client/*.lua',
-    'server/*.lua',
+    'server/server.lua',
     'config.lua',
 }
 dependency '/assetpacks'

@@ -1,18 +1,26 @@
 # Dependencies
 - QBCore (latest)
-- indigo-target https://github.com/qbcore-framework/indigo-target
+- qb-target https://github.com/qbcore-framework/qb-target
 - polyzone
-- indigo-phone
+- ps-zones https://github.com/Project-Sloth/ps-zones
 - qb-inventory/lj-inventory
 
 ------------------------------------------------------------------------------------
 
+# Go to [qb] > qb-smallresources > server > logs.lua and  the following snippet in the local Webhooks
+
+```lua
+['methruns'] = 'put your discord channel webhook here',
+```
+
+* If you are unsure how to get a webhook this link can help you https://docs.gitlab.com/ee/user/project/integrations/discord_notifications.html
+
 * Add the images from the images file into your inventory html images
 * Add the below lines into your qb-core>shared>item.lua at the bottom
 ```lua
-	["methcontainer"] 			     = {["name"] = "methcontainer",				    ["label"] = "Meth Container",			   	["weight"] = 9500,    	["type"] = "item",		["image"] = "methcontainer.png",         ["unique"] = true,		["useable"] = false,	    ["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Container full of white powder"},
+	["methcontainer"] 			     = {["name"] = "methcontainer",				    ["label"] = "Meth Container",			   	["weight"] = 9500,    	["type"] = "item",		["image"] = "methcontainer.png",         ["unique"] = false,		["useable"] = false,	    ["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Container full of white powder"},
 	["methcase"] 			     = {["name"] = "methcase",				    ["label"] = "Shiny Case",			   	["weight"] = 4500,    	["type"] = "item",		["image"] = "securitycase.png",         ["unique"] = true,		["useable"] = true,	    ["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Briefcase full of money"},
-    	["floor-cleaner"] 			     = {["name"] = "floor-cleaner",				    ["label"] = "Floor Cleaner",			["weight"] = 1000,    	["type"] = "item",		["image"] = "floorcleaner.png",         	["unique"] = true,		["useable"] = false,	    ["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "",								["created"] = nil, 		["decay"] = 0.0	},
+    	["floor-cleaner"] 			     = {["name"] = "floor-cleaner",				    ["label"] = "Floor Cleaner",			["weight"] = 1000,    	["type"] = "item",		["image"] = "floorcleaner.png",         	["unique"] = false,		["useable"] = false,	    ["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "",								["created"] = nil, 		["decay"] = 0.0	},
 
 ```
 
