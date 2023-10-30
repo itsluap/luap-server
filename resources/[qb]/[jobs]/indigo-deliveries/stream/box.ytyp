@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<CMapTypes>
+  <extensions/>
+  <archetypes>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="40.00000000"/>
+      <flags value="537001984"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.21537200" y="-0.17245500" z="-0.17417400"/>
+      <bbMax x="0.21537200" y="0.17245500" z="0.17417400"/>
+      <bsCentre x="0.00000000" y="0.00000000" z="0.00000000"/>
+      <bsRadius value="0.32628580"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>mediumdelivery_box</name>
+      <textureDictionary>mediumdelivery_box</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mediumdelivery_box</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>mediumdelivery_box</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="40.00000000"/>
+      <flags value="537001984"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.18280200" y="-0.26590400" z="-0.22540800"/>
+      <bbMax x="0.18280200" y="0.26590400" z="0.22540800"/>
+      <bsCentre x="0.00000000" y="0.00000000" z="0.00000000"/>
+      <bsRadius value="0.39361180"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>smalldelivery_box</name>
+      <textureDictionary>smalldelivery_box</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>smalldelivery_box</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>smalldelivery_box</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="40.00000000"/>
+      <flags value="537001984"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.30079400" y="-0.30079400" z="0.00000000"/>
+      <bbMax x="0.30079400" y="0.30079400" z="0.90238100"/>
+      <bsCentre x="0.00000000" y="0.00000000" z="0.45119050"/>
+      <bsRadius value="0.62010230"/>
+      <hdTextureDist value="20.00000000"/>
+      <name>largedelivery_box</name>
+      <textureDictionary>largedelivery_box</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>largedelivery_box</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>largedelivery_box</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="40.00000000"/>
+      <flags value="537001984"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.21537200" y="-0.17245500" z="-0.17417400"/>
+      <bbMax x="0.21537200" y="0.17245500" z="0.17417400"/>
+      <bsCentre x="0.00000000" y="0.00000000" z="0.00000000"/>
+      <bsRadius value="0.32628580"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>largedelivery_box2</name>
+      <textureDictionary>largedelivery_box2</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>largedelivery_box2</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>largedelivery_box2</assetName>
+      <extensions/>
+    </Item>
+  </archetypes>
+  <name>box</name>
+  <dependencies/>
+  <compositeEntityTypes/>
+</CMapTypes>

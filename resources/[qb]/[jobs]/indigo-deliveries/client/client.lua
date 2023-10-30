@@ -1,33 +1,27 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
-local cancarry = false
-local TruckBones
-local OnJob = false
-local PackagesDelivered = false
-local HasPackage = false
-local CanCollectPayment = false
-local ShopCoords = vector3(0.0, 0.0, 0.0)
-local ReturnVehicle = false
+local deliveryItem = nil
+local truckBones = nil
+local onJob = false
+local packagesDelivered = false
+local hasPackage = false
+local shopCoords = vector3(0.0, 0.0, 0.0)
+local returnVehicle = false
+local roadRunnerTruck = nil
+local handPackage = false
 
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
     PlayerJob = QBCore.Functions.GetPlayerData().job
-    cancarry = true
 end)
 
 RegisterNetEvent('QBCore:Client:OnJobUpdate', function()
     PlayerJob = QBCore.Functions.GetPlayerData().job
 end)
 
-RegisterNetEvent('QBCore:Client:OnPlayerUnload', function()
-    cancarry = false
-end)
-
 AddEventHandler('onResourceStart', function(resourceName)
-    --if GetCurrentResourceName() == resourceName then
+    if GetCurrentResourceName() == resourceName then
         PlayerJob = QBCore.Functions.GetPlayerData().job
-        exports["ps-zones"]:DestroyZone('RoadRunner-TruckReturnZone')
-        cancarry = true
-    --end
+    end
 end)
 
 CreateThread(function()
@@ -47,153 +41,149 @@ CreateThread(function()
 	SetEntityInvincible(RoadRunnerPed, true)
 	SetBlockingOfNonTemporaryEvents(RoadRunnerPed, true)
 
-    exports['indigo-target']:AddTargetEntity(RoadRunnerPed, {
+    exports['qb-target']:AddTargetEntity(RoadRunnerPed, {
         options = {
             {
-                icon = Config.CheckInTargetIcon,
-                label = Config.CheckInLabel,
+                icon = 'fas fa-circle',
+                label = 'Sign In',
                 canInteract = function()
-                    return not OnJob
+                    return not onJob
                 end,
                 action = function()
-                    TriggerEvent('kevin-deliveries:TalkToJobPed')
+                    TriggerServerEvent('indigo-deliveriesv2:CreateDeliveryGroupJob')
                 end,
             },
             {
-                icon = Config.GroupManagementTargetIcon,
-                label = Config.GroupManagementLabel,
-                action = function()
-                    ExecuteCommand('group')
-                end,
-            },
-            {
-                icon = Config.CollectPaymentTargetIcon,
-                label = Config.CollectPaymentLabel,
+                icon = 'fas fa-circle',
+                label = 'Cancel Delivery',
                 canInteract = function()
-                    return CanCollectPayment
+                    return onJob
                 end,
                 action = function()
-                    TriggerEvent('kevin-deliveries:CleanandCollect')
+                    TriggerServerEvent('indigo-deliveriesv2:canceldelivery')
                 end,
             },
             {
-                icon = Config.ReturnVehicleTargetIcon,
-                label = Config.ReturnVehicleLabel,
+                icon = 'fas fa-circle',
+                label = 'Return Vehicle',
                 canInteract = function()
-                    return ReturnVehicle
+                    return returnVehicle
                 end,
                 action = function()
-                    TriggerEvent('kevin-deliveries:ReturnVehicle')
+                    TriggerServerEvent('indigo-deliveriesv2:ReturnVehicleAndClean')
                 end,
             },
             {
-                icon = Config.ApplyForJobTargetIcon,
-                label = Config.ApplyForJobLabel,
+                icon = 'fas fa-circle',
+                label = 'Apply for Job',
                 action = function()
-                    TriggerEvent('kevin-deliveries:ApplyForJob')
+                    TriggerServerEvent('indigo-deliveriesv2:TakeJob')
                 end,
             },
+            {
+                icon = 'fas fa-circle',
+                label = 'Check Experience',
+                action = function()
+                    TriggerServerEvent('indigo-deliveriesv2:checkreputation')
+                end,
+            },
+            -- {
+            --     icon = 'fas fa-circle',
+            --     label = 'Create Group',
+            --     action = function()
+            --         CreateGroup()
+            --     end,
+            -- },
         },
         distance = 2.0
     })
 end)
 
-RegisterNetEvent('kevin-deliveries:TalkToJobPed', function ()
-    if Config.JobNeeded then
-        if PlayerJob.name == Config.JobName then
-            if exports['ps-playergroups']:IsGroupLeader() then
-                if exports['ps-playergroups']:GetJobStage() == 'WAITING' then
-                    local GroupID = exports['ps-playergroups']:GetGroupID()
-                    local model = GetHashKey('boxville7')
-                    RequestModel(model)
-                    while not HasModelLoaded(model) do
-                        Wait(0)
-                    end
-                    TriggerServerEvent('kevin-deliveries:CreateDeliveryGroupJob', GroupID)
-                else
-                    QBCore.Functions.Notify(Config.GroupBusyNotify, 'error', 5000)
-                end
-            else
-                QBCore.Functions.Notify(Config.NotGroupLeaderNotify, 'error', 5000)
-            end
-        else
-            QBCore.Functions.Notify('You do not seem to work here.', 'error')
-        end
-    else
-        if exports['ps-playergroups']:IsGroupLeader() then
-            if exports['ps-playergroups']:GetJobStage() == 'WAITING' then
-                local GroupID = exports['ps-playergroups']:GetGroupID()
-                local model = GetHashKey('boxville7')
-                RequestModel(model)
-                while not HasModelLoaded(model) do
-                    Wait(0)
-                end
-                TriggerServerEvent('kevin-deliveries:CreateDeliveryGroupJob', GroupID)
-            else
-                QBCore.Functions.Notify(Config.GroupBusyNotify, 'error', 5000)
-            end
-        else
-            QBCore.Functions.Notify(Config.NotGroupLeaderNotify, 'error', 5000)
-        end
-    end
+-- USED THIS TO SHOW A NOTIFICATION ON OX_LIB TO SHOW HOW TO START THE JOB (IF YOU USE THIS UNCOMMENT THE OPTION IN THE TARGET ABOVE )
+function CreateGroup()
+    local alert = lib.alertDialog({
+        header = 'To Create Group:',
+        content = '- Get a phone  \n - Go to Job Center App \n - Create Group \n - Other members go to Job Center App \n - Join your friend\'s group',
+        centered = true,
+        cancel = true
+    })
+end
+
+--  USED THIS TO TEST THE JOB WITHOUT TALING TO PED
+-- RegisterCommand('deliv',function ()
+--     TriggerServerEvent('indigo-deliveriesv2:CreateDeliveryGroupJob')
+-- end)
+
+RegisterNetEvent('indigo-deliveriesv2:createjobvehicle', function ()
+    local truckhash = `boxville7`
+    QBCore.Functions.LoadModel(truckhash)
+    local TruckSpawn = Config.VehicleSpawn
+    roadRunnerTruck = CreateVehicle(truckhash, TruckSpawn.x, TruckSpawn.y, TruckSpawn.z, TruckSpawn.w, true, true)
+
+    local VehiclePlate = GetVehicleNumberPlateText(roadRunnerTruck)
+    local networkID = NetworkGetNetworkIdFromEntity(roadRunnerTruck)
+    SetEntityAsMissionEntity(roadRunnerTruck)
+    SetNetworkIdExistsOnAllMachines(networkID, true)
+    NetworkRegisterEntityAsNetworked(roadRunnerTruck)
+    SetNetworkIdCanMigrate(networkID, true)
+    SetVehicleDirtLevel(roadRunnerTruck, 0)
+    SetVehicleEngineOn(roadRunnerTruck, true, true)
+    SetVehicleDoorsLocked(roadRunnerTruck, 1)
+    exports[Config.FuelScript]:SetFuel(roadRunnerTruck, 100)
+    onJob = true
+    TriggerServerEvent('indigo-deliveriesv2:givegroupvehiclekeys', VehiclePlate, networkID)
 end)
 
-RegisterNetEvent('kevin-deliveries:ApplyForJob', function ()
-    if PlayerJob.name == Config.JobName then
-        TriggerEvent('QBCore:Notify', Config.AlreadyWorkHereNotify, "error", 3000)
-    else
-        TriggerServerEvent('kevin-deliveries:TakeJob')
-    end
-end)
+RegisterNetEvent('indigo-deliveriesv2:addvehicletarget', function (networkID)
+    truckBones = {
+        'seat_dside_r',
+        'seat_pside_r'
+    }
 
-RegisterNetEvent('kevin-deliveries:StartDelivery', function (DeliveryTruckId, Coords)
-    OnJob = true
-    RoadRunnerTruck = NetworkGetEntityFromNetworkId(DeliveryTruckId)
-    ShopCoords = Coords
-    SetVehicleLivery(RoadRunnerTruck, 5)
-    SetVehicleDirtLevel(RoadRunnerTruck, 0)
-    SetVehicleEngineOn(RoadRunnerTruck, true, true)
-    SetVehicleDoorsLocked(RoadRunnerTruck, 1)
-    exports[Config.FuelScript]:SetFuel(RoadRunnerTruck, 100)
-
-    if Config.ItemPlacement == 'target' then
-        TruckBones = {
-            'seat_dside_r',
-            'seat_pside_r'
-        }
-        exports['indigo-target']:AddTargetBone(TruckBones, {
+    CreateThread(function()
+        exports['qb-target']:AddTargetBone(truckBones, {
             options = {
                 {
-                    icon = Config.TruckTargetIcon,
-                    label = Config.TruckTargetLabel,
-                    action = function()
-                        TriggerServerEvent('kevin-deliveries:TakePackages',exports['ps-playergroups']:GetGroupID())
+                    icon = 'fas fa-box',
+                    label = 'Take Package',
+                    action = function(entity)
+                        handPackage =  true
+                        TriggerServerEvent('indigo-deliveriesv2:TakePackages')
                     end,
-                    canInteract = function(entity, distance, data)
-                        return entity == RoadRunnerTruck and not HasPackage
+                    canInteract = function(entity)
+                        return NetworkGetNetworkIdFromEntity(entity) == networkID and not hasPackage and not handPackage
                     end,
                 },
             },
             distance = 1.5,
         })
-    end
+    end)
+end)
 
-    exports['indigo-target']:AddBoxZone('Delivery-TargetZone', vector3(ShopCoords.x, ShopCoords.y, ShopCoords.z), 3.5, 2.0, {
+RegisterNetEvent('indigo-deliveriesv2:changevarible', function ()
+    handPackage = false
+end)
+
+RegisterNetEvent('indigo-deliveriesv2:addstoretarget', function (Coords)
+    shopCoords = Coords
+
+    exports['qb-target']:AddBoxZone('Delivery-TargetZone', vector3(shopCoords.x, shopCoords.y, shopCoords.z), 3.5, 2.0, {
         name='Delivery-TargetZone',
         debugPoly= false,
-        heading= ShopCoords.w,
-        minZ = ShopCoords.z-1 ,
-        maxZ = ShopCoords.z+1,
+        heading= shopCoords.w,
+        minZ = shopCoords.z-1 ,
+        maxZ = shopCoords.z+1,
         }, {
             options = {
                 {
-                    icon = Config.DeliverTargetIcon,
-                    label = Config.DeliverTargetLabel,
+                    icon = 'fas fa-circle',
+                    label = 'Deliver Package',
                     canInteract = function()
-                        return not PackagesDelivered and HasPackage
+                        return not packagesDelivered and hasPackage
                     end,
                     action = function()
-                        TriggerServerEvent('kevin-deliveries:DeliverPackage',exports['ps-playergroups']:GetGroupID())
+                        handPackage = false
+                        TriggerServerEvent('indigo-deliveriesv2:DeliverPackage', deliveryItem)
                     end,
                 },
             },
@@ -201,80 +191,67 @@ RegisterNetEvent('kevin-deliveries:StartDelivery', function (DeliveryTruckId, Co
     })
 end)
 
-RegisterNetEvent('kevin-deliveries:RemoveTarget', function ()
-    exports['indigo-target']:RemoveTargetBone(TruckBones, Config.TruckTargetLabel)
+RegisterNetEvent('indigo-deliveriesv2:RemoveTarget', function ()
+    exports['qb-target']:RemoveTargetBone(truckBones, 'Take Package')
 end)
 
-RegisterNetEvent('kevin-deliveries:CanReturn', function ()
-    CanCollectPayment = true
-    ReturnVehicle = true
+RegisterNetEvent('indigo-deliveriesv2:canreturn', function ()
+    returnVehicle = true
 end)
 
-RegisterNetEvent('kevin-deliveries:CleanandCollect', function ()
-    CanCollectPayment = false
-    local GroupID = exports['ps-playergroups']:GetGroupID()
-    TriggerServerEvent('kevin-deliveries:CollectPayment', GroupID)
+RegisterNetEvent('indigo-deliveriesv2:ReturnVehicle', function ()
+    returnVehicle = false
+    onJob = false
+    packagesDelivered = false
+    hasPackage = false
+    shopCoords = vector3(0.0, 0.0, 0.0)
 end)
 
-RegisterNetEvent('kevin-deliveries:ReturnVehicle', function ()
-    if exports['ps-playergroups']:IsGroupLeader() then
-        if exports['ps-playergroups']:GetJobStage() == 'ROADRUNNER DELIVERY' then
-            local GroupID = exports['ps-playergroups']:GetGroupID()
-            TriggerServerEvent('kevin-deliveries:ReturnVehicleAndClean', GroupID)
-            ReturnVehicle = false
-            OnJob = false
-            PackagesDelivered = false
-            HasPackage = false
-            CanCollectPayment = false
-            ShopCoords = vector3(0.0, 0.0, 0.0)
-        else
-            QBCore.Functions.Notify(Config.GroupNotOnJobNotify, 'error', 5000)
+RegisterNetEvent('indigo-deliveriesv2:deletevehicle', function ()
+    if DoesEntityExist(roadRunnerTruck) then
+        NetworkRequestControlOfEntity(roadRunnerTruck)
+        Wait(500)
+        DeleteEntity(roadRunnerTruck)
+        roadRunnerTruck = nil
+    end
+end)
+
+RegisterNetEvent('kevin-deliveriesv2:cleareverything', function ()
+    truckBones = nil
+    onJob = false
+    packagesDelivered = false
+    hasPackage = false
+    shopCoords = vector3(0.0, 0.0, 0.0)
+    returnVehicle = false
+    if DoesEntityExist(roadRunnerTruck) then
+        exports['qb-target']:RemoveTargetBone(truckBones, 'Take Package')
+    end
+end)
+
+function HasBoxItems()
+    local playeritems = QBCore.Functions.GetPlayerData().items
+    for k, item in pairs(playeritems) do
+        for boxes, v in pairs(Config.BoxesData) do
+            if boxes == item.name then
+                return item.name, v
+            end
         end
-    else
-        QBCore.Functions.Notify(Config.IfNotGroupLeaderCannotReturnVehicleNotify, 'error', 5000)
     end
-end)
-
-RegisterNetEvent('kevin-deliveries:CreateZone', function ()
-    exports["ps-zones"]:CreateBoxZone("RoadRunner-TruckReturnZone", Config.VehicleSpawn, 30.0, 30.0, {
-        debugPoly = false,
-        heading = Config.VehicleSpawn.w,
-        minZ = Config.VehicleSpawn.z - 1,
-        maxZ = Config.VehicleSpawn.z + 5,
-    })
-end)
-
-RegisterNetEvent("ps-zones:enter", function(ZoneName, ZoneData)
-    local GroupID = exports['ps-playergroups']:GetGroupID()
-    if ZoneName == 'RoadRunner-TruckReturnZone' then
-        TriggerServerEvent('kevin-deliveries:SendEndMessages', GroupID)
-        exports["ps-zones"]:DestroyZone('RoadRunner-TruckReturnZone')
-    end
-end)
-
-RegisterNetEvent('kevin-deliveries:CantReturn', function ()
-    ReturnVehicle = true
-end)
+end
 
 CreateThread(function()
     while true do
-        if cancarry then
+        if LocalPlayer.state['isLoggedIn'] then
             local player = PlayerPedId()
-            local Item = QBCore.Functions.HasItem(Config.TrunkItems[1].name)
-            if Item then
-                if not HasPackage then
-                    HasPackage = true
-                    LoadAnim('anim@heists@box_carry@')
-                    TaskPlayAnim(player, 'anim@heists@box_carry@', 'idle', 6.0, -6.0, -1, 49, 0, 0, 0, 0)
-                    local boxhash = `prop_cs_cardbox_01`
-                    QBCore.Functions.LoadModel(boxhash)
-                    DeliveryBox = CreateObject(boxhash, 0, 0, 0, true, true, true)
-                    AttachEntityToEntity(DeliveryBox, player, GetPedBoneIndex(player, 0xEB95), 0.075, -0.00, 0.255, -130.0, 105.0, 0.0, true, true, false, false, 0, true)
-                    CarryAnimation()
-                    DisableControls()
+            local package, packagesData = HasBoxItems()
+            if package then
+                if not hasPackage then
+                    deliveryItem = package
+                    hasPackage = true
+                    CreateandAnimate(packagesData)
                 end
-            elseif HasPackage then
-                HasPackage = false
+            elseif hasPackage then
+                hasPackage = false
                 DeleteEntity(DeliveryBox)
                 ClearPedTasks(player)
             end
@@ -283,9 +260,25 @@ CreateThread(function()
     end
 end)
 
+function CreateandAnimate(packagesData)
+    local player = PlayerPedId()
+    local animDict = 'anim@heists@box_carry@'
+    local animName = 'idle'
+    LoadAnim(animDict)
+    TaskPlayAnim(player, animDict, animName, 6.0, -6.0, -1, 49, 0, 0, 0, 0)
+    local x, y, z = table.unpack(GetEntityCoords(player))
+    QBCore.Functions.LoadModel(packagesData.name)
+    DeliveryBox = CreateObject(packagesData.name, x, y, z, true, true, true)
+    AttachEntityToEntity(DeliveryBox, player, GetPedBoneIndex(player, 28422), packagesData.placement.x,packagesData.placement.y,packagesData.placement.z,packagesData.placement.xrot,
+    packagesData.placement.yrot, packagesData.placement.zrot, true, true, false, true, 1, true)
+    SetModelAsNoLongerNeeded(DeliveryBox)
+    CarryAnimation(animDict, animName)
+    DisableControls()
+end
+
 function DisableControls()
     CreateThread(function ()
-        while HasPackage do
+        while hasPackage do
             DisableControlAction(0, 21, Config.DisableSprintingWithPackages) -- Sprinting
             DisableControlAction(0, 22, Config.DisableJumpingWithPackages) -- Jumping
             DisableControlAction(0, 23, Config.DisableVehicleEnteringWithPackages) -- Vehicle Entering
@@ -297,12 +290,12 @@ function DisableControls()
     end)
 end
 
-function CarryAnimation()
+function CarryAnimation(animDict, animName)
     local player = PlayerPedId()
     CreateThread( function ()
-        while HasPackage do
-            if not IsEntityPlayingAnim(player, 'anim@heists@box_carry@', 'idle', 3) then
-                TaskPlayAnim(player, 'anim@heists@box_carry@', 'idle', 6.0, -6.0, -1, 49, 0, 0, 0, 0)
+        while hasPackage do
+            if not IsEntityPlayingAnim(player, animDict, animName, 3) then
+                TaskPlayAnim(player, animDict, animName, 6.0, -6.0, -1, 49, 0, 0, 0, 0)
             end
             Wait(1000)
         end

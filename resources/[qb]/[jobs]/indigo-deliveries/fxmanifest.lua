@@ -26,10 +26,11 @@ files {
 }
 data_file 'VEHICLE_METADATA_FILE' 'common/vehicles.meta'
 data_file 'VEHICLE_VARIATION_FILE' 'common/carvariations.meta'
+data_file 'DLC_ITYP_REQUEST' 'stream/box.ytyp'
 
-escrow_ignore { 
+escrow_ignore {
     'client/*.lua',
-    'server/*.lua',
+    'server/server.lua',
     'config.lua',
     'common/*.meta',
     'stream/*.ytd',
