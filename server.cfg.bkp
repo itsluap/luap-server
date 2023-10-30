@@ -1,7 +1,7 @@
 ## You CAN edit the following:
 endpoint_add_tcp "0.0.0.0:30120"
 endpoint_add_udp "0.0.0.0:30120"
-sv_maxclients 8
+sv_maxclients 100
 set steam_webApiKey "AF94A1DB58A91D044F2A6A3E0C7A444D"
 sets tags " "
 #set onesync on
@@ -9,7 +9,7 @@ sets tags " "
 ## You MAY edit the following:
 sv_licenseKey "cfxk_QaIU1AqTYCZlmMKAtqZn_gHKHD"
 sv_hostname "Indigo RP"
-sets sv_projectName "Indigo RP"
+sets sv_projectName "Indigo RP | Player Owned Businesses | Custom Content | Active Staff"
 sets sv_projectDesc " "
 sets locale "en-US" 
 #sets activitypubFeed indigorp@mstdn.social
@@ -47,48 +47,54 @@ ensure cfx-gabz-mapdata         #*THIS RESOURCE IS REQUIRED FOR ALL RESOURCES TO
 ensure cfx-gabz-scenarios       #*THIS RESOURCE IS OPTIONAL, IT REMOVES CONFLICTING PEDS SPAWNS*
 ensure cfx-gabz-pdprops         #*THIS RESOURCE IS REQUIRED IF YOU USE ANY PD. IT MUST BE START BEFORE PD'S*
 ensure cfx-gabz-247             #*THIS RESOURCE IS MANDATORY IF YOU USE [CFX-GABZ-OTTOS]*
-#ensure cfx-gabz-altruists
+ensure cfx-gabz-altruists
 ensure cfx-gabz-ammunation
 ensure cfx-gabz-arcade
-#ensure cfx-gabz-aztecas
+ensure cfx-gabz-atom
+ensure cfx-gabz-aztecas
 ensure cfx-gabz-bahama
-#ensure cfx-gabz-ballas
+ensure cfx-gabz-ballas
 ensure cfx-gabz-barber
-#ensure cfx-gabz-beanmachine
-ensure cfx-gabz-bennys         #*READ BELOW*!
+ensure cfx-gabz-beanmachine
+ensure cfx-gabz-bennys
 ensure cfx-gabz-binco
 ensure cfx-gabz-bobcat
 ensure cfx-gabz-bowling
+ensure cfx-gabz-burgershot
 ensure cfx-gabz-carmeet
 ensure cfx-gabz-casino
 ensure cfx-gabz-catcafe
 ensure cfx-gabz-davispd         #*THIS RESOURCE REQUIRES [CFX-GABZ-PDPROPS] TO WORK PROPERLY*
 ensure cfx-gabz-diner
 ensure cfx-gabz-esbltd
-#ensure cfx-gabz-families
+ensure cfx-gabz-families
 ensure cfx-gabz-firedept
 ensure cfx-gabz-fleeca
 ensure cfx-gabz-harmony
 ensure cfx-gabz-haters
 ensure cfx-gabz-hayes
-#ensure cfx-gabz-hub            #*READ BELOW*!
+ensure cfx-gabz-hornys
 ensure cfx-gabz-import
-ensure cfx-gabz-impound        #*READ BELOW*!
+ensure cfx-gabz-impound
+ensure cfx-gabz-koi
 ensure cfx-gabz-lamesapd        #*THIS RESOURCE REQUIRES [CFX-GABZ-PDPROPS] TO WORK PROPERLY*
-#ensure cfx-gabz-lost
-#ensure cfx-gabz-lostsc
+ensure cfx-gabz-lost
+ensure cfx-gabz-lostsc
 ensure cfx-gabz-lscustoms
-#ensure cfx-gabz-marabunta
+ensure cfx-gabz-marabunta
+ensure cfx-gabz-mba
 ensure cfx-gabz-mirrorpark1
 ensure cfx-gabz-mirrorpark2
 ensure cfx-gabz-mrpd
 ensure cfx-gabz-ottos
 ensure cfx-gabz-pacificbank     #*THIS RESOURCE REQUIRES [CFX-GABZ-PDPROPS] TO WORK PROPERLY*
 ensure cfx-gabz-paletobank
+ensure cfx-gabz-paletocamp
 ensure cfx-gabz-paletoliquor
 ensure cfx-gabz-paletopd        #*THIS RESOURCE REQUIRES [CFX-GABZ-PDPROPS] TO WORK PROPERLY*
 ensure cfx-gabz-parkranger
-ensure cfx-gabz-pdm            #*READ BELOW*!
+ensure cfx-gabz-pearls
+ensure cfx-gabz-pdm
 ensure cfx-gabz-pillbox
 ensure cfx-gabz-pinkcage
 ensure cfx-gabz-pizzeria        #*THIS RESOURCE IS MANDATORY IF YOU USE [CFX-GABZ-OTTOS]*
@@ -100,16 +106,13 @@ ensure cfx-gabz-studio
 ensure cfx-gabz-suburban
 ensure cfx-gabz-tattoo
 ensure cfx-gabz-townhall        #*THIS RESOURCE REQUIRES [CFX-GABZ-PDPROPS] TO WORK PROPERLY*
-#ensure cfx-gabz-triads
+ensure cfx-gabz-triads
 ensure cfx-gabz-tuners
-#ensure cfx-gabz-vagos
+ensure cfx-gabz-vagos
 ensure cfx-gabz-vbmarket
 ensure cfx-gabz-vu
-ensure cfx-gabz-yachts
-ensure cfx-gabz-mba
-ensure cfx-gabz-paletocamp
 ensure cfx-gabz-weedcamp
-#ensure cfx-gabz-xmas
+ensure cfx-gabz-yachts
 ensure [assets]
 ##########################
 ensure qb-core
@@ -131,6 +134,7 @@ add_ace group.admin command allow # allow all commands
 add_principal identifier.fivem:2448277 qbcore.god #luap2
 #add_principal identifier.discord:353767887305048064 group.admin #lin
 add_principal identifier.discord:406599443601817650 group.admin #mediumking
+add_principal identifier.discord:651614268306882570 group.admin #goose
 #add_principal identifier.discord:548070310734200832 group.admin #icey
 #add_principal identifier.discord:343161050163707904 group.admin #nodeth
 add_principal identifier.discord:325010690148663296 group.admin #learning life
