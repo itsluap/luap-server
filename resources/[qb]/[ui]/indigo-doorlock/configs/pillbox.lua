@@ -62,7 +62,7 @@ table.insert(Config.DoorList, {
 -- Ward A - Surgery 1
 table.insert(Config.DoorList, {
 	authorizedJobs = { ['ambulance']=0 },
-	locked = true,
+	locked = false,
 	lockpick = false,
 	slides = false,
 	maxDistance = 2.5,
