@@ -3,10 +3,10 @@ Config.ShowNearestGasStationOnly = true -- show nearest gas stations when close 
 Config.LeaveEngineRunning = true -- when set to true vehicle engine will run upon exiting vehicle
 Config.VehicleBlowUp = true -- when set to true vehicle has a chance to blow up if engine is left running
 Config.BlowUpChance = 5 -- percentage for chance of engine explosion
-Config.RefillCost = 75 -- default price
+Config.RefillCost = 100 -- default price
 Config.CostMultiplier = 3.0 -- tax basically
-Config.canCost = 50 -- buy jerry can price
-Config.refuelCost = 50 -- refueling jerry can price
+Config.canCost = 400 -- buy jerry can price
+Config.refuelCost = 600 -- refueling jerry can price
 Config.GlobalTax = 15.0
 
 Config.fuelPrice = 2.0 -- fuel price in litres I guess
@@ -36,13 +36,13 @@ Config.Blacklist = {
 	"dilettante",
 	"khamelion",
 	"wheelchair",
-    "bmx",
-    "tribike3",
-    "fixter",
-    "cruiser",
-    "scorcher",
-    "tribike2",
-    "tribike",
+    	"bmx",
+    	"tribike3",
+    	"fixter",
+    	"cruiser",
+    	"scorcher",
+    	"tribike2",
+    	"tribike",
 }
 
 -- Class multipliers. If you want SUVs to use less fuel, you can change it to anything under 1.0, and vise versa.
@@ -112,10 +112,8 @@ Config.GasStationsBlips = { -- gas station blips
     vector3(620.843, 269.100, 103.089),
     vector3(2581.321, 362.039, 108.468),
     vector3(176.631, -1562.025, 29.263),
-    vector3(176.631, -1562.025, 29.263),
     vector3(-319.292, -1471.715, 30.549),
-    vector3(1784.324, 3330.55, 41.253),
-    vector3(809.8, -789.17, 26.2)
+    vector3(1784.324, 3330.55, 41.253)
 }
 
 Config.GasStations = { -- gas station polyzones
@@ -405,15 +403,5 @@ Config.GasStations = { -- gas station polyzones
         },
         minz = 29.5,
         maxz = 31.9,
-    },
-    [28] = { 
-        zones = {
-            vector2(816.33673095703, -792.51049804688),
-            vector2(803.83605957031, -792.60369873047),
-            vector2(803.80212402344, -785.38513183594),
-            vector2(816.45806884766, -785.02490234375)
-        },
-        minZ = 33.561901092529,
-        maxZ = 40.626487731934
     },
 }

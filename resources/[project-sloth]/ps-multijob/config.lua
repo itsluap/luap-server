@@ -3,7 +3,7 @@ Config = Config or {}
 -- Side of the screen where you want the ui to be on. Can either be "left" or "right"
 Config.Side = "right"
 
-Config.MaxJobs = 4
+Config.MaxJobs = 3
 Config.IgnoredJobs = {
 	["unemployed"] = true,
 }
@@ -17,38 +17,19 @@ Config.WhitelistJobs = {
 	["police"] = true,
 	["ambulance"] = true,
 	["mechanic"] = true,
-	["cardealer"] = true,
-	["realestate"] = true,
-	["ottos"] = true,
-	["tuner"] = true,
-	["autoex"] = true,
-	["hayes"] = true,
-	["bennys"] = true,
-	["burgershot"] = true,
-	["vanilla"] = true,
 	["judge"] = true,
 	["lawyer"] = true,
-	["casino"] = true,
-	["irc"] = true,
-	["puffpuffpass"] = true,
 }
 
 Config.Descriptions = {
 	["police"] = "Shoot some criminals or maybe be a good cop and arrest them",
 	["ambulance"] = "Fix the bullet holes",
-	["mechanic"] = "Fix and customize cars",
-	["ottos"] = "Fix and customize cars",
-	["tuner"] = "Fix and customize cars",
-	["autoex"] = "Fix and customize cars",
-	["hayes"] = "Fix and customize cars",
-	["bennys"] = "Fix and customize cars",
+	["mechanic"] = "Fix the bullet holes",
 	["tow"] = "Pickup the tow truck and steal some vehicles",
-	["taxi"] = "You should retire, this job sucks",
-	["bus"] = "You should retire, this job sucks",
+	["taxi"] = "Pickup people around the city and drive them to their destination",
+	["bus"] = "Pickup multiple people around the city and drive them to their destination",
 	["realestate"] = "Sell houses or something",
 	["cardealer"] = "Sell cars or something",
-	["burgershot"] = "Sell burgers or something",
-	["vanilla"] = "Shawty I don't mind",
 	["judge"] = "Decide if people are guilty",
 	["lawyer"] = "Help the good or the bad",
 	["reporter"] = "Lowkey useless",
@@ -56,7 +37,6 @@ Config.Descriptions = {
 	["garbage"] = "Drive a garbage truck",
 	["vineyard"] = "Get them vines",
 	["hotdog"] = "Sell them glizzys",
-	["unemployed"] = "You should probably get a job",
 }
 
 -- Change the icons to any free font awesome icon, also add other jobs your server might have to the list

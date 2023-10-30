@@ -77,7 +77,7 @@ local function hasHarness()
     if not IsPedInAnyVehicle(ped, false) then return end
 
     local _harness = false
-    local hasHarness = exports['indigo-smallresources']:HasHarness()
+    local hasHarness = exports['qb-smallresources']:HasHarness()
     if hasHarness then
         _harness = true
     else
@@ -180,7 +180,7 @@ RegisterNUICallback('closeMenu', function(_, cb)
     SetNuiFocus(false, false)
 end)
 
-RegisterKeyMapping('menu', 'Open Menu', 'keyboard', Config.OpenMenu)
+RegisterKeyMapping('menu', Lang:t('info.open_menu'), 'keyboard', Config.OpenMenu)
 
 -- Reset hud
 local function restartHud()
@@ -441,17 +441,17 @@ RegisterNetEvent("hud:client:LoadMap", function()
             showSquareB = true
         end
         Wait(1200)
-        --if Menu.isMapNotifChecked then
-        --    QBCore.Functions.Notify(Lang:t("notify.loaded_square_map"))
-        --end
+        if Menu.isMapNotifChecked then
+            QBCore.Functions.Notify(Lang:t("notify.loaded_square_map"))
+        end
     elseif Menu.isToggleMapShapeChecked == "circle" then
         RequestStreamedTextureDict("circlemap", false)
         if not HasStreamedTextureDictLoaded("circlemap") then
             Wait(150)
         end
-        --if Menu.isMapNotifChecked then
-        --    QBCore.Functions.Notify(Lang:t("notify.load_circle_map"))
-        --end
+        if Menu.isMapNotifChecked then
+            QBCore.Functions.Notify(Lang:t("notify.load_circle_map"))
+        end
         SetMinimapClipType(1)
         AddReplaceTexture("platform:/textures/graphics", "radarmasksm", "circlemap", "radarmasksm")
         AddReplaceTexture("platform:/textures/graphics", "radarmask1g", "circlemap", "radarmasksm")
@@ -478,9 +478,9 @@ RegisterNetEvent("hud:client:LoadMap", function()
             showCircleB = true
         end
         Wait(1200)
-        --if Menu.isMapNotifChecked then
-        --    QBCore.Functions.Notify(Lang:t("notify.loaded_circle_map"))
-        --end
+        if Menu.isMapNotifChecked then
+            QBCore.Functions.Notify(Lang:t("notify.loaded_circle_map"))
+        end
     end
 end)
 
@@ -613,10 +613,6 @@ RegisterNUICallback('updateMenuSettingsToClient', function(data, cb)
     Menu.isPointerShowChecked = data.isPointerShowChecked
     CinematicShow(data.isCineamticModeChecked)
     cb({})
-    if Menu.isMapEnabledChecked then
-        Wait(50)
-        TriggerEvent("hud:client:LoadMap")
-    end
 end)
 
 RegisterNetEvent("hud:client:EngineHealth", function(newEngine)
@@ -738,7 +734,7 @@ RegisterCommand('+engine', function()
     SetVehicleEngineOn(vehicle, not GetIsVehicleEngineRunning(vehicle), false, true)
 end)
 
-RegisterKeyMapping('+engine', 'Toggle Engine', 'keyboard', 'G')
+RegisterKeyMapping('+engine', Lang:t('info.toggle_engine'), 'keyboard', 'G')
 
 local function IsWhitelistedWeaponArmed(weapon)
     if weapon then
@@ -1074,6 +1070,7 @@ end)
 RegisterNetEvent('hud:client:OnMoneyChange', function(type, amount, isMinus)
     cashAmount = PlayerData.money['cash']
     bankAmount = PlayerData.money['bank']
+		if type == 'cash' and amount == 0 then return end
     SendNUIMessage({
         action = 'updatemoney',
         cash = cashAmount,
@@ -1095,7 +1092,7 @@ CreateThread(function()
                 hasHarness()
                 local veh = GetEntityModel(GetVehiclePedIsIn(ped, false))
                 if seatbeltOn ~= true and IsThisModelACar(veh) then
-                    -- TriggerEvent("InteractSound_CL:PlayOnOne", "beltalarm", 0.6) -- annoying as hell
+                    TriggerEvent("InteractSound_CL:PlayOnOne", "beltalarm", 0.6)
                 end
             end
         end
@@ -1112,11 +1109,8 @@ CreateThread(function() -- Speeding
             if IsPedInAnyVehicle(ped, false) then
                 local speed = GetEntitySpeed(GetVehiclePedIsIn(ped, false)) * speedMultiplier
                 local stressSpeed = seatbeltOn and config.MinimumSpeed or config.MinimumSpeedUnbuckled
-                local hasHarness = exports['indigo-smallresources']:HasHarness()
-                if not hasHarness then
-                    if speed >= stressSpeed then
-                        TriggerServerEvent('hud:server:GainStress', math.random(1, 2))
-                    end
+                if speed >= stressSpeed then
+                    TriggerServerEvent('hud:server:GainStress', math.random(1, 3))
                 end
             end
         end

@@ -6,7 +6,7 @@ A script designed with a sleek and modern design for being able to display your 
 # Features
 * Configurable ignore certain jobs. 
 * Configurable keybind to open the job menu - J by default. 
-* Configurable max jobs per citizen ID.
+* Configurable max jobs per citizen ID. Unlimited jobs for players with the 'admin' permission. 
 * Configurable white list jobs.
 * Configurable descriptions per job.
 * Configurable side (left or right) of the screen you want the ui to show on. Right side by default. (see Config)
@@ -22,6 +22,17 @@ A script designed with a sleek and modern design for being able to display your 
 * Import [SQL](https://github.com/Project-Sloth/ps-multijob/blob/main/database.sql) into your database
 * Ensure to server.cfg 
 
+# Linking to qb-management | Auto Firing
+1. Find the following event
+```
+qb-bossmenu:server:FireEmployee
+```
+2. Insert the TriggerEvent right under the notification for 'Employee Fired!'. The TriggerEvent should be added twice, once near line 174 and once near line 199.
+
+```
+TriggerClientEvent('QBCore:Notify', src, "Employee fired!", "success")
+TriggerEvent('ps-multijob:server:removeJob', target)
+```
 
 # Credits:
 * [xFutte](https://github.com/xFutte)

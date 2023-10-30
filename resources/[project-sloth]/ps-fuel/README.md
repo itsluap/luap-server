@@ -6,9 +6,11 @@ A NoPixel inspired functionality fuel system that uses PolyZones that target spe
 ![Project Sloth Buttons](https://user-images.githubusercontent.com/91661118/169454003-488c8994-eec9-4b92-9b0c-f3a675be7d1b.png)
 
 ### Dependencies:
-* [indigo-target](https://github.com/BerkieBb/indigo-target)
-* [indigo-menu](https://github.com/qbcore-framework/indigo-menu)
+* [qb-target](https://github.com/BerkieBb/qb-target)
+* [qb-menu](https://github.com/qbcore-framework/qb-menu)
+* [qb-input](https://github.com/qbcore-framework/qb-input)
 * [polyzone](https://github.com/qbcore-framework/PolyZone)
+* [interact-sound](https://github.com/qbcore-framework/interact-sound)
 
 <br>
 <br>
@@ -34,7 +36,7 @@ Open your entire resources folder with Visual Studio Code (or whichever program 
 ![explorer_vpSwery89h](https://user-images.githubusercontent.com/91661118/169423238-99659010-718d-4d95-a73e-8aa2b232ebb4.gif)
 
 ### Step 3: 
-First copy the snippet below and then navigate to your **indigo-smallresources/client/ignore.lua**
+First copy the snippet below and then navigate to your **qb-smallresources/client/ignore.lua**
 
 ```lua
 Citizen.CreateThread(function()
@@ -82,7 +84,7 @@ after it takes you to spot we need, copy this snippet and paste it over the few 
 ### Step 4:
 ```TriggerServerEvent("weapons:server:UpdateWeaponAmmo", CurrentWeaponData, tonumber(ammo))```
 
-Copy this line and then navigate to your **indigo-weapons/client/main.lua** paste this in your Visual Studio Code search bar.
+Copy this line and then navigate to your **qb-weapons/client/main.lua** paste this in your Visual Studio Code search bar.
 
 ```lua
 CreateThread(function()
@@ -109,6 +111,9 @@ end)
 After it takes you to spot we need, copy this snippet and paste it over the few lines shown in the GIF below.
 
 ![Code_yecDDjuRVG](https://user-images.githubusercontent.com/91661118/169425085-6eaeead9-9398-4ac0-8e0f-b6d116326e97.gif)
+
+### Step 5:
+Copy the sounds inside the sounds folder and paste/drag it into your interact-sounds folder located at resources/[standalone]/interact-sound/client/html/sounds
 
 <br>
 <br>
@@ -142,8 +147,6 @@ https://user-images.githubusercontent.com/91661118/169447776-815aae46-53e0-40cd-
 #### Refueling vehicle:
 https://user-images.githubusercontent.com/91661118/169447249-b20abaca-fd1b-49ef-88c2-b6683b266f41.mp4
 
-# DMCA Protection Certificate
-![image](https://user-images.githubusercontent.com/82112471/171916122-95422e07-0831-4d7e-bf27-c4b31945801f.png)
 
 ### Credits:
 Huge thanks to [Snipe (pushkart2)](https://github.com/pushkart2) and [MonkeyWhisper](https://github.com/MonkeyWhisper) for figuring out the long-awaited issue of jerry cans not saving the proper amount of fuel each time you equip it. This release wouldn't be possible without them.
