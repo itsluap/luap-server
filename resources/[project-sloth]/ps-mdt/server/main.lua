@@ -13,15 +13,15 @@ local calls = {}
 --------------------------------
 -- SET YOUR WEHBOOKS IN HERE
 -- Images for mug shots will be uploaded here. Add a Discord webhook. 
-local MugShotWebhook = ''
+local MugShotWebhook = 'https://discord.com/api/webhooks/1168446856632745984/75ORovkVvbmU78p74QfaA3qAN2e7LRnTwasHMTnCxCiAIawt-g2mCYshJGhJpUonV8Et'
 
 -- Clock-in notifications for duty. Add a Discord webhook.
 -- Command /mdtleaderboard, will display top players per clock-in hours.
-local ClockinWebhook = ''
+local ClockinWebhook = 'https://discord.com/api/webhooks/1168446959640657960/qXbgYNx63KGhv0-PVcbJgIEQmeYcY7wuYnakqchfRwoB041nQWhH8TZewmrcvRXvijJB'
 
 -- Incident and Incident editting. Add a Discord webhook.
 -- Incident Author, Title, and Report will display in webhook post.
-local IncidentWebhook = ''
+local IncidentWebhook = 'https://discord.com/api/webhooks/1168447065005760533/tzLBFvcuqDjmX_sDQ84_JjUsIiv83ORXpfrgUByR71Jr0j3-f9fXnEefdLKqBNE1J5mB'
 --------------------------------
 
 QBCore.Functions.CreateCallback('ps-mdt:server:MugShotWebhook', function(source, cb)
