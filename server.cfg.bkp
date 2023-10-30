@@ -114,7 +114,7 @@ ensure cfx-gabz-vu
 ensure cfx-gabz-weedcamp
 ensure cfx-gabz-yachts
 #ensure [assets]
-#ensure indigo_clothing
+ensure indigo_clothing
 ##########################
 ensure qb-core
 ensure ox_lib
