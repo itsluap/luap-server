@@ -15,7 +15,7 @@ A NoPixel inspired functionality fuel system that uses PolyZones that target spe
 * [indigo-menu](https://github.com/qbcore-framework/indigo-menu)
 =======
 * [qb-target](https://github.com/BerkieBb/qb-target)
-* [qb-menu](https://github.com/qbcore-framework/qb-menu)
+* [indigo-menu](https://github.com/qbcore-framework/indigo-menu)
 >>>>>>> parent of cd8b9a0ee (.)
 * [qb-input](https://github.com/qbcore-framework/qb-input)
 * [polyzone](https://github.com/qbcore-framework/PolyZone)

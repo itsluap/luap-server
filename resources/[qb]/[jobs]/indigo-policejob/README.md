@@ -28,7 +28,7 @@ Police Job for QB-Core Framework :police_officer:
 - [qb-phone](https://github.com/qbcore-framework/qb-phone) - For the MEOS app and notifications etc.
 - [qb-log](https://github.com/qbcore-framework/qb-logs) - (Deprecated) - For logging certain events
 - [qb-smallresources](https://github.com/qbcore-framework/qb-smallresources) (Replaces qb-log) - qb-log was added to qb-smallresources
-- [qb-menu](https://github.com/qbcore-framework/qb-menu) - For the vehicle menus
+- [indigo-menu](https://github.com/qbcore-framework/indigo-menu) - For the vehicle menus
 - [qb-input](https://github.com/qbcore-framework/qb-input) - For accessing evidence stashes
 
 
