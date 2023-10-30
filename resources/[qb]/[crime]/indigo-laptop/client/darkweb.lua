@@ -53,7 +53,7 @@ RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
 
         for netID, _ in pairs(crates) do
             local obj = NetworkGetEntityFromNetworkId(netID)
-            exports['indigo-target']:AddTargetEntity(obj, {
+            exports['qb-target']:AddTargetEntity(obj, {
                 options = {
                     {
                         label = Lang:t('darkweb.target.breakcrateopen'),
@@ -106,7 +106,7 @@ RegisterNetEvent('darkweb:client:cratedrop', function(netID)
         SetBlipAsShortRange(crateBlip, true)
     end
 
-    exports['indigo-target']:AddTargetEntity(obj, {
+    exports['qb-target']:AddTargetEntity(obj, {
         options = {
             {
                 label = Lang:t('darkweb.target.breakcrateopen'),

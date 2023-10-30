@@ -233,7 +233,7 @@ Read this before opening a ticket.
 
 - This file creates repair benches that can **ONLY** be used when there isn't any mechanics on duty.
 - The benches are added to set locations at the top of this file
-- They are activated by targetting with `indigo-target` while in a car
+- They are activated by targetting with `qb-target` while in a car
 - How the config.lua options are set will determine how the menu functions
 	- `Config.ManualRepairCost` - This is the **SET** amount a vehicle repair will cost
 	- `Config.ManualRepairBased` - when `true` this overrides the above and grabs the value of the vehicle from vehicles.lua
@@ -243,7 +243,7 @@ Read this before opening a ticket.
 	- `Config.dutyMessage` - The excuse for why people can't repair while mechanics are on duty.
 	- `Config.repairAnimate` - Animates the repair, better than a progress bar
 	- `Config.repairSpeed` - How fast each repair step takes
-- NOTE: People have reported this file causing issues with removing other indigo-target locations in other files
+- NOTE: People have reported this file causing issues with removing other qb-target locations in other files
 	- I have no idea how or why.
 	- Removing this file seems to fix it.
 
@@ -253,7 +253,7 @@ Read this before opening a ticket.
 - This file creates repair/customisation benches for police
 	- These are intended to be for Police/EMS players, but other job roles can be added easily
 - It adds a bench to the set locations where they can repair and change a handful of cosmetics/extras.
-- This is activated by using third eye/indigo-target
+- This is activated by using third eye/qb-target
 - Note: I have been asked several times to add more options to this
 	- There are so many different custom police cars that use a random modification to change a small thing on the vehicle.
 	- At that point if I added more/all options it would just be another version of `indigo-customs`
@@ -826,7 +826,7 @@ RepairFuelCost = 8,
 
 ## Dependancies
 - This script requires `indigo-menu` and `indigo-input` for the menu systems
-- This script requires `indigo-target` for opening stores, crafting tables, cash registers, going on duty, nos refill
+- This script requires `qb-target` for opening stores, crafting tables, cash registers, going on duty, nos refill
 - This script is also designed to use [jim-payments](https://github.com/jimathy/jim-payments) for charging customers and sending money to the society accounts
 
 ## NOS + Odometer

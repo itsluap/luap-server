@@ -239,7 +239,7 @@ CreateThread(function()
     if Config.UseTarget then
         for job, zones in pairs(Config.BossMenuZones) do
             for index, data in ipairs(zones) do
-                exports['indigo-target']:AddBoxZone(job.."-BossMenu-"..index, data.coords, data.length, data.width, {
+                exports['qb-target']:AddBoxZone(job.."-BossMenu-"..index, data.coords, data.length, data.width, {
                     name = job.."-BossMenu-"..index,
                     heading = data.heading,
                     -- debugPoly = true,

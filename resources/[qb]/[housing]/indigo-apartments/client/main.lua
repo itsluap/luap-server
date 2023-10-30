@@ -616,7 +616,7 @@ end)
 
 Citizen.CreateThread(function()
     for k,v in pairs(Apartments.Locations) do
-        exports['indigo-target']:AddBoxZone('ApartmentRaid-'..k, vector3(v.coords.enter.x, v.coords.enter.y, v.coords.enter.z), 2.0, 2.0, {
+        exports['qb-target']:AddBoxZone('ApartmentRaid-'..k, vector3(v.coords.enter.x, v.coords.enter.y, v.coords.enter.z), 2.0, 2.0, {
         name='ApartmentRaid-'..k,
         heading=v.coords.enter.h,
         debugPoly=false,

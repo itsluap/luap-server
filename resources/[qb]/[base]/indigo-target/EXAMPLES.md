@@ -13,7 +13,7 @@ Then, in the actual options themselves, we define 'police' as our required job.
 This is an example using **exports**
 
 ```lua
-exports['indigo-target']:AddBoxZone("MissionRowDutyClipboard", vector3(441.7989, -982.0529, 30.67834), 0.45, 0.35, {
+exports['qb-target']:AddBoxZone("MissionRowDutyClipboard", vector3(441.7989, -982.0529, 30.67834), 0.45, 0.35, {
 	name = "MissionRowDutyClipboard",
 	heading = 11.0,
 	debugPoly = false,
@@ -98,7 +98,7 @@ Config.Peds = {
     "g_m_importexport_0",
     "g_m_m_armboss_01"
 }
-exports['indigo-target']:AddTargetModel(Config.Peds, {
+exports['qb-target']:AddTargetModel(Config.Peds, {
 	options = {
 		{
 			event = "request:CuffPed",
@@ -170,7 +170,7 @@ while not HasModelLoaded(model) do
 end
 local mule = CreateVehicle(model, GetEntityCoords(PlayerPedId()), GetEntityHeading(PlayerPedId()), true, false)
 TaskWarpPedIntoVehicle(PlayerPedId(), mule, -1)
-exports['indigo-target']:AddTargetEntity(mule, {
+exports['qb-target']:AddTargetEntity(mule, {
     options = {
         {
             type = "client",
@@ -219,14 +219,14 @@ Config.Peds = {
 ```
 
 ## Passing Item Data
-In this example, we define the model of the coffee machines you see around the map, and allow players to purchase a coffee. You'll have to provide your own logic for the purchase, but this is how you would handle it with indigo-target, and how you would pass data through to an event for future use.
+In this example, we define the model of the coffee machines you see around the map, and allow players to purchase a coffee. You'll have to provide your own logic for the purchase, but this is how you would handle it with qb-target, and how you would pass data through to an event for future use.
 
 This is an example using **exports**
 
 The event should **not** go into the config, hence why it's not provided with the config example, it's meant for a client file
 
 ```lua
-exports['indigo-target']:AddTargetModel(`prop_vend_coffe_01`, {
+exports['qb-target']:AddTargetModel(`prop_vend_coffe_01`, {
     options = {
         {
             type = "client",
@@ -287,7 +287,7 @@ AddEventHandler('plantpotato',function()
 
 	-- Logic to handle growth, create a thread and loop, or do something else. Up to you.
 
-	exports['indigo-target']:AddEntityZone("potato-growing-"..plant, plant, {
+	exports['qb-target']:AddEntityZone("potato-growing-"..plant, plant, {
 		name = "potato-growing-"..plant,
 		heading = GetEntityHeading(plant),
 		debugPoly = false,

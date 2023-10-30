@@ -48,7 +48,7 @@ CreateThread(function()
             if k ~= 'main' then
                 if Config.UseTarget then
                     if k == 'deliver' then
-                        exports["indigo-target"]:AddBoxZone("yard"..i, v.coords, v.length, v.width, {
+                        exports["qb-target"]:AddBoxZone("yard"..i, v.coords, v.length, v.width, {
                             name = "yard"..i,
                             heading = v.heading,
                             minZ = v.coords.z - 1,
@@ -66,7 +66,7 @@ CreateThread(function()
                             distance = 3
                         })
                     else
-                        exports["indigo-target"]:AddBoxZone("list"..i, v.coords, v.length, v.width, {
+                        exports["qb-target"]:AddBoxZone("list"..i, v.coords, v.length, v.width, {
                             name = "list"..i,
                             heading = v.heading,
                             minZ = v.coords.z - 1,

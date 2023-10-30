@@ -22,7 +22,7 @@ end)
 CreateThread(function()
     if Config.UseTarget then
         for key, value in pairs(Config.PawnLocation) do
-            exports['indigo-target']:AddBoxZone('PawnShop'..key, value.coords, value.length, value.width, {
+            exports['qb-target']:AddBoxZone('PawnShop'..key, value.coords, value.length, value.width, {
                 name = 'PawnShop'..key,
                 heading = value.heading,
                 minZ = value.minZ,

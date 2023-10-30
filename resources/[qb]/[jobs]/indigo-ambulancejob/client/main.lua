@@ -886,7 +886,7 @@ end)
 if Config.UseTarget then
     CreateThread(function()
         for k, v in pairs(Config.Locations["checking"]) do
-            exports['indigo-target']:AddBoxZone("checking"..k, vector3(v.x, v.y, v.z), 3.5, 2, {
+            exports['qb-target']:AddBoxZone("checking"..k, vector3(v.x, v.y, v.z), 3.5, 2, {
                 name = "checking"..k,
                 heading = -72,
                 debugPoly = false,
@@ -906,7 +906,7 @@ if Config.UseTarget then
         end
 
         for k, v in pairs(Config.Locations["beds"]) do
-            exports['indigo-target']:AddBoxZone("beds"..k,  v.coords, 2.5, 2.3, {
+            exports['qb-target']:AddBoxZone("beds"..k,  v.coords, 2.5, 2.3, {
                 name = "beds"..k,
                 heading = -20,
                 debugPoly = false,

@@ -238,7 +238,7 @@ CreateThread(function()
     if Config.UseTarget then
         for gang, zones in pairs(Config.GangMenuZones) do
             for index, data in ipairs(zones) do
-                exports['indigo-target']:AddBoxZone(gang.."-GangMenu"..index, data.coords, data.length, data.width, {
+                exports['qb-target']:AddBoxZone(gang.."-GangMenu"..index, data.coords, data.length, data.width, {
                     name = gang.."-GangMenu"..index,
                     heading = data.heading,
                     -- debugPoly = true,

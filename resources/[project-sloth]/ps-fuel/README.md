@@ -8,13 +8,13 @@ A NoPixel inspired functionality fuel system that uses PolyZones that target spe
 ### Dependencies:
 <<<<<<< HEAD
 <<<<<<< HEAD
-* [indigo-target](https://github.com/BerkieBb/indigo-target)
+* [qb-target](https://github.com/BerkieBb/qb-target)
 =======
-* [indigo-target](https://github.com/BerkieBb/indigo-target)
+* [qb-target](https://github.com/BerkieBb/qb-target)
 >>>>>>> parent of 1dbf3d257 (.)
 * [indigo-menu](https://github.com/qbcore-framework/indigo-menu)
 =======
-* [indigo-target](https://github.com/BerkieBb/indigo-target)
+* [qb-target](https://github.com/BerkieBb/qb-target)
 * [indigo-menu](https://github.com/qbcore-framework/indigo-menu)
 >>>>>>> parent of cd8b9a0ee (.)
 * [indigo-input](https://github.com/qbcore-framework/indigo-input)

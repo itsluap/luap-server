@@ -10,7 +10,7 @@ local washers = {
 Citizen.CreateThread(function()
 
     for k,v in pairs(washers) do 
-        exports['indigo-target']:AddBoxZone("wash"..k, vector3(v.x, v.y, v.z), 0.8, 1.2, {
+        exports['qb-target']:AddBoxZone("wash"..k, vector3(v.x, v.y, v.z), 0.8, 1.2, {
             name="wash"..k,
             heading=v.h,
             debugPoly=false,

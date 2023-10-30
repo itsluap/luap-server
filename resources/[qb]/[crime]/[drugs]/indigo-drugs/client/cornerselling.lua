@@ -33,7 +33,7 @@ end
 
 local function RobberyPed()
     if Config.UseTarget then
-        exports['indigo-target']:AddEntityZone('stealingPed', stealingPed, {
+        exports['qb-target']:AddEntityZone('stealingPed', stealingPed, {
             name = 'stealingPed',
             debugPoly = false,
         }, {
@@ -54,7 +54,7 @@ local function RobberyPed()
                         TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items[stealData.item], "add")
                         stealingPed = nil
                         stealData = {}
-                        exports['indigo-target']:RemoveZone('stealingPed')
+                        exports['qb-target']:RemoveZone('stealingPed')
                     end,
                     canInteract = function(entity)
                         if IsEntityDead(entity) then
@@ -74,7 +74,7 @@ local function RobberyPed()
                 if dist > 100 then
                     stealingPed = nil
                     stealData = {}
-                    exports['indigo-target']:RemoveZone('stealingPed')
+                    exports['qb-target']:RemoveZone('stealingPed')
                     break
                 end
                 Wait(0)
@@ -204,7 +204,7 @@ local function SellToPed(ped)
                 if pedDist2 < 1.5 and cornerselling then
                     if Config.UseTarget and not zoneMade then
                         zoneMade = true
-                        exports['indigo-target']:AddEntityZone('sellingPed', ped, {
+                        exports['qb-target']:AddEntityZone('sellingPed', ped, {
                             name = 'sellingPed',
                             debugPoly = false,
                         }, {
@@ -223,7 +223,7 @@ local function SellToPed(ped)
                                         SetEntityAsNoLongerNeeded(entity)
                                         ClearPedTasksImmediately(entity)
                                         lastPed[#lastPed + 1] = entity
-                                        exports['indigo-target']:RemoveZone('sellingPed')
+                                        exports['qb-target']:RemoveZone('sellingPed')
                                         PoliceCall()
                                     end,
                                 },
@@ -237,7 +237,7 @@ local function SellToPed(ped)
                                         SetEntityAsNoLongerNeeded(entity)
                                         ClearPedTasksImmediately(entity)
                                         lastPed[#lastPed + 1] = entity
-                                        exports['indigo-target']:RemoveZone('sellingPed')
+                                        exports['qb-target']:RemoveZone('sellingPed')
                                     end,
                                 },
                             },
@@ -278,7 +278,7 @@ local function SellToPed(ped)
                 else
                     if Config.UseTarget then
                         zoneMade = false
-                        exports['indigo-target']:RemoveZone('sellingPed')
+                        exports['qb-target']:RemoveZone('sellingPed')
                     else
                         if textDrawn then
                             exports['qb-core']:HideText()

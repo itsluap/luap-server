@@ -47,7 +47,7 @@ Citizen.CreateThread(function()
         if Config.enableGameHouse then
             optionLabel = "Play Arcade for $" .. Config.singleUsePrice
         end
-        exports['indigo-target']:AddTargetModel(Config.ArcadeModels, {
+        exports['qb-target']:AddTargetModel(Config.ArcadeModels, {
             options = {
                 {
                     type = "server",
@@ -68,7 +68,7 @@ Citizen.CreateThread(function()
     end
     for k, v in pairs(Config.Arcade) do
         local npcId = "ComputerNPC-" .. k
-        exports['indigo-target']:AddBoxZone(npcId, v.NPC.position, 1, 1, {
+        exports['qb-target']:AddBoxZone(npcId, v.NPC.position, 1, 1, {
             name = npcId,
             heading = v.NPC.heading,
             debugPoly = false,
@@ -109,7 +109,7 @@ end)
 Citizen.CreateThread(function()
     for k, v in pairs(Config.computerList) do
         local computerName = "Computer-" .. k
-        exports['indigo-target']:AddBoxZone(computerName, v.position, 1, 1, {
+        exports['qb-target']:AddBoxZone(computerName, v.position, 1, 1, {
             name = computerName,
             debugPoly = false,
             minZ = v.position.z - 1.5,

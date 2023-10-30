@@ -41,7 +41,7 @@ CreateThread(function()
         SetEntityInvincible(QBClassicBlackMarketPed, true)
         SetBlockingOfNonTemporaryEvents(QBClassicBlackMarketPed, true)
     end
-    exports['indigo-target']:AddTargetEntity(QBClassicBlackMarketPed, {
+    exports['qb-target']:AddTargetEntity(QBClassicBlackMarketPed, {
         options = {
             {
                 num = 1,

@@ -6,7 +6,7 @@ fx_version "cerulean"
 game "gta5"
 lua54 'yes'
 
-dependencies { 'indigo-input', 'indigo-target', }
+dependencies { 'indigo-input', 'qb-target', }
 client_scripts { 'client/*.lua', 'locales/*.lua' }
 server_scripts { '@oxmysql/lib/MySQL.lua', 'server/*.lua' }
 shared_scripts { 'config.lua', 'shared/*.lua', 'locales/*.lua' }

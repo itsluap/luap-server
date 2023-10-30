@@ -22,7 +22,7 @@ local function RegisterTraphouseEntranceTarget(traphouseID, traphouseData)
     local coords = traphouseData.coords['enter']
     local boxName = 'traphouseEntrance' .. traphouseID
     local boxData = traphouseData.polyzoneBoxData['enter']
-    exports['indigo-target']:AddBoxZone(boxName, coords, boxData.length, boxData.width, {
+    exports['qb-target']:AddBoxZone(boxName, coords, boxData.length, boxData.width, {
         name = boxName,
         heading = boxData.heading,
         debugPoly = boxData.debug,
@@ -148,7 +148,7 @@ local function RegisterTraphouseInteractionTarget(traphouseID, traphouseData)
         end
     end
 
-    exports['indigo-target']:AddBoxZone(boxName, coords, boxData.length, boxData.width, {
+    exports['qb-target']:AddBoxZone(boxName, coords, boxData.length, boxData.width, {
         name = boxName,
         heading = boxData.heading,
         debugPoly = boxData.debug,
@@ -189,7 +189,7 @@ end
 local function RegisterTraphouseExitTarget(coords, traphouseID, traphouseData)
     local boxName = 'traphouseExit' .. traphouseID
     local boxData = traphouseData.polyzoneBoxData['exit']
-    exports['indigo-target']:AddBoxZone(boxName, coords, boxData.length, boxData.width, {
+    exports['qb-target']:AddBoxZone(boxName, coords, boxData.length, boxData.width, {
         name = boxName,
         heading = boxData.heading,
         debugPoly = boxData.debug,
@@ -344,10 +344,10 @@ local function LeaveTraphouse(k, data)
     end)
 
     if Config.UseTarget then
-        exports['indigo-target']:RemoveZone('traphouseInteraction' .. k)
+        exports['qb-target']:RemoveZone('traphouseInteraction' .. k)
         data.polyzoneBoxData['interaction'].created = false
 
-        exports['indigo-target']:RemoveZone('traphouseExit' .. k)
+        exports['qb-target']:RemoveZone('traphouseExit' .. k)
         data.polyzoneBoxData['exit'].created = false
     else
         if Config.TrapHouses[k] and Config.TrapHouses[k].polyzoneBoxData['interaction'] and Config.TrapHouses[k].polyzoneBoxData['interaction'].zone then
@@ -436,7 +436,7 @@ RegisterNetEvent('indigo-traphouse:client:SyncData', function(k, data)
     IsHouseOwner = IsOwner(PlayerData.citizenid)
 
     if Config.UseTarget then
-        exports['indigo-target']:RemoveZone('traphouseInteraction' .. k)
+        exports['qb-target']:RemoveZone('traphouseInteraction' .. k)
         Config.TrapHouses[k].polyzoneBoxData['interaction'].created = false
     else
         if Config.TrapHouses[k] and Config.TrapHouses[k].polyzoneBoxData['interaction'] and Config.TrapHouses[k].polyzoneBoxData['interaction'].zone then

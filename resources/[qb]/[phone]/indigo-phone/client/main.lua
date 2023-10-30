@@ -93,7 +93,7 @@ local PublicPhoneobject = {
     -1559354806
 }
 
-exports["indigo-target"]:AddTargetModel(PublicPhoneobject, {
+exports["qb-target"]:AddTargetModel(PublicPhoneobject, {
     options = {
         {
             type = "client",

@@ -35,7 +35,7 @@ CreateThread(function()
 		local rand = math.random(1,3)
 		Strepper[#Strepper+1] = makePed(`CSB_Stripper_02`, v, true, true, nil, { "mini@strip_club@private_dance@part"..rand, "priv_dance_p"..rand })
 		Targets["Strep"..k] =
-			exports['indigo-target']:AddBoxZone("Strep"..k, vector3(v.x, v.y, v.z-0.3), 0.8, 0.8, { name="Strep"..k, heading = v.w, debugPoly=Config.Debug, minZ = v.z-1.0, maxZ=v.z+1.0 },
+			exports['qb-target']:AddBoxZone("Strep"..k, vector3(v.x, v.y, v.z-0.3), 0.8, 0.8, { name="Strep"..k, heading = v.w, debugPoly=Config.Debug, minZ = v.z-1.0, maxZ=v.z+1.0 },
 				{ options = { { event = "jim-vanillaunicorn:PayStrep", icon = "fas fa-money-bill-1-wave", label = Loc[Config.Lan].info["tip"]..Config.TipCost, ped = Strepper[#Strepper] }, },
 				distance = 1.5 })
 		Wait(1500)
@@ -80,7 +80,7 @@ RegisterNetEvent("jim-vanillaunicorn:PayStrep", function(data)
 end)
 
 AddEventHandler('onResourceStop', function(r) if r ~= GetCurrentResourceName() then return end
-	for k in pairs(Targets) do exports["indigo-target"]:RemoveZone(k) end
+	for k in pairs(Targets) do exports["qb-target"]:RemoveZone(k) end
 	for _, v in pairs(Strepper) do DeleteEntity(v) end
 end)
 

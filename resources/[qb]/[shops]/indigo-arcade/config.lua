@@ -27,7 +27,7 @@ Config.Arcade = {
     }, 
 }
 
--- "single use" prices to be used on non gamehouse machines (e,g props in houses, etc, via indigo-target. check readme.md)
+-- "single use" prices to be used on non gamehouse machines (e,g props in houses, etc, via qb-target. check readme.md)
 Config.singleUsePrice = 500
 -- arcade machine model hashes
 Config.ArcadeModels = {

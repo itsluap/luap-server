@@ -45,7 +45,7 @@ CreateThread(function()
     SetEntityInvincible(ped, true)
     SetBlockingOfNonTemporaryEvents(ped, true)
 
-    exports['indigo-target']:AddTargetEntity(ped, {
+    exports['qb-target']:AddTargetEntity(ped, {
         options = {
             {
                 label = Lang:t('bennys.warehouse'),

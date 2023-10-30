@@ -84,7 +84,7 @@ https://discord.gg/xKgQZ6wZvS
 # Dependancies
 
 - This script requires `indigo-menu` and `indigo-input` for the menu systems
-- This script requires `indigo-target` for opening stores, crafting tables, cash registers, going on duty, nos refill
+- This script requires `qb-target` for opening stores, crafting tables, cash registers, going on duty, nos refill
 
 - This script is also designed to use `jim-payments` (https://github.com/jimathy/jim-payments) for charging customs and sending money to the society accounts
 

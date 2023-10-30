@@ -147,7 +147,7 @@ local function spawnPeds()
                 }
             end
             if opts then
-                exports['indigo-target']:AddTargetEntity(ped, {
+                exports['qb-target']:AddTargetEntity(ped, {
                     options = {opts},
                     distance = 2.0
                 })

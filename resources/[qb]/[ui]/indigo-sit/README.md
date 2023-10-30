@@ -7,7 +7,7 @@ Orignial - https://github.com/boostless/esx_sit
 
 qb-core - https://github.com/qbcore-framework/qb-core
 
-indigo-target - https://github.com/BerkieBb/indigo-target
+qb-target - https://github.com/BerkieBb/qb-target
 
 polyzone - https://github.com/mkafrin/PolyZone
 

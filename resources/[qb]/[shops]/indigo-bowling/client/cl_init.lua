@@ -72,7 +72,7 @@ Citizen.CreateThread(function()
         GetHashKey("a_m_o_salton_01"),
     }
 
-    exports['indigo-target']:AddTargetModel(BowlingPed, {
+    exports['qb-target']:AddTargetModel(BowlingPed, {
         options = {
             {
                 event = 'bp-bowling:client:openMenu',
@@ -167,7 +167,7 @@ local sheesh = false
 function shit(k,v) 
     Citizen.CreateThread(function()
         while sheesh == true do
-            exports['indigo-target']:AddBoxZone("bp-bowling:lane_"..k, v.pos, 1.8, 2.0, {
+            exports['qb-target']:AddBoxZone("bp-bowling:lane_"..k, v.pos, 1.8, 2.0, {
             
                 name = "bp-bowling:lane_"..k,
                 heading = 0.0,

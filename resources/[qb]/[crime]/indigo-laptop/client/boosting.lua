@@ -272,7 +272,7 @@ local function StartVin()
             TriggerServerEvent("indigo-laptop:server:fuckvin", NetID, model, mods)
             TriggerServerEvent('indigo-laptop:server:finishBoost', NetID, true)
             Entity(car).state.isvinCar = false
-            exports['indigo-target']:RemoveTargetEntity(car, "Scratch Vin")
+            exports['qb-target']:RemoveTargetEntity(car, "Scratch Vin")
             ClearPedTasks(PlayerPedId())
         end, function() -- Play When Cancel
         ClearPedTasks(PlayerPedId())
@@ -285,7 +285,7 @@ local function MeVinYeah()
 
     local state = Entity(car).state
     if state.isvinCar then
-        exports['indigo-target']:AddTargetEntity(car, {
+        exports['qb-target']:AddTargetEntity(car, {
             options = {
                 {
                     action = function()
@@ -718,7 +718,7 @@ RegisterNUICallback("boosting/expire", function(data, cb)
 end)
 
 CreateThread(function()
-    exports['indigo-target']:AddGlobalVehicle({
+    exports['qb-target']:AddGlobalVehicle({
         options = {
             {
                 label = "Check Vin",

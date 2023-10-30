@@ -43,7 +43,7 @@ local function spawnOccasionsVehicles(vehicles)
                 FreezeEntityPosition(occasionVehicles[Zone][i].car,true)
                 if Config.UseTarget then
                     if not EntityZones then EntityZones = {} end
-                    EntityZones[i] = exports['indigo-target']:AddTargetEntity(occasionVehicles[Zone][i].car, {
+                    EntityZones[i] = exports['qb-target']:AddTargetEntity(occasionVehicles[Zone][i].car, {
                         options = {
                             {
                                 type = "client",
@@ -73,7 +73,7 @@ local function despawnOccasionsVehicles()
         end
 
         if EntityZones[i] and Config.UseTarget then
-            exports['indigo-target']:RemoveZone(EntityZones[i])
+            exports['qb-target']:RemoveZone(EntityZones[i])
         end
     end
     EntityZones = {}

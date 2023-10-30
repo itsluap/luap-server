@@ -6,13 +6,13 @@ local Poles = {}
 CreateThread(function()
 	for k, v in pairs(Config.Poles) do
 		Poles["UniDance"..k] =
-		exports['indigo-target']:AddBoxZone("UniDance"..k, v.coords.xyz, 0.7, 0.7, { name="UniDance"..k, heading = v.coords.w, debugPoly=Config.Debug, minZ = v.minZ, maxZ = v.maxZ, },
+		exports['qb-target']:AddBoxZone("UniDance"..k, v.coords.xyz, 0.7, 0.7, { name="UniDance"..k, heading = v.coords.w, debugPoly=Config.Debug, minZ = v.minZ, maxZ = v.maxZ, },
 			{ options = { { event = "jim-vanillaunicorn:Dance", icon = "fas fa-chair", label = Loc[Config.Lan].info["dance"], job = "vanilla", loc = v.coords, pole = v.pole }, },
 				distance = v.distance })
 	end
 	for k, v in pairs(Config.Dance) do
 		Poles["UniPvtDance"..k] =
-			exports['indigo-target']:AddBoxZone("UniPvtDance"..k, v.coords.xyz, 0.7, 0.7, { name="UniPvtDance"..k, heading = v.coords.w, debugPoly=Config.Debug, minZ = v.minZ, maxZ = v.maxZ, },
+			exports['qb-target']:AddBoxZone("UniPvtDance"..k, v.coords.xyz, 0.7, 0.7, { name="UniPvtDance"..k, heading = v.coords.w, debugPoly=Config.Debug, minZ = v.minZ, maxZ = v.maxZ, },
 				{ options = { { event = "jim-vanillaunicorn:PvtDance", icon = "fas fa-chair", label = Loc[Config.Lan].info["dance"], job = "vanilla", loc = v.coords, }, },
 					distance = 1.7 })
 	end
@@ -133,5 +133,5 @@ elseif Config.MLO == "van" then
 end
 
 AddEventHandler('onResourceStop', function(r) if r ~= GetCurrentResourceName() then return end
-	for k in pairs(Poles) do exports['indigo-target']:RemoveZone(k) end
+	for k in pairs(Poles) do exports['qb-target']:RemoveZone(k) end
 end)

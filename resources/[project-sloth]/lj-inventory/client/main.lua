@@ -319,7 +319,7 @@ local function CreateItemDrop(index)
     PlaceObjectOnGroundProperly(dropItem)
     FreezeEntityPosition(dropItem, true)
 	if Config.UseTarget then
-		exports['indigo-target']:AddTargetEntity(dropItem, {
+		exports['qb-target']:AddTargetEntity(dropItem, {
 			options = {
 				{
 					icon = 'fa-solid fa-bag-shopping',
@@ -1018,7 +1018,7 @@ CreateThread(function()
 end)
 
 
-    --indigo-target
+    --qb-target
     RegisterNetEvent("inventory:client:Crafting", function(dropId)
         local crafting = {}
         crafting.label = "Crafting"
@@ -1044,7 +1044,7 @@ end)
         `prop_toolchest_05`,
         `prop_toolchest_04`,
     }
-    exports['indigo-target']:AddTargetModel(toolBoxModels, {
+    exports['qb-target']:AddTargetModel(toolBoxModels, {
             options = {
                 {
                     event = "inventory:client:WeaponAttachmentCrafting",
@@ -1059,7 +1059,7 @@ end)
             },
         distance = 1.0
     })
-    exports['indigo-target']:AddTargetModel(Config.VendingObjects, {
+    exports['qb-target']:AddTargetModel(Config.VendingObjects, {
         options = {
             {
                 event = "inventory:client:OpenVending",
@@ -1070,7 +1070,7 @@ end)
         },
     distance = 1.0
     })
-    exports['indigo-target']:AddTargetModel(Config.VendingFoodObjects, {
+    exports['qb-target']:AddTargetModel(Config.VendingFoodObjects, {
         options = {
             {
                 event = "inventory:client:OpenFoodVending",

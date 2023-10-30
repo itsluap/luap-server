@@ -16,7 +16,7 @@ shared_scripts {'Config.lua'}
 
 dependencies {
     'indigo-menu',
-    'indigo-target'
+    'qb-target'
 }
 
 -- Support Discord

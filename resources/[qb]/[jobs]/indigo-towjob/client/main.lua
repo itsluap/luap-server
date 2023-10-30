@@ -115,7 +115,7 @@ local function CreateZone(type, number)
     end
 
     if Config.UseTarget and type == "main" then
-        exports['indigo-target']:AddBoxZone(boxName, coords, size, size, {
+        exports['qb-target']:AddBoxZone(boxName, coords, size, size, {
             minZ = coords.z - 5.0,
             maxZ = coords.z + 5.0,
             name = boxName,

@@ -118,7 +118,7 @@ local function DeliverAnim()
         local CL = Config.Locations["trashcan"][currentStop]
         hasBag = false
         local pos = GetEntityCoords(ped)
-        exports['indigo-target']:RemoveTargetEntity(garbageVehicle)
+        exports['qb-target']:RemoveTargetEntity(garbageVehicle)
         if (amountOfBags - 1) <= 0 then
             QBCore.Functions.TriggerCallback('garbagejob:server:NextStop', function(hasMoreStops, nextStop, newBagAmount)
                 if hasMoreStops and nextStop ~= 0 then
@@ -151,7 +151,7 @@ local function DeliverAnim()
             else
                 QBCore.Functions.Notify(Lang:t("info.bags_still", { value = amountOfBags }))
             end
-            exports['indigo-target']:AddCircleZone('garbagebin', vector3(CL.coords.x, CL.coords.y, CL.coords.z), 2.0,{
+            exports['qb-target']:AddCircleZone('garbagebin', vector3(CL.coords.x, CL.coords.y, CL.coords.z), 2.0,{
                 name = 'garbagebin', debugPoly = false, useZ=true}, {
                 options = {{label = Lang:t("target.grab_garbage"),icon = 'fa-solid fa-trash', action = function() TakeAnim() end}},
                 distance = 2.0
@@ -180,8 +180,8 @@ function TakeAnim()
         AnimCheck()
         if Config.UseTarget and not hasBag then
             hasBag = true
-            exports['indigo-target']:RemoveZone("garbagebin")
-            exports['indigo-target']:AddTargetEntity(garbageVehicle, {
+            exports['qb-target']:RemoveZone("garbagebin")
+            exports['qb-target']:AddTargetEntity(garbageVehicle, {
             options = {
                 {label = Lang:t("target.dispose_garbage"),icon = 'fa-solid fa-truck',action = function() DeliverAnim() end,canInteract = function() if hasBag then return true end return false end, }
             },
@@ -351,7 +351,7 @@ function SetGarbageRoute()
     SetBlipRoute(deliveryBlip, true)
     finished = false
     if Config.UseTarget and not hasBag then
-        exports['indigo-target']:AddCircleZone('garbagebin', vector3(CL.coords.x, CL.coords.y, CL.coords.z), 2.0,{
+        exports['qb-target']:AddCircleZone('garbagebin', vector3(CL.coords.x, CL.coords.y, CL.coords.z), 2.0,{
             name = 'garbagebin', debugPoly = false, useZ=true }, {
             options = {{label = Lang:t("target.grab_garbage"), icon = 'fa-solid fa-trash', action = function() TakeAnim() end }},
             distance = 2.0
@@ -396,7 +396,7 @@ local function spawnPeds()
         current.pedHandle = ped
 
         if Config.UseTarget then
-            exports['indigo-target']:AddTargetEntity(ped, {
+            exports['qb-target']:AddTargetEntity(ped, {
                 options = {{type = "client", event = "indigo-garbagejob:client:MainMenu", label = Lang:t("target.talk"), icon = 'fa-solid fa-recycle', job = "garbage",}},
                 distance = 2.0
             })

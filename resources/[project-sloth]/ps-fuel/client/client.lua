@@ -53,7 +53,7 @@ CreateThread(function()
 		"seat_dside_r",
 		"engine",
 	}
-	exports['indigo-target']:AddTargetBone(bones, {
+	exports['qb-target']:AddTargetBone(bones, {
 		options = {
 			{
 				type = "client",
@@ -68,7 +68,7 @@ CreateThread(function()
 		distance = 1.5,
 	})
 	-- Target Export
-	exports['indigo-target']:AddTargetModel(props, {
+	exports['qb-target']:AddTargetModel(props, {
 		options = {
 			{
 				num = 1,

@@ -95,7 +95,7 @@ RegisterNetEvent('kb-business:client:WeedRestock', function()
         FreezeEntityPosition(ShopPed, true)
         SetEntityInvincible(ShopPed, true)
         SetBlockingOfNonTemporaryEvents(ShopPed, true)
-		exports['indigo-target']:AddTargetEntity(ShopPed, { -- create third eye
+		exports['qb-target']:AddTargetEntity(ShopPed, { -- create third eye
 			options = {
 				{
 					type = "client",
@@ -110,7 +110,7 @@ RegisterNetEvent('kb-business:client:WeedRestock', function()
 		TriggerEvent('kb-business:client:WeedRestockTimer') -- start timer
 		TriggerEvent('QBCore:Notify', "Restock has been started!", 'success') 
 	elseif not canStock then 
-		exports['indigo-target']:RemoveTargetEntity(ShopPed, 'Restock Shop') -- remove third eye if started returns false
+		exports['qb-target']:RemoveTargetEntity(ShopPed, 'Restock Shop') -- remove third eye if started returns false
 		DeletePed(ShopPed)
 		ClearAllBlipRoutes()
 		TriggerEvent('QBCore:Notify', "Restock was cancelled!", 'error') 
@@ -124,7 +124,7 @@ RegisterNetEvent('kb-business:client:WeedRestockTimer', function()
         Wait(1000)
         timer = timer - 1000
         if timer == 0 then
-            exports['indigo-target']:RemoveTargetEntity(ShopPed, 'Restock Shop')
+            exports['qb-target']:RemoveTargetEntity(ShopPed, 'Restock Shop')
 			canStock = true
 			DeletePed(ShopPed)
 			ClearAllBlipRoutes()
@@ -134,7 +134,7 @@ end)
 
 RegisterNetEvent('kb-business:client:StopWeedRestock', function()
 	local current = 'mp_m_shopkeep_01'
-	exports['indigo-target']:RemoveTargetEntity(ShopPed, 'Restock Shop')
+	exports['qb-target']:RemoveTargetEntity(ShopPed, 'Restock Shop')
 end)
 
 RegisterNetEvent("kb-business:OpenWeedRestock", function()

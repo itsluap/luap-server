@@ -6,7 +6,7 @@ This script is designed to make it simple to setup business and give it function
 
 An example business is in shared/businesses.lua (Using Yellowjack with [This MLO](https://www.gta5-mods.com/maps/mlo-yellow-jack-extension-interior-2nd-floor))
 
-Easy to setup and configure indigo-target zones for mostly every feature
+Easy to setup and configure qb-target zones for mostly every feature
 - Support for dispensers (Sell items to players)
 - Support for stashes
 - Setup custom actions for the business (Call external events)
@@ -105,5 +105,5 @@ You can see an example event in client/employeeActions-example.lua & server/empl
 
 **Required Resources**
 - QBCore
-- indigo-target
+- qb-target
 - [Github - jim-payments](https://github.com/jimathy/jim-payments)

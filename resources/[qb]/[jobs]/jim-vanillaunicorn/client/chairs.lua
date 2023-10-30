@@ -7,7 +7,7 @@ local Chairs = {}
 CreateThread(function()
 	for k, v in pairs(Config.Chairs) do
 		Chairs["UniChair"..k] =
-		exports['indigo-target']:AddBoxZone("UniChair"..k, v.coords.xyz, 0.7, 0.7, { name="UniChair"..k, heading = v.coords.w, debugPoly=Config.Debug, minZ = v.coords.z-1.2, maxZ = v.coords.z+0.1, },
+		exports['qb-target']:AddBoxZone("UniChair"..k, v.coords.xyz, 0.7, 0.7, { name="UniChair"..k, heading = v.coords.w, debugPoly=Config.Debug, minZ = v.coords.z-1.2, maxZ = v.coords.z+0.1, },
 			{ options = { { event = "jim-vanillaunicorn:Chair", icon = "fas fa-chair", label = Loc[Config.Lan].info["Sit Down"], loc = v.coords, stand = v.stand }, },
 				distance = 2.2
 		})
@@ -202,4 +202,4 @@ elseif Config.MLO == "van" then
 	}
 end
 
-AddEventHandler('onResourceStop', function(r) if r == GetCurrentResourceName() then for k in pairs(Chairs) do exports['indigo-target']:RemoveZone(k) end end end)
+AddEventHandler('onResourceStop', function(r) if r == GetCurrentResourceName() then for k in pairs(Chairs) do exports['qb-target']:RemoveZone(k) end end end)

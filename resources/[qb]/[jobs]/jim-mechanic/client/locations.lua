@@ -422,7 +422,7 @@ CreateThread(function()
 			if v.crafting then
 				for l, b in pairs(v.crafting) do
 					Targets["MechCraft: "..k..l] =
-					exports['indigo-target']:AddBoxZone("MechCraft: "..k..l, b.coords, b.w, b.d, { name="MechCraft: "..k..l, heading = b.heading, debugPoly=Config.Debug, minZ=b.coords.z-1.0, maxZ=b.coords.z+1.0 },
+					exports['qb-target']:AddBoxZone("MechCraft: "..k..l, b.coords, b.w, b.d, { name="MechCraft: "..k..l, heading = b.heading, debugPoly=Config.Debug, minZ=b.coords.z-1.0, maxZ=b.coords.z+1.0 },
 						{ options = { { event = "jim-mechanic:client:Crafting:Menu", icon = "fas fa-cogs", label = Loc[Config.Lan]["crafting"].menuheader, job = job }, },
 							distance = 2.0 })
 				end
@@ -435,7 +435,7 @@ CreateThread(function()
 			if v.store then
 				for l, b in pairs(v.store) do
 					Targets["MechStore: "..k..l] =
-					exports['indigo-target']:AddBoxZone("MechStore: "..k..l, b.coords, b.w, b.d, { name="MechStore: "..k..l, heading = b.heading, debugPoly=Config.Debug, minZ=b.coords.z-1.0, maxZ=b.coords.z+1.0 },
+					exports['qb-target']:AddBoxZone("MechStore: "..k..l, b.coords, b.w, b.d, { name="MechStore: "..k..l, heading = b.heading, debugPoly=Config.Debug, minZ=b.coords.z-1.0, maxZ=b.coords.z+1.0 },
 						{ options = { { event = "jim-mechanic:client:Store:Menu", icon = "fas fa-cogs", label = Loc[Config.Lan]["stores"].browse, job = job }, },
 							distance = 2.0 })
 				end
@@ -446,7 +446,7 @@ CreateThread(function()
 	for k, v in pairs(Config.Locations) do
 		if v.payments then v = v.payments
 			Targets["MechReceipt: "..k] =
-			exports['indigo-target']:AddBoxZone("MechReceipt: "..k, v.coords, 0.47, 0.34, { name="MechReceipt: "..k, heading = v.heading, debugPoly=Config.Debug, minZ=v.coords.z-0.1, maxZ=v.coords.z+0.4 },
+			exports['qb-target']:AddBoxZone("MechReceipt: "..k, v.coords, 0.47, 0.34, { name="MechReceipt: "..k, heading = v.heading, debugPoly=Config.Debug, minZ=v.coords.z-0.1, maxZ=v.coords.z+0.4 },
 				{ options = { { event = "jim-payments:client:Charge", icon = "fas fa-credit-card", label = Loc[Config.Lan]["payments"].charge, job = v.job, img = v.img }, },
 					distance = 2.0
 			})
@@ -462,7 +462,7 @@ CreateThread(function()
 			if v.stash then
 				for l, b in pairs(v.stash) do
 					Targets["MechSafe: "..k..l] =
-					exports['indigo-target']:AddBoxZone("MechSafe: "..k..l, b.coords, b.w, b.d, { name="MechSafe: "..k..l, heading = b.heading, debugPoly=Config.Debug, minZ=b.coords.z-1.0, maxZ=b.coords.z+1.0 },
+					exports['qb-target']:AddBoxZone("MechSafe: "..k..l, b.coords, b.w, b.d, { name="MechSafe: "..k..l, heading = b.heading, debugPoly=Config.Debug, minZ=b.coords.z-1.0, maxZ=b.coords.z+1.0 },
 						{ options = { { event = "jim-mechanic:client:Safe", icon = "fas fa-cogs", label = Loc[Config.Lan]["repair"].browse, job = job }, },
 							distance = 2.0 })
 				end
@@ -482,7 +482,7 @@ CreateThread(function()
 					end
 				end
 				Targets["MechClock: "..k..l] =
-				exports['indigo-target']:AddBoxZone("MechClock: "..k..l, vector3(b.coords.x, b.coords.y, b.coords.z), 0.45, 0.4, { name="MechClock: "..k..l, heading = b.heading, debugPoly=Config.Debug, minZ=b.coords.z-0.1, maxZ=b.coords.z+0.4 },
+				exports['qb-target']:AddBoxZone("MechClock: "..k..l, vector3(b.coords.x, b.coords.y, b.coords.z), 0.45, 0.4, { name="MechClock: "..k..l, heading = b.heading, debugPoly=Config.Debug, minZ=b.coords.z-0.1, maxZ=b.coords.z+0.4 },
 					{ options = {
 						{ type = "server", event = "QBCore:ToggleDuty", icon = "fas fa-clipboard", label = "Duty Toggle", job = v.job },
 						{ event = "qb-bossmenu:client:OpenMenu", icon = "fas fa-list", label = "Open Bossmenu", job = bossrole, },
@@ -500,7 +500,7 @@ CreateThread(function()
 		if v.garage then
 			local out = v.garage.out
 			Targets["MechGarage: "..k] =
-			exports['indigo-target']:AddBoxZone("MechGarage: "..k, vector3(out.x, out.y, out.z-1.03), 0.8, 0.5, { name="MechGarage: "..k, heading = out[4]+180.0, debugPoly=Config.Debug, minZ=(out.z-1.03)-0.1, maxZ=out.z-1.03+1.3 },
+			exports['qb-target']:AddBoxZone("MechGarage: "..k, vector3(out.x, out.y, out.z-1.03), 0.8, 0.5, { name="MechGarage: "..k, heading = out[4]+180.0, debugPoly=Config.Debug, minZ=(out.z-1.03)-0.1, maxZ=out.z-1.03+1.3 },
 				{ options = { { event = "jim-mechanic:client:Garage:Menu", icon = "fas fa-clipboard", label = Loc[Config.Lan]["garage"].jobgarage, job = job, coords = v.garage.spawn, list = v.garage.list }, },
 				distance = 2.0 })
 			loadModel(`prop_parkingpay`)
@@ -518,7 +518,7 @@ CreateThread(function()
 				SetEntityHeading(nos[#nos],b.coords[4]+0.0)
 				FreezeEntityPosition(nos[#nos], true)
 				Targets["MechNos: "..k..l] =
-				exports['indigo-target']:AddBoxZone("MechNos: "..k..l, vector3(b.coords.x, b.coords.y, b.coords.z), 0.6, 0.6, { name="MechNos: "..k..l, heading = b.coords[4], debugPoly=Config.Debug, minZ=b.coords.z-0.85, maxZ=b.coords.z+0.85 },
+				exports['qb-target']:AddBoxZone("MechNos: "..k..l, vector3(b.coords.x, b.coords.y, b.coords.z), 0.6, 0.6, { name="MechNos: "..k..l, heading = b.coords[4], debugPoly=Config.Debug, minZ=b.coords.z-0.85, maxZ=b.coords.z+0.85 },
 					{ options = { { event = "jim-mechanic:client:NosRefill", item = "noscan", icon = "fas fa-gauge-high", label = QBCore.Shared.Items["nos"].label.." ($"..Config.NosRefillCharge..")", coords = b.coords, tank = nos[#nos], }, },
 					distance = 2.0 })
 
@@ -776,7 +776,7 @@ RegisterNetEvent("jim-mechanic:client:Garage:Blip", function(data)
 end)
 
 AddEventHandler('onResourceStop', function(r) if r ~= GetCurrentResourceName() then return end
-	for k in pairs(Targets) do exports["indigo-target"]:RemoveZone(k) end
+	for k in pairs(Targets) do exports["qb-target"]:RemoveZone(k) end
 	for i = 1, #till do DeleteEntity(till[i]) end
 	for i = 1, #laptop do DeleteEntity(laptop[i]) end
 	for i = 1, #nos do DeleteEntity(nos[i]) end

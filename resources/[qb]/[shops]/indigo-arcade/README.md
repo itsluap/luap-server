@@ -38,7 +38,7 @@ the cpu determines how long the initial loading bar lasts<br>
 the gpu determines the resolution of the screen
 
 TODO:
-- [x] indigo-target integration to allow all arcade machines to work
+- [x] qb-target integration to allow all arcade machines to work
 - [x] Freeze Player to allow gamepad use without punching and moving in GTA
 - [x] Add some animations to show player is using arcade machine / computer
 
@@ -53,5 +53,5 @@ MISC:
 
 Dependencies
 
-indigo-target<br>
+qb-target<br>
 https://github.com/d3st1nyh4x/MenuAPI (fork fixed for large lists)

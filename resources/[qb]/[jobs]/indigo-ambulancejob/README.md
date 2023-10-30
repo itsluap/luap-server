@@ -4,7 +4,7 @@ EMS Job and Death/Wound Logic for qb-core Framework :ambulance:
 ## Dependencies
 - [qb-core](https://github.com/qbcore-framework/qb-core) (Required)
 - [indigo-phone](https://github.com/qbcore-framework/indigo-phone) (Required)
-- [indigo-target](https://github.com/BerkieBb/indigo-target) (Optional)
+- [qb-target](https://github.com/BerkieBb/qb-target) (Optional)
 - [PolyZone](https://github.com/mkafrin/PolyZone) (Required)
 
 # Server.cfg Convar Update

@@ -685,7 +685,7 @@ if Config.UseTarget then
     CreateThread(function()
         -- Toggle Duty
         for k, v in pairs(Config.Locations["duty"]) do
-            exports['indigo-target']:AddBoxZone("PoliceDuty_"..k, vector3(v.x, v.y, v.z), 1, 1, {
+            exports['qb-target']:AddBoxZone("PoliceDuty_"..k, vector3(v.x, v.y, v.z), 1, 1, {
                 name = "PoliceDuty_"..k,
                 heading = 11,
                 debugPoly = false,
@@ -707,7 +707,7 @@ if Config.UseTarget then
 
         -- Personal Stash
         for k, v in pairs(Config.Locations["stash"]) do
-            exports['indigo-target']:AddBoxZone("PoliceStash_"..k, vector3(v.x, v.y, v.z), 1.5, 1.5, {
+            exports['qb-target']:AddBoxZone("PoliceStash_"..k, vector3(v.x, v.y, v.z), 1.5, 1.5, {
                 name = "PoliceStash_"..k,
                 heading = 11,
                 debugPoly = false,
@@ -729,7 +729,7 @@ if Config.UseTarget then
 
         -- Police Trash
         for k, v in pairs(Config.Locations["trash"]) do
-            exports['indigo-target']:AddBoxZone("PoliceTrash_"..k, vector3(v.x, v.y, v.z), 1, 1.75, {
+            exports['qb-target']:AddBoxZone("PoliceTrash_"..k, vector3(v.x, v.y, v.z), 1, 1.75, {
                 name = "PoliceTrash_"..k,
                 heading = 11,
                 debugPoly = false,
@@ -751,7 +751,7 @@ if Config.UseTarget then
 
         -- Fingerprint
         for k, v in pairs(Config.Locations["fingerprint"]) do
-            exports['indigo-target']:AddBoxZone("PoliceFingerprint_"..k, vector3(v.x, v.y, v.z), 2, 1, {
+            exports['qb-target']:AddBoxZone("PoliceFingerprint_"..k, vector3(v.x, v.y, v.z), 2, 1, {
                 name = "PoliceFingerprint_"..k,
                 heading = 11,
                 debugPoly = false,
@@ -773,7 +773,7 @@ if Config.UseTarget then
 
         -- Armoury
         for k, v in pairs(Config.Locations["armory"]) do
-            exports['indigo-target']:AddBoxZone("PoliceArmory_"..k, vector3(v.x, v.y, v.z), 5, 1, {
+            exports['qb-target']:AddBoxZone("PoliceArmory_"..k, vector3(v.x, v.y, v.z), 5, 1, {
                 name = "PoliceArmory_"..k,
                 heading = 11,
                 debugPoly = false,

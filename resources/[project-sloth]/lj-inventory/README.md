@@ -12,7 +12,7 @@ Runs at ~ 0.00 to 0.01 ms if you have more optimization suggestions feel free to
 In collaboration with [OnlyCats](https://github.com/onlycats) who helped reorganized and also created some custom images.
 # Dependencies
 * [qbcore framework](https://github.com/qbcore-framework)
-* [indigo-target](https://github.com/BerkieBb/indigo-target)
+* [qb-target](https://github.com/BerkieBb/qb-target)
 * [qb-core](https://github.com/qbcore-framework/qb-core)
 * [qb-logs](https://github.com/qbcore-framework/qb-logs)
 * [indigo-traphouse](https://github.com/qbcore-framework/indigo-traphouse)

@@ -34,7 +34,7 @@
         - Uses PS-UI, QB-Lock, and indigo-skillbar
         - All configurable from the config
 - Prison break!
-	- indigo-target at gate panels
+	- qb-target at gate panels
 	- PS-Var or PS-Thermite Minigames
 - Lockers for prisoners!
     - Adds lockers to every cell
@@ -49,7 +49,7 @@
 - Debug Configs
     - Prints for debugging
     - Polyzoine Debug
-- Create/Destroy all indigo-target zones
+- Create/Destroy all qb-target zones
     - Resource Start/Stop
     - Player Loaded/Unloaded
 - Choose to remove player jobs when entering prison
@@ -143,7 +143,7 @@ end)
 ## Dependencies:
 
 - indigo-policejob https://github.com/qbcore-framework/indigo-policejob
-- indigo-target https://github.com/qbcore-framework/indigo-target
+- qb-target https://github.com/qbcore-framework/qb-target
 - indigo-menu https://github.com/qbcore-framework/indigo-menu
 - qb-lock https://github.com/Tex27/qb-lock
 - OPTIONAL FOR PRISON SHIV: Custom-Weapons https://github.com/NoobySloth/Custom-Weapons

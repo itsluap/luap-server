@@ -49,7 +49,7 @@ Citizen.CreateThread(function()
             end
         end)
 
-        exports['indigo-target']:AddBoxZone(k..'_Target', v.Target.coords, v.Target.length, v.Target.width, {
+        exports['qb-target']:AddBoxZone(k..'_Target', v.Target.coords, v.Target.length, v.Target.width, {
             name = k..'_Target',
             heading = 0,
             debugPoly = false,

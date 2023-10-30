@@ -414,7 +414,7 @@ if Config.UseTarget then
                 }
             end
 
-            exports['indigo-target']:AddBoxZone(v.shopType .. k, v.coords, v.length, v.width, {
+            exports['qb-target']:AddBoxZone(v.shopType .. k, v.coords, v.length, v.width, {
                 name = v.shopType .. k,
                 debugPoly = false,
                 minZ = v.coords.z-1,
@@ -448,7 +448,7 @@ if Config.UseTarget then
                 end
             end
 
-            exports['indigo-target']:AddBoxZone('clothing_' .. v.requiredJob .. k, v.coords, v.length, v.width, {
+            exports['qb-target']:AddBoxZone('clothing_' .. v.requiredJob .. k, v.coords, v.length, v.width, {
                 name = 'clothing_' .. v.requiredJob .. k,
                 debugPoly = false,
                 minZ = v.coords.z - 2,

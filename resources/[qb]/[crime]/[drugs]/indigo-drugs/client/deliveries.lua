@@ -188,7 +188,7 @@ local function DeliverStuff()
             TriggerServerEvent('indigo-drugs:server:successDelivery', activeDelivery, true)
             activeDelivery = nil
             if Config.UseTarget then
-                exports['indigo-target']:RemoveZone('drugDeliveryZone')
+                exports['qb-target']:RemoveZone('drugDeliveryZone')
             else
                 drugDeliveryZone:destroy()
             end
@@ -242,7 +242,7 @@ end
 function InitZones()
     if Config.UseTarget then
         for k,v in pairs(Config.Dealers) do
-            exports["indigo-target"]:AddBoxZone("dealer_"..k, vector3(v.coords.x, v.coords.y, v.coords.z), 1.5, 1.5, {
+            exports["qb-target"]:AddBoxZone("dealer_"..k, vector3(v.coords.x, v.coords.y, v.coords.z), 1.5, 1.5, {
                 name = "dealer_"..k,
                 heading = v.heading,
                 minZ = v.coords.z - 1,
@@ -365,7 +365,7 @@ RegisterNetEvent('indigo-drugs:client:setLocation', function(locationData)
     DeliveryTimer()
     SetMapBlip(activeDelivery["coords"]["x"], activeDelivery["coords"]["y"])
     if Config.UseTarget then
-        exports["indigo-target"]:AddBoxZone('drugDeliveryZone', vector3(activeDelivery["coords"].x, activeDelivery["coords"].y, activeDelivery["coords"].z), 1.5, 1.5, {
+        exports["qb-target"]:AddBoxZone('drugDeliveryZone', vector3(activeDelivery["coords"].x, activeDelivery["coords"].y, activeDelivery["coords"].z), 1.5, 1.5, {
             name = 'drugDeliveryZone',
             heading = 0,
             minZ = activeDelivery["coords"].z - 1,

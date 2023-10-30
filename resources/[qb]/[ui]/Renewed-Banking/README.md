@@ -10,7 +10,7 @@ This resource is a replacement for qb-banking, qb-atm, qb-managment
 # Dependencies
 * [oxmysql](https://github.com/overextended/oxmysql)
 * [QBCore](https://github.com/qbcore-framework/qb-core)
-* [indigo-target](https://github.com/qbcore-framework/indigo-target)
+* [qb-target](https://github.com/qbcore-framework/qb-target)
 * [indigo-menu](https://github.com/qbcore-framework/indigo-menu)
 * [indigo-input](https://github.com/qbcore-framework/indigo-input)
 * [progressbars](https://github.com/Project-Sloth/progressbar)

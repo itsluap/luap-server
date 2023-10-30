@@ -19,7 +19,7 @@ Black Market Script For QBCore
 
 # Dependencies
 - [qb-core](https://github.com/qbcore-framework/qb-core)
-- [indigo-target](https://github.com/qbcore-framework/indigo-target)
+- [qb-target](https://github.com/qbcore-framework/qb-target)
 - [indigo-menu](https://github.com/qbcore-framework/indigo-menu)
 
 # Previews

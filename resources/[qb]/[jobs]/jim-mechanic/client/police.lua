@@ -8,7 +8,7 @@ Config.QuickJobs = {
 }
 
 Config.PoliceLocations = {
-    --Add your poly zone box locations and job name for each store and it will add it to the indigo-target loop above
+    --Add your poly zone box locations and job name for each store and it will add it to the qb-target loop above
     { coords = vector3(451.05, -973.19, 25.7), heading = 0, }, -- MRPD UNDERGROUND PARKING
     { coords = vector3(342.51, -570.98, 28.8), heading = 250.0, }, -- PILL BOX GARAGE
 }
@@ -20,7 +20,7 @@ CreateThread(function()
 		bench[#bench+1] = CreateObject(`gr_prop_gr_bench_03a`,v.coords.x, v.coords.y, v.coords.z-2.4,false,false,false)
 		SetEntityHeading(bench[#bench], v.heading)
 		FreezeEntityPosition(bench[#bench], true)
-		exports['indigo-target']:AddBoxZone("bench"..k, v.coords, 1.2, 4.2, { name="bench"..k, heading = v.heading, debugPoly=Config.Debug, minZ = v.coords.z-1, maxZ = v.coords.z+1.4, },
+		exports['qb-target']:AddBoxZone("bench"..k, v.coords, 1.2, 4.2, { name="bench"..k, heading = v.heading, debugPoly=Config.Debug, minZ = v.coords.z-1, maxZ = v.coords.z+1.4, },
 			{ options = { { event = "jim-mechanic:client:Police:Menu", icon = "fas fa-cogs", label = Loc[Config.Lan]["police"].userepair, job = Config.QuickJobs, }, }, distance = 5.0 })
 	end
 end)
@@ -393,7 +393,7 @@ end)
 
 AddEventHandler('onResourceStop', function(r)
 	if r == GetCurrentResourceName() then
-		for k, v in pairs(Config.PoliceLocations) do exports['indigo-target']:RemoveZone("bench"..k) end
+		for k, v in pairs(Config.PoliceLocations) do exports['qb-target']:RemoveZone("bench"..k) end
 		for i = 1, #bench do DeleteEntity(bench[i])	end
 	end
 end)

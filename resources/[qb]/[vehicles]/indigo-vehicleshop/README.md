@@ -68,7 +68,7 @@ https://github.com/mkafrin/PolyZone/wiki/Using-the-creation-script
 
 ```lua
 Config = {}
-Config.UsingTarget = false -- If you are using indigo-target (uses entity zones to target vehicles)
+Config.UsingTarget = false -- If you are using qb-target (uses entity zones to target vehicles)
 Config.Commission = 0.10 -- Percent that goes to sales person from a full car sale - default 10%
 Config.FinanceCommission = 0.05 -- Percent that goes to sales person from a finance sale - default 5%
 Config.FinanceZone = vector3(-29.53, -1103.67, 26.42) -- Where the finance menu is located

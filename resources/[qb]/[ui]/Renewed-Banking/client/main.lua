@@ -83,7 +83,7 @@ CreateThread(function ()
         }})
         return
     end
-    exports['indigo-target']:AddTargetModel(config.atms,{
+    exports['qb-target']:AddTargetModel(config.atms,{
         options = {{
             type = "client",
             event = "Renewed-Banking:client:openBankUI",
@@ -150,7 +150,7 @@ local function createPeds()
         }
         exports.ox_target:addLocalEntity(peds.adv, targetOpts)
     else
-        exports['indigo-target']:AddTargetEntity(peds.basic, {
+        exports['qb-target']:AddTargetEntity(peds.basic, {
             options = {
                 {
                     type = "client",
@@ -162,7 +162,7 @@ local function createPeds()
             },
             distance = 2.0
         })
-        exports['indigo-target']:AddTargetEntity(peds.adv, {
+        exports['qb-target']:AddTargetEntity(peds.adv, {
             options = {
                 {
                     type = "client",
@@ -217,9 +217,9 @@ AddEventHandler('onResourceStop', function(resource)
         exports.ox_target:removeEntity(peds.basic, {'renewed_banking_openui'})
         exports.ox_target:removeEntity(peds.adv, {'renewed_banking_openui','renewed_banking_accountmng'})
     else
-        exports['indigo-target']:RemoveTargetModel(config.atms, Lang:t("menu.view_bank"))
-        exports['indigo-target']:RemoveTargetEntity(peds.basic, Lang:t("menu.view_bank"))
-        exports['indigo-target']:RemoveTargetEntity(peds.adv, {Lang:t("menu.view_bank"), Lang:t("menu.manage_bank")})
+        exports['qb-target']:RemoveTargetModel(config.atms, Lang:t("menu.view_bank"))
+        exports['qb-target']:RemoveTargetEntity(peds.basic, Lang:t("menu.view_bank"))
+        exports['qb-target']:RemoveTargetEntity(peds.adv, {Lang:t("menu.view_bank"), Lang:t("menu.manage_bank")})
     end
     deletePeds()
 end)

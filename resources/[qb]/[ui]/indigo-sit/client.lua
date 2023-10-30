@@ -35,7 +35,7 @@ Citizen.CreateThread(function()
 		table.insert(Sitables, model)
 	end
 	Citizen.Wait(100)
-	exports['indigo-target']:AddTargetModel(Sitables, {
+	exports['qb-target']:AddTargetModel(Sitables, {
         options = {
             {
                 event = "indigo-sit:Sit",

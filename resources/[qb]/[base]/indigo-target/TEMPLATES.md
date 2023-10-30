@@ -1,11 +1,11 @@
-# These are Templates for all the functions in indigo-target
+# These are Templates for all the functions in qb-target
 
 ## AddCircleZone
 
 ### Function Format
 
 ```lua
--- This is the function from how you would use it inside indigo-target/client.lua
+-- This is the function from how you would use it inside qb-target/client.lua
 AddCircleZone(name: string, center: vector3, radius: float, options: table, targetoptions: table)
 
 options = {
@@ -46,7 +46,7 @@ targetoptions = {
     debugPoly = false, -- This is for enabling/disabling the drawing of the box, it accepts only a boolean value (true or false), when true it will draw the polyzone in green
     options = { -- This is your options table, in this table all the options will be specified for the target to accept
       { -- This is the first table with options, you can make as many options inside the options table as you want
-        num = 1, -- This is the position number of your option in the list of options in the indigo-target context menu (OPTIONAL)
+        num = 1, -- This is the position number of your option in the list of options in the qb-target context menu (OPTIONAL)
         type = "client", -- This specifies the type of event the target has to trigger on click, this can be "client", "server", "command" or "qbcommand", this is OPTIONAL and will only work if the event is also specified
         event = "Test:Event", -- This is the event it will trigger on click, this can be a client event, server event, command or qbcore registered command, NOTICE: Normal command can't have arguments passed through, QBCore registered ones can have arguments passed through
         icon = 'fas fa-example', -- This is the icon that will display next to this trigger option
@@ -73,16 +73,16 @@ targetoptions = {
   },
 ```
 
-### Export option, this will go into any client side resource file aside from indigo-target's one
+### Export option, this will go into any client side resource file aside from qb-target's one
 
 ```lua
-exports['indigo-target']:AddCircleZone("name", vector3(x, y, z), 1.5, { -- The name has to be unique, the coords a vector3 as shown and the 1.5 is the radius which has to be a float value
+exports['qb-target']:AddCircleZone("name", vector3(x, y, z), 1.5, { -- The name has to be unique, the coords a vector3 as shown and the 1.5 is the radius which has to be a float value
   name = "name", -- This is the name of the zone recognized by PolyZone, this has to be unique so it doesn't mess up with other zones
   debugPoly = false, -- This is for enabling/disabling the drawing of the box, it accepts only a boolean value (true or false), when true it will draw the polyzone in green
 }, {
   options = { -- This is your options table, in this table all the options will be specified for the target to accept
     { -- This is the first table with options, you can make as many options inside the options table as you want
-      num = 1, -- This is the position number of your option in the list of options in the indigo-target context menu (OPTIONAL)
+      num = 1, -- This is the position number of your option in the list of options in the qb-target context menu (OPTIONAL)
       type = "client", -- This specifies the type of event the target has to trigger on click, this can be "client", "server", "command" or "qbcommand", this is OPTIONAL and will only work if the event is also specified
       event = "Test:Event", -- This is the event it will trigger on click, this can be a client event, server event, command or qbcore registered command, NOTICE: Normal command can't have arguments passed through, QBCore registered ones can have arguments passed through
       icon = 'fas fa-example', -- This is the icon that will display next to this trigger option
@@ -114,7 +114,7 @@ exports['indigo-target']:AddCircleZone("name", vector3(x, y, z), 1.5, { -- The n
 ### Function Format
 
 ```lua
--- This is the function from how you would use it inside indigo-target/client.lua
+-- This is the function from how you would use it inside qb-target/client.lua
 AddBoxZone(name: string, center: vector3, length: float, width: float, options: table, targetoptions: table)
 
 options = {
@@ -162,7 +162,7 @@ targetoptions = {
     maxZ = 38.9, -- This is the top of the boxzone, this can be different from the Z value in the coords, this has to be a float value
     options = { -- This is your options table, in this table all the options will be specified for the target to accept
       { -- This is the first table with options, you can make as many options inside the options table as you want
-        num = 1, -- This is the position number of your option in the list of options in the indigo-target context menu (OPTIONAL)
+        num = 1, -- This is the position number of your option in the list of options in the qb-target context menu (OPTIONAL)
         type = "client", -- This specifies the type of event the target has to trigger on click, this can be "client", "server", "command" or "qbcommand", this is OPTIONAL and will only work if the event is also specified
         event = "Test:Event", -- This is the event it will trigger on click, this can be a client event, server event, command or qbcore registered command, NOTICE: Normal command can't have arguments passed through, QBCore registered ones can have arguments passed through
         icon = 'fas fa-example', -- This is the icon that will display next to this trigger option
@@ -189,10 +189,10 @@ targetoptions = {
   },
 ```
 
-### Export option, this will go into any client side resource file aside from indigo-target's one
+### Export option, this will go into any client side resource file aside from qb-target's one
 
 ```lua
-exports['indigo-target']:AddBoxZone("name", vector3(x, y, z), 1.5, 1.6, { -- The name has to be unique, the coords a vector3 as shown, the 1.5 is the length of the boxzone and the 1.6 is the width of the boxzone, the length and width have to be float values
+exports['qb-target']:AddBoxZone("name", vector3(x, y, z), 1.5, 1.6, { -- The name has to be unique, the coords a vector3 as shown, the 1.5 is the length of the boxzone and the 1.6 is the width of the boxzone, the length and width have to be float values
   name = "name", -- This is the name of the zone recognized by PolyZone, this has to be unique so it doesn't mess up with other zones
   heading = 12.0, -- The heading of the boxzone, this has to be a float value
   debugPoly = false, -- This is for enabling/disabling the drawing of the box, it accepts only a boolean value (true or false), when true it will draw the polyzone in green
@@ -201,7 +201,7 @@ exports['indigo-target']:AddBoxZone("name", vector3(x, y, z), 1.5, 1.6, { -- The
 }, {
   options = { -- This is your options table, in this table all the options will be specified for the target to accept
     { -- This is the first table with options, you can make as many options inside the options table as you want
-      num = 1, -- This is the position number of your option in the list of options in the indigo-target context menu (OPTIONAL)
+      num = 1, -- This is the position number of your option in the list of options in the qb-target context menu (OPTIONAL)
       type = "client", -- This specifies the type of event the target has to trigger on click, this can be "client", "server", "command" or "qbcommand", this is OPTIONAL and will only work if the event is also specified
       event = "Test:Event", -- This is the event it will trigger on click, this can be a client event, server event, command or qbcore registered command, NOTICE: Normal command can't have arguments passed through, QBCore registered ones can have arguments passed through
       icon = 'fas fa-example', -- This is the icon that will display next to this trigger option
@@ -233,7 +233,7 @@ exports['indigo-target']:AddBoxZone("name", vector3(x, y, z), 1.5, 1.6, { -- The
 ### Function Format
 
 ```lua
--- This is the function from how you would use it inside indigo-target/client.lua
+-- This is the function from how you would use it inside qb-target/client.lua
 AddPolyZone(name: string, points: table, options: table, targetoptions: table)
 
 points = {
@@ -283,7 +283,7 @@ targetoptions = {
     maxZ = 38.9, -- This is the top of the boxzone, this can be different from the Z value in the coords, this has to be a float value
     options = { -- This is your options table, in this table all the options will be specified for the target to accept
       { -- This is the first table with options, you can make as many options inside the options table as you want
-        num = 1, -- This is the position number of your option in the list of options in the indigo-target context menu (OPTIONAL)
+        num = 1, -- This is the position number of your option in the list of options in the qb-target context menu (OPTIONAL)
         type = "client", -- This specifies the type of event the target has to trigger on click, this can be "client", "server", "command" or "qbcommand", this is OPTIONAL and will only work if the event is also specified
         event = "Test:Event", -- This is the event it will trigger on click, this can be a client event, server event, command or qbcore registered command, NOTICE: Normal command can't have arguments passed through, QBCore registered ones can have arguments passed through
         icon = 'fas fa-example', -- This is the icon that will display next to this trigger option
@@ -310,13 +310,13 @@ targetoptions = {
   },
 ```
 
-### Export option, this will go into any client side resource file aside from indigo-target's one
+### Export option, this will go into any client side resource file aside from qb-target's one
 
 ```lua
 local points = {
   vector2(x, y, z), vector2(x, y, z), vector2(x, y, z)
 }
-exports['indigo-target']:AddPolyZone("name", points, {
+exports['qb-target']:AddPolyZone("name", points, {
   name = "name", -- This is the name of the zone recognized by PolyZone, this has to be unique so it doesn't mess up with other zones
   debugPoly = false, -- This is for enabling/disabling the drawing of the box, it accepts only a boolean value (true or false), when true it will draw the polyzone in green
   minZ = 36.7, -- This is the bottom of the polyzone, this can be different from the Z value in the coords, this has to be a float value
@@ -324,7 +324,7 @@ exports['indigo-target']:AddPolyZone("name", points, {
 }, {
   options = { -- This is your options table, in this table all the options will be specified for the target to accept
     { -- This is the first table with options, you can make as many options inside the options table as you want
-      num = 1, -- This is the position number of your option in the list of options in the indigo-target context menu (OPTIONAL)
+      num = 1, -- This is the position number of your option in the list of options in the qb-target context menu (OPTIONAL)
       type = "client", -- This specifies the type of event the target has to trigger on click, this can be "client", "server", "command" or "qbcommand", this is OPTIONAL and will only work if the event is also specified
       event = "Test:Event", -- This is the event it will trigger on click, this can be a client event, server event, command or qbcore registered command, NOTICE: Normal command can't have arguments passed through, QBCore registered ones can have arguments passed through
       icon = 'fas fa-example', -- This is the icon that will display next to this trigger option
@@ -356,7 +356,7 @@ exports['indigo-target']:AddPolyZone("name", points, {
 ### Function Format
 
 ```lua
--- This is the function from how you would use it inside indigo-target/client.lua
+-- This is the function from how you would use it inside qb-target/client.lua
 AddComboZone(zones: table, options: table, targetoptions: table)
 
 zones = {zone1: zone, zone2: zone} -- Minimum of 2 zones
@@ -389,7 +389,7 @@ targetoptions = {
 }
 ```
 
-### Export option, this will go into any client side resource file aside from indigo-target's one
+### Export option, this will go into any client side resource file aside from qb-target's one
 
 ```lua
 local zone1 = BoxZone:Create(vector3(500, 500, 100), 3.0, 5.0, {
@@ -401,13 +401,13 @@ local zone2 = BoxZone:Create(vector3(400, 400, 100), 3.0, 5.0, {
   debugPoly = false
 })
 local zones = {zone1, zone2}
-exports['indigo-target']:AddComboZone(zones, {
+exports['qb-target']:AddComboZone(zones, {
   name = "name", -- This is the name of the zone recognized by PolyZone, this has to be unique so it doesn't mess up with other zones
   debugPoly = false, -- This is for enabling/disabling the drawing of the box, it accepts only a boolean value (true or false), when true it will draw the polyzone in green
 }, {
   options = { -- This is your options table, in this table all the options will be specified for the target to accept
     { -- This is the first table with options, you can make as many options inside the options table as you want
-      num = 1, -- This is the position number of your option in the list of options in the indigo-target context menu (OPTIONAL)
+      num = 1, -- This is the position number of your option in the list of options in the qb-target context menu (OPTIONAL)
       type = "client", -- This specifies the type of event the target has to trigger on click, this can be "client", "server", "command" or "qbcommand", this is OPTIONAL and will only work if the event is also specified
       event = "Test:Event", -- This is the event it will trigger on click, this can be a client event, server event, command or qbcore registered command, NOTICE: Normal command can't have arguments passed through, QBCore registered ones can have arguments passed through
       icon = 'fas fa-example', -- This is the icon that will display next to this trigger option
@@ -439,7 +439,7 @@ exports['indigo-target']:AddComboZone(zones, {
 ### Function Format
 
 ```lua
--- This is the function from how you would use it inside indigo-target/client.lua
+-- This is the function from how you would use it inside qb-target/client.lua
 AddTargetBone(bones: table or string, parameters: table)
 
 parameters = {
@@ -469,7 +469,7 @@ parameters = {
     bones = {'boot', 'bonnet'} -- This is your bones table, this specifies all the bones that have to be added to the targetoptions, this can be a string or a table
     options = { -- This is your options table, in this table all the options will be specified for the target to accept
       { -- This is the first table with options, you can make as many options inside the options table as you want
-        num = 1, -- This is the position number of your option in the list of options in the indigo-target context menu (OPTIONAL)
+        num = 1, -- This is the position number of your option in the list of options in the qb-target context menu (OPTIONAL)
         type = "client", -- This specifies the type of event the target has to trigger on click, this can be "client", "server", "command" or "qbcommand", this is OPTIONAL and will only work if the event is also specified
         event = "Test:Event", -- This is the event it will trigger on click, this can be a client event, server event, command or qbcore registered command, NOTICE: Normal command can't have arguments passed through, QBCore registered ones can have arguments passed through
         icon = 'fas fa-example', -- This is the icon that will display next to this trigger option
@@ -493,17 +493,17 @@ parameters = {
   },
 ```
 
-### Export option, this will go into any client side resource file aside from indigo-target's one
+### Export option, this will go into any client side resource file aside from qb-target's one
 
 ```lua
 local bones = {
   'boot',
   'bonnet'
 }
-exports['indigo-target']:AddTargetBone(bones, { -- The bones can be a string or a table
+exports['qb-target']:AddTargetBone(bones, { -- The bones can be a string or a table
   options = { -- This is your options table, in this table all the options will be specified for the target to accept
     { -- This is the first table with options, you can make as many options inside the options table as you want
-      num = 1, -- This is the position number of your option in the list of options in the indigo-target context menu (OPTIONAL)
+      num = 1, -- This is the position number of your option in the list of options in the qb-target context menu (OPTIONAL)
       type = "client", -- This specifies the type of event the target has to trigger on click, this can be "client", "server", "command" or "qbcommand", this is OPTIONAL and will only work if the event is also specified
       event = "Test:Event", -- This is the event it will trigger on click, this can be a client event, server event, command or qbcore registered command, NOTICE: Normal command can't have arguments passed through, QBCore registered ones can have arguments passed through
       icon = 'fas fa-example', -- This is the icon that will display next to this trigger option
@@ -554,7 +554,7 @@ parameters = {
 }
 ```
 
-### Export option, this will go into any client side resource file aside from indigo-target's one
+### Export option, this will go into any client side resource file aside from qb-target's one
 
 ```lua
 CreateThread(function()
@@ -564,10 +564,10 @@ CreateThread(function()
     Wait(0)
   end
   local entity = CreatePed(0, model, GetEntityCoords(PlayerPedId()), GetEntityHeading(PlayerPedId()), true, false)
-  exports['indigo-target']:AddTargetEntity(entity, { -- The specified entity number
+  exports['qb-target']:AddTargetEntity(entity, { -- The specified entity number
     options = { -- This is your options table, in this table all the options will be specified for the target to accept
       { -- This is the first table with options, you can make as many options inside the options table as you want
-        num = 1, -- This is the position number of your option in the list of options in the indigo-target context menu (OPTIONAL)
+        num = 1, -- This is the position number of your option in the list of options in the qb-target context menu (OPTIONAL)
         type = "client", -- This specifies the type of event the target has to trigger on click, this can be "client", "server", "command" or "qbcommand", this is OPTIONAL and will only work if the event is also specified
         event = "Test:Event", -- This is the event it will trigger on click, this can be a client event, server event, command or qbcore registered command, NOTICE: Normal command can't have arguments passed through, QBCore registered ones can have arguments passed through
         icon = 'fas fa-example', -- This is the icon that will display next to this trigger option
@@ -627,7 +627,7 @@ targetoptions = {
 }
 ```
 
-### Export option, this will go into any client side resource file aside from indigo-target's one
+### Export option, this will go into any client side resource file aside from qb-target's one
 
 ```lua
 CreateThread(function()
@@ -637,13 +637,13 @@ CreateThread(function()
     Wait(0)
   end
   local entity = CreatePed(0, model, GetEntityCoords(PlayerPedId()), GetEntityHeading(PlayerPedId()), true, false)
-  exports['indigo-target']:AddEntityZone("name", entity, { -- The specified entity number
+  exports['qb-target']:AddEntityZone("name", entity, { -- The specified entity number
     name = "name", -- This is the name of the zone recognized by PolyZone, this has to be unique so it doesn't mess up with other zones
     debugPoly = false, -- This is for enabling/disabling the drawing of the box, it accepts only a boolean value (true or false), when true it will draw the polyzone in green
   }, {
     options = { -- This is your options table, in this table all the options will be specified for the target to accept
       { -- This is the first table with options, you can make as many options inside the options table as you want
-        num = 1, -- This is the position number of your option in the list of options in the indigo-target context menu (OPTIONAL)
+        num = 1, -- This is the position number of your option in the list of options in the qb-target context menu (OPTIONAL)
         type = "client", -- This specifies the type of event the target has to trigger on click, this can be "client", "server", "command" or "qbcommand", this is OPTIONAL and will only work if the event is also specified
         event = "Test:Event", -- This is the event it will trigger on click, this can be a client event, server event, command or qbcore registered command, NOTICE: Normal command can't have arguments passed through, QBCore registered ones can have arguments passed through
         icon = 'fas fa-example', -- This is the icon that will display next to this trigger option
@@ -707,7 +707,7 @@ parameters = {
     }
     options = { -- This is your options table, in this table all the options will be specified for the target to accept
       { -- This is the first table with options, you can make as many options inside the options table as you want
-        num = 1, -- This is the position number of your option in the list of options in the indigo-target context menu (OPTIONAL)
+        num = 1, -- This is the position number of your option in the list of options in the qb-target context menu (OPTIONAL)
         type = "client", -- This specifies the type of event the target has to trigger on click, this can be "client", "server", "command" or "qbcommand", this is OPTIONAL and will only work if the event is also specified
         event = "Test:Event", -- This is the event it will trigger on click, this can be a client event, server event, command or qbcore registered command, NOTICE: Normal command can't have arguments passed through, QBCore registered ones can have arguments passed through
         icon = 'fas fa-example', -- This is the icon that will display next to this trigger option
@@ -731,16 +731,16 @@ parameters = {
   },
 ```
 
-### Export option, this will go into any client side resource file aside from indigo-target's one
+### Export option, this will go into any client side resource file aside from qb-target's one
 
 ```lua
 local models = {
   'a_m_m_indian_01',
 }
-exports['indigo-target']:AddTargetModel(models, { -- This defines the models, can be a string or a table
+exports['qb-target']:AddTargetModel(models, { -- This defines the models, can be a string or a table
   options = { -- This is your options table, in this table all the options will be specified for the target to accept
     { -- This is the first table with options, you can make as many options inside the options table as you want
-      num = 1, -- This is the position number of your option in the list of options in the indigo-target context menu (OPTIONAL)
+      num = 1, -- This is the position number of your option in the list of options in the qb-target context menu (OPTIONAL)
       type = "client", -- This specifies the type of event the target has to trigger on click, this can be "client", "server", "command" or "qbcommand", this is OPTIONAL and will only work if the event is also specified
       event = "Test:Event", -- This is the event it will trigger on click, this can be a client event, server event, command or qbcore registered command, NOTICE: Normal command can't have arguments passed through, QBCore registered ones can have arguments passed through
       icon = 'fas fa-example', -- This is the icon that will display next to this trigger option
@@ -772,10 +772,10 @@ exports['indigo-target']:AddTargetModel(models, { -- This defines the models, ca
 RemoveZone(name: string)
 ```
 
-### Export option, this will go into any client side resource file aside from indigo-target's one
+### Export option, this will go into any client side resource file aside from qb-target's one
 
 ```lua
-exports['indigo-target']:RemoveZone("name")
+exports['qb-target']:RemoveZone("name")
 ```
 
 ## RemoveTargetBone
@@ -786,10 +786,10 @@ exports['indigo-target']:RemoveZone("name")
 RemoveTargetBone(bones: table or string, labels: table or string)
 ```
 
-### Export option, this will go into any client side resource file aside from indigo-target's one
+### Export option, this will go into any client side resource file aside from qb-target's one
 
 ```lua
-exports['indigo-target']:RemoveTargetBone('bonnet', 'Test')
+exports['qb-target']:RemoveTargetBone('bonnet', 'Test')
 ```
 
 ## RemoveTargetModel
@@ -800,10 +800,10 @@ exports['indigo-target']:RemoveTargetBone('bonnet', 'Test')
 RemoveTargetModel(models: table or string, labels: table or string)
 ```
 
-### Export option, this will go into any client side resource file aside from indigo-target's one
+### Export option, this will go into any client side resource file aside from qb-target's one
 
 ```lua
-exports['indigo-target']:RemoveTargetModel('a_m_m_indian_01', 'Test')
+exports['qb-target']:RemoveTargetModel('a_m_m_indian_01', 'Test')
 ```
 
 ## RemoveTargetEntity
@@ -814,10 +814,10 @@ exports['indigo-target']:RemoveTargetModel('a_m_m_indian_01', 'Test')
 RemoveTargetEntity(entity: number or table, labels: table or string)
 ```
 
-### Export option, this will go into any client side resource file aside from indigo-target's one
+### Export option, this will go into any client side resource file aside from qb-target's one
 
 ```lua
-exports['indigo-target']:RemoveTargetEntity(entity, 'Test')
+exports['qb-target']:RemoveTargetEntity(entity, 'Test')
 ```
 
 ## AddGlobalPed
@@ -852,7 +852,7 @@ parameters = {
 ```lua
   options = { -- This is your options table, in this table all the options will be specified for the target to accept
     { -- This is the first table with options, you can make as many options inside the options table as you want
-      num = 1, -- This is the position number of your option in the list of options in the indigo-target context menu (OPTIONAL)
+      num = 1, -- This is the position number of your option in the list of options in the qb-target context menu (OPTIONAL)
       type = "client", -- This specifies the type of event the target has to trigger on click, this can be "client", "server", "command" or "qbcommand", this is OPTIONAL and will only work if the event is also specified
       event = "Test:Event", -- This is the event it will trigger on click, this can be a client event, server event, command or qbcore registered command, NOTICE: Normal command can't have arguments passed through, QBCore registered ones can have arguments passed through
       icon = 'fas fa-example', -- This is the icon that will display next to this trigger option
@@ -875,13 +875,13 @@ parameters = {
   distance = 2.5, -- This is the distance for you to be at for the target to turn blue, this is in GTA units and has to be a float value
 ```
 
-### Export option, this will go into any client side resource file aside from indigo-target's one
+### Export option, this will go into any client side resource file aside from qb-target's one
 
 ```lua
-exports['indigo-target']:AddGlobalPed({
+exports['qb-target']:AddGlobalPed({
   options = { -- This is your options table, in this table all the options will be specified for the target to accept
     { -- This is the first table with options, you can make as many options inside the options table as you want
-      num = 1, -- This is the position number of your option in the list of options in the indigo-target context menu (OPTIONAL)
+      num = 1, -- This is the position number of your option in the list of options in the qb-target context menu (OPTIONAL)
       type = "client", -- This specifies the type of event the target has to trigger on click, this can be "client", "server", "command" or "qbcommand", this is OPTIONAL and will only work if the event is also specified
       event = "Test:Event", -- This is the event it will trigger on click, this can be a client event, server event, command or qbcore registered command, NOTICE: Normal command can't have arguments passed through, QBCore registered ones can have arguments passed through
       icon = 'fas fa-example', -- This is the icon that will display next to this trigger option
@@ -937,7 +937,7 @@ parameters = {
 ```lua
   options = { -- This is your options table, in this table all the options will be specified for the target to accept
     { -- This is the first table with options, you can make as many options inside the options table as you want
-      num = 1, -- This is the position number of your option in the list of options in the indigo-target context menu (OPTIONAL)
+      num = 1, -- This is the position number of your option in the list of options in the qb-target context menu (OPTIONAL)
       type = "client", -- This specifies the type of event the target has to trigger on click, this can be "client", "server", "command" or "qbcommand", this is OPTIONAL and will only work if the event is also specified
       event = "Test:Event", -- This is the event it will trigger on click, this can be a client event, server event, command or qbcore registered command, NOTICE: Normal command can't have arguments passed through, QBCore registered ones can have arguments passed through
       icon = 'fas fa-example', -- This is the icon that will display next to this trigger option
@@ -960,13 +960,13 @@ parameters = {
   distance = 2.5, -- This is the distance for you to be at for the target to turn blue, this is in GTA units and has to be a float value
 ```
 
-### Export option, this will go into any client side resource file aside from indigo-target's one
+### Export option, this will go into any client side resource file aside from qb-target's one
 
 ```lua
-exports['indigo-target']:AddGlobalVehicle({
+exports['qb-target']:AddGlobalVehicle({
   options = { -- This is your options table, in this table all the options will be specified for the target to accept
     { -- This is the first table with options, you can make as many options inside the options table as you want
-      num = 1, -- This is the position number of your option in the list of options in the indigo-target context menu (OPTIONAL)
+      num = 1, -- This is the position number of your option in the list of options in the qb-target context menu (OPTIONAL)
       type = "client", -- This specifies the type of event the target has to trigger on click, this can be "client", "server", "command" or "qbcommand", this is OPTIONAL and will only work if the event is also specified
       event = "Test:Event", -- This is the event it will trigger on click, this can be a client event, server event, command or qbcore registered command, NOTICE: Normal command can't have arguments passed through, QBCore registered ones can have arguments passed through
       icon = 'fas fa-example', -- This is the icon that will display next to this trigger option
@@ -1022,7 +1022,7 @@ parameters = {
 ```lua
   options = { -- This is your options table, in this table all the options will be specified for the target to accept
     { -- This is the first table with options, you can make as many options inside the options table as you want
-      num = 1, -- This is the position number of your option in the list of options in the indigo-target context menu (OPTIONAL)
+      num = 1, -- This is the position number of your option in the list of options in the qb-target context menu (OPTIONAL)
       type = "client", -- This specifies the type of event the target has to trigger on click, this can be "client", "server", "command" or "qbcommand", this is OPTIONAL and will only work if the event is also specified
       event = "Test:Event", -- This is the event it will trigger on click, this can be a client event, server event, command or qbcore registered command, NOTICE: Normal command can't have arguments passed through, QBCore registered ones can have arguments passed through
       icon = 'fas fa-example', -- This is the icon that will display next to this trigger option
@@ -1045,13 +1045,13 @@ parameters = {
   distance = 2.5, -- This is the distance for you to be at for the target to turn blue, this is in GTA units and has to be a float value
 ```
 
-### Export option, this will go into any client side resource file aside from indigo-target's one
+### Export option, this will go into any client side resource file aside from qb-target's one
 
 ```lua
-exports['indigo-target']:AddGlobalObject({
+exports['qb-target']:AddGlobalObject({
   options = { -- This is your options table, in this table all the options will be specified for the target to accept
     { -- This is the first table with options, you can make as many options inside the options table as you want
-      num = 1, -- This is the position number of your option in the list of options in the indigo-target context menu (OPTIONAL)
+      num = 1, -- This is the position number of your option in the list of options in the qb-target context menu (OPTIONAL)
       type = "client", -- This specifies the type of event the target has to trigger on click, this can be "client", "server", "command" or "qbcommand", this is OPTIONAL and will only work if the event is also specified
       event = "Test:Event", -- This is the event it will trigger on click, this can be a client event, server event, command or qbcore registered command, NOTICE: Normal command can't have arguments passed through, QBCore registered ones can have arguments passed through
       icon = 'fas fa-example', -- This is the icon that will display next to this trigger option
@@ -1107,7 +1107,7 @@ parameters = {
 ```lua
   options = { -- This is your options table, in this table all the options will be specified for the target to accept
     { -- This is the first table with options, you can make as many options inside the options table as you want
-      num = 1, -- This is the position number of your option in the list of options in the indigo-target context menu (OPTIONAL)
+      num = 1, -- This is the position number of your option in the list of options in the qb-target context menu (OPTIONAL)
       type = "client", -- This specifies the type of event the target has to trigger on click, this can be "client", "server", "command" or "qbcommand", this is OPTIONAL and will only work if the event is also specified
       event = "Test:Event", -- This is the event it will trigger on click, this can be a client event, server event, command or qbcore registered command, NOTICE: Normal command can't have arguments passed through, QBCore registered ones can have arguments passed through
       icon = 'fas fa-example', -- This is the icon that will display next to this trigger option
@@ -1130,13 +1130,13 @@ parameters = {
   distance = 2.5, -- This is the distance for you to be at for the target to turn blue, this is in GTA units and has to be a float value
 ```
 
-### Export option, this will go into any client side resource file aside from indigo-target's one
+### Export option, this will go into any client side resource file aside from qb-target's one
 
 ```lua
-exports['indigo-target']:AddGlobalPlayer({
+exports['qb-target']:AddGlobalPlayer({
   options = { -- This is your options table, in this table all the options will be specified for the target to accept
     { -- This is the first table with options, you can make as many options inside the options table as you want
-      num = 1, -- This is the position number of your option in the list of options in the indigo-target context menu (OPTIONAL)
+      num = 1, -- This is the position number of your option in the list of options in the qb-target context menu (OPTIONAL)
       type = "client", -- This specifies the type of event the target has to trigger on click, this can be "client", "server", "command" or "qbcommand", this is OPTIONAL and will only work if the event is also specified
       event = "Test:Event", -- This is the event it will trigger on click, this can be a client event, server event, command or qbcore registered command, NOTICE: Normal command can't have arguments passed through, QBCore registered ones can have arguments passed through
       icon = 'fas fa-example', -- This is the icon that will display next to this trigger option
@@ -1168,10 +1168,10 @@ exports['indigo-target']:AddGlobalPlayer({
 RemoveGlobalTypeOptions(type: integer, labels: table or string)
 ```
 
-### Export option, this will go into any client side resource file aside from indigo-target's one
+### Export option, this will go into any client side resource file aside from qb-target's one
 
 ```lua
-exports['indigo-target']:RemoveType(1, 'Test') -- 1 is for peds
+exports['qb-target']:RemoveType(1, 'Test') -- 1 is for peds
 ```
 
 ## RemoveGlobalPed
@@ -1182,10 +1182,10 @@ exports['indigo-target']:RemoveType(1, 'Test') -- 1 is for peds
 RemoveGlobalPed(labels: table or string)
 ```
 
-### Export option, this will go into any client side resource file aside from indigo-target's one
+### Export option, this will go into any client side resource file aside from qb-target's one
 
 ```lua
-exports['indigo-target']:RemoveGlobalPed('Test')
+exports['qb-target']:RemoveGlobalPed('Test')
 ```
 
 ## RemoveGlobalVehicle
@@ -1196,10 +1196,10 @@ exports['indigo-target']:RemoveGlobalPed('Test')
 RemoveGlobalVehicle(labels: table or string)
 ```
 
-### Export option, this will go into any client side resource file aside from indigo-target's one
+### Export option, this will go into any client side resource file aside from qb-target's one
 
 ```lua
-exports['indigo-target']:RemoveGlobalVehicle('Test')
+exports['qb-target']:RemoveGlobalVehicle('Test')
 ```
 
 ## RemoveGlobalObject
@@ -1210,10 +1210,10 @@ exports['indigo-target']:RemoveGlobalVehicle('Test')
 RemoveGlobalObject(labels: table or string)
 ```
 
-### Export option, this will go into any client side resource file aside from indigo-target's one
+### Export option, this will go into any client side resource file aside from qb-target's one
 
 ```lua
-exports['indigo-target']:RemoveGlobalObject('Test')
+exports['qb-target']:RemoveGlobalObject('Test')
 ```
 
 ## RemoveGlobalPlayer
@@ -1224,10 +1224,10 @@ exports['indigo-target']:RemoveGlobalObject('Test')
 RemoveGlobalPlayer(labels: table or string)
 ```
 
-### Export option, this will go into any client side resource file aside from indigo-target's one
+### Export option, this will go into any client side resource file aside from qb-target's one
 
 ```lua
-exports['indigo-target']:RemoveGlobalPlayer('Test')
+exports['qb-target']:RemoveGlobalPlayer('Test')
 ```
 
 ## RaycastCamera
@@ -1238,13 +1238,13 @@ exports['indigo-target']:RemoveGlobalPlayer('Test')
 RaycastCamera(flag: number, playerCoords: vector3) -- Preferably 30 or -1, -1 will not interact with any hashes higher than 32 bit and 30 will not interact with the world
 ```
 
-### Export option, this will go into any client side resource file aside from indigo-target's one
+### Export option, this will go into any client side resource file aside from qb-target's one
 
 ```lua
 CreateThread(function()
   while true do
     local curFlag = 30
-    local coords, distance, entity, entityType = exports['indigo-target']:RaycastCamera(-1, GetEntityCoords(PlayerPedId()))
+    local coords, distance, entity, entityType = exports['qb-target']:RaycastCamera(-1, GetEntityCoords(PlayerPedId()))
     if entityType > 0 then
       print('Got an entity')
     end
@@ -1383,7 +1383,7 @@ datatable = {
     useModel = false, -- This is the option for which target function to use, when this is set to true it'll use AddTargetModel and add these to al models of the given ped model, if it is false it will only add the options to this specific ped
     options = { -- This is your options table, in this table all the options will be specified for the target to accept
       { -- This is the first table with options, you can make as many options inside the options table as you want
-        num = 1, -- This is the position number of your option in the list of options in the indigo-target context menu (OPTIONAL)
+        num = 1, -- This is the position number of your option in the list of options in the qb-target context menu (OPTIONAL)
         type = "client", -- This specifies the type of event the target has to trigger on click, this can be "client", "server", "command" or "qbcommand", this is OPTIONAL and will only work if the event is also specified
         event = "Test:Event", -- This is the event it will trigger on click, this can be a client event, server event, command or qbcore registered command, NOTICE: Normal command can't have arguments passed through, QBCore registered ones can have arguments passed through
         icon = 'fas fa-example', -- This is the icon that will display next to this trigger option
@@ -1412,11 +1412,11 @@ datatable = {
 },
 ```
 
-### Export option, this will go into any client side resource file aside from indigo-target's one
+### Export option, this will go into any client side resource file aside from qb-target's one
 
 ```lua
 -- This is for 1 ped only
-exports['indigo-target']:SpawnPed({
+exports['qb-target']:SpawnPed({
   model = 'a_m_m_indian_01', -- This is the ped model that is going to be spawning at the given coords
   coords = vector4(x, y, z, w), -- This is the coords that the ped is going to spawn at, always has to be a vector4 and the w value is the heading
   minusOne = true, -- Set this to true if your ped is hovering above the ground but you want it on the ground (OPTIONAL)
@@ -1441,7 +1441,7 @@ exports['indigo-target']:SpawnPed({
     useModel = false, -- This is the option for which target function to use, when this is set to true it'll use AddTargetModel and add these to al models of the given ped model, if it is false it will only add the options to this specific ped
     options = { -- This is your options table, in this table all the options will be specified for the target to accept
       { -- This is the first table with options, you can make as many options inside the options table as you want
-        num = 1, -- This is the position number of your option in the list of options in the indigo-target context menu (OPTIONAL)
+        num = 1, -- This is the position number of your option in the list of options in the qb-target context menu (OPTIONAL)
         type = "client", -- This specifies the type of event the target has to trigger on click, this can be "client", "server", "command" or "qbcommand", this is OPTIONAL and will only work if the event is also specified
         event = "Test:Event", -- This is the event it will trigger on click, this can be a client event, server event, command or qbcore registered command, NOTICE: Normal command can't have arguments passed through, QBCore registered ones can have arguments passed through
         icon = 'fas fa-example', -- This is the icon that will display next to this trigger option
@@ -1470,7 +1470,7 @@ exports['indigo-target']:SpawnPed({
 })
 
 -- This is for multiple peds, here I used 2 of the same peds
-exports['indigo-target']:SpawnPed({
+exports['qb-target']:SpawnPed({
   [1] = { -- This has to be a number otherwise it can't delete the ped afterwards
     model = 'a_m_m_indian_01', -- This is the ped model that is going to be spawning at the given coords
     coords = vector4(x, y, z, w), -- This is the coords that the ped is going to spawn at, always has to be a vector4 and the w value is the heading
@@ -1496,7 +1496,7 @@ exports['indigo-target']:SpawnPed({
       useModel = false, -- This is the option for which target function to use, when this is set to true it'll use AddTargetModel and add these to al models of the given ped model, if it is false it will only add the options to this specific ped
       options = { -- This is your options table, in this table all the options will be specified for the target to accept
         { -- This is the first table with options, you can make as many options inside the options table as you want
-          num = 1, -- This is the position number of your option in the list of options in the indigo-target context menu (OPTIONAL)
+          num = 1, -- This is the position number of your option in the list of options in the qb-target context menu (OPTIONAL)
           type = "client", -- This specifies the type of event the target has to trigger on click, this can be "client", "server", "command" or "qbcommand", this is OPTIONAL and will only work if the event is also specified
           event = "Test:Event", -- This is the event it will trigger on click, this can be a client event, server event, command or qbcore registered command, NOTICE: Normal command can't have arguments passed through, QBCore registered ones can have arguments passed through
           icon = 'fas fa-example', -- This is the icon that will display next to this trigger option
@@ -1548,7 +1548,7 @@ exports['indigo-target']:SpawnPed({
       useModel = false, -- This is the option for which target function to use, when this is set to true it'll use AddTargetModel and add these to al models of the given ped model, if it is false it will only add the options to this specific ped
       options = { -- This is your options table, in this table all the options will be specified for the target to accept
         { -- This is the first table with options, you can make as many options inside the options table as you want
-          num = 1, -- This is the position number of your option in the list of options in the indigo-target context menu (OPTIONAL)
+          num = 1, -- This is the position number of your option in the list of options in the qb-target context menu (OPTIONAL)
           type = "client", -- This specifies the type of event the target has to trigger on click, this can be "client", "server", "command" or "qbcommand", this is OPTIONAL and will only work if the event is also specified
           event = "Test:Event", -- This is the event it will trigger on click, this can be a client event, server event, command or qbcore registered command, NOTICE: Normal command can't have arguments passed through, QBCore registered ones can have arguments passed through
           icon = 'fas fa-example', -- This is the icon that will display next to this trigger option
@@ -1586,11 +1586,11 @@ exports['indigo-target']:SpawnPed({
 RemoveSpawnedPed(peds: number or table)
 ```
 
-### Export option, this will go into any client side resource file aside from indigo-target's one
+### Export option, this will go into any client side resource file aside from qb-target's one
 
 ```lua
 if DoesEntityExist(a_ped) then
-    exports['indigo-target']:RemoveSpawnedPed({[5] = a_ped}) -- The 5 specified here is to delete the peds currentpednumber from the config, which here is the index of the ped in the config 5
+    exports['qb-target']:RemoveSpawnedPed({[5] = a_ped}) -- The 5 specified here is to delete the peds currentpednumber from the config, which here is the index of the ped in the config 5
 ```
 
 ## AllowTargeting
@@ -1601,10 +1601,10 @@ if DoesEntityExist(a_ped) then
 AllowTargeting(allow: bool)
 ```
 
-### Export option, this will go into any client side resource file aside from indigo-target's one
+### Export option, this will go into any client side resource file aside from qb-target's one
 
 ```lua
 if IsEntityDead(PlayerPedId()) then
-    exports['indigo-target']:AllowTargeting(false)
+    exports['qb-target']:AllowTargeting(false)
 end
 ```

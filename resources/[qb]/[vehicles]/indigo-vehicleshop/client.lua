@@ -186,7 +186,7 @@ local function createVehZones(shopName, entity)
             end
         end)
     else
-        exports['indigo-target']:AddTargetEntity(entity, {
+        exports['qb-target']:AddTargetEntity(entity, {
             options = {
                 {
                     type = "client",

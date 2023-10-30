@@ -95,7 +95,7 @@ Everything that says optional can be omitted.
 ### parking vehicle using target
 ```
 local garageName = 'pdgarage'
-    exports['indigo-target']:AddBoxZone(garageName, vector3(469.51, -992.35, 26.27), 0.2, 0.2, {
+    exports['qb-target']:AddBoxZone(garageName, vector3(469.51, -992.35, 26.27), 0.2, 0.2, {
         name = garageName,
         debugPoly = true,
         minZ = 26.80,

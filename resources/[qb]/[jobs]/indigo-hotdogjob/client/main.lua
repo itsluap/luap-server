@@ -411,7 +411,7 @@ local function StartWorking()
                 PlaceObjectOnGroundProperly(StandObject)
                 SetEntityHeading(StandObject, SpawnCoords.w - 90)
                 FreezeEntityPosition(StandObject, true)
-                exports['indigo-target']:AddTargetEntity(StandObject, {
+                exports['qb-target']:AddTargetEntity(StandObject, {
                     options = {
                         {
                             icon = "fas fa-hand",
@@ -617,7 +617,7 @@ local function SellToPed(ped)
                 if Config.UseTarget then
                     if not zoneMade then
                         zoneMade = true
-                        exports['indigo-target']:AddEntityZone('sellingDogPed', ped, {
+                        exports['qb-target']:AddEntityZone('sellingDogPed', ped, {
                             name = 'sellingDogPed',
                             debugPoly = false,
                         }, {
@@ -638,7 +638,7 @@ local function SellToPed(ped)
                                         SellingData.RecentPeds[#SellingData.RecentPeds+1] = entity
                                         Config.Stock[SellingData.Hotdog].Current = Config.Stock[SellingData.Hotdog].Current - HotdogsForSale
                                         SellingData.Hotdog = nil
-                                        exports['indigo-target']:RemoveZone('sellingDogPed')
+                                        exports['qb-target']:RemoveZone('sellingDogPed')
                                         zoneMade = false
                                     end,
                                 },
@@ -654,7 +654,7 @@ local function SellToPed(ped)
                                         ClearPedTasksImmediately(entity)
                                         SellingData.RecentPeds[#SellingData.RecentPeds+1] = entity
                                         SellingData.Hotdog = nil
-                                        exports['indigo-target']:RemoveZone('sellingDogPed')
+                                        exports['qb-target']:RemoveZone('sellingDogPed')
                                         zoneMade = false
                                     end,
                                 },
@@ -856,7 +856,7 @@ end)
 
 CreateThread(function()
     if Config.UseTarget then
-        exports['indigo-target']:AddBoxZone('hotdog_start', vector3(Config.Locations["take"].coords.x, Config.Locations["take"].coords.y, Config.Locations["take"].coords.z), 1, 1, {
+        exports['qb-target']:AddBoxZone('hotdog_start', vector3(Config.Locations["take"].coords.x, Config.Locations["take"].coords.y, Config.Locations["take"].coords.z), 1, 1, {
             name = 'hotdog_start',
             debugPoly = false,
             heading = Config.Locations["take"].coords.w,

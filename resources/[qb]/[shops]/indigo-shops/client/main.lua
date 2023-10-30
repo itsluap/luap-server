@@ -140,7 +140,7 @@ local function createPeds()
         SetBlockingOfNonTemporaryEvents(ShopPed[k], true)
 
         if Config.UseTarget then
-            exports['indigo-target']:AddTargetEntity(ShopPed[k], {
+            exports['qb-target']:AddTargetEntity(ShopPed[k], {
                 options = {
                     {
                         label = v["targetLabel"],
@@ -171,7 +171,7 @@ local function createPeds()
     -- SetBlockingOfNonTemporaryEvents(ShopPed["casino"], true)
     --[[
     if Config.UseTarget then
-        exports['indigo-target']:AddTargetEntity(ShopPed["casino"], {
+        exports['qb-target']:AddTargetEntity(ShopPed["casino"], {
             options = {
                 {
                     label = 'Sell Chips',

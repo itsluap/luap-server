@@ -1,5 +1,5 @@
 Config = {}
-Config.UseTarget = GetConvar('UseTarget', 'false') == 'true' -- Use indigo-target interactions (don't change this, go to your server.cfg and add `setr UseTarget true` to use this and just that from true to false or the other way around)
+Config.UseTarget = GetConvar('UseTarget', 'false') == 'true' -- Use qb-target interactions (don't change this, go to your server.cfg and add `setr UseTarget true` to use this and just that from true to false or the other way around)
 Config.FirearmsLicenseCheck = true -- Whether a arms dealer checks for a firearms license
 Config.SellCasinoChips = {
     coords = vector4(950.37, 34.72, 71.87, 33.82),
