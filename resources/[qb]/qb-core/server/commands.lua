@@ -240,10 +240,6 @@ QBCore.Commands.Add('setjob', 'Set A Players Job (Admin Only)', { { name = 'id',
         TriggerClientEvent('QBCore:Notify', source, Lang:t('error.not_online'), 'error')
     end
 
-    if tostring(args[2]) ~= "police" or tostring(args[2]) ~= "sheriff" or tostring(args[2]) ~= "trooper" then
-        GlobalState.isLEO = false
-    end 
-
 end, 'admin')
 
 QBCore.Commands.Add('removejob', 'Removes A Players Job (Admin Only)', { { name = 'id', help = 'Player ID' }, { name = 'job', help = 'Job name' } }, true, function(source, args)
@@ -256,10 +252,6 @@ QBCore.Commands.Add('removejob', 'Removes A Players Job (Admin Only)', { { name 
     else
         TriggerClientEvent('QBCore:Notify', source, Lang:t('error.not_online'), 'error')
     end
-
-    if tostring(args[2]) ~= "police" or tostring(args[2]) ~= "sheriff" or tostring(args[2]) ~= "trooper" then
-        GlobalState.isLEO = false
-    end 
 
 end, 'admin')
 

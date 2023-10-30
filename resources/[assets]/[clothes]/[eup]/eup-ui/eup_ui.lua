@@ -122,7 +122,7 @@ menuPool:RefreshIndex()
 
 RegisterCommand('eup', function()
 	local ped = PlayerPedId()
-	if GlobalState.isLEO or GlobalState.isEMS then
+	-- if GlobalState.isLEO or GlobalState.isEMS then -- was breaking everything find a better way
 		if GetEntityModel(ped) == GetHashKey("mp_m_freemode_01") then
 			mainMenuM:Visible(not mainMenuM:Visible())
 		elseif GetEntityModel(ped) == GetHashKey("mp_f_freemode_01") then
@@ -130,7 +130,7 @@ RegisterCommand('eup', function()
 		else
 			ShowInfo("You need to use an MP ped with EUP")
 		end
-	end
+	--end
 end, false)
 
 CreateThread(function()

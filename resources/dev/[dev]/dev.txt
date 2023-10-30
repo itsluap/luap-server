@@ -2,7 +2,6 @@ Dev Notes:
     - server color ? 53B3CB blue \ 5500FF  indigo
     - the "press E to open" menu is - exports['qb-core']:DrawText(text, 'left') and to hide - exports['qb-core']:HideText()
     - ps-ui can be used instead of the above ^^^ -- did this
-    - GlobalState.isLEO returns true if player has job from ps-mdt config.lua, returns false if any other job
     - drug effects are in indigo-smallresources (consumables)
     - set light ids to unique id (cant be above 1013) (for headlights)
     - clothing has to be for mp male or female (no franklin)

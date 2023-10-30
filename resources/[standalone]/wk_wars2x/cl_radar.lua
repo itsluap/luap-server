@@ -44,7 +44,7 @@ local pairs = pairs
 	UI loading and key binds registering
 ----------------------------------------------------------------------------------]]--
 local function RegisterKeyBinds()
-	if GlobalState.isLEO then
+	if QBCore.Functions.GetPlayerData().job.name == 'police' then
 		if ( UTIL:IsResourceNameValid() ) then
 			UTIL:Log( "Registering radar commands and key binds." )
 

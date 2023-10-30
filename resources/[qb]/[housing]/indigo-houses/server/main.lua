@@ -92,7 +92,7 @@ end)
 
 QBCore.Functions.CreateUseableItem("police_stormram", function(source, _)
     local Player = QBCore.Functions.GetPlayer(source)
-    if (GlobalState.isLEO and Player.PlayerData.job.onduty) then
+    if (QBCore.Functions.GetPlayerData().job.name == 'police' and Player.PlayerData.job.onduty) then
         TriggerClientEvent("indigo-houses:client:HomeInvasion", source)
     else
         TriggerClientEvent('QBCore:Notify', source, Lang:t("error.emergency_services"), "error")

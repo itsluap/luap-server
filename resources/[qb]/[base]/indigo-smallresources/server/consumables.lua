@@ -178,7 +178,7 @@ end)
 
 QBCore.Commands.Add("resetarmor", "Resets Vest (Police Only)", {}, false, function(source)
     local Player = QBCore.Functions.GetPlayer(source)
-    if GlobalState.isLEO then
+    if QBCore.Functions.GetPlayerData().job.name == 'police' then
         TriggerClientEvent("consumables:client:ResetArmor", source)
     else
         TriggerClientEvent('QBCore:Notify', source,  "For Police Officer Only", "error")
