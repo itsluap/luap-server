@@ -217,11 +217,11 @@ function MenuGarage(currentSelection)
         header = Lang:t('menu.close'),
         txt = "",
         params = {
-            event = "qb-menu:client:closeMenu"
+            event = "indigo-menu:client:closeMenu"
         }
 
     }
-    exports['qb-menu']:openMenu(vehicleMenu)
+    exports['indigo-menu']:openMenu(vehicleMenu)
 end
 
 function MenuImpound(currentSelection)
@@ -262,17 +262,17 @@ function MenuImpound(currentSelection)
                 header = Lang:t('menu.close'),
                 txt = "",
                 params = {
-                    event = "qb-menu:client:closeMenu"
+                    event = "indigo-menu:client:closeMenu"
                 }
             }
-            exports['qb-menu']:openMenu(impoundMenu)
+            exports['indigo-menu']:openMenu(impoundMenu)
         end
     end)
 
 end
 
 function closeMenuFull()
-    exports['qb-menu']:closeMenu()
+    exports['indigo-menu']:closeMenu()
 end
 
 --NUI Callbacks
@@ -449,7 +449,7 @@ RegisterNetEvent('police:client:EvidenceStashDrawer', function(data)
             TriggerEvent("inventory:client:SetCurrentStash", Lang:t('info.current_evidence', {value = currentEvidence, value2 = drawer.slot}))
         end
     else
-        exports['qb-menu']:closeMenu()
+        exports['indigo-menu']:closeMenu()
     end
 end)
 
@@ -957,7 +957,7 @@ CreateThread(function()
                         currentEvidence = k
                     end
                 end
-                exports['qb-menu']:showHeader({
+                exports['indigo-menu']:showHeader({
                     {
                         header = Lang:t('info.evidence_stash', {value = currentEvidence}),
                         params = {
@@ -970,7 +970,7 @@ CreateThread(function()
                 })
             end
         else
-            exports['qb-menu']:closeMenu()
+            exports['indigo-menu']:closeMenu()
         end
     end)
 
@@ -1035,7 +1035,7 @@ CreateThread(function()
                             currentSelection = k
                         end
                     end
-                    exports['qb-menu']:showHeader({
+                    exports['indigo-menu']:showHeader({
                         {
                             header = Lang:t('menu.pol_impound'),
                             params = {
@@ -1050,7 +1050,7 @@ CreateThread(function()
             end
         else
             inImpound = false
-            exports['qb-menu']:closeMenu()
+            exports['indigo-menu']:closeMenu()
             exports['qb-core']:HideText()
         end
     end)
@@ -1083,7 +1083,7 @@ CreateThread(function()
                             currentSelection = k
                         end
                     end
-                    exports['qb-menu']:showHeader({
+                    exports['indigo-menu']:showHeader({
                         {
                             header = Lang:t('menu.pol_garage'),
                             params = {
@@ -1098,7 +1098,7 @@ CreateThread(function()
             end
         else
             inGarage = false
-            exports['qb-menu']:closeMenu()
+            exports['indigo-menu']:closeMenu()
             exports['qb-core']:HideText()
         end
     end)
