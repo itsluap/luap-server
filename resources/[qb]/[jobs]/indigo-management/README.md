@@ -8,7 +8,7 @@ New qb-bossmenu / qb-gangmenu converted into one resource using indigo-menu and 
 - [indigo-input](https://github.com/qbcore-framework/indigo-input)
 - [indigo-menu](https://github.com/qbcore-framework/indigo-menu)
 - [qb-inventory](https://github.com/qbcore-framework/qb-inventory)
-- [qb-clothing](https://github.com/qbcore-framework/qb-clothing)
+- [indigo-clothing](https://github.com/qbcore-framework/indigo-clothing)
 
 ## Screenshots
 ![image](https://i.imgur.com/9yiQZDX.png)

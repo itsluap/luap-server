@@ -23,7 +23,7 @@ Police Job for qb-core Framework :police_officer:
 - [qb-core](https://github.com/qbcore-framework/qb-core)
 - [qb-bossmenu](https://github.com/qbcore-framework/qb-bossmenu) - For the boss menu
 - [indigo-garages](https://github.com/qbcore-framework/indigo-garages) - For the vehicle spawner
-- [qb-clothing](https://github.com/qbcore-framework/qb-clothing) - For the locker room
+- [indigo-clothing](https://github.com/qbcore-framework/indigo-clothing) - For the locker room
 - [indigo-phone](https://github.com/qbcore-framework/indigo-phone) - For the MEOS app and notifications etc.
 - [qb-log](https://github.com/qbcore-framework/qb-logs) - For logging certain events
 - [indigo-menu](https://github.com/qbcore-framework/indigo-menu) - For the vehicle menus
