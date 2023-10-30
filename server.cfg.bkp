@@ -114,7 +114,7 @@ ensure cfx-gabz-vu
 ensure cfx-gabz-weedcamp
 ensure cfx-gabz-yachts
 #ensure [assets]
-#ensure indigo_clothing
+ensure indigo_clothing
 ##########################
 ensure qb-core
 ensure ox_lib
@@ -151,10 +151,5 @@ add_ace qbcore.god command allow # Allow all commands
 add_principal qbcore.god group.admin # Allow gods access to the main admin group used to get all default permissions
 add_principal qbcore.god qbcore.admin # Allow gods access to admin commands
 add_principal qbcore.admin qbcore.mod # Allow admins access to mod commands
-
-add_ace resource.ox_lib command.add_ace allow
-add_ace resource.ox_lib command.remove_ace allow
-add_ace resource.ox_lib command.add_principal allow
-add_ace resource.ox_lib command.remove_principal allow
 
 setr illenium-appearance:locale "en"

@@ -103,13 +103,7 @@ function getOtherClothing(src, cb, cid)
         cb -> callback(chardata)
         cid -> citizenid
     ]]
-    --cb(nil)
-    local result = MySQL.query.await('SELECT * FROM playerskins WHERE citizenid = ? AND active = ?', {cid, 1})
-    if result[1] ~= nil then
-        cb(json.decode(result[1].skin))
-    else
-        cb(nil)
-    end
+    cb(nil)
 end
 
 function GiveStarterItems(source)

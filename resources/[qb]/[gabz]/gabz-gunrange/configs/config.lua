@@ -7,7 +7,7 @@ function L(cd) if Locales[Config.Language][cd] then return Locales[Config.Langua
 --╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝ ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
 
 
-Config.Framework = 'qbcore' ---[ 'esx' / 'qbcore' / 'standalone' / 'other' ] Choose your framework.
+Config.Framework = 'esx' ---[ 'esx' / 'qbcore' / 'standalone' / 'other' ] Choose your framework.
 Config.Language = 'EN' --[ 'EN' / 'NL' ] You can add your own locales to the Locales.lua. But make sure to add it here.
 
 Config.FrameworkTriggers = { --You can change the esx/qbcore events (IF NEEDED).

@@ -215,7 +215,7 @@ RegisterNetEvent('ps-adminmenu:server:ClothingMenu', function(data, selectedData
         TriggerClientEvent("ps-adminmenu:client:CloseUI", src)
     end
 
-    TriggerClientEvent('indigo-clothing:client:openMenu', target)
+    TriggerClientEvent('qb-clothing:client:openMenu', target)
 end)
 
 -- Set Ped

@@ -66,7 +66,7 @@ end
 ```
 
 ## Self Register Weapons
-* Your citizens can self-register weapons found on their inventory. Event to trigger is below if you're using indigo-target. There's also a command available named `registerweapon` but you'll need to uncomment if you want to use it.
+* Your citizens can self-register weapons found on their inventory. Event to trigger is below if you're using qb-target. There's also a command available named `registerweapon` but you'll need to uncomment if you want to use it.
 ```
 ps-mdt:client:selfregister
 ```

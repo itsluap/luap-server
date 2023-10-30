@@ -53,7 +53,7 @@ CreateThread(function()
 		"seat_dside_r",
 		"engine",
 	}
-	exports['indigo-target']:AddTargetBone(bones, {
+	exports['qb-target']:AddTargetBone(bones, {
 		options = {
 			{
 				type = "client",
@@ -68,7 +68,7 @@ CreateThread(function()
 		distance = 1.5,
 	})
 	-- Target Export
-	exports['indigo-target']:AddTargetModel(props, {
+	exports['qb-target']:AddTargetModel(props, {
 		options = {
 			{
 				num = 1,
@@ -222,7 +222,7 @@ end)
 -- Client Events
 
 RegisterNetEvent('ps-fuel:client:buyCanMenu', function()
-	exports['indigo-menu']:openMenu({
+	exports['qb-menu']:openMenu({
 		{
 			header = Lang:t('info.gas_station'),
 			txt = Lang:t('info.total_can_cost', {value = Config.canCost}),
@@ -298,7 +298,7 @@ RegisterNetEvent('ps-fuel:client:refuelCanMenu', function()
 		})
 		if dialog ~= nil then
 			if playerMoney[dialog.billtype] >= Config.refuelCost then
-				exports['indigo-menu']:openMenu({
+				exports['qb-menu']:openMenu({
 					{
 						header = Lang:t('info.gas_station'),
 						txt = Lang:t("info.total_refuel_cost", {value = Config.refuelCost}),
