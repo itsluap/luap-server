@@ -38,7 +38,7 @@ If you are still lost, Slothy has created a few GIF's to help guide you through 
 ![explorer_rKiz0tBzmo](https://user-images.githubusercontent.com/91661118/169417369-59282006-7284-477d-853f-c29b108baa5d.gif)
 
 ### Step 2:
-Open your entire resources folder with Visual Studio Code (or whichever program you use) and replace all exsiting exports titled "LegacyFuel" with "ps-fuel" instead. 
+Open your entire resources folder with Visual Studio Code (or whichever program you use) and replace all exsiting exports titled "ps-fuel" with "ps-fuel" instead. 
 
 **If you have the previous resource "lj-fuel" do the same thing and replace that with "ps-fuel" or just get this newer version to avoid any conflictions or confusion.**
 

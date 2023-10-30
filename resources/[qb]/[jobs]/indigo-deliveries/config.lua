@@ -26,7 +26,7 @@ Config.ReturnBlipSpriteScale = 0.62
 Config.ReturnBlipRoute = true
 Config.ReturnBlipRouteColour = 32
 --
-Config.FuelScript = 'ps-fuel' -- ps-fuel/lj-fuel/LegacyFuel Change to the fuel system you use here
+Config.FuelScript = 'ps-fuel' -- ps-fuel/lj-fuel/ps-fuel Change to the fuel system you use here
 Config.VehicleSpawn = vector4(-445.69, -2789.91, 5.39, 43.89) -- Spot the vehicle spawns
 
 Config.VehicleReturnCoords = vector4(-454.36, -2799.81, 5.39, 44.51) -- area where to return vehicle
