@@ -15,13 +15,3 @@ while true do
  
     print(cache('test', function() return i end, 5000))
 end
- 
--- output:
-> 1
-> 1
-> 1
-> 1
-> 1
-> 6
-> 6
-> 6
