@@ -27,7 +27,7 @@ Police Job for QB-Core Framework :police_officer:
 - [indigo-clothing](https://github.com/qbcore-framework/indigo-clothing) - For the locker room
 - [qb-phone](https://github.com/qbcore-framework/qb-phone) - For the MEOS app and notifications etc.
 - [qb-log](https://github.com/qbcore-framework/qb-logs) - (Deprecated) - For logging certain events
-- [qb-smallresources](https://github.com/qbcore-framework/qb-smallresources) (Replaces qb-log) - qb-log was added to qb-smallresources
+- [indigo-smallresources](https://github.com/qbcore-framework/indigo-smallresources) (Replaces qb-log) - qb-log was added to indigo-smallresources
 - [indigo-menu](https://github.com/qbcore-framework/indigo-menu) - For the vehicle menus
 - [qb-input](https://github.com/qbcore-framework/qb-input) - For accessing evidence stashes
 

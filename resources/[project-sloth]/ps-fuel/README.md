@@ -45,7 +45,7 @@ Open your entire resources folder with Visual Studio Code (or whichever program 
 ![explorer_vpSwery89h](https://user-images.githubusercontent.com/91661118/169423238-99659010-718d-4d95-a73e-8aa2b232ebb4.gif)
 
 ### Step 3: 
-First copy the snippet below and then navigate to your **qb-smallresources/client/ignore.lua**
+First copy the snippet below and then navigate to your **indigo-smallresources/client/ignore.lua**
 
 ```lua
 Citizen.CreateThread(function()
