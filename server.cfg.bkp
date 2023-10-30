@@ -113,9 +113,11 @@ ensure cfx-gabz-vbmarket
 ensure cfx-gabz-vu
 ensure cfx-gabz-weedcamp
 ensure cfx-gabz-yachts
-ensure [assets]
+#ensure [assets]
+ensure indigo_clothing
 ##########################
 ensure qb-core
+ensure ox_lib
 ensure pma-voice
 ensure indigo-phone
 ensure indigo-weathersync
