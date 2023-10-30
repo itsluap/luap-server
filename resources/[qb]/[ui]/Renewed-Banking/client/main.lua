@@ -15,7 +15,7 @@ end
 local function openBankUI(isAtm)
     SendNUIMessage({action = "setLoading", status = true})
     nuiHandler(true)
-    QBCore.Functions.TriggerCallback('Renwed-Banking:server:initalizeBanking', function(result)
+    QBCore.Functions.TriggerCallback('Renewed-Banking:server:initalizeBanking', function(result)
         if not result then
             nuiHandler(false)
             QBCore.Functions.Notify(Lang:t("notify.loading_failed"), 'error', 7500)
@@ -33,10 +33,10 @@ local function openBankUI(isAtm)
     end)
 end
 
-RegisterNetEvent("Renwed-Banking:client:openBankUI", function(data)
+RegisterNetEvent("Renewed-Banking:client:openBankUI", function(data)
     local txt = data.atm and 'Opening ATM' or 'Opening Bank'
     TaskStartScenarioInPlace(PlayerPedId(), "PROP_HUMAN_ATM", 0, 1)
-    QBCore.Functions.Progressbar('Renwed-Banking', txt, math.random(3000,5000), false, true, {
+    QBCore.Functions.Progressbar('Renewed-Banking', txt, math.random(3000,5000), false, true, {
         disableMovement = true,
         disableCarMovement = true,
         disableMouse = false,
@@ -63,7 +63,7 @@ CreateThread(function ()
     for k=1, #bankActions do
         RegisterNUICallback(bankActions[k], function(data, cb)
             local pushingP = promise.new()
-            QBCore.Functions.TriggerCallback("Renwed-Banking:server:"..bankActions[k], function(result)
+            QBCore.Functions.TriggerCallback("Renewed-Banking:server:"..bankActions[k], function(result)
                 pushingP:resolve(result)
             end, data)
             local newTransaction = Citizen.Await(pushingP)
@@ -73,7 +73,7 @@ CreateThread(function ()
     if lib then
         exports.ox_target:addModel(config.atms, {{
             name = 'renewed_banking_openui',
-            event = 'Renwed-Banking:client:openBankUI',
+            event = 'Renewed-Banking:client:openBankUI',
             icon = 'fas fa-money-check',
             label = Lang:t("menu.view_bank"),
             atm = true,
@@ -86,7 +86,7 @@ CreateThread(function ()
     exports['indigo-target']:AddTargetModel(config.atms,{
         options = {{
             type = "client",
-            event = "Renwed-Banking:client:openBankUI",
+            event = "Renewed-Banking:client:openBankUI",
             icon = "fas fa-money-check",
             label = Lang:t("menu.view_bank"),
             atm = true
@@ -129,7 +129,7 @@ local function createPeds()
     if lib then
         local targetOpts ={{
             name = 'renewed_banking_openui',
-            event = 'Renwed-Banking:client:openBankUI',
+            event = 'Renewed-Banking:client:openBankUI',
             icon = 'fas fa-money-check',
             label = Lang:t("menu.view_bank"),
             atm = false,
@@ -140,7 +140,7 @@ local function createPeds()
         exports.ox_target:addLocalEntity(peds.basic, targetOpts)
         targetOpts[#targetOpts+1]={
             name = 'renewed_banking_accountmng',
-            event = 'Renwed-Banking:client:accountManagmentMenu',
+            event = 'Renewed-Banking:client:accountManagmentMenu',
             icon = 'fas fa-money-check',
             label = Lang:t("menu.manage_bank"),
             atm = false,
@@ -154,7 +154,7 @@ local function createPeds()
             options = {
                 {
                     type = "client",
-                    event = "Renwed-Banking:client:openBankUI",
+                    event = "Renewed-Banking:client:openBankUI",
                     icon = "fas fa-money-check",
                     label = Lang:t("menu.view_bank"),
                     atm = false
@@ -166,14 +166,14 @@ local function createPeds()
             options = {
                 {
                     type = "client",
-                    event = "Renwed-Banking:client:openBankUI",
+                    event = "Renewed-Banking:client:openBankUI",
                     icon = "fas fa-money-check",
                     label = Lang:t("menu.view_bank"),
                     atm = false
                 },
                 {
                     type = "client",
-                    event = "Renwed-Banking:client:accountManagmentMenu",
+                    event = "Renewed-Banking:client:accountManagmentMenu",
                     icon = "fas fa-money-check",
                     label = Lang:t("menu.manage_bank")
                 }
@@ -236,7 +236,7 @@ AddEventHandler('onResourceStart', function(resource)
 
 end)
 
-RegisterNetEvent("Renwed-Banking:client:sendNotification", function(msg)
+RegisterNetEvent("Renewed-Banking:client:sendNotification", function(msg)
     if not msg then return end
     SendNUIMessage({
         action = "notify",
@@ -244,13 +244,13 @@ RegisterNetEvent("Renwed-Banking:client:sendNotification", function(msg)
     })
 end)
 
-RegisterNetEvent('Renwed-Banking:client:viewAccountsMenu', function()
-    TriggerServerEvent("Renwed-Banking:server:getPlayerAccounts")
+RegisterNetEvent('Renewed-Banking:client:viewAccountsMenu', function()
+    TriggerServerEvent("Renewed-Banking:server:getPlayerAccounts")
 end)
 
 local bankingMenus = {
     [1] = {
-        event = "Renwed-Banking:client:accountManagmentMenu",
+        event = "Renewed-Banking:client:accountManagmentMenu",
         menu = function()
             local table = {
                 {
@@ -261,14 +261,14 @@ local bankingMenus = {
                     header = Lang:t("menu.create_account"),
                     txt = Lang:t("menu.create_account_txt"),
                     params = {
-                        event = 'Renwed-Banking:client:createAccountMenu'
+                        event = 'Renewed-Banking:client:createAccountMenu'
                     }
                 },
                 {
                     header = Lang:t("menu.manage_account"),
                     txt = Lang:t("menu.manage_account_txt"),
                     params = {
-                        event = 'Renwed-Banking:client:viewAccountsMenu'
+                        event = 'Renewed-Banking:client:viewAccountsMenu'
                     }
                 }
             }
@@ -284,13 +284,13 @@ local bankingMenus = {
                         title = Lang:t("menu.create_account"),
                         icon = 'file-invoice-dollar',
                         metadata = {Lang:t("menu.create_account_txt")},
-                        event = "Renwed-Banking:client:createAccountMenu"
+                        event = "Renewed-Banking:client:createAccountMenu"
                     },
                     {
                         title = Lang:t("menu.manage_account"),
                         icon = 'users-gear',
                         metadata = {Lang:t("menu.manage_account_txt")},
-                        event = 'Renwed-Banking:client:viewAccountsMenu'
+                        event = 'Renewed-Banking:client:viewAccountsMenu'
                     }
                 }
             })
@@ -298,7 +298,7 @@ local bankingMenus = {
         end
     },
     [2] = {
-        event = "Renwed-Banking:client:createAccountMenu",
+        event = "Renewed-Banking:client:createAccountMenu",
         menu = function()
             local dialog = exports["indigo-input"]:ShowInput({
                 header = Lang:t("menu.bank_name"),
@@ -314,7 +314,7 @@ local bankingMenus = {
             })
             if dialog and dialog.accountid then
                 dialog.accountid = dialog.accountid:lower():gsub("%s+", "")
-                TriggerServerEvent("Renwed-Banking:server:createNewAccount", dialog.accountid)
+                TriggerServerEvent("Renewed-Banking:server:createNewAccount", dialog.accountid)
             end
         end,
         lib = function()
@@ -325,12 +325,12 @@ local bankingMenus = {
             }})
             if input and input[1] then
                 input[1] = input[1]:lower():gsub("%s+", "")
-                TriggerServerEvent("Renwed-Banking:server:createNewAccount", input[1])
+                TriggerServerEvent("Renewed-Banking:server:createNewAccount", input[1])
             end
         end
     },
     [3] = {
-        event = "Renwed-Banking:client:accountsMenu",
+        event = "Renewed-Banking:client:accountsMenu",
         menu = function(data)
             local table = {{
                 isMenuHeader = true,
@@ -342,7 +342,7 @@ local bankingMenus = {
                         header = data[k],
                         txt = Lang:t("menu.view_members"),
                         params = {
-                            event = 'Renwed-Banking:client:accountsMenuView',
+                            event = 'Renewed-Banking:client:accountsMenuView',
                             args = {
                                 account = data[k],
                             }
@@ -366,7 +366,7 @@ local bankingMenus = {
                         title = data[k],
                         icon = 'users-gear',
                         metadata = {Lang:t("menu.view_members")},
-                        event = "Renwed-Banking:client:accountsMenuView",
+                        event = "Renewed-Banking:client:accountsMenuView",
                         args = {
                             account = data[k],
                         }
@@ -389,7 +389,7 @@ local bankingMenus = {
         end
     },
     [4] = {
-        event = "Renwed-Banking:client:accountsMenuView",
+        event = "Renewed-Banking:client:accountsMenuView",
         menu = function(data)
             local table = {
                 {
@@ -401,7 +401,7 @@ local bankingMenus = {
                     txt = Lang:t("menu.manage_members_txt"),
                     params = {
                         isServer =true,
-                        event = 'Renwed-Banking:server:viewMemberManagement',
+                        event = 'Renewed-Banking:server:viewMemberManagement',
                         args = data
                     }
                 },
@@ -409,7 +409,7 @@ local bankingMenus = {
                     header = Lang:t("menu.edit_acc_name"),
                     txt = Lang:t("menu.edit_acc_name_txt"),
                     params = {
-                        event = 'Renwed-Banking:client:changeAccountName',
+                        event = 'Renewed-Banking:client:changeAccountName',
                         args = data
                     }
                 }
@@ -427,14 +427,14 @@ local bankingMenus = {
                         title = Lang:t("menu.manage_members"),
                         icon = 'users-gear',
                         metadata = {Lang:t("menu.manage_members_txt")},
-                        serverEvent = "Renwed-Banking:server:viewMemberManagement",
+                        serverEvent = "Renewed-Banking:server:viewMemberManagement",
                         args = data
                     },
                     {
                         title = Lang:t("menu.edit_acc_name"),
                         icon = 'users-gear',
                         metadata = {Lang:t("menu.edit_acc_name_txt")},
-                        event = "Renwed-Banking:client:changeAccountName",
+                        event = "Renewed-Banking:client:changeAccountName",
                         args = data
                     }
                 }
@@ -443,7 +443,7 @@ local bankingMenus = {
         end
     },
     [5] = {
-        event = "Renwed-Banking:client:viewMemberManagement",
+        event = "Renewed-Banking:client:viewMemberManagement",
         menu = function(data)
             local table = {{
                 isMenuHeader = true,
@@ -455,7 +455,7 @@ local bankingMenus = {
                     header = v,
                     txt = Lang:t("menu.remove_member_txt"),
                     params = {
-                        event = 'Renwed-Banking:client:removeMemberConfirmation',
+                        event = 'Renewed-Banking:client:removeMemberConfirmation',
                         args = {
                             account = account,
                             cid = k,
@@ -467,7 +467,7 @@ local bankingMenus = {
                 header = Lang:t("menu.add_member"),
                 txt = Lang:t("menu.add_member_txt"),
                 params = {
-                    event = 'Renwed-Banking:client:addAccountMember',
+                    event = 'Renewed-Banking:client:addAccountMember',
                     args = {
                         account = account
                     }
@@ -482,7 +482,7 @@ local bankingMenus = {
                 menuOpts[#menuOpts+1] = {
                     title = v,
                     metadata = {Lang:t("menu.remove_member_txt")},
-                    event = 'Renwed-Banking:client:removeMemberConfirmation',
+                    event = 'Renewed-Banking:client:removeMemberConfirmation',
                     args = {
                         account = account,
                         cid = k,
@@ -492,7 +492,7 @@ local bankingMenus = {
             menuOpts[#menuOpts+1] = {
                 title = Lang:t("menu.add_member"),
                 metadata = {Lang:t("menu.add_member_txt")},
-                event = 'Renwed-Banking:client:addAccountMember',
+                event = 'Renewed-Banking:client:addAccountMember',
                 args = {
                     account = account
                 }
@@ -508,7 +508,7 @@ local bankingMenus = {
         end
     },
     [6] = {
-        event = "Renwed-Banking:client:removeMemberConfirmation",
+        event = "Renewed-Banking:client:removeMemberConfirmation",
         menu = function(data)
             local table = {
                 {
@@ -520,7 +520,7 @@ local bankingMenus = {
                     icon = "fa-solid fa-angle-left",
                     params = {
                         isServer =true,
-                        event = "Renwed-Banking:client:accountsMenuView",
+                        event = "Renewed-Banking:client:accountsMenuView",
                         args = data
                     }
                 },
@@ -529,7 +529,7 @@ local bankingMenus = {
                     txt = Lang:t("menu.remove_member_txt2", {id=data.cid}),
                     params = {
                         isServer = true,
-                        event = 'Renwed-Banking:server:removeAccountMember',
+                        event = 'Renewed-Banking:server:removeAccountMember',
                         args = data
                     }
                 }
@@ -546,7 +546,7 @@ local bankingMenus = {
                     {
                         title = Lang:t("menu.remove_member"),
                         metadata = {Lang:t("menu.remove_member_txt2", {id=data.cid})},
-                        serverEvent = 'Renwed-Banking:server:removeAccountMember',
+                        serverEvent = 'Renewed-Banking:server:removeAccountMember',
                         args = data
                     }
                 }
@@ -555,7 +555,7 @@ local bankingMenus = {
         end
     },
     [7] = {
-        event = "Renwed-Banking:client:addAccountMember",
+        event = "Renewed-Banking:client:addAccountMember",
         menu = function(data)
             local dialog = exports["indigo-input"]:ShowInput({
                 header = Lang:t("menu.bank_name"),
@@ -571,7 +571,7 @@ local bankingMenus = {
             })
             if dialog and dialog.accountid then
                 dialog.accountid = dialog.accountid:upper():gsub("%s+", "")
-                TriggerServerEvent("Renwed-Banking:server:addAccountMember", data.account, dialog.accountid)
+                TriggerServerEvent("Renewed-Banking:server:addAccountMember", data.account, dialog.accountid)
             end
         end,
         lib = function(data)
@@ -582,12 +582,12 @@ local bankingMenus = {
             }})
             if input and input[1] then
                 input[1] = input[1]:upper():gsub("%s+", "")
-                TriggerServerEvent("Renwed-Banking:server:addAccountMember", data.account, input[1])
+                TriggerServerEvent("Renewed-Banking:server:addAccountMember", data.account, input[1])
             end
         end
     },
     [8] = {
-        event = "Renwed-Banking:client:changeAccountName",
+        event = "Renewed-Banking:client:changeAccountName",
         menu = function(data)
             local dialog = exports["indigo-input"]:ShowInput({
                 header = Lang:t("menu.bank_name"),
@@ -603,7 +603,7 @@ local bankingMenus = {
             })
             if dialog and dialog.accountid then
                 dialog.accountid = dialog.accountid:lower():gsub("%s+", "")
-                TriggerServerEvent("Renwed-Banking:server:changeAccountName", data.account, dialog.accountid)
+                TriggerServerEvent("Renewed-Banking:server:changeAccountName", data.account, dialog.accountid)
             end
         end,
         lib = function(data)
@@ -614,7 +614,7 @@ local bankingMenus = {
             }})
             if input and input[1] then
                 input[1] = input[1]:lower():gsub("%s+", "")
-                TriggerServerEvent("Renwed-Banking:server:changeAccountName", data.account, input[1])
+                TriggerServerEvent("Renewed-Banking:server:changeAccountName", data.account, input[1])
             end
         end
     }

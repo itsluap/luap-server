@@ -323,7 +323,7 @@ RegisterNetEvent('indigo-vehicleshop:server:sellShowroomVehicle', function(data,
             target.Functions.RemoveMoney('cash', vehiclePrice, 'vehicle-bought-in-showroom')
             player.Functions.AddMoney('bank', commission)
             TriggerClientEvent('QBCore:Notify', src, Lang:t('success.earned_commission', {amount = comma_value(commission)}), 'success')
-            exports['Renwed-Banking']:addAccountMoney(player.PlayerData.job.name, vehiclePrice)
+            exports['Renewed-Banking']:addAccountMoney(player.PlayerData.job.name, vehiclePrice)
             TriggerClientEvent('QBCore:Notify', target.PlayerData.source, Lang:t('success.purchased'), 'success')
         elseif bank >= tonumber(vehiclePrice) then
             MySQL.insert('INSERT INTO player_vehicles (license, citizenid, vehicle, hash, mods, plate, garage, state) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', {
@@ -339,7 +339,7 @@ RegisterNetEvent('indigo-vehicleshop:server:sellShowroomVehicle', function(data,
             TriggerClientEvent('indigo-vehicleshop:client:buyShowroomVehicle', target.PlayerData.source, vehicle, plate)
             target.Functions.RemoveMoney('bank', vehiclePrice, 'vehicle-bought-in-showroom')
             player.Functions.AddMoney('bank', commission)
-            exports['Renwed-Banking']:addAccountMoney(player.PlayerData.job.name, vehiclePrice)
+            exports['Renewed-Banking']:addAccountMoney(player.PlayerData.job.name, vehiclePrice)
             TriggerClientEvent('QBCore:Notify', src, Lang:t('success.earned_commission', {amount = comma_value(commission)}), 'success')
             TriggerClientEvent('QBCore:Notify', target.PlayerData.source, Lang:t('success.purchased'), 'success')
         else
@@ -395,7 +395,7 @@ RegisterNetEvent('indigo-vehicleshop:server:sellfinanceVehicle', function(downPa
             target.Functions.RemoveMoney('cash', downPayment, 'vehicle-bought-in-showroom')
             player.Functions.AddMoney('bank', commission)
             TriggerClientEvent('QBCore:Notify', src, Lang:t('success.earned_commission', {amount = comma_value(commission)}), 'success')
-            exports['Renwed-Banking']:addAccountMoney(player.PlayerData.job.name, vehiclePrice)
+            exports['Renewed-Banking']:addAccountMoney(player.PlayerData.job.name, vehiclePrice)
             TriggerClientEvent('QBCore:Notify', target.PlayerData.source, Lang:t('success.purchased'), 'success')
         elseif bank >= downPayment then
             MySQL.insert('INSERT INTO player_vehicles (license, citizenid, vehicle, hash, mods, plate, garage, state, balance, paymentamount, paymentsleft, financetime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', {
@@ -416,7 +416,7 @@ RegisterNetEvent('indigo-vehicleshop:server:sellfinanceVehicle', function(downPa
             target.Functions.RemoveMoney('bank', downPayment, 'vehicle-bought-in-showroom')
             player.Functions.AddMoney('bank', commission)
             TriggerClientEvent('QBCore:Notify', src, Lang:t('success.earned_commission', {amount = comma_value(commission)}), 'success')
-            exports['Renwed-Banking']:addAccountMoney(player.PlayerData.job.name, vehiclePrice)
+            exports['Renewed-Banking']:addAccountMoney(player.PlayerData.job.name, vehiclePrice)
             TriggerClientEvent('QBCore:Notify', target.PlayerData.source, Lang:t('success.purchased'), 'success')
         else
             TriggerClientEvent('QBCore:Notify', src, Lang:t('error.notenoughmoney'), 'error')

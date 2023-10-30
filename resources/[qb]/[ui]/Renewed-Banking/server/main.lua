@@ -139,7 +139,7 @@ local function getBankData(source)
     return bankData
 end
 
-QBCore.Functions.CreateCallback("Renwed-Banking:server:initalizeBanking", function(source, cb)
+QBCore.Functions.CreateCallback("Renewed-Banking:server:initalizeBanking", function(source, cb)
     local bankData = getBankData(source)
     cb(bankData)
 end)
@@ -222,7 +222,7 @@ local function addAccountMoney(account, amount)
     return true
 end exports('addAccountMoney', addAccountMoney)
 
-QBCore.Functions.CreateCallback("Renwed-Banking:server:deposit", function(source, cb, data)
+QBCore.Functions.CreateCallback("Renewed-Banking:server:deposit", function(source, cb, data)
     local Player = QBCore.Functions.GetPlayer(source)
     local amount = tonumber(data.amount)
     if not amount or amount < 1 then
@@ -242,7 +242,7 @@ QBCore.Functions.CreateCallback("Renwed-Banking:server:deposit", function(source
         local bankData = getBankData(source)
         cb(bankData)
     else
-        TriggerClientEvent('Renwed-Banking:client:sendNotification', source, Lang:t("notify.not_enough_money"))
+        TriggerClientEvent('Renewed-Banking:client:sendNotification', source, Lang:t("notify.not_enough_money"))
         cb(false)
     end
 end)
@@ -262,7 +262,7 @@ local function removeAccountMoney(account, amount)
     return true
 end exports('removeAccountMoney', removeAccountMoney)
 
-QBCore.Functions.CreateCallback("Renwed-Banking:server:withdraw", function(source, cb, data)
+QBCore.Functions.CreateCallback("Renewed-Banking:server:withdraw", function(source, cb, data)
     local Player = QBCore.Functions.GetPlayer(source)
     local amount = tonumber(data.amount)
     if not amount or amount < 1 then
@@ -285,7 +285,7 @@ QBCore.Functions.CreateCallback("Renwed-Banking:server:withdraw", function(sourc
         local bankData = getBankData(source)
         cb(bankData)
     else
-        TriggerClientEvent('Renwed-Banking:client:sendNotification', source, Lang:t("notify.not_enough_money"))
+        TriggerClientEvent('Renewed-Banking:client:sendNotification', source, Lang:t("notify.not_enough_money"))
         cb(false)
     end
 end)
@@ -315,7 +315,7 @@ local function getPlayerData(source, id)
     return Player
 end
 
-QBCore.Functions.CreateCallback("Renwed-Banking:server:transfer", function(source, cb, data)
+QBCore.Functions.CreateCallback("Renewed-Banking:server:transfer", function(source, cb, data)
     local Player = QBCore.Functions.GetPlayer(source)
     local amount = tonumber(data.amount)
     if not amount or amount < 1 then
@@ -333,14 +333,14 @@ QBCore.Functions.CreateCallback("Renwed-Banking:server:transfer", function(sourc
                 local transaction = handleTransaction(data.fromAccount, title, amount, data.comment, cachedAccounts[data.fromAccount].name, cachedAccounts[data.stateid].name, "withdraw")
                 handleTransaction(data.stateid, title, amount, data.comment, cachedAccounts[data.fromAccount].name, cachedAccounts[data.stateid].name, "deposit", transaction.trans_id)
             else
-                TriggerClientEvent('Renwed-Banking:client:sendNotification', source, Lang:t("notify.not_enough_money"))
+                TriggerClientEvent('Renewed-Banking:client:sendNotification', source, Lang:t("notify.not_enough_money"))
                 cb(false)
                 return
             end
         else
             local Player2 = getPlayerData(source, data.stateid)
             if not Player2 then
-                TriggerClientEvent('Renwed-Banking:client:sendNotification', source, Lang:t("notify.fail_transfer"))
+                TriggerClientEvent('Renewed-Banking:client:sendNotification', source, Lang:t("notify.fail_transfer"))
                 cb(false)
                 return
             end
@@ -351,7 +351,7 @@ QBCore.Functions.CreateCallback("Renwed-Banking:server:transfer", function(sourc
                 local transaction = handleTransaction(data.fromAccount, ("%s / %s"):format(cachedAccounts[data.fromAccount].name, data.fromAccount), amount, data.comment, cachedAccounts[data.fromAccount].name, name, "withdraw")
                 handleTransaction(data.stateid, ("%s / %s"):format(cachedAccounts[data.fromAccount].name, data.fromAccount), amount, data.comment, cachedAccounts[data.fromAccount].name, name, "deposit", transaction.trans_id)
             else
-                TriggerClientEvent('Renwed-Banking:client:sendNotification', source, Lang:t("notify.not_enough_money"))
+                TriggerClientEvent('Renewed-Banking:client:sendNotification', source, Lang:t("notify.not_enough_money"))
                 cb(false)
                 return
             end
@@ -365,14 +365,14 @@ QBCore.Functions.CreateCallback("Renwed-Banking:server:transfer", function(sourc
                 local transaction = handleTransaction(data.fromAccount, Lang:t("ui.personal_acc") .. data.fromAccount, amount, data.comment, name, cachedAccounts[data.stateid].name, "withdraw")
                 handleTransaction(data.stateid, Lang:t("ui.personal_acc") .. data.fromAccount, amount, data.comment, name, cachedAccounts[data.stateid].name, "deposit", transaction.trans_id)
             else
-                TriggerClientEvent('Renwed-Banking:client:sendNotification', source, Lang:t("notify.not_enough_money"))
+                TriggerClientEvent('Renewed-Banking:client:sendNotification', source, Lang:t("notify.not_enough_money"))
                 cb(false)
                 return
             end
         else
             local Player2 = getPlayerData(source, data.stateid)
             if not Player2 then
-                TriggerClientEvent('Renwed-Banking:client:sendNotification', source, Lang:t("notify.fail_transfer"))
+                TriggerClientEvent('Renewed-Banking:client:sendNotification', source, Lang:t("notify.fail_transfer"))
                 cb(false)
                 return
             end
@@ -383,7 +383,7 @@ QBCore.Functions.CreateCallback("Renwed-Banking:server:transfer", function(sourc
                 local transaction = handleTransaction(data.fromAccount, Lang:t("ui.personal_acc") .. data.fromAccount, amount, data.comment, name, name2, "withdraw")
                 handleTransaction(data.stateid, Lang:t("ui.personal_acc") .. data.fromAccount, amount, data.comment, name, name2, "deposit", transaction.trans_id)
             else
-                TriggerClientEvent('Renwed-Banking:client:sendNotification', source, Lang:t("notify.not_enough_money"))
+                TriggerClientEvent('Renewed-Banking:client:sendNotification', source, Lang:t("notify.not_enough_money"))
                 cb(false)
                 return
             end
@@ -393,7 +393,7 @@ QBCore.Functions.CreateCallback("Renwed-Banking:server:transfer", function(sourc
     cb(bankData)
 end)
 
-RegisterNetEvent('Renwed-Banking:server:createNewAccount', function(accountid)
+RegisterNetEvent('Renewed-Banking:server:createNewAccount', function(accountid)
     local Player = QBCore.Functions.GetPlayer(source)
     if cachedAccounts[accountid] then QBCore.Functions.Notify(source, Lang:t("notify.account_taken"), "error") return end
     cachedAccounts[accountid] = {
@@ -418,7 +418,7 @@ RegisterNetEvent('Renwed-Banking:server:createNewAccount', function(accountid)
     })
 end)
 
-RegisterNetEvent("Renwed-Banking:server:getPlayerAccounts", function()
+RegisterNetEvent("Renewed-Banking:server:getPlayerAccounts", function()
     local Player = QBCore.Functions.GetPlayer(source)
     local accounts = cachedPlayers[Player.PlayerData.citizenid].accounts
     local data = {}
@@ -429,10 +429,10 @@ RegisterNetEvent("Renwed-Banking:server:getPlayerAccounts", function()
             end
         end
     end
-    TriggerClientEvent("Renwed-Banking:client:accountsMenu", source, data)
+    TriggerClientEvent("Renewed-Banking:client:accountsMenu", source, data)
 end)
 
-RegisterNetEvent("Renwed-Banking:server:viewMemberManagement", function(data)
+RegisterNetEvent("Renewed-Banking:server:viewMemberManagement", function(data)
     local Player = QBCore.Functions.GetPlayer(source)
 
     local account = data.account
@@ -449,10 +449,10 @@ RegisterNetEvent("Renwed-Banking:server:viewMemberManagement", function(data)
         end
     end
 
-    TriggerClientEvent("Renwed-Banking:client:viewMemberManagement", Player.PlayerData.source, retData)
+    TriggerClientEvent("Renewed-Banking:client:viewMemberManagement", Player.PlayerData.source, retData)
 end)
 
-RegisterNetEvent('Renwed-Banking:server:addAccountMember', function(account, member)
+RegisterNetEvent('Renewed-Banking:server:addAccountMember', function(account, member)
     local Player = QBCore.Functions.GetPlayer(source)
 
     if Player.PlayerData.citizenid ~= cachedAccounts[account].creator then print(Lang:t("logs.illegal_action", {name=GetPlayerName(source)})) return end
@@ -471,7 +471,7 @@ RegisterNetEvent('Renwed-Banking:server:addAccountMember', function(account, mem
     MySQL.update('UPDATE bank_accounts SET auth = ? WHERE id = ?',{json.encode(auth), account})
 end)
 
-RegisterNetEvent('Renwed-Banking:server:removeAccountMember', function(data)
+RegisterNetEvent('Renewed-Banking:server:removeAccountMember', function(data)
     local Player = QBCore.Functions.GetPlayer(source)
     if Player.PlayerData.citizenid ~= cachedAccounts[data.account].creator then print(Lang:t("logs.illegal_action", {name=GetPlayerName(source)})) return end
     local Player2 = getPlayerData(source, data.cid)
@@ -550,7 +550,7 @@ local function updateAccountName(account, newName, src)
     return true
 end
 
-RegisterNetEvent('Renwed-Banking:server:changeAccountName', function(account, newName)
+RegisterNetEvent('Renewed-Banking:server:changeAccountName', function(account, newName)
     updateAccountName(account, newName, source)
 end) exports("changeAccountName", updateAccountName)-- Should only use this on very secure backends to avoid anyone using this as this is a server side ONLY export --
 

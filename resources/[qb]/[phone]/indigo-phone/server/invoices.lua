@@ -14,7 +14,7 @@ RegisterNetEvent('indigo-phone:server:InvoiceHandler')
             if Config.RenewedBanking then
                 local cid = Player.PlayerData.citizenid
                 local name = ("%s %s"):format(Player.PlayerData.charinfo.firstname, Player.PlayerData.charinfo.lastname)
-                exports['Renwed-Banking']:handleTransaction(cid, "Phone Invoice", amount, "Paid off phone invoice of $"..amount, name, name, "withdraw")
+                exports['Renewed-Banking']:handleTransaction(cid, "Phone Invoice", amount, "Paid off phone invoice of $"..amount, name, name, "withdraw")
             end
             -- Do shit
         end

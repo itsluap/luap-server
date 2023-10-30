@@ -11,11 +11,11 @@ Translations = {
         secs = "Acum cateva secunde",
     },
     logs = {
-        invalid_account = "^6[^4Renwed-Banking^6] ^0 Contul nu a fost gasit (%{account})",
-        broke_account = "^6[^4Renwed-Banking^6] ^0 Contul (%{account}) nu are destul fonduri: $%{amount}",
-        illegal_action = "^6[^4Renwed-Banking^6] ^0 %{name} a incercat sa efectueze o actiune intr-un cont pe care nu l-a creat!",
-        no_account = "^6[^4Renwed-Banking^6] ^0 %{name} a incercat sa efectueze o actiune intr-un cont pe care nu l-a creat!",
-        existing_account = "^6[^4Renwed-Banking^6] ^0 Contul %{account} deja exista"
+        invalid_account = "^6[^4Renewed-Banking^6] ^0 Contul nu a fost gasit (%{account})",
+        broke_account = "^6[^4Renewed-Banking^6] ^0 Contul (%{account}) nu are destul fonduri: $%{amount}",
+        illegal_action = "^6[^4Renewed-Banking^6] ^0 %{name} a incercat sa efectueze o actiune intr-un cont pe care nu l-a creat!",
+        no_account = "^6[^4Renewed-Banking^6] ^0 %{name} a incercat sa efectueze o actiune intr-un cont pe care nu l-a creat!",
+        existing_account = "^6[^4Renewed-Banking^6] ^0 Contul %{account} deja exista"
     },
     notify = {
         invalid_amount = "Suma invalida %{type}",

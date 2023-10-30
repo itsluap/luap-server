@@ -24,8 +24,8 @@ RegisterNetEvent('indigo-phone:server:wenmo_givemoney_toID', function(data)
             local cid2 = OtherPly.PlayerData.citizenid
             local name2 = ("%s %s"):format(OtherPly.PlayerData.charinfo.firstname, OtherPly.PlayerData.charinfo.lastname)
 
-            exports['Renwed-Banking']:handleTransaction(cid, "Wenmo Transaction", Amount, txt, name2, name, "withdraw")
-            exports['Renwed-Banking']:handleTransaction(cid2, "Wenmo Transaction", Amount, txt, name, name2, "deposit")
+            exports['Renewed-Banking']:handleTransaction(cid, "Wenmo Transaction", Amount, txt, name2, name, "withdraw")
+            exports['Renewed-Banking']:handleTransaction(cid2, "Wenmo Transaction", Amount, txt, name, name2, "deposit")
         end
     else
         TriggerClientEvent("QBCore:Notify", src, 'You don\'t have enough money!', "error") -- replace this with Phone Notify
