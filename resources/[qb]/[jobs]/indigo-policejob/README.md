@@ -29,7 +29,7 @@ Police Job for QB-Core Framework :police_officer:
 - [qb-log](https://github.com/qbcore-framework/qb-logs) - (Deprecated) - For logging certain events
 - [indigo-smallresources](https://github.com/qbcore-framework/indigo-smallresources) (Replaces qb-log) - qb-log was added to indigo-smallresources
 - [indigo-menu](https://github.com/qbcore-framework/indigo-menu) - For the vehicle menus
-- [qb-input](https://github.com/qbcore-framework/qb-input) - For accessing evidence stashes
+- [indigo-input](https://github.com/qbcore-framework/indigo-input) - For accessing evidence stashes
 
 
 ## Screenshots

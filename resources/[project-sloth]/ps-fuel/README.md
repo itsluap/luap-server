@@ -17,7 +17,7 @@ A NoPixel inspired functionality fuel system that uses PolyZones that target spe
 * [indigo-target](https://github.com/BerkieBb/indigo-target)
 * [indigo-menu](https://github.com/qbcore-framework/indigo-menu)
 >>>>>>> parent of cd8b9a0ee (.)
-* [qb-input](https://github.com/qbcore-framework/qb-input)
+* [indigo-input](https://github.com/qbcore-framework/indigo-input)
 * [polyzone](https://github.com/qbcore-framework/PolyZone)
 * [interact-sound](https://github.com/qbcore-framework/interact-sound)
 

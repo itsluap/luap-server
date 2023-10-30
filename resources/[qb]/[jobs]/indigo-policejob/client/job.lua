@@ -428,7 +428,7 @@ RegisterNetEvent('police:client:EvidenceStashDrawer', function(data)
     if not takeLoc then return end
 
     if #(pos - takeLoc) <= 1.0 then
-        local drawer = exports['qb-input']:ShowInput({
+        local drawer = exports['indigo-input']:ShowInput({
             header = Lang:t('info.evidence_stash', {value = currentEvidence}),
             submitText = "open",
             inputs = {

@@ -235,7 +235,7 @@ end)
 
 RegisterNetEvent('ps-fuel:client:ShowCanInput', function ()
 	local playerMoney = QBCore.Functions.GetPlayerData().money
-	local dialog = exports['qb-input']:ShowInput({
+	local dialog = exports['indigo-input']:ShowInput({
 		header = "Gas Station",
 		submitText = "Accept Charge: $"..Config.canCost,
 		inputs = {
@@ -281,7 +281,7 @@ RegisterNetEvent('ps-fuel:client:refuelCanMenu', function()
 	if fuelToAdd ~= 0 then
 		price = math.floor(fuelToAdd * Config.fuelPrice)
 		local playerMoney = QBCore.Functions.GetPlayerData().money
-		local dialog = exports['qb-input']:ShowInput({
+		local dialog = exports['indigo-input']:ShowInput({
 			header = "Gas Station",
 			submitText = "Accept Charge: $"..Config.refuelCost,
 			inputs = {
@@ -383,7 +383,7 @@ RegisterNetEvent('ps-fuel:client:ShowInput', function (refillCost)
 	local ped = PlayerPedId()
 	local playerMoney = QBCore.Functions.GetPlayerData().money
 	if not HasPedGotWeapon(ped, 883325847) then
-		local dialog = exports['qb-input']:ShowInput({
+		local dialog = exports['indigo-input']:ShowInput({
 			header = "Gas Station",
 			submitText = "Accept Charge: $"..refillCost,
 			inputs = {

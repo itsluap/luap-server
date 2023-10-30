@@ -160,7 +160,7 @@ RegisterNetEvent('police:client:JailPlayer', function()
     local player, distance = QBCore.Functions.GetClosestPlayer()
     if player ~= -1 and distance < 2.5 then
         local playerId = GetPlayerServerId(player)
-        local dialog = exports['qb-input']:ShowInput({
+        local dialog = exports['indigo-input']:ShowInput({
             header = Lang:t('info.jail_time_input'),
             submitText = Lang:t('info.submit'),
             inputs = {
@@ -186,7 +186,7 @@ RegisterNetEvent('police:client:BillPlayer', function()
     local player, distance = QBCore.Functions.GetClosestPlayer()
     if player ~= -1 and distance < 2.5 then
         local playerId = GetPlayerServerId(player)
-        local dialog = exports['qb-input']:ShowInput({
+        local dialog = exports['indigo-input']:ShowInput({
             header = Lang:t('info.bill'),
             submitText = Lang:t('info.submit'),
             inputs = {
