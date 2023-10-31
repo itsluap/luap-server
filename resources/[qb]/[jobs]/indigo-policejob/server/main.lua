@@ -412,10 +412,10 @@ QBCore.Commands.Add('fine', Lang:t("commands.fine"), {{name = 'id', help = Lang:
                     else
                         MySQL.Async.insert('INSERT INTO phone_invoices (citizenid, amount, society, sender, sendercitizenid) VALUES (?, ?, ?, ?, ?)',{billed.PlayerData.citizenid, amount, biller.PlayerData.job.name, biller.PlayerData.charinfo.firstname, biller.PlayerData.citizenid}, function(id)
                             if id then
-                                TriggerClientEvent('qb-phone:client:AcceptorDenyInvoice', billed.PlayerData.source, id, biller.PlayerData.charinfo.firstname, biller.PlayerData.job.name, biller.PlayerData.citizenid, amount, GetInvokingResource())
+                                TriggerClientEvent('indigo-phone:client:AcceptorDenyInvoice', billed.PlayerData.source, id, biller.PlayerData.charinfo.firstname, biller.PlayerData.job.name, biller.PlayerData.citizenid, amount, GetInvokingResource())
                             end
                         end)
-                        TriggerClientEvent('qb-phone:RefreshPhone', billed.PlayerData.source)
+                        TriggerClientEvent('indigo-phone:RefreshPhone', billed.PlayerData.source)
                     end
                 else
                     TriggerClientEvent('QBCore:Notify', source, Lang:t("error.amount_higher"), 'error')
@@ -499,7 +499,7 @@ RegisterNetEvent('police:server:SendTrackerLocation', function(coords, requestId
         description = msg
     }
     TriggerClientEvent("police:client:TrackerMessage", requestId, msg, coords)
-    TriggerClientEvent("qb-phone:client:addPoliceAlert", requestId, alertData)
+    TriggerClientEvent("indigo-phone:client:addPoliceAlert", requestId, alertData)
 end)
 
 QBCore.Commands.Add('911p', Lang:t("commands.police_report"), {{name='message', help= Lang:t("commands.message_sent")}}, false, function(source, args)
@@ -512,7 +512,7 @@ QBCore.Commands.Add('911p', Lang:t("commands.police_report"), {{name='message', 
     for _, v in pairs(players) do
         if v and v.PlayerData.job.name == 'police' and v.PlayerData.job.onduty then
             local alertData = {title = Lang:t("commands.emergency_call"), coords = {x = coords.x, y = coords.y, z = coords.z}, description = message}
-            TriggerClientEvent("qb-phone:client:addPoliceAlert", v.PlayerData.source, alertData)
+            TriggerClientEvent("indigo-phone:client:addPoliceAlert", v.PlayerData.source, alertData)
             TriggerClientEvent('police:client:policeAlert', v.PlayerData.source, coords, message)
         end
     end
@@ -646,7 +646,7 @@ RegisterNetEvent('police:server:policeAlert', function(text)
     for _, v in pairs(players) do
         if v and v.PlayerData.job.name == 'police' and v.PlayerData.job.onduty then
             local alertData = {title = Lang:t('info.new_call'), coords = {x = coords.x, y = coords.y, z = coords.z}, description = text}
-            TriggerClientEvent("qb-phone:client:addPoliceAlert", v.PlayerData.source, alertData)
+            TriggerClientEvent("indigo-phone:client:addPoliceAlert", v.PlayerData.source, alertData)
             TriggerClientEvent('police:client:policeAlert', v.PlayerData.source, coords, text)
         end
     end

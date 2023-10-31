@@ -79,7 +79,7 @@ RegisterNetEvent('ps-adminmenu:server:SetJob', function(data, selectedData)
     
     Player.Functions.SetJob(tostring(Job), tonumber(Grade))
             if Config.RenewedPhone then
-                exports['qb-phone']:hireUser(tostring(Job), Player.PlayerData.citizenid, tonumber(Grade))
+                exports['indigo-phone']:hireUser(tostring(Job), Player.PlayerData.citizenid, tonumber(Grade))
             end
             
             QBCore.Functions.Notify(src, locale("jobset", name, Job, Grade), 'success', 5000)

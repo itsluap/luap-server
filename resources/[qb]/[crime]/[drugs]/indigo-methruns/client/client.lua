@@ -209,7 +209,7 @@ function GetTask()
     local playerMeta = playerData.metadata['methruns']
     if phone then
         if Config.Phone == 'qb' then
-            TriggerEvent('qb-phone:client:CustomNotification', 'TASK NOTIFICATION', 'Get the vehicle marked on your gps..', 'fas fa-bars', '#c07ef2', 8500)
+            TriggerEvent('indigo-phone:client:CustomNotification', 'TASK NOTIFICATION', 'Get the vehicle marked on your gps..', 'fas fa-bars', '#c07ef2', 8500)
         elseif Config.Phone == 'gks' then
             TriggerEvent('gksphone:notifi', {title = 'TASK NOTIFICATION', message = 'Get the vehicle marked on your gps..', img= '/html/static/img/icons/messages.png'})
         elseif Config.Phone == 'qs' then
@@ -244,7 +244,7 @@ function GetSupplier()
     local phone = QBCore.Functions.HasItem(Config.PhoneItemName)
     if phone then
         if Config.Phone == 'qb' then
-            TriggerEvent('qb-phone:client:CustomNotification', 'TASK NOTIFICATION', 'Meet the supplier and get the products', 'fas fa-bars', '#c07ef2', 8500)
+            TriggerEvent('indigo-phone:client:CustomNotification', 'TASK NOTIFICATION', 'Meet the supplier and get the products', 'fas fa-bars', '#c07ef2', 8500)
         elseif Config.Phone == 'gks' then
             TriggerEvent('gksphone:notifi', {title = 'TASK NOTIFICATION', message = 'Meet the supplier and get the products', img= '/html/static/img/icons/messages.png'})
         elseif Config.Phone == 'qs' then
@@ -401,7 +401,7 @@ function GetLocation()
     local phone = QBCore.Functions.HasItem(Config.PhoneItemName)
     if phone then
         if Config.Phone == 'qb' then
-            TriggerEvent('qb-phone:client:CustomNotification', 'TASK NOTIFICATION', 'Wait for a Drop Location', 'fas fa-bars', '#c07ef2', 8500)
+            TriggerEvent('indigo-phone:client:CustomNotification', 'TASK NOTIFICATION', 'Wait for a Drop Location', 'fas fa-bars', '#c07ef2', 8500)
         elseif Config.Phone == 'gks' then
             TriggerEvent('gksphone:notifi', {title = 'TASK NOTIFICATION', message = 'Wait for a Drop Location', img= '/html/static/img/icons/messages.png'})
         elseif Config.Phone == 'qs' then
@@ -423,7 +423,7 @@ function GetLocation()
     gotLocation = true
     if phone then
         if Config.Phone == 'qb' then
-            TriggerEvent('qb-phone:client:CustomNotification', 'TASK NOTIFICATION', 'Deliver the goods and vehicle', 'fas fa-bars', '#c07ef2', 8500)
+            TriggerEvent('indigo-phone:client:CustomNotification', 'TASK NOTIFICATION', 'Deliver the goods and vehicle', 'fas fa-bars', '#c07ef2', 8500)
         elseif Config.Phone == 'gks' then
             TriggerEvent('gksphone:notifi', {title = 'TASK NOTIFICATION', message = 'Deliver the goods and vehicle', img= '/html/static/img/icons/messages.png'})
         elseif Config.Phone == 'qs' then
@@ -458,7 +458,7 @@ RegisterNetEvent('indigo-methruns:leavevehicle', function ()
                 local phone = QBCore.Functions.HasItem(Config.PhoneItemName)
                 if phone then
                     if Config.Phone == 'qb' then
-                        TriggerEvent('qb-phone:client:CustomNotification', 'TASK NOTIFICATION', 'Return to the boss for payment', 'fas fa-bars', '#c07ef2', 8500)
+                        TriggerEvent('indigo-phone:client:CustomNotification', 'TASK NOTIFICATION', 'Return to the boss for payment', 'fas fa-bars', '#c07ef2', 8500)
                     elseif Config.Phone == 'gks' then
                         TriggerEvent('gksphone:notifi', {title = 'TASK NOTIFICATION', message = 'Return to the boss for payment', img= '/html/static/img/icons/messages.png'})
                     elseif Config.Phone == 'qs' then

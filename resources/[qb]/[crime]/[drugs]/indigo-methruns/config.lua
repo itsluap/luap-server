@@ -14,7 +14,7 @@ Config.MinRep = 3 -- Rep given at the end ( this is a random between Config.MinR
 Config.MaxRep = 5
 Config.LevelRep = 100-- Amount of reputation needed to get higher rewards etc
 Config.StartItem = 'meth'-- Item needed to start the runs
-Config.UseItemsStacked = false -- have the items you put in the start ped inventory stackeds
+Config.UseItemsStacked = true -- have the items you put in the start ped inventory stackeds
 Config.Caseitem = 'methcase'
 Config.RequiredAmount = 20 -- Amount of the starting item you need
 ----Low Rep Settings----

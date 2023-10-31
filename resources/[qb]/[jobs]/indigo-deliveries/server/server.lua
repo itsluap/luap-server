@@ -16,7 +16,7 @@ end)
 RegisterServerEvent('indigo-deliveriesv2:CreateDeliveryGroupJob', function()
     local PlayerId = source
     local Player = QBCore.Functions.GetPlayer(PlayerId)
-    local group = exports['qb-phone']:GetGroupByMembers(PlayerId)
+    local group = exports['indigo-phone']:GetGroupByMembers(PlayerId)
     if group then
         if Config.JobNeeded then
             if Player.PlayerData.job.name == Config.JobName then
@@ -55,11 +55,11 @@ end
 
 RegisterNetEvent('indigo-deliveriesv2:startjob', function (source)
     local PlayerId = source
-    local group = exports['qb-phone']:GetGroupByMembers(PlayerId)
-    local leader = exports['qb-phone']:GetGroupLeader(group)
+    local group = exports['indigo-phone']:GetGroupByMembers(PlayerId)
+    local leader = exports['indigo-phone']:GetGroupLeader(group)
     if PlayerId == leader then
         Jobs[group] = {StoreLocation = vector4(0.0, 0.0, 0.0, 0.0), DeliveryTruckId = 0, DeliveryPackages = 0, CollectedPackages = 0, DeliveredPackages = 0, Payment = 0, Reputation = 0}
-        exports['qb-phone']:pNotifyGroup(group, "RoadRunner Delivery", "Deliver packages to the customer", "fas fa-bars", '#090fd6', 7500)
+        exports['indigo-phone']:pNotifyGroup(group, "RoadRunner Delivery", "Deliver packages to the customer", "fas fa-bars", '#090fd6', 7500)
         local coords, packages, reputation, payment = GetStoreInfo(PlayerId, group)
         print(coords, packages, reputation, payment)
         Jobs[group]['StoreLocation'] = coords
@@ -74,8 +74,8 @@ end)
 
 RegisterNetEvent('indigo-deliveriesv2:givegroupvehiclekeys', function (VehiclePlate, TruckNetworkId)
     local PlayerId = source
-    local group = exports['qb-phone']:GetGroupByMembers(PlayerId)
-    local members = exports['qb-phone']:getGroupMembers(group)
+    local group = exports['indigo-phone']:GetGroupByMembers(PlayerId)
+    local members = exports['indigo-phone']:getGroupMembers(group)
     Jobs[group]['DeliveryTruckId'] = TruckNetworkId
     for i = 1, #members do
         TriggerClientEvent('vehiclekeys:client:SetOwner', members[i], VehiclePlate)
@@ -83,12 +83,12 @@ RegisterNetEvent('indigo-deliveriesv2:givegroupvehiclekeys', function (VehiclePl
         TriggerClientEvent('indigo-deliveriesv2:addstoretarget', members[i], Jobs[group]['StoreLocation'])
     end
 
-    exports['qb-phone']:pNotifyGroup(group, 'CURRENT TASK', 'DELIVER PACKAGES TO STORES', "fas fa-bars", '#86F9A1', 8000)
+    exports['indigo-phone']:pNotifyGroup(group, 'CURRENT TASK', 'DELIVER PACKAGES TO STORES', "fas fa-bars", '#86F9A1', 8000)
     local Stages = {
         [1] = {name = "Deliver the packages to the marked store", isDone = false , id = 1},
         [2] = {name = "Return back to the port and return truck", isDone = false , id = 2},
     }
-    exports['qb-phone']:setJobStatus(group, "RoadRunner Delivery", Stages)
+    exports['indigo-phone']:setJobStatus(group, "RoadRunner Delivery", Stages)
     local blip = {
         coords = Jobs[group]['StoreLocation'],
         color = 32,
@@ -99,14 +99,14 @@ RegisterNetEvent('indigo-deliveriesv2:givegroupvehiclekeys', function (VehiclePl
         route = true,
         routeColor = 32,
     }
-    exports['qb-phone']:CreateBlipForGroup(group, "delivery-location", blip)
+    exports['indigo-phone']:CreateBlipForGroup(group, "delivery-location", blip)
 end)
 
 RegisterServerEvent('indigo-deliveriesv2:TakePackages', function()
     local PlayerId = source
     local Player = QBCore.Functions.GetPlayer(PlayerId)
-    local group = exports['qb-phone']:GetGroupByMembers(PlayerId)
-    local job = exports["qb-phone"]:getJobStatus(group)
+    local group = exports['indigo-phone']:GetGroupByMembers(PlayerId)
+    local job = exports["indigo-phone"]:getJobStatus(group)
     local ped = GetPlayerPed(PlayerId)
     local pcoords = QBCore.Functions.GetCoords(ped)
     local coords = vector3(pcoords.x, pcoords.y, pcoords.z)
@@ -124,7 +124,7 @@ RegisterServerEvent('indigo-deliveriesv2:TakePackages', function()
 
             Jobs[group]['CollectedPackages'] = Jobs[group]['CollectedPackages'] + 1
             if Jobs[group]['CollectedPackages'] ==  Jobs[group]['DeliveryPackages'] then
-                local members = exports['qb-phone']:getGroupMembers(group)
+                local members = exports['indigo-phone']:getGroupMembers(group)
                 for i=1, #members do
                     TriggerClientEvent('indigo-deliveriesv2:RemoveTarget', members[i])
                 end
@@ -139,29 +139,29 @@ end)
 RegisterNetEvent('indigo-deliveriesv2:DeliverPackage', function (item)
     local PlayerId = source
     local Player = QBCore.Functions.GetPlayer(PlayerId)
-    local group = exports['qb-phone']:GetGroupByMembers(PlayerId)
-    local job = exports["qb-phone"]:getJobStatus(group)
+    local group = exports['indigo-phone']:GetGroupByMembers(PlayerId)
+    local job = exports["indigo-phone"]:getJobStatus(group)
     if not job then return end
     if Jobs[group]['DeliveredPackages'] < Jobs[group]['DeliveryPackages'] then
         if Player.Functions.RemoveItem(item, 1, false) then
             TriggerClientEvent('inventory:client:ItemBox', PlayerId, QBCore.Shared.Items[item], 'remove')
 
             Jobs[group]['DeliveredPackages'] = Jobs[group]['DeliveredPackages'] + 1
-            exports['qb-phone']:pNotifyGroup(group, 'DELIVERY NOTIFICATION', 'PACKAGES : '..Jobs[group]['DeliveredPackages']..' / '..Jobs[group]['DeliveryPackages'], "fas fa-bars", '#86F9A1', 8000)
+            exports['indigo-phone']:pNotifyGroup(group, 'DELIVERY NOTIFICATION', 'PACKAGES : '..Jobs[group]['DeliveredPackages']..' / '..Jobs[group]['DeliveryPackages'], "fas fa-bars", '#86F9A1', 8000)
             if Jobs[group]['DeliveredPackages'] ==  Jobs[group]['DeliveryPackages'] then
-                local leader = exports['qb-phone']:GetGroupLeader(group)
+                local leader = exports['indigo-phone']:GetGroupLeader(group)
                 TriggerClientEvent('indigo-deliveriesv2:canreturn', leader)
                 
-                exports['qb-phone']:pNotifyGroup(group, 'TASK COMPLETED', 'ALL PACKAGES DELIVERED', "fas fa-bars", '#86F9A1', 8000)
+                exports['indigo-phone']:pNotifyGroup(group, 'TASK COMPLETED', 'ALL PACKAGES DELIVERED', "fas fa-bars", '#86F9A1', 8000)
                 Wait(3500)
-                exports['qb-phone']:pNotifyGroup(group, 'CURRENT TASK', 'RETURN TO THE PORT.', "fas fa-bars", '#86F9A1', 8000)
+                exports['indigo-phone']:pNotifyGroup(group, 'CURRENT TASK', 'RETURN TO THE PORT.', "fas fa-bars", '#86F9A1', 8000)
 
                 local Stages = {
                     [1] = {name = "Deliver the packages to the marked store", isDone = true , id = 1},
                     [2] = {name = "Return back to the port and return truck", isDone = false , id = 2},
                 }
-                exports['qb-phone']:setJobStatus(group, "RoadRunner Delivery", Stages)
-                exports['qb-phone']:RemoveBlipForGroup(group, "delivery-location")
+                exports['indigo-phone']:setJobStatus(group, "RoadRunner Delivery", Stages)
+                exports['indigo-phone']:RemoveBlipForGroup(group, "delivery-location")
                 local blip = {
                     coords = Config.VehicleSpawn,
                     color = 32,
@@ -172,7 +172,7 @@ RegisterNetEvent('indigo-deliveriesv2:DeliverPackage', function (item)
                     route = true,
                     routeColor = 32,
                 }
-                exports['qb-phone']:CreateBlipForGroup(group, "delivery-warehouse", blip)
+                exports['indigo-phone']:CreateBlipForGroup(group, "delivery-warehouse", blip)
             end
         end
     end
@@ -180,18 +180,18 @@ end)
 
 RegisterNetEvent('indigo-deliveriesv2:ReturnVehicleAndClean', function ()
     local PlayerId = source
-    local group = exports['qb-phone']:GetGroupByMembers(PlayerId)
-    local leader = exports['qb-phone']:GetGroupLeader(group)
-    local job = exports["qb-phone"]:getJobStatus(group)
+    local group = exports['indigo-phone']:GetGroupByMembers(PlayerId)
+    local leader = exports['indigo-phone']:GetGroupLeader(group)
+    local job = exports["indigo-phone"]:getJobStatus(group)
     if not job then return end
     if PlayerId == leader then
-        exports['qb-phone']:RemoveBlipForGroup(group, "delivery-warehouse")
+        exports['indigo-phone']:RemoveBlipForGroup(group, "delivery-warehouse")
         local Stages = {
             [1] = {name = "Deliver the packages to the marked store", isDone = true , id = 1},
             [2] = {name = "Return back to the port and return truck", isDone = true , id = 2},
         }
-        exports['qb-phone']:setJobStatus(group, "RoadRunner Delivery", Stages)
-        local members = exports['qb-phone']:getGroupMembers(group)
+        exports['indigo-phone']:setJobStatus(group, "RoadRunner Delivery", Stages)
+        local members = exports['indigo-phone']:getGroupMembers(group)
         for i=1, #members do
             TriggerClientEvent('indigo-deliveriesv2:cleareverything', members[i])
         end
@@ -204,14 +204,14 @@ end)
 
 RegisterNetEvent('indigo-deliveriesv2:CollectPayment', function (source)
     local PlayerId = source
-    local group = exports['qb-phone']:GetGroupByMembers(PlayerId)
-    local members = exports['qb-phone']:getGroupMembers(group)
-    local leader = exports['qb-phone']:GetGroupLeader(group)
-    local job = exports["qb-phone"]:getJobStatus(group)
+    local group = exports['indigo-phone']:GetGroupByMembers(PlayerId)
+    local members = exports['indigo-phone']:getGroupMembers(group)
+    local leader = exports['indigo-phone']:GetGroupLeader(group)
+    local job = exports["indigo-phone"]:getJobStatus(group)
     if not job then return end
     if PlayerId == leader then
         local pay = Jobs[group]['Payment']
-        exports['qb-phone']:resetJobStatus(group)
+        exports['indigo-phone']:resetJobStatus(group)
         for i = 1, #members do
             local Players = QBCore.Functions.GetPlayer(members[i])
             Players.Functions.AddMoney(Config.PaymentMethod, pay, 'RoadRunner Delivery Payment')
@@ -226,15 +226,15 @@ end)
 
 RegisterNetEvent('indigo-deliveriesv2:canceldelivery', function ()
     local PlayerId = source
-    local group = exports['qb-phone']:GetGroupByMembers(PlayerId)
-    local leader = exports['qb-phone']:GetGroupLeader(group)
-    local job = exports["qb-phone"]:getJobStatus(group)
+    local group = exports['indigo-phone']:GetGroupByMembers(PlayerId)
+    local leader = exports['indigo-phone']:GetGroupLeader(group)
+    local job = exports["indigo-phone"]:getJobStatus(group)
     if not job then return end
     if PlayerId == leader then
-        exports['qb-phone']:RemoveBlipForGroup(group, "delivery-location")
-        exports['qb-phone']:RemoveBlipForGroup(group, "delivery-warehouse")
-        exports['qb-phone']:resetJobStatus(group)
-        local members = exports['qb-phone']:getGroupMembers(group)
+        exports['indigo-phone']:RemoveBlipForGroup(group, "delivery-location")
+        exports['indigo-phone']:RemoveBlipForGroup(group, "delivery-warehouse")
+        exports['indigo-phone']:resetJobStatus(group)
+        local members = exports['indigo-phone']:getGroupMembers(group)
         Jobs[group] = nil
         for i=1, #members do
             TriggerClientEvent('indigo-deliveriesv2:cleareverything', members[i])

@@ -4,7 +4,7 @@
 
 * qbcore 
 * qb-target
-* qb-phone https://github.com/Renewed-Scripts/qb-phone
+* indigo-phone https://github.com/Renewed-Scripts/indigo-phone
 * polyzone
 * ps-zones https://github.com/Project-Sloth/ps-zones
 
