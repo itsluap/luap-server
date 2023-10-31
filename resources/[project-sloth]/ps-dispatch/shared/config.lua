@@ -2,7 +2,7 @@ Config = Config or {}
 
 Config.Debug = false -- Enables debug and send alerts when leo break the law.
 
-Config.RespondKeybind = 'E'
+Config.RespondKeybind = ','
 Config.OpenDispatchMenu = 'O'
 Config.AlertTime = 5     -- How many seconds you want the alert to stay on screen
 
@@ -14,7 +14,7 @@ Config.Jobs = { -- Job Types that can access the dispatch menu
 
 Config.DefaultAlertsDelay = 5 -- Delay between each default alert, prevent spamming
 Config.DefaultAlerts = {
-    Speeding = true,
+    Speeding = false,
     Shooting = true,
     Autotheft = true,
     Melee = true,
@@ -24,7 +24,7 @@ Config.DefaultAlerts = {
 Config.MinOffset = 1
 Config.MaxOffset = 120
 
-Config.PhoneRequired = false -- Set true if only can use 911/311 command when got a phone on inventory.
+Config.PhoneRequired = true -- Set true if only can use 911/311 command when got a phone on inventory.
 Config.PhoneItems = { -- Add the entire list of your phone items.
     "phone",
 }
