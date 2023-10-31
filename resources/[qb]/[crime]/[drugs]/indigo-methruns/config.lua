@@ -1,6 +1,6 @@
 Config = Config or {}
 
-Config.Inventory = 'lj' -- qb/lj , ox = ox_inventory
+Config.Inventory = 'qb' -- qb/lj , ox = ox_inventory
 Config.UseMethCooldown = false -- true/false
 Config.CoolDown = 10 --- Cooldown until can start next run default is 10 minutes
 Config.CopNeeded = 0 -- Cops needed to do the runs
