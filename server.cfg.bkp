@@ -5,6 +5,7 @@ sv_maxclients 100
 set steam_webApiKey "AF94A1DB58A91D044F2A6A3E0C7A444D"
 sets tags "qbcore, roleplay"
 #set onesync on
+set txAdmin_cachePath "C:\fivem-server\cache"
 
 ## You MAY edit the following:
 sv_licenseKey "cfxk_QaIU1AqTYCZlmMKAtqZn_gHKHD"
@@ -17,8 +18,8 @@ sets Discord "discord.gg/Zm3yNJE5Ab"
 sets Website "indigorp.net"
 load_server_icon myLogo.png
 set sv_enforceGameBuild 2944
-#set mysql_connection_string "user=root;password=YellowMustang12;host=localhost;port=3306;database=indigo-live;charset=utf8mb4"
-set mysql_connection_string "user=root;host=localhost;port=3306;database=fivem-dev;charset=utf8mb4"
+set mysql_connection_string "user=root;password=YellowMustang12;host=localhost;port=3306;database=indigo-live;charset=utf8mb4"
+#set mysql_connection_string "user=root;host=localhost;port=3306;database=fivem-dev;charset=utf8mb4"
 #sv_tebexSecret 9ece67381cffad8ef67ec7d10f20b2b0b41b86b6
 
 # Voice config
@@ -114,7 +115,7 @@ ensure cfx-gabz-vbmarket
 ensure cfx-gabz-vu
 ensure cfx-gabz-weedcamp
 ensure cfx-gabz-yachts
-#ensure [assets]
+ensure [assets]
 #ensure indigo_clothing
 ##########################
 ensure ox_lib
@@ -152,5 +153,3 @@ add_ace qbcore.god command allow # Allow all commands
 add_principal qbcore.god group.admin # Allow gods access to the main admin group used to get all default permissions
 add_principal qbcore.god qbcore.admin # Allow gods access to admin commands
 add_principal qbcore.admin qbcore.mod # Allow admins access to mod commands
-
-setr illenium-appearance:locale "en"
