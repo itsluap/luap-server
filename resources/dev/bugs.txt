@@ -1,0 +1,5 @@
+Current bugs or possible bugs:
+
+1. ps-dispatch sending 2 notifications for store robberies? - needs more testing
+
+2. cars going inside each other at pdm? - needs more testing

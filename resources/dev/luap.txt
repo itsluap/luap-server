@@ -1,5 +1,3 @@
-if i do this again i need to make sure that i have a fully working server with no bugs unless it's something that i can't control, this includes everything from wesbite(forums,store,etc), the actual server, discord server(staff,ticket system, etc)
-
 
 -- monetization
     - finish patreon (patreon only goes towards supporting server - no benefits)

@@ -8,3 +8,11 @@ Methrun Guide:
 6. find the npc and grab the items from him
 7. go to the drop off location and leave the car along with the items in the trunk
 8. after leaving the area you can head back to the boss and get your payment
+
+
+meth runs:
+    - need to give task guy 5 meth
+    - then check goods
+    - then get task
+    - complete task and return to dealer to get payment
+    - you then get a briefcase, use briefcase to get money
