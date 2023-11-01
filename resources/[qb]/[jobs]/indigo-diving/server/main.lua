@@ -38,7 +38,6 @@ RegisterNetEvent('indigo-diving:server:CallCops', function(coords)
                     coords = coords,
                     description = msg
                 }
-                TriggerClientEvent("indigo-phone:client:addPoliceAlert", -1, alertData)
             end
         end
     end

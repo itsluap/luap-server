@@ -499,7 +499,6 @@ RegisterNetEvent('police:server:SendTrackerLocation', function(coords, requestId
         description = msg
     }
     TriggerClientEvent("police:client:TrackerMessage", requestId, msg, coords)
-    TriggerClientEvent("indigo-phone:client:addPoliceAlert", requestId, alertData)
 end)
 
 QBCore.Commands.Add('911p', Lang:t("commands.police_report"), {{name='message', help= Lang:t("commands.message_sent")}}, false, function(source, args)
@@ -512,7 +511,6 @@ QBCore.Commands.Add('911p', Lang:t("commands.police_report"), {{name='message', 
     for _, v in pairs(players) do
         if v and v.PlayerData.job.name == 'police' and v.PlayerData.job.onduty then
             local alertData = {title = Lang:t("commands.emergency_call"), coords = {x = coords.x, y = coords.y, z = coords.z}, description = message}
-            TriggerClientEvent("indigo-phone:client:addPoliceAlert", v.PlayerData.source, alertData)
             TriggerClientEvent('police:client:policeAlert', v.PlayerData.source, coords, message)
         end
     end
@@ -646,7 +644,6 @@ RegisterNetEvent('police:server:policeAlert', function(text)
     for _, v in pairs(players) do
         if v and v.PlayerData.job.name == 'police' and v.PlayerData.job.onduty then
             local alertData = {title = Lang:t('info.new_call'), coords = {x = coords.x, y = coords.y, z = coords.z}, description = text}
-            TriggerClientEvent("indigo-phone:client:addPoliceAlert", v.PlayerData.source, alertData)
             TriggerClientEvent('police:client:policeAlert', v.PlayerData.source, coords, text)
         end
     end

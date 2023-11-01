@@ -28,14 +28,3 @@ RegisterNUICallback('FetchVehicleScan', function(_, cb)
         end, plate)
     end, plate)
 end)
-
--- Events
-
-RegisterNetEvent('indigo-phone:client:addPoliceAlert', function(alertData)
-    if PlayerData.job.name == 'police' and PlayerData.job.onduty then
-        SendNUIMessage({
-            action = "AddPoliceAlert",
-            alert = alertData,
-        })
-    end
-end)

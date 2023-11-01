@@ -127,7 +127,6 @@ RegisterNetEvent('indigo-storerobbery:server:callCops', function(type, safe, str
         description = Lang:t("email.someone_is_trying_to_rob_a_store",{street = streetLabel, cameraId1 = cameraId})
     }
     TriggerClientEvent("indigo-storerobbery:client:robberyCall", -1, type, safe, streetLabel, coords)
-    TriggerClientEvent("indigo-phone:client:addPoliceAlert", -1, alertData)
 end)
 
 RegisterNetEvent('indigo-storerobbery:server:removeAdvancedLockpick', function()
