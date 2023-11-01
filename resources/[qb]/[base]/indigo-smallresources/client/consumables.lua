@@ -595,6 +595,7 @@ RegisterNetEvent('consumables:client:UseHeavyArmor', function()
 		disableMouse = false,
 		disableCombat = true,
     }, {}, {}, {}, function() -- Done
+        --[[
         if PlayerData.charinfo.gender == 0 then
             currentVest = GetPedDrawableVariation(ped, 9)
             currentVestTexture = GetPedTextureVariation(ped, 9)
@@ -608,6 +609,7 @@ RegisterNetEvent('consumables:client:UseHeavyArmor', function()
             currentVestTexture = GetPedTextureVariation(ped, 30)
             SetPedComponentVariation(ped, 9, 30, 0, 2)
         end
+        ]]--
         TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["heavyarmor"], "remove")
         TriggerServerEvent("consumables:server:useHeavyArmor")
         SetPedArmour(ped, 100)
