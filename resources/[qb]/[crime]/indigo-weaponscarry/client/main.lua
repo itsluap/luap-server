@@ -41,13 +41,13 @@ local PlayerSlots = {
 local props = {
 	---- ** Drugs ** ----
 	-- Weed
-	["wetbud"] = { model = "bkr_prop_weed_drying_02a", hash = joaat("bkr_prop_weed_drying_02a"), tier = 1, yr = 90.0 }, -- This is more of an item that deserves a
+	--["wetbud"] = { model = "bkr_prop_weed_drying_02a", hash = joaat("bkr_prop_weed_drying_02a"), tier = 1, yr = 90.0 }, -- This is more of an item that deserves a
 
 	-- meth
-	["meth"] = { model = "hei_prop_pill_bag_01", hash = joaat("hei_prop_pill_bag_01"), tier = 3 },
+	--["meth"] = { model = "hei_prop_pill_bag_01", hash = joaat("hei_prop_pill_bag_01"), tier = 3 },
 
 	-- Contraband
-	["markedbills"] = { model = "prop_money_bag_01", hash = joaat("prop_money_bag_01"), tier = 3, x = -0.47, zr = 0 }, -- If you put any x,y,z,xr,yr,zr it will offset it from the slots to make it fit perfectly
+	--["markedbills"] = { model = "prop_money_bag_01", hash = joaat("prop_money_bag_01"), tier = 3, x = -0.47, zr = 0 }, -- If you put any x,y,z,xr,yr,zr it will offset it from the slots to make it fit perfectly
 
 	-- Custom Weapons Tier 1
 	["weapon_assaultrifle"]  = { model = "w_ar_assaultrifle", hash = joaat("weapon_assaultrifle"), tier = 1 },
@@ -82,22 +82,22 @@ local props = {
 	["weapon_wrench"]    = { model = "w_me_wrench", hash = joaat("weapon_wrench"), tier = 2 },
 
 	-- These Utilize the NoPixel pelts from their packages get them here: https://3dstore.nopixel.net/package/5141816 --
-	["deer_pelt_1"] = { model = "hunting_pelt_01_a", hash = joaat("hunting_pelt_01_a"), tier = 4 },
-	["deer_pelt_2"] = { model = "hunting_pelt_01_b", hash = joaat("hunting_pelt_01_b"), tier = 4 },
-	["deer_pelt_3"] = { model = "hunting_pelt_01_c", hash = joaat("hunting_pelt_01_c"), tier = 4 },
+	--["deer_pelt_1"] = { model = "hunting_pelt_01_a", hash = joaat("hunting_pelt_01_a"), tier = 4 },
+	--["deer_pelt_2"] = { model = "hunting_pelt_01_b", hash = joaat("hunting_pelt_01_b"), tier = 4 },
+	--["deer_pelt_3"] = { model = "hunting_pelt_01_c", hash = joaat("hunting_pelt_01_c"), tier = 4 },
 
 
 	-- I use these for my house robbery when they steal the objects --
-	["telescope"]      = { carry = true, model = "prop_t_telescope_01b", bone = 24817, x = -0.23, y = 0.43, z = 0.05,
-		xr = -10.0, yr = 93.0, zr = 0.0, blockAttack = true, blockCar = true, blockRun = true, },
-	["pcequipment"]    = { carry = true, model = "prop_dyn_pc_02", bone = 24817, x = 0.09, y = 0.43, z = 0.05, xr = 91.0,
-		yr = 0.0, zr = -265.0, blockAttack = true, blockCar = true, blockRun = true },
-	["coffeemaker"]    = { carry = true, model = "prop_coffee_mac_02", bone = 24817, x = 0.00, y = 0.43, z = 0.05,
-		xr = 91.0, yr = 0.0, zr = -265.0, blockAttack = true, blockCar = true, blockRun = true },
-	["musicequipment"] = { carry = true, model = "prop_speaker_06", bone = 24817, x = 0.00, y = 0.43, z = 0.05, xr = 91.0,
-		yr = 0.0, zr = -265.0, blockAttack = true, blockCar = true, blockRun = true },
-	["microwave"]      = { carry = true, model = "prop_microwave_1", bone = 24817, x = -0.20, y = 0.43, z = 0.05, xr = 91.0,
-		yr = 0.0, zr = -265.0, blockAttack = true, blockCar = true, blockRun = true },
+	--["telescope"]      = { carry = true, model = "prop_t_telescope_01b", bone = 24817, x = -0.23, y = 0.43, z = 0.05,
+		--xr = -10.0, yr = 93.0, zr = 0.0, blockAttack = true, blockCar = true, blockRun = true, },
+	--["pcequipment"]    = { carry = true, model = "prop_dyn_pc_02", bone = 24817, x = 0.09, y = 0.43, z = 0.05, xr = 91.0,
+		--yr = 0.0, zr = -265.0, blockAttack = true, blockCar = true, blockRun = true },
+	--["coffeemaker"]    = { carry = true, model = "prop_coffee_mac_02", bone = 24817, x = 0.00, y = 0.43, z = 0.05,
+		--xr = 91.0, yr = 0.0, zr = -265.0, blockAttack = true, blockCar = true, blockRun = true },
+	--["musicequipment"] = { carry = true, model = "prop_speaker_06", bone = 24817, x = 0.00, y = 0.43, z = 0.05, xr = 91.0,
+		--yr = 0.0, zr = -265.0, blockAttack = true, blockCar = true, blockRun = true },
+	--["microwave"]      = { carry = true, model = "prop_microwave_1", bone = 24817, x = -0.20, y = 0.43, z = 0.05, xr = 91.0,
+		--yr = 0.0, zr = -265.0, blockAttack = true, blockCar = true, blockRun = true },
 
 }
 
