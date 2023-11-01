@@ -3,3 +3,32 @@ Current bugs or possible bugs:
 1. ps-dispatch sending 2 notifications for store robberies? - needs more testing
 
 2. cars going inside each other at pdm? - needs more testing
+
+
+
+
+
+OLD LIST OF BUGS (SHOULD CHECK ANYWAY):
+
+1. Pawnshop:
+    - if player isn't able to carry everything that the pawnshop is trying to givem it will give what the player can carry,
+      but won't set the items as picked up and will keep giving the item that the player can carry, allowing duplication of items
+
+2. Inventory:
+    - If player is in a vehicles trunk and gets hit/falls over the trunk will allow players to take items out but won't register the items as being taken out
+      allowing duplication of items
+
+3. if doing /911 animation and you pull out gun you get kicked for exploting
+
+4. add lab keys to blackmarket
+
+5. hud shows nos in car even if car doesn't have nos
+
+6. financing a vehicle won't autopay for it, get's repod if no payments are made
+
+-- Whole Server:
+    - things start to respond slow? causes problems in every script
+
+-- Misc:
+    - when police impound cars it is indefinite (dv'd cars go to impound but phone wont show that)
+    - walk out of car dealers for job to update (fixes dealer menu on cars)

@@ -32,7 +32,6 @@ Testing:
 
 -- new player guide could be a link to a forum page that shows a guide
 -- make sure rules are 100%, try to cover everything, edit anything needed / create a staff application
--- PD hiring bonus / EMS hiring bonus
 
 
 
