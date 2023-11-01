@@ -16,14 +16,3 @@ AddEventHandler("wld:delallveh", function ()
         end
     end
 end)
-
--- testing ox_lib --
-
-local i = 0
- 
-while true do
-    Wait(1000)
-    i += 1
- 
-    print(cache('test', function() return i end, 5000))
-end
