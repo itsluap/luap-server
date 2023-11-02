@@ -1098,6 +1098,7 @@ end)
 
 RegisterNetEvent('police:server:RobPlayerInv')
 AddEventHandler('police:server:RobPlayerInv', function(playerId)
+    print("server:RobPlayerInv")
     local src = source
     local playerPed = GetPlayerPed(src)
     local targetPed = GetPlayerPed(playerId)
