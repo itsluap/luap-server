@@ -1115,9 +1115,8 @@ AddEventHandler('police:server:RobPlayerInv', function(playerId)
     end
 
     -- Check if the target player is in last stand or dead
-    if RobbedPlayer.PlayerData.metadata["inlaststand"] or RobbedPlayer.PlayerData.metadata["isdead"] then
-        -- Perform the robbery action
-        TriggerClientEvent("police:client:GetRobbed", playerId, Player.PlayerData.source)
+    if (RobbedPlayer.PlayerData.metadata["inlaststand"] or RobbedPlayer.PlayerData.metadata["isdead"]) then
+        TriggerClientEvent("police:client:GetRobbed", RobbedPlayer.PlayerData.source, Player.PlayerData.source)
     else
         TriggerClientEvent('QBCore:Notify', src, Lang:t("error.not_last_stand_dead"), 'error')
     end
@@ -1129,10 +1128,12 @@ RegisterNetEvent('police:server:EscortPlayer', function(playerId)
     local targetPed = GetPlayerPed(playerId)
     local playerCoords = GetEntityCoords(playerPed)
     local targetCoords = GetEntityCoords(targetPed)
+
     if #(playerCoords - targetCoords) > 5 then return DropPlayer(src, "Attempted exploit abuse") end
 
     local Player = QBCore.Functions.GetPlayer(source)
     local EscortPlayer = QBCore.Functions.GetPlayer(playerId)
+    
     if not Player or not EscortPlayer then return end
 
     if (Player.PlayerData.job.name == "police" or Player.PlayerData.job.name == "ambulance") or (EscortPlayer.PlayerData.metadata["ishandcuffed"] or EscortPlayer.PlayerData.metadata["isdead"] or EscortPlayer.PlayerData.metadata["inlaststand"]) then
