@@ -119,7 +119,7 @@ local function RegisterKeyBinds()
 		else
 			UTIL:Log( "ERROR: Resource name is not wk_wars2x. Key binds will not be registered for compatibility reasons. Contact the server owner and ask them to change the resource name back to wk_wars2x" )
 		end
-	elseif PlayerJob = nil then 
+	elseif PlayerJob == nil then 
 		Citizen.Wait(1000)
 	end
 end
