@@ -1110,7 +1110,7 @@ AddEventHandler('police:server:GetPlayerStatus', function(playerId, callback)
     inLastStand = IsPlayerInLastStand(playerId)
 
     -- Check if the player is dead
-    local targetPlayer = QBCore.Functions.GetPlayerData(playerId)
+    local targetPlayer = QBCore.Functions.GetPlayer(playerId)
     if targetPlayer and targetPlayer.metadata and targetPlayer.metadata["isdead"] then
         isDead = true
     end
