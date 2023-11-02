@@ -68,7 +68,7 @@ Config.MenuItems = {
                         title = 'Rob',
                         icon = 'mask',
                         type = 'client',
-                        event = 'police:client:RobPlayer',
+                        event = 'police:client:RobPlayerInv',
                         shouldClose = true
                     }, {
                         id = 'escort',
