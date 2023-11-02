@@ -1132,7 +1132,7 @@ end)
 -- Function to check if a player is in last stand (you need to implement this)
 function IsPlayerInLastStand(playerId)
     local RobbedPlayer = QBCore.Functions.GetPlayer(playerId)
-    if (RobbedPlayer.PlayerData.metadata["inlaststand"] or RobbedPlayer.PlayerData.metadata["isdead"]) then
+    if RobbedPlayer.PlayerData.metadata["inlaststand"] or RobbedPlayer.PlayerData.metadata["isdead"] then
         return true
     else 
         return false 
