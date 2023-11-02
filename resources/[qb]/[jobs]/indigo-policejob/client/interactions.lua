@@ -205,7 +205,7 @@ end)
 
 -- Create a function to check if a player is in last stand
 function IsPlayerInLastStand(playerId, callback)
-    TriggerServerEvent('myServerFunction:CheckLastStand', playerId, callback)
+    TriggerServerEvent('luap:CheckLastStand', playerId, callback)
 end
 
 
