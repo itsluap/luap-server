@@ -3,7 +3,7 @@ game "gta5"
 
 author "Nuno Radio Man"
 description "[Robbery] Pacific Gabz"
-version "1.0.5"
+version "1.2.0"
 
 dependencies { 
 	"/onesync",
@@ -15,18 +15,29 @@ dependencies {
 
 lua54 'yes'
 
-client_scripts { 
-	"client/*"
+client_scripts {
+	"cfg/cfg.lua",
+	"cfg/cfg_robbery.lua",
+	"client/dependency.lua",
+	"client/functions.lua",
+	"client/client.lua",
 }
 server_scripts { 
-	--"@vrp/lib/utils.lua",
-	"cfg/*",
-	"server/*"
+	"@vrp/lib/utils.lua",
+
+	"cfg/cfg.lua",
+	"cfg/cfg_logs.lua",
+	"cfg/cfg_robbery.lua",
+	"server/dependency.lua",
+	"server/functions.lua",
+	"server/server.lua",
 }
 
 escrow_ignore {
-	'server/functions.lua',
-	'client/functions.lua',
-	'cfg/config.lua',
+	"cfg/cfg.lua",
+	"cfg/cfg_logs.lua",
+	"cfg/cfg_robbery.lua",
+	"client/functions.lua",
+	"server/functions.lua",
 }
 dependency '/assetpacks'
