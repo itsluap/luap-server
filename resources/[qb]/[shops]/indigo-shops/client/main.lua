@@ -85,8 +85,8 @@ local function openShop(shop, data)
         else
             ShopItems.items = SetupItems(shop, true)
             QBCore.Functions.Notify(Lang:t("error.dealer_decline"), "error")
-            Wait(500)
-            QBCore.Functions.Notify(Lang:t("error.talk_cop"), "error")
+            --Wait(500)
+            --QBCore.Functions.Notify(Lang:t("error.talk_cop"), "error")
             Wait(1000)
         end
     else
