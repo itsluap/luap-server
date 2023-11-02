@@ -4598,7 +4598,7 @@ QBShared.Vehicles = {
 	----------------------------------------
 	
 	-- tuner shop --
-
+	--[[
 	['z32midnight'] = {
         ['name'] = 'Z32 Midnight',
         ['brand'] = 'Nissan',
@@ -5466,6 +5466,7 @@ QBShared.Vehicles = {
         ['hash'] = `928gtsmn`,
         ['shop'] = {'tuner', 'ottos',  'autoex',}
     },
+	]]--
 }
 
 for _, v in pairs(QBShared.Vehicles) do
