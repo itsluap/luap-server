@@ -152,7 +152,7 @@ RegisterNetEvent('police:client:RobPlayer', function()
                     QBCore.Functions.Notify(Lang:t("error.canceled"), "error")
                 end)
             end
-        end
+        end)
     else
         QBCore.Functions.Notify(Lang:t("error.none_nearby"), "error")
     end
