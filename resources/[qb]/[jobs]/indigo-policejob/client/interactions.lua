@@ -126,30 +126,32 @@ RegisterNetEvent('police:client:RobPlayer', function()
     if player ~= -1 and distance < 2.5 then
         local playerPed = GetPlayerPed(player)
         local playerId = GetPlayerServerId(player)
-        if IsEntityPlayingAnim(playerPed, "missminuteman_1ig_2", "handsup_base", 3) or IsEntityPlayingAnim(playerPed, "mp_arresting", "idle", 3) or IsTargetDead(playerId) then
-            QBCore.Functions.Progressbar("robbing_player", Lang:t("progressbar.robbing"), math.random(5000, 7000), false, true, {
-                disableMovement = true,
-                disableCarMovement = true,
-                disableMouse = false,
-                disableCombat = true,
-            }, {
-                animDict = "random@shop_robbery",
-                anim = "robbery_action_b",
-                flags = 16,
-            }, {}, {}, function() -- Done
-                local plyCoords = GetEntityCoords(playerPed)
-                local pos = GetEntityCoords(ped)
-                if #(pos - plyCoords) < 2.5 then
+        QBCore.Functions.GetPlayerData(function(PlayerData)
+            if IsEntityPlayingAnim(playerPed, "missminuteman_1ig_2", "handsup_base", 3) or IsEntityPlayingAnim(playerPed, "mp_arresting", "idle", 3) or IsTargetDead(playerId) or PlayerData.metadata["inlaststand"] then
+                QBCore.Functions.Progressbar("robbing_player", Lang:t("progressbar.robbing"), math.random(5000, 7000), false, true, {
+                    disableMovement = true,
+                    disableCarMovement = true,
+                    disableMouse = false,
+                    disableCombat = true,
+                }, {
+                    animDict = "random@shop_robbery",
+                    anim = "robbery_action_b",
+                    flags = 16,
+                }, {}, {}, function() -- Done
+                    local plyCoords = GetEntityCoords(playerPed)
+                    local pos = GetEntityCoords(ped)
+                    if #(pos - plyCoords) < 2.5 then
+                        StopAnimTask(ped, "random@shop_robbery", "robbery_action_b", 1.0)
+                        TriggerServerEvent("inventory:server:OpenInventory", "otherplayer", playerId)
+                        TriggerEvent("inventory:server:RobPlayer", playerId)
+                    else
+                        QBCore.Functions.Notify(Lang:t("error.none_nearby"), "error")
+                    end
+                end, function() -- Cancel
                     StopAnimTask(ped, "random@shop_robbery", "robbery_action_b", 1.0)
-                    TriggerServerEvent("inventory:server:OpenInventory", "otherplayer", playerId)
-                    TriggerEvent("inventory:server:RobPlayer", playerId)
-                else
-                    QBCore.Functions.Notify(Lang:t("error.none_nearby"), "error")
-                end
-            end, function() -- Cancel
-                StopAnimTask(ped, "random@shop_robbery", "robbery_action_b", 1.0)
-                QBCore.Functions.Notify(Lang:t("error.canceled"), "error")
-            end)
+                    QBCore.Functions.Notify(Lang:t("error.canceled"), "error")
+                end)
+            end
         end
     else
         QBCore.Functions.Notify(Lang:t("error.none_nearby"), "error")
