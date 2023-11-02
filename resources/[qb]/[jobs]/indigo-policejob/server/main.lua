@@ -1094,6 +1094,46 @@ RegisterNetEvent('police:server:SyncSpikes', function(table)
     TriggerClientEvent('police:client:SyncSpikes', -1, table)
 end)
 
+-- added by luap ------------------------------------------------------------------------
+
+-- Define a table to store player statuses
+local playerStatuses = {}
+
+-- Server event to get player status
+RegisterServerEvent('police:server:GetPlayerStatus')
+AddEventHandler('police:server:GetPlayerStatus', function(playerId, callback)
+    local source = source
+    local inLastStand, isDead = false, false
+
+    -- Check the player's last stand status (you'll need to implement this logic)
+    -- For example, you might have a function to determine if a player is in last stand
+    inLastStand = IsPlayerInLastStand(playerId)
+
+    -- Check if the player is dead
+    local targetPlayer = QBCore.Functions.GetPlayerData(playerId)
+    if targetPlayer and targetPlayer.metadata and targetPlayer.metadata["isdead"] then
+        isDead = true
+    end
+
+    playerStatuses[source] = { inLastStand = inLastStand, isDead = isDead }
+
+    -- Return the status to the client
+    callback(inLastStand, isDead)
+end)
+
+-- Function to determine if a player is in last stand (you need to implement this logic)
+function IsPlayerInLastStand(playerId)
+    local player = QBCore.Functions.GetPlayerData(playerId)
+    if player and player.metadata and player.metadata["inlaststand"] then
+        return true
+    else
+        return false
+    end
+end
+
+
+-------------------------------------------------------------------------------------------
+
 -- Threads
 CreateThread(function()
     while true do
