@@ -1124,7 +1124,7 @@ end)
 
 -- Register a server function to check if a player is in last stand
 RegisterServerEvent('luap:CheckLastStand')
-AddEventHandler('luap:CheckLastStand', function(playerId)
+AddEventHandler('luap:CheckLastStand', function(playerId, callback)
     local isLastStand = IsPlayerInLastStand(playerId)
     callback(isLastStand)
 end)
