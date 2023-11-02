@@ -15,6 +15,7 @@ sets locale "en-US"
 #sets activitypubFeed indigorp@mstdn.social
 sets Discord "discord.gg/Zm3yNJE5Ab"
 sets Website "indigorp.net"
+sets sv_pureLevel 1
 load_server_icon myLogo.png
 set sv_enforceGameBuild 2944
 set mysql_connection_string "user=root;password=YellowMustang12;host=localhost;port=3306;database=indigo-live;charset=utf8mb4"
@@ -56,7 +57,7 @@ ensure cfx-gabz-arcade
 ensure cfx-gabz-bahama
 #ensure cfx-gabz-ballas
 ensure cfx-gabz-barber
-ensure cfx-gabz-beanmachine
+#ensure cfx-gabz-beanmachine
 ensure cfx-gabz-bennys
 ensure cfx-gabz-binco
 ensure cfx-gabz-bobcat
@@ -78,9 +79,9 @@ ensure cfx-gabz-hayes
 ensure cfx-gabz-import
 ensure cfx-gabz-impound
 #ensure cfx-gabz-koi
-ensure cfx-gabz-lamesapd        #*THIS RESOURCE REQUIRES [CFX-GABZ-PDPROPS] TO WORK PROPERLY*
-ensure cfx-gabz-lost
-ensure cfx-gabz-lostsc
+#ensure cfx-gabz-lamesapd        #*THIS RESOURCE REQUIRES [CFX-GABZ-PDPROPS] TO WORK PROPERLY*
+#ensure cfx-gabz-lost
+#ensure cfx-gabz-lostsc
 ensure cfx-gabz-lscustoms
 #ensure cfx-gabz-marabunta
 ensure cfx-gabz-mba
@@ -90,20 +91,20 @@ ensure cfx-gabz-mrpd
 ensure cfx-gabz-ottos
 ensure cfx-gabz-pacificbank     #*THIS RESOURCE REQUIRES [CFX-GABZ-PDPROPS] TO WORK PROPERLY*
 ensure cfx-gabz-paletobank
-ensure cfx-gabz-paletocamp
+#ensure cfx-gabz-paletocamp
 ensure cfx-gabz-paletoliquor
 ensure cfx-gabz-paletopd        #*THIS RESOURCE REQUIRES [CFX-GABZ-PDPROPS] TO WORK PROPERLY*
-ensure cfx-gabz-parkranger
-ensure cfx-gabz-pearls
+#ensure cfx-gabz-parkranger
+#ensure cfx-gabz-pearls
 ensure cfx-gabz-pdm
 ensure cfx-gabz-pillbox
 ensure cfx-gabz-pinkcage
 ensure cfx-gabz-pizzeria        #*THIS RESOURCE IS MANDATORY IF YOU USE [CFX-GABZ-OTTOS]*
 ensure cfx-gabz-ponsonbys
 ensure cfx-gabz-prison
-ensure cfx-gabz-records
+#ensure cfx-gabz-records
 ensure cfx-gabz-sandypd         #*THIS RESOURCE REQUIRES [CFX-GABZ-PDPROPS] TO WORK PROPERLY*
-ensure cfx-gabz-studio
+#ensure cfx-gabz-studio
 ensure cfx-gabz-suburban
 ensure cfx-gabz-tattoo
 ensure cfx-gabz-townhall        #*THIS RESOURCE REQUIRES [CFX-GABZ-PDPROPS] TO WORK PROPERLY*
