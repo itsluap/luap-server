@@ -1096,8 +1096,8 @@ end)
 
 -- added by luap ------------------------------------------------------------------------
 
-RegisterNetEvent('police:server:RobPlayer')
-AddEventHandler('police:server:RobPlayer', function(playerId)
+RegisterNetEvent('police:server:RobPlayerInv')
+AddEventHandler('police:server:RobPlayerInv', function(playerId)
     local src = source
     local playerPed = GetPlayerPed(src)
     local targetPed = GetPlayerPed(playerId)

@@ -2021,7 +2021,7 @@ end, "admin")
 
 QBCore.Commands.Add("rob", "Rob Player", {}, false, function(source, args)
 	-- TriggerClientEvent("police:client:GetRobbed", source) -- moving to server side to check if in last stand
-	TriggerServerEvent("police:server:RobPlayer", playerId)
+	TriggerServerEvent("police:server:RobPlayerInv", playerId)
 end)
 
 QBCore.Commands.Add("giveitem", "Give An Item (Admin Only)", {{name="id", help="Player ID"},{name="item", help="Name of the item (not a label)"}, {name="amount", help="Amount of items"}}, false, function(source, args)

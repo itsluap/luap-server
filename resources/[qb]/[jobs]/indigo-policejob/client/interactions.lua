@@ -295,7 +295,7 @@ AddEventHandler('police:client:RobPlayer', function()
     local player, distance = QBCore.Functions.GetClosestPlayer()
     if player ~= -1 and distance < 2.5 then
         local playerId = GetPlayerServerId(player)
-        TriggerServerEvent("police:server:RobPlayer", playerId)
+        TriggerServerEvent("police:server:RobPlayerInv", playerId)
     else
         QBCore.Functions.Notify(Lang:t("error.none_nearby"), "error")
     end
