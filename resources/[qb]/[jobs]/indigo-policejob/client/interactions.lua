@@ -120,39 +120,37 @@ RegisterNetEvent('police:client:SeizeDriverLicense', function()
 end)
 
 
-RegisterNetEvent('police:client:RobPlayer', function()
+RegisterNetEvent('police:client:GetRobbed', function()
     local player, distance = QBCore.Functions.GetClosestPlayer()
     local ped = PlayerPedId()
     if player ~= -1 and distance < 2.5 then
         local playerPed = GetPlayerPed(player)
         local playerId = GetPlayerServerId(player)
-        TriggerServerEvent('police:server:GetPlayerStatus', playerId, function(inLastStand, isDead)
-            if IsEntityPlayingAnim(playerPed, "missminuteman_1ig_2", "handsup_base", 3) or IsEntityPlayingAnim(playerPed, "mp_arresting", "idle", 3) or IsTargetDead(playerId) or inLastStand then
-                QBCore.Functions.Progressbar("robbing_player", Lang:t("progressbar.robbing"), math.random(5000, 7000), false, true, {
-                    disableMovement = true,
-                    disableCarMovement = true,
-                    disableMouse = false,
-                    disableCombat = true,
-                }, {
-                    animDict = "random@shop_robbery",
-                    anim = "robbery_action_b",
-                    flags = 16,
-                }, {}, {}, function() -- Done
-                    local plyCoords = GetEntityCoords(playerPed)
-                    local pos = GetEntityCoords(ped)
-                    if #(pos - plyCoords) < 2.5 then
-                        StopAnimTask(ped, "random@shop_robbery", "robbery_action_b", 1.0)
-                        TriggerServerEvent("inventory:server:OpenInventory", "otherplayer", playerId)
-                        TriggerEvent("inventory:server:RobPlayer", playerId)
-                    else
-                        QBCore.Functions.Notify(Lang:t("error.none_nearby"), "error")
-                    end
-                end, function() -- Cancel
+        if IsEntityPlayingAnim(playerPed, "missminuteman_1ig_2", "handsup_base", 3) or IsEntityPlayingAnim(playerPed, "mp_arresting", "idle", 3) or IsTargetDead(playerId) then
+            QBCore.Functions.Progressbar("robbing_player", Lang:t("progressbar.robbing"), math.random(5000, 7000), false, true, {
+                disableMovement = true,
+                disableCarMovement = true,
+                disableMouse = false,
+                disableCombat = true,
+            }, {
+                animDict = "random@shop_robbery",
+                anim = "robbery_action_b",
+                flags = 16,
+            }, {}, {}, function() -- Done
+                local plyCoords = GetEntityCoords(playerPed)
+                local pos = GetEntityCoords(ped)
+                if #(pos - plyCoords) < 2.5 then
                     StopAnimTask(ped, "random@shop_robbery", "robbery_action_b", 1.0)
-                    QBCore.Functions.Notify(Lang:t("error.canceled"), "error")
-                end)
-            end
-        end)
+                    TriggerServerEvent("inventory:server:OpenInventory", "otherplayer", playerId)
+                    TriggerEvent("inventory:server:RobPlayer", playerId)
+                else
+                    QBCore.Functions.Notify(Lang:t("error.none_nearby"), "error")
+                end
+            end, function() -- Cancel
+                StopAnimTask(ped, "random@shop_robbery", "robbery_action_b", 1.0)
+                QBCore.Functions.Notify(Lang:t("error.canceled"), "error")
+            end)
+        end
     else
         QBCore.Functions.Notify(Lang:t("error.none_nearby"), "error")
     end
@@ -160,7 +158,7 @@ end)
 
 --[[
 
-RegisterNetEvent('police:client:RobPlayer', function()
+RegisterNetEvent('police:client:GetRobbed', function()
     local player, distance = QBCore.Functions.GetClosestPlayer()
     local ped = PlayerPedId()
     
@@ -291,6 +289,18 @@ RegisterNetEvent('police:client:EscortPlayer', function()
         QBCore.Functions.Notify(Lang:t("error.none_nearby"), "error")
     end
 end)
+
+RegisterNetEvent('police:client:RobPlayer')
+AddEventHandler('police:client:RobPlayer', function()
+    local player, distance = QBCore.Functions.GetClosestPlayer()
+    if player ~= -1 and distance < 2.5 then
+        local playerId = GetPlayerServerId(player)
+        TriggerServerEvent("police:server:RobPlayer", playerId)
+    else
+        QBCore.Functions.Notify(Lang:t("error.none_nearby"), "error")
+    end
+end)
+
 
 RegisterNetEvent('police:client:KidnapPlayer', function()
     local player, distance = QBCore.Functions.GetClosestPlayer()

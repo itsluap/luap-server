@@ -1096,40 +1096,50 @@ end)
 
 -- added by luap ------------------------------------------------------------------------
 
--- Define a table to store player statuses
-local playerStatuses = {}
+RegisterNetEvent('police:server:RobPlayer')
+AddEventHandler('police:server:RobPlayer', function(playerId)
+    local src = source
+    local playerPed = GetPlayerPed(src)
+    local targetPed = GetPlayerPed(playerId)
+    local playerCoords = GetEntityCoords(playerPed)
+    local targetCoords = GetEntityCoords(targetPed)
 
--- Server event to get player status
-RegisterServerEvent('police:server:GetPlayerStatus')
-AddEventHandler('police:server:GetPlayerStatus', function(playerId, callback)
-    local source = source
-    local inLastStand, isDead = false, false
+    if #(playerCoords - targetCoords) > 5 then return DropPlayer(src, "Attempted exploit abuse") end
 
-    -- Check the player's last stand status (you'll need to implement this logic)
-    -- For example, you might have a function to determine if a player is in last stand
-    inLastStand = IsPlayerInLastStand(playerId)
+    local Player = QBCore.Functions.GetPlayer(source)
+    local RobbedPlayer = QBCore.Functions.GetPlayer(playerId)
 
-    -- Check if the player is dead
-    local targetPlayer = QBCore.Functions.GetPlayer(playerId)
-    if targetPlayer and targetPlayer.metadata and targetPlayer.metadata["isdead"] then
-        isDead = true
+    if not Player or not RobbedPlayer then
+        return
     end
 
-    playerStatuses[source] = { inLastStand = inLastStand, isDead = isDead }
-
-    -- Return the status to the client
-    callback(inLastStand, isDead)
+    -- Check if the target player is in last stand or dead
+    if RobbedPlayer.PlayerData.metadata["inlaststand"] or RobbedPlayer.PlayerData.metadata["isdead"] then
+        -- Perform the robbery action
+        TriggerClientEvent("police:client:GetRobbed", playerId, Player.PlayerData.source)
+    else
+        TriggerClientEvent('QBCore:Notify', src, Lang:t("error.not_last_stand_dead"), 'error')
+    end
 end)
 
--- Function to determine if a player is in last stand (you need to implement this logic)
-function IsPlayerInLastStand(playerId)
-    local DeadPlayer = QBCore.Functions.GetPlayer(playerId)
-    if DeadPlayer and DeadPlayer.PlayerData.metadata and DeadPlayer.PlayerData.metadata["inlaststand"] then
-        return true
+RegisterNetEvent('police:server:EscortPlayer', function(playerId)
+    local src = source
+    local playerPed = GetPlayerPed(src)
+    local targetPed = GetPlayerPed(playerId)
+    local playerCoords = GetEntityCoords(playerPed)
+    local targetCoords = GetEntityCoords(targetPed)
+    if #(playerCoords - targetCoords) > 5 then return DropPlayer(src, "Attempted exploit abuse") end
+
+    local Player = QBCore.Functions.GetPlayer(source)
+    local EscortPlayer = QBCore.Functions.GetPlayer(playerId)
+    if not Player or not EscortPlayer then return end
+
+    if (Player.PlayerData.job.name == "police" or Player.PlayerData.job.name == "ambulance") or (EscortPlayer.PlayerData.metadata["ishandcuffed"] or EscortPlayer.PlayerData.metadata["isdead"] or EscortPlayer.PlayerData.metadata["inlaststand"]) then
+        TriggerClientEvent("police:client:GetEscorted", EscortPlayer.PlayerData.source, Player.PlayerData.source)
     else
-        return false
+        TriggerClientEvent('QBCore:Notify', src, Lang:t("error.not_cuffed_dead"), 'error')
     end
-end
+end)
 
 
 -------------------------------------------------------------------------------------------
