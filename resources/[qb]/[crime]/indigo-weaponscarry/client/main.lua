@@ -673,6 +673,6 @@ AddEventHandler("luap:playPutOnBagAnimation", function()
 	end
 
     ClearPedTasks(playerPed)
-	print("Gender = " .. playerGender)
+	print("Gender = " .. PlayerData.charinfo.gender)
 	print("running but doing nothing")
 end)
