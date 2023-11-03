@@ -656,7 +656,7 @@ AddEventHandler("luap:playPutOnBagAnimation", function()
 		SetPedComponentVariation(ped, 5, 114, 0, 2) -- Set the bag to 114 (customize with the correct value) and use texture 0 (if it's the default)
 	end
 
-    ClearPedTasks(ped)
+    --ClearPedTasks(ped)
 	print("Gender = " .. PlayerData.charinfo.gender)
 	print("running but doing nothing")
 end)
