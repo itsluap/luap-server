@@ -90,7 +90,7 @@ AddEventHandler("ps-housing:server:registerProperty", function (propertyData) --
         if result and result[1] then
             Debug("Player: " .. propertyData.owner .. " skin already exists!")
         else
-            TriggerClientEvent("qb-clothes:client:CreateFirstCharacter", src)
+            TriggerClientEvent("indigo-clothing:client:CreateFirstCharacter", src)
             Debug("Player: " .. propertyData.owner .. " is creating a new character!")
         end
 
@@ -180,7 +180,7 @@ RegisterNetEvent("ps-housing:server:createApartmentStash", function(citizenId, p
     TriggerEvent('qb-inventory:server:SaveStashItems', stashId, items)
 end)
 
-RegisterNetEvent('qb-apartments:returnBucket', function()
+RegisterNetEvent('indigo-apartments:returnBucket', function()
     local src = source
     SetPlayerRoutingBucket(src, 0)
 end)
