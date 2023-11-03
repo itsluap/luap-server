@@ -636,6 +636,7 @@ end)
 -- Register a client-side event to play the animation
 RegisterNetEvent("luap:playPutOnBagAnimation")
 AddEventHandler("luap:playPutOnBagAnimation", function()
+	print("in luap event")
     local playerPed = PlayerPedId()
 	local playerGender = PlayerData.charinfo.gender
     local animDict = "anim@heists@ornate_bank@grab_cash" -- Animation dictionary
