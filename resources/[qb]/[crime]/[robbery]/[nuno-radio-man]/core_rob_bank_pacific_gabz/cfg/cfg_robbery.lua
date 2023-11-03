@@ -274,16 +274,16 @@ cfg.robbery = {
 				type = "rarity", -- "nospawn" "normal" "rarity" "glassdisplaysupport"
 				model = "", -- model_hash
 				models = {
-					{"none",0.0}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_money_01a"),16.6}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_money_01b"),16.6}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_money_01c"),16.6}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_silver_01a"),0.0}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_silver_01b"),0.0}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_silver_01c"),0.0}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_gold_01a"),16.6}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_gold_01b"),16.6}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_gold_01c"),16.6}, -- {model_hash,percentage}
+					{"none",50.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_money_01a"),50.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_money_01b"),50.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_money_01c"),50.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_silver_01a"),35.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_silver_01b"),35.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_silver_01c"),35.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_gold_01a"),15.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_gold_01b"),15.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_gold_01c"),15.0}, -- {model_hash,percentage}
 				},
 				position = {241.64663,210.94276,97.11051,0.0,0.0,340.0,0.0,0.0,-0.51,0.0}, -- {pos_x,pos_y,pos_z,rot_x,rot_y,rot_z,offset_x,offset_y,offset_z,offset_heading}
 				positions = {},
@@ -458,16 +458,16 @@ cfg.robbery = {
 				type = "rarity", -- "nospawn" "normal" "rarity" "glassdisplaysupport"
 				model = "", -- model_hash
 				models = {
-					{"none",0.0}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_money_01a"),16.6}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_money_01b"),16.6}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_money_01c"),16.6}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_silver_01a"),0.0}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_silver_01b"),0.0}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_silver_01c"),0.0}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_gold_01a"),16.6}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_gold_01b"),16.6}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_gold_01c"),16.6}, -- {model_hash,percentage}
+					{"none",50.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_money_01a"),50.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_money_01b"),50.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_money_01c"),50.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_silver_01a"),35.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_silver_01b"),35.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_silver_01c"),35.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_gold_01a"),15.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_gold_01b"),15.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_gold_01c"),15.0}, -- {model_hash,percentage}
 				},
 				position = {252.19699,239.92962,97.11051,0.0,0.0,160.0,0.0,0.0,-0.51,0.0}, -- {pos_x,pos_y,pos_z,rot_x,rot_y,rot_z,offset_x,offset_y,offset_z,offset_heading}
 				positions = {},
@@ -643,16 +643,16 @@ cfg.robbery = {
 				type = "rarity", -- "nospawn" "normal" "rarity" "glassdisplaysupport"
 				model = "", -- model_hash
 				models = {
-					{"none",0.0}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_money_01a"),16.6}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_money_01b"),16.6}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_money_01c"),16.6}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_silver_01a"),0.0}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_silver_01b"),0.0}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_silver_01c"),0.0}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_gold_01a"),16.6}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_gold_01b"),16.6}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_gold_01c"),16.6}, -- {model_hash,percentage}
+					{"none",50.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_money_01a"),50.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_money_01b"),50.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_money_01c"),50.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_silver_01a"),35.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_silver_01b"),35.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_silver_01c"),35.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_gold_01a"),15.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_gold_01b"),15.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_gold_01c"),15.0}, -- {model_hash,percentage}
 				},
 				position = {229.38514,234.68666,97.11051,0.0,0.0,160.0,0.0,0.0,-0.51,0.0}, -- {pos_x,pos_y,pos_z,rot_x,rot_y,rot_z,offset_x,offset_y,offset_z,offset_heading}
 				positions = {},
@@ -757,16 +757,16 @@ cfg.robbery = {
 				type = "rarity", -- "nospawn" "normal" "rarity" "glassdisplaysupport"
 				model = "", -- model_hash
 				models = {
-					{"none",0.0}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_money_01a"),16.6}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_money_01b"),16.6}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_money_01c"),16.6}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_silver_01a"),0.0}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_silver_01b"),0.0}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_silver_01c"),0.0}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_gold_01a"),16.6}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_gold_01b"),16.6}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_gold_01c"),16.6}, -- {model_hash,percentage}
+					{"none",50.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_money_01a"),50.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_money_01b"),50.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_money_01c"),50.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_silver_01a"),35.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_silver_01b"),35.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_silver_01c"),35.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_gold_01a"),15.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_gold_01b"),15.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_gold_01c"),15.0}, -- {model_hash,percentage}
 				},
 				position = {230.96690,234.11094,97.11051,0.0,0.0,160.0,0.0,0.0,-0.51,0.0}, -- {pos_x,pos_y,pos_z,rot_x,rot_y,rot_z,offset_x,offset_y,offset_z,offset_heading}
 				positions = {},
@@ -940,16 +940,16 @@ cfg.robbery = {
 				type = "rarity", -- "nospawn" "normal" "rarity" "glassdisplaysupport"
 				model = "", -- model_hash
 				models = {
-					{"none",0.0}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_money_01a"),16.6}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_money_01b"),16.6}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_money_01c"),16.6}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_silver_01a"),0.0}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_silver_01b"),0.0}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_silver_01c"),0.0}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_gold_01a"),16.6}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_gold_01b"),16.6}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_gold_01c"),16.6}, -- {model_hash,percentage}
+					{"none",50.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_money_01a"),50.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_money_01b"),50.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_money_01c"),50.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_silver_01a"),35.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_silver_01b"),35.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_silver_01c"),35.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_gold_01a"),15.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_gold_01b"),15.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_gold_01c"),15.0}, -- {model_hash,percentage}
 				},
 				position = {228.64396,225.41377,97.11051,0.0,0.0,345.0,0.0,0.0,-0.51,0.0}, -- {pos_x,pos_y,pos_z,rot_x,rot_y,rot_z,offset_x,offset_y,offset_z,offset_heading}
 				positions = {},
@@ -1054,16 +1054,16 @@ cfg.robbery = {
 				type = "rarity", -- "nospawn" "normal" "rarity" "glassdisplaysupport"
 				model = "", -- model_hash
 				models = {
-					{"none",0.0}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_money_01a"),16.6}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_money_01b"),16.6}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_money_01c"),16.6}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_silver_01a"),0.0}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_silver_01b"),0.0}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_silver_01c"),0.0}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_gold_01a"),16.6}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_gold_01b"),16.6}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_gold_01c"),16.6}, -- {model_hash,percentage}
+					{"none",50.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_money_01a"),50.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_money_01b"),50.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_money_01c"),50.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_silver_01a"),35.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_silver_01b"),35.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_silver_01c"),35.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_gold_01a"),15.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_gold_01b"),15.0}, -- {model_hash,percentage}
+					{GetHashKey("interactable_trolly_gold_01c"),15.0}, -- {model_hash,percentage}
 				},
 				position = {225.58288,226.80377,97.11051,0.0,0.0,340.0,0.0,0.0,-0.51,0.0}, -- {pos_x,pos_y,pos_z,rot_x,rot_y,rot_z,offset_x,offset_y,offset_z,offset_heading}
 				positions = {},
