@@ -646,7 +646,7 @@ AddEventHandler("luap:playPutOnBagAnimation", function()
 	while not HasAnimDictLoaded("anim@heists@ornate_bank@grab_cash") do
 		Wait(0)
 	end
-	TaskPlayAnim(player, "anim@heists@ornate_bank@grab_cash", "intro", 8.0, -8.0, -1, 1, 0, false, false, false)
+	TaskPlayAnim(player, "anim@heists@ornate_bank@grab_cash", "intro", 8.0, -8.0, -1, 51, 0, false, false, false)
 
     --RequestAnimDict("anim@heists@ornate_bank@grab_cash") print("requesting anim dict")
 
