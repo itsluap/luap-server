@@ -6,6 +6,8 @@
 
 2. Once you have the required items head to the basement of the bank and use third eye to view the security panels
 
+2.5. Every door but the vault uses an electronickit, the vault uses the pixellaptop and security_card_02
+
 3. Begin the hacks and continue through each door
 
 4. Grab money and profit
