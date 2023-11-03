@@ -657,4 +657,5 @@ AddEventHandler("luap:playPutOnBagAnimation", function()
 	end
 
     ClearPedTasks(playerPed)
+	print("running but doing nothing")
 end)
