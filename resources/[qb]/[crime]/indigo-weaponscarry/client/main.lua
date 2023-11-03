@@ -648,7 +648,7 @@ AddEventHandler("luap:playPutOnBagAnimation", function()
     while not HasAnimDictLoaded(animDict) do
         Citizen.Wait(1000)
     end
-	
+
     TaskPlayAnim(PlayerPedId(), animDict, animName, 8.0, 8.0, 1600, 51, 0, false, false, false)
 
 	if playerGender == 0 then -- Female
@@ -658,5 +658,6 @@ AddEventHandler("luap:playPutOnBagAnimation", function()
 	end
 
     ClearPedTasks(playerPed)
+	print(playerGender)
 	print("running but doing nothing")
 end)
