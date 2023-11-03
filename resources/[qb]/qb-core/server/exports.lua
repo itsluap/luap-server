@@ -134,7 +134,6 @@ local function AddItem(itemName, item)
     end
 
     QBCore.Shared.Items[itemName] = item
-
     TriggerClientEvent('QBCore:Client:OnSharedUpdate', -1, 'Items', itemName, item)
     TriggerEvent('QBCore:Server:UpdateObject')
     return true, "success"
