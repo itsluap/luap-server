@@ -274,7 +274,7 @@ cfg.robbery = {
 				type = "rarity", -- "nospawn" "normal" "rarity" "glassdisplaysupport"
 				model = "", -- model_hash
 				models = {
-					{"none",50.0}, -- {model_hash,percentage}
+					{"none",0.0}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_money_01a"),16.6}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_money_01b"),16.6}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_money_01c"),16.6}, -- {model_hash,percentage}
@@ -458,7 +458,7 @@ cfg.robbery = {
 				type = "rarity", -- "nospawn" "normal" "rarity" "glassdisplaysupport"
 				model = "", -- model_hash
 				models = {
-					{"none",50.0}, -- {model_hash,percentage}
+					{"none",0.0}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_money_01a"),16.6}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_money_01b"),16.6}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_money_01c"),16.6}, -- {model_hash,percentage}
@@ -643,7 +643,7 @@ cfg.robbery = {
 				type = "rarity", -- "nospawn" "normal" "rarity" "glassdisplaysupport"
 				model = "", -- model_hash
 				models = {
-					{"none",50.0}, -- {model_hash,percentage}
+					{"none",0.0}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_money_01a"),16.6}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_money_01b"),16.6}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_money_01c"),16.6}, -- {model_hash,percentage}
@@ -757,7 +757,7 @@ cfg.robbery = {
 				type = "rarity", -- "nospawn" "normal" "rarity" "glassdisplaysupport"
 				model = "", -- model_hash
 				models = {
-					{"none",50.0}, -- {model_hash,percentage}
+					{"none",0.0}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_money_01a"),16.6}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_money_01b"),16.6}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_money_01c"),16.6}, -- {model_hash,percentage}
@@ -940,7 +940,7 @@ cfg.robbery = {
 				type = "rarity", -- "nospawn" "normal" "rarity" "glassdisplaysupport"
 				model = "", -- model_hash
 				models = {
-					{"none",50.0}, -- {model_hash,percentage}
+					{"none",0.0}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_money_01a"),16.6}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_money_01b"),16.6}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_money_01c"),16.6}, -- {model_hash,percentage}
@@ -1054,7 +1054,7 @@ cfg.robbery = {
 				type = "rarity", -- "nospawn" "normal" "rarity" "glassdisplaysupport"
 				model = "", -- model_hash
 				models = {
-					{"none",50.0}, -- {model_hash,percentage}
+					{"none",0.0}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_money_01a"),16.6}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_money_01b"),16.6}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_money_01c"),16.6}, -- {model_hash,percentage}
