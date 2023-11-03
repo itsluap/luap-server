@@ -20,33 +20,45 @@ QBShared.Jobs = {
 		grades = {
             ['0'] = {
                 name = 'Recruit',
-                payment = 1000
+                payment = 1900
             },
 			['1'] = {
                 name = 'Officer',
-                payment = 1500
+                payment = 2500
             },
 			['2'] = {
-                name = 'Sergeant',
-                payment = 3000
+                name = 'Senior Officer',
+                payment = 3200
             },
-			['3'] = {
-                name = 'Lieutenant',
-                payment = 4000
+            ['3'] = {
+                name = 'Detective',
+                payment = 4200
             },
             ['4'] = {
-                name = 'Captain',
-                payment = 5000
+                name = 'Corporal',
+                payment = 4800
             },
             ['5'] = {
-                name = 'Deputy Chief',
-                payment = 6000
+                name = 'Sergeant',
+                payment = 5200
             },
-			['6'] = {
-                name = 'Chief',
+            ['6'] = {
+                name = 'Lieutenant',
+                payment = 5800
+            },
+            ['7'] = {
+                name = 'Captain',
+                payment = 6200
+            },
+            ['8'] = {
+                name = 'Deputy Chief of LSPD',
+                payment = 7000
+            },
+			['9'] = {
+                name = 'Chief of LSPD',
 				isboss = true,
                 bankAuth = true,
-                payment = 8000
+                payment = 9000
             },
         },
 	},
@@ -56,26 +68,32 @@ QBShared.Jobs = {
 		offDutyPay = false,
 		grades = {
             ['0'] = {
-                name = 'Recruit',
-                payment = 1000
-            },
-			['1'] = {
-                name = 'Paramedic',
+                name = 'EMS Trainee',
                 payment = 2000
             },
+			['1'] = {
+                name = 'EMT',
+                payment = 4500
+            },
 			['2'] = {
-                name = 'Doctor',
-                payment = 4000
+                name = 'AEMT',
+                payment = 5000
             },
 			['3'] = {
-                name = 'Surgeon',
-                payment = 8000
+                name = 'EMS Lieutenant',
+                payment = 5500
             },
 			['4'] = {
-                name = 'Chief',
+                name = 'Captain',
 				isboss = true,
                 bankAuth = true,
-                payment = 16000
+                payment = 6000
+            },
+            ['4'] = {
+                name = 'Dean of EMS',
+				isboss = true,
+                bankAuth = true,
+                payment = 9000
             },
         },
 	},

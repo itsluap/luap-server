@@ -18,8 +18,6 @@ OLD LIST OF BUGS (SHOULD CHECK ANYWAY):
     - If player is in a vehicles trunk and gets hit/falls over the trunk will allow players to take items out but won't register the items as being taken out
       allowing duplication of items
 
-3. if doing /911 animation and you pull out gun you get kicked for exploting
-
 4. add lab keys to blackmarket
 
 5. hud shows nos in car even if car doesn't have nos
