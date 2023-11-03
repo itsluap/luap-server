@@ -636,34 +636,21 @@ end)
 -- Register a client-side event to play the animation
 RegisterNetEvent("luap:playPutOnBagAnimation")
 AddEventHandler("luap:playPutOnBagAnimation", function()
-	print("starting luap event")
-	Citizen.Wait(5000)
+	Citizen.Wait(2000)
 	local ped = PlayerPedId()
 	local PlayerData = QBCore.Functions.GetPlayerData()
 
-	local player = PlayerPedId()
-	RequestAnimDict("anim@heists@ornate_bank@grab_cash")
-	while not HasAnimDictLoaded("anim@heists@ornate_bank@grab_cash") do
+	RequestAnimDict("clothingtie")
+	while not HasAnimDictLoaded("clothingtie") do
 		Wait(0)
 	end
-	TaskPlayAnim(player, "anim@heists@ornate_bank@grab_cash", "intro", 8.0, -8.0, -1, 51, 0, false, false, false)
-
-    --RequestAnimDict("anim@heists@ornate_bank@grab_cash") print("requesting anim dict")
-
-    --while not HasAnimDictLoaded("anim@heists@ornate_bank@grab_cash") do
-    --    Citizen.Wait(1000)
-    --end
-
-    --TaskPlayAnim(ped, "anim@heists@ornate_bank@grab_cash", "intro", 8.0, 8.0, 1600, 51, 0, false, false, false) print("playing anim")
-
+	TaskPlayAnim(ped, "clothingtie", "try_tie_negative_a", 8.0, -8.0, 1200, 51, 0, false, false, false)
+	Citizen.Wait(1200)
 	if PlayerData.charinfo.gender == 0 then -- male
 		SetPedComponentVariation(ped, 5, 114, 0, 2) -- Set the bag to 115 (customize with the correct value) and use texture 0 (if it's the default)
-		print("setting bag")
 	else -- (or other gender)
 		SetPedComponentVariation(ped, 5, 114, 0, 2) -- Set the bag to 114 (customize with the correct value) and use texture 0 (if it's the default)
 	end
 
-    --ClearPedTasks(ped)
-	print("Gender = " .. PlayerData.charinfo.gender)
-	print("running but doing nothing")
+    ClearPedTasks(ped)
 end)
