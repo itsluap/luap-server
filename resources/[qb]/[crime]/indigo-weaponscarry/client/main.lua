@@ -642,11 +642,11 @@ AddEventHandler("luap:playPutOnBagAnimation", function()
 	local PlayerData = QBCore.Functions.GetPlayerData()
 
 	local player = PlayerPedId()
-	RequestAnimDict("pickup_object")
-	while not HasAnimDictLoaded("pickup_object") do
+	RequestAnimDict("anim@heists@ornate_bank@grab_cash")
+	while not HasAnimDictLoaded("anim@heists@ornate_bank@grab_cash") do
 		Wait(0)
 	end
-	TaskPlayAnim(player, "pickup_object", "pickup_low", 8.0, -8.0, -1, 1, 0, false, false, false)
+	TaskPlayAnim(player, "anim@heists@ornate_bank@grab_cash", "intro", 8.0, -8.0, -1, 1, 0, false, false, false)
 
     --RequestAnimDict("anim@heists@ornate_bank@grab_cash") print("requesting anim dict")
 
