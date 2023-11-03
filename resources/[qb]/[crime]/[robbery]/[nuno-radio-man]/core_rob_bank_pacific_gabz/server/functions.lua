@@ -150,7 +150,7 @@ function GiveItemToPlayer(player,item_name,item_amount)
 		if item_name == "money" then -- check if item is money
 			xPlayer.Functions.AddMoney("cash",item_amount) -- give money to player
 		elseif item == "markedbills" then -- check if item is markedbills
-			xPlayer.Functions.AddItem("markedbills",1,false,{worth = item_amount})
+			xPlayer.Functions.AddItem("markedbills",1,false,{worth = math.random(5000, 10000)})
 		else -- if it is an item
 			xPlayer.Functions.AddItem(item_name,item_amount) -- give item to player
 		end
