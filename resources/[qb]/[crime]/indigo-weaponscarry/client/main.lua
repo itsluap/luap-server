@@ -439,7 +439,6 @@ local function DoItemCheck()
 						AttatchChain(props[item.name].model, props[item.name].hash, props[item.name].tier, item.name)
 					end
 				elseif props[item.name].bag then
-					print('has marked bills')
 					TriggerEvent('luap:playPutOnBagAnimation')
 				elseif not items_attatched[props[item.name].model] and GetSelectedPedWeapon(ped) ~= props[item.name].hash and
 					getFreeSlot(props[item.name].tier) >= 1 then
