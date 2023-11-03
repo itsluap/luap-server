@@ -641,13 +641,20 @@ AddEventHandler("luap:playPutOnBagAnimation", function()
 	local ped = PlayerPedId()
 	local PlayerData = QBCore.Functions.GetPlayerData()
 
-    RequestAnimDict("anim@heists@ornate_bank@grab_cash") print("requesting anim dict")
+	local player = PlayerPedId()
+	RequestAnimDict("pickup_object")
+	while not HasAnimDictLoaded("pickup_object") do
+		Wait(0)
+	end
+	TaskPlayAnim(player, "pickup_object", "pickup_low", 8.0, -8.0, -1, 1, 0, false, false, false)
 
-    while not HasAnimDictLoaded("anim@heists@ornate_bank@grab_cash") do
-        Citizen.Wait(1000)
-    end
+    --RequestAnimDict("anim@heists@ornate_bank@grab_cash") print("requesting anim dict")
 
-    TaskPlayAnim(ped, "anim@heists@ornate_bank@grab_cash", "intro", 8.0, 8.0, 1600, 51, 0, false, false, false) print("playing anim")
+    --while not HasAnimDictLoaded("anim@heists@ornate_bank@grab_cash") do
+    --    Citizen.Wait(1000)
+    --end
+
+    --TaskPlayAnim(ped, "anim@heists@ornate_bank@grab_cash", "intro", 8.0, 8.0, 1600, 51, 0, false, false, false) print("playing anim")
 
 	if PlayerData.charinfo.gender == 0 then -- male
 		SetPedComponentVariation(ped, 5, 114, 0, 2) -- Set the bag to 115 (customize with the correct value) and use texture 0 (if it's the default)
