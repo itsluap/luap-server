@@ -643,8 +643,8 @@ AddEventHandler("luap:playPutOnBagAnimation", function()
 	while not HasAnimDictLoaded("clothingtie") do
 		Wait(0)
 	end
-	TaskPlayAnim(ped, "clothingtie", "try_tie_negative_a", 8.0, -8.0, 1200, 51, 0, false, false, false)
-	Citizen.Wait(1200)
+	TaskPlayAnim(ped, "clothingtie", "try_tie_negative_a", 8.0, -8.0, 1600, 51, 0, false, false, false)
+	Citizen.Wait(1600)
 	if PlayerData.charinfo.gender == 0 then -- male
 		SetPedComponentVariation(ped, 5, 114, 0, 2) -- Set the bag to 115 (customize with the correct value) and use texture 0 (if it's the default)
 	else -- (or other gender)
