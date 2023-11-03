@@ -66,7 +66,7 @@ ensure cfx-gabz-bowling
 #ensure cfx-gabz-carmeet
 ensure cfx-gabz-casino
 ensure cfx-gabz-catcafe
-ensure cfx-gabz-davispd         #*THIS RESOURCE REQUIRES [CFX-GABZ-PDPROPS] TO WORK PROPERLY*
+#ensure cfx-gabz-davispd         #*THIS RESOURCE REQUIRES [CFX-GABZ-PDPROPS] TO WORK PROPERLY*
 ensure cfx-gabz-diner
 ensure cfx-gabz-esbltd
 #ensure cfx-gabz-families
@@ -93,7 +93,7 @@ ensure cfx-gabz-pacificbank     #*THIS RESOURCE REQUIRES [CFX-GABZ-PDPROPS] TO W
 ensure cfx-gabz-paletobank
 #ensure cfx-gabz-paletocamp
 ensure cfx-gabz-paletoliquor
-ensure cfx-gabz-paletopd        #*THIS RESOURCE REQUIRES [CFX-GABZ-PDPROPS] TO WORK PROPERLY*
+#ensure cfx-gabz-paletopd        #*THIS RESOURCE REQUIRES [CFX-GABZ-PDPROPS] TO WORK PROPERLY*
 #ensure cfx-gabz-parkranger
 #ensure cfx-gabz-pearls
 ensure cfx-gabz-pdm
