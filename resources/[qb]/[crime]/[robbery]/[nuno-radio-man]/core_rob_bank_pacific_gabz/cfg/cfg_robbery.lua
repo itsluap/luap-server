@@ -278,9 +278,9 @@ cfg.robbery = {
 					{GetHashKey("interactable_trolly_money_01a"),50.0}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_money_01b"),50.0}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_money_01c"),50.0}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_silver_01a"),35.0}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_silver_01b"),35.0}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_silver_01c"),35.0}, -- {model_hash,percentage}
+					--{GetHashKey("interactable_trolly_silver_01a"),35.0}, -- {model_hash,percentage}
+					--{GetHashKey("interactable_trolly_silver_01b"),35.0}, -- {model_hash,percentage}
+					--{GetHashKey("interactable_trolly_silver_01c"),35.0}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_gold_01a"),15.0}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_gold_01b"),15.0}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_gold_01c"),15.0}, -- {model_hash,percentage}
@@ -462,9 +462,9 @@ cfg.robbery = {
 					{GetHashKey("interactable_trolly_money_01a"),50.0}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_money_01b"),50.0}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_money_01c"),50.0}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_silver_01a"),35.0}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_silver_01b"),35.0}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_silver_01c"),35.0}, -- {model_hash,percentage}
+					--{GetHashKey("interactable_trolly_silver_01a"),35.0}, -- {model_hash,percentage}
+					--{GetHashKey("interactable_trolly_silver_01b"),35.0}, -- {model_hash,percentage}
+					--{GetHashKey("interactable_trolly_silver_01c"),35.0}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_gold_01a"),15.0}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_gold_01b"),15.0}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_gold_01c"),15.0}, -- {model_hash,percentage}
@@ -647,9 +647,9 @@ cfg.robbery = {
 					{GetHashKey("interactable_trolly_money_01a"),50.0}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_money_01b"),50.0}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_money_01c"),50.0}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_silver_01a"),35.0}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_silver_01b"),35.0}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_silver_01c"),35.0}, -- {model_hash,percentage}
+					--{GetHashKey("interactable_trolly_silver_01a"),35.0}, -- {model_hash,percentage}
+					--{GetHashKey("interactable_trolly_silver_01b"),35.0}, -- {model_hash,percentage}
+					--{GetHashKey("interactable_trolly_silver_01c"),35.0}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_gold_01a"),15.0}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_gold_01b"),15.0}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_gold_01c"),15.0}, -- {model_hash,percentage}
@@ -761,9 +761,9 @@ cfg.robbery = {
 					{GetHashKey("interactable_trolly_money_01a"),50.0}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_money_01b"),50.0}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_money_01c"),50.0}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_silver_01a"),35.0}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_silver_01b"),35.0}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_silver_01c"),35.0}, -- {model_hash,percentage}
+					--{GetHashKey("interactable_trolly_silver_01a"),35.0}, -- {model_hash,percentage}
+					--{GetHashKey("interactable_trolly_silver_01b"),35.0}, -- {model_hash,percentage}
+					--{GetHashKey("interactable_trolly_silver_01c"),35.0}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_gold_01a"),15.0}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_gold_01b"),15.0}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_gold_01c"),15.0}, -- {model_hash,percentage}
@@ -944,9 +944,9 @@ cfg.robbery = {
 					{GetHashKey("interactable_trolly_money_01a"),50.0}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_money_01b"),50.0}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_money_01c"),50.0}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_silver_01a"),35.0}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_silver_01b"),35.0}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_silver_01c"),35.0}, -- {model_hash,percentage}
+					--{GetHashKey("interactable_trolly_silver_01a"),35.0}, -- {model_hash,percentage}
+					--{GetHashKey("interactable_trolly_silver_01b"),35.0}, -- {model_hash,percentage}
+					--{GetHashKey("interactable_trolly_silver_01c"),35.0}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_gold_01a"),15.0}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_gold_01b"),15.0}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_gold_01c"),15.0}, -- {model_hash,percentage}
@@ -1058,9 +1058,9 @@ cfg.robbery = {
 					{GetHashKey("interactable_trolly_money_01a"),50.0}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_money_01b"),50.0}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_money_01c"),50.0}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_silver_01a"),35.0}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_silver_01b"),35.0}, -- {model_hash,percentage}
-					{GetHashKey("interactable_trolly_silver_01c"),35.0}, -- {model_hash,percentage}
+					--{GetHashKey("interactable_trolly_silver_01a"),35.0}, -- {model_hash,percentage}
+					--{GetHashKey("interactable_trolly_silver_01b"),35.0}, -- {model_hash,percentage}
+					--{GetHashKey("interactable_trolly_silver_01c"),35.0}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_gold_01a"),15.0}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_gold_01b"),15.0}, -- {model_hash,percentage}
 					{GetHashKey("interactable_trolly_gold_01c"),15.0}, -- {model_hash,percentage}
