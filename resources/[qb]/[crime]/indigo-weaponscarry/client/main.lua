@@ -641,7 +641,7 @@ AddEventHandler("luap:playPutOnBagAnimation", function()
 
 	local itemToCheck = "markedbills"
 	local hasItem = QBCore.Functions.HasItem(PlayerData, itemToCheck)
-
+	print(hasItem)
 	if not hasItem then
 		RequestAnimDict("clothingtie")
 		while not HasAnimDictLoaded("clothingtie") do
