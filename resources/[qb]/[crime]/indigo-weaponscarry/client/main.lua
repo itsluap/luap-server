@@ -636,28 +636,29 @@ end)
 -- Register a client-side event to play the animation
 RegisterNetEvent("luap:playPutOnBagAnimation")
 AddEventHandler("luap:playPutOnBagAnimation", function()
-	print("in luap event")
+	print("starting luap event")
 	Citizen.Wait(5000)
     local playerPed = PlayerPedId()
 	local playerGender = PlayerData.charinfo.gender
     local animDict = "anim@heists@ornate_bank@grab_cash" -- Animation dictionary
     local animName = "intro" -- Animation name
 
-    RequestAnimDict(animDict)
+    RequestAnimDict(animDict) print("requesting anim dict")
 
     while not HasAnimDictLoaded(animDict) do
         Citizen.Wait(1000)
     end
 
-    TaskPlayAnim(PlayerPedId(), animDict, animName, 8.0, 8.0, 1600, 51, 0, false, false, false)
+    TaskPlayAnim(PlayerPedId(), animDict, animName, 8.0, 8.0, 1600, 51, 0, false, false, false) print("playing anim")
 
-	if playerGender == 0 then -- Female
+	if playerGender == 0 then -- male
 		SetPedComponentVariation(ped, 5, 114, 1, 2) -- Set the bag to 115 (customize with the correct value) and use texture 0 (if it's the default)
-	else -- Male (or other gender)
+		print("setting bag")
+	else -- (or other gender)
 		SetPedComponentVariation(ped, 5, 114, 1, 2) -- Set the bag to 114 (customize with the correct value) and use texture 0 (if it's the default)
 	end
 
     ClearPedTasks(playerPed)
-	print(playerGender)
+	print("Gender =" playerGender)
 	print("running but doing nothing")
 end)
