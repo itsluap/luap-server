@@ -81,7 +81,7 @@ local props = {
 	["weapon_crowbar"]   = { model = "w_me_crowbar", hash = joaat("weapon_crowbar"), tier = 2 },
 	["weapon_wrench"]    = { model = "w_me_wrench", hash = joaat("weapon_wrench"), tier = 2 },
 
-	["markedbills"]    = { bag = true },
+	["markedbills"]    = { bag = true, model = "luap" },
 	-- These Utilize the NoPixel pelts from their packages get them here: https://3dstore.nopixel.net/package/5141816 --
 	--["deer_pelt_1"] = { model = "hunting_pelt_01_a", hash = joaat("hunting_pelt_01_a"), tier = 4 },
 	--["deer_pelt_2"] = { model = "hunting_pelt_01_b", hash = joaat("hunting_pelt_01_b"), tier = 4 },
