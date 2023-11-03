@@ -98,8 +98,7 @@ cfg.robbery = {
 					type = "hack_securitypanel_01", -- dont change
 	
 					item_needed = {
-						{"security_card_02",1,100}, -- {item_name,item_amount,chance_to_remove}
-                        {"pixellaptop",1,0}, -- {item_name,item_amount,chance_to_remove}
+						{"electronickit",1,100}, -- {item_name,item_amount,chance_to_remove}
 					},
 	
 					minigame = {
@@ -415,8 +414,7 @@ cfg.robbery = {
 					type = "hack_securitypanel_01", -- dont change
 	
 					item_needed = {
-						{"security_card_02",1,100}, -- {item_name,item_amount,chance_to_remove}
-                        {"pixellaptop",1,0}, -- {item_name,item_amount,chance_to_remove}
+						{"electronickit",1,100}, -- {item_name,item_amount,chance_to_remove}
 					},
 	
 					minigame = {
@@ -898,8 +896,7 @@ cfg.robbery = {
 					type = "hack_securitypanel_01", -- dont change
 
 					item_needed = {
-						{"security_card_02",1,100}, -- {item_name,item_amount,chance_to_remove}
-                        {"pixellaptop",1,0}, -- {item_name,item_amount,chance_to_remove}
+						{"electronickit",1,100}, -- {item_name,item_amount,chance_to_remove}
 					},
 
 					minigame = {
