@@ -639,6 +639,7 @@ AddEventHandler("luap:playPutOnBagAnimation", function()
 	print("starting luap event")
 	Citizen.Wait(5000)
     local playerPed = PlayerPedId()
+	local ped = PlayerPedId()
 	local PlayerData = QBCore.Functions.GetPlayerData()
     --local animDict = "anim@heists@ornate_bank@grab_cash" -- Animation dictionary
     --local animName = "intro" -- Animation name
