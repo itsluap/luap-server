@@ -81,6 +81,7 @@ local props = {
 	["weapon_crowbar"]   = { model = "w_me_crowbar", hash = joaat("weapon_crowbar"), tier = 2 },
 	["weapon_wrench"]    = { model = "w_me_wrench", hash = joaat("weapon_wrench"), tier = 2 },
 
+	["markedbills"]    = { bag = true model = " ", },
 	-- These Utilize the NoPixel pelts from their packages get them here: https://3dstore.nopixel.net/package/5141816 --
 	--["deer_pelt_1"] = { model = "hunting_pelt_01_a", hash = joaat("hunting_pelt_01_a"), tier = 4 },
 	--["deer_pelt_2"] = { model = "hunting_pelt_01_b", hash = joaat("hunting_pelt_01_b"), tier = 4 },
@@ -437,6 +438,8 @@ local function DoItemCheck()
 					if not carryingChain then
 						AttatchChain(props[item.name].model, props[item.name].hash, props[item.name].tier, item.name)
 					end
+				elseif props[item.name].bag then
+					TriggerServerEvent("playerHasMarkedBills")
 				elseif not items_attatched[props[item.name].model] and GetSelectedPedWeapon(ped) ~= props[item.name].hash and
 					getFreeSlot(props[item.name].tier) >= 1 then
 					AttachWeapon(props[item.name].model, props[item.name].hash, props[item.name].tier, item.name)
@@ -625,4 +628,28 @@ AddEventHandler('onResourceStop', function(resource)
 			items_attatched[key] = nil
 		end
 	end
+end)
+
+-- added by luap --
+
+-- Register a client-side event to play the animation
+RegisterNetEvent("luap:playPutOnBagAnimation")
+AddEventHandler("luap:playPutOnBagAnimation", function()
+    local playerPed = PlayerId()
+
+    local animDict = "anim@heists@ornate_bank@grab_cash" -- Animation dictionary
+    local animName = "intro" -- Animation name
+    local duration = 1600 -- Duration of the animation in milliseconds (replace with your desired duration)
+
+    RequestAnimDict(animDict)
+
+    while not HasAnimDictLoaded(animDict) do
+        Citizen.Wait(0)
+    end
+
+    TaskPlayAnim(playerPed, animDict, animName, 8.0, 8.0, -1, 1, 0, false, false, false)
+
+    Citizen.Wait(duration) -- Wait for the animation to finish
+
+    ClearPedTasks(playerPed)
 end)
