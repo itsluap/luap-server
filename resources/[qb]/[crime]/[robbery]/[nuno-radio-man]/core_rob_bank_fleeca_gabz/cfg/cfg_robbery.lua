@@ -56,7 +56,7 @@ cfg.robbery = {
 		
 						minigame = {
 							{ -- 1
-								event = "CORE_ROB_MINIGAMES:TerminalMinigame_c",
+								event = "luap:ScramblerGame",
 								data = {
 									background = 4, -- 0 to 6 | MUST BE INTEGER
 									lives = 5.0, -- max is 7.0 | MUST BE FLOAT
@@ -127,7 +127,7 @@ cfg.robbery = {
 		
 						minigame = {
 							{ -- 1
-								event = "CORE_ROB_MINIGAMES:TerminalMinigame_c",
+								event = "luap:ScramblerGame",
 								data = {
 									background = 4, -- 0 to 6 | MUST BE INTEGER
 									lives = 5.0, -- max is 7.0 | MUST BE FLOAT
@@ -563,7 +563,7 @@ cfg.robbery = {
 		
 						minigame = {
 							{ -- 1
-								event = "CORE_ROB_MINIGAMES:TerminalMinigame_c",
+								event = "luap:ScramblerGame",
 								data = {
 									background = 4, -- 0 to 6 | MUST BE INTEGER
 									lives = 5.0, -- max is 7.0 | MUST BE FLOAT
@@ -634,7 +634,7 @@ cfg.robbery = {
 		
 						minigame = {
 							{ -- 1
-								event = "CORE_ROB_MINIGAMES:TerminalMinigame_c",
+								event = "luap:ScramblerGame",
 								data = {
 									background = 4, -- 0 to 6 | MUST BE INTEGER
 									lives = 5.0, -- max is 7.0 | MUST BE FLOAT
@@ -1070,7 +1070,7 @@ cfg.robbery = {
 		
 						minigame = {
 							{ -- 1
-								event = "CORE_ROB_MINIGAMES:TerminalMinigame_c",
+								event = "luap:ScramblerGame",
 								data = {
 									background = 4, -- 0 to 6 | MUST BE INTEGER
 									lives = 5.0, -- max is 7.0 | MUST BE FLOAT
@@ -1141,7 +1141,7 @@ cfg.robbery = {
 		
 						minigame = {
 							{ -- 1
-								event = "CORE_ROB_MINIGAMES:TerminalMinigame_c",
+								event = "luap:ScramblerGame",
 								data = {
 									background = 4, -- 0 to 6 | MUST BE INTEGER
 									lives = 5.0, -- max is 7.0 | MUST BE FLOAT
@@ -1577,7 +1577,7 @@ cfg.robbery = {
 		
 						minigame = {
 							{ -- 1
-								event = "CORE_ROB_MINIGAMES:TerminalMinigame_c",
+								event = "luap:ScramblerGame",
 								data = {
 									background = 4, -- 0 to 6 | MUST BE INTEGER
 									lives = 5.0, -- max is 7.0 | MUST BE FLOAT
@@ -1648,7 +1648,7 @@ cfg.robbery = {
 		
 						minigame = {
 							{ -- 1
-								event = "CORE_ROB_MINIGAMES:TerminalMinigame_c",
+								event = "luap:ScramblerGame",
 								data = {
 									background = 4, -- 0 to 6 | MUST BE INTEGER
 									lives = 5.0, -- max is 7.0 | MUST BE FLOAT
@@ -2084,7 +2084,7 @@ cfg.robbery = {
 		
 						minigame = {
 							{ -- 1
-								event = "CORE_ROB_MINIGAMES:TerminalMinigame_c",
+								event = "luap:ScramblerGame",
 								data = {
 									background = 4, -- 0 to 6 | MUST BE INTEGER
 									lives = 5.0, -- max is 7.0 | MUST BE FLOAT
@@ -2155,7 +2155,7 @@ cfg.robbery = {
 		
 						minigame = {
 							{ -- 1
-								event = "CORE_ROB_MINIGAMES:TerminalMinigame_c",
+								event = "luap:ScramblerGame",
 								data = {
 									background = 4, -- 0 to 6 | MUST BE INTEGER
 									lives = 5.0, -- max is 7.0 | MUST BE FLOAT
@@ -2591,7 +2591,7 @@ cfg.robbery = {
 		
 						minigame = {
 							{ -- 1
-								event = "CORE_ROB_MINIGAMES:TerminalMinigame_c",
+								event = "luap:ScramblerGame",
 								data = {
 									background = 4, -- 0 to 6 | MUST BE INTEGER
 									lives = 5.0, -- max is 7.0 | MUST BE FLOAT
@@ -2662,7 +2662,7 @@ cfg.robbery = {
 		
 						minigame = {
 							{ -- 1
-								event = "CORE_ROB_MINIGAMES:TerminalMinigame_c",
+								event = "luap:ScramblerGame",
 								data = {
 									background = 4, -- 0 to 6 | MUST BE INTEGER
 									lives = 5.0, -- max is 7.0 | MUST BE FLOAT
