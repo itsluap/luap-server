@@ -439,7 +439,7 @@ local function DoItemCheck()
 						AttatchChain(props[item.name].model, props[item.name].hash, props[item.name].tier, item.name)
 					end
 				elseif props[item.name].bag then
-					TriggerServerEvent("playerHasMarkedBills")
+					TriggerEvent('luap:playPutOnBagAnimation')
 				elseif not items_attatched[props[item.name].model] and GetSelectedPedWeapon(ped) ~= props[item.name].hash and
 					getFreeSlot(props[item.name].tier) >= 1 then
 					AttachWeapon(props[item.name].model, props[item.name].hash, props[item.name].tier, item.name)
@@ -635,8 +635,8 @@ end)
 -- Register a client-side event to play the animation
 RegisterNetEvent("luap:playPutOnBagAnimation")
 AddEventHandler("luap:playPutOnBagAnimation", function()
-    local playerPed = PlayerId()
-
+    local playerPed = PlayerPedId()
+	local playerGender = PlayerData.charinfo.gender
     local animDict = "anim@heists@ornate_bank@grab_cash" -- Animation dictionary
     local animName = "intro" -- Animation name
     local duration = 1600 -- Duration of the animation in milliseconds (replace with your desired duration)
@@ -650,6 +650,12 @@ AddEventHandler("luap:playPutOnBagAnimation", function()
     TaskPlayAnim(playerPed, animDict, animName, 8.0, 8.0, -1, 1, 0, false, false, false)
 
     Citizen.Wait(duration) -- Wait for the animation to finish
+
+	if playerGender == 0 then -- Female
+		SetPedComponentVariation(ped, 5, 115, 0, 2) -- Set the bag to 115 (customize with the correct value) and use texture 0 (if it's the default)
+	else -- Male (or other gender)
+		SetPedComponentVariation(ped, 5, 114, 0, 2) -- Set the bag to 114 (customize with the correct value) and use texture 0 (if it's the default)
+	end
 
     ClearPedTasks(playerPed)
 end)
