@@ -641,7 +641,6 @@ AddEventHandler("luap:playPutOnBagAnimation", function()
 	local playerGender = PlayerData.charinfo.gender
     local animDict = "anim@heists@ornate_bank@grab_cash" -- Animation dictionary
     local animName = "intro" -- Animation name
-    local duration = 1600 -- Duration of the animation in milliseconds (replace with your desired duration)
 
     RequestAnimDict(animDict)
 
@@ -649,14 +648,12 @@ AddEventHandler("luap:playPutOnBagAnimation", function()
         Citizen.Wait(0)
     end
 
-    TaskPlayAnim(playerPed, animDict, animName, 8.0, 8.0, -1, 1, 0, false, false, false)
-
-    Citizen.Wait(duration) -- Wait for the animation to finish
+    TaskPlayAnim(PlayerPedId(), animDict, animName, 8.0, 8.0, 1600, 32, 0, false, false, false)
 
 	if playerGender == 0 then -- Female
-		SetPedComponentVariation(ped, 5, 115, 0, 2) -- Set the bag to 115 (customize with the correct value) and use texture 0 (if it's the default)
+		SetPedComponentVariation(ped, 5, 114, 1, 2) -- Set the bag to 115 (customize with the correct value) and use texture 0 (if it's the default)
 	else -- Male (or other gender)
-		SetPedComponentVariation(ped, 5, 114, 0, 2) -- Set the bag to 114 (customize with the correct value) and use texture 0 (if it's the default)
+		SetPedComponentVariation(ped, 5, 114, 1, 2) -- Set the bag to 114 (customize with the correct value) and use texture 0 (if it's the default)
 	end
 
     ClearPedTasks(playerPed)
