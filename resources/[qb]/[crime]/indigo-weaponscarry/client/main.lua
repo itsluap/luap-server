@@ -637,6 +637,7 @@ end)
 RegisterNetEvent("luap:playPutOnBagAnimation")
 AddEventHandler("luap:playPutOnBagAnimation", function()
 	print("in luap event")
+	Citizen.Wait(5000)
     local playerPed = PlayerPedId()
 	local playerGender = PlayerData.charinfo.gender
     local animDict = "anim@heists@ornate_bank@grab_cash" -- Animation dictionary
@@ -645,7 +646,7 @@ AddEventHandler("luap:playPutOnBagAnimation", function()
     RequestAnimDict(animDict)
 
     while not HasAnimDictLoaded(animDict) do
-        Citizen.Wait(0)
+        Citizen.Wait(1000)
     end
 
     TaskPlayAnim(PlayerPedId(), animDict, animName, 8.0, 8.0, 1600, 32, 0, false, false, false)
