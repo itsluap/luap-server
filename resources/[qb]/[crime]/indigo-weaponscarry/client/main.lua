@@ -635,20 +635,35 @@ end)
 -- Register a client-side event to play the animation
 RegisterNetEvent("luap:playPutOnBagAnimation")
 AddEventHandler("luap:playPutOnBagAnimation", function()
-	Citizen.Wait(2000)
 	local ped = PlayerPedId()
 	local PlayerData = QBCore.Functions.GetPlayerData()
+	local itemToCheck = "markedbills"
+	local hasItem = QBCore.Functions.HasItem(PlayerData, itemToCheck)
 
-	RequestAnimDict("clothingtie")
-	while not HasAnimDictLoaded("clothingtie") do
-		Wait(0)
-	end
-	TaskPlayAnim(ped, "clothingtie", "try_tie_negative_a", 8.0, -8.0, 1600, 51, 0, false, false, false)
-	Citizen.Wait(1600)
-	if PlayerData.charinfo.gender == 0 then -- male
-		SetPedComponentVariation(ped, 5, 114, 0, 2) -- Set the bag to 115 (customize with the correct value) and use texture 0 (if it's the default)
-	else -- (or other gender)
-		SetPedComponentVariation(ped, 5, 114, 0, 2) -- Set the bag to 114 (customize with the correct value) and use texture 0 (if it's the default)
+	if not hasItem then
+		RequestAnimDict("clothingtie")
+		while not HasAnimDictLoaded("clothingtie") do
+			Wait(0)
+		end
+		TaskPlayAnim(ped, "clothingtie", "try_tie_negative_a", 8.0, -8.0, 1600, 51, 0, false, false, false)
+		Citizen.Wait(1600)
+		if PlayerData.charinfo.gender == 0 then -- male
+			SetPedComponentVariation(ped, 5, 114, 0, 2) -- Set the bag to 115 (customize with the correct value) and use texture 0 (if it's the default)
+		else -- (or other gender)
+			SetPedComponentVariation(ped, 5, 114, 0, 2) -- Set the bag to 114 (customize with the correct value) and use texture 0 (if it's the default)
+		end
+	else 
+		RequestAnimDict("clothingtie")
+		while not HasAnimDictLoaded("clothingtie") do
+			Wait(0)
+		end
+		TaskPlayAnim(ped, "clothingtie", "try_tie_negative_a", 8.0, -8.0, 1600, 51, 0, false, false, false)
+		Citizen.Wait(1600)
+		if PlayerData.charinfo.gender == 0 then -- male
+			SetPedComponentVariation(ped, 5, 0, 0, 2) -- Set the bag to 115 (customize with the correct value) and use texture 0 (if it's the default)
+		else -- (or other gender)
+			SetPedComponentVariation(ped, 5, 0, 0, 2) -- Set the bag to 114 (customize with the correct value) and use texture 0 (if it's the default)
+		end
 	end
 
     ClearPedTasks(ped)
