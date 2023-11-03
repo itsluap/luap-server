@@ -442,7 +442,7 @@ local function DoItemCheck()
 					getFreeSlot(props[item.name].tier) >= 1 then
 					AttachWeapon(props[item.name].model, props[item.name].hash, props[item.name].tier, item.name)
 				end
-				TriggerEvent('luap:playPutOnBagAnimation')
+				--TriggerEvent('luap:playPutOnBagAnimation')
 			end
 		end
 	end
