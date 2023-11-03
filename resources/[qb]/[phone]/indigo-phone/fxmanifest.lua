@@ -9,7 +9,7 @@ ui_page 'html/index.html'
 
 shared_scripts {
     'config.lua',
-    '@indigo-apartments/config.lua',
+    --'@indigo-apartments/config.lua',
     '@indigo-garages/config.lua',
 }
 
