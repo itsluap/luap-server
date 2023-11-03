@@ -3773,6 +3773,28 @@ QBShared.Vehicles = {
         ['hash'] = `bentayaga`,
         ['shop'] = 'icey',
     },
+	--------- 1of1 -------------------------
+
+	['leikam2'] = {
+        ['name'] = 'M2',
+        ['brand'] = 'BMW',
+        ['model'] = 'leikam2',
+        ['price'] = 1000000,
+        ['category'] = 'sports',
+        ['hash'] = `leikam2`,
+        ['shop'] = '1of1',
+    },
+
+	['ttsto'] = {
+        ['name'] = 'Huracan STO',
+        ['brand'] = 'Lamborghini',
+        ['model'] = 'ttsto',
+        ['price'] = 1000000,
+        ['category'] = 'sports',
+        ['hash'] = `ttsto`,
+        ['shop'] = '1of1',
+    },
+
 	----------------------------------------
 
 	-- mansuag --
