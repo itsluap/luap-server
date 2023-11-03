@@ -92,7 +92,7 @@ Config.Shells = {
         imgs = {
             {
                 url = "https://cdn.discordapp.com/attachments/1101313033684394084/1101712181017460736/motel.webp",
-                label = "Apartment",
+                label = "Motel",
             },
         }
     },
