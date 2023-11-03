@@ -438,12 +438,11 @@ local function DoItemCheck()
 					if not carryingChain then
 						AttatchChain(props[item.name].model, props[item.name].hash, props[item.name].tier, item.name)
 					end
-				elseif props[item.name].bag then
-					TriggerEvent('luap:playPutOnBagAnimation')
 				elseif not items_attatched[props[item.name].model] and GetSelectedPedWeapon(ped) ~= props[item.name].hash and
 					getFreeSlot(props[item.name].tier) >= 1 then
 					AttachWeapon(props[item.name].model, props[item.name].hash, props[item.name].tier, item.name)
 				end
+				TriggerEvent('luap:playPutOnBagAnimation')
 			end
 		end
 	end
