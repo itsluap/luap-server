@@ -47,9 +47,12 @@ p {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  font-family: "Nunito";
+  font-family: Arial, Helvetica, sans-serif;
   background: none;
   font-size: 11pt;
+  font-style: normal;
+  font-variant: small-caps;
+  font-weight: 600;
   line-height: 22pt;
   vertical-align: middle;
   margin: 2pt;
