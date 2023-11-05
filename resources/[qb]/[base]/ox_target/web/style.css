@@ -28,7 +28,7 @@ p {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 22pt;
-  fill: black;
+  fill: white;
 }
 
 .eye-hover {
