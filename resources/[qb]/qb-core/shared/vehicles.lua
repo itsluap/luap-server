@@ -3715,6 +3715,7 @@ QBShared.Vehicles = {
         ['hash'] = `ninjah2`,
         ['shop'] = 'luap',
     },
+	--[[
 	-- icey
 	['21bentayga'] = {
         ['name'] = 'Bentayga',
@@ -3744,6 +3745,7 @@ QBShared.Vehicles = {
         ['hash'] = `bnrpandem`,
         ['shop'] = 'nodeth',
     },
+	]]--
 	-- king -- 
 	['navigator'] = {
         ['name'] = 'Navigator',
@@ -3763,6 +3765,7 @@ QBShared.Vehicles = {
         ['hash'] = `rmodf40`,
         ['shop'] = 'king',
     },
+	--[[
 	-- icey --
 	['bentayaga'] = {
         ['name'] = 'Bentayaga',
@@ -3773,6 +3776,7 @@ QBShared.Vehicles = {
         ['hash'] = `bentayaga`,
         ['shop'] = 'icey',
     },
+	]]--
 	--------- 1of1 -------------------------
 
 	['leikam2'] = {
