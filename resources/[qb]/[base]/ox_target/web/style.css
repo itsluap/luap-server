@@ -48,12 +48,7 @@ p {
   justify-content: flex-start;
   align-items: center;
   font-family: "Nunito";
-  background: linear-gradient(
-    90deg,
-    rgba(20, 20, 20, 0.7) 0%,
-    rgba(20, 20, 20, 0.6) 66%,
-    rgba(47, 48, 53, 0) 100%
-  );
+  background: none;
   font-size: 11pt;
   line-height: 22pt;
   vertical-align: middle;
