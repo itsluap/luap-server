@@ -49,11 +49,14 @@ p {
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
   background: none;
-  font-size: 11pt;
+  font-size: 1.7vh;
   font-style: normal;
   font-variant: small-caps;
   font-weight: 600;
-  line-height: 22pt;
+  line-height: 0;
+  letter-spacing: 0.1px;
+  white-space: nowrap;
+  text-shadow: 0.1vh 0.1vh 0.1vh #000000;
   vertical-align: middle;
   margin: 2pt;
   transition: 300ms;
