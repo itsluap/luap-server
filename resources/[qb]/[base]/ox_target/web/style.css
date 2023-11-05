@@ -62,12 +62,7 @@ p {
 }
 
 .option-container:hover {
-  background: linear-gradient(
-    90deg,
-    rgba(30, 30, 30, 0.7) 0%,
-    rgba(30, 30, 30, 0.6) 66%,
-    rgba(57, 58, 63, 0) 100%
-  );
+  background: none;
   transform-origin: left top;
   color: var(--color-hover);
   margin-left: 4pt;
