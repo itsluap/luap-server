@@ -111,7 +111,6 @@
         notifications.send(res.message, "boosting", 5000);
       })
       .catch((err) => {
-        console.log(err);
         notifications.send(
           "You can't start a contract right now, try again later",
           "boosting",
@@ -125,7 +124,6 @@
       show: true,
       onOk: (value) => {
         if (value) {
-          console.log(value);
           fetchNui("boosting/transfer", {
             playerid: value,
             contractID: id,
@@ -314,7 +312,7 @@
             </div>
             <div class="boost-name">{contract.owner}</div>
             <div class="boost-car">{Truncate(contract.carName)}</div>
-            <div class="boost-reward">Buy In: <b>{contract.cost} LME</b></div>
+            <div class="boost-reward">Buy In: <b>{contract.cost} GNE</b></div>
             <div class="expires">
               Expires: <b
                 >{moment(contract.expire).endOf("hour").from(currentDate)}</b

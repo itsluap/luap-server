@@ -15,7 +15,7 @@ QBCore.Functions.CreateCallback('indigo-laptop:server:getCrateStatus', function(
         crateID = crates[crateNetID].id,
         crate = crateentity
     }
-	cb(data)
+    cb(data)
 end)
 
 QBCore.Functions.CreateCallback('indigo-laptop:server:getAllCrates', function(source, cb)

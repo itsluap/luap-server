@@ -42,15 +42,15 @@ local LookingForContracts = {}
 
 local function Notify(src, text, type, time)
     if Config.Boosting.Notifications == "phone" then
-        TriggerClientEvent('indigo-phone:client:CustomNotification', src,
+        TriggerClientEvent('qb-phone:client:CustomNotification', src,
             Lang:t('boosting.info.phonenotify'),
             text,
             "fas fa-user-secret",
-            "#ffffff",
+            "#00008B",
             time
         )
     elseif Config.Boosting.Notifications == "npwd" then
-        TriggerEvent('indigo-phone:server:sendNewMail', {
+        TriggerEvent('qb-phone:server:sendNewMail', {
             sender = Lang:t('boosting.info.phonenotify'),
             subject = 'Boosting',
             message = text,
@@ -115,7 +115,7 @@ end)
 
 function RandomVIN()
     local random = tostring(QBCore.Shared.RandomInt(3) .. QBCore.Shared.RandomStr(3) .. QBCore.Shared.RandomInt(2)):
-        upper()
+    upper()
     return random
 end
 
@@ -214,7 +214,7 @@ QBCore.Functions.CreateCallback('indigo-laptop:server:CanStartBoosting', functio
 
     if currentRuns[CID] then return cb("running") end
     if not currentContracts[CID][id] then return cb("notfound") end
-    if Config.RenewedPhone and not exports['indigo-phone']:hasEnough(src, "lme", currentContracts[CID][id].cost) then
+    if Config.RenewedPhone and not exports['qb-phone']:hasEnough(src, "gne", currentContracts[CID][id].cost) then
         return cb("notenough")
     elseif not Config.RenewedPhone and Player.PlayerData.money.crypto < currentContracts[CID][id].cost then
         return cb("notenough")
@@ -243,9 +243,8 @@ QBCore.Functions.CreateCallback('indigo-laptop:server:CanStartBoosting', functio
         }
 
         if SpawnCar(src) then
-
             if Config.RenewedPhone then
-                exports['indigo-phone']:RemoveCrypto(src, "lme", currentContracts[CID][id].cost)
+                exports['qb-phone']:RemoveCrypto(src, "gne", currentContracts[CID][id].cost)
             else
                 if not
                     Player.Functions.RemoveMoney("crypto", currentContracts[CID][id].cost,
@@ -268,7 +267,6 @@ QBCore.Functions.CreateCallback('indigo-laptop:server:CanStartBoosting', functio
     else
         cb("busy")
     end
-
 end)
 
 
@@ -353,21 +351,36 @@ RegisterNetEvent('indigo-laptop:server:SyncPlates', function(success)
 
     local randomSeconds = math.random(Config.Boosting.HackDelayMin, Config.Boosting.HackDelayMax)
 
-    if not Player then log("Player not found") return end
-    if not Player.Functions.GetItemByName(Config.Boosting.HackingDevice) then log("Hacking item not found") return end
+    if not Player then
+        log("Player not found")
+        return
+    end
+    if not Player.Functions.GetItemByName(Config.Boosting.HackingDevice) then
+        log("Hacking item not found")
+        return
+    end
 
     local ped = GetPlayerPed(src)
     local car = GetVehiclePedIsIn(ped, false)
     local state = Entity(car).state.Boosting
 
-    if not state then log("Hacking State is nil") return end
-    if state.boostCooldown then log("state is on Cooldown") return end
-    if state.boostHacks <= 0 then log("Boosthacks is 0 or less") return end
+    if not state then
+        log("Hacking State is nil")
+        return
+    end
+    if state.boostCooldown then
+        log("state is on Cooldown")
+        return
+    end
+    if state.boostHacks <= 0 then
+        log("Boosthacks is 0 or less")
+        return
+    end
 
     if success then
         if state.boostHacks - 1 >= 1 then
             Notify(src, Lang:t('boosting.success.tracker_off', { tracker_left = newThing, time = randomSeconds }),
-            'success', 7500)
+                'success', 7500)
         end
 
         local newAmount = Config.Boosting.Debug and 0 or state.boostHacks - 1
@@ -411,7 +424,9 @@ QBCore.Functions.CreateCallback('indigo-laptop:server:joinQueue', function(sourc
     local CID = Player.PlayerData.citizenid
     if status then
         if LookingForContracts[CID] and LookingForContracts[CID].active and LookingForContracts[CID].online and
-            LookingForContracts[CID].src == src then return cb("inqueue") end
+            LookingForContracts[CID].src == src then
+            return cb("inqueue")
+        end
         if currentRuns[CID] then return cb("running") end
         if not LookingForContracts[CID] then LookingForContracts[CID] = {} end
         if not currentContracts[CID] then currentContracts[CID] = {} end
@@ -465,18 +480,19 @@ RegisterNetEvent('indigo-laptop:server:fuckvin', function(netid, model, mods)
     local Player = QBCore.Functions.GetPlayer(src)
     local entity = NetworkGetEntityFromNetworkId(netid)
     local plate = GetVehicleNumberPlateText(entity)
-    MySQL.insert.await("INSERT INTO player_vehicles (license, citizenid, vehicle, hash, mods, plate, state, vinscratch, vinnumber) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
+    MySQL.insert.await(
+        "INSERT INTO player_vehicles (license, citizenid, vehicle, hash, mods, plate, state, vinscratch, vinnumber) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
         , {
-        Player.PlayerData.license,
-        Player.PlayerData.citizenid,
-        model,
-        entity,
-        json.encode(mods),
-        plate,
-        0,
-        1,
-        RandomVIN()
-    })
+            Player.PlayerData.license,
+            Player.PlayerData.citizenid,
+            model,
+            entity,
+            json.encode(mods),
+            plate,
+            0,
+            1,
+            RandomVIN()
+        })
     TriggerClientEvent('vehiclekeys:client:SetOwner', src, plate)
 end)
 
@@ -498,7 +514,7 @@ RegisterNetEvent('indigo-laptop:server:finishBoost', function(netId, isvin)
         end
         local reward = math.ceil(currentRuns[CID].cost * math.random(2, 3))
         if Config.RenewedPhone then
-            exports['indigo-phone']:AddCrypto(src, "lme", reward)
+            exports['qb-phone']:AddCrypto(src, "gne", reward)
         else
             Player.Functions.AddMoney("crypto", reward, Lang:t('boosting.info.rewardboost'))
         end
@@ -676,40 +692,37 @@ local function generateTier(boostData)
     local tier
     if not boostData then return end
     -- We should also get their current metadata and based on their metadata increase this luck or even cap it so they cant get s+ if they just startedt/
-    if chance >= 99 then -- 2%
+    if chance >= 99 then                                      -- 2%
         if boostData >= Config.Boosting.TiersPerRep["S"] then -- You can jump 1 tier above the current tier you are at so someone at D can't get a S+ Contract
             tier = "S+"
         else
             generateTier(src)
         end
-    elseif chance >= 95 then -- 3%
+    elseif chance >= 95 then                                   -- 3%
         if boostData >= Config.Boosting.TiersPerRep["A+"] then -- You can jump 1 tier above the current tier you are at so someone at D can't get a S+ Contract
             tier = "S"
         else
             generateTier(src)
         end
-
-    elseif chance >= 90 then -- 5%
+    elseif chance >= 90 then                                  -- 5%
         if boostData >= Config.Boosting.TiersPerRep["A"] then -- You can jump 1 tier above the current tier you are at so someone at D can't get a S+ Contract
             tier = "A+"
         else
             generateTier(src)
         end
-
-    elseif chance >= 80 then -- 10%
+    elseif chance >= 80 then                                  -- 10%
         if boostData >= Config.Boosting.TiersPerRep["B"] then -- You can jump 1 tier above the current tier you are at so someone at D can't get a S+ Contract
             tier = "A"
         else
             generateTier(src)
         end
-
-    elseif chance >= 60 then -- 20%
+    elseif chance >= 60 then                                  -- 20%
         if boostData >= Config.Boosting.TiersPerRep["C"] then -- You can jump 1 tier above the current tier you are at so someone at D can't get a S+ Contract
             tier = "B"
         else
             generateTier(src)
         end
-    elseif chance >= 35 then -- 25%
+    elseif chance >= 35 then                                  -- 25%
         if boostData >= Config.Boosting.TiersPerRep["D"] then -- You can jump 1 tier above the current tier you are at so someone at D can't get a S+ Contract
             tier = "C"
         else
@@ -737,7 +750,6 @@ local function generateCar(tier)
 end
 
 local function missionType(boostData, tier)
-
     if not boostData then return end
 
     if not tier then return end
@@ -769,7 +781,6 @@ function GetCurrentTime()
     else
         return os.date("!%Y-%m-%dT%SZ", os.time())
     end
-
 end
 
 QBCore.Functions.CreateCallback("indigo-laptop:server:getCurrentTime", function(cb)
@@ -877,10 +888,11 @@ end)
 
 -- Commands --
 QBCore.Commands.Add('giveboost', Lang:t('boosting.command.command_desc'),
-    { { name = Lang:t('boosting.command.command_name_ID'), help = Lang:t('boosting.command.command_help_ID') },
-        { name = Lang:t('boosting.command.command_name_tier'), help = Lang:t('boosting.command.command_help_tier') },
+    { { name = Lang:t('boosting.command.command_name_ID'),    help = Lang:t('boosting.command.command_help_ID') },
+        { name = Lang:t('boosting.command.command_name_tier'),    help = Lang:t('boosting.command.command_help_tier') },
         { name = Lang:t('boosting.command.command_name_vehicle'), help = Lang:t('boosting.command.command_help_vehicle') },
-        { name = 'Type', help = 'boosting/vinscratch' }, }, false, function(source, args)
+        { name = 'Type',                                          help = 'boosting/vinscratch' }, }, false,
+    function(source, args)
         if args and type(tonumber(args[1])) == "number" then
             local Player = QBCore.Functions.GetPlayer(tonumber(args[1]))
             if Player then
@@ -891,11 +903,11 @@ QBCore.Commands.Add('giveboost', Lang:t('boosting.command.command_desc'),
                             7500)
                     elseif args[3] and not type(args[3]) == "string" then
                         TriggerClientEvent('QBCore:Notify', source, Lang:t('boosting.command.incorrect_vehicle'), 'error'
-                            , 7500)
+                        , 7500)
                     elseif args[2] and
                         not
                         (
-                        args[2] == "D" or args[2] == "C" or args[2] == "B" or args[2] == "A" or args[2] == "A+" or
+                            args[2] == "D" or args[2] == "C" or args[2] == "B" or args[2] == "A" or args[2] == "A+" or
                             args[2] == "S" or args[2] == "S+") then
                         TriggerClientEvent('QBCore:Notify', source, Lang:t('boosting.command.incorrect_tier'), 'error',
                             7500)
@@ -945,7 +957,8 @@ AddEventHandler("onServerResourceStart", function(resname)
             for i = 1, #result do
                 local row = result[i]
                 queries[#queries + 1] = {
-                    query = 'UPDATE player_vehicles SET vinnumber = @vin WHERE id = @id', parameters = {
+                    query = 'UPDATE player_vehicles SET vinnumber = @vin WHERE id = @id',
+                    parameters = {
                         ["@id"] = row.id,
                         ["@vin"] = RandomVIN()
                     }

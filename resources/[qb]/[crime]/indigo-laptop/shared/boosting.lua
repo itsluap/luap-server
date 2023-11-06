@@ -6,7 +6,7 @@ Config.Boosting.Notifications = "phone" -- Use this for qb // renewed phone inte
 
 Config.Boosting.Debug = true -- Make this true to make boosting faster lmao
 
-Config.Boosting.HackingDevice = "electronickit" -- Whatever item you use to hack a car with
+Config.Boosting.HackingDevice = "phone" -- Whatever item you use to hack a car with
 
 Config.Boosting.HackDelayMin = 30 -- Seconds
 Config.Boosting.HackDelayMax = 60 -- Seconds
