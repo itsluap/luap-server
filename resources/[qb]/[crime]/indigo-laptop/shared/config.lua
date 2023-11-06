@@ -40,6 +40,7 @@ Config.Apps = {
         item = {},
         default = true
     },
+    --[[
     ['bennys'] = {
         app = 'bennys',
         name = "Bennys Shop",
@@ -53,6 +54,7 @@ Config.Apps = {
         item = {},
         default = true
     },
+    ]]--
     ['darkweb'] = {
         app = 'darkweb',
         name = "Unknown",

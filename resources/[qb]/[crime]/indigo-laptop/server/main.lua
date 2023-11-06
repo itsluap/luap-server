@@ -96,8 +96,9 @@ RegisterNetEvent('indigo-laptop:server:RemoveItem', function(item)
         Player.Functions.RemoveItem(item, 1)
     end
 end)
-
+--[[
 AddEventHandler('onResourceStart', function(resource)
     if resource ~= GetCurrentResourceName() then return end
     lib.versionCheck('Ejiy/indigo-laptop')
 end)
+]]--
