@@ -1,8 +1,6 @@
 Final (Ready to Launch):
-    - add better admin menu (waiting for projectsloth release)
     - add boosting script (waiting for kevinscripts release)
     - add bowling script (waiting for gabz release)
     - when server goes live create devloper branch of luap-server
-    - make sure all scripts are updated (qbcore and project sloth)
     - create new user guide - create control list
     - fix heroin animation

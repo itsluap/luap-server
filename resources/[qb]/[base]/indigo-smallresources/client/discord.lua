@@ -33,7 +33,7 @@ CreateThread(function()
             last is the url (this has to start with "fivem://connect/" or "https://")
         ]]--
         SetDiscordRichPresenceAction(0, "Join Indigo 3.0!", "fivem://connect/localhost:30120")
-        SetDiscordRichPresenceAction(1, "Join the Discord!", "discord.gg/indigorp")
+        SetDiscordRichPresenceAction(1, "Join the Discord!", "discord.gg/indigoroleplay")
 
         -- It updates every minute just in case.
         Wait(60000)

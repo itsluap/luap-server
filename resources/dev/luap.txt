@@ -3,8 +3,6 @@
     - finish patreon (patreon only goes towards supporting server - no benefits)
     - finish tebex (tebex is where people can make payments with benefits)
 
--- bugs
-    - work out all bugs before adding new 'big' scripts
 
 -- go through heist system
     - add more heists
@@ -14,7 +12,6 @@
 -- go through drug system
     - make improvements as neccessary
     - test corner selling, possibly use another system for players who don't want to corner sell
-    -
 
 -- police
     - make sure ps dispatch codes are correct
@@ -23,8 +20,6 @@
     - State Statutes needs to be finished (wait for someome who wants to run DOJ?)
 
 -- cars
-    - finish car dealers asap -- PRICES ARENT SET
-    - finish car drop asap (handling, headlights/taillights, oversize)
     - make sure player owned cars can't be lockpicked - need to hack with an electronickit
     - find out whats locking vehicle wheels: pretty sure its seatbelt script, SetVehicleEngine, SetVehicleUnusable
 
