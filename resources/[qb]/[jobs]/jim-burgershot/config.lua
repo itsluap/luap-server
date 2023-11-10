@@ -10,7 +10,7 @@ Config = {
 					--use "GN" if you are using GNMods burgershot MLO
 					--use "NP" if you are using NoPixels Paid burgershot MLO
 
-	img = "lj-inventory/html/images/", -- Change this to your inventory's name and image folder (SET TO "" IF YOU HAVE DOUBLE IMAGES)
+	img = "ps-inventory/html/images/", -- Change this to your inventory's name and image folder (SET TO "" IF YOU HAVE DOUBLE IMAGES)
 	JimShop = false, 		-- Enable this to use jim-shops for buying ingredients
 	CheckMarks = true, -- If true this will show the player if they have the correct items to be able to craft the items
 

@@ -8,7 +8,7 @@ Config = {
 	Debug = false,  -- false to remove green boxes
 	Lan = "en", -- Pick your language here
 
-	img = "lj-inventory/html/images/", -- Change this to your inventory's name and image folder (SET TO "" IF YOU HAVE DOUBLE IMAGES)
+	img = "ps-inventory/html/images/", -- Change this to your inventory's name and image folder (SET TO "" IF YOU HAVE DOUBLE IMAGES)
 	JimShop = false, -- Enable this to use jim-shops for buying ingredients
 	CheckMarks = true, -- If true this will show the player if they have the correct items to be able to craft the items
 	TipCost = 100, -- How much a Stripper Tip costs

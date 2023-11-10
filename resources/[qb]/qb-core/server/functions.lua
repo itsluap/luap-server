@@ -263,8 +263,8 @@ function QBCore.Functions.CanUseItem(item)
 end
 
 function QBCore.Functions.UseItem(source, item)
-    if GetResourceState('lj-inventory') == 'missing' then return end
-    exports['lj-inventory']:UseItem(source, item)
+    if GetResourceState('ps-inventory') == 'missing' then return end
+    exports['ps-inventory']:UseItem(source, item)
 end
 
 -- Kick Player
@@ -409,8 +409,8 @@ end
 -- Utility functions
 
 function QBCore.Functions.HasItem(source, items, amount)
-    if GetResourceState('lj-inventory') == 'missing' then return end
-    return exports['lj-inventory']:HasItem(source, items, amount)
+    if GetResourceState('ps-inventory') == 'missing' then return end
+    return exports['ps-inventory']:HasItem(source, items, amount)
 end
 
 function QBCore.Functions.Notify(source, text, type, length)

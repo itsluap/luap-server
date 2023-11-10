@@ -1,6 +1,6 @@
 Config = {}
 
-Config.Inventory = "lj-inventory"
+Config.Inventory = "ps-inventory"
 Config.LaptopDevice = "pixellaptop"
 
 Config.RenewedPhone = true
