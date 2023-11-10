@@ -2,7 +2,7 @@
 
 .bg-button { background: var(--color-primary)!important; box-shadow: none!important; }
 .text-check { color: rgba(255, 255, 255, 0.8)!important; }
-.text-checkbox { color: #0fffd5!important; }
+.text-checkbox { color: #53B3CB!important; }
 .q-checkbox__svg { color: #000!important; }
 div#q-loading-bar { display: none!important; }
 .q-card { background: var(--color-primary)!important; }
@@ -27,7 +27,7 @@ p { margin: 0 !important; }
 :root {
     --color-primary: #23242e;
     --color-secondary: #383942;
-    --color-accent: rgb(65, 199, 165);
+    --color-accent: #53B3CB;
 }
 
 .fas.fa-lock {
@@ -1387,5 +1387,5 @@ body {
 .craft-item-slot {
     width: 30%;
     height: 30%;
-    background: #0fffd5;
+    background: #53B3CB;
 }
