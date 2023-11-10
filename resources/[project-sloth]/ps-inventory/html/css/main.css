@@ -37,15 +37,6 @@ p { margin: 0 !important; }
     position: relative;
 }
 
-.brand-logo {
-    position: relative; 
-    left: 50%;
-    transform: translateX(-50%);
-    padding-top: 3px;
-    padding-bottom: 10px;
-    width: 45%;
-}
-
 ::placeholder {
     color: white;
     text-align: center;
