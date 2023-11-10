@@ -1,7 +1,7 @@
 local Translations = {
     command = {
-        name = "topmoney",
-        help = "Get money of top players",
+        name = "richest",
+        help = "Log the richest players,
     },
     message = {
         top_without_license = "%{name} (%{citizenid}) | %{money} | TOTAL MONEY: $%{totalMoney}`\n", --DO NOT REMOVE "`" AT THE END OF THIS STRING
