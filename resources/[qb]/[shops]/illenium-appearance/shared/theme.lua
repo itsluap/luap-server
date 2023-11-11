@@ -1,5 +1,5 @@
 Config.Theme = {
-    currentTheme = "project-sloth",
+    currentTheme = "qb-core",
     themes = {
         {
             id = "default",
@@ -22,8 +22,8 @@ Config.Theme = {
             fontColorHover = "255, 255, 255",
             fontColorSelected = "255, 255, 255",
             fontFamily = "Poppins",
-            primaryBackground = "220, 20, 60",
-            primaryBackgroundSelected = "220, 20, 60",
+            primaryBackground = "83, 179, 203",
+            primaryBackgroundSelected = "83, 179, 203",
             secondaryBackground = "23, 23, 23",
             scaleOnHover = true,
             sectionFontWeight = "bold",
