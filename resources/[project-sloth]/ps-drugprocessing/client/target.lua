@@ -1,7 +1,7 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
 CreateThread(function()
-    exports['qb-target']:SpawnPed({
+    exports['indigo-peds']:SpawnPed({
         model = 'a_m_m_hillbilly_02',
         coords = vector4(-1187.73, -445.27, 43.91, 289.45), 
         minusOne = true, 
@@ -20,7 +20,7 @@ CreateThread(function()
           distance = 2.5,
         },
     })
-    exports['qb-target']:SpawnPed({
+    exports['indigo-peds']:SpawnPed({
         model = 'a_m_m_mlcrisis_01',
         coords = vector4(812.49, -2399.59, 23.66, 223.1), 
         minusOne = true, 

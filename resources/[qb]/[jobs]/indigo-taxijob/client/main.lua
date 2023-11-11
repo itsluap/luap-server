@@ -554,7 +554,7 @@ end)
 -- setup qb-target
 function setupTarget()
     CreateThread(function()
-        exports['qb-target']:SpawnPed({
+        exports['indigo-peds']:SpawnPed({
             model = 'a_m_m_indian_01',
             coords = vector4(901.34, -170.06, 74.08, 228.81),
             minusOne = true,
