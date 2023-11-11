@@ -43,6 +43,7 @@ ensure chat
 ensure spawnmanager
 ensure sessionmanager
 ensure hardcap
+ensure ox_lib
 
 # QBCore & Extra stuff
 
@@ -119,7 +120,6 @@ ensure cfx-gabz-yachts
 ensure [assets]
 ensure indigo_clothing
 ##########################
-ensure ox_lib
 ensure qb-core
 ensure pma-voice
 ensure indigo-phone
