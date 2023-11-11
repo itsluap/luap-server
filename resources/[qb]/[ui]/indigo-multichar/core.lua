@@ -4,6 +4,6 @@ CoreConfig = {
     notify = 'QBCore:Notify', -- your notification trigger
     char_english_only = true, -- block to option to create character with non english names
 
-    clothing_base = 'qb', -- Whether "qb", "raid", "fivem-appearance" or "other"
-    clothing_name = 'indigo-clothing' -- Your clothing resource name
+    clothing_base = 'fivem-appearance', -- Whether "qb", "raid", "fivem-appearance" or "other"
+    clothing_name = 'illenium-appearance' -- Your clothing resource name
 }
