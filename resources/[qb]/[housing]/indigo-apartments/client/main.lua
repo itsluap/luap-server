@@ -441,6 +441,7 @@ RegisterNetEvent('QBCore:Client:OnPlayerUnload', function()
 end)
 
 RegisterNetEvent('apartments:client:setupSpawnUI', function(cData)
+    print("setupSpawnUI")
     QBCore.Functions.TriggerCallback('apartments:GetOwnedApartment', function(result)
         if result then
             --TriggerEvent('indigo-spawn:client:setupSpawns', cData, false, nil)
