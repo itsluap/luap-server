@@ -124,10 +124,15 @@ end)
 RegisterNUICallback('chooseAppa', function(data, cb)
     local ped = PlayerPedId()
     local appaYeet = data.appType
+    local AppLabel = "Integrity"
     SetDisplay(false)
     DoScreenFadeOut(500)
     Wait(5000)
-    TriggerServerEvent("apartments:server:CreateApartment", appaYeet, Apartments.Locations[appaYeet].label)
+    if Apartments == nil then 
+        TriggerServerEvent("apartments:server:CreateApartment", appaYeet, AppLabel)
+    else
+        TriggerServerEvent("apartments:server:CreateApartment", appaYeet, Apartments.Locations[appaYeet].label)
+    end
     TriggerServerEvent('QBCore:Server:OnPlayerLoaded')
     TriggerEvent('QBCore:Client:OnPlayerLoaded')
     FreezeEntityPosition(ped, false)
