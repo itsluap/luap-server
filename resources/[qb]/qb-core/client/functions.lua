@@ -102,7 +102,7 @@ function QBCore.Functions.Notify(text, textype, length)
 end
 ]]--
 
-function QBCore.Functions.Notify(text, textype, length)
+function QBCore.Functions.Notify(text, textype, length, caption)
     if textype == "primary" then textype = "inform" end
 
     if type(text) == "table" then
@@ -111,20 +111,20 @@ function QBCore.Functions.Notify(text, textype, length)
         local ttype = textype or 'inform'
         local length = length or 5000
 
-        OXLib.Notification.SendCustom({
+        lib.notify({
             type = ttype,
-            text = ttext,
-            length = length,
-            caption = caption
+            title = ttext,
+            duration = length,
+            description = caption
         })
     else
         local ttype = textype or 'inform'
         local length = length or 5000
 
-        OXLib.Notification.SendCustom({
+        lib.notify({
             type = ttype,
-            text = text,
-            length = length
+            title = text,
+            duration = length
         })
     end
 end
