@@ -85,6 +85,7 @@ RegisterNUICallback('getNotifyConfig', function(_, cb)
     cb(QBCore.Config.Notify)
 end)
 
+--[[ "old notify system" 
 function QBCore.Functions.Notify(text, textype, length)
     if textype == "primary" then textype = "inform" end
     if type(text) == "table" then
@@ -99,6 +100,35 @@ function QBCore.Functions.Notify(text, textype, length)
         exports['mythic_notify']:DoCustomHudText(ttype, text, length)
     end
 end
+]]--
+
+function QBCore.Functions.Notify(text, textype, length)
+    if textype == "primary" then textype = "inform" end
+
+    if type(text) == "table" then
+        local ttext = text.text or 'Placeholder'
+        local caption = text.caption or 'Placeholder'
+        local ttype = textype or 'inform'
+        local length = length or 5000
+
+        OXLib.Notification.SendCustom({
+            type = ttype,
+            text = ttext,
+            length = length,
+            caption = caption
+        })
+    else
+        local ttype = textype or 'inform'
+        local length = length or 5000
+
+        OXLib.Notification.SendCustom({
+            type = ttype,
+            text = text,
+            length = length
+        })
+    end
+end
+
 
 function QBCore.Debug(resource, obj, depth)
     TriggerServerEvent('QBCore:DebugSomething', resource, obj, depth)
