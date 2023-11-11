@@ -124,7 +124,7 @@ end)
 RegisterNUICallback('chooseAppa', function(data, cb)
     local ped = PlayerPedId()
     local appaYeet = data.appType
-    local AppLabel = "Integrity"
+    local AppLabel = "Integrity Way"
     SetDisplay(false)
     DoScreenFadeOut(500)
     Wait(5000)
