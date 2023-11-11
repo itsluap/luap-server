@@ -82,7 +82,7 @@ lib.addCommand("migrateskins", {
     local resourceName = args.resourceName
     if resourceName == "fivem-appearance" then
         MigrateFivemAppearance(source)
-    elseif resourceName == "qb-clothing" then
+    elseif resourceName == "indigo-clothing" then
         CreateThread(function()
             MigrateQBClothing(source)
         end)
