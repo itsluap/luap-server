@@ -39,7 +39,7 @@ local NpcData = {
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
     PlayerJob = QBCore.Functions.GetPlayerData().job
     if Config.UseTarget then
-        setupTarget()
+        --setupTarget()
         setupCabParkingLocation()
     end
 end)
@@ -552,6 +552,7 @@ end)
 -- POLY & TARGET Conversion code
 
 -- setup qb-target
+--[[
 function setupTarget()
     CreateThread(function()
         exports['indigo-peds']:SpawnPed({
@@ -582,6 +583,7 @@ function setupTarget()
           })
     end)
 end
+]]--
 
 local zone
 local delieveryZone

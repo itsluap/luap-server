@@ -1,5 +1,5 @@
 local QBCore = exports['qb-core']:GetCoreObject()
-
+--[[
 CreateThread(function()
     exports['indigo-peds']:SpawnPed({
         model = 'a_m_m_hillbilly_02',
@@ -40,6 +40,7 @@ CreateThread(function()
         },
     })
 end)
+]]--
 
 CreateThread(function()
     exports["qb-target"]:AddBoxZone("chemmenu", vector3(3535.66, 3661.69, 28.12), 1.65, 2.4, {

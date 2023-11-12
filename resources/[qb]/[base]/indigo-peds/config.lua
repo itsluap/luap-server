@@ -14,125 +14,58 @@ Config.GenderNumbers = { -- No reason to touch these.
 }
 
 Config.PedList = {
-	-- Barber Shops
+
+	-- from ps-drugproccessing --
+
 	{
-		model = `s_f_m_fembarber`, -- Model name as a hash.
-		coords = vector4(-34.42, -151.15, 57.09, 180.0), -- Hawick Ave (X, Y, Z, Heading)
-		gender = 'female' -- The gender of the ped, used for the CreatePed native.
+		model = `a_m_m_hillbilly_02`, -- Model name as a hash.
+		coords = vector4(-1187.73, -445.27, 43.91, 289.45), -- Hawick Ave (X, Y, Z, Heading)
+		gender = 'male' -- The gender of the ped, used for the CreatePed native.
 	},
 
 	{
-		model = `s_f_m_fembarber`,
-		coords = vector4(-279.89, 6227.61, 31.71, 50.0), -- Paleto Bay
-		gender = 'female'
+		model = `a_m_m_mlcrisis_01`, -- Model name as a hash.
+		coords = vector4(812.49, -2399.59, 23.66, 223.1), -- Hawick Ave (X, Y, Z, Heading)
+		gender = 'male' -- The gender of the ped, used for the CreatePed native.
 	},
 
-	{
-		model = `s_f_m_fembarber`,
-		coords = vector4(1933.71, 3730.42, 32.85, 210.0), -- Sandy Shores
-		gender = 'female'
-	},
+	-- indigo-taxijob --
 
 	{
-		model = `s_f_m_fembarber`,
-		coords = vector4(-817.19, -183.30, 37.57, 130.0), -- Mad Wayne Thunder Drive
-		gender = 'female'
+		model = `a_m_m_indian_01`, -- Model name as a hash.
+		coords = vector4(901.34, -170.06, 74.08, 228.81), -- Hawick Ave (X, Y, Z, Heading)
+		gender = 'male' -- The gender of the ped, used for the CreatePed native.
 	},
 
-	{
-		model = `s_f_m_fembarber`,
-		coords = vector4(-1283.62, -1119.24, 7.00, 110.0), -- Magellan Ave
-		gender = 'female'
-	},
-
-	{
-		model = `s_f_m_fembarber`,
-		coords = vector4(137.61, -1709.78, 29.30, 320.0), -- Carson Ave
-		gender = 'female'
-	},
-
-	-- Clothing Stores
-	{
-		model = `s_f_y_shop_low`,
-		coords = vector4(1.20, 6508.53, 31.88, 330.0), -- Paleto Bay
-		gender = 'female'
-	},
-
-	{
-		model = `s_f_y_shop_low`,
-		coords = vector4(1695.00, 4817.49, 42.06, 360.0), -- Grapeseed
-		gender = 'female'
-	},
-
-	{
-		model = `s_f_y_shop_mid`,
-		coords = vector4(126.91, -224.29, 54.56, 90.0), -- Hawick Ave
-		gender = 'female'
-	},
-
-	{
-		model = `s_f_m_shop_high`,
-		coords = vector4(-709.06, -151.46, 37.42, 120.0), -- Portola Drive
-		gender = 'female'
-	},
-
-	{
-		model = `s_f_m_shop_high`,
-		coords = vector4(-1448.41, -237.54, 49.81, 60.0), -- Cougar Ave
-		gender = 'female'
-	},
-
-	{
-		model = `s_f_m_shop_high`,
-		coords = vector4(-165.24, -303.62, 39.73, 260.0), -- Las Lagunas Blvd
-		gender = 'female'
-	},
-
-	{
-		model = `s_f_y_shop_mid`,
-		coords = vector4(-1194.10, -767.09, 17.32, 220.0), -- North Rockford Drive
-		gender = 'female'
-	},
-
-	{
-		model = `s_f_y_shop_low`,
-		coords = vector4(425.88, -811.50, 29.49, 20.0), -- Sinner Street
-		gender = 'female'
-	},
-
-	{
-		model = `s_f_y_shop_low`,
-		coords = vector4(-818.20, -1070.43, 11.33, 120.0), -- South Rockford Drive
-		gender = 'female'
-	},
-
-	{
-		model = `s_f_y_shop_low`,
-		coords = vector4(75.20, -1387.62, 29.38, 210.0), -- Innocence Blvd
-		gender = 'female'
-	},
-
-	{
-		model = `s_f_y_shop_mid`,
-		coords = vector4(613.04, 2762.49, 42.09, 280.0), -- Grapeseed
-		gender = 'female'
-	},
-
-	{
-		model = `s_f_y_shop_low`,
-		coords = vector4(1201.97, 2710.80, 38.22, 100.0), -- Harmony
-		gender = 'female'
-	},
-
-	{
-		model = `s_f_y_shop_low`,
-		coords = vector4(-1097.96, 2714.62, 19.11, 140.0), -- Route 68
-		gender = 'female'
-	},
-
-	{
-		model = `s_f_y_shop_low`,
-		coords = vector4(-3169.38, 1043.18, 20.86, 50.0), -- Great Ocean Highway
-		gender = 'female'
-	},
 }
+
+-- ox_lib stuff --
+
+ps1_model = 'a_m_m_hillbilly_02'
+ps2_model = 'a_m_m_mlcrisis_01'
+taxi_model = 'a_m_m_indian_01'
+
+ps1_options = {
+	event = "ps-drugprocessing:EnterLab",
+	icon = "fas fa-atom",
+	label = "Talk to Walter",
+}
+
+ps2_options = {
+	event = "ps-drugprocessing:EnterCWarehouse",
+	icon = "fas fa-key",
+	label = "Talk to Draco",
+}
+
+taxi_options = {
+	event = "indigo-taxijob:client:requestcab",
+	icon = "fas fa-sign-in-alt",
+	label = '🚕 Request Taxi Cab',
+	groups = "taxi",
+}
+
+exports.ox_target:addModel(ps1_model, ps1_options)
+
+exports.ox_target:addModel(ps2_model, ps2_options)
+
+exports.ox_target:addModel(taxi_model, taxi_options)
