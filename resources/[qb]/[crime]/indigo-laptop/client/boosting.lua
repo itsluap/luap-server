@@ -708,7 +708,7 @@ end)
 
 
 RegisterNetEvent('indigo-laptop:client:setvehicleFuel', function(veh)
-    exports['LegacyFuel']:SetFuel(car, 100.0)
+    exports['ps-fuel']:SetFuel(car, 100.0)
 end)
 
 RegisterNUICallback("boosting/getqueue", function(_, cb)

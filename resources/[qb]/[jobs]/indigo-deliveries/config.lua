@@ -13,7 +13,7 @@ Config.JobPedBlipSpriteColour = 32
 Config.JobPedBlipSpriteScale = 0.75
 
 --
-Config.FuelScript = 'ps-fuel' -- ps-fuel/lj-fuel/LegacyFuel Change to the fuel system you use here
+Config.FuelScript = 'ps-fuel' -- ps-fuel/lj-fuel/ps-fuel Change to the fuel system you use here
 Config.VehicleSpawn = vector4(-445.69, -2789.91, 5.39, 43.89) -- Spot the vehicle spawns
 
 Config.PaymentMethod = 'cash' -- cash/bank how the groups gets paid out at the end
