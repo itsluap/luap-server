@@ -39,6 +39,8 @@ RegisterNetEvent('hud:server:GainStress', function(amount)
     TriggerClientEvent('QBCore:Notify', src, Lang:t("notify.stress_gain"), 'error', 1500)
 end)
 
+local stressTimer = {}
+
 RegisterNetEvent('hud:server:RelieveStress', function(amount)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
@@ -58,7 +60,15 @@ RegisterNetEvent('hud:server:RelieveStress', function(amount)
     end
     Player.Functions.SetMetaData('stress', newStress)
     TriggerClientEvent('hud:client:UpdateStress', src, newStress)
-    TriggerClientEvent('QBCore:Notify', src, Lang:t("notify.stress_removed"))
+    if not stressTimer[src] then
+        TriggerClientEvent('QBCore:Notify', src, Lang:t("notify.stress_removed"))
+        stressTimer[src] = true
+
+        Citizen.CreateThread(function()
+            Citizen.Wait(15000)  -- Wait for 15 seconds
+            stressTimer[src] = nil
+        end)
+    end
 end)
 
 RegisterNetEvent('hud:server:saveUIData', function(data)
