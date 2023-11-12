@@ -1,4 +1,4 @@
-print("^2Jim^7-^2Burgershot ^7v^42^7.^43^7.^47 ^7- ^2BurgerShot Job Script by Jimathy^7")
+--print("^2Jim^7-^2Burgershot ^7v^42^7.^43^7.^47 ^7- ^2BurgerShot Job Script by Jimathy^7")
 
 Config = {
 	Debug = false,  -- True to show debug boxes and messages
