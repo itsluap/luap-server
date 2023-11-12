@@ -237,3 +237,15 @@ RegisterNetEvent("ps-adminmenu:server:setPed", function (data, selectedData)
 
     TriggerClientEvent("ps-adminmenu:client:setPed", Player.PlayerData.source, ped)
 end)
+
+QBCore.Commands.Add('setammo', Lang:t("commands.ammo_amount_set"), {{name='amount', help='Amount of bullets, for example: 20'}, {name='weapon', help='Name of the weapon, for example: WEAPON_VINTAGEPISTOL'}}, false, function(source, args)
+    local src = source
+    local weapon = args[2]
+    local amount = tonumber(args[1])
+
+    if weapon ~= nil then
+        TriggerClientEvent('indigo-weapons:client:SetWeaponAmmoManual', src, weapon, amount)
+    else
+        TriggerClientEvent('indigo-weapons:client:SetWeaponAmmoManual', src, 'current', amount)
+    end
+end, 'admin')
