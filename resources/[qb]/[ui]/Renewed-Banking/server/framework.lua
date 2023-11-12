@@ -128,7 +128,7 @@ end
 function GetJobs(Player)
     if Framework == 'qb' then
         if Config.renewedMultiJob then
-            local jobs = exports['qb-phone']:getJobs(Player.PlayerData.citizenid)
+            local jobs = exports['indigo-phone']:getJobs(Player.PlayerData.citizenid)
             local temp = {}
             for k,v in pairs(jobs) do
                 temp[#temp+1] = {
