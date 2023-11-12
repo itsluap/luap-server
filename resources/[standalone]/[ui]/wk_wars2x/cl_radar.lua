@@ -47,9 +47,10 @@ local pairs = pairs
 	UI loading and key binds registering
 ----------------------------------------------------------------------------------]]--
 local function RegisterKeyBinds()
+	Citizen.Wait(10000) -- waiting because of nil error
 	local player = QBCore.Functions.GetPlayerData()
-	PlayerJob = player.job
-	if PlayerJob.name == "police" then
+    PlayerJob = player.job
+	if PlayerJob and PlayerJob.name == "police" then
 		if ( UTIL:IsResourceNameValid() ) then
 			UTIL:Log( "Registering radar commands and key binds." )
 
