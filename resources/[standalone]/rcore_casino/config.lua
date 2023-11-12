@@ -340,10 +340,10 @@ if Framework.Active == 5 then
     local qbState = GetResourceState(Framework.QB_CORE_RESOURCE_NAME)
 
     if esxState == "starting" or esxState == "started" then
-        print("^3[Casino] Framework ^2ESX^3 detected.^7")
+        -- print("^3[Casino] Framework ^2ESX^3 detected.^7")
         Framework.Active = 1
     elseif qbState == "starting" or qbState == "started" then
-        print("^3[Casino] Framework ^2QBCore^3 detected.^7")
+        -- print("^3[Casino] Framework ^2QBCore^3 detected.^7")
         Framework.Active = 2
     else
         Framework.Active = 3
@@ -356,12 +356,12 @@ if Config.DrunkSystem == 1 then
 
     if rcoreDrunkState == "starting" or rcoreDrunkState == "started" then
         Config.DrunkSystem = 4
-        print("^3[Casino] ^2rcore_drunk^3 detected.^7")
+        -- print("^3[Casino] ^2rcore_drunk^3 detected.^7")
     elseif esxStatusState == "starting" or esxStatusState == "started" then
         Config.DrunkSystem = 2
-        print("^3[Casino] ^2esx_status^3 detected.^7")
+        -- print("^3[Casino] ^2esx_status^3 detected.^7")
     elseif Framework.Active == 2 then
         Config.DrunkSystem = 3
-        print("^3[Casino] drunk system set to ^2evidence:^3.^7")
+        -- print("^3[Casino] drunk system set to ^2evidence:^3.^7")
     end
 end
