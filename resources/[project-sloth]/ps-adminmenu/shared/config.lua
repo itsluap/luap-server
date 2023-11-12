@@ -2,7 +2,7 @@ Config = Config or {}
 
 Config.Fuel = "ps-fuel" -- "ps-fuel", "ps-fuel"
 Config.ResourcePerms = 'admin' -- permission to control resource(start stop restart)
-Config.RenewedPhone = false -- if you use indigo-phone from renewed. (multijob)
+Config.RenewedPhone = true -- if you use indigo-phone from renewed. (multijob)
 
 -- Key Bindings
 Config.Keybindings = true
