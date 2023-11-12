@@ -1,12 +1,14 @@
 Config.Bennys = {}
 
 Config.Bennys.Location = {
+    --[[
     ped = "s_m_y_airworker",
     coords = vector4(1183.37, -3322.16, 6.03, 95.27),
     sprite = 473,
     colour = 28,
     text = "Bennys Warehouse",
     scenario = "WORLD_HUMAN_CLIPBOARD",
+    ]]--
 }
 
 Config.Bennys.Categories = {
