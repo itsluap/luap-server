@@ -717,14 +717,6 @@ Config.Products = {
     },
     ["digitalden"] = {
         [1] = {
-            name = 'fitbit',
-            price = 50,
-            amount = 100,
-            info = {},
-            type = 'item',
-            slot = 1,
-        },
-        [2] = {
             name = 'radio',
             price = 150,
             amount = 100,
@@ -732,7 +724,7 @@ Config.Products = {
             type = 'item',
             slot = 2,
         },
-        [3] = {
+        [2] = {
             name = 'phone',
             price = 200,
             amount = 100,
@@ -740,7 +732,7 @@ Config.Products = {
             type = 'item',
             slot = 4,
         },
-        [4] = {
+        [3] = {
             name = 'racetablet',
             price = 750,
             amount = 100,
@@ -748,7 +740,7 @@ Config.Products = {
             type = 'item',
             slot = 5,
         },
-        [5] = {
+        [4] = {
             name = 'pixellaptop',
             price = 1750,
             amount = 100,

@@ -11,6 +11,7 @@ local AlertSend = false
 local lastPickedVehicle = nil
 local usingAdvanced = false
 local IsHotwiring = false
+local isHacking = false
 
 -----------------------
 ----   Threads     ----
@@ -70,31 +71,34 @@ CreateThread(function()
                     end
                 -- Parked car logic
                 elseif driver == 0 and entering ~= lastPickedVehicle and not HasKeys(plate) and not isTakingKeys then
-                    QBCore.Functions.TriggerCallback('indigo-vehiclekeys:server:checkPlayerOwned', function(playerOwned)
-                        if not playerOwned then
-                            if Config.LockNPCParkedCars then
-                                TriggerServerEvent('indigo-vehiclekeys:server:setVehLockState', NetworkGetNetworkIdFromEntity(entering), 2)
-                            else
-                                TriggerServerEvent('indigo-vehiclekeys:server:setVehLockState', NetworkGetNetworkIdFromEntity(entering), 1)
-                            end
-                        end
-                    end, plate)
-
+                    if Config.LockNPCParkedCars then
+                        TriggerServerEvent('indigo-vehiclekeys:server:setVehLockState', NetworkGetNetworkIdFromEntity(entering), 2)
+                    else
+                        TriggerServerEvent('indigo-vehiclekeys:server:setVehLockState', NetworkGetNetworkIdFromEntity(entering), 1)
+                    end
                 end
             end
 
             -- Hotwiring while in vehicle, also keeps engine off for vehicles you don't own keys to
-            if IsPedInAnyVehicle(ped, false) and not IsHotwiring then
+            if IsPedInAnyVehicle(ped, false) and not IsHotwiring and not IsHacking then
                 sleep = 1000
                 local vehicle = GetVehiclePedIsIn(ped)
                 local plate = QBCore.Functions.GetPlate(vehicle)
-                if GetPedInVehicleSeat(vehicle, -1) == PlayerPedId() and not HasKeys(plate) and not isBlacklistedVehicle(vehicle) and not AreKeysJobShared(vehicle) then
+                if GetPedInVehicleSeat(vehicle, -1) == PlayerPedId() and not HasKeys(plate) and not isBlacklistedVehicle(vehicle) and not AreKeysJobShared(vehicle) and not PlayerOwnedCar then
                     sleep = 0
                     exports['ps-ui']:DisplayText("[H] Hotwire", "warning") -- Colors: primary, error, success, warning, info, mint
                     SetVehicleEngineOn(vehicle, false, false, true)
 
                     if IsControlJustPressed(0, 74) then
                         Hotwire(vehicle, plate)
+                    end
+                elseif GetPedInVehicleSeat(vehicle, -1) == PlayerPedId() and not HasKeys(plate) and not isBlacklistedVehicle(vehicle) and not AreKeysJobShared(vehicle) and PlayerOwnedCar then 
+                    sleep = 0
+                    exports['ps-ui']:DisplayText("[H] Hack", "warning") -- Colors: primary, error, success, warning, info, mint
+                    SetVehicleEngineOn(vehicle, false, false, true)
+
+                    if IsControlJustPressed(0, 74) then
+                        Hotwire(vehicle, plate) -- replace with player owned car hacking
                     end
                 end
             end
@@ -392,40 +396,36 @@ function IsBlacklistedWeapon()
 end
 
 function LockpickDoor(isAdvanced)
-    QBCore.Functions.TriggerCallback('indigo-vehiclekeys:server:checkPlayerOwned', function(playerOwned)
-        if not playerOwned then
-            local ped = PlayerPedId()
-            local pos = GetEntityCoords(ped)
-            local vehicle = QBCore.Functions.GetClosestVehicle()
+    local ped = PlayerPedId()
+    local pos = GetEntityCoords(ped)
+    local vehicle = QBCore.Functions.GetClosestVehicle()
 
-            if vehicle == nil or vehicle == 0 then return end
-            if HasKeys(QBCore.Functions.GetPlate(vehicle)) then return end
-            if #(pos - GetEntityCoords(vehicle)) > 2.5 then return end
-            if GetVehicleDoorLockStatus(vehicle) <= 0 then return end
+    if vehicle == nil or vehicle == 0 then return end
+    if HasKeys(QBCore.Functions.GetPlate(vehicle)) then return end
+    if #(pos - GetEntityCoords(vehicle)) > 2.5 then return end
+    if GetVehicleDoorLockStatus(vehicle) <= 0 then return end
 
-            usingAdvanced = isAdvanced
-            loadAnimDict("veh@break_in@0h@p_m_one@")
-            TaskPlayAnim(ped, "veh@break_in@0h@p_m_one@", "low_force_entry_ds", 3.0, 3.0, -1, 16, 0, 0, 0, 0)
-            exports['ps-ui']:Circle(function(success)
-            if success then
-                TaskPlayAnim(ped, "veh@break_in@0h@p_m_one@", "low_force_entry_ds", 3.0, 3.0, 3000, 16, 0, 0, 0, 0)
-                TriggerServerEvent('hud:server:GainStress', math.random(1, 4))
-                lastPickedVehicle = vehicle
-                if GetPedInVehicleSeat(vehicle, -1) == PlayerPedId() then
-                    TriggerServerEvent('indigo-vehiclekeys:server:AcquireVehicleKeys', QBCore.Functions.GetPlate(vehicle))
-                else
-                    QBCore.Functions.Notify(Lang:t("notify.vlockpick"), 'success')
-                    TriggerServerEvent('indigo-vehiclekeys:server:setVehLockState', NetworkGetNetworkIdFromEntity(vehicle), 1)
-                end
-            else
-                TaskPlayAnim(ped, "veh@break_in@0h@p_m_one@", "low_force_entry_ds", 3.0, 3.0, 3000, 16, 0, 0, 0, 0)
-                TriggerServerEvent('hud:server:GainStress', math.random(1, 4))
-                QBCore.Functions.Notify("You failed to lockpick the vehicle!", "error")
-                AttemptPoliceAlert("steal")
-                end
-            end, 4, 8) -- NumberOfCircles, MS
+    usingAdvanced = isAdvanced
+    loadAnimDict("veh@break_in@0h@p_m_one@")
+    TaskPlayAnim(ped, "veh@break_in@0h@p_m_one@", "low_force_entry_ds", 3.0, 3.0, -1, 16, 0, 0, 0, 0)
+    exports['ps-ui']:Circle(function(success)
+    if success then
+        TaskPlayAnim(ped, "veh@break_in@0h@p_m_one@", "low_force_entry_ds", 3.0, 3.0, 3000, 16, 0, 0, 0, 0)
+        TriggerServerEvent('hud:server:GainStress', math.random(1, 4))
+        lastPickedVehicle = vehicle
+        if GetPedInVehicleSeat(vehicle, -1) == PlayerPedId() then
+            TriggerServerEvent('indigo-vehiclekeys:server:AcquireVehicleKeys', QBCore.Functions.GetPlate(vehicle))
+        else
+            QBCore.Functions.Notify(Lang:t("notify.vlockpick"), 'success')
+            TriggerServerEvent('indigo-vehiclekeys:server:setVehLockState', NetworkGetNetworkIdFromEntity(vehicle), 1)
         end
-    end, plate)
+    else
+        TaskPlayAnim(ped, "veh@break_in@0h@p_m_one@", "low_force_entry_ds", 3.0, 3.0, 3000, 16, 0, 0, 0, 0)
+        TriggerServerEvent('hud:server:GainStress', math.random(1, 4))
+        QBCore.Functions.Notify("You failed to lockpick the vehicle!", "error")
+        AttemptPoliceAlert("steal")
+        end
+    end, 4, 8) -- NumberOfCircles, MS
 end
 
 --[[
@@ -461,6 +461,33 @@ function LockpickFinishCallback(success)
 end
 ]]--
 
+-- Function to check if the player's current vehicle is player-owned
+function isPlayerInOwnVehicle()
+    local playerPed = PlayerPedId()
+    local vehicle = GetVehiclePedIsIn(playerPed, false)
+
+    if DoesEntityExist(vehicle) then
+        local plate = GetVehicleNumberPlateText(vehicle)
+
+        local playerOwned = false
+
+        QBCore.Functions.TriggerCallback('indigo-vehiclekeys:server:checkPlayerOwned', function(result)
+            playerOwned = result
+        end, plate)
+
+        -- Wait for the callback to complete before returning the result
+        while playerOwned == nil do
+            Wait(10)
+        end
+
+        return playerOwned
+    else
+        return false  -- Player is not in a vehicle
+    end
+end
+
+local PlayerOwnedCar = isPlayerInOwnVehicle()
+
 function Hotwire(vehicle, plate)
     local hotwireTime = math.random(Config.minHotwireTime, Config.maxHotwireTime)
     local ped = PlayerPedId()
@@ -483,6 +510,30 @@ function Hotwire(vehicle, plate)
         AttemptPoliceAlert("steal")
     end)
     IsHotwiring = false
+end
+
+function HackPlayerOwned(vehicle, plate)
+    local hackingTime = math.random(Config.minHackingTime, Config.maxHackingTime)
+    local ped = PlayerPedId()
+    IsHacking = true
+
+    exports['ps-ui']:HideText()
+    SetVehicleEngineOn(vehicle, false, false, true) -- trying to keep engine off until hotwire is finished
+    SetVehicleAlarm(vehicle, true)
+    SetVehicleAlarmTimeLeft(vehicle, hackingTime)
+    exports['ps-ui']:Scrambler(function(success)
+    if success then
+            TriggerServerEvent('indigo-vehiclekeys:server:AcquireVehicleKeys', plate)
+            Wait(1000)
+        else
+            QBCore.Functions.Notify(Lang:t("notify.fvhacking"), "error")
+        end
+    end, "greek", 30, 0) -- Type (alphabet, numeric, alphanumeric, greek, braille, runes), Time (Seconds), Mirrored (0: Normal, 1: Normal + Mirrored 2: Mirrored only )
+
+    SetTimeout(10000, function()
+        AttemptPoliceAlert("steal")
+    end)
+    IsHacking = false
 end
 
 function CarjackVehicle(target)

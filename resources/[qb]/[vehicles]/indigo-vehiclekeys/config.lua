@@ -33,6 +33,8 @@ Config.HotwireChance = 0.5 -- Chance for successful hotwire or not
 Config.TimeBetweenHotwires = 5000 -- Time in ms between hotwire attempts
 Config.minHotwireTime = 20000 -- Minimum hotwire time in ms
 Config.maxHotwireTime = 30000 --  Maximum hotwire time in ms
+Config.minHackingTime = 20000 -- Minimum hotwire time in ms
+Config.maxHackingTime = 30000 --  Maximum hotwire time in ms
 
 -- Police Alert Settings
 Config.AlertCooldown = 10000 -- 10 seconds
