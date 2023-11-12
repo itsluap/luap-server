@@ -246,7 +246,7 @@ QBShared.Jobs = {
 	},
     ['ottos'] = {
 		label = 'Ottos Autos',
-        type = "ottos",
+        type = "mechanic",
 		defaultDuty = true,
 		offDutyPay = false,
 		grades = {
@@ -284,7 +284,7 @@ QBShared.Jobs = {
 	},
     ['tuner'] = {
 		label = 'Tuner Shop',
-        type = "tuner",
+        type = "mechanic",
 		defaultDuty = true,
 		offDutyPay = false,
 		grades = {
