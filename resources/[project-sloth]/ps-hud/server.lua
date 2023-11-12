@@ -17,6 +17,8 @@ QBCore.Commands.Add("dev", Lang:t('info.toggle_dev_mode'), {}, false, function(s
     TriggerClientEvent("qb-admin:client:ToggleDevmode", source)
 end, 'admin')
 
+local stressGainTimer = {}
+
 RegisterNetEvent('hud:server:GainStress', function(amount)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
@@ -36,7 +38,15 @@ RegisterNetEvent('hud:server:GainStress', function(amount)
     end
     Player.Functions.SetMetaData('stress', newStress)
     TriggerClientEvent('hud:client:UpdateStress', src, newStress)
-    TriggerClientEvent('QBCore:Notify', src, Lang:t("notify.stress_gain"), 'error', 1500)
+    if not stressGainTimer[src] then
+        TriggerClientEvent('QBCore:Notify', src, Lang:t("notify.stress_gain"), 'error', 1500)
+        stressGainTimer[src] = true
+
+        Citizen.CreateThread(function()
+            Citizen.Wait(15000)  -- Wait for 15 seconds
+            stressGainTimer[src] = nil
+        end)
+    end
 end)
 
 local stressTimer = {}
