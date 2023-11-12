@@ -95,7 +95,7 @@ local function getVehPrice()
 end
 
 local function getVehBrand()
-    return QBCore.Shared.Vehicles[Config.Shops[insideShop]["ShowroomVehicles"][ClosestVehicle].chosenVehicle]['brand']
+    return QBCore.Shared.Vehicles[Config.Shops[insideShop]["ShowroomVehicles"][ClosestVehicle].chosenVehicle]['brand'] -- gives an error when joining back and already in zone
 end
 
 local function setClosestShowroomVehicle()

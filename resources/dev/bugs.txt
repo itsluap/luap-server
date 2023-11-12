@@ -4,8 +4,18 @@ Current bugs or possible bugs:
 
 2. cars going inside each other at pdm? - needs more testing
 
+-------------------------------------------------------------------------------------------------------------------
+
+-- known bugs --
+
+1. when a player rejoins the server within a dealership zone the server isn't able to register something, haven't figured out what yet
+
+2. mechanics are completely broke until jim-mechanic is purchased (no ox_target support currently)
+
+3.
 
 
+-------------------------------------------------------------------------------------------------------------------
 
 
 OLD LIST OF BUGS (SHOULD CHECK ANYWAY):
