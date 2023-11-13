@@ -3299,6 +3299,7 @@ QBShared.Vehicles = {
 	},
 
 	------------------- start of pdm ------------
+	--[[
 
 	['golfmk6'] = {
 		['name'] = 'Golf MK6',
@@ -3559,7 +3560,7 @@ QBShared.Vehicles = {
 		['hash'] = `gs350`,
 		['shop'] = 'pdm',
 	},
-
+	]]--
 
 	------ END OF PDM ------------
 

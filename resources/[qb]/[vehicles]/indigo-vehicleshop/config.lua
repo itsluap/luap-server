@@ -106,28 +106,28 @@ Config.Shops = {
         ['ShowroomVehicles'] = {
             [1] = {
                 coords = vector4(-37.27, -1093.05, 26.3, 114.0), -- where the vehicle will spawn on display
-                defaultVehicle = 'gs350', -- Default display vehicle
-                chosenVehicle = 'gs350', -- Same as default but is dynamically changed when swapping vehicles
+                defaultVehicle = 'adder', -- Default display vehicle
+                chosenVehicle = 'adder', -- Same as default but is dynamically changed when swapping vehicles
             },
             [2] = {
                 coords = vector4(-50.03, -1083.83, 26.3, 148.41),
-                defaultVehicle = 'rogue20',
-                chosenVehicle = 'rogue20'
+                defaultVehicle = 'adder',
+                chosenVehicle = 'adder'
             },
             [3] = {
                 coords = vector4(-47.61, -1092.15, 26.3, 188.34),
-                defaultVehicle = 'camry18',
-                chosenVehicle = 'camry18'
+                defaultVehicle = 'adder',
+                chosenVehicle = 'adder'
             },
             [4] = {
                 coords = vector4(-42.19, -1101.35, 26.3, 284.51),
-                defaultVehicle = 'golfmk6',
-                chosenVehicle = 'golfmk6'
+                defaultVehicle = 'adder',
+                chosenVehicle = 'adder'
             },
             [5] = {
                 coords = vector4(-54.48, -1096.71, 26.3, 293.13),
-                defaultVehicle = 'mgt',
-                chosenVehicle = 'mgt'
+                defaultVehicle = 'adder',
+                chosenVehicle = 'adder'
             }
         },
     },
@@ -164,28 +164,28 @@ Config.Shops = {
         ['ShowroomVehicles'] = {
             [1] = {
                 coords = vector4(126.54, -157.62, 53.79, 285.67),
-                defaultVehicle = 'teslax',
-                chosenVehicle = 'teslax'
+                defaultVehicle = 'adder',
+                chosenVehicle = 'adder'
             },
             [2] = {
                 coords = vector4(134.38, -160.38, 53.79, 34.82),
-                defaultVehicle = 'rmodlfa',
-                chosenVehicle = 'rmodlfa'
+                defaultVehicle = 'adder',
+                chosenVehicle = 'adder'
             },
             [3] = {
                 coords = vector4(141.78, -163.68, 53.79, 276.15),
-                defaultVehicle = 'ghoulcharger',
-                chosenVehicle = 'ghoulcharger'
+                defaultVehicle = 'adder',
+                chosenVehicle = 'adder'
             },
             [4] = {
                 coords = vector4(113.54, -146.69, 59.76, 233.95),
-                defaultVehicle = 'bati',
-                chosenVehicle = 'bati'
+                defaultVehicle = 'adder',
+                chosenVehicle = 'adder'
             },
             [5] = {
                 coords = vector4(117.94, -153.7, 59.76, 0.66),
-                defaultVehicle = 'carbonrs',
-                chosenVehicle = 'carbonrs'
+                defaultVehicle = 'adder',
+                chosenVehicle = 'adder'
             },
         }
     }, -- Add your next table under this comma
@@ -224,8 +224,8 @@ Config.Shops = {
         ['ShowroomVehicles'] = {
             [1] = {
                 coords = vector4(124.22, -3023.0, 6.04, 266.47),
-                defaultVehicle = 'devilz',
-                chosenVehicle = 'devilz'
+                defaultVehicle = 'adder',
+                chosenVehicle = 'adder'
             },
         }
     }, -- Add your next table under this comma
@@ -264,11 +264,12 @@ Config.Shops = {
         ['ShowroomVehicles'] = {
             [1] = {
                 coords = vector4(808.23, -811.91, 25.18, 88.19),
-                defaultVehicle = 'nis13',
-                chosenVehicle = 'nis13'
+                defaultVehicle = 'adder',
+                chosenVehicle = 'adder'
             },
         }
     }, -- Add your next table under this comma
+    --[[
     ['autoex'] = {
         ['Type'] = 'managed', -- meaning a real player has to sell the car
         ['Zone'] = {
@@ -311,6 +312,7 @@ Config.Shops = {
             },
         }
     }, -- Add your next table under this comma
+    ]]--
     ['hayes'] = {
         ['Type'] = 'managed', -- meaning a real player has to sell the car
         ['Zone'] = {
@@ -342,8 +344,8 @@ Config.Shops = {
         ['ShowroomVehicles'] = {
             [1] = {
                 coords = vector4(-1379.29, -450.82, 33.48, 214.57),
-                defaultVehicle = '22m5',
-                chosenVehicle = '22m5'
+                defaultVehicle = 'adder',
+                chosenVehicle = 'adder'
             },
         }
     }, -- Add your next table under this comma
