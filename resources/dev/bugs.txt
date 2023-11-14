@@ -12,7 +12,7 @@ Current bugs or possible bugs:
 
 2. mechanics are completely broke until jim-mechanic is purchased (no ox_target support currently)
 
-3.
+3. when first person and shooting without aiming you get normal crosshair and kill confirm hitmarker
 
 
 -------------------------------------------------------------------------------------------------------------------
