@@ -165,3 +165,22 @@ RegisterNetEvent("ps-adminmenu:client:setPed", function ( pedModels )
     SetPedDefaultComponentVariation(cache.ped)
     SetModelAsNoLongerNeeded(pedModels)
 end)
+
+-- old qb-admin stuff-- 
+
+RegisterNetEvent('indigo-weapons:client:SetWeaponAmmoManual', function(weapon, ammo)
+    local ped = PlayerPedId()
+    if weapon ~= "current" then
+        weapon = weapon:upper()
+        SetPedAmmo(ped, GetHashKey(weapon), ammo)
+        QBCore.Functions.Notify(Lang:t("info.ammoforthe", {value = ammo, weapon = QBCore.Shared.Weapons[weapon]["label"]}), 'success')
+    else
+        weapon = GetSelectedPedWeapon(ped)
+        if weapon ~= nil then
+            SetPedAmmo(ped, weapon, ammo)
+            QBCore.Functions.Notify(Lang:t("info.ammoforthe", {value = ammo, weapon = QBCore.Shared.Weapons[weapon]["label"]}), 'success')
+        else
+            QBCore.Functions.Notify(Lang:t("error.no_weapon"), 'error')
+        end
+    end
+end)
