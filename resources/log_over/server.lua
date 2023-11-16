@@ -5,6 +5,7 @@ local logFilePath = "A:/fivem-server/luap-server/resources/log_overoversized_tex
 
 -- Function to log oversized texture warnings
 function logOversizedTexture(message)
+    print("Logging oversized texture:", message)
     local timestamp = os.date("[%Y-%m-%d %H:%M:%S]")
     local logMessage = timestamp .. " " .. message
 
@@ -22,6 +23,7 @@ end
 
 -- Event handler for the print event
 AddEventHandler("print", function(message)
+    print("Received print event:", message)
     -- Check if the message contains the keyword indicating an oversized texture warning
     if string.find(message, "Oversized assets") then
         logOversizedTexture(message)
