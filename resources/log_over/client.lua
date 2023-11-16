@@ -1,7 +1,7 @@
 -- Oversized Texture Logger Script
 
 -- Specify the path to the log file
-local logFilePath = "path/to/oversized_texture_log.txt"
+local logFilePath = "A:/fivem-server/luap-server/resources/log_overoversized_texture_log.txt"
 
 -- Function to log oversized texture warnings
 function logOversizedTexture(message)
