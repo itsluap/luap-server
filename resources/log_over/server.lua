@@ -23,7 +23,7 @@ end
 -- Event handler for the print event
 AddEventHandler("print", function(message)
     -- Check if the message contains the keyword indicating an oversized texture warning
-    if string.find(message, "oversized_texture_warning_keyword") then
+    if string.find(message, "Oversized assets") then
         logOversizedTexture(message)
     end
 end)
