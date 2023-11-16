@@ -1,0 +1,1200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CVehicleModelInfoVarGlobal>    
+  <Kits>
+    <Item>
+		<kitName>2955_m3e30_modkit</kitName>
+		<id value="2955" />	 	  
+		<kitType>MKT_SPORT</kitType>
+		<visibleMods>
+		<Item>
+			<modelName>null</modelName>
+			<modShopLabel>no bumper</modShopLabel>
+			<linkedModels></linkedModels>
+			<turnOffBones>
+				<Item>bumper_f</Item>
+				<Item>indicator_lf</Item>
+				<Item>indicator_rf</Item>
+			</turnOffBones>
+			<type>VMT_BUMPER_F</type>
+			<bone>bumper_f</bone>
+			<collisionBone>bumper_f</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="0" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>null</modelName>
+			<modShopLabel>no bumper</modShopLabel>
+			<linkedModels></linkedModels>
+			<turnOffBones>
+				<Item>bumper_r</Item>
+			</turnOffBones>
+			<type>VMT_BUMPER_R</type>
+			<bone>bumper_r</bone>
+			<collisionBone>bumper_r</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="0" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>rolcage_a</modelName>
+			<modShopLabel>Rollcage</modShopLabel>
+			<linkedModels></linkedModels>
+			<turnOffBones></turnOffBones>
+			<type>VMT_CHASSIS</type>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>bumf_a</modelName>
+			<modShopLabel>Bumper 1</modShopLabel>
+			<linkedModels></linkedModels>
+			<turnOffBones>
+				<Item>bumper_f</Item>
+				<Item>indicator_lf</Item>
+				<Item>indicator_rf</Item>
+			</turnOffBones>
+			<type>VMT_BUMPER_F</type>
+			<collisionBone>bumper_f</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+		</Item>
+		<Item>
+			<modelName>bumf_b</modelName>
+			<modShopLabel>Bumper 2</modShopLabel>
+			<linkedModels></linkedModels>
+			<turnOffBones>
+				<Item>bumper_f</Item>
+				<Item>indicator_lf</Item>
+				<Item>indicator_rf</Item>
+			</turnOffBones>
+			<type>VMT_BUMPER_F</type>
+			<collisionBone>bumper_f</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+		</Item>
+		<Item>
+			<modelName>bumf_c</modelName>
+			<modShopLabel>Splitter</modShopLabel>
+			<linkedModels></linkedModels>
+			<turnOffBones></turnOffBones>
+			<type>VMT_ROOF</type>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>wing_a</modelName>
+			<modShopLabel>Spoiler 1</modShopLabel>
+			<linkedModels />
+			<turnOffBones></turnOffBones>
+			<type>VMT_SPOILER</type>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>wing_b</modelName>
+			<modShopLabel>Spoiler 2</modShopLabel>
+			<linkedModels />
+			<turnOffBones></turnOffBones>
+			<type>VMT_SPOILER</type>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>wing_c</modelName>
+			<modShopLabel>Spoiler 3</modShopLabel>
+			<linkedModels />
+			<turnOffBones></turnOffBones>
+			<type>VMT_SPOILER</type>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>wing_d</modelName>
+			<modShopLabel>Spoiler 4</modShopLabel>
+			<linkedModels />
+			<turnOffBones></turnOffBones>
+			<type>VMT_SPOILER</type>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_splr_custom</modelName>
+			<modShopLabel>Custom</modShopLabel>
+			<linkedModels />
+			<turnOffBones></turnOffBones>
+			<type>VMT_SPOILER</type>
+			<bone>chassis</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_eyelids</modelName>
+			<modShopLabel>Eyelids</modShopLabel>
+			<linkedModels />
+			<turnOffBones></turnOffBones>
+			<type>VMT_GRILL</type>
+			<bone>chassis</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_splr_pandem</modelName>
+			<modShopLabel>Pandem</modShopLabel>
+			<linkedModels />
+			<turnOffBones></turnOffBones>
+			<type>VMT_SPOILER</type>
+			<bone>chassis</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_bumf_pandem</modelName>
+			<modShopLabel>Pandem</modShopLabel>
+			<linkedModels />
+			<turnOffBones></turnOffBones>
+			<type>VMT_BUMPER_F</type>
+			<bone>bumper_f</bone>
+			<collisionBone>bumper_f</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_skrt_pandem</modelName>
+			<modShopLabel>Pandem</modShopLabel>
+			<linkedModels />
+			<turnOffBones>
+				<Item>misc_d</Item>
+				<Item>misc_i</Item>
+			</turnOffBones>
+			<type>VMT_SKIRT</type>
+			<bone>chassis</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_fndrf_pandem</modelName>
+			<modShopLabel>Pandem</modShopLabel>
+			<linkedModels />
+			<turnOffBones></turnOffBones>
+			<type>VMT_WING_L</type>
+			<bone>chassis</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_fndrr_pandem</modelName>
+			<modShopLabel>Pandem</modShopLabel>
+			<linkedModels />
+			<turnOffBones></turnOffBones>
+			<type>VMT_WING_R</type>
+			<bone>chassis</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_bumr_custom</modelName>
+			<modShopLabel>Custom</modShopLabel>
+			<linkedModels />
+			<turnOffBones>
+				<Item>bumper_r</Item>
+			</turnOffBones>
+			<type>VMT_BUMPER_R</type>
+			<bone>bumper_r</bone>
+			<collisionBone>bumper_r</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_splr_hakosuka</modelName>
+			<modShopLabel>Hakosuka</modShopLabel>
+			<linkedModels />
+			<turnOffBones></turnOffBones>
+			<type>VMT_SPOILER</type>
+			<bone>chassis</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_splr_326power</modelName>
+			<modShopLabel>326 Power</modShopLabel>
+			<linkedModels />
+			<turnOffBones></turnOffBones>
+			<type>VMT_SPOILER</type>
+			<bone>chassis</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_splr_uras_drag</modelName>
+			<modShopLabel>URAS Drag</modShopLabel>
+			<linkedModels />
+			<turnOffBones></turnOffBones>
+			<type>VMT_SPOILER</type>
+			<bone>chassis</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_splr_uras_low</modelName>
+			<modShopLabel>URAS low</modShopLabel>
+			<linkedModels />
+			<turnOffBones></turnOffBones>
+			<type>VMT_SPOILER</type>
+			<bone>chassis</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_splr_bigwang</modelName>
+			<modShopLabel>Big Wang</modShopLabel>
+			<linkedModels />
+			<turnOffBones></turnOffBones>
+			<type>VMT_SPOILER</type>
+			<bone>chassis</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_bonnet_carbon</modelName>
+			<modShopLabel>Carbon</modShopLabel>
+			<linkedModels />
+			<turnOffBones>
+				<Item>bonnet</Item>
+			</turnOffBones>
+			<type>VMT_BONNET</type>
+			<bone>bonnet</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_exh_shtgn1</modelName>
+			<modShopLabel>Shotgun</modShopLabel>
+			<linkedModels />
+			<turnOffBones>
+				<Item>misc_h</Item>
+			</turnOffBones>
+			<type>VMT_EXHAUST</type>
+			<bone>chassis</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_exh_exas_s_tunes_gp</modelName>
+			<modShopLabel>Exas S Tunes GP Sports</modShopLabel>
+			<linkedModels />
+			<turnOffBones>
+				<Item>misc_h</Item>
+			</turnOffBones>
+			<type>VMT_EXHAUST</type>
+			<bone>chassis</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_fl_yellow</modelName>
+			<modShopLabel>Yellow lights</modShopLabel>
+			<linkedModels />
+			<turnOffBones></turnOffBones>
+			<type>VMT_CHASSIS3</type>
+			<bone>chassis</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_grill_2eyes</modelName>
+			<modShopLabel>Custom Grill</modShopLabel>
+			<linkedModels />
+			<turnOffBones>
+				<Item>misc_e</Item>
+				<Item>extralight_1</Item>
+				<Item>extralight_2</Item>
+			</turnOffBones>
+			<type>VMT_CHASSIS4</type>
+			<bone>chassis</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_plate_2534_f</modelName>
+			<modShopLabel>front 25-34</modShopLabel>
+			<linkedModels />
+			<turnOffBones></turnOffBones>
+			<type>VMT_PLTVANITY</type>
+			<bone>bumper_f</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_plate_2534_r</modelName>
+			<modShopLabel>rear 25-34</modShopLabel>
+			<linkedModels />
+			<turnOffBones></turnOffBones>
+			<type>VMT_PLTHOLDER</type>
+			<bone>chassis</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_plate_2648_f</modelName>
+			<modShopLabel>front 26-48</modShopLabel>
+			<linkedModels />
+			<turnOffBones></turnOffBones>
+			<type>VMT_PLTVANITY</type>
+			<bone>bumper_f</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_plate_2648_r</modelName>
+			<modShopLabel>rear 26-48</modShopLabel>
+			<linkedModels />
+			<turnOffBones></turnOffBones>
+			<type>VMT_PLTHOLDER</type>
+			<bone>chassis</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_seats_bride_vios3_black</modelName>
+			<modShopLabel>Bride Vios III Black</modShopLabel>
+			<linkedModels />
+			<turnOffBones>
+				<Item>misc_f</Item>
+			</turnOffBones>
+			<type>VMT_SEATS</type>
+			<bone>chassis</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_seats_bride_vios3_red</modelName>
+			<modShopLabel>Bride Vios III Red</modShopLabel>
+			<linkedModels />
+			<turnOffBones>
+				<Item>misc_f</Item>
+			</turnOffBones>
+			<type>VMT_SEATS</type>
+			<bone>chassis</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_seats_recaro_orange</modelName>
+			<modShopLabel>Recaro Orange</modShopLabel>
+			<linkedModels />
+			<turnOffBones>
+				<Item>misc_f</Item>
+			</turnOffBones>
+			<type>VMT_SEATS</type>
+			<bone>chassis</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_seats_recaro_pink</modelName>
+			<modShopLabel>Recaro Pink</modShopLabel>
+			<linkedModels />
+			<turnOffBones>
+				<Item>misc_f</Item>
+			</turnOffBones>
+			<type>VMT_SEATS</type>
+			<bone>chassis</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_seats_recaro_hks</modelName>
+			<modShopLabel>Recaro HKS</modShopLabel>
+			<linkedModels />
+			<turnOffBones>
+				<Item>misc_f</Item>
+			</turnOffBones>
+			<type>VMT_SEATS</type>
+			<bone>chassis</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_seats_thrash_black</modelName>
+			<modShopLabel>Thrash Racing Black</modShopLabel>
+			<linkedModels />
+			<turnOffBones>
+				<Item>misc_f</Item>
+			</turnOffBones>
+			<type>VMT_SEATS</type>
+			<bone>chassis</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_seats_thrash_blue</modelName>
+			<modShopLabel>Thrash Racing Blue</modShopLabel>
+			<linkedModels />
+			<turnOffBones>
+				<Item>misc_f</Item>
+			</turnOffBones>
+			<type>VMT_SEATS</type>
+			<bone>chassis</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_seats_thrash_red</modelName>
+			<modShopLabel>Thrash Racing Red</modShopLabel>
+			<linkedModels />
+			<turnOffBones>
+				<Item>misc_f</Item>
+			</turnOffBones>
+			<type>VMT_SEATS</type>
+			<bone>chassis</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_seats_thrash_yellow</modelName>
+			<modShopLabel>Thrash Racing Yellow</modShopLabel>
+			<linkedModels />
+			<turnOffBones>
+				<Item>misc_f</Item>
+			</turnOffBones>
+			<type>VMT_SEATS</type>
+			<bone>chassis</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_seats_thrash_love</modelName>
+			<modShopLabel>Thrash Racing Love</modShopLabel>
+			<linkedModels />
+			<turnOffBones>
+				<Item>misc_f</Item>
+			</turnOffBones>
+			<type>VMT_SEATS</type>
+			<bone>chassis</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_seats_thrash_tiger</modelName>
+			<modShopLabel>Thrash Racing Tiger</modShopLabel>
+			<linkedModels />
+			<turnOffBones>
+				<Item>misc_f</Item>
+			</turnOffBones>
+			<type>VMT_SEATS</type>
+			<bone>chassis</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_seats_thrash_jaguar</modelName>
+			<modShopLabel>Thrash Racing Jaguar</modShopLabel>
+			<linkedModels />
+			<turnOffBones>
+				<Item>misc_f</Item>
+			</turnOffBones>
+			<type>VMT_SEATS</type>
+			<bone>chassis</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_seats_thrash_zebra</modelName>
+			<modShopLabel>Thrash Racing Zebra</modShopLabel>
+			<linkedModels />
+			<turnOffBones>
+				<Item>misc_f</Item>
+			</turnOffBones>
+			<type>VMT_SEATS</type>
+			<bone>chassis</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_sw_vrtx_chck</modelName>
+			<modShopLabel>Vertex Checker</modShopLabel>
+			<linkedModels />
+			<turnOffBones>
+				<Item>steeringwheel</Item>
+			</turnOffBones>
+			<type>VMT_STEERING</type>
+			<bone>steeringwheel</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_sw_vrtx_red</modelName>
+			<modShopLabel>Vertex Red</modShopLabel>
+			<linkedModels />
+			<turnOffBones>
+				<Item>steeringwheel</Item>
+			</turnOffBones>
+			<type>VMT_STEERING</type>
+			<bone>steeringwheel</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_sw_vrtx_blue</modelName>
+			<modShopLabel>Vertex Blue</modShopLabel>
+			<linkedModels />
+			<turnOffBones>
+				<Item>steeringwheel</Item>
+			</turnOffBones>
+			<type>VMT_STEERING</type>
+			<bone>steeringwheel</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_sw_nardi_gray</modelName>
+			<modShopLabel>Nardi Gray</modShopLabel>
+			<linkedModels />
+			<turnOffBones>
+				<Item>steeringwheel</Item>
+			</turnOffBones>
+			<type>VMT_STEERING</type>
+			<bone>steeringwheel</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_sw_nardi_black</modelName>
+			<modShopLabel>Nardi Black</modShopLabel>
+			<linkedModels />
+			<turnOffBones>
+				<Item>steeringwheel</Item>
+			</turnOffBones>
+			<type>VMT_STEERING</type>
+			<bone>steeringwheel</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_sw_atc_volanti</modelName>
+			<modShopLabel>ATC Volanti</modShopLabel>
+			<linkedModels />
+			<turnOffBones>
+				<Item>steeringwheel</Item>
+			</turnOffBones>
+			<type>VMT_STEERING</type>
+			<bone>steeringwheel</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_sw_momo_montecarlo</modelName>
+			<modShopLabel>MOMO Montecarlo (Spoon)</modShopLabel>
+			<linkedModels />
+			<turnOffBones>
+				<Item>steeringwheel</Item>
+			</turnOffBones>
+			<type>VMT_STEERING</type>
+			<bone>steeringwheel</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_sw_vrtx_leopard</modelName>
+			<modShopLabel>Vertex Leopard</modShopLabel>
+			<linkedModels />
+			<turnOffBones>
+				<Item>steeringwheel</Item>
+			</turnOffBones>
+			<type>VMT_STEERING</type>
+			<bone>steeringwheel</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_sw_thrash_yellow</modelName>
+			<modShopLabel>Thrash Racing Yellow</modShopLabel>
+			<linkedModels />
+			<turnOffBones>
+				<Item>steeringwheel</Item>
+			</turnOffBones>
+			<type>VMT_STEERING</type>
+			<bone>steeringwheel</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_sw_thrash_red</modelName>
+			<modShopLabel>Thrash Racing Red</modShopLabel>
+			<linkedModels />
+			<turnOffBones>
+				<Item>steeringwheel</Item>
+			</turnOffBones>
+			<type>VMT_STEERING</type>
+			<bone>steeringwheel</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_sw_thrash_blue</modelName>
+			<modShopLabel>Thrash Racing Blue</modShopLabel>
+			<linkedModels />
+			<turnOffBones>
+				<Item>steeringwheel</Item>
+			</turnOffBones>
+			<type>VMT_STEERING</type>
+			<bone>steeringwheel</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_sw_thrash_black</modelName>
+			<modShopLabel>Thrash Racing Black</modShopLabel>
+			<linkedModels />
+			<turnOffBones>
+				<Item>steeringwheel</Item>
+			</turnOffBones>
+			<type>VMT_STEERING</type>
+			<bone>steeringwheel</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_tails_clear</modelName>
+			<modShopLabel>Clear Taillights</modShopLabel>
+			<linkedModels />
+			<turnOffBones>
+				<Item>misc_g</Item>
+			</turnOffBones>
+			<type>VMT_CHASSIS5</type>
+			<bone>chassis</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_tails_red</modelName>
+			<modShopLabel>All Red Taillights</modShopLabel>
+			<linkedModels />
+			<turnOffBones>
+				<Item>misc_g</Item>
+			</turnOffBones>
+			<type>VMT_CHASSIS5</type>
+			<bone>chassis</bone>
+			<collisionBone>chassis</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="10" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		<Item>
+			<modelName>m3e30_mirror_dside</modelName>
+			<modShopLabel>mirrors</modShopLabel>
+			<linkedModels>
+				<Item>m3e30_mirror_pside</Item>
+			</linkedModels>
+			<turnOffBones>
+				<Item>misc_u</Item>
+				<Item>misc_v</Item>
+			</turnOffBones>
+			<type>VMT_DOOR_L</type>
+			<bone>door_dside_f</bone>
+			<collisionBone>door_dside_f</collisionBone>
+			<cameraPos>VMCP_DEFAULT</cameraPos>
+			<audioApply value="1.000000" />
+			<weight value="0" />
+			<turnOffExtra value="false" />
+			<disableBonnetCamera value="false" />
+			<allowBonnetSlide value="true" />
+        </Item>
+		</visibleMods>
+      <linkMods>
+		<Item>
+			<modelName>m3e30_mirror_pside</modelName>
+			<bone>door_pside_f</bone>
+			<turnOffExtra value="false"/>
+		</Item>
+      </linkMods>
+      <statMods>
+        <Item>
+          <identifier />
+          <modifier value="25" />
+          <audioApply value="1.000000" />
+          <weight value="20" />
+          <type>VMT_ENGINE</type>
+        </Item>
+        <Item>
+          <identifier />
+          <modifier value="50" />
+          <audioApply value="1.000000" />
+          <weight value="20" />
+          <type>VMT_ENGINE</type>
+        </Item>
+        <Item>
+          <identifier />
+          <modifier value="75" />
+          <audioApply value="1.000000" />
+          <weight value="20" />
+          <type>VMT_ENGINE</type>
+        </Item>
+        <Item>
+          <identifier />
+          <modifier value="100" />
+          <audioApply value="1.000000" />
+          <weight value="20" />
+          <type>VMT_ENGINE</type>
+        </Item>
+        <Item>
+          <identifier />
+          <modifier value="25" />
+          <audioApply value="1.000000" />
+          <weight value="5" />
+          <type>VMT_BRAKES</type>
+        </Item>
+        <Item>
+          <identifier />
+          <modifier value="50" />
+          <audioApply value="1.000000" />
+          <weight value="5" />
+          <type>VMT_BRAKES</type>
+        </Item>
+        <Item>
+          <identifier />
+          <modifier value="100" />
+          <audioApply value="1.000000" />
+          <weight value="5" />
+          <type>VMT_BRAKES</type>
+        </Item>
+        <Item>
+          <identifier />
+          <modifier value="25" />
+          <audioApply value="1.000000" />
+          <weight value="5" />
+          <type>VMT_GEARBOX</type>
+        </Item>
+        <Item>
+          <identifier />
+          <modifier value="50" />
+          <audioApply value="1.000000" />
+          <weight value="5" />
+          <type>VMT_GEARBOX</type>
+        </Item>
+        <Item>
+          <identifier />
+          <modifier value="100" />
+          <audioApply value="1.000000" />
+          <weight value="5" />
+          <type>VMT_GEARBOX</type>
+        </Item>
+        <Item>
+          <identifier />
+          <modifier value="20" />
+          <audioApply value="1.000000" />
+          <weight value="0" />
+          <type>VMT_ARMOUR</type>
+        </Item>
+        <Item>
+          <identifier />
+          <modifier value="40" />
+          <audioApply value="1.000000" />
+          <weight value="10" />
+          <type>VMT_ARMOUR</type>
+        </Item>
+        <Item>
+          <identifier />
+          <modifier value="60" />
+          <audioApply value="1.000000" />
+          <weight value="20" />
+          <type>VMT_ARMOUR</type>
+        </Item>
+        <Item>
+          <identifier />
+          <modifier value="80" />
+          <audioApply value="1.000000" />
+          <weight value="30" />
+          <type>VMT_ARMOUR</type>
+        </Item>
+        <Item>
+          <identifier />
+          <modifier value="100" />
+          <audioApply value="1.000000" />
+          <weight value="40" />
+          <type>VMT_ARMOUR</type>
+        </Item>
+        <Item>
+          <identifier>HORN_TRUCK</identifier>
+          <modifier value="1766676233" />
+          <audioApply value="1.000000" />
+          <weight value="0" />
+          <type>VMT_HORN</type>
+        </Item>
+        <Item>
+          <identifier>HORN_COP</identifier>
+          <modifier value="2904189469" />
+          <audioApply value="1.000000" />
+          <weight value="0" />
+          <type>VMT_HORN</type>
+        </Item>
+        <Item>
+          <identifier>HORN_CLOWN</identifier>
+          <modifier value="2543206147" />
+          <audioApply value="1.000000" />
+          <weight value="0" />
+          <type>VMT_HORN</type>
+        </Item>
+        <Item>
+          <identifier>HORN_MUSICAL_1</identifier>
+          <modifier value="1732399718" />
+          <audioApply value="1.000000" />
+          <weight value="0" />
+          <type>VMT_HORN</type>
+        </Item>
+        <Item>
+          <identifier>HORN_MUSICAL_2</identifier>
+          <modifier value="2046162893" />
+          <audioApply value="1.000000" />
+          <weight value="0" />
+          <type>VMT_HORN</type>
+        </Item>
+        <Item>
+          <identifier>HORN_MUSICAL_3</identifier>
+          <modifier value="2194999691" />
+          <audioApply value="1.000000" />
+          <weight value="0" />
+          <type>VMT_HORN</type>
+        </Item>
+        <Item>
+          <identifier>HORN_MUSICAL_4</identifier>
+          <modifier value="2508304100" />
+          <audioApply value="1.000000" />
+          <weight value="0" />
+          <type>VMT_HORN</type>
+        </Item>
+        <Item>
+          <identifier>HORN_MUSICAL_5</identifier>
+          <modifier value="3707223535" />
+          <audioApply value="1.000000" />
+          <weight value="0" />
+          <type>VMT_HORN</type>
+        </Item>
+		<Item>
+          <identifier>HORN_SAD_TROMBONE</identifier>
+          <modifier value="632950117" />
+          <audioApply value="1.000000" />
+          <weight value="0" />
+          <type>VMT_HORN</type>
+        </Item>
+        <Item>
+          <identifier />
+          <modifier value="7" />
+          <audioApply value="1.000000" />
+          <weight value="0" />
+          <type>VMT_SUSPENSION</type>
+        </Item>
+        <Item>
+          <identifier />
+          <modifier value="14" />
+          <audioApply value="1.000000" />
+          <weight value="0" />
+          <type>VMT_SUSPENSION</type>
+        </Item>
+        <Item>
+          <identifier />
+          <modifier value="21" />
+          <audioApply value="1.000000" />
+          <weight value="0" />
+          <type>VMT_SUSPENSION</type>
+        </Item>
+        <Item>
+          <identifier />
+          <modifier value="28" />
+          <audioApply value="1.000000" />
+          <weight value="0" />
+          <type>VMT_SUSPENSION</type>
+        </Item>
+      </statMods>
+      <slotNames>
+      </slotNames>
+      <liveryNames />
+    </Item>
+  </Kits>
+</CVehicleModelInfoVarGlobal>
