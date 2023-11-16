@@ -234,12 +234,23 @@ end, 'user')
 QBCore.Commands.Add('setjob', 'Set A Players Job (Admin Only)', { { name = 'id', help = 'Player ID' }, { name = 'job', help = 'Job name' }, { name = 'grade', help = 'Grade' } }, true, function(source, args)
     local Player = QBCore.Functions.GetPlayer(tonumber(args[1]))
     if Player then
-        Player.Functions.SetJob(tostring(args[2]), tonumber(args[3]))
-        --exports['indigo-phone']:hireUser(tostring(args[2]), Player.PlayerData.citizenid, tonumber(args[3]))
+        local job = tostring(args[2])
+        local grade = tonumber(args[3])
+        local sgrade = tostring(args[3])
+        local jobInfo = QBCore.Shared.Jobs[job]
+        if jobInfo then
+            if jobInfo["grades"][sgrade] then
+                Player.Functions.SetJob(job, grade)
+                exports['indigo-phone']:hireUser(job, Player.PlayerData.citizenid, grade)
+            else
+                TriggerClientEvent('QBCore:Notify', source, "Not a valid grade", 'error')
+            end
+        else
+            TriggerClientEvent('QBCore:Notify', source, "Not a valid job", 'error')
+        end
     else
         TriggerClientEvent('QBCore:Notify', source, Lang:t('error.not_online'), 'error')
     end
-
 end, 'admin')
 
 QBCore.Commands.Add('removejob', 'Removes A Players Job (Admin Only)', { { name = 'id', help = 'Player ID' }, { name = 'job', help = 'Job name' } }, true, function(source, args)
@@ -252,7 +263,6 @@ QBCore.Commands.Add('removejob', 'Removes A Players Job (Admin Only)', { { name 
     else
         TriggerClientEvent('QBCore:Notify', source, Lang:t('error.not_online'), 'error')
     end
-
 end, 'admin')
 
 -- Gang
