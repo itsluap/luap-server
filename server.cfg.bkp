@@ -44,6 +44,7 @@ ensure spawnmanager
 ensure sessionmanager
 ensure hardcap
 ensure ox_lib
+ensure log_over
 
 # QBCore & Extra stuff
 
