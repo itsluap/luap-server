@@ -1,31 +1,36 @@
--- Oversized Texture Logger Script
-
--- Specify the path to the log file
 local logFilePath = "A:/fivem-server/luap-server/resources/log_overoversized_texture_log.txt"
 
--- Function to log oversized texture warnings
-function logOversizedTexture(message)
-    print("Logging oversized texture:", message)
+function logOversizedAsset(message)
     local timestamp = os.date("[%Y-%m-%d %H:%M:%S]")
     local logMessage = timestamp .. " " .. message
 
-    -- Open the log file in append mode
     local logFile = io.open(logFilePath, "a")
 
     if logFile then
-        -- Write the log message and close the file
         logFile:write(logMessage .. "\n")
         logFile:close()
+        print("Log entry added:", logMessage)
     else
         print("Error: Unable to open log file for writing")
     end
 end
 
--- Event handler for the print event
-AddEventHandler("print", function(message)
-    print("Received print event:", message)
-    -- Check if the message contains the keyword indicating an oversized texture warning
-    if string.find(message, "Oversized assets") then
-        logOversizedTexture(message)
+-- Redirect stdout to capture server console output
+io.stdout:flush()
+io.stdout:setvbuf "no"
+io.stdout = io.open("CON", "w")
+
+AddEventHandler("onServerResourceStart", function(resourceName)
+    if GetCurrentResourceName() == resourceName then
+        print("Oversized Asset Logger resource started.")
+        logOversizedAsset("Resource started.")
     end
 end)
+
+AddEventHandler("onResourceStop", function(resourceName)
+    if GetCurrentResourceName() == resourceName then
+        print("Oversized Asset Logger resource stopped.")
+        logOversizedAsset("Resource stopped.")
+    end
+end)
+
