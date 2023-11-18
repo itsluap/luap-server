@@ -12,7 +12,7 @@ Config.Jobs = { -- Job Types that can access the dispatch menu
     "ems"
 }
 
-Config.DefaultAlertsDelay = 5 -- Delay between each default alert, prevent spamming
+Config.DefaultAlertsDelay = 180 -- Delay between each default alert, prevent spamming
 Config.DefaultAlerts = {
     Speeding = false,
     Shooting = true,
