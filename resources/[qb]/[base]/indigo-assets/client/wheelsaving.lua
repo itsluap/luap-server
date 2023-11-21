@@ -15,5 +15,6 @@ Citizen.CreateThread(function()
                 SetVehicleSteeringAngle(GetVehiclePedIsIn(PlayerPedId(), true), angle)
             end
         end
+        Citizen.Wait(1000)
     end
 end)
