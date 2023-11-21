@@ -96,7 +96,6 @@ RegisterNetEvent('QBCore:Client:OnJobUpdate', function(JobInfo)
 end)
 
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
-    exports.spawnmanager:setAutoSpawn(false)
     local ped = PlayerPedId()
     local player = PlayerId()
     CreateThread(function()
