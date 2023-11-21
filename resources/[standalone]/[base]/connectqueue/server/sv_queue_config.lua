@@ -27,7 +27,7 @@ Config.ConnectTimeOut = 600
 Config.QueueTimeOut = 90
 
 -- will give players temporary priority when they disconnect and when they start loading in
-Config.EnableGrace = false
+Config.EnableGrace = true
 
 -- how much priority power grace time will give
 Config.GracePower = 5

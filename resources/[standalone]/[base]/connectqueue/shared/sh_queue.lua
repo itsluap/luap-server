@@ -46,7 +46,7 @@ local os_time = os.time
 local table_insert = table.insert
 local table_remove = table.remove
 
-Queue.InitHostName = Queue.InitHostName ~= "default FXServer" and Queue.InitHostName or false
+Queue.InitHostName = Queue.InitHostName ~= "Indigo RP" and Queue.InitHostName or false
 
 for id, power in pairs(Config.Priority) do
     _Queue.Priority[string_lower(id)] = power
