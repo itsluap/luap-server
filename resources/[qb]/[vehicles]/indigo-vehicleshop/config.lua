@@ -164,28 +164,28 @@ Config.Shops = {
         ['ShowroomVehicles'] = {
             [1] = {
                 coords = vector4(126.54, -157.62, 53.79, 285.67),
-                defaultVehicle = 'adder',
-                chosenVehicle = 'adder'
+                defaultVehicle = 'komoda',
+                chosenVehicle = 'komoda'
             },
             [2] = {
                 coords = vector4(134.38, -160.38, 53.79, 34.82),
-                defaultVehicle = 'adder',
-                chosenVehicle = 'adder'
+                defaultVehicle = 'rebla',
+                chosenVehicle = 'rebla'
             },
             [3] = {
                 coords = vector4(141.78, -163.68, 53.79, 276.15),
-                defaultVehicle = 'adder',
-                chosenVehicle = 'adder'
+                defaultVehicle = 'buffalo4',
+                chosenVehicle = 'buffalo4'
             },
             [4] = {
                 coords = vector4(113.54, -146.69, 59.76, 233.95),
-                defaultVehicle = 'adder',
-                chosenVehicle = 'adder'
+                defaultVehicle = 'bati',
+                chosenVehicle = 'bati'
             },
             [5] = {
                 coords = vector4(117.94, -153.7, 59.76, 0.66),
-                defaultVehicle = 'adder',
-                chosenVehicle = 'adder'
+                defaultVehicle = 'hakuchou',
+                chosenVehicle = 'hakuchou'
             },
         }
     }, -- Add your next table under this comma
@@ -264,8 +264,8 @@ Config.Shops = {
         ['ShowroomVehicles'] = {
             [1] = {
                 coords = vector4(808.23, -811.91, 25.18, 88.19),
-                defaultVehicle = 'adder',
-                chosenVehicle = 'adder'
+                defaultVehicle = 'cypher',
+                chosenVehicle = 'cypher'
             },
         }
     }, -- Add your next table under this comma
@@ -344,8 +344,8 @@ Config.Shops = {
         ['ShowroomVehicles'] = {
             [1] = {
                 coords = vector4(-1379.29, -450.82, 33.48, 214.57),
-                defaultVehicle = 'adder',
-                chosenVehicle = 'adder'
+                defaultVehicle = 'tailgater2',
+                chosenVehicle = 'tailgater2'
             },
         }
     }, -- Add your next table under this comma
