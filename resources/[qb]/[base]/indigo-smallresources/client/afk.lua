@@ -5,7 +5,7 @@ local ignoredGroups = {
     ['admin'] = true,
     ['god'] = true
 }
-local secondsUntilKick = 1800 -- AFK Kick Time Limit (in seconds)
+local secondsUntilKick = 900 -- AFK Kick Time Limit (in seconds)
 local checkUser = true
 local prevPos, time = nil, nil
 local timeMinutes = {

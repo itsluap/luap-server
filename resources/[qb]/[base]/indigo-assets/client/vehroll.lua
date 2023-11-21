@@ -16,5 +16,6 @@ Citizen.CreateThread(function()
                 DisableControlAction(2,60,true) -- Disable up/down
             end
         end
+        Citizen.Wait(1000)
     end
 end)

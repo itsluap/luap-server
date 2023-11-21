@@ -10,6 +10,8 @@
 
 --============================ НЕ ТРОГАТЬ / DO TOUCH ==================================
 
+--[[
+
 Citizen.CreateThread(function()
 
     RequestIpl("int_sheriff_first_milo_")
@@ -536,3 +538,4 @@ Citizen.CreateThread(function()
     evedence_weap(false) --Add or remove WEAPON staff in evidence room
 
 end)
+]]--

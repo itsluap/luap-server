@@ -13,7 +13,7 @@ CreateThread(function()
         -- (11-11-2018) New Natives:
 
         -- Here you can add hover text for the "large" icon.
-        SetDiscordRichPresenceAssetText('Indigo RP 3.0')
+        SetDiscordRichPresenceAssetText('Indigo RP')
 
         -- Here you will have to put the image name for the "small" icon.
         -- SetDiscordRichPresenceAssetSmall('logo_name')
@@ -22,7 +22,7 @@ CreateThread(function()
         -- SetDiscordRichPresenceAssetSmallText('This is a lsmall icon with text')
 
         QBCore.Functions.TriggerCallback('smallresources:server:GetCurrentPlayers', function(result)
-            SetRichPresence('Players: '..result..'/200')
+            SetRichPresence('Players: '..result..'/100')
         end)
 
         -- (26-02-2021) New Native:
