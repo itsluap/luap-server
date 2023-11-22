@@ -401,7 +401,7 @@ local function UpdateRadialMenu()
 end
 
 local function CreateGarageZone()
-    local combo = ComboZone:Create(GarageZones, {name = 'garages', debugPoly=true})
+    local combo = ComboZone:Create(GarageZones, {name = 'garages', debugPoly=false})
     combo:onPlayerInOut(function(isPointInside, l, zone)
         if isPointInside and IsAuthorizedToAccessGarage(zone.name) then
             CurrentGarage = zone.name
