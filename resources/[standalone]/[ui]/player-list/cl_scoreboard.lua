@@ -179,7 +179,7 @@ function ST.Scoreboard.Menu.Close(self)
         WarMenu.CloseMenu(K)
     end
 end
-
+--[[
 Citizen.CreateThread(function()
     local function IsAnyMenuOpen()
         for k,v in pairs(ST._Scoreboard.Menus) do
@@ -205,6 +205,35 @@ Citizen.CreateThread(function()
         end
     end
 end)
+]]--
+
+-- Register the key mapping
+RegisterKeyMapping('toggle_scoreboard', 'Toggle Scoreboard', 'keyboard', 'F10')
+
+-- Function to check if any menu is open
+function IsAnyMenuOpen()
+    for k, v in pairs(ST._Scoreboard.Menus) do
+        if WarMenu.IsMenuOpened(k) then return true end
+    end
+    return false
+end
+
+-- Function to toggle the scoreboard menu
+function ToggleScoreboardMenu()
+    if not IsAnyMenuOpen() then
+        ST.Scoreboard.Menu:Open()
+        -- TriggerEvent('animations:client:EmoteCommandStart', {"think"})
+    else
+        ST.Scoreboard.Menu:Close()
+        -- TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+    end
+end
+
+-- Event handler for the key mapping
+RegisterCommand('toggle_scoreboard', function()
+    ToggleScoreboardMenu()
+end, false)
+
 
 RegisterNetEvent("qb-score:RemovePlayer")
 AddEventHandler("qb-score:RemovePlayer", function(data)
