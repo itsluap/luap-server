@@ -1707,7 +1707,7 @@ Garages = {
         job = "police",
         --useVehicleSpawner = true,
         vehicleCategories = {'emergency'},
-        drawText = 'Parking',
+        -- drawText = 'Parking',
         ["ParkingSpots"] = {
             vector4(445.67, -997.0, 24.81, 269.98),
             vector4(445.83, -994.31, 25.21, 267.42),
