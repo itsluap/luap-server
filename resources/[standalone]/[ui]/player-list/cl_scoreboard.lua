@@ -373,29 +373,46 @@ function DisplayPlayerNames()
         N_0x31698aa80e0223f8(i)
     end
     for id = 0, 255 do
-        if NetworkIsPlayerActive(id) then
+        if NetworkIsPlayerActive( id ) then
             local playerped = PlayerPedId()
             local HeadBone = 0x796e
             local ped = GetPlayerPed(id)
             local playerCoords = GetPedBoneCoords(playerped, HeadBone)
             if ped == playerped then
-                DrawText3DTalking(playerCoords.x, playerCoords.y, playerCoords.z + 0.5, " " .. GetPlayerServerId(id) .. " ", {255, 255, 255, 255})
+                DrawText3DTalking(playerCoords.x, playerCoords.y, playerCoords.z+0.5, " ".. GetPlayerServerId(id) .. " ", {255, 255, 255, 255})
             else
                 local pedCoords = GetPedBoneCoords(ped, HeadBone)
                 local distance = math.floor(#(playerCoords - pedCoords))
 
-                -- Rest of your player name display logic
+                local isDucking = IsPedDucking(GetPlayerPed( id ))
+                local cansee = HasEntityClearLosToEntity( GetPlayerPed( -1 ), GetPlayerPed( id ), 17 )
+                local isReadyToShoot = IsPedWeaponReadyToShoot(GetPlayerPed( id ))
+                local isStealth = GetPedStealthMovement(GetPlayerPed( id ))
+                local isDriveBy = IsPedDoingDriveby(GetPlayerPed( id ))
+                local isInCover = IsPedInCover(GetPlayerPed( id ),true)
+                if isStealth == nil then
+                    isStealth = 0
+                end
 
+                if isDucking or isStealth == 1 or isDriveBy or isInCover then
+                    cansee = false
+                end
+
+                if hidden[id] then cansee = false end
+                
                 if (distance < disPlayerNames) then
                     local isTalking = true
                     if isTalking then
-                        -- Modify this part based on your logic
-                        DrawText3DTalking(pedCoords.x, pedCoords.y, pedCoords.z + 0.5, " " .. GetPlayerServerId(id) .. " ", {255, 255, 255, 255})
+                        if cansee then
+                            DrawText3DTalking(pedCoords.x, pedCoords.y, pedCoords.z+0.5, " ".. GetPlayerServerId(id) .. " ", {255, 255, 255, 255})
+                        end
                     else
-                        -- Modify this part based on your logic
-                        DrawText3DTalking(pedCoords.x, pedCoords.y, pedCoords.z + 0.5, " " .. GetPlayerServerId(id) .. " ", {255, 255, 255, 255})
+                        if cansee then
+                            DrawText3DTalking(pedCoords.x, pedCoords.y, pedCoords.z+0.5, " ".. GetPlayerServerId(id) .. " ", {255, 255, 255, 255})
+                        end
                     end
                 end
+                    
             end
         end
     end
