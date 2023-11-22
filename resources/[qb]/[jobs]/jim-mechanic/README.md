@@ -290,7 +290,7 @@ There is little snippets of information on each line for these, but this is a mo
 - Use this if if you are using an older/edited version of indigo-menu
 - This is for adding images of inventory items to indigo-menu and indigo-input.
 - The default would be: `qb-inventory/html/images/`
-- I personally use LJ's inventory system which makes it: `lj-inventory/html/images/`. I imagine other's are pretty similar.
+- I personally use LJ's inventory system which makes it: `ps-inventory/html/images/`. I imagine other's are pretty similar.
 
 ### Config.JimShops
 - Set this to true if you are using my free indigo-shops alternative, [jim-shops](https://github.com/jimathy/jim-shops)
@@ -840,7 +840,7 @@ RepairFuelCost = 8,
 - **This isn't fully required but helps organise multiples of the "mechboard"**
 - The MechBoard item is an item given to the person who uses the preview menu and makes changes
 - To make full use of this item you need to add the ability for the item to show item info in your inventory system
-- I have only done this with `qb-inventory` and `lj-inventory` as they are similar
+- I have only done this with `qb-inventory` and `ps-inventory` as they are similar
 	- `qb-inventory/html/js/app.js`
 
 - Search for "harness" or Scroll down until you find:

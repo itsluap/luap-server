@@ -149,7 +149,7 @@ The MechBoard item is an item given to the person who uses the preview menu and 
 
 To make full use of this item you need to add the ability for the item to show item info in your inventory system
 
-I have only done this with `qb-inventory` and `lj-inventory` as they are similar
+I have only done this with `qb-inventory` and `ps-inventory` as they are similar
 
 `qb-inventory/html/js/app.js`
 

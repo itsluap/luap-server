@@ -137,7 +137,7 @@ police:server:JailPlayer
 ```
 
 # Inventory Edit | Automatic Add Weapons with images
-* [lj-inventory](https://github.com/loljoshie/lj-inventory) will come already with the changes needed for this to work. 
+* [ps-inventory](https://github.com/loljoshie/ps-inventory) will come already with the changes needed for this to work. 
 * [qb-inventory](https://github.com/qbcore-framework/qb-inventory) follow instructions below. 
 
 1. Edit the following event

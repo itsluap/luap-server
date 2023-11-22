@@ -3,7 +3,7 @@
 - qb-target https://github.com/qbcore-framework/qb-target
 - polyzone
 - ps-zones https://github.com/Project-Sloth/ps-zones
-- qb-inventory/lj-inventory
+- qb-inventory/ps-inventory
 
 ------------------------------------------------------------------------------------
 

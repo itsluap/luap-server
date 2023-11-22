@@ -1,6 +1,6 @@
 # PS-Inventory
 
-lj-Inventory has been fully redesigned by [OK1ez](https://github.com/OK1ez), under the name ps-inventory.
+ps-inventory has been fully redesigned by [OK1ez](https://github.com/OK1ez), under the name ps-inventory.
 
 Future updates will be coming and we will of course support all normal monitor sizes.
 
