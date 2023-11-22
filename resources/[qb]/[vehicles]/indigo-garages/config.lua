@@ -1689,6 +1689,7 @@ Garages = {
         },
         debug = false
     },
+    --[[
     ['pdgarage'] = {
         ['Zone'] = {
             ['Shape'] = { --polygon that surrounds the parking area
@@ -1730,6 +1731,7 @@ Garages = {
         },
         debug = false
     },
+    ]]--
     ['helipad'] = {
         ['Zone'] = {
             ['Shape'] = { --polygon that surrounds the parking area
