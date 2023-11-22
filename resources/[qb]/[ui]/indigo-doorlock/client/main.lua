@@ -109,12 +109,15 @@ end
 
 local function displayNUIText(text)
 	local color = Config.ChangeColor and (closestDoor.data.locked and Config.LockedColor or Config.UnlockedColor) or Config.DefaultColor
+	--[[
 	SendNUIMessage({
 		type = "setDoorText",
 		enable = true,
 		text = text,
 		color = color
 	})
+	]]--
+	exports['ps-ui']:DisplayText(text, color)
 	Wait(1)
 end
 
@@ -490,7 +493,8 @@ end)
 
 RegisterNetEvent('indigo-doorlock:client:addNewDoor', function()
 	canContinue = false
-	hideNUI()
+	--hideNUI() 
+	exports['ps-ui']:HideText()
 	if not Config.SaveDoorDialog then doorData = {} end
 	local dialog = exports['indigo-input']:ShowInput({
 		header = Lang:t("general.newdoor_menu_title"),
@@ -843,7 +847,8 @@ CreateThread(function()
 			if closestDoor.id then
 				while isLoggedIn do
 					if not paused and IsPauseMenuActive() then
-						hideNUI()
+						--hideNUI()
+						exports['ps-ui']:HideText()
 						paused = true
 					elseif paused then
 						if not IsPauseMenuActive() then paused = false end
@@ -870,7 +875,8 @@ CreateThread(function()
 
 							if displayText ~= "" and (closestDoor.data.hideLabel == nil or not closestDoor.data.hideLabel) then displayNUIText(displayText) end
 						else
-							hideNUI()
+							--hideNUI()
+							exports['ps-ui']:HideText()
 							break
 						end
 					end
