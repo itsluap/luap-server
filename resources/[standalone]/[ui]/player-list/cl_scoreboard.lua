@@ -229,11 +229,45 @@ function ToggleScoreboardMenu()
     end
 end
 
--- Event handler for the key mapping
+-- Function to display player names
+function DisplayPlayerNames()
+    for i = 0, 255 do
+        N_0x31698aa80e0223f8(i)
+    end
+    for id = 0, 255 do
+        if NetworkIsPlayerActive(id) then
+            local playerped = PlayerPedId()
+            local HeadBone = 0x796e
+            local ped = GetPlayerPed(id)
+            local playerCoords = GetPedBoneCoords(playerped, HeadBone)
+            if ped == playerped then
+                DrawText3DTalking(playerCoords.x, playerCoords.y, playerCoords.z + 0.5, " " .. GetPlayerServerId(id) .. " ", {255, 255, 255, 255})
+            else
+                local pedCoords = GetPedBoneCoords(ped, HeadBone)
+                local distance = math.floor(#(playerCoords - pedCoords))
+
+                -- Rest of your player name display logic
+
+                if (distance < disPlayerNames) then
+                    local isTalking = true
+                    if isTalking then
+                        -- Modify this part based on your logic
+                        DrawText3DTalking(pedCoords.x, pedCoords.y, pedCoords.z + 0.5, " " .. GetPlayerServerId(id) .. " ", {255, 255, 255, 255})
+                    else
+                        -- Modify this part based on your logic
+                        DrawText3DTalking(pedCoords.x, pedCoords.y, pedCoords.z + 0.5, " " .. GetPlayerServerId(id) .. " ", {255, 255, 255, 255})
+                    end
+                end
+            end
+        end
+    end
+end
+
+-- Event handler for the key mapping to toggle scoreboard and display player names
 RegisterCommand('toggle_scoreboard', function()
     ToggleScoreboardMenu()
+    DisplayPlayerNames()
 end, false)
-
 
 RegisterNetEvent("qb-score:RemovePlayer")
 AddEventHandler("qb-score:RemovePlayer", function(data)
@@ -312,7 +346,7 @@ AddEventHandler("hud:HidePlayer", function(player, toggle)
         end
     end
 end) ]]
-
+--[[
 Citizen.CreateThread(function()
     while true do
         if IsControlPressed(0, 311) then
@@ -321,7 +355,7 @@ Citizen.CreateThread(function()
                 N_0x31698aa80e0223f8(i)
             end
             for id = 0, 255 do
-                if NetworkIsPlayerActive( id ) --[[ and GetPlayerPed( id ) ~= GetPlayerPed( -1 )) ]] then
+                if NetworkIsPlayerActive( id ) then
                     local playerped = PlayerPedId()
                     local HeadBone = 0x796e
                     local ped = GetPlayerPed(id)
@@ -370,3 +404,4 @@ Citizen.CreateThread(function()
         end
     end
 end)
+]]--
