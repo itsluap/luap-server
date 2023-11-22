@@ -248,7 +248,7 @@ function DisplayPlayerNames()
 
                 -- Rest of your player name display logic
 
-                if (distance < disPlayerNames) then
+                if (distance < 10) then
                     local isTalking = true
                     if isTalking then
                         -- Modify this part based on your logic
