@@ -126,8 +126,8 @@ table.insert(Config.DoorList, {
 table.insert(Config.DoorList, {
 	objCoords = vector3(431.4119, -1000.772, 26.69661),
 	objHeading = 0,
-	slides = false,
-	garage = false,
+	slides = true,
+	garage = true,
 	objHash = 2130672747, -- gabz_mrpd_garage_door
 	locked = true,
 	audioRemote = true,
@@ -142,8 +142,8 @@ table.insert(Config.DoorList, {
 table.insert(Config.DoorList, {
 	objCoords = vector3(452.3005, -1000.772, 26.69661),
 	objHeading = 0,
-	slides = false,
-	garage = false,
+	slides = true,
+	garage = true,
 	objHash = 2130672747, -- gabz_mrpd_garage_door
 	locked = true,
 	audioRemote = true,
