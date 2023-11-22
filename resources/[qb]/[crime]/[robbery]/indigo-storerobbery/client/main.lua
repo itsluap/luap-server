@@ -459,6 +459,6 @@ RegisterNetEvent('indigo-storerobbery:client:robberyCall', function(_, _, _, coo
                 return
             end
         end
+        ]]--
     end
-    ]]--
 end)
