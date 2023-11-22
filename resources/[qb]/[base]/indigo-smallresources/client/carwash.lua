@@ -65,7 +65,7 @@ CreateThread(function()
                 end
             end
         end
-        SetCarHighSpeedBumpSeverityMultiplier(0.0)
+        SetCarHighSpeedBumpSeverityMultiplier(1.0)
         Wait(sleep)
     end
 end)
