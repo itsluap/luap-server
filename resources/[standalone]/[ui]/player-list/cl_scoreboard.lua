@@ -179,7 +179,7 @@ function ST.Scoreboard.Menu.Close(self)
         WarMenu.CloseMenu(K)
     end
 end
---[[
+
 Citizen.CreateThread(function()
     local function IsAnyMenuOpen()
         for k,v in pairs(ST._Scoreboard.Menus) do
@@ -191,7 +191,7 @@ Citizen.CreateThread(function()
 
     while true do
         Citizen.Wait(0)
-        if IsControlPressed(0, 311) then
+        if IsControlPressed(0, 57) then
             if not IsAnyMenuOpen() then
                 ST.Scoreboard.Menu:Open()
                 --TriggerEvent('animations:client:EmoteCommandStart', {"think"})
@@ -205,8 +205,6 @@ Citizen.CreateThread(function()
         end
     end
 end)
-]]--
-
 
 RegisterNetEvent("qb-score:RemovePlayer")
 AddEventHandler("qb-score:RemovePlayer", function(data)
@@ -285,16 +283,16 @@ AddEventHandler("hud:HidePlayer", function(player, toggle)
         end
     end
 end) ]]
---[[
+
 Citizen.CreateThread(function()
     while true do
-        if IsControlPressed(0, 311) then
+        if IsControlPressed(0, 57) then
 
             for i=0,255 do
                 N_0x31698aa80e0223f8(i)
             end
             for id = 0, 255 do
-                if NetworkIsPlayerActive( id ) then
+                if NetworkIsPlayerActive( id ) --[[ and GetPlayerPed( id ) ~= GetPlayerPed( -1 )) ]] then
                     local playerped = PlayerPedId()
                     local HeadBone = 0x796e
                     local ped = GetPlayerPed(id)
@@ -343,84 +341,3 @@ Citizen.CreateThread(function()
         end
     end
 end)
-]]--
-
--- Register the key mapping
-RegisterKeyMapping('toggle_scoreboard', 'Toggle Scoreboard', 'keyboard', 'F10')
-
--- Function to check if any menu is open
-function IsAnyMenuOpen()
-    for k, v in pairs(ST._Scoreboard.Menus) do
-        if WarMenu.IsMenuOpened(k) then return true end
-    end
-    return false
-end
-
--- Function to toggle the scoreboard menu
-function ToggleScoreboardMenu()
-    if not IsAnyMenuOpen() then
-        ST.Scoreboard.Menu:Open()
-        -- TriggerEvent('animations:client:EmoteCommandStart', {"think"})
-    else
-        ST.Scoreboard.Menu:Close()
-        -- TriggerEvent('animations:client:EmoteCommandStart', {"c"})
-    end
-end
-
--- Function to display player names
-function DisplayPlayerNames()
-    for i = 0, 255 do
-        N_0x31698aa80e0223f8(i)
-    end
-    for id = 0, 255 do
-        if NetworkIsPlayerActive( id ) then
-            local playerped = PlayerPedId()
-            local HeadBone = 0x796e
-            local ped = GetPlayerPed(id)
-            local playerCoords = GetPedBoneCoords(playerped, HeadBone)
-            if ped == playerped then
-                DrawText3DTalking(playerCoords.x, playerCoords.y, playerCoords.z+0.5, " ".. GetPlayerServerId(id) .. " ", {255, 255, 255, 255})
-            else
-                local pedCoords = GetPedBoneCoords(ped, HeadBone)
-                local distance = math.floor(#(playerCoords - pedCoords))
-
-                local isDucking = IsPedDucking(GetPlayerPed( id ))
-                local cansee = HasEntityClearLosToEntity( GetPlayerPed( -1 ), GetPlayerPed( id ), 17 )
-                local isReadyToShoot = IsPedWeaponReadyToShoot(GetPlayerPed( id ))
-                local isStealth = GetPedStealthMovement(GetPlayerPed( id ))
-                local isDriveBy = IsPedDoingDriveby(GetPlayerPed( id ))
-                local isInCover = IsPedInCover(GetPlayerPed( id ),true)
-                if isStealth == nil then
-                    isStealth = 0
-                end
-
-                if isDucking or isStealth == 1 or isDriveBy or isInCover then
-                    cansee = false
-                end
-
-                if hidden[id] then cansee = false end
-                
-                if (distance < disPlayerNames) then
-                    local isTalking = true
-                    if isTalking then
-                        if cansee then
-                            DrawText3DTalking(pedCoords.x, pedCoords.y, pedCoords.z+0.5, " ".. GetPlayerServerId(id) .. " ", {255, 255, 255, 255})
-                        end
-                    else
-                        if cansee then
-                            DrawText3DTalking(pedCoords.x, pedCoords.y, pedCoords.z+0.5, " ".. GetPlayerServerId(id) .. " ", {255, 255, 255, 255})
-                        end
-                    end
-                    print("showing player-list ids")
-                end
-                    
-            end
-        end
-    end
-end
-
--- Event handler for the key mapping to toggle scoreboard and display player names
-RegisterCommand('toggle_scoreboard', function()
-    ToggleScoreboardMenu()
-    DisplayPlayerNames()
-end, false)
