@@ -61,7 +61,7 @@ Config.MeltingItems = { -- meltTime is amount of time in minutes per item
                 amount = 1
             }
         },
-        meltTime = 3.00
+        meltTime = 1.50
     },
     [2] = {
         item = 'diamond_ring',
@@ -75,7 +75,7 @@ Config.MeltingItems = { -- meltTime is amount of time in minutes per item
                 amount = 1
             }
         },
-        meltTime = 3.00
+        meltTime = 1.50
     },
     [3] = {
         item = 'rolex',
@@ -93,7 +93,7 @@ Config.MeltingItems = { -- meltTime is amount of time in minutes per item
                 amount = 1
             }
         },
-        meltTime = 3.00
+        meltTime = 1.50
     },
     [4] = {
         item = '10kgoldchain',
@@ -107,7 +107,7 @@ Config.MeltingItems = { -- meltTime is amount of time in minutes per item
                 amount = 1
             }
         },
-        meltTime = 3.00
+        meltTime = 1.50
     },
     [5] = {
         item = 'goldmask',
@@ -121,6 +121,6 @@ Config.MeltingItems = { -- meltTime is amount of time in minutes per item
                 amount = 2
             }
         },
-        meltTime = 5.00
+        meltTime = 3.00
     },
 }
