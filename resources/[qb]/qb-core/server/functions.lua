@@ -227,7 +227,7 @@ function PaycheckInterval()
                         Player.Functions.AddMoney('bank', payment)
                         TriggerClientEvent('QBCore:Notify', Player.PlayerData.source, Lang:t('info.received_paycheck', {value = payment}))
                     end
-                    print("Giving paycheck to: " .. Player .. ", amount: " .. payment)
+                    print("Giving paycheck, amount: " .. payment)
                 end
             end
         end
