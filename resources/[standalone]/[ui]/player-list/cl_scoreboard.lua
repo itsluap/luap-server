@@ -411,6 +411,7 @@ function DisplayPlayerNames()
                             DrawText3DTalking(pedCoords.x, pedCoords.y, pedCoords.z+0.5, " ".. GetPlayerServerId(id) .. " ", {255, 255, 255, 255})
                         end
                     end
+                    print("showing player-list ids")
                 end
                     
             end
