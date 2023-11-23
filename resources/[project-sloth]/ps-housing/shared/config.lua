@@ -51,7 +51,7 @@ Config.RealtorJobName = "realestate" -- Set your Real Estate job here
 -- Set this value to true if ur using qb-management
 -- and want the Money go straight into the Realestate Bank Account.
 -- Using different Boss Menu? -> replace the qb-management export
-Config.QBManagement = false
+Config.QBManagement = true
 
 -- Realtor Commisions based on job grade, the rest goes to the owner, if any.
 Config.Commissions = {
@@ -99,8 +99,8 @@ Config.Shells = {
         hash = `npapartment`,
         doorOffset = { x = -3.97, y = -3.51, z = 0.0, h = 358.87, width = 2.0 },
         stash = {
-            maxweight = 100000, 
-            slots = 12,
+            maxweight = 1000000, 
+            slots = 30,
         },
         imgs = {
             {
