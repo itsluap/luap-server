@@ -652,7 +652,7 @@ local function heli()
             if inHelicopter and PlayerData.job.type == 'leo' then
                 if PlayerJob.onduty then sleep = 5 end
                 if IsControlJustReleased(0, 38) then
-                    TriggerEvent("qb-police:client:spawnHelicopter")")
+                    TriggerEvent("qb-police:client:spawnHelicopter")
                     break
                 end
             else
