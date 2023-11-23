@@ -159,7 +159,7 @@ VehicleCategories = {
     -- you can also create new / delete or update categories, and use them below in the config.
 }
 
-HouseGarageCategories = {'car', 'motorcycle', 'emergency' 'other'} -- Which categories are allowed to be parked at a house garage
+HouseGarageCategories = {'car', 'motorcycle', 'emergency', 'other'} -- Which categories are allowed to be parked at a house garage
 
 
 VehicleHeading = 'driverside' -- only used when NO parking spots are defined in the garage config
