@@ -43,13 +43,15 @@ end)
 
 RegisterNetEvent('indigo-spawn:client:setupSpawns', function(cData, new, apps)
     if not new then
-        QBCore.Functions.TriggerCallback('indigo-spawn:server:getOwnedHouses', function(houses)
+        QBCore.Functions.TriggerCallback('qb-spawn:server:getOwnedHouses', function(houses)
             local myHouses = {}
             if houses ~= nil then
                 for i = 1, (#houses), 1 do
+                    local house = houses[i]
+
                     myHouses[#myHouses+1] = {
-                        house = houses[i].house,
-                        label = Houses[houses[i].house].adress,
+                        house = house,
+                        label = (house.apartment or house.street) .. " " .. house.property_id,
                     }
                 end
             end
@@ -62,7 +64,6 @@ RegisterNetEvent('indigo-spawn:client:setupSpawns', function(cData, new, apps)
                 isNew = new
             })
         end, cData.citizenid)
-    
     elseif new then
         SendNUIMessage({
             action = "setupAppartements",
@@ -124,24 +125,21 @@ end)
 RegisterNUICallback('chooseAppa', function(data, cb)
     local ped = PlayerPedId()
     local appaYeet = data.appType
-    local AppLabel = "Integrity Way"
     SetDisplay(false)
     DoScreenFadeOut(500)
-    Wait(5000)
-    if Apartments == nil then 
-        TriggerServerEvent("apartments:server:CreateApartment", appaYeet, AppLabel)
-    else
-        TriggerServerEvent("apartments:server:CreateApartment", appaYeet, Apartments.Locations[appaYeet].label)
-    end
-    TriggerServerEvent('QBCore:Server:OnPlayerLoaded')
-    TriggerEvent('QBCore:Client:OnPlayerLoaded')
+    Wait(100)
     FreezeEntityPosition(ped, false)
-    RenderScriptCams(false, true, 500, true, true)
+    RenderScriptCams(false, true, 0, true, true)
     SetCamActive(cam, false)
     DestroyCam(cam, true)
     SetCamActive(cam2, false)
     DestroyCam(cam2, true)
     SetEntityVisible(ped, true)
+    Wait(500)
+    TriggerServerEvent('QBCore:Server:OnPlayerLoaded')
+    TriggerEvent('QBCore:Client:OnPlayerLoaded')
+    Wait(100)
+    TriggerServerEvent("ps-housing:server:createNewApartment", appaYeet)
     cb('ok')
 end)
 
@@ -177,25 +175,19 @@ RegisterNUICallback('spawnplayer', function(data, cb)
             SetEntityHeading(ped, pd.position.a)
             FreezeEntityPosition(ped, false)
         end)
-
-        if insideMeta.house ~= nil then
-            local houseId = insideMeta.house
-            TriggerEvent('indigo-houses:client:LastLocationHouse', houseId)
-        elseif insideMeta.apartment.apartmentType ~= nil or insideMeta.apartment.apartmentId ~= nil then
-            local apartmentType = insideMeta.apartment.apartmentType
-            local apartmentId = insideMeta.apartment.apartmentId
-            TriggerEvent('indigo-apartments:client:LastLocationHouse', apartmentType, apartmentId)
-        end
         TriggerServerEvent('QBCore:Server:OnPlayerLoaded')
         TriggerEvent('QBCore:Client:OnPlayerLoaded')
+        if insideMeta.property_id ~= nil then
+            local property_id = insideMeta.property_id
+            TriggerServerEvent('ps-housing:server:enterProperty', tostring(property_id))
+        end
         PostSpawnPlayer()
     elseif type == "house" then
         PreSpawnPlayer()
-        TriggerEvent('indigo-houses:client:enterOwnedHouse', location)
         TriggerServerEvent('QBCore:Server:OnPlayerLoaded')
         TriggerEvent('QBCore:Client:OnPlayerLoaded')
-        TriggerServerEvent('indigo-houses:server:SetInsideMeta', 0, false)
-        TriggerServerEvent('indigo-apartments:server:SetInsideMeta', 0, 0, false)
+        local property_id = data.spawnloc.property_id
+        TriggerServerEvent('ps-housing:server:enterProperty', tostring(property_id))
         PostSpawnPlayer()
     elseif type == "normal" then
         local pos = QB.Spawns[location].coords
@@ -203,9 +195,7 @@ RegisterNUICallback('spawnplayer', function(data, cb)
         SetEntityCoords(ped, pos.x, pos.y, pos.z)
         TriggerServerEvent('QBCore:Server:OnPlayerLoaded')
         TriggerEvent('QBCore:Client:OnPlayerLoaded')
-        TriggerServerEvent('indigo-houses:server:SetInsideMeta', 0, false)
-        TriggerServerEvent('indigo-apartments:server:SetInsideMeta', 0, 0, false)
-        Wait(500)
+        TriggerServerEvent('ps-housing:server:resetMetaData')
         SetEntityCoords(ped, pos.x, pos.y, pos.z)
         SetEntityHeading(ped, pos.w)
         PostSpawnPlayer()

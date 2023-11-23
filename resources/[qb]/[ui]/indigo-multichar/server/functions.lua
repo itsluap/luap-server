@@ -28,7 +28,8 @@ function AfterSpawn(src, register, cid)
     end
 
     SetPlayerRoutingBucket(src, 0) -- dont touch
-    TriggerClientEvent('apartments:client:setupSpawnUI', src, {citizenid = cid}) -- change spawn trigger here
+    --TriggerClientEvent('apartments:client:setupSpawnUI', src, {citizenid = cid}) -- change spawn trigger here
+    TriggerClientEvent('ps-housing:client:setupSpawnUI', src, {citizenid = cid})
     QBCore.Commands.Refresh(src)
 end
 
