@@ -4025,9 +4025,9 @@ $(document).ready(() => {
       if (PoliceJobs[sentJob] !== undefined)  {
         if (sentJob == "police") {
             applyCustomTheme(customThemes.lspd)
-          } else if (sentJob == "bcso"){
+          } else if (sentJob == "sheriff"){
             applyCustomTheme(customThemes.bcso)
-          } else if (sentJob == "sasp") {
+          } else if (sentJob == "trooper") {
             applyCustomTheme(customThemes.sasp)
           } else if (sentJob == "sast") {
             applyCustomTheme(customThemes.sast)

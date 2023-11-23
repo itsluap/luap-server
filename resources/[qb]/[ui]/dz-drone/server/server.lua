@@ -27,7 +27,7 @@ elseif Config.Framework == "esx" then
 	ESX.RegisterUsableItem("drone_lspd", function(source)
 		local src = source
 		local Player = ESX.GetPlayerFromId(src)
-		if (Player.job.name == "admin") or (Player.job.name == "agent") or (Player.job.name == "police") then
+		if (Player.job.name == "admin") or (Player.job.name == "agent") or (Player.job.type == "leo") then
 			TriggerClientEvent('dz-drone:client:InitiateDroneLSPD', src)
 		else
 			TriggerClientEvent('dz-drone:client:Notify', src, 'You\'re not authorised to use this drone', 2)
