@@ -522,7 +522,6 @@ RegisterNetEvent('qb-police:client:spawnHelicopter', function(k)
             TriggerEvent("vehiclekeys:client:SetOwner", QBCore.Functions.GetPlate(veh))
             SetVehicleEngineOn(veh, true, true)
         end, Config.PoliceHelicopter, coords, true)
-        print('spawned the heli')
     end
 end)
 
@@ -652,11 +651,8 @@ local function heli()
             Wait(0)
             if inHelicopter and PlayerData.job.type == 'leo' then
                 if PlayerJob.onduty then sleep = 5 end
-                -- making it this far
                 if IsControlJustReleased(0, 38) then
-                    -- not making it to here
-                    TriggerEvent("qb-police:client:spawnHelicopter")
-                    print("spawning heli")
+                    TriggerEvent("qb-police:client:spawnHelicopter")")
                     break
                 end
             else
