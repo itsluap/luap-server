@@ -240,7 +240,7 @@ Framework.qb = {
     end,
 
     AddRadialOption = function(id, label, icon, _, event, options)
-        exports['qb-radialmenu']:AddOption({
+        exports['indigo-radialmenu']:AddOption({
             id = id,
             title = label,
             icon = icon,
@@ -252,7 +252,7 @@ Framework.qb = {
     end,
 
     RemoveRadialOption = function(id)
-        exports['qb-radialmenu']:RemoveOption(id)
+        exports['indigo-radialmenu']:RemoveOption(id)
     end,
 
     AddTargetEntity = function (entity, label, icon, action)
