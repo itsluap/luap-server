@@ -5,6 +5,7 @@ cuffType = 1
 isEscorted = false
 PlayerJob = {}
 local DutyBlips = {}
+local PlayerData = {}
 
 -- Functions
 local function CreateDutyBlips(playerId, playerLabel, playerJob, playerLocation)
@@ -41,6 +42,7 @@ end
 -- Events
 AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
     local player = QBCore.Functions.GetPlayerData()
+    PlayerData = QBCore.Functions.GetPlayerData()
     PlayerJob = player.job
     isHandcuffed = false
     TriggerServerEvent("police:server:SetHandcuffStatus", false)
@@ -86,6 +88,7 @@ RegisterNetEvent('QBCore:Client:OnPlayerUnload', function()
     isHandcuffed = false
     isEscorted = false
     PlayerJob = {}
+    PlayerData = {}
     ClearPedTasks(PlayerPedId())
     DetachEntity(PlayerPedId(), true, false)
     if DutyBlips then
@@ -110,6 +113,7 @@ RegisterNetEvent('QBCore:Client:OnJobUpdate', function(JobInfo)
         DutyBlips = {}
     end
     PlayerJob = JobInfo
+    PlayerData.job = JobInfo
     TriggerServerEvent("police:server:UpdateBlips")
 end)
 
