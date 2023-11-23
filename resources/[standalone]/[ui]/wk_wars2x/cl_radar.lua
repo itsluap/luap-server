@@ -407,9 +407,7 @@ function RADAR:SetDisplayHidden( state ) self.vars.hidden = state end
 -- Opens the remote only if the pause menu is not open and the player's vehicle state is valid, as the
 -- passenger can also open the remote, we check the config variable as well.
 function RADAR:OpenRemote()
-	local player = QBCore.Functions.GetPlayerData()
-    PlayerJob = player.job
-	if PlayerJob and PlayerData.job.type == 'leo' then
+	if PlayerData.job.type == 'leo' then
 		if ( not IsPauseMenuActive() and PLY:CanViewRadar() ) then
 			-- Get the remote open state from the other player
 			local openByOtherPly = SYNC:IsRemoteAlreadyOpen( PLY:GetOtherPed() )
