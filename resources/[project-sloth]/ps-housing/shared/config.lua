@@ -77,18 +77,6 @@ Config.Apartments = {
         },
         shell = "Standard Apartment",
     },
-    
-    ["South Rockford Drive"] = {
-        label = "South Rockford Drive",
-        door = { x = -667.02, y = -1105.24, z = 14.63, h = 242.32, length = 1, width = 2 },
-        imgs = {
-            {
-                url = "https://cdn.discordapp.com/attachments/1143566042153631784/1143566767864684665/FKTQq4b.jpg",
-                label = "Outside",
-            },
-        },
-        shell = "Standard Apartment",
-    },
 
     ['Morningwood Blvd'] = {
         label = 'Morningwood Blvd',
@@ -102,29 +90,6 @@ Config.Apartments = {
         shell = "Standard Apartment",
     },
 
-    ['Tinsel Towers'] = {
-        label = 'Tinsel Towers',
-        door = { x = -619.29, y = 37.69, z = 43.59, h = 181.03, length = 1, width = 2 },
-        imgs = {
-            {
-                url = "https://cdn.discordapp.com/attachments/1108364246342963322/1140163262315495494/tinsel.webp",
-                label = "Outside",
-            },
-        },
-        shell = "Standard Apartment",
-    },
-
-    ['Fantastic Plaza'] = {
-        label = 'Fantastic Plaza',
-        door = { x = 291.517, y = -1078.674, z = 29.405, h = 270.75, length = 1, width = 2 },
-        imgs = {
-            {
-                url = "https://cdn.discordapp.com/attachments/1143566042153631784/1143566742589800629/SgK60IR.jpg",
-                label = "Outside",
-            },
-        },
-        shell = "Standard Apartment",
-    }
 }
 
 -- Shells provided by K4MB1 https://www.k4mb1maps.com/
