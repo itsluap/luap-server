@@ -101,7 +101,7 @@ Config.SecurityCameras = {
     },
 }
 
-Config.AuthorizedVehicles = {
+Config.PoliceAuthorizedVehicles = {
 	-- Grade 0
 	[0] = {
 		--["police"] = "Police Car 1",
