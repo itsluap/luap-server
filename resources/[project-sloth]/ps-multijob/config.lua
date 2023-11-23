@@ -11,10 +11,14 @@ Config.IgnoredJobs = {
 Config.DenyDuty = {
 	["ambulance"] = true,
 	["police"] = true,
+	["sheriff"] = true,
+	["trooper"] = true,
 }
 
 Config.WhitelistJobs = {
 	["police"] = true,
+	["sheriff"] = true,
+	["trooper"] = true,
 	["ambulance"] = true,
 	["mechanic"] = true,
 	["judge"] = true,
@@ -23,6 +27,8 @@ Config.WhitelistJobs = {
 
 Config.Descriptions = {
 	["police"] = "Shoot some criminals or maybe be a good cop and arrest them",
+	["sheriff"] = "Shoot some criminals or maybe be a good cop and arrest them",
+	["trooper"] = "Shoot some criminals or maybe be a good cop and arrest them",
 	["ambulance"] = "Fix the bullet holes",
 	["mechanic"] = "Fix the bullet holes",
 	["tow"] = "Pickup the tow truck and steal some vehicles",

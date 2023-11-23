@@ -712,7 +712,11 @@ if Config.UseTarget then
                         event = "indigo-policejob:ToggleDuty",
                         icon = "fas fa-sign-in-alt",
                         label = "Sign In",
-                        job = "police",
+                        job = {
+                            "police",
+                            "sheriff",
+                            "trooper"
+                        }
                     },
                 },
                 distance = 1.5
@@ -734,7 +738,11 @@ if Config.UseTarget then
                         event = "qb-police:client:openStash",
                         icon = "fas fa-dungeon",
                         label = "Open Personal Stash",
-                        job = "police",
+                        job = {
+                            "police",
+                            "sheriff",
+                            "trooper"
+                        }
                     },
                 },
                 distance = 1.5
@@ -756,7 +764,11 @@ if Config.UseTarget then
                         event = "qb-police:client:openTrash",
                         icon = "fas fa-trash",
                         label = "Open Trash",
-                        job = "police",
+                        job = {
+                            "police",
+                            "sheriff",
+                            "trooper"
+                        }
                     },
                 },
                 distance = 1.5
@@ -778,7 +790,11 @@ if Config.UseTarget then
                         event = "qb-police:client:scanFingerPrint",
                         icon = "fas fa-fingerprint",
                         label = "Open Fingerprint",
-                        job = "police",
+                        job = {
+                            "police",
+                            "sheriff",
+                            "trooper"
+                        }
                     },
                 },
                 distance = 1.5
@@ -800,7 +816,11 @@ if Config.UseTarget then
                         event = "qb-police:client:openArmoury",
                         icon = "fas fa-swords",
                         label = "Open Armory",
-                        job = "police",
+                        job = {
+                            "police",
+                            "sheriff",
+                            "trooper"
+                        }
                     },
                 },
                 distance = 1.5
