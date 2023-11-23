@@ -31,7 +31,7 @@
 ---------------------------------------------------------------------------------------]]--
 
 QBCore = exports['qb-core']:GetCoreObject()
-PlayerData = QBCore.Functions.GetPlayerData()
+PlayerJob = {}
 
 -- Cache some of the main Lua functions and libraries
 local next = next
@@ -407,7 +407,9 @@ function RADAR:SetDisplayHidden( state ) self.vars.hidden = state end
 -- Opens the remote only if the pause menu is not open and the player's vehicle state is valid, as the
 -- passenger can also open the remote, we check the config variable as well.
 function RADAR:OpenRemote()
-	if PlayerData.job.type == 'leo' then
+	local player = QBCore.Functions.GetPlayerData()
+    PlayerJob = player.job
+	if PlayerJob and PlayerJob.name == "police" or PlayerJob.name == "sheriff" or PlayerJob.name == "trooper" then
 		if ( not IsPauseMenuActive() and PLY:CanViewRadar() ) then
 			-- Get the remote open state from the other player
 			local openByOtherPly = SYNC:IsRemoteAlreadyOpen( PLY:GetOtherPed() )
