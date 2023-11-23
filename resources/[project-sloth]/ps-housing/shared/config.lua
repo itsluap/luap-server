@@ -9,7 +9,7 @@ Config = {}
 -- If you're not utilizing ox_lib, it's time to question your approach.
 Config.Target = "ox" -- "ox" or "qb"
 Config.Notify = "ox" -- "ox" or "qb"
-Config.Radial = "ox" -- "ox" or "qb"
+Config.Radial = "qb" -- "ox" or "qb"
 Config.Inventory = "qb" -- "ox" or "qb"
 Config.Logs = "qb" -- "qb"
 
@@ -129,9 +129,9 @@ Config.Apartments = {
 
 -- Shells provided by K4MB1 https://www.k4mb1maps.com/
 Config.Shells = {
-    ["Standard Motel"] = {
-        label = "Standard Motel",
-        hash = `standardmotel_shell`,
+    ["Standard Apartment"] = {
+        label = "Standard Apartment",
+        hash = `npapartment`,
         doorOffset = { x = -0.5, y = -2.3, z = 0.0, h = 90.0, width = 1.5 },
         stash = {
             maxweight = 100000, 
@@ -139,8 +139,8 @@ Config.Shells = {
         },
         imgs = {
             {
-                url = "https://cdn.discordapp.com/attachments/1101313033684394084/1101712181017460736/motel.webp",
-                label = "Motel",
+                url = " ",
+                label = "Apartment",
             },
         }
     },
