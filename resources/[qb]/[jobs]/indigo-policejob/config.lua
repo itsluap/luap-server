@@ -199,6 +199,51 @@ Config.PoliceAuthorizedVehicles = {
 	}
 }
 
+Config.SheriffAuthorizedVehicles = {
+	-- Grade 0
+	[0] = {
+		--["police"] = "Police Car 1",
+	},
+	-- Grade 1
+	[1] = {
+		["leg16explorer"] = "'16 Explorer",
+	},
+	-- Grade 2
+	[2] = {
+		["leg16explorer"] = "'16 Explorer",
+        ["leg18taurus"] = "'18 Taurus",
+	},
+	-- Grade 3
+	[3] = {
+		["leg16explorer"] = "'16 Explorer",
+        ["leg18taurus"] = "'18 Taurus",
+        ["leg20explorer"] = "'20 Explorer",
+	},
+	-- Grade 4
+	[4] = {
+		["leg16explorer"] = "'16 Explorer",
+        ["leg18taurus"] = "'18 Taurus",
+        ["leg20explorer"] = "'20 Explorer",
+        ["leg18charger"] = "'18 Charger",
+	},
+
+    [5] = {
+		["leg16explorer"] = "'16 Explorer",
+        ["leg18taurus"] = "'18 Taurus",
+        ["leg20explorer"] = "'20 Explorer",
+        ["leg18charger"] = "'18 Charger",
+        ["leg21durango"] = "'21 Durango",
+	},
+
+    [5] = {
+		["leg16explorer"] = "'16 Explorer",
+        ["leg18taurus"] = "'18 Taurus",
+        ["leg20explorer"] = "'20 Explorer",
+        ["leg18charger"] = "'18 Charger",
+        ["leg21durango"] = "'21 Durango",
+	},
+}
+
 Config.TrooperAuthorizedVehicles = {
 	-- Grade 0
 	[0] = {
@@ -516,6 +561,7 @@ Config.Items = {
 }
 
 Config.VehicleSettings = {
+    -- LSPD VEHICLES--
     ["n11vic"] = { --- Model name
         ["extras"] = {
             ["1"] = true, -- on/off
@@ -585,6 +631,143 @@ Config.VehicleSettings = {
 		["livery"] = 3,
     },
     ["n19mustang"] = { --- Model name
+        ["extras"] = {
+            ["1"] = true, -- on/off
+            --["2"] = false,
+            --["3"] = false,
+            --["4"] = false,
+            ["5"] = true,
+            --["6"] = false,
+            ["7"] = true,
+            --["8"] = false,
+            --["9"] = false,
+            --["10"] = false,
+            ["11"] = true,
+            --["12"] = false,
+        },
+		["livery"] = 3,
+    },
+    -- SASP VEHICLES --
+    ["lib1f150"] = { --- Model name
+        ["extras"] = {
+            ["1"] = true, -- on/off
+            --["2"] = false,
+            --["3"] = false,
+            --["4"] = false,
+            ["5"] = true,
+            --["6"] = false,
+            ["7"] = true,
+            --["8"] = false,
+            --["9"] = false,
+            --["10"] = false,
+            ["11"] = true,
+            --["12"] = false,
+        },
+		["livery"] = 3,
+    },
+    ["lib114charger"] = { --- Model name
+        ["extras"] = {
+            ["1"] = true, -- on/off
+            --["2"] = false,
+            --["3"] = false,
+            --["4"] = false,
+            ["5"] = true,
+            --["6"] = false,
+            ["7"] = true,
+            --["8"] = false,
+            --["9"] = false,
+            --["10"] = false,
+            ["11"] = true,
+            --["12"] = false,
+        },
+		["livery"] = 3,
+    },
+    ["lib114ram"] = { --- Model name
+        ["extras"] = {
+            ["1"] = true, -- on/off
+            --["2"] = false,
+            --["3"] = false,
+            --["4"] = false,
+            ["5"] = true,
+            --["6"] = false,
+            ["7"] = true,
+            --["8"] = false,
+            --["9"] = false,
+            --["10"] = false,
+            ["11"] = true,
+            --["12"] = false,
+        },
+		["livery"] = 3,
+    },
+    ["lib116explorer"] = { --- Model name
+        ["extras"] = {
+            ["1"] = true, -- on/off
+            --["2"] = false,
+            --["3"] = false,
+            --["4"] = false,
+            ["5"] = true,
+            --["6"] = false,
+            ["7"] = true,
+            --["8"] = false,
+            --["9"] = false,
+            --["10"] = false,
+            ["11"] = true,
+            --["12"] = false,
+        },
+		["livery"] = 3,
+    },
+    ["lib118charger"] = { --- Model name
+        ["extras"] = {
+            ["1"] = true, -- on/off
+            --["2"] = false,
+            --["3"] = false,
+            --["4"] = false,
+            ["5"] = true,
+            --["6"] = false,
+            ["7"] = true,
+            --["8"] = false,
+            --["9"] = false,
+            --["10"] = false,
+            ["11"] = true,
+            --["12"] = false,
+        },
+		["livery"] = 3,
+    },
+    ["lib119tahoe"] = { --- Model name
+        ["extras"] = {
+            ["1"] = true, -- on/off
+            --["2"] = false,
+            --["3"] = false,
+            --["4"] = false,
+            ["5"] = true,
+            --["6"] = false,
+            ["7"] = true,
+            --["8"] = false,
+            --["9"] = false,
+            --["10"] = false,
+            ["11"] = true,
+            --["12"] = false,
+        },
+		["livery"] = 3,
+    },
+    ["lib120explorer"] = { --- Model name
+        ["extras"] = {
+            ["1"] = true, -- on/off
+            --["2"] = false,
+            --["3"] = false,
+            --["4"] = false,
+            ["5"] = true,
+            --["6"] = false,
+            ["7"] = true,
+            --["8"] = false,
+            --["9"] = false,
+            --["10"] = false,
+            ["11"] = true,
+            --["12"] = false,
+        },
+		["livery"] = 3,
+    },
+    ["lib121tahoe"] = { --- Model name
         ["extras"] = {
             ["1"] = true, -- on/off
             --["2"] = false,
