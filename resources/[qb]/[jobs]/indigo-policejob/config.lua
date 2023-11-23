@@ -17,7 +17,7 @@ Config.LicenseRank = 2
 Config.UseTarget = GetConvar('UseTarget', 'false') == 'true'
 Config.Locations = {
     ["duty"] = {
-        [1] = vector3(453.2326, -990.5402, 31.6966), -- lspd
+        [1] = vector3(453.2106, -990.7479, 30.6302), -- lspd
         [2] = vector3(1555.1921, 836.2491, 77.5915), -- sasp
     },
     ["vehicle"] = {
