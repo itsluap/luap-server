@@ -886,6 +886,7 @@ end)
 
 -- Convar turns into a boolean
 if Config.UseTarget then
+    --[[
     CreateThread(function()
         for k, v in pairs(Config.Locations["checking"]) do
             exports['qb-target']:AddBoxZone("checking"..k, vector3(v.x, v.y, v.z), 3.5, 2, {
@@ -927,7 +928,8 @@ if Config.UseTarget then
             })
         end
     end)
-else
+    ]]--
+--else
     CreateThread(function()
         local checkingPoly = {}
         for k, v in pairs(Config.Locations["checking"]) do
