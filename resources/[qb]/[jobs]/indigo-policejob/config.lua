@@ -653,8 +653,8 @@ Config.VehicleSettings = {
             ["1"] = true, -- on/off
             --["2"] = false,
             --["3"] = false,
-            --["4"] = false,
-            ["5"] = true,
+            ["4"] = true,
+            --["5"] = false,
             --["6"] = false,
             ["7"] = true,
             --["8"] = false,
@@ -670,8 +670,8 @@ Config.VehicleSettings = {
             ["1"] = true, -- on/off
             --["2"] = false,
             --["3"] = false,
-            --["4"] = false,
-            ["5"] = true,
+            ["4"] = true,
+            --["5"] = false,
             --["6"] = false,
             ["7"] = true,
             --["8"] = false,
@@ -680,15 +680,15 @@ Config.VehicleSettings = {
             ["11"] = true,
             --["12"] = false,
         },
-		["livery"] = 3,
+		["livery"] = 0,
     },
     ["lib114ram"] = { --- Model name
         ["extras"] = {
             ["1"] = true, -- on/off
             --["2"] = false,
             --["3"] = false,
-            --["4"] = false,
-            ["5"] = true,
+            ["4"] = true,
+            --["5"] = false,
             --["6"] = false,
             ["7"] = true,
             --["8"] = false,
@@ -697,15 +697,15 @@ Config.VehicleSettings = {
             ["11"] = true,
             --["12"] = false,
         },
-		["livery"] = 3,
+		["livery"] = 0,
     },
     ["lib116explorer"] = { --- Model name
         ["extras"] = {
             ["1"] = true, -- on/off
             --["2"] = false,
             --["3"] = false,
-            --["4"] = false,
-            ["5"] = true,
+            ["4"] = true,
+            --["5"] = false,
             --["6"] = false,
             ["7"] = true,
             --["8"] = false,
@@ -714,15 +714,15 @@ Config.VehicleSettings = {
             ["11"] = true,
             --["12"] = false,
         },
-		["livery"] = 3,
+		["livery"] = 0,
     },
     ["lib118charger"] = { --- Model name
         ["extras"] = {
             ["1"] = true, -- on/off
             --["2"] = false,
             --["3"] = false,
-            --["4"] = false,
-            ["5"] = true,
+            ["4"] = true,
+            --["5"] = false,
             --["6"] = false,
             ["7"] = true,
             --["8"] = false,
@@ -731,15 +731,15 @@ Config.VehicleSettings = {
             ["11"] = true,
             --["12"] = false,
         },
-		["livery"] = 3,
+		["livery"] = 0,
     },
     ["lib119tahoe"] = { --- Model name
         ["extras"] = {
             ["1"] = true, -- on/off
             --["2"] = false,
             --["3"] = false,
-            --["4"] = false,
-            ["5"] = true,
+            ["4"] = true,
+            --["5"] = false,
             --["6"] = false,
             ["7"] = true,
             --["8"] = false,
@@ -748,15 +748,15 @@ Config.VehicleSettings = {
             ["11"] = true,
             --["12"] = false,
         },
-		["livery"] = 3,
+		["livery"] = 0,
     },
     ["lib120explorer"] = { --- Model name
         ["extras"] = {
             ["1"] = true, -- on/off
             --["2"] = false,
             --["3"] = false,
-            --["4"] = false,
-            ["5"] = true,
+            ["4"] = true,
+            --["5"] = false,
             --["6"] = false,
             ["7"] = true,
             --["8"] = false,
@@ -765,15 +765,15 @@ Config.VehicleSettings = {
             ["11"] = true,
             --["12"] = false,
         },
-		["livery"] = 3,
+		["livery"] = 0,
     },
     ["lib121tahoe"] = { --- Model name
         ["extras"] = {
             ["1"] = true, -- on/off
             --["2"] = false,
             --["3"] = false,
-            --["4"] = false,
-            ["5"] = true,
+            ["4"] = true,
+            --["5"] = false,
             --["6"] = false,
             ["7"] = true,
             --["8"] = false,
@@ -782,6 +782,6 @@ Config.VehicleSettings = {
             ["11"] = true,
             --["12"] = false,
         },
-		["livery"] = 3,
+		["livery"] = 0,
     },
 }

@@ -49,6 +49,8 @@ Config.Descriptions = {
 -- List: https://fontawesome.com/search?o=r&s=solid
 Config.FontAwesomeIcons = {
 	["police"] = "fa-solid fa-handcuffs",
+	["sheriff"] = "fa-solid fa-handcuffs",
+	["trooper"] = "fa-solid fa-handcuffs",
 	["ambulance"] = "fa-solid fa-user-doctor",
 	["mechanic"] = "fa-solid fa-wrench",
 	["tow"] = "fa-solid fa-truck-tow",
