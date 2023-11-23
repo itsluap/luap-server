@@ -97,7 +97,7 @@ Config.Shells = {
     ["Standard Apartment"] = {
         label = "Standard Apartment",
         hash = `npapartment`,
-        doorOffset = { x = -3.94, y = -2.97, z = 0.94, h = 176.18, width = 2.0 },
+        doorOffset = { x = -3.97, y = -3.51, z = 0.0, h = 358.87, width = 2.0 },
         stash = {
             maxweight = 100000, 
             slots = 12,
