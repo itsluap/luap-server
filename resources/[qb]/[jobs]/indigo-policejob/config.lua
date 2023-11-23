@@ -164,6 +164,91 @@ Config.PoliceAuthorizedVehicles = {
         ["z1RB"] = "Pursuit Corvette",
         ["poldemonrb"] = "Pursuit Demon",
 	}
+
+    [7] = {
+		["n11vic"] = "Crown Victoria",
+        ["n18taurus"] = "Taurus",
+		["n16explorer"] = "Exlporer",
+        ["n18charger"] = "Charger",
+        ["n19mustang"] = "Mustang",
+        ["mach1rb"] = "Pursuit Mustang",
+        ["z1RB"] = "Pursuit Corvette",
+        ["poldemonrb"] = "Pursuit Demon",
+	}
+
+    [8] = {
+		["n11vic"] = "Crown Victoria",
+        ["n18taurus"] = "Taurus",
+		["n16explorer"] = "Exlporer",
+        ["n18charger"] = "Charger",
+        ["n19mustang"] = "Mustang",
+        ["mach1rb"] = "Pursuit Mustang",
+        ["z1RB"] = "Pursuit Corvette",
+        ["poldemonrb"] = "Pursuit Demon",
+	}
+
+    [9] = {
+		["n11vic"] = "Crown Victoria",
+        ["n18taurus"] = "Taurus",
+		["n16explorer"] = "Exlporer",
+        ["n18charger"] = "Charger",
+        ["n19mustang"] = "Mustang",
+        ["mach1rb"] = "Pursuit Mustang",
+        ["z1RB"] = "Pursuit Corvette",
+        ["poldemonrb"] = "Pursuit Demon",
+	}
+}
+
+Config.TrooperAuthorizedVehicles = {
+	-- Grade 0
+	[0] = {
+		--["police"] = "Police Car 1",
+	},
+	-- Grade 1
+	[1] = {
+		["lib1f150"] = "F150",
+		["lib114charger"] = "'14 Charger",
+	},
+	-- Grade 2
+	[2] = {
+		["lib1f150"] = "F150",
+		["lib114charger"] = "'14 Charger",
+		["lib114ram"] = "'14 Ram",
+	},
+	-- Grade 3
+	[3] = {
+		["lib1f150"] = "F150",
+		["lib114charger"] = "'14 Charger",
+		["lib114ram"] = "'14 Ram",
+        ["lib118charger"] = "'18 Charger",
+	},
+	-- Grade 4
+	[4] = {
+		["lib1f150"] = "F150",
+		["lib114charger"] = "'14 Charger",
+		["lib114ram"] = "'14 Ram",
+        ["lib118charger"] = "'18 Charger",
+        ["lib119tahoe"] = "'19 Tahoe",
+	},
+
+    [5] = {
+		["lib1f150"] = "F150",
+		["lib114charger"] = "'14 Charger",
+		["lib114ram"] = "'14 Ram",
+        ["lib118charger"] = "'18 Charger",
+        ["lib119tahoe"] = "'19 Tahoe",
+        ["lib120explorer"] = "'20 Explorer",
+	},
+
+    [5] = {
+		["lib1f150"] = "F150",
+		["lib114charger"] = "'14 Charger",
+		["lib114ram"] = "'14 Ram",
+        ["lib118charger"] = "'18 Charger",
+        ["lib119tahoe"] = "'19 Tahoe",
+        ["lib120explorer"] = "'20 Explorer",
+        ["lib121tahoe"] = "'21 Tahoe",
+	},
 }
 
 Config.WhitelistedVehicles = {}
