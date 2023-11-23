@@ -52,14 +52,16 @@ Config.RosterLink = {
 
 Config.PoliceJobs = {
     ['police'] = true,
-    ['lspd'] = true,
-    ['bcso'] = true,
-    ['sast'] = true,
-    ['sasp'] = true,
-    ['doc'] = true,
-    ['lssd'] = true,
-    ['sapr'] = true,
-    ['pa'] = true
+    ['sheriff'] = true,
+    ['trooper'] = true,
+    ['lspd'] = false,
+    ['bcso'] = false,
+    ['sast'] = false,
+    ['sasp'] = false,
+    ['doc'] = false,
+    ['lssd'] = false,
+    ['sapr'] = false,
+    ['pa'] = false
 }
 
 Config.AmbulanceJobs = {

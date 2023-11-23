@@ -509,7 +509,7 @@ QBCore.Commands.Add('911p', Lang:t("commands.police_report"), {{name='message', 
     local coords = GetEntityCoords(ped)
     local players = QBCore.Functions.GetQBPlayers()
     for _, v in pairs(players) do
-        if v and v.PlayerData.job.name == 'police' and v.PlayerData.job.onduty then
+        if v and v.PlayerData.job.type == 'leo' and v.PlayerData.job.onduty then
             local alertData = {title = Lang:t("commands.emergency_call"), coords = {x = coords.x, y = coords.y, z = coords.z}, description = message}
             TriggerClientEvent('police:client:policeAlert', v.PlayerData.source, coords, message)
         end
@@ -642,7 +642,7 @@ RegisterNetEvent('police:server:policeAlert', function(text)
     local coords = GetEntityCoords(ped)
     local players = QBCore.Functions.GetQBPlayers()
     for _, v in pairs(players) do
-        if v and v.PlayerData.job.name == 'police' and v.PlayerData.job.onduty then
+        if v and v.PlayerData.job.type == 'leo' and v.PlayerData.job.onduty then
             local alertData = {title = Lang:t('info.new_call'), coords = {x = coords.x, y = coords.y, z = coords.z}, description = text}
             TriggerClientEvent('police:client:policeAlert', v.PlayerData.source, coords, text)
         end
