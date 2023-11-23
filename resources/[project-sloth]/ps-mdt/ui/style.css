@@ -5236,10 +5236,6 @@ span.tag-reports-input[contenteditable]:empty::before {
     background-color: #950909;
 }
 
-.toggle-duty:hover {
-    background-color: #956E09;
-}
-
 .set-callsign:hover {
     background-color: #0B9509;
 }

@@ -159,7 +159,7 @@ VehicleCategories = {
     -- you can also create new / delete or update categories, and use them below in the config.
 }
 
-HouseGarageCategories = {'car', 'motorcycle', 'other'} -- Which categories are allowed to be parked at a house garage
+HouseGarageCategories = {'car', 'motorcycle', 'emergency' 'other'} -- Which categories are allowed to be parked at a house garage
 
 
 VehicleHeading = 'driverside' -- only used when NO parking spots are defined in the garage config
@@ -220,7 +220,7 @@ Garages = {
         blipName = 'Public Parking',
         blipNumber = 357,
         type = 'public',
-        vehicleCategories = {'car', 'motorcycle', 'other'},
+        vehicleCategories = {'car', 'motorcycle', 'emergency', 'other'},
         drawText = 'Parking',
         debug = false,
         ['ParkingSpots'] = {
@@ -285,7 +285,7 @@ Garages = {
         blipName = 'Public Parking',
         blipNumber = 357,
         type = 'public',
-        vehicleCategories = {'car', 'motorcycle', 'other'},
+        vehicleCategories = {'car', 'motorcycle', 'emergency', 'other'},
         drawText = 'Parking',
         debug = false,
         ['ParkingSpots'] = {
@@ -341,7 +341,7 @@ Garages = {
         blipName = 'Public Parking',
         blipNumber = 357,
         type = 'public',
-        vehicleCategories = {'car', 'motorcycle', 'other'},
+        vehicleCategories = {'car', 'motorcycle', 'emergency', 'other'},
         drawText = 'Parking',
         debug = false,
         ['ParkingSpots'] = {
@@ -431,7 +431,7 @@ Garages = {
         blipName = 'Public Parking',
         blipNumber = 357,
         type = 'public',
-        vehicleCategories = {'car', 'motorcycle', 'other'},
+        vehicleCategories = {'car', 'motorcycle', 'emergency', 'other'},
         drawText = 'Parking',
         debug = false,
         ['ParkingSpots'] = {
@@ -611,7 +611,7 @@ Garages = {
         blipName = 'Public Parking',
         blipNumber = 357,
         type = 'public',
-        vehicleCategories = {'car', 'motorcycle', 'other'},
+        vehicleCategories = {'car', 'motorcycle', 'emergency', 'other'},
         drawText = 'Parking',
         debug = false,
         ['ParkingSpots'] = {
@@ -679,7 +679,7 @@ Garages = {
         blipName = "Public Parking",
         blipNumber = 357,
         type = 'public',                -- public, job, gang, depot
-        vehicleCategories = {'car', 'motorcycle', 'other'},                --car, air, sea
+        vehicleCategories = {'car', 'motorcycle', 'emergency', 'other'},                --car, air, sea
         drawText = 'Parking',
         debug = false,
         ['ParkingSpots'] = {
@@ -739,7 +739,7 @@ Garages = {
         blipName = "Public Parking",
         blipNumber = 357,
         type = 'public',                --public, job, gang, depot
-        vehicleCategories = {'car', 'motorcycle', 'other'},
+        vehicleCategories = {'car', 'motorcycle', 'emergency', 'other'},
         drawText = 'Parking',
         debug = false,                 --car, air, sea
         ['ParkingSpots'] = {
@@ -819,7 +819,7 @@ Garages = {
         blipName = "Public Parking",
         blipNumber = 357,
         type = 'public',                --public, job, gang, depot
-        vehicleCategories = {'car', 'motorcycle', 'other'},
+        vehicleCategories = {'car', 'motorcycle', 'emergency', 'other'},
         drawText = 'Parking',                 --car, air, sea
         debug = false
     },
@@ -842,7 +842,7 @@ Garages = {
         blipName = "Public Parking",
         blipNumber = 357,
         type = 'public',                --public, job, gang, depot
-        vehicleCategories = {'car', 'motorcycle', 'other'},
+        vehicleCategories = {'car', 'motorcycle', 'emergency', 'other'},
         drawText = 'Parking',                 --car, air, sea
         debug = false,
         ['ParkingSpots'] = {
@@ -871,7 +871,7 @@ Garages = {
         blipName = "Public Parking",
         blipNumber = 357,
         type = 'public',                --public, job, gang, depot
-        vehicleCategories = {'car', 'motorcycle', 'other'},
+        vehicleCategories = {'car', 'motorcycle', 'emergency', 'other'},
         drawText = 'Parking',                 --car, air, sea
         debug = false,
         ['ParkingSpots'] = {
@@ -930,7 +930,7 @@ Garages = {
         blipName = "Public Parking",
         blipNumber = 357,
         type = 'public',                --public, job, gang, depot
-        vehicleCategories = {'car', 'motorcycle', 'other'},
+        vehicleCategories = {'car', 'motorcycle', 'emergency', 'other'},
         drawText = 'Parking',                 --car, air, sea
         debug = false,
         ['ParkingSpots'] = {
@@ -1031,7 +1031,7 @@ Garages = {
         blipName = "Public Parking",
         blipNumber = 357,
         type = 'public',                --public, job, gang, depot
-        vehicleCategories = {'car', 'motorcycle', 'other'},
+        vehicleCategories = {'car', 'motorcycle', 'emergency', 'other'},
         drawText = 'Parking',
         debug = false
     },
@@ -1064,7 +1064,7 @@ Garages = {
         blipName = "Public Parking",
         blipNumber = 357,
         type = 'public',                --public, job, gang, depot
-        vehicleCategories = {'car', 'motorcycle', 'other'},
+        vehicleCategories = {'car', 'motorcycle', 'emergency', 'other'},
         drawText = 'Parking',                 --car, air, sea
         debug = false
     },
@@ -1089,7 +1089,7 @@ Garages = {
         blipName = "Public Parking",
         blipNumber = 357,
         type = 'public',                --public, job, gang, depot
-        vehicleCategories = {'car', 'motorcycle', 'other'},
+        vehicleCategories = {'car', 'motorcycle', 'emergency', 'other'},
         drawText = 'Parking',                 --car, air, sea
         debug = false
     },
@@ -1110,7 +1110,7 @@ Garages = {
         blipName = "Public Parking",
         blipNumber = 357,
         type = 'public',                --public, job, gang, depot
-        vehicleCategories = {'car', 'motorcycle', 'other'},
+        vehicleCategories = {'car', 'motorcycle', 'emergency', 'other'},
         drawText = 'Parking',                 --car, air, sea
         debug = false
     },
@@ -1155,7 +1155,7 @@ Garages = {
         blipName = "Public Parking",
         blipNumber = 357,
         type = 'public',                --public, job, gang, depot
-        vehicleCategories = {'car', 'motorcycle', 'other'},
+        vehicleCategories = {'car', 'motorcycle', 'emergency', 'other'},
         drawText = 'Parking',                 --car, air, sea
         debug = false
     },
@@ -1178,7 +1178,7 @@ Garages = {
         blipName = "Public Parking",
         blipNumber = 357,
         type = 'public',                --public, job, gang, depot
-        vehicleCategories = {'car', 'motorcycle', 'other'},
+        vehicleCategories = {'car', 'motorcycle', 'emergency', 'other'},
         drawText = 'Parking',                 --car, air, sea
         debug = false,
         ['ParkingSpots'] = {
@@ -1282,7 +1282,7 @@ Garages = {
         blipName = "Impound Lot",
         blipNumber = 68,
         type = 'depot',                --public, job, gang, depot
-        vehicleCategories = {'car', 'motorcycle', 'other'},
+        vehicleCategories = {'car', 'motorcycle', 'emergency', 'other'},
         drawText = 'Impound',                 --car, air, sea
         debug = false,
         ['ParkingSpots'] = {
@@ -1375,7 +1375,7 @@ Garages = {
         },
         label = 'LS Customs',
         type = 'job',
-        vehicleCategories = {'car', 'motorcycle', 'other'},
+        vehicleCategories = {'car', 'motorcycle', 'emergency', 'other'},
         drawText = 'Parking',
         job = 'mechanic',
         debug = false
@@ -1400,7 +1400,7 @@ Garages = {
         },
         label = 'Alta Apartments',
         type = 'public',
-        vehicleCategories = {'car', 'motorcycle', 'other'},
+        vehicleCategories = {'car', 'motorcycle', 'emergency', 'other'},
         drawText = 'Parking',
         ["ParkingSpots"] = {
             vector4(-297.71, -990.11, 30.76, 338.79),
@@ -1531,7 +1531,7 @@ Garages = {
         },
         label = 'City Hall Parking',
         type = 'public',
-        vehicleCategories = {'car', 'motorcycle', 'other'},
+        vehicleCategories = {'car', 'motorcycle', 'emergency', 'other'},
         drawText = 'Parking',
         ["ParkingSpots"] = {
             vector4(-475.26, -219.26, 36.05, 30.12),
@@ -1559,7 +1559,7 @@ Garages = {
         },
         label = 'Auto Exotic Parking',
         type = 'public',
-        vehicleCategories = {'car', 'motorcycle', 'other'},
+        vehicleCategories = {'car', 'motorcycle', 'emergency', 'other'},
         drawText = 'Parking',
         ["ParkingSpots"] = {
             vector4(540.91, -136.1, 59.47, 180),
@@ -1582,7 +1582,7 @@ Garages = {
         },
         label = 'Otto\'s Auto Parking',
         type = 'public',
-        vehicleCategories = {'car', 'motorcycle', 'other'},
+        vehicleCategories = {'car', 'motorcycle', 'emergency', 'other'},
         drawText = 'Parking',
         ["ParkingSpots"] = {
             vector4(832.02, -785.34, 26.27, 115.0),
@@ -1605,7 +1605,7 @@ Garages = {
         },
         label = 'Benny\'s Auto Parking',
         type = 'public',
-        vehicleCategories = {'car', 'motorcycle', 'other'},
+        vehicleCategories = {'car', 'motorcycle', 'emergency', 'other'},
         drawText = 'Parking',
         ["ParkingSpots"] = {
             vector4(-244.97, -1314.76, 31.3, 179.79),
@@ -1628,7 +1628,7 @@ Garages = {
         label = 'Otto\'s Dealer Parking',
         type = 'job',
         job = 'ottos',
-        vehicleCategories = {'car', 'motorcycle', 'other'},
+        vehicleCategories = {'car', 'motorcycle', 'emergency', 'other'},
         drawText = 'Parking',
         ["ParkingSpots"] = {
             vector4(797.77, -815.11, 26.18, 270.79),
@@ -1650,7 +1650,7 @@ Garages = {
         },
         label = 'Tuner Shop Parking',
         type = 'public',
-        vehicleCategories = {'car', 'motorcycle', 'other'},
+        vehicleCategories = {'car', 'motorcycle', 'emergency', 'other'},
         drawText = 'Parking',
         ["ParkingSpots"] = {
             vector4(163.22, -3009.42, 5.94, 268.83),
