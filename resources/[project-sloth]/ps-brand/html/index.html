@@ -15,7 +15,6 @@
         <div id="checklist">
         <img class="checklist-logo" src="./checklist-logo.svg"></img> <!-- change this for your own checklist logo -->
         <div class="q-pa-md text-custom">
-        <h1>Starter Checklist: You can change everything in provided HTML file. Thanks for using my script ❤️</h1>
         <q-field borderless dense v-model="selectedCheck" :rules="[ val => val.length >= 10 || 'You must checkmark all boxes!']">
         <div class="text-custom" template v-slot:control>
             <q-checkbox dark label='Use "ESC > Settings > Voice Chat" to set up audio / voice settings.' v-model="selectedCheck" color="light-green-14" val="1"></q-checkbox>
