@@ -663,7 +663,7 @@ Config.VehicleSettings = {
             ["11"] = true,
             --["12"] = false,
         },
-		["livery"] = 1,
+		["livery"] = 0,
     },
     ["lib114charger"] = { --- Model name
         ["extras"] = {
