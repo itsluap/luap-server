@@ -68,7 +68,7 @@ Config.StartingApartment = true
 Config.Apartments = {
     ["Integrity Way"] = {
         label = "Integrity Way",
-        door = { x = 269.73, y = -640.75, z = 42.02, h = 249.07, length = 1, width = 2 },
+        door = { x = 287.8004, y = -655.6436, z = 42.0186, h = 340.6655, length = 2, width = 2 },
         imgs = {
             {
                 url = "https://cdn.discordapp.com/attachments/1143566042153631784/1143566754983972954/986BKLz.jpg",
