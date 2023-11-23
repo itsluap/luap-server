@@ -542,6 +542,7 @@ end)
 
 local dutylisten = false
 local function dutylistener()
+    PlayerData = QBCore.Functions.GetPlayerData()
     dutylisten = true
     CreateThread(function()
         while dutylisten do
@@ -563,6 +564,7 @@ end
 
 -- Personal Stash Thread
 local function stash()
+    PlayerData = QBCore.Functions.GetPlayerData()
     CreateThread(function()
         while true do
             Wait(0)
@@ -582,6 +584,7 @@ end
 
 -- Police Trash Thread
 local function trash()
+    PlayerData = QBCore.Functions.GetPlayerData()
     CreateThread(function()
         while true do
             Wait(0)
@@ -604,6 +607,7 @@ end
 
 -- Fingerprint Thread
 local function fingerprint()
+    PlayerData = QBCore.Functions.GetPlayerData()
     CreateThread(function()
         while true do
             Wait(0)
@@ -622,6 +626,7 @@ end
 
 -- Armoury Thread
 local function armoury()
+    PlayerData = QBCore.Functions.GetPlayerData()
     CreateThread(function()
         while true do
             Wait(0)
@@ -640,6 +645,7 @@ end
 
 -- Helicopter Thread
 local function heli()
+    PlayerData = QBCore.Functions.GetPlayerData()
     CreateThread(function()
         while true do
             Wait(0)
@@ -658,6 +664,7 @@ end
 
 -- Police Impound Thread
 local function impound()
+    PlayerData = QBCore.Functions.GetPlayerData()
     CreateThread(function()
         while true do
             Wait(0)
@@ -678,6 +685,7 @@ end
 
 -- Police Garage Thread
 local function garage()
+    PlayerData = QBCore.Functions.GetPlayerData()
     CreateThread(function()
         while true do
             Wait(0)
