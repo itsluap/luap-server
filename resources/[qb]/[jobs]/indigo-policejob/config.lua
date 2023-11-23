@@ -163,7 +163,7 @@ Config.PoliceAuthorizedVehicles = {
         ["mach1rb"] = "Pursuit Mustang",
         ["z1RB"] = "Pursuit Corvette",
         ["poldemonrb"] = "Pursuit Demon",
-	}
+	},
 
     [7] = {
 		["n11vic"] = "Crown Victoria",
@@ -174,7 +174,7 @@ Config.PoliceAuthorizedVehicles = {
         ["mach1rb"] = "Pursuit Mustang",
         ["z1RB"] = "Pursuit Corvette",
         ["poldemonrb"] = "Pursuit Demon",
-	}
+	},
 
     [8] = {
 		["n11vic"] = "Crown Victoria",
@@ -185,7 +185,7 @@ Config.PoliceAuthorizedVehicles = {
         ["mach1rb"] = "Pursuit Mustang",
         ["z1RB"] = "Pursuit Corvette",
         ["poldemonrb"] = "Pursuit Demon",
-	}
+	},
 
     [9] = {
 		["n11vic"] = "Crown Victoria",
@@ -196,7 +196,7 @@ Config.PoliceAuthorizedVehicles = {
         ["mach1rb"] = "Pursuit Mustang",
         ["z1RB"] = "Pursuit Corvette",
         ["poldemonrb"] = "Pursuit Demon",
-	}
+	},
 }
 
 Config.SheriffAuthorizedVehicles = {
@@ -235,7 +235,7 @@ Config.SheriffAuthorizedVehicles = {
         ["leg21durango"] = "'21 Durango",
 	},
 
-    [5] = {
+    [6] = {
 		["leg16explorer"] = "'16 Explorer",
         ["leg18taurus"] = "'18 Taurus",
         ["leg20explorer"] = "'20 Explorer",
@@ -285,7 +285,7 @@ Config.TrooperAuthorizedVehicles = {
         ["lib120explorer"] = "'20 Explorer",
 	},
 
-    [5] = {
+    [6] = {
 		["lib1f150"] = "F150",
 		["lib114charger"] = "'14 Charger",
 		["lib114ram"] = "'14 Ram",
