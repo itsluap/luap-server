@@ -409,7 +409,7 @@ function RADAR:SetDisplayHidden( state ) self.vars.hidden = state end
 function RADAR:OpenRemote()
 	local player = QBCore.Functions.GetPlayerData()
     PlayerJob = player.job
-	if PlayerJob and PlayerJob.name == "police" then
+	if PlayerJob and PlayerData.job.type == 'leo' then
 		if ( not IsPauseMenuActive() and PLY:CanViewRadar() ) then
 			-- Get the remote open state from the other player
 			local openByOtherPly = SYNC:IsRemoteAlreadyOpen( PLY:GetOtherPed() )
