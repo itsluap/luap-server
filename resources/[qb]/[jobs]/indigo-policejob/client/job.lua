@@ -182,7 +182,21 @@ function MenuGarage(currentSelection)
         }
     }
 
-    local authorizedVehicles = Config.AuthorizedVehicles[QBCore.Functions.GetPlayerData().job.grade.level]
+    local playerData = QBCore.Functions.GetPlayerData()
+    local job = playerData.job.name
+    local grade = playerData.job.grade.level
+
+    --local authorizedVehicles = Config.AuthorizedVehicles[QBCore.Functions.GetPlayerData().job.grade.level]
+    if job == "police" or job == "sheriff" or job == "trooper" then
+        if Config.PoliceAuthorizedVehicles[grade] and job == "police" then
+            authorizedVehicles = Config.PoliceAuthorizedVehicles[grade]
+        elseif Config.SheriffAuthorizedVehicles[grade] and job == "sheriff" then
+            authorizedVehicles = Config.SheriffAuthorizedVehicles[grade]
+        elseif Config.TrooperAuthorizedVehicles[grade] and job == "trooper" then
+            authorizedVehicles = Config.TrooperAuthorizedVehicles[grade]
+        end
+    end
+
     for veh, label in pairs(authorizedVehicles) do
         vehicleMenu[#vehicleMenu+1] = {
             header = label,
