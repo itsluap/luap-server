@@ -435,7 +435,7 @@ RegisterNetEvent('indigo-storerobbery:client:setSafeStatus', function(safe, bool
 end)
 
 RegisterNetEvent('indigo-storerobbery:client:robberyCall', function(_, _, _, coords)
-    if QBCore.Functions.GetPlayerData().job.name == 'police' and onDuty then
+    if QBCore.Functions.GetPlayerData().job.type== 'leo' and onDuty then
         PlaySound(-1, "Lose_1st", "GTAO_FM_Events_Soundset", 0, 0, 1)
         exports['ps-dispatch']:StoreRobbery(camId)
         --[[

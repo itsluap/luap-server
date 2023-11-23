@@ -147,7 +147,7 @@ local function selectOption(t, t2)
 end
 
 local function IsPoliceOrEMS()
-    return (QBCore.Functions.GetPlayerData().job.name == 'police' or PlayerData.job.name == "ambulance")
+    return (QBCore.Functions.GetPlayerData().job.type== 'leo' or PlayerData.job.name == "ambulance")
 end
 
 local function IsDowned()

@@ -160,7 +160,7 @@ end
 local function IsArmoryWhitelist() -- being removed
     local retval = false
 
-    if QBCore.Functions.GetPlayerData().job.name == 'police' then
+    if QBCore.Functions.GetPlayerData().job.type== 'leo' then
         retval = true
     end
     return retval
