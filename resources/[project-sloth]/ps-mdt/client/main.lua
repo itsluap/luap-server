@@ -45,7 +45,7 @@ RegisterNetEvent("QBCore:Client:SetDuty", function(job, state)
         TriggerServerEvent("ps-mdt:server:ToggleDuty")
 	TriggerServerEvent("ps-mdt:server:ClockSystem")
         TriggerServerEvent('QBCore:ToggleDuty')
-        if PlayerData.job.name == "police" or PlayerData.job.type == "leo" then
+        if PlayerData.job.type == 'leo' or PlayerData.job.type == "leo" then
             TriggerServerEvent("police:server:UpdateCurrentCops")
         end
         if (PlayerData.job.name == "ambulance" or PlayerData.job.type == "ems") and job then
