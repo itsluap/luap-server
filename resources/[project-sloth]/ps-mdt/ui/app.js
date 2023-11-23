@@ -33,6 +33,8 @@ let impoundChanged = false;
 // TEMP CONFIG OF JOBS
 const PoliceJobs = {
   ['police']: true,
+  ['sheriff']: true,
+  ['trooper']: true,
   ['lspd']: true,
   ['bcso']: true,
   ['sast']: true,
@@ -4277,11 +4279,11 @@ window.addEventListener("message", function (event) {
         if (PoliceJobs[unit.unitType] !== undefined) {
           if (unit.unitType == "police") { policeCount++;
           activeInfoJob = `<div class="unit-job active-info-job-lspd">LSPD</div>`;
-          } else if(unit.unitType == "bcso")  { bcsoCount++;
+          } else if(unit.unitType == "sheriff")  { bcsoCount++;
             activeInfoJob = `<div class="unit-job active-info-job-bcso">BCSO</div>`;
           } else if(unit.unitType == "lssd")  { bcsoCount++;
             activeInfoJob = `<div class="unit-job active-info-job-bcso">LSSD</div>`;
-          } else if(unit.unitType == "sasp")  { saspCount++;
+          } else if(unit.unitType == "trooper")  { saspCount++;
             activeInfoJob = `<div class="unit-job active-info-job-sasp">SASP</div>`;
           } else if(unit.unitType == "sast")  { saspCount++;
             activeInfoJob = `<div class="unit-job active-info-job-sasp">SAST</div>`;
