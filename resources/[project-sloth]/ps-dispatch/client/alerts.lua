@@ -361,7 +361,7 @@ local function InjuriedPerson()
         codeName = 'civdown',
         code = '10-69',
         icon = 'fas fa-face-dizzy',
-        priority = 2,
+        priority = 1,
         coords = coords,
         gender = GetPlayerGender(),
         street = GetStreetAndZone(coords),
@@ -380,7 +380,7 @@ local function DeceasedPerson()
         codeName = 'civdead',
         code = '10-69',
         icon = 'fas fa-skull',
-        priority = 2,
+        priority = 1,
         coords = coords,
         gender = GetPlayerGender(),
         street = GetStreetAndZone(coords),
@@ -399,7 +399,7 @@ local function OfficerDown()
         codeName = 'officerdown',
         code = '10-99',
         icon = 'fas fa-skull',
-        priority = 2,
+        priority = 1,
         coords = coords,
         gender = GetPlayerGender(),
         street = GetStreetAndZone(coords),
@@ -414,6 +414,29 @@ exports('OfficerDown', OfficerDown)
 
 RegisterNetEvent("ps-dispatch:client:officerdown", function() OfficerDown() end)
 
+local function OfficerBackup()
+    local coords = GetEntityCoords(cache.ped)
+
+    local dispatchData = {
+        message = locale('officerbackup'),
+        codeName = 'officerbackup',
+        code = '10-32',
+        icon = 'fas fa-skull',
+        priority = 1,
+        coords = coords,
+        gender = GetPlayerGender(),
+        street = GetStreetAndZone(coords),
+        name = PlayerData.charinfo.firstname .. " " .. PlayerData.charinfo.lastname,
+        callsign = PlayerData.metadata["callsign"],
+        jobs = { 'ems', 'leo' }
+    }
+
+    TriggerServerEvent('ps-dispatch:server:notify', dispatchData)
+end
+exports('OfficerBackup', OfficerBackup)
+
+RegisterNetEvent("ps-dispatch:client:officerbackup", function() OfficerBackup() end)
+
 local function OfficerInDistress()
     local coords = GetEntityCoords(cache.ped)
 
@@ -422,7 +445,7 @@ local function OfficerInDistress()
         codeName = 'officerdistress',
         code = '10-99',
         icon = 'fas fa-skull',
-        priority = 2,
+        priority = 1,
         coords = coords,
         gender = GetPlayerGender(),
         street = GetStreetAndZone(coords),
@@ -443,7 +466,7 @@ local function EmsDown()
         codeName = 'emsdown',
         code = '10-99',
         icon = 'fas fa-skull',
-        priority = 2,
+        priority = 1,
         coords = coords,
         gender = GetPlayerGender(),
         street = GetStreetAndZone(coords),
@@ -730,29 +753,3 @@ local function SignRobbery()
     TriggerServerEvent('ps-dispatch:server:notify', dispatchData)
 end
 exports('SignRobbery', SignRobbery)
-
--- Addon Alerts --
-
-local function MethRuns()
-    local currentPos = GetEntityCoords(PlayerPedId())
-    local locationInfo = getStreetandZone(currentPos)
-    local gender = GetPedGender()
-    TriggerServerEvent("dispatch:server:notify",{
-        dispatchcodename = "methruns", -- has to match the codes in sv_dispatchcodes.lua so that it generates the right blip
-        dispatchCode = "10-31",
-        firstStreet = locationInfo,
-        gender = gender,
-        model = nil,
-        plate = nil,
-        priority = 2, -- priority
-        firstColor = nil,
-        automaticGunfire = false,
-        origin = {
-            x = currentPos.x,
-            y = currentPos.y,
-            z = currentPos.z
-        },
-        dispatchMessage = ('Suspicious Drug Activity'), -- message
-        job = {"police"} -- jobs that will get the alerts
-    })
-end exports('MethRuns', MethRuns)

@@ -5,6 +5,8 @@ export const BROWSER_MODE = writable<boolean>(false);
 export const RESOURCE_NAME = writable<string>("");
 
 export const PLAYER = writable<any>(null);
+export const MAX_CALL_LIST = writable<number>(null);
+export const RESPOND_KEYBIND = writable<string>("");
 
 export const DISPATCH_MUTED = writable<boolean>(false);
 export const DISPATCH_DISABLED = writable<boolean>(false);

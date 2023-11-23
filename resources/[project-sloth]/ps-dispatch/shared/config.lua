@@ -2,19 +2,20 @@ Config = Config or {}
 
 Config.Debug = false -- Enables debug and send alerts when leo break the law.
 
-Config.RespondKeybind = ','
+Config.RespondKeybind = 'E'
 Config.OpenDispatchMenu = 'O'
 Config.AlertTime = 5     -- How many seconds you want the alert to stay on screen
 
+Config.MaxCallList = 25 -- maximum dispatch calls in dispatch list
 Config.OnDutyOnly = true -- Set true if only on duty players can see the alert
 Config.Jobs = { -- Job Types that can access the dispatch menu
     "leo",
     "ems"
 }
 
-Config.DefaultAlertsDelay = 30 -- Delay between each default alert, prevent spamming
+Config.DefaultAlertsDelay = 5 -- Delay between each default alert, prevent spamming
 Config.DefaultAlerts = {
-    Speeding = false,
+    Speeding = true,
     Shooting = true,
     Autotheft = true,
     Melee = true,
@@ -130,6 +131,16 @@ Config.Blips = {
         flash = false
     },
     ['officerdown'] = {
+        radius = 15.0,
+        sprite = 526,
+        color = 1,
+        scale = 1.5,
+        length = 2,
+        sound = 'panicbutton',
+        offset = false,
+        flash = true
+    },
+    ['officerbackup'] = {
         radius = 15.0,
         sprite = 526,
         color = 1,

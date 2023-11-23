@@ -29,6 +29,8 @@ local function setupDispatch()
         data = {
             locales = locales,
             player = PlayerData,
+            keybind = Config.RespondKeybind,
+            maxCallList = Config.MaxCallList,
         }
     })
 end
@@ -66,7 +68,7 @@ local function setWaypoint()
 
     if not data then return end
 
-    if not waypointCooldown then
+    if not waypointCooldown and lib.table.contains(data.jobs, PlayerData.job.type) then
         SetNewWaypoint(data.coords.x, data.coords.y)
         TriggerServerEvent('ps-dispatch:server:attach', data.id, PlayerData)
         lib.notify({ description = locale('waypoint_set'), position = 'top', type = 'success' })
@@ -208,20 +210,58 @@ local function removeZones()
     nodispatchzone:remove()
 end
 
+-- Keybind
+local RespondToDispatch = lib.addKeybind({
+    name = 'RespondToDispatch',
+    description = 'Set waypoint to last call location',
+    defaultKey = Config.RespondKeybind,
+    onPressed = setWaypoint,
+})
+
+local OpenDispatchMenu = lib.addKeybind({
+    name = 'OpenDispatchMenu',
+    description = 'Open Dispatch Menu',
+    defaultKey = Config.OpenDispatchMenu,
+    onPressed = openMenu,
+})
+
 -- Events
 RegisterNetEvent('ps-dispatch:client:notify', function(data, source)
+    local timer = Config.AlertTime * 1000
     if alertsDisabled then return end
     if not isJobValid(data.jobs) then return end
     if not IsOnDuty() then return end
+
+    timerCheck = true
+
     SendNUIMessage({
         action = 'newCall',
         data = {
             data = data,
-            timer = Config.AlertTime * 1000,
+            timer = timer,
         }
     })
 
     addBlip(data, Config.Blips[data.codeName] or data)
+
+    RespondToDispatch:disable(false)
+    OpenDispatchMenu:disable(true)
+
+    local startTime = GetGameTimer()
+    while timerCheck do
+        Wait(1000)
+
+        local currentTime = GetGameTimer()
+        local elapsed = currentTime - startTime
+
+        if elapsed >= timer then
+            break
+        end
+    end
+
+    timerCheck = false
+    OpenDispatchMenu:disable(false)
+    RespondToDispatch:disable(true)
 end)
 
 RegisterNetEvent('ps-dispatch:client:openMenu', function(data)
@@ -253,31 +293,35 @@ AddEventHandler('onResourceStop', function(resourceName)
 end)
 
 -- NUICallbacks
-RegisterNUICallback("hideUI", function()
+RegisterNUICallback("hideUI", function(_, cb)
     toggleUI(false)
+    cb("ok")
 end)
 
 RegisterNUICallback("attachUnit", function(data, cb)
     TriggerServerEvent('ps-dispatch:server:attach', data.id, PlayerData)
     SetNewWaypoint(data.coords.x, data.coords.y)
-
+    cb("ok")
 end)
 
 RegisterNUICallback("detachUnit", function(data, cb)
     TriggerServerEvent('ps-dispatch:server:detach', data.id, PlayerData)
     DeleteWaypoint()
+    cb("ok")
 end)
 
 RegisterNUICallback("toggleMute", function(data, cb)
     local muteStatus = data.boolean and locale('muted') or locale('unmuted')
     lib.notify({ description = locale('alerts') .. muteStatus, position = 'top', type = 'warning' })
     alertsMuted = data.boolean
+    cb("ok")
 end)
 
 RegisterNUICallback("toggleAlerts", function(data, cb)
     local muteStatus = data.boolean and locale('disabled') or locale('enabled')
     lib.notify({ description = locale('alerts') .. muteStatus, position = 'top', type = 'warning' })
     alertsDisabled = data.boolean
+    cb("ok")
 end)
 
 RegisterNUICallback("clearBlips", function(data, cb)
@@ -288,25 +332,12 @@ RegisterNUICallback("clearBlips", function(data, cb)
     for k, v in pairs(radius2) do
         RemoveBlip(v)
     end
+    cb("ok")
 end)
 
 RegisterNUICallback("refreshAlerts", function(data, cb)
     lib.notify({ description = locale('alerts_refreshed'), position = 'top', type = 'success' })
     local data = lib.callback.await('ps-dispatch:callback:getCalls', false)
     SendNUIMessage({ action = 'setDispatchs', data = data, })
+    cb("ok")
 end)
-
--- Keybind
-lib.addKeybind({
-    name = 'RespondToDispatch',
-    description = 'Set waypoint to last call location',
-    defaultKey = Config.RespondKeybind,
-    onPressed = setWaypoint,
-})
-
-lib.addKeybind({
-    name = 'OpenDispatchMenu',
-    description = 'Open Dispatch Menu',
-    defaultKey = Config.OpenDispatchMenu,
-    onPressed = openMenu,
-})

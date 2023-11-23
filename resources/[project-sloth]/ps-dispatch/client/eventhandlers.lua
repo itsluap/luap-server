@@ -58,13 +58,11 @@ end)
 AddEventHandler('CEventShockingSeenMeleeAction', function(witnesses, ped)
     WaitTimer('Melee', function()
         if cache.ped ~= ped then return end
-
         if PlayerData.job.type == 'leo' then 
             if not Config.Debug then
                 return
             end
         end
-
         if witnesses and not isPedAWitness(witnesses, ped) then return end
 
         exports['ps-dispatch']:Fight()
@@ -74,13 +72,11 @@ end)
 AddEventHandler('CEventPedJackingMyVehicle', function(_, ped)
     WaitTimer('Autotheft', function()
         if cache.ped ~= ped then return end
-
         if PlayerData.job.type == 'leo' then 
             if not Config.Debug then
                 return
             end
         end
-
         local vehicle = GetVehiclePedIsUsing(ped, true)
         exports['ps-dispatch']:CarJacking(vehicle)
     end)
@@ -89,13 +85,11 @@ end)
 AddEventHandler('CEventShockingCarAlarm', function(_, ped)
     WaitTimer('Autotheft', function()
         if cache.ped ~= ped then return end
-
         if PlayerData.job.type == 'leo' then 
             if not Config.Debug then
                 return
             end
         end
-
         local vehicle = GetVehiclePedIsUsing(ped, true)
         exports['ps-dispatch']:VehicleTheft(vehicle)
     end)
@@ -139,6 +133,11 @@ for i = 1, #SpeedingEvents do
                 return
             end
             if cache.ped ~= ped then return end
+            if PlayerData.job.type == 'leo' then 
+                if not Config.Debug then
+                    return
+                end
+            end
 
             if GetEntitySpeed(cache.vehicle) * 3.6 < (80 + math.random(0, 20)) then return end
 
