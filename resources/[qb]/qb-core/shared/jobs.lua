@@ -62,6 +62,106 @@ QBShared.Jobs = {
             },
         },
 	},
+    ['sheriff'] = {
+		label = 'BCSO',
+        type = "leo",
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+            ['0'] = {
+                name = 'Recruit',
+                payment = 1900
+            },
+			['1'] = {
+                name = 'Deputy',
+                payment = 2500
+            },
+			['2'] = {
+                name = 'Senior Deputy',
+                payment = 3200
+            },
+            ['3'] = {
+                name = 'Detective',
+                payment = 4200
+            },
+            ['4'] = {
+                name = 'Corporal',
+                payment = 4800
+            },
+            ['5'] = {
+                name = 'Sergeant',
+                payment = 5200
+            },
+            ['6'] = {
+                name = 'Lieutenant',
+                payment = 5800
+            },
+            ['7'] = {
+                name = 'Captain',
+                payment = 6200
+            },
+            ['8'] = {
+                name = 'Deputy Sheriff',
+                payment = 7000
+            },
+			['9'] = {
+                name = 'Sheriff',
+				isboss = true,
+                bankAuth = true,
+                payment = 9000
+            },
+        },
+	},
+    ['trooper'] = {
+		label = 'SASP',
+        type = "leo",
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+            ['0'] = {
+                name = 'Recruit',
+                payment = 1900
+            },
+			['1'] = {
+                name = 'Trooper',
+                payment = 2500
+            },
+			['2'] = {
+                name = 'Senior Trooper',
+                payment = 3200
+            },
+            ['3'] = {
+                name = 'Detective',
+                payment = 4200
+            },
+            ['4'] = {
+                name = 'Corporal',
+                payment = 4800
+            },
+            ['5'] = {
+                name = 'Sergeant',
+                payment = 5200
+            },
+            ['6'] = {
+                name = 'Lieutenant',
+                payment = 5800
+            },
+            ['7'] = {
+                name = 'Captain',
+                payment = 6200
+            },
+            ['8'] = {
+                name = 'Deputy Chief of SASP',
+                payment = 7000
+            },
+			['9'] = {
+                name = 'Chief of SASP',
+				isboss = true,
+                bankAuth = true,
+                payment = 9000
+            },
+        },
+	},
 	['ambulance'] = {
 		label = 'EMS',
 		defaultDuty = true,
