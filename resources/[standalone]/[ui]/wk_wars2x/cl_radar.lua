@@ -31,7 +31,7 @@
 ---------------------------------------------------------------------------------------]]--
 
 QBCore = exports['qb-core']:GetCoreObject()
-PlayerJob = {}
+PlayerData = QBCore.Functions.GetPlayerData()
 
 -- Cache some of the main Lua functions and libraries
 local next = next
