@@ -8,7 +8,7 @@ Config = {}
 
 -- If you're not utilizing ox_lib, it's time to question your approach.
 Config.Target = "ox" -- "ox" or "qb"
-Config.Notify = "ox" -- "ox" or "qb"
+Config.Notify = "qb" -- "ox" or "qb"
 Config.Radial = "qb" -- "ox" or "qb"
 Config.Inventory = "qb" -- "ox" or "qb"
 Config.Logs = "qb" -- "qb"
@@ -100,7 +100,7 @@ Config.Shells = {
         doorOffset = { x = -3.97, y = -3.51, z = 0.0, h = 358.87, width = 2.0 },
         stash = {
             maxweight = 1000000, 
-            slots = 30,
+            slots = 50,
         },
         imgs = {
             {
