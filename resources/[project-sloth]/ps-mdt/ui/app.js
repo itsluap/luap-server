@@ -3338,40 +3338,6 @@ $(document).ready(() => {
     //}
   });
 
-  $(".contextmenu").on("click", ".toggle-duty", function () {
-    let info = $(this).data("info");
-    let currentStatus = $(`[data-id="${info}"]`)
-      .find(".unit-status")
-      .html();
-    if (currentStatus == "10-8") {
-      $(`[data-id="${info}"]`).find(".unit-status").html("10-7");
-      $(`[data-id="${info}"]`)
-        .find(".unit-status")
-        .removeClass("green-status")
-        .addClass("yellow-status");
-      $.post(
-        `https://${GetParentResourceName()}/toggleDuty`,
-        JSON.stringify({
-          cid: info,
-          status: 0,
-        })
-      );
-    } else if (currentStatus == "10-7") {
-      $(`[data-id="${info}"]`).find(".unit-status").html("10-8");
-      $(`[data-id="${info}"]`)
-        .find(".unit-status")
-        .removeClass("yellow-status")
-        .addClass("green-status");
-      $.post(
-        `https://${GetParentResourceName()}/toggleDuty`,
-        JSON.stringify({
-          cid: info,
-          status: 1,
-        })
-      );
-    }
-  });
-
   $(".contextmenu").on("click", ".set-callsign", function () {
     let info = $(this).data("info");
     $(".callsign-container").fadeIn(0);
@@ -3402,13 +3368,6 @@ $(document).ready(() => {
     let cid = $(this).data("id");
     if (cid) {
       args = [
-        {
-          className: "toggle-duty",
-          icon: "fas fa-thumbtack",
-          text: "Toggle Duty",
-          info: cid,
-          status: "",
-        },
         {
           className: "set-callsign",
           icon: "far fa-id-badge",
