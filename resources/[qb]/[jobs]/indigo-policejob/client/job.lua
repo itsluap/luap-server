@@ -8,6 +8,7 @@ local inArmoury = false
 local inHelicopter = false
 local inImpound = false
 local inGarage = false
+PlayerData = QBCore.Functions.GetPlayerData()
 
 local function loadAnimDict(dict) -- interactions, job,
     while (not HasAnimDictLoaded(dict)) do
@@ -982,6 +983,7 @@ CreateThread(function()
     local evidenceCombo = ComboZone:Create(evidenceZones, {name = "evidenceCombo", debugPoly = false})
     evidenceCombo:onPlayerInOut(function(isPointInside)
         if isPointInside then
+            PlayerData = QBCore.Functions.GetPlayerData()
             if PlayerData.job.type == 'leo' and PlayerJob.onduty then
                 local currentEvidence = 0
                 local pos = GetEntityCoords(PlayerPedId())
