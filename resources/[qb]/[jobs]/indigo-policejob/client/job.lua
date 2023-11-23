@@ -652,6 +652,8 @@ local function heli()
             if inHelicopter and PlayerData.job.type == 'leo' then
                 if PlayerJob.onduty then sleep = 5 end
                 print("can press E to spawn heli")
+                print(PlayerData.job.type)
+                print(PlayerJob.onduty)
                 if IsControlJustReleased(0, 38) then
                     TriggerEvent("qb-police:client:spawnHelicopter")
                     print("spawning heli")
