@@ -12,7 +12,7 @@ https://discord.gg/xKgQZ6wZvS
 
 ---
 # Item installation
-- Add the image files from the zip to your `qb-inventory > html > images` folder
+- Add the image files from the zip to your `ps-inventory > html > images` folder
 
 - Add these lines to your qb-core > shared lua under the Items section
 ```lua
@@ -149,9 +149,9 @@ The MechBoard item is an item given to the person who uses the preview menu and 
 
 To make full use of this item you need to add the ability for the item to show item info in your inventory system
 
-I have only done this with `qb-inventory` and `ps-inventory` as they are similar
+I have only done this with `ps-inventory` and `ps-inventory` as they are similar
 
-`qb-inventory/html/js/app.js`
+`ps-inventory/html/js/app.js`
 
 - Search for "harness" or Scroll down until you find:
 ```js
@@ -656,7 +656,7 @@ end
 		- `if lockedCar(vehicle) then return end`
 		- This line has been added to all items and events, can't do any work on a vehicle until is unlocked
 	- Added support for toggling between gks-phone and indigo-phone for the preview emails in the config
-	- Repairs now uses custom stash event, not requiring qb-inventory default events anymore.
+	- Repairs now uses custom stash event, not requiring ps-inventory default events anymore.
 		- This hopefully fixes a couple issues with certain different inventories
 	- Add new strings to locales, don't forget to update these and make a github pull request
 	- Added support for ps-progressbar

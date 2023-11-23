@@ -160,7 +160,7 @@ RegisterNetEvent('weapons:ResetHolster', function()
 end)
 
 CreateThread(function()
-	if GetResourceState('ps-inventory') == 'missing' then return end -- This part is only made to work with qb-inventory, other inventories might conflict
+	if GetResourceState('ps-inventory') == 'missing' then return end -- This part is only made to work with ps-inventory, other inventories might conflict
 	local sleep
 	while true do
 		local ped = PlayerPedId()
@@ -354,7 +354,7 @@ CreateThread(function()
 end)
 
 CreateThread(function()
-	if GetResourceState('ps-inventory') == 'missing' then return end -- This part is only made to work with qb-inventory, other inventories might conflict
+	if GetResourceState('ps-inventory') == 'missing' then return end -- This part is only made to work with ps-inventory, other inventories might conflict
 	local sleep
 	while true do
 		sleep = 250

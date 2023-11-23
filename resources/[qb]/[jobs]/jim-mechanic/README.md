@@ -289,7 +289,7 @@ There is little snippets of information on each line for these, but this is a mo
 ### Config.img
 - Use this if if you are using an older/edited version of indigo-menu
 - This is for adding images of inventory items to indigo-menu and indigo-input.
-- The default would be: `qb-inventory/html/images/`
+- The default would be: `ps-inventory/html/images/`
 - I personally use LJ's inventory system which makes it: `ps-inventory/html/images/`. I imagine other's are pretty similar.
 
 ### Config.JimShops
@@ -756,7 +756,7 @@ RepairFuelCost = 8,
 
 
 ### Item installation
-- Add the image files from the zip to your `qb-inventory > html > images` folder
+- Add the image files from the zip to your `ps-inventory > html > images` folder
 - Add these lines to your qb-core > shared lua under the Items section
 
 ```lua
@@ -840,8 +840,8 @@ RepairFuelCost = 8,
 - **This isn't fully required but helps organise multiples of the "mechboard"**
 - The MechBoard item is an item given to the person who uses the preview menu and makes changes
 - To make full use of this item you need to add the ability for the item to show item info in your inventory system
-- I have only done this with `qb-inventory` and `ps-inventory` as they are similar
-	- `qb-inventory/html/js/app.js`
+- I have only done this with `ps-inventory` and `ps-inventory` as they are similar
+	- `ps-inventory/html/js/app.js`
 
 - Search for "harness" or Scroll down until you find:
 ```js

@@ -44,7 +44,7 @@ ensure [jim]
 ```
 
 - Add the ticket image to your inventory script:
-- Naviage to `[qb] > qb-inventory > html > images` and add this line
+- Naviage to `[qb] > ps-inventory > html > images` and add this line
 
 ![](https://github.com/jimathy/jim-payments/blob/main/images/ticket.png?raw=true)
 

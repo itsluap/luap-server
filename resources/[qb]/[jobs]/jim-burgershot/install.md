@@ -10,7 +10,7 @@ https://discord.gg/jixelpatterns
 
 Add the item images to your inventory script
 For Example:
-	`[qb]` > `qb-inventory` > `html` > `images`
+	`[qb]` > `ps-inventory` > `html` > `images`
 
 THESE GO IN YOUR SHARED.LUA IN qb-core:
 

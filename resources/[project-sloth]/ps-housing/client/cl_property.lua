@@ -175,7 +175,7 @@ function Property:RegisterGarageZone()
         label = self.propertyData.street .. self.property_id .. " Garage",
     }
 
-    TriggerEvent("qb-garages:client:addHouseGarage", self.property_id, data)
+    TriggerEvent("indigo-garages:client:addHouseGarage", self.property_id, data)
 
     self.garageZone = lib.zones.box({
         coords = vec3(garageData.x, garageData.y, garageData.z),
@@ -183,7 +183,7 @@ function Property:RegisterGarageZone()
         rotation = garageData.h,
         debug = Config.DebugMode,
         onEnter = function()
-            TriggerEvent('qb-garages:client:setHouseGarage', self.property_id, true)
+            TriggerEvent('indigo-garages:client:setHouseGarage', self.property_id, true)
         end,
     })
 end
@@ -191,7 +191,7 @@ end
 function Property:UnregisterGarageZone()
     if not self.garageZone then return end
 
-    TriggerEvent("qb-garages:client:removeHouseGarage", self.property_id)
+    TriggerEvent("indigo-garages:client:removeHouseGarage", self.property_id)
 
     self.garageZone:remove()
     self.garageZone = nil

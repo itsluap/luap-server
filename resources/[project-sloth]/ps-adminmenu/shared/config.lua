@@ -659,7 +659,7 @@ AddEventHandler("onResourceStart", function()
         Config.Inventory = 'ps-inventory'
     elseif GetResourceState('ps-inventory') == 'started' then
         Config.Inventory = 'ps-inventory'
-    elseif GetResourceState('qb-inventory') == 'started' then
-        Config.Inventory = 'qb-inventory'
+    elseif GetResourceState('ps-inventory') == 'started' then
+        Config.Inventory = 'ps-inventory'
 	end
 end)

@@ -41,4 +41,4 @@ Paste this in the qb-core/shared/itmes
 
 Paste the images in 
 
-qb-inventory/html/images
+ps-inventory/html/images

@@ -116,13 +116,13 @@ RegisterNetEvent('qb-multicharacter:server:createCharacter', function(data)
     end
 end)
 ```
-### 2. Find the following events in `qb-spawn` and change in client/client.lua event to: 
+### 2. Find the following events in `indigo-spawn` and change in client/client.lua event to: 
 
-`qb-spawn > client.lua > line 51 > 'qb-spawn:client:setupSpawns' event`
+`indigo-spawn > client.lua > line 51 > 'indigo-spawn:client:setupSpawns' event`
 ```lua
-RegisterNetEvent('qb-spawn:client:setupSpawns', function(cData, new, apps)
+RegisterNetEvent('indigo-spawn:client:setupSpawns', function(cData, new, apps)
     if not new then
-        QBCore.Functions.TriggerCallback('qb-spawn:server:getOwnedHouses', function(houses)
+        QBCore.Functions.TriggerCallback('indigo-spawn:server:getOwnedHouses', function(houses)
             local myHouses = {}
             if houses ~= nil then
                 for i = 1, (#houses), 1 do
@@ -153,7 +153,7 @@ RegisterNetEvent('qb-spawn:client:setupSpawns', function(cData, new, apps)
 end)
 ```
 
-`qb-spawn > client.lua > line 134 > 'chooseAppa' NUI Callback`
+`indigo-spawn > client.lua > line 134 > 'chooseAppa' NUI Callback`
 ```lua
 RegisterNUICallback('chooseAppa', function(data, cb)
     local ped = PlayerPedId()
@@ -177,7 +177,7 @@ RegisterNUICallback('chooseAppa', function(data, cb)
 end)
 ```
 
-`qb-spawn > client > client.lua > line 169 'spawnplayer' NUI Callback`
+`indigo-spawn > client > client.lua > line 169 'spawnplayer' NUI Callback`
 ```lua
 RegisterNUICallback('spawnplayer', function(data, cb)
     local location = tostring(data.spawnloc)
@@ -222,9 +222,9 @@ RegisterNUICallback('spawnplayer', function(data, cb)
 end)
 ```
 
-`qb-spawn > server.lua > line 3`
+`indigo-spawn > server.lua > line 3`
 ```lua
-QBCore.Functions.CreateCallback('qb-spawn:server:getOwnedHouses', function(_, cb, cid)
+QBCore.Functions.CreateCallback('indigo-spawn:server:getOwnedHouses', function(_, cb, cid)
     if cid ~= nil then
         local houses = MySQL.query.await('SELECT * FROM properties WHERE owner_citizenid = ?', {cid})
         if houses[1] ~= nil then
@@ -238,8 +238,8 @@ QBCore.Functions.CreateCallback('qb-spawn:server:getOwnedHouses', function(_, cb
 end)
 ```
 
-### 3. Find the following events in `qb-garages` and change: 
-`qb-garages > server > main.lua > around line 120` on event `qb-garage:server:checkOwnership`
+### 3. Find the following events in `indigo-garages` and change: 
+`indigo-garages > server > main.lua > around line 120` on event `qb-garage:server:checkOwnership`
 
 Replace 
 ```lua
@@ -250,15 +250,15 @@ With
 local hasHouseKey = exports['ps-housing']:IsOwner(src, house)
 ```
 
-`qb-garages > client > main.lua > around line 451` add under event `qb-garages:client:addHouseGarage`
+`indigo-garages > client > main.lua > around line 451` add under event `indigo-garages:client:addHouseGarage`
 ```lua
-RegisterNetEvent('qb-garages:client:removeHouseGarage', function(house)
+RegisterNetEvent('indigo-garages:client:removeHouseGarage', function(house)
     Config.HouseGarages[house] = nil
 end)
 ```
 
-### For qb-garages v2: 
-`qb-garages > server > main.lua > around line 118` on event `qb-garages:server:canDeposit`
+### For indigo-garages v2: 
+`indigo-garages > server > main.lua > around line 118` on event `indigo-garages:server:canDeposit`
 
 Replace 
 ```lua
@@ -269,9 +269,9 @@ With
 if type == 'house' and not exports['ps-housing']:IsOwner(source, garage) then
 ```
 
-`qb-garages > client > main.lua > around line 392` add under event `qb-garages:client:addHouseGarage`
+`indigo-garages > client > main.lua > around line 392` add under event `indigo-garages:client:addHouseGarage`
 ```lua
-RegisterNetEvent('qb-garages:client:removeHouseGarage', function(house)
+RegisterNetEvent('indigo-garages:client:removeHouseGarage', function(house)
     Config.Garages[house] = nil
 end)
 ```
@@ -282,7 +282,7 @@ end)
 
 ### 6. Delete default [indigo-houses](https://github.com/qbcore-framework/indigo-houses)
 
-### 7. Delete `indigo-apartments/config.lua` references in `qb-spawn`, `qb-multicharacter` and `qb-phone` fxmanifest.lua (and any other scripts that may reference it).
+### 7. Delete `indigo-apartments/config.lua` references in `indigo-spawn`, `qb-multicharacter` and `qb-phone` fxmanifest.lua (and any other scripts that may reference it).
 
 ### 8. Ensure ps-realtor above ps-housing.
 

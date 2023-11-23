@@ -894,7 +894,7 @@ RegisterNetEvent('indigo-garages:client:addHouseGarage', function(house, garageI
     RegisterHousePoly(house)
 end)
 
-RegisterNetEvent('qb-garages:client:removeHouseGarage', function(house)
+RegisterNetEvent('indigo-garages:client:removeHouseGarage', function(house)
     Config.HouseGarages[house] = nil
 end)
 

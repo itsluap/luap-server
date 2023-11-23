@@ -177,7 +177,7 @@ RegisterNetEvent("ps-housing:server:createApartmentStash", function(citizenId, p
     end
 
     -- This will create the stash for the apartment (without requiring player to have first opened and placed item in it)
-    TriggerEvent('qb-inventory:server:SaveStashItems', stashId, items)
+    TriggerEvent('ps-inventory:server:SaveStashItems', stashId, items)
 end)
 
 RegisterNetEvent('indigo-apartments:returnBucket', function()

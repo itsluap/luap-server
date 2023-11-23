@@ -124,7 +124,7 @@ INSTALLATION
 
 Add the item images to your inventory script
 
-[qb] > qb-inventory > html > images
+[qb] > ps-inventory > html > images
 
 -------------------------------------------------------------------------------------------------
 

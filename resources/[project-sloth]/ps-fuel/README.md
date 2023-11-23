@@ -79,7 +79,7 @@ then paste this snippet over the existing lines shown in the GIF below.
 ### Step 3:
 ```if weaponName == "weapon_petrolcan" or weaponName == "weapon_fireextinguisher"```
 
-Copy this line and then navigate to your **qb-inventory/client/main.lua** paste this in your Visual Studio Code search bar.
+Copy this line and then navigate to your **ps-inventory/client/main.lua** paste this in your Visual Studio Code search bar.
 
 ```lua
 if weaponName == "weapon_fireextinguisher" then

@@ -616,7 +616,7 @@ local function Framework_Check()
                 end
             end
         elseif Framework.Active == 2 then
-            local invState = GetResourceState("qb-inventory")
+            local invState = GetResourceState("ps-inventory")
             if (invState == "starting" or invState == "started") and ESX and ESX.QBCore and ESX.QBCore.Shared and
                 ESX.QBCore.Shared.Items and not ESX.QBCore.Shared.Items[Config.ChipsInventoryItem] then
                 print("^3[Casino][Warning] It looks like the '" .. Config.ChipsInventoryItem ..

@@ -54,7 +54,7 @@ Future updates will be coming and we will of course support all normal monitor s
 * Make sure you have the latest update of [qb-weapons](https://github.com/qbcore-framework/qb-weapons)
 * Drag `ps-inventory` into your resources folder or any subfolder
 * Make sure that the folder is named `ps-inventory` and **not** `ps-inventory-main`
-* Replace all occurrences of `qb-inventory` with `ps-inventory`.<br>The example below uses Visual Studio Code to replace all instances.
+* Replace all occurrences of `ps-inventory` with `ps-inventory`.<br>The example below uses Visual Studio Code to replace all instances.
 
 ![image](https://github.com/Z3rio/ps-inventory/assets/54480523/00fa21a5-4be2-443f-aff2-4b3202b662dc)
 
@@ -102,7 +102,7 @@ Runs at ~ 0.00 to 0.01 ms if you have more optimization suggestions feel free to
 * [OK1ez](https://github.com/OK1ez) for full redesign. 
 * ihyajb (Aj) for [original version](https://github.com/ihyajb/aj-inventory)
 * Jay for [decay](https://github.com/tnj-development/inventory)
-* i-kulgu for [updated decay](https://github.com/i-kulgu/qb-inventory-decay)
+* i-kulgu for [updated decay](https://github.com/i-kulgu/ps-inventory-decay)
 * [OnlyCats](https://github.com/onlycats) who helped reorganize and also created some custom images.
 
 # Issues and Suggestions
