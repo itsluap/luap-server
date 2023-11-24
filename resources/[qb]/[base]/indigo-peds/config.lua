@@ -75,7 +75,6 @@ donator_options = {
 	event = "donator:createMenu",
 	icon = "fa-solid fa-circle",
 	label = 'Donator Store',
-	groups = "taxi",
 }
 
 exports.ox_target:addModel(ps1_model, ps1_options)
