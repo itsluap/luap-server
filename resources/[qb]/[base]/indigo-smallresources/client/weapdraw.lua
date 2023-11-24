@@ -181,30 +181,35 @@ CreateThread(function()
 				local HolsterVariant = GetPedDrawableVariation(ped, 7)
 
 				if HolsterVariant == 1 or
-					HolsterVariant == 2 or
-					HolsterVariant == 3 or
-					HolsterVariant == 5 or
-					HolsterVariant == 6 or
-					HolsterVariant == 8 or
-					HolsterVariant == 9 or
-					HolsterVariant == 56 or
-					HolsterVariant == 57 or
-					HolsterVariant == 58 or
-					HolsterVariant == 59 or
-					HolsterVariant == 60 or
-					HolsterVariant == 61 or
-					HolsterVariant == 62 or
-					HolsterVariant == 63 or
-					HolsterVariant == 64 or
-					HolsterVariant == 65 or
-					HolsterVariant == 66 or
-					HolsterVariant == 67 or
-					HolsterVariant == 68 or
-					HolsterVariant == 69 or
-					HolsterVariant == 71 or
-					HolsterVariant == 72 or
-					HolsterVariant == 119 or
-					HolsterVariant == 120 then
+					HolsterVariant == 195 or
+					HolsterVariant == 196 or
+					HolsterVariant == 233 or
+					HolsterVariant == 234 or
+					HolsterVariant == 235 or
+					HolsterVariant == 236 or
+					HolsterVariant == 237 or
+					HolsterVariant == 238 or
+					HolsterVariant == 239 or
+					HolsterVariant == 240 or
+					HolsterVariant == 241 or
+					HolsterVariant == 242 or
+					HolsterVariant == 243 or
+					HolsterVariant == 244 or
+					HolsterVariant == 269 or
+					HolsterVariant == 282 or
+					HolsterVariant == 283 or
+					HolsterVariant == 284 or
+					HolsterVariant == 285 or
+					HolsterVariant == 286 or
+					HolsterVariant == 287 or
+					HolsterVariant == 288 or
+					HolsterVariant == 289 or
+					HolsterVariant == 291 or
+					HolsterVariant == 292 or
+					HolsterVariant == 293 or
+					HolsterVariant == 294 or
+					HolsterVariant == 295 or
+					HolsterVariant == 296 then
 					WearingHolster = true
 				else
 					WearingHolster = false
@@ -221,7 +226,7 @@ CreateThread(function()
 							SetCurrentPedWeapon(ped, newWeap, true)
 
 							if IsWeaponHolsterable(newWeap) then
-								SetPedComponentVariation(ped, 7, currentHolster == 8 and 2 or currentHolster == 1 and 3 or currentHolster == 6 and 5, currentHolsterTexture, 2)
+								SetPedComponentVariation(ped, 7, currentHolster == 296 and 295 or currentHolster == 1 and 3 or currentHolster == 6 and 5, currentHolsterTexture, 2)
 							end
 							currWeapon = newWeap
 							Wait(300)
