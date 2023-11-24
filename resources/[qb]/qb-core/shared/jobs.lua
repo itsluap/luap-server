@@ -51,7 +51,7 @@ QBShared.Jobs = {
                 payment = 6200
             },
             ['8'] = {
-                name = 'Deputy Chief of LSPD',
+                name = 'Assistant Chief of LSPD',
                 payment = 7000
             },
 			['9'] = {
