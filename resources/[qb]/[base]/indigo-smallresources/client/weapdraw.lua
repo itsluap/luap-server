@@ -226,7 +226,7 @@ CreateThread(function()
 							SetCurrentPedWeapon(ped, newWeap, true)
 
 							if IsWeaponHolsterable(newWeap) then
-								SetPedComponentVariation(ped, 7, currentHolster == 295 and 296 or currentHolster == 1 and 3 or currentHolster == 6 and 5, currentHolsterTexture, 2)
+								SetPedComponentVariation(ped, 7, currentHolster == 295 and 296 or currentHolster == 293 and 294 or currentHolster == 291 and 292 or currentHolster == 287 and 288 or currentHolster == 282 and 283 or currentHolster == 243 and 244 or currentHolster == 241 and 242 or currentHolster == 239 and 240 or currentHolster == 237 and 238 or currentHolster == 235 and 236 or currentHolster == 233 and 234 or currentHolster == 291 and 292, currentHolsterTexture, 2)
 							end
 							currWeapon = newWeap
 							Wait(300)
@@ -264,7 +264,7 @@ CreateThread(function()
 							SetCurrentPedWeapon(ped, newWeap, true)
 
 							if IsWeaponHolsterable(newWeap) then
-								SetPedComponentVariation(ped, 7, currentHolster == 296 and 295 or currentHolster == 1 and 3 or currentHolster == 6 and 5, currentHolsterTexture, 2)
+								SetPedComponentVariation(ped, 7, currentHolster == 295 and 296 or currentHolster == 293 and 294 or currentHolster == 291 and 292 or currentHolster == 287 and 288 or currentHolster == 282 and 283 or currentHolster == 243 and 244 or currentHolster == 241 and 242 or currentHolster == 239 and 240 or currentHolster == 237 and 238 or currentHolster == 235 and 236 or currentHolster == 233 and 234 or currentHolster == 291 and 292, currentHolsterTexture, 2)
 							end
 
 							Wait(500)
@@ -296,7 +296,7 @@ CreateThread(function()
 							SetCurrentPedWeapon(ped, newWeap, true)
 
 							if IsWeaponHolsterable(newWeap) then
-								SetPedComponentVariation(ped, 7, currentHolster == 296 and 295 or currentHolster == 1 and 3 or currentHolster == 6 and 5, currentHolsterTexture, 2)
+								SetPedComponentVariation(ped, 7, currentHolster == 295 and 296 or currentHolster == 293 and 294 or currentHolster == 291 and 292 or currentHolster == 287 and 288 or currentHolster == 282 and 283 or currentHolster == 243 and 244 or currentHolster == 241 and 242 or currentHolster == 239 and 240 or currentHolster == 237 and 238 or currentHolster == 235 and 236 or currentHolster == 233 and 234 or currentHolster == 291 and 292, currentHolsterTexture, 2)
 							end
 
 							currWeapon = newWeap
