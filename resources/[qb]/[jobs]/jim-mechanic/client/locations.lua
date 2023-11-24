@@ -662,7 +662,7 @@ RegisterNetEvent('jim-mechanic:client:Store', function(data)
 end)
 
 ------ Repair Stash Stuff -----
-RegisterNetEvent('jim-mechanic:client:Safe', function(data) TriggerEvent("inventory:client:SetCurrentStash", data.job.."Safe") TriggerServerEvent("inventory:server:OpenInventory", "stash", data.job.."Safe", { maxweight = 4000000, slots = 50, }) end)
+RegisterNetEvent('jim-mechanic:client:Safe', function(data) PlayerData = QBCore.Functions.GetPlayerData() TriggerEvent("inventory:client:SetCurrentStash", PlayerData.job.name.."Safe") TriggerServerEvent("inventory:server:OpenInventory", "stash", PlayerData.job.name.."Safe", { maxweight = 4000000, slots = 50, }) end)
 
 -------- Garage Stuff ---------
 local currentVeh = { out = false, current = nil }
