@@ -45,7 +45,7 @@ CreateThread(function()
             local ped = PlayerPedId()
             if not IsPedInAnyVehicle(ped, false) and GetEntitySpeed(ped) > 2.5 then
                 sleep = 0
-                if IsControlJustPressed(1, 19) then
+                if IsControlJustPressed(1, 38) then
                     Tackle()
                 end
             end
