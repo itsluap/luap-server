@@ -30,7 +30,7 @@ RegisterNetEvent("donator:createMenu", function()
           }
         }
     end
-    exports["qb-menu"]:openMenu(menu)
+    exports["indigo-menu"]:openMenu(menu)
 end)
 
 CreateThread(function()
