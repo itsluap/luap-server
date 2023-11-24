@@ -644,9 +644,9 @@ end)
 RegisterNetEvent('jim-mechanic:client:Store:Menu', function(data)
 	PlayerData = QBCore.Functions.GetPlayerData()
     exports['indigo-menu']:openMenu({
-        { header = Loc[Config.Lan]["stores"].tools, txt = "", params = { event = "jim-mechanic:client:Store", args = { id = 1, job = PlayerData.job } } },
-        { header = Loc[Config.Lan]["stores"].perform, txt = "", params = { event = "jim-mechanic:client:Store", args = { id = 2, job = PlayerData.job } } },
-        { header = Loc[Config.Lan]["stores"].cosmetic, txt = "", params = { event = "jim-mechanic:client:Store", args = { id = 3, job = PlayerData.job } } },
+        { header = Loc[Config.Lan]["stores"].tools, txt = "", params = { event = "jim-mechanic:client:Store", args = { id = 1, job = PlayerData.job.name } } },
+        { header = Loc[Config.Lan]["stores"].perform, txt = "", params = { event = "jim-mechanic:client:Store", args = { id = 2, job = PlayerData.job.name } } },
+        { header = Loc[Config.Lan]["stores"].cosmetic, txt = "", params = { event = "jim-mechanic:client:Store", args = { id = 3, job = PlayerData.job.name } } },
     })
 end)
 
