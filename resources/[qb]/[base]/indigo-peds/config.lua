@@ -37,6 +37,12 @@ Config.PedList = {
 		gender = 'male' -- The gender of the ped, used for the CreatePed native.
 	},
 
+	{
+		model = `cs_fbisuit_01`, -- Model name as a hash.
+		coords = vector4(185.29, -916.61, 30.69, 148.52), -- Hawick Ave (X, Y, Z, Heading)
+		gender = 'male' -- The gender of the ped, used for the CreatePed native.
+	},
+
 }
 
 -- ox_lib stuff --
@@ -44,6 +50,7 @@ Config.PedList = {
 ps1_model = 'a_m_m_hillbilly_02'
 ps2_model = 'a_m_m_mlcrisis_01'
 taxi_model = 'a_m_m_indian_01'
+donator_model = 'cs_fbisuit_01'
 
 ps1_options = {
 	event = "ps-drugprocessing:EnterLab",
@@ -64,8 +71,17 @@ taxi_options = {
 	groups = "taxi",
 }
 
+donator_options = {
+	event = "donator:createMenu",
+	icon = "fa-solid fa-circle",
+	label = 'Donator Store',
+	groups = "taxi",
+}
+
 exports.ox_target:addModel(ps1_model, ps1_options)
 
 exports.ox_target:addModel(ps2_model, ps2_options)
+
+exports.ox_target:addModel(taxi_model, taxi_options)
 
 exports.ox_target:addModel(taxi_model, taxi_options)

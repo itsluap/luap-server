@@ -42,7 +42,7 @@ CreateThread(function()
     BeginTextCommandSetBlipName("STRING")
     AddTextComponentSubstringPlayerName("Donator Store")
     EndTextCommandSetBlipName(blip)
-
+    --[[
     exports['qb-target']:SpawnPed({
         model = Config.Model,
         coords = Config.NPC,
@@ -64,6 +64,7 @@ CreateThread(function()
           distance = 2.5,
         },
       })
+      ]]--
 end)
 
 RegisterNetEvent("donator:spawnVehicle", function(model, plate)
