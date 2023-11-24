@@ -20,7 +20,7 @@ load_server_icon myLogo.png
 set sv_enforceGameBuild 2944
 set mysql_connection_string "user=root;password=YellowMustang12;host=localhost;port=3306;database=indigo-live;charset=utf8mb4"
 #set mysql_connection_string "user=root;host=localhost;port=3306;database=fivem-dev;charset=utf8mb4"
-#sv_tebexSecret 9ece67381cffad8ef67ec7d10f20b2b0b41b86b6
+sv_tebexSecret 9ece67381cffad8ef67ec7d10f20b2b0b41b86b6
 
 # Voice config
 setr voice_useNativeAudio true
@@ -126,6 +126,8 @@ ensure indigo-weathersync
 ensure indigo-assets
 ensure ps-ui
 ensure ps-dispatch
+ensure ps-realtor
+ensure ps-housing
 ensure [qb]
 ensure [project-sloth]
 ensure [standalone]
