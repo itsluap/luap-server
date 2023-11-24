@@ -14,8 +14,7 @@ RegisterNetEvent('QBCore:Client:OnJobUpdate', function(JobInfo)
 	PlayerJob = JobInfo
 	onDuty = PlayerJob.onduty
 	for _, v in pairs(Config.JobRoles) do 
-		if v == PlayerJob.name then 
-			GlobalState.isMech = true 
+		if v == PlayerJob.name then
 		end 
 	end
 end)
@@ -643,10 +642,11 @@ end)
 ------ Store Stuff ------
 -- Menu to pick the store
 RegisterNetEvent('jim-mechanic:client:Store:Menu', function(data)
+	PlayerData = QBCore.Functions.GetPlayerData()
     exports['indigo-menu']:openMenu({
-        { header = Loc[Config.Lan]["stores"].tools, txt = "", params = { event = "jim-mechanic:client:Store", args = { id = 1, job = data.job } } },
-        { header = Loc[Config.Lan]["stores"].perform, txt = "", params = { event = "jim-mechanic:client:Store", args = { id = 2, job = data.job } } },
-        { header = Loc[Config.Lan]["stores"].cosmetic, txt = "", params = { event = "jim-mechanic:client:Store", args = { id = 3, job = data.job } } },
+        { header = Loc[Config.Lan]["stores"].tools, txt = "", params = { event = "jim-mechanic:client:Store", args = { id = 1, job = PlayerData.job } } },
+        { header = Loc[Config.Lan]["stores"].perform, txt = "", params = { event = "jim-mechanic:client:Store", args = { id = 2, job = PlayerData.job } } },
+        { header = Loc[Config.Lan]["stores"].cosmetic, txt = "", params = { event = "jim-mechanic:client:Store", args = { id = 3, job = PlayerData.job } } },
     })
 end)
 
