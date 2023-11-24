@@ -568,6 +568,33 @@ Config.Items = {
             slot = 20,
             authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}
         },
+        [21] = {
+            name = "pdbadge",
+            price = 0,
+            amount = 50,
+            info = {},
+            type = "item",
+            slot = 21,
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}
+        },
+        [21] = {
+            name = "pdbadge",
+            price = 0,
+            amount = 50,
+            info = {},
+            type = "item",
+            slot = 21,
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}
+        },
+        [22] = {
+            name = "drone_lspd",
+            price = 1250,
+            amount = 50,
+            info = {},
+            type = "item",
+            slot = 22,
+            authorizedJobGrades = {8, 9, 10, 11, 12, 13, 14}
+        },
     }
 }
 
