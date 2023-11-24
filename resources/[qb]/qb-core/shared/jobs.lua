@@ -19,7 +19,7 @@ QBShared.Jobs = {
 		offDutyPay = false,
 		grades = {
             ['0'] = {
-                name = 'Recruit',
+                name = 'Cadet',
                 payment = 1900
             },
 			['1'] = {
@@ -51,11 +51,11 @@ QBShared.Jobs = {
                 payment = 6200
             },
             ['8'] = {
-                name = 'Assistant Chief of LSPD',
-                payment = 7000
+                name = 'Deputy Chief of LSPD',
+                payment = 6550
             },
             ['9'] = {
-                name = 'Deputy Chief of LSPD',
+                name = 'Assistant Chief of LSPD',
                 payment = 7000
             },
 			['10'] = {

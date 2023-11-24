@@ -197,6 +197,17 @@ Config.PoliceAuthorizedVehicles = {
         ["z1RB"] = "Pursuit Corvette",
         ["poldemonrb"] = "Pursuit Demon",
 	},
+
+    [10] = {
+		["n11vic"] = "Crown Victoria",
+        ["n18taurus"] = "Taurus",
+		["n16explorer"] = "Exlporer",
+        ["n18charger"] = "Charger",
+        ["n19mustang"] = "Mustang",
+        ["mach1rb"] = "Pursuit Mustang",
+        ["z1RB"] = "Pursuit Corvette",
+        ["poldemonrb"] = "Pursuit Demon",
+	},
 }
 
 Config.SheriffAuthorizedVehicles = {
