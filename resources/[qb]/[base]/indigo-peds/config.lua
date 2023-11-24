@@ -84,4 +84,4 @@ exports.ox_target:addModel(ps2_model, ps2_options)
 
 exports.ox_target:addModel(taxi_model, taxi_options)
 
-exports.ox_target:addModel(taxi_model, taxi_options)
+exports.ox_target:addModel(donator_model, donator_options)
