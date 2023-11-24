@@ -264,7 +264,7 @@ CreateThread(function()
 							SetCurrentPedWeapon(ped, newWeap, true)
 
 							if IsWeaponHolsterable(newWeap) then
-								SetPedComponentVariation(ped, 7, currentHolster == 8 and 2 or currentHolster == 1 and 3 or currentHolster == 6 and 5, currentHolsterTexture, 2)
+								SetPedComponentVariation(ped, 7, currentHolster == 296 and 295 or currentHolster == 1 and 3 or currentHolster == 6 and 5, currentHolsterTexture, 2)
 							end
 
 							Wait(500)
@@ -296,7 +296,7 @@ CreateThread(function()
 							SetCurrentPedWeapon(ped, newWeap, true)
 
 							if IsWeaponHolsterable(newWeap) then
-								SetPedComponentVariation(ped, 7, currentHolster == 8 and 2 or currentHolster == 1 and 3 or currentHolster == 6 and 5, currentHolsterTexture, 2)
+								SetPedComponentVariation(ped, 7, currentHolster == 296 and 295 or currentHolster == 1 and 3 or currentHolster == 6 and 5, currentHolsterTexture, 2)
 							end
 
 							currWeapon = newWeap
