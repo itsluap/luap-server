@@ -602,12 +602,12 @@ Config.Outfits = {
     ["police"] = {
         ["Male"] = {
             {
-                name = "Rookie",
+                name = "Cadet",
                 outfitData = {
                     ["pants"] = {item = 272, texture = 0}, -- Pants
                     ["arms"] = {item = 4, texture = 0}, -- Arms
                     ["t-shirt"] = {item = 281, texture = 0}, -- T Shirt
-                    ["vest"] = {item = 0, texture = 0}, -- Body Vest
+                    ["vest"] = {item = 82, texture = 0}, -- Body Vest
                     ["decals"] = {item = 0, texture = 0}, -- Decals
                     ["torso2"] = {item = 800, texture = 2}, -- Jacket
                     ["shoes"] = {item = 24, texture = 0}, -- Shoes
