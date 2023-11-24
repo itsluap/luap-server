@@ -3,7 +3,7 @@ Config = {}
 Config.NPC = vector4(185.29, -916.61, 30.69, 148.52) -- Location for the NPC to spawn.
 Config.Model = "cs_fbisuit_01" -- NPC Model.
 Config.VehicleSpawn = vector4(180.45, -923.15, 30.69, 230.33) -- Location for car to spawn.
-Config.Garage = "garage1" -- Default garage for the car to be tagged too.
+Config.Garage = "pillboxlowergarage" -- Default garage for the car to be tagged too.
 
 Config.CoinShop = {
     [1] = {
