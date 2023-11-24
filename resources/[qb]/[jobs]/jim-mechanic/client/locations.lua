@@ -654,6 +654,8 @@ end)
 RegisterNetEvent('jim-mechanic:client:Store', function(data)
 	local event = "inventory:server:OpenInventory" if Config.JimShops then event = "jim-shops:ShopOpen" end
 	print(data.job) -- temporary print to find out why stuff isnt working anymore
+	print(data.id)
+	print(data)
 	if data.id == 1 then TriggerServerEvent(event, "shop", data.job, Stores.ToolItems)
 	elseif data.id == 2 then TriggerServerEvent(event, "shop", data.job, Stores.PerformItems)
 	elseif data.id == 3 then TriggerServerEvent(event, "shop", data.job, Stores.StoreItems) end
