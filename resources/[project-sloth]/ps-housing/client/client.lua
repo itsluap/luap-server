@@ -53,16 +53,18 @@ RegisterNetEvent('ps-housing:client:setupSpawnUI', function(cData)
     DoScreenFadeOut(1000)
     local result = lib.callback.await('ps-housing:cb:GetOwnedApartment', source, cData.citizenid)
     if result then
-        TriggerEvent('indigo-spawn:client:setupSpawns', cData, false, nil)
-        TriggerEvent('indigo-spawn:client:openUI', true)
+        --TriggerEvent('indigo-spawn:client:setupSpawns', cData, false, nil)
+        --TriggerEvent('indigo-spawn:client:openUI', true)
         -- TriggerEvent("apartments:client:SetHomeBlip", result.type)
+        TriggerEvent('indigo-spawn:client:luap:spawn')
     else
         if Config.StartingApartment then
             TriggerEvent('indigo-spawn:client:setupSpawns', cData, true, Config.Apartments)
             TriggerEvent('indigo-spawn:client:openUI', true)
         else
-            TriggerEvent('indigo-spawn:client:setupSpawns', cData, false, nil)
-            TriggerEvent('indigo-spawn:client:openUI', true)
+            --TriggerEvent('indigo-spawn:client:setupSpawns', cData, false, nil)
+            --TriggerEvent('indigo-spawn:client:openUI', true)
+            TriggerEvent('indigo-spawn:client:luap:spawn')
         end
     end
 end)
