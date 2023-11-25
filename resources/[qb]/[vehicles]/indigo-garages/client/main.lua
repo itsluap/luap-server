@@ -810,14 +810,7 @@ RegisterNetEvent('indigo-garages:client:OpenMenu', function()
             PublicGarage(CurrentGarage, type)
         end
     elseif CurrentHouseGarage then
-        print(CurrentHouseGarage)
-        QBCore.Functions.TriggerCallback('ps-housing:isPlayerOwner', function(isOwner)
-            if isOwner then
-                TriggerEvent('indigo-garages:client:OpenHouseGarage')
-            else
-                print("You are not the owner.")
-            end
-        end, property_id)
+        TriggerServerEvent('indigo-garages:luap:OpenHouseGarageMenu', CurrentHouseGarage)
     end
 end)
 

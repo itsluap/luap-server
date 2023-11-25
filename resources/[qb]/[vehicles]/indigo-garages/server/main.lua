@@ -407,3 +407,14 @@ function(source, args)
         end)
     end
 end, RestoreCommandPermissionLevel)
+
+RegisterNetEvent('indigo-garages:luap:OpenHouseGarageMenu', function(house)
+    local src = source
+    local hasKey = exports['ps-housing']:IsOwner(src, house)
+    if hasKey then 
+        TriggerClientEvent('indigo-garages:client:OpenHouseGarage', src)
+    else
+        print("You don't have the key to open the garage.")
+        -- or send a notification to the client, etc.
+    end
+end)
