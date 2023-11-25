@@ -59,7 +59,8 @@ RegisterNetEvent('indigo-spawn:client:setupSpawns', function(cData, new, apps)
                 action = "setupLocations",
                 locations = QB.Spawns,
                 houses = myHouses,
-                isNew = new
+                isNew = new,
+                Access = QB.SpawnAccess,
             })
         end, cData.citizenid)
     elseif new then
