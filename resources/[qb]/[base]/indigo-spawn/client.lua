@@ -4,24 +4,22 @@ local camZPlus2 = 50
 local pointCamCoords = 75
 local pointCamCoords2 = 0
 local cam1Time = 500
-local cam2Time = 1000
+local cam2Time = 3000
 local choosingSpawn = false
 local Houses = {}
 local cam = nil
 local cam2 = nil
 
--- Functions
-
 local function SetDisplay(bool)
     choosingSpawn = bool
+    DisplayRadar(true) 
+
     SetNuiFocus(bool, bool)
     SendNUIMessage({
-        action = "showUi",
+        type = "ui",
         status = bool
     })
 end
-
--- Events
 
 RegisterNetEvent('indigo-spawn:client:openUI', function(value)
     SetEntityVisible(PlayerPedId(), false)
@@ -73,18 +71,6 @@ RegisterNetEvent('indigo-spawn:client:setupSpawns', function(cData, new, apps)
     end
 end)
 
--- NUI Callbacks
-
-RegisterNUICallback("exit", function(_, cb)
-    SetNuiFocus(false, false)
-    SendNUIMessage({
-        action = "showUi",
-        status = false
-    })
-    choosingSpawn = false
-    cb("ok")
-end)
-
 local function SetCam(campos)
     cam2 = CreateCamWithParams("DEFAULT_SCRIPTED_CAMERA", campos.x, campos.y, campos.z + camZPlus1, 300.00,0.00,0.00, 110.00, false, 0)
     PointCamAtCoord(cam2, campos.x, campos.y, campos.z + pointCamCoords)
@@ -92,7 +78,6 @@ local function SetCam(campos)
     if DoesCamExist(cam) then
         DestroyCam(cam, true)
     end
-    Wait(cam1Time)
 
     cam = CreateCamWithParams("DEFAULT_SCRIPTED_CAMERA", campos.x, campos.y, campos.z + camZPlus2, 300.00,0.00,0.00, 110.00, false, 0)
     PointCamAtCoord(cam, campos.x, campos.y, campos.z + pointCamCoords2)
@@ -103,11 +88,14 @@ end
 RegisterNUICallback('setCam', function(data, cb)
     local location = tostring(data.posname)
     local type = tostring(data.type)
+
     DoScreenFadeOut(200)
     Wait(500)
     DoScreenFadeIn(200)
+
     if DoesCamExist(cam) then DestroyCam(cam, true) end
     if DoesCamExist(cam2) then DestroyCam(cam2, true) end
+
     if type == "current" then
         QBCore.Functions.GetPlayerData(function(PlayerData)
             SetCam(PlayerData.position)
@@ -145,7 +133,6 @@ end)
 
 local function PreSpawnPlayer()
     SetDisplay(false)
-    DoScreenFadeOut(500)
     Wait(2000)
 end
 
@@ -158,8 +145,21 @@ local function PostSpawnPlayer(ped)
     DestroyCam(cam2, true)
     SetEntityVisible(PlayerPedId(), true)
     Wait(500)
+    TriggerEvent("backitems:start")
     DoScreenFadeIn(250)
 end
+
+RegisterNUICallback('spawnplayerappartment2', function(data, cb)
+    PreSpawnPlayer()
+    local Data = data.spawnloc
+    local Data2 = data.apartName
+    TriggerServerEvent('QBCore:Server:OnPlayerLoaded')
+    TriggerEvent('QBCore:Client:OnPlayerLoaded')
+    TriggerServerEvent('ps-housing:server:resetMetaData')
+    TriggerEvent('indigo-apartments:client:LastLocationHouse', Data, Data2)
+    PostSpawnPlayer()
+    cb('ok')
+end)
 
 RegisterNUICallback('spawnplayer', function(data, cb)
     local location = tostring(data.spawnloc)
@@ -202,6 +202,21 @@ RegisterNUICallback('spawnplayer', function(data, cb)
     end
     cb('ok')
 end)
+RegisterNetEvent('indigo-spawn:client:OpenUIForSelectCoord', function()
+    local PlayerCoord = GetEntityCoords(PlayerPedId(), 1)
+    local PlayerHeading = GetEntityHeading(PlayerPedId())
+    SendNUIMessage({
+        action = "AddCoord",
+        Coord = {x = PlayerCoord[1], y = PlayerCoord[2], z = PlayerCoord[3], h = PlayerHeading},
+            
+    })
+    SetNuiFocus(true, true)
+end)
+
+RegisterNUICallback('CloseAddCoord', function(_, cb)
+    SetNuiFocus(false, false)
+    cb('ok')
+end)
 
 -- Threads
 
@@ -214,29 +229,4 @@ CreateThread(function()
             Wait(1000)
         end
     end
-end)
-
-RegisterNetEvent('indigo-spawn:client:luap:spawn', function()
-    local ped = PlayerPedId()
-    local PlayerData = QBCore.Functions.GetPlayerData()
-    local insideMeta = PlayerData.metadata["inside"]
-    PreSpawnPlayer()
-    QBCore.Functions.GetPlayerData(function(pd)
-        ped = PlayerPedId()
-        SetEntityCoords(ped, pd.position.x, pd.position.y, pd.position.z)
-        SetEntityHeading(ped, pd.position.a)
-        FreezeEntityPosition(ped, false)
-    end)
-
-    if insideMeta.house ~= nil then
-        local houseId = insideMeta.house
-        TriggerEvent('indigo-houses:client:LastLocationHouse', houseId)
-    elseif insideMeta.apartment.apartmentType ~= nil or insideMeta.apartment.apartmentId ~= nil then
-        local apartmentType = insideMeta.apartment.apartmentType
-        local apartmentId = insideMeta.apartment.apartmentId
-        TriggerEvent('indigo-apartments:client:LastLocationHouse', apartmentType, apartmentId)
-    end
-    TriggerServerEvent('QBCore:Server:OnPlayerLoaded')
-    TriggerEvent('QBCore:Client:OnPlayerLoaded')
-    PostSpawnPlayer()
 end)

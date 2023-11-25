@@ -1,61 +1,118 @@
-# indigo-spawn
-Spawn Selector for qb-core Framework :eagle:
-
-# License
-
-    QBCore Framework
-    Copyright (C) 2021 Joshua Eger
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <https://www.gnu.org/licenses/>
+# add to qb-apartments/config.lua
 
 
-## Dependencies
-- [qb-core](https://github.com/qbcore-framework/qb-core)
-- [indigo-houses](https://github.com/qbcore-framework/indigo-houses) - Lets player select the house
-- [qb-apartment](https://github.com/qbcore-framework/qb-apartment) - Lets player select the apartment
-- [indigo-garages](https://github.com/qbcore-framework/indigo-garages) - For house garages
-
-## Screenshots
-![Spawn selector](https://i.imgur.com/nz0mPGe.png)
-
-## Features
-- Ability to select spawn after selecting the character
-
-## Installation
-### Manual
-- Download the script and put it in the `[qb]` directory.
-- Add the following code to your server.cfg/resouces.cfg
-```
-ensure qb-core
-ensure indigo-spawn
-ensure indigo-apartments
-ensure indigo-garages
-```
-
-## Configuration
-An example to add spawn option
-```
-QB.Spawns = {
-    ["spawn1"] = { -- Needs to be unique
-        coords = vector4(1.1, -1.1, 1.1, 180.0), -- Coords player will be spawned
-        location = "spawn1", -- Needs to be unique
-        label = "Spawn 1 Name", -- This is the label which will show up in selection menu.
+```lua
+Apartments.Locations = {
+    ["apartment1"] = {
+        name = "apartment1",
+        label = "South Rockford Drive",
+        coords = {
+            enter = vector4(-667.02, -1105.24, 14.63, 242.32),
+        },
+        pos = {top = 57, left = 32},
+        polyzoneBoxData = {
+            heading = 245,
+            minZ = 13.5,
+            maxZ = 16.0,
+            debug = false,
+            length = 1,
+            width = 3,
+            distance = 2.0,
+            created = false
+        }
     },
-    ["spawn2"] = { -- Needs to be unique
-        coords = vector4(1.1, -1.1, 1.1, 180.0), -- Coords player will be spawned
-        location = "spawn2", -- Needs to be unique
-        label = "Spawn 2 Name", -- This is the label which will show up in selection menu.
+    ["apartment2"] = {
+        name = "apartment2",
+        label = "Morningwood Blvd",
+        coords = {
+            enter = vector4(-1288.52, -430.51, 35.15, 124.81),
+        },
+        pos = {top = 67, left = 36},
+        polyzoneBoxData = {
+            heading = 124,
+            minZ = 34.0,
+            maxZ = 37.0,
+            debug = false,
+            length = 1,
+            width = 3,
+            distance = 2.0,
+            created = false
+        }
+    },
+    ["apartment3"] = {
+        name = "apartment3",
+        label = "Integrity Way",
+        coords = {
+            enter = vector4(269.73, -640.75, 42.02, 249.07),
+        },
+        pos = {top = 48, left = 33.5},
+        polyzoneBoxData = {
+            heading = 250,
+            minZ = 40,
+            maxZ = 43.5,
+            debug = false,
+            length = 1,
+            width = 1,
+            distance = 2.0,
+            created = false
+        }
+    },
+    ["apartment4"] = {
+        name = "apartment4",
+        label = "Tinsel Towers",
+        coords = {
+            enter = vector4(-619.29, 37.69, 43.59, 181.03),
+        },
+        pos = {top = 58, left = 39},
+        polyzoneBoxData = {
+            heading = 180,
+            minZ = 41.0,
+            maxZ = 45.5,
+            debug = false,
+            length = 1,
+            width = 2,
+            distance = 2.0,
+            created = false
+        }
+    },
+    ["apartment5"] = {
+        name = "apartment5",
+        label = "Fantastic Plaza",
+        coords = {
+            enter = vector4(291.517, -1078.674, 29.405, 270.75),
+        },
+        pos = {top = 48, left = 31},
+        polyzoneBoxData = {
+            heading = 270,
+            minZ = 28.5,
+            maxZ = 31.0,
+            debug = false,
+            length = 1,
+            width = 2,
+            distance = 2.0,
+            created = false
+        }
     },
 }
+```
+
+# Open qb-apartments/client/main.lua and replace
+```lua
+RegisterNetEvent('apartments:client:setupSpawnUI', function(cData)
+    QBCore.Functions.TriggerCallback('apartments:GetOwnedApartment', function(result)
+        if result then
+            TriggerEvent('qb-spawn:client:setupSpawns', cData, false, nil)
+            TriggerEvent('qb-spawn:client:openUI', true)
+            TriggerEvent("apartments:client:SetHomeBlip", result.type)
+        else
+            if Apartments.Starting then
+                TriggerEvent('qb-spawn:client:setupSpawns', cData, true, Apartments.Locations)
+                TriggerEvent('qb-spawn:client:openUI', true)
+            else
+                TriggerEvent('qb-spawn:client:setupSpawns', cData, false, nil)
+                TriggerEvent('qb-spawn:client:openUI', true)
+            end
+        end
+    end, cData.citizenid)
+end)
 ```
