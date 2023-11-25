@@ -815,6 +815,7 @@ RegisterNetEvent('indigo-garages:client:OpenMenu', function()
                 TriggerEvent('indigo-garages:client:OpenHouseGarage')
             else
                 print("You are not the owner.")
+                print(property_id)
             end
         end, property_id)
     end
