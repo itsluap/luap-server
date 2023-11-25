@@ -177,15 +177,15 @@ RegisterNetEvent('indigo-weed:client:leaveHouse', function()
     end)
 end)
 
-RegisterNetEvent('indigo-weed:client:refreshHousePlants', function(house)
-    if currentHouse ~= nil and currentHouse == house then
+RegisterNetEvent('indigo-weed:client:refreshHousePlants', function(property)
+    if currentHouse ~= nil and currentHouse == property then
         despawnHousePlants()
         SetTimeout(100, function()
             QBCore.Functions.TriggerCallback('indigo-weed:server:getBuildingPlants', function(plants)
-                currentHouse = house
+                currentHouse = property
                 housePlants[currentHouse] = plants
                 spawnHousePlants()
-            end, house)
+            end, property)
         end)
     end
 end)
