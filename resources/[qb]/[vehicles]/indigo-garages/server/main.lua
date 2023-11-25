@@ -20,7 +20,7 @@ local function TableContains (tab, val)
     return false
 end
 
-QBCore.Functions.CreateCallback("qb-garage:server:GetOutsideVehicle", function(source, cb, plate)
+QBCore.Functions.CreateCallback("indigo-garages:server:GetOutsideVehicle", function(source, cb, plate)
     local src = source
     local pData = QBCore.Functions.GetPlayer(src)
     if not OutsideVehicles[plate] then cb(nil) return end
@@ -33,16 +33,16 @@ QBCore.Functions.CreateCallback("qb-garage:server:GetOutsideVehicle", function(s
     end)
 end)
 
-QBCore.Functions.CreateCallback("qb-garage:server:CheckSpawnedVehicle", function(source, cb, plate)
+QBCore.Functions.CreateCallback("indigo-garages:server:CheckSpawnedVehicle", function(source, cb, plate)
     cb(VehicleSpawnerVehicles[plate] ~= nil and VehicleSpawnerVehicles[plate])
 end)
 
-RegisterNetEvent("qb-garage:server:UpdateSpawnedVehicle", function(plate, value)
+RegisterNetEvent("indigo-garages:server:UpdateSpawnedVehicle", function(plate, value)
     VehicleSpawnerVehicles[plate] = value
 end)
 
 
-QBCore.Functions.CreateCallback('qb-garage:server:spawnvehicle', function (source, cb, vehInfo, coords, warp)
+QBCore.Functions.CreateCallback('indigo-garages:server:spawnvehicle', function (source, cb, vehInfo, coords, warp)
     local veh = QBCore.Functions.SpawnVehicle(source, vehInfo.vehicle, coords, warp)
     -- print(veh)
     if not veh or not NetworkGetNetworkIdFromEntity(veh) then
@@ -58,7 +58,7 @@ QBCore.Functions.CreateCallback('qb-garage:server:spawnvehicle', function (sourc
     cb(netId, vehProps)
 end)
 
-QBCore.Functions.CreateCallback("qb-garage:server:GetGarageVehicles", function(source, cb, garage, garageType, category)
+QBCore.Functions.CreateCallback("indigo-garages:server:GetGarageVehicles", function(source, cb, garage, garageType, category)
     local src = source
     local pData = QBCore.Functions.GetPlayer(src)
     if garageType == "public" then        --Public garages give player cars in the garage only
@@ -144,7 +144,7 @@ QBCore.Functions.CreateCallback("qb-garage:server:GetGarageVehicles", function(s
     end
 end)
 
-QBCore.Functions.CreateCallback("qb-garage:server:IsSpawnOk", function(_, cb, plate)
+QBCore.Functions.CreateCallback("indigo-garages:server:IsSpawnOk", function(_, cb, plate)
     if OutsideVehicles[plate] and DoesEntityExist(OutsideVehicles[plate].entity) then
         cb(false)
     else
@@ -153,7 +153,7 @@ QBCore.Functions.CreateCallback("qb-garage:server:IsSpawnOk", function(_, cb, pl
 end)
 
 if UseEnc0dedPersistenVehicles then
-    QBCore.Functions.CreateCallback("qb-garage:server:checkIsSpawned", function (plate)
+    QBCore.Functions.CreateCallback("indigo-garages:server:checkIsSpawned", function (plate)
         local data = exports['persistent-vehicles']:GetVehicleData(plate, {'pos'})
         return data == false and data or true
     end)
@@ -161,7 +161,7 @@ end
 
 
 
-QBCore.Functions.CreateCallback("qb-garage:server:checkOwnership", function(source, cb, plate, garageType, garage, gang, hasHouseKey)
+QBCore.Functions.CreateCallback("indigo-garages:server:checkOwnership", function(source, cb, plate, garageType, garage, gang, hasHouseKey)
     local src = source
     local pData = QBCore.Functions.GetPlayer(src)
     if garageType == "public" then        --Public garages only for player cars
@@ -219,7 +219,7 @@ QBCore.Functions.CreateCallback("qb-garage:server:checkOwnership", function(sour
     end
 end)
 
-QBCore.Functions.CreateCallback("qb-garage:server:GetVehicleProperties", function(source, cb, plate)
+QBCore.Functions.CreateCallback("indigo-garages:server:GetVehicleProperties", function(source, cb, plate)
     local properties = {}
     local result = MySQL.query.await('SELECT mods FROM player_vehicles WHERE plate = ?', {plate})
     if result[1] then
@@ -228,7 +228,7 @@ QBCore.Functions.CreateCallback("qb-garage:server:GetVehicleProperties", functio
     cb(properties)
 end)
 
-RegisterNetEvent('qb-garage:server:updateVehicle', function(state, fuel, engine, body, properties, plate, garage, location, damage)
+RegisterNetEvent('indigo-garages:server:updateVehicle', function(state, fuel, engine, body, properties, plate, garage, location, damage)
     if location and type(location) == 'vector3' then
         if StoreDamageAccuratly then
             MySQL.update('UPDATE player_vehicles SET state = ?, garage = ?, fuel = ?, engine = ?, body = ?, mods = ?, parkingspot = ?, damage = ? WHERE plate = ?',{state, garage, fuel, engine, body, json.encode(properties), json.encode(location), json.encode(damage), plate})
@@ -244,7 +244,7 @@ RegisterNetEvent('qb-garage:server:updateVehicle', function(state, fuel, engine,
     end
 end)
 
-RegisterNetEvent('qb-garage:server:updateVehicleState', function(state, plate, garage)
+RegisterNetEvent('indigo-garages:server:updateVehicleState', function(state, plate, garage)
     MySQL.update('UPDATE player_vehicles SET state = ?, garage = ?, depotprice = ? WHERE plate = ?',{state, garage, 0, plate})
 end)
 
@@ -261,7 +261,7 @@ RegisterNetEvent('indigo-garages:server:UpdateOutsideVehicles2', function(plate,
     OutsideVehicles[plate] = {netID = vehicle, entity = entity}
 end)
 
-QBCore.Functions.CreateCallback("qb-garage:server:GetOutsideVehicles", function(source, cb)
+QBCore.Functions.CreateCallback("indigo-garages:server:GetOutsideVehicles", function(source, cb)
     local ply = QBCore.Functions.GetPlayer(source)
     local citizenId = ply.PlayerData.citizenid
     if OutsideVehicles[citizenId] and next(OutsideVehicles[citizenId]) then
@@ -280,7 +280,7 @@ AddEventHandler('onResourceStart', function(resource)
     end
 end)
 
-RegisterNetEvent('qb-garage:server:PayDepotPrice', function(data)
+RegisterNetEvent('indigo-garages:server:PayDepotPrice', function(data)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     local cashBalance = Player.PlayerData.money["cash"]
@@ -301,7 +301,7 @@ end)
 
 --External Calls
 --Call from indigo-vehiclesales
-QBCore.Functions.CreateCallback("qb-garage:server:checkVehicleOwner", function(source, cb, plate)
+QBCore.Functions.CreateCallback("indigo-garages:server:checkVehicleOwner", function(source, cb, plate)
     local src = source
     local pData = QBCore.Functions.GetPlayer(src)
      MySQL.query('SELECT * FROM player_vehicles WHERE plate = ? AND citizenid = ?',{plate, pData.PlayerData.citizenid}, function(result)
@@ -314,7 +314,7 @@ QBCore.Functions.CreateCallback("qb-garage:server:checkVehicleOwner", function(s
 end)
 
 --Call from indigo-phone
-QBCore.Functions.CreateCallback('qb-garage:server:GetPlayerVehicles', function(source, cb)
+QBCore.Functions.CreateCallback('indigo-garages:server:GetPlayerVehicles', function(source, cb)
     local Player = QBCore.Functions.GetPlayer(source)
     local Vehicles = {}
 

@@ -47,7 +47,7 @@ local function TakeOutImpound(vehicle)
     local coords = Config.ImpoundLocations[currentGarage]
     if coords then
         QBCore.Functions.SpawnVehicle(vehicle.vehicle, function(veh)
-            QBCore.Functions.TriggerCallback('qb-garage:server:GetVehicleProperties', function(properties)
+            QBCore.Functions.TriggerCallback('indigo-garages:server:GetVehicleProperties', function(properties)
                 QBCore.Functions.SetVehicleProperties(veh, properties)
                 SetVehicleNumberPlateText(veh, vehicle.plate)
                 SetEntityHeading(veh, coords.w)

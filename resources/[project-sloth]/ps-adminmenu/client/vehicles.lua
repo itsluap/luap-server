@@ -159,7 +159,7 @@ RegisterNetEvent("ps-adminmenu:client:SpawnPersonalvehicle", function(data, sele
     local coords = QBCore.Functions.GetCoords(ped)
     local cid = QBCore.Functions.GetPlayerData().citizenid
 
-    QBCore.Functions.TriggerCallback("qb-garage:server:GetVehicleProperties", function(properties, plate)
+    QBCore.Functions.TriggerCallback("indigo-garages:server:GetVehicleProperties", function(properties, plate)
         props = properties
     end, plate)
     lib.callback('ps-adminmenu:server:GetVehicleByPlate', false, function(vehModel)

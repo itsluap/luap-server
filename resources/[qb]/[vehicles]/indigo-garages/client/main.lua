@@ -296,7 +296,7 @@ local function ParkOwnedVehicle(veh, garageName, vehLocation, plate)
     local closestVec3 = closestLocation and vector3(closestLocation.x,closestLocation.y, closestLocation.z) or nil
     if not canPark and not garageName.useVehicleSpawner then return end
     local properties = QBCore.Functions.GetVehicleProperties(veh)
-    TriggerServerEvent('qb-garage:server:updateVehicle', 1, totalFuel, engineDamage, bodyDamage, properties, plate, garageName, StoreParkinglotAccuratly and closestVec3 or nil, StoreDamageAccuratly and GetCarDamage(veh) or nil)
+    TriggerServerEvent('indigo-garages:server:updateVehicle', 1, totalFuel, engineDamage, bodyDamage, properties, plate, garageName, StoreParkinglotAccuratly and closestVec3 or nil, StoreDamageAccuratly and GetCarDamage(veh) or nil)
     ExitAndDeleteVehicle(veh)
     if plate then
         OutsideVehicles[plate] = nil
@@ -307,10 +307,10 @@ local function ParkOwnedVehicle(veh, garageName, vehLocation, plate)
 end
 
 function ParkVehicleSpawnerVehicle(veh, garageName, vehLocation, plate)
-    QBCore.Functions.TriggerCallback("qb-garage:server:CheckSpawnedVehicle", function (result)
+    QBCore.Functions.TriggerCallback("indigo-garages:server:CheckSpawnedVehicle", function (result)
         local canPark, _ = CanParkVehicle(veh, garageName, vehLocation)
         if result and canPark then
-            TriggerServerEvent("qb-garage:server:UpdateSpawnedVehicle", plate, nil)
+            TriggerServerEvent("indigo-garages:server:UpdateSpawnedVehicle", plate, nil)
             ExitAndDeleteVehicle(veh)
         elseif not result then
             QBCore.Functions.Notify(Lang:t("error.not_owned"), "error", 3500)
@@ -331,7 +331,7 @@ local function ParkVehicle(veh, garageName, vehLocation)
         hasHouseKey = exports['ps-housing']:IsOwner(src, garageName)
     end
     ]]--
-    QBCore.Functions.TriggerCallback('qb-garage:server:checkOwnership', function(owned)
+    QBCore.Functions.TriggerCallback('indigo-garages:server:checkOwnership', function(owned)
         if owned then
            ParkOwnedVehicle(veh, garageName, vehLocation, plate)
         elseif garage and garage.useVehicleSpawner and IsAuthorizedToAccessGarage(garageName) then
@@ -594,7 +594,7 @@ local function SpawnVehicleSpawnerVehicle(vehicleModel, location, heading, cb)
                 exports['ps-fuel']:SetFuel(veh, 100) -- Don't change this. Change it in the  Defaults to legacy fuel if not set in the config
             end
             TriggerEvent("vehiclekeys:client:SetOwner", plate)
-            TriggerServerEvent("qb-garage:server:UpdateSpawnedVehicle", plate, true)
+            TriggerServerEvent("indigo-garages:server:UpdateSpawnedVehicle", plate, true)
 
             ClearMenu()
             SetEntityHeading(veh, heading)
@@ -624,7 +624,7 @@ function UpdateSpawnedVehicle(spawnedVehicle, vehicleInfo, heading, garage, prop
             exports['ps-fuel']:SetFuel(spawnedVehicle, 100) -- Don't change this. Change it in the  Defaults to legacy fuel if not set in the config
         end
         TriggerEvent("vehiclekeys:client:SetOwner", plate)
-        TriggerServerEvent("qb-garage:server:UpdateSpawnedVehicle", plate, true)
+        TriggerServerEvent("indigo-garages:server:UpdateSpawnedVehicle", plate, true)
     else
         if plate then
             OutsideVehicles[plate] = spawnedVehicle
@@ -643,7 +643,7 @@ function UpdateSpawnedVehicle(spawnedVehicle, vehicleInfo, heading, garage, prop
             TriggerEvent('persistent-vehicles/register-vehicle', spawnedVehicle)
         end
         ApplyVehicleDamage(spawnedVehicle, vehicleInfo)
-        TriggerServerEvent('qb-garage:server:updateVehicleState', 0, vehicleInfo.plate, vehicleInfo.garage)
+        TriggerServerEvent('indigo-garages:server:updateVehicleState', 0, vehicleInfo.plate, vehicleInfo.garage)
         TriggerEvent("vehiclekeys:client:SetOwner", vehicleInfo.plate)
     end
     SetEntityHeading(spawnedVehicle, heading)
@@ -664,7 +664,7 @@ RegisterNetEvent("indigo-garages:client:GarageMenu", function(data)
 
     leave = Lang:t("menu.leave."..superCategory)
 
-    QBCore.Functions.TriggerCallback("qb-garage:server:GetGarageVehicles", function(result)
+    QBCore.Functions.TriggerCallback("indigo-garages:server:GetGarageVehicles", function(result)
         if result == nil then
             QBCore.Functions.Notify(Lang:t("error.no_vehicles"), "error", 5000)
         else
@@ -753,7 +753,7 @@ RegisterNetEvent('indigo-garages:client:TakeOutGarage', function(data, cb)
         SpawnVehicleSpawnerVehicle(vehicleModel, location, heading, cb)
     end
     if SpawnVehicleServerside then
-        QBCore.Functions.TriggerCallback('qb-garage:server:spawnvehicle', function(netId, properties)
+        QBCore.Functions.TriggerCallback('indigo-garages:server:spawnvehicle', function(netId, properties)
             local veh = NetToVeh(netId)
             if not veh or not netId then
                 print("ISSUE HERE: ", netId)
@@ -766,7 +766,7 @@ RegisterNetEvent('indigo-garages:client:TakeOutGarage', function(data, cb)
 
     else
         QBCore.Functions.SpawnVehicle(vehicleModel, function(veh)
-            QBCore.Functions.TriggerCallback('qb-garage:server:GetVehicleProperties', function(properties)
+            QBCore.Functions.TriggerCallback('indigo-garages:server:GetVehicleProperties', function(properties)
                 UpdateSpawnedVehicle(veh, vehicle, heading, garage, properties)
                 if cb then cb(veh) end
             end, vehicle.plate)
@@ -818,11 +818,11 @@ end)
 RegisterNetEvent('indigo-garages:client:TakeOutDepot', function(data)
     local vehicle = data.vehicle
     local vehExists = DoesEntityExist(OutsideVehicles[vehicle.plate])
-    QBCore.Functions.TriggerCallback('qb-garage:server:IsSpawnOk', function(spawn)
+    QBCore.Functions.TriggerCallback('indigo-garages:server:IsSpawnOk', function(spawn)
         if spawn and not vehExists then
             print('garage spawn') print(spawn) print(vehExists) print (OutsideVehicles[vehicle.plate])
             if UseEnc0dedPersistenVehicles then
-                QBCore.Functions.TriggerCallback('qb-garage:server:checkIsSpawned', function(spawned)
+                QBCore.Functions.TriggerCallback('indigo-garages:server:checkIsSpawned', function(spawned)
                     if spawned then
                         QBCore.Functions.Notify(Lang:t('error.not_impound'), "error", 5000)
                         return
@@ -833,7 +833,7 @@ RegisterNetEvent('indigo-garages:client:TakeOutDepot', function(data)
             if PlayerData.money['cash'] >= vehicle.depotprice or PlayerData.money['bank'] >= vehicle.depotprice then
                 TriggerEvent("indigo-garages:client:TakeOutGarage", data, function (veh)
                     if veh then
-                        TriggerServerEvent("qb-garage:server:PayDepotPrice", data)
+                        TriggerServerEvent("indigo-garages:server:PayDepotPrice", data)
                     end
                 end)
             end
@@ -853,7 +853,7 @@ RegisterNetEvent('indigo-garages:client:TakeOutDepot', function(data)
         if PlayerData.money['cash'] >= vehicle.depotprice or PlayerData.money['bank'] >= vehicle.depotprice then
             TriggerEvent("indigo-garages:client:TakeOutGarage", data, function (veh)
                 if veh then
-                    TriggerServerEvent("qb-garage:server:PayDepotPrice", data)
+                    TriggerServerEvent("indigo-garages:server:PayDepotPrice", data)
                 end
             end)
         else
@@ -905,7 +905,7 @@ AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
     if not PlayerData then return end
     PlayerGang = PlayerData.gang
     PlayerJob = PlayerData.job
-    QBCore.Functions.TriggerCallback('qb-garage:server:GetOutsideVehicles', function(outsideVehicles)
+    QBCore.Functions.TriggerCallback('indigo-garages:server:GetOutsideVehicles', function(outsideVehicles)
         OutsideVehicles = outsideVehicles
     end)
 end)

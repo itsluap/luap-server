@@ -239,7 +239,7 @@ end)
 ```
 
 ### 3. Find the following events in `indigo-garages` and change: 
-`indigo-garages > server > main.lua > around line 120` on event `qb-garage:server:checkOwnership`
+`indigo-garages > server > main.lua > around line 120` on event `indigo-garages:server:checkOwnership`
 
 Replace 
 ```lua

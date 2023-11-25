@@ -267,7 +267,7 @@ RegisterNetEvent('qb-occasions:client:SellBackCar', function()
         local vehicle = GetVehiclePedIsIn(ped, false)
         vehicleData.model = GetEntityModel(vehicle)
         vehicleData.plate = GetVehicleNumberPlateText(vehicle)
-        QBCore.Functions.TriggerCallback('qb-garage:server:checkVehicleOwner', function(owned, balance)
+        QBCore.Functions.TriggerCallback('indigo-garages:server:checkVehicleOwner', function(owned, balance)
             if owned then
                 if balance < 1 then
                     TriggerServerEvent('qb-occasions:server:sellVehicleBack', vehicleData)
@@ -316,7 +316,7 @@ end)
 
 RegisterNetEvent('indigo-vehiclesales:client:SellVehicle', function()
     local VehiclePlate = QBCore.Functions.GetPlate(GetVehiclePedIsIn(PlayerPedId()))
-    QBCore.Functions.TriggerCallback('qb-garage:server:checkVehicleOwner', function(owned, balance)
+    QBCore.Functions.TriggerCallback('indigo-garages:server:checkVehicleOwner', function(owned, balance)
         if owned then
             if balance < 1 then
                 QBCore.Functions.TriggerCallback('qb-occasions:server:getVehicles', function(vehicles)
