@@ -226,6 +226,7 @@ function Property:LeaveShell()
     SetEntityCoordsNoOffset(cache.ped, coords.x, coords.y, coords.z, false, false, true)
 
     TriggerServerEvent("ps-housing:server:leaveProperty", self.property_id)
+    TriggerEvent('indigo-weed:client:leaveHouse')
 
     self:UnloadFurnitures()
     self.propertyData.furnitures = {}
@@ -729,6 +730,7 @@ end
 RegisterNetEvent("ps-housing:client:enterProperty", function(property_id)
     local property = Property.Get(property_id)
     property:EnterShell()
+    TriggerEvent('indigo-weed:client:getHousePlants', property)
 end)
 
 RegisterNetEvent("ps-housing:client:updateDoorbellPool", function(property_id, data)

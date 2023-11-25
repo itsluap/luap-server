@@ -219,7 +219,7 @@ RegisterNetEvent('indigo-weed:client:placePlant', function(type, item)
 
     if currentHouse ~= nil then
         if ClosestPlant == 0 then
-	LocalPlayer.state:set("inv_busy", true, true)
+	        LocalPlayer.state:set("inv_busy", true, true)
             QBCore.Functions.Progressbar("plant_weed_plant", Lang:t('text.planting'), 8000, false, true, {
                 disableMovement = true,
                 disableCarMovement = true,
@@ -229,7 +229,7 @@ RegisterNetEvent('indigo-weed:client:placePlant', function(type, item)
                 animDict = "amb@world_human_gardener_plant@male@base",
                 anim = "base",
                 flags = 16,
-		LocalPlayer.state:set("inv_busy", false, true)
+		        LocalPlayer.state:set("inv_busy", false, true)
             }, {}, {}, function() -- Done
                 ClearPedTasks(ped)
                 TriggerServerEvent('indigo-weed:server:placePlant', json.encode(plantData["plantCoords"]), type, currentHouse)
@@ -237,7 +237,7 @@ RegisterNetEvent('indigo-weed:client:placePlant', function(type, item)
             end, function() -- Cancel
                 ClearPedTasks(ped)
                 QBCore.Functions.Notify(Lang:t('error.process_canceled'), "error")
-		LocalPlayer.state:set("inv_busy", false, true)
+		        LocalPlayer.state:set("inv_busy", false, true)
             end)
         else
             QBCore.Functions.Notify(Lang:t('error.cant_place_here'), 'error', 3500)
