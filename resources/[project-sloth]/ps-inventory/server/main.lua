@@ -1239,13 +1239,13 @@ RegisterNetEvent('inventory:server:OpenInventory', function(name, id, other)
 				end
 				secondInv.name = "glovebox-"..id
 				secondInv.label = "Glovebox-"..id
-				secondInv.maxweight = 10000
+				secondInv.maxweight = 20000
 				secondInv.inventory = {}
 				secondInv.slots = 5
 				if Gloveboxes[id] and Gloveboxes[id].isOpen then
 					secondInv.name = "none-inv"
 					secondInv.label = "Glovebox-None"
-					secondInv.maxweight = 10000
+					secondInv.maxweight = 20000
 					secondInv.inventory = {}
 					secondInv.slots = 0
 				else
