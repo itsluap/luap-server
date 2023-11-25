@@ -729,10 +729,9 @@ end
 
 RegisterNetEvent("ps-housing:client:enterProperty", function(property_id)
     local property = Property.Get(property_id)
-    local weed_property = property.street
     property:EnterShell()
-    TriggerEvent('indigo-weed:client:getHousePlants', weed_property)
-    print(weed_property)
+    TriggerEvent('indigo-weed:client:getHousePlants', Property.Get(property_id))
+    print(Property.Get(property_id))
 end)
 
 RegisterNetEvent("ps-housing:client:updateDoorbellPool", function(property_id, data)
