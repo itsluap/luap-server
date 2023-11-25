@@ -33,6 +33,8 @@ Config.DynamicDoors = false
 
 Config.PoliceJobNames = {  -- add multiple police jobs that are allowed to raid properties!
     "police",
+    "sheriff",
+    "trooper"
     -- "police2",
     -- "police3",
 }
