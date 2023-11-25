@@ -230,6 +230,22 @@ exports('IsOwner', function(src, property_id)
     return property:CheckForAccess(citizenid)
 end)
 
+RegisterNetEvent('ps-housing:server:isPlayerOwner')
+AddEventHandler('ps-housing:server:isPlayerOwner', function(property_id, callback)
+    local source = source
+    local isOwner = luapIsOwner(source, property_id)
+    callback(isOwner)
+end)
+
+function luapIsOwner(src, property_id)
+    local property = Property.Get(property_id)
+    if not property then return false end
+
+    local citizenid = GetCitizenid(src, src)
+    return property:CheckForAccess(citizenid)
+end
+
+
 function GetCitizenid(targetSrc, callerSrc)
     local Player = QBCore.Functions.GetPlayer(tonumber(targetSrc))
     if not Player then

@@ -10,6 +10,7 @@ local MenuItemId = nil
 local VehicleClassMap = {}
 local GarageZones = {}
 local SpawnVehicleServerside = true
+local luapHasKey = false
 
 -- helper functions
 
@@ -795,6 +796,24 @@ RegisterNetEvent('indigo-garages:client:OpenMenu', function()
         end
     elseif CurrentHouseGarage then
         TriggerEvent('indigo-garages:client:OpenHouseGarage')
+        TriggerServerEvent('ps-housing:server:isPlayerOwner', garage)
+    end
+end)
+
+RegisterNetEvent('indigo-garages:client:OpenMenu', function()
+    if CurrentGarage then
+        local garage = Garages[CurrentGarage]
+        local type = garage.type
+        if type == 'job' and garage.useVehicleSpawner then
+            JobMenuGarage(CurrentGarage)
+        else
+            PublicGarage(CurrentGarage, type)
+        end
+    elseif CurrentHouseGarage then
+        TriggerServerEvent('ps-housing:server:isPlayerOwner', CurrentHouseGarage, function(isOwner)
+            luapHasKey = isOwner
+            TriggerEvent('indigo-garages:client:OpenHouseGarage')
+        end)
     end
 end)
 
@@ -866,8 +885,7 @@ end)
 ]]--
 
 RegisterNetEvent('indigo-garages:client:OpenHouseGarage', function()
-    local hasKey = exports['ps-housing']:IsOwner(source, CurrentHouseGarage)
-    if hasKey then
+    if luapHasKey then
         MenuHouseGarage()
     else
         QBCore.Functions.Notify(Lang:t("error.no_house_keys"))
