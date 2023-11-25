@@ -230,23 +230,6 @@ exports('IsOwner', function(src, property_id)
     return property:CheckForAccess(citizenid)
 end)
 
-QBCore.Functions.CreateCallback('ps-housing:isPlayerOwner', function(source, cb, property_id)
-    local isOwner = exports['isOwner'](source, property_id)
-    print(isOwner)
-    print(property_id)
-    cb(isOwner)
-end)
-
-function luapIsOwner(source, property_id)
-    local property = Property.Get(property_id)
-    if not property then return false end
-
-    local citizenid = GetCitizenid(src, src)
-    print(property:CheckForAccess(citizenid))
-    return property:CheckForAccess(citizenid)
-end
-
-
 function GetCitizenid(targetSrc, callerSrc)
     local Player = QBCore.Functions.GetPlayer(tonumber(targetSrc))
     if not Player then

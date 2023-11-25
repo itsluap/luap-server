@@ -414,7 +414,6 @@ RegisterNetEvent('indigo-garages:luap:OpenHouseGarageMenu', function(house)
     if hasKey then 
         TriggerClientEvent('indigo-garages:client:OpenHouseGarage', src)
     else
-        print("You don't have the key to open the garage.")
-        -- or send a notification to the client, etc.
+        QBCore.Functions.Notify(Lang:t("error.no_house_keys"))
     end
 end)
