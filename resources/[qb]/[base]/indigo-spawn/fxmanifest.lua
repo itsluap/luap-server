@@ -1,15 +1,12 @@
 fx_version 'cerulean'
 game 'gta5'
 
-author 'FS#0777'
-description 'discord.gg/fivemscript'
-version 'V.1'
-
+description 'indigo-spawn'
 version '1.0.0'
 
 shared_scripts {
 	'config.lua',
-	--'@qb-apartments/config.lua'
+	--'@indigo-apartments/config.lua'
 }
 
 client_script 'client.lua'
@@ -23,17 +20,8 @@ ui_page 'html/index.html'
 files {
 	'html/index.html',
 	'html/style.css',
-	'html/script.js',
-	'html/reset.css',
-	'html/*.png',
+	'html/vue.js',
+	'html/reset.css'
 }
 
 lua54 'yes'
-
-escrow_ignore {
-    'config.lua',
-    'README.md',
-    'LICENSE',
-}
-
-dependency '/assetpacks'server_scripts { '@mysql-async/lib/MySQL.lua' }server_scripts { '@mysql-async/lib/MySQL.lua' }server_scripts { '@mysql-async/lib/MySQL.lua' }server_scripts { '@mysql-async/lib/MySQL.lua' }server_scripts { '@mysql-async/lib/MySQL.lua' }

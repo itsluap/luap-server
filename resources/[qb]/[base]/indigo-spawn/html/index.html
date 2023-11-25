@@ -1,48 +1,123 @@
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Victro - Spawn </title>
-        <link rel="stylesheet" type="text/css" href="reset.css"> <!-- RESET CSS -->
-        <link rel="stylesheet" type="text/css" href="style.css"> <!-- STYLE CSS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>QBCore - Spawnlocation</title>
+    <link rel="stylesheet" type="text/css" href="reset.css"> <!-- RESET CSS -->
+    <link rel="stylesheet" type="text/css" href="style.css"> <!-- STYLE CSS -->
 
-    </head>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script type="text/javascript" src="vue.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet"/>
+</head>
     <body>
-        <div class="container Stylecontainer" id="noselect">
-            <h1 class="choose">CHOOSE YOUR DESTINATION</h1>
-            <h2 class="spawn">SPAWN SELECT</h2>
-            
-            <img src="./victro-map.png" class="MapStyle">
-            <div class="BTNStyleForSelect GreenBTN">SPAWN </div>
-            <div class="BTNStyleForSelect LastBTN" id="IconClassStyle" data-location="current" data-type="current" data-label="Last Location">Last Loc</div>
-            <div class="dropdown BTNStyleForSelect RedBTN">
-                <div class="select">
-                    <span style="color: white;">HOUSES <i style="color: white;" class="fas fa-home"></i> </span>
+        <v-app data-app>
+            <div id="app" class="noselect">
+                <div class="spawn-locations" :class="{'slide-top-fade-leave-active': show == false, 'slide-top-fade-leave-to': show == false}">
+                    <div class="spawn_locations-header"><p><span id="null">Where would you like to start?</span></p></div>
+
+                    <v-btn 
+                        elevation="0" color="#00000000" v-if="newChar !== true" class="location" x-large v-ripple 
+                        :class="{'selected': 'current' == selectedValue.type && 'current' == selectedValue.name}" 
+                        @click="click_location('current', 'current')"
+                    >
+                        Last Location
+                    </v-btn>
+
+                    <div v-for="(locations, locationGroupIdx) in positions">
+                        <v-btn 
+                            v-for="(location, locationIdx) in locations"
+                            :key="locationGroupIdx + '-' + locationIdx"
+                            elevation="0" color="#00000000" 
+                            :class="{'selected': locationGroupIdx == selectedValue.type && ((locationGroupIdx !== 'house' && locationIdx == selectedValue.name) || (locationGroupIdx == 'house' && location.house == selectedValue.name))}" 
+                            class="location" x-large v-ripple @click="click_location(locationGroupIdx, locationGroupIdx == 'house' ? location.house : locationIdx)"
+                        >
+                            {{ location.label }}
+                        </v-btn>
+                    </div>
+
+                    <v-btn @click="submit_spawn" v-ripple x-large class="submit-spawn" v-if="selectedValue.type !== '' && selectedValue.name !== ''">Confirm</v-btn>
                 </div>
-                <input type="hidden" name="gender">
-                <ul class="dropdown-menu"></ul>
-            </div> 
-
-            <div class="spawn-locations-new">
-                <!-- Locations auto generated -->
             </div>
+        </v-app>
 
-            <div class="BtnBodyClass">
-                <div class="TextFoJSCode">Pick you spawn point</div>
-                <div class="SelectLoc-Border-Btn"></div>
+        <script>
+            const viewmodel = new Vue({
+                el: "#app",
+                vuetify: new Vuetify(),
+                data: {
+                    positions: {
+                        normal: [],
+                        appartment: [],
+                        house: [],
+                    },
 
-       
-                <!-- <div class="BTNStyleForSelect RedBTN">HOUSES <i style="color: black;" class="fas fa-home"></i></div> -->
-                
-                
-            </div>
-        </div>
+                    selectedValue: {
+                        type: "",
+                        name: ""
+                    },
 
+                    newChar: false,
+                    show: false
+                },
 
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-        <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
-        <script type="text/javascript" src="script.js"></script>
+                methods: {
+                    click_location: function(type, name) {
+                        if (type == "normal") { 
+                            axios.post('https://indigo-spawn/setCam', {
+                                posname: name,
+                                type: type,
+                            });
+                        }
+                        viewmodel.selectedValue = {type: type, name: name}
+                    },
+
+                    submit_spawn: function() {
+                        viewmodel.show = false
+                        const data = viewmodel.selectedValue
+                        if (data.type !== "appartment") {
+                            axios.post('https://indigo-spawn/spawnplayer', {
+                                spawnloc: data.name,
+                                typeLoc: data.type
+                            });
+                        } else {
+                            axios.post('https://indigo-spawn/chooseAppa', {
+                                appType: data.name,
+                            });
+                        }
+                    }
+                },
+
+                mounted () {
+                    window.addEventListener('message', function (event) {
+                        let data = event.data;
+                        switch(data.action) {
+                            case "showUi":
+                                viewmodel.show = data.status
+                                break;
+                            case "setupLocations":
+                                viewmodel.positions = {normal: [], appartment: [], house: []}
+                                viewmodel.selectedValue = {type: "", index: -1}
+
+                                viewmodel.positions.normal = data.locations
+                                viewmodel.positions.house = data.houses
+                                viewmodel.newChar = data.isNew
+                                break;
+                            case "setupAppartements":
+                                viewmodel.positions = {normal: [], appartment: [], house: []}
+                                viewmodel.selectedValue = {type: "", index: -1}
+
+                                viewmodel.positions.appartment = data.locations
+                                viewmodel.newChar = data.isNew
+                                break;
+                        }
+                    })
+                }
+            });
+        </script>
     </body>
 </html>

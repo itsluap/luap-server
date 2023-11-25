@@ -13,4 +13,16 @@ QBCore.Functions.CreateCallback('indigo-spawn:server:getOwnedHouses', function(_
     end
 end)
 
--- QBCore#4011 -- discord.gg/qbcoreframework -- Only Buy From Here
+QBCore.Functions.CreateCallback('indigo-spawn:server:getOwnedApartments', function(_, cb, cid)
+    if cid ~= nil then
+        local apartments = MySQL.query.await('SELECT * FROM apartments WHERE citizenid = ?', {cid})
+        if apartments[1] ~= nil then
+            print(json.encode(apartments))
+            cb(apartments)
+        else
+            cb({})
+        end
+    else
+        cb({})
+    end
+end)

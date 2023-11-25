@@ -13,7 +13,7 @@ menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
     letter-spacing: .1vh;
     font-weight: 900;
-    color: white;
+    color: #ededed;
     margin: 0;
     padding: 0;
     border: 0;
@@ -45,7 +45,7 @@ table {
     border-spacing: 0;
 }
 
-#noselect {
+.noselect {
     -webkit-touch-callout: none;
        -khtml-user-select: none; 
          -moz-user-select: none; 
