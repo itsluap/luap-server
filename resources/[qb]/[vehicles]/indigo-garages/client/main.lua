@@ -326,9 +326,11 @@ local function ParkVehicle(veh, garageName, vehLocation)
     local gang = PlayerGang.name;
     local job = PlayerJob.name;
     local hasHouseKey = false;
+    --[[
     if type == 'house' then
         hasHouseKey = exports['ps-housing']:IsOwner(src, garageName)
     end
+    ]]--
     QBCore.Functions.TriggerCallback('qb-garage:server:checkOwnership', function(owned)
         if owned then
            ParkOwnedVehicle(veh, garageName, vehLocation, plate)
