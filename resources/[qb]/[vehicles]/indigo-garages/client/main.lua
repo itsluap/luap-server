@@ -814,6 +814,7 @@ RegisterNetEvent('indigo-garages:client:OpenMenu', function()
             luapHasKey = isOwner
             print(CurrentHouseGarage)
             print(luapHasKey)
+            print(garage)
             TriggerEvent('indigo-garages:client:OpenHouseGarage')
         end)
     end
