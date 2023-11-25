@@ -816,7 +816,7 @@ RegisterNetEvent('indigo-garages:client:OpenMenu', function()
             else
                 print("You are not the owner.")
             end
-        end, CurrentHouseGarage)
+        end, tostring(CurrentHouseGarage))
     end
 end)
 
