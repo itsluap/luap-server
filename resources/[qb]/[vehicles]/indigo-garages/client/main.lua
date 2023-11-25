@@ -866,21 +866,11 @@ end)
 ]]--
 
 RegisterNetEvent('indigo-garages:client:OpenHouseGarage', function()
-    if UseLoafHousing then
-        local hasKey = exports['loaf_housing']:HasHouseKey(CurrentHouseGarage)
-        if hasKey then
-            MenuHouseGarage()
-        else
-            QBCore.Functions.Notify(Lang:t("error.no_house_keys"))
-        end
+    local hasKey = exports['ps-housing']:IsOwner(source, CurrentHouseGarage)
+    if hasKey then
+        MenuHouseGarage()
     else
-        QBCore.Functions.TriggerCallback('indigo-houses:server:hasKey', function(hasKey)
-            if hasKey then
-                MenuHouseGarage()
-            else
-                QBCore.Functions.Notify(Lang:t("error.no_house_keys"))
-            end
-        end, CurrentHouseGarage)
+        QBCore.Functions.Notify(Lang:t("error.no_house_keys"))
     end
 end)
 
