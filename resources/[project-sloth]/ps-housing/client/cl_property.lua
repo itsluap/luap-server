@@ -730,7 +730,7 @@ end
 RegisterNetEvent("ps-housing:client:enterProperty", function(property_id)
     local property = Property.Get(property_id)
     property:EnterShell()
-    TriggerEvent('indigo-weed:client:getHousePlants', Property.Get(property_id))
+    TriggerEvent('indigo-weed:client:getHousePlants', property.property_id)
     print(property.property_id)
 end)
 
