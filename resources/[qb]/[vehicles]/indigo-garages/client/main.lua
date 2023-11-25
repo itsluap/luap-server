@@ -810,12 +810,13 @@ RegisterNetEvent('indigo-garages:client:OpenMenu', function()
             PublicGarage(CurrentGarage, type)
         end
     elseif CurrentHouseGarage then
+        print(CurrentHouseGarage)
+        print(garage)
         TriggerServerEvent('ps-housing:server:isPlayerOwner', CurrentHouseGarage, function(isOwner)
             luapHasKey = isOwner
-            print(CurrentHouseGarage)
-            print(luapHasKey)
-            print(garage)
-            TriggerEvent('indigo-garages:client:OpenHouseGarage')
+            if luapHasKey then
+                TriggerEvent('indigo-garages:client:OpenHouseGarage')
+            end
         end)
     end
 end)
