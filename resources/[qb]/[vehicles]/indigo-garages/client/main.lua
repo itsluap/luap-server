@@ -866,11 +866,7 @@ end)
 ]]--
 
 RegisterNetEvent('indigo-garages:client:OpenHouseGarage', function()
-    if luapHasKey then
-        MenuHouseGarage()
-    else
-        QBCore.Functions.Notify(Lang:t("error.no_house_keys"))
-    end
+    MenuHouseGarage()
 end)
 
 RegisterNetEvent('indigo-garages:client:houseGarageConfig', function(garageConfig)
