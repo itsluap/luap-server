@@ -326,8 +326,8 @@ local function ParkVehicle(veh, garageName, vehLocation)
     local gang = PlayerGang.name;
     local job = PlayerJob.name;
     local hasHouseKey = false;
-    if type == 'house' and UseLoafHousing then
-        hasHouseKey = exports['loaf_housing']:HasHouseKey(garageName)
+    if type == 'house' then
+        hasHouseKey = exports['ps-housing']:IsOwner(src, garageName)
     end
     QBCore.Functions.TriggerCallback('qb-garage:server:checkOwnership', function(owned)
         if owned then
@@ -895,7 +895,7 @@ RegisterNetEvent('indigo-garages:client:addHouseGarage', function(house, garageI
 end)
 
 RegisterNetEvent('indigo-garages:client:removeHouseGarage', function(house)
-    Config.HouseGarages[house] = nil
+    HouseGarages[house] = nil
 end)
 
 AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
