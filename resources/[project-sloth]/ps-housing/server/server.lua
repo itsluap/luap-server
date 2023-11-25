@@ -229,13 +229,26 @@ exports('IsOwner', function(src, property_id)
     local citizenid = GetCitizenid(src, src)
     return property:CheckForAccess(citizenid)
 end)
-
+--[[
 RegisterNetEvent('ps-housing:server:isPlayerOwner')
 AddEventHandler('ps-housing:server:isPlayerOwner', function(property_id, callback)
     local source = source
     local isOwner = luapIsOwner(source, property_id)
     callback(isOwner)
 end)
+]]--
+RegisterNetEvent('ps-housing:server:isPlayerOwner')
+AddEventHandler('ps-housing:server:isPlayerOwner', function(property_id, callback)
+    print("Received server event with property ID: " .. tostring(property_id))
+    if callback and type(callback) == 'function' then
+        local source = source
+        local isOwner = luapIsOwner(source, property_id)
+        callback(isOwner)
+    else
+        print("Callback is not a valid function.")
+    end
+end)
+
 
 function luapIsOwner(src, property_id)
     local property = Property.Get(property_id)
