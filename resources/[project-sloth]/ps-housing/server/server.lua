@@ -236,7 +236,7 @@ QBCore.Functions.CreateCallback('ps-housing:isPlayerOwner', function(source, cb,
 end)
 
 
-function luapIsOwner(src, property_id)
+function luapIsOwner(source, property_id)
     local property = Property.Get(property_id)
     if not property then return false end
 
