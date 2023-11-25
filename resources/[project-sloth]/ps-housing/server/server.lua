@@ -231,7 +231,7 @@ exports('IsOwner', function(src, property_id)
 end)
 
 QBCore.Functions.CreateCallback('ps-housing:isPlayerOwner', function(source, cb, property_id)
-    local isOwner = luapIsOwner(source, property_id)
+    local isOwner = exports['isOwner'](source, property_id)
     print(isOwner)
     print(property_id)
     cb(isOwner)
