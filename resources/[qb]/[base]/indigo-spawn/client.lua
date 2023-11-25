@@ -74,27 +74,6 @@ RegisterNetEvent('indigo-spawn:client:setupSpawns', function(cData, new, apps)
     end
 end)
 
-RegisterNetEvent('indigo-spawn:client:luap:spawn', function()
-    local ped = PlayerPedId()
-    local PlayerData = QBCore.Functions.GetPlayerData()
-    local insideMeta = PlayerData.metadata["inside"]
-    PreSpawnPlayer()
-    QBCore.Functions.GetPlayerData(function(pd)
-        ped = PlayerPedId()
-        SetEntityCoords(ped, pd.position.x, pd.position.y, pd.position.z)
-        SetEntityHeading(ped, pd.position.a)
-        FreezeEntityPosition(ped, false)
-    end)
-
-    if insideMeta.property_id ~= nil then
-        local property_id = insideMeta.property_id
-        TriggerServerEvent('ps-housing:server:enterProperty', tostring(property_id))
-    end
-    TriggerServerEvent('QBCore:Server:OnPlayerLoaded')
-    TriggerEvent('QBCore:Client:OnPlayerLoaded')
-    PostSpawnPlayer()
-end)
-
 -- NUI Callbacks
 
 RegisterNUICallback("exit", function(_, cb)
@@ -236,4 +215,25 @@ CreateThread(function()
             Wait(1000)
         end
     end
+end)
+
+RegisterNetEvent('indigo-spawn:client:luap:spawn', function()
+    local ped = PlayerPedId()
+    local PlayerData = QBCore.Functions.GetPlayerData()
+    local insideMeta = PlayerData.metadata["inside"]
+    PreSpawnPlayer()
+    QBCore.Functions.GetPlayerData(function(pd)
+        ped = PlayerPedId()
+        SetEntityCoords(ped, pd.position.x, pd.position.y, pd.position.z)
+        SetEntityHeading(ped, pd.position.a)
+        FreezeEntityPosition(ped, false)
+    end)
+
+    if insideMeta.property_id ~= nil then
+        local property_id = insideMeta.property_id
+        TriggerServerEvent('ps-housing:server:enterProperty', tostring(property_id))
+    end
+    TriggerServerEvent('QBCore:Server:OnPlayerLoaded')
+    TriggerEvent('QBCore:Client:OnPlayerLoaded')
+    PostSpawnPlayer()
 end)
