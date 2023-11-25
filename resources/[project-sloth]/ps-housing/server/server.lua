@@ -242,6 +242,7 @@ function luapIsOwner(source, property_id)
     if not property then return false end
 
     local citizenid = GetCitizenid(src, src)
+    print(property:CheckForAccess(citizenid))
     return property:CheckForAccess(citizenid)
 end
 
