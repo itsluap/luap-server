@@ -19,13 +19,13 @@ DrawText3Ds = function(x, y, z, text)
     ClearDrawOrigin()
 end
 
-RegisterNetEvent('indigo-weed:client:getHousePlants', function(house)
+RegisterNetEvent('indigo-weed:client:getHousePlants', function(property)
     QBCore.Functions.TriggerCallback('indigo-weed:server:getBuildingPlants', function(plants)
-        currentHouse = house
+        currentHouse = property
         housePlants[currentHouse] = plants
         insideHouse = true
         spawnHousePlants()
-    end, house)
+    end, property)
 end)
 
 function spawnHousePlants()

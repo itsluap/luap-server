@@ -138,7 +138,7 @@ RegisterServerEvent('indigo-weed:server:removeSeed', function(itemslot, seed)
     Player.Functions.RemoveItem(seed, 1, itemslot)
 end)
 
-RegisterNetEvent('indigo-weed:server:harvestPlant', function(house, amount, plantName, plantId)
+RegisterNetEvent('indigo-weed:server:harvestPlant', function(property, amount, plantName, plantId)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     local weedBag = Player.Functions.GetItemByName('empty_weed_bag')
@@ -146,17 +146,17 @@ RegisterNetEvent('indigo-weed:server:harvestPlant', function(house, amount, plan
 
     if weedBag ~= nil then
         if weedBag.amount >= sndAmount then
-            if house ~= nil then
+            if property ~= nil then
                 local result = MySQL.query.await(
-                    'SELECT * FROM house_plants WHERE plantid = ? AND building = ?', {plantId, house})
+                    'SELECT * FROM house_plants WHERE plantid = ? AND building = ?', {plantId, property})
                 if result[1] ~= nil then
                     Player.Functions.AddItem('weed_' .. plantName .. '_seed', amount)
                     Player.Functions.AddItem('weed_' .. plantName, sndAmount)
                     Player.Functions.RemoveItem('empty_weed_bag', sndAmount)
                     MySQL.query('DELETE FROM house_plants WHERE plantid = ? AND building = ?',
-                        {plantId, house})
+                        {plantId, property})
                     TriggerClientEvent('QBCore:Notify', src,  Lang:t('text.the_plant_has_been_harvested'), 'success', 3500)
-                    TriggerClientEvent('indigo-weed:client:refreshHousePlants', -1, house)
+                    TriggerClientEvent('indigo-weed:client:refreshHousePlants', -1, property)
                 else
                     TriggerClientEvent('QBCore:Notify', src, Lang:t('error.this_plant_no_longer_exists'), 'error', 3500)
                 end
@@ -171,22 +171,22 @@ RegisterNetEvent('indigo-weed:server:harvestPlant', function(house, amount, plan
     end
 end)
 
-RegisterNetEvent('indigo-weed:server:foodPlant', function(house, amount, plantName, plantId)
+RegisterNetEvent('indigo-weed:server:foodPlant', function(property, amount, plantName, plantId)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     local plantStats = MySQL.query.await(
         'SELECT * FROM house_plants WHERE building = ? AND sort = ? AND plantid = ?',
-        {house, plantName, tostring(plantId)})
+        {property, plantName, tostring(plantId)})
     TriggerClientEvent('QBCore:Notify', src,
         QBWeed.Plants[plantName]["label"] .. ' | Nutrition: ' .. plantStats[1].food .. '% + ' .. amount .. '% (' ..
             (plantStats[1].food + amount) .. '%)', 'success', 3500)
     if plantStats[1].food + amount > 100 then
         MySQL.update('UPDATE house_plants SET food = ? WHERE building = ? AND plantid = ?',
-            {100, house, plantId})
+            {100, property, plantId})
     else
         MySQL.update('UPDATE house_plants SET food = ? WHERE building = ? AND plantid = ?',
-            {(plantStats[1].food + amount), house, plantId})
+            {(plantStats[1].food + amount), property, plantId})
     end
     Player.Functions.RemoveItem('weed_nutrition', 1)
-    TriggerClientEvent('indigo-weed:client:refreshHousePlants', -1, house)
+    TriggerClientEvent('indigo-weed:client:refreshHousePlants', -1, property)
 end)
