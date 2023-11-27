@@ -168,19 +168,22 @@ end)
 
 -- old qb-admin stuff-- 
 
+local no_weapon = 'You dont have a weapon in your hands..'
+local ammoforthe = '+%{value} Ammo for the %{weapon}'
+
 RegisterNetEvent('indigo-weapons:client:SetWeaponAmmoManual', function(weapon, ammo)
     local ped = PlayerPedId()
     if weapon ~= "current" then
         weapon = weapon:upper()
         SetPedAmmo(ped, GetHashKey(weapon), ammo)
-        QBCore.Functions.Notify(Lang:t("info.ammoforthe", {value = ammo, weapon = QBCore.Shared.Weapons[weapon]["label"]}), 'success')
+        QBCore.Functions.Notify(no_weapon, {value = ammo, weapon = QBCore.Shared.Weapons[weapon]["label"]}, 'success')
     else
         weapon = GetSelectedPedWeapon(ped)
         if weapon ~= nil then
             SetPedAmmo(ped, weapon, ammo)
-            QBCore.Functions.Notify(Lang:t("info.ammoforthe", {value = ammo, weapon = QBCore.Shared.Weapons[weapon]["label"]}), 'success')
+            QBCore.Functions.Notify(no_weapon, {value = ammo, weapon = QBCore.Shared.Weapons[weapon]["label"]}, 'success')
         else
-            QBCore.Functions.Notify(Lang:t("error.no_weapon"), 'error')
+            QBCore.Functions.Notify(no_weapon, 'error')
         end
     end
 end)
