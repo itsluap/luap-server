@@ -83,29 +83,24 @@ local function robKeyLoop()
                 end
 
                 -- Hotwiring while in vehicle, also keeps engine off for vehicles you don't own keys to
-                if IsPedInAnyVehicle(ped, false) and not IsHotwiring then
+                if IsPedInAnyVehicle(ped, false) and not IsHotwiring and not IsHacking then
                     sleep = 1000
                     local vehicle = GetVehiclePedIsIn(ped)
                     local plate = QBCore.Functions.GetPlate(vehicle)
 
                     if GetPedInVehicleSeat(vehicle, -1) == PlayerPedId() and not HasKeys(plate) and not isBlacklistedVehicle(vehicle) and not AreKeysJobShared(vehicle) then
+                        SetVehicleEngineOn(vehicle, false, false, true)
                         QBCore.Functions.TriggerCallback('indigo-vehiclekeys:server:checkPlayerOwned', function(playerOwned)
                             if not playerOwned then
                                 sleep = 0
-
-                                local vehiclePos = GetOffsetFromEntityInWorldCoords(vehicle, 0.0, 1.0, 0.5)
                                 exports['ps-ui']:DisplayText("[H] Hotwire", "warning") -- Colors: primary, error, success, warning, info, mint
-                                SetVehicleEngineOn(vehicle, false, false, true)
 
                                 if IsControlJustPressed(0, 74) then
                                     Hotwire(vehicle, plate)
                                 end
                             else 
                                 sleep = 0
-
-                                local vehiclePos = GetOffsetFromEntityInWorldCoords(vehicle, 0.0, 1.0, 0.5)
                                 exports['ps-ui']:DisplayText("[H] Hack", "warning") -- Colors: primary, error, success, warning, info, mint
-                                SetVehicleEngineOn(vehicle, false, false, true)
 
                                 if IsControlJustPressed(0, 74) then
                                     HackPlayerOwned(vehicle, plate)
