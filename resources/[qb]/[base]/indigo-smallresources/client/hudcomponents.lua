@@ -28,7 +28,7 @@ CreateThread(function()
         end
 
         ---------------------------------
-        if IsAimCamActive() and not GlobalState.TakingPhoto and not IsFirstPersonAimCamActive() then
+        if IsAimCamActive() and not GlobalState.TakingPhoto and not IsFirstPersonAimCamActive() and not IsPedDoingDriveby(PlayerPedId()) then
             HideHudComponentThisFrame(14)
             SendNUIMessage({
                 action = "togglexhair",
