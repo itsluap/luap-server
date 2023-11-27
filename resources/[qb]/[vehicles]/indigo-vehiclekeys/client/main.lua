@@ -110,6 +110,7 @@ local function robKeyLoop()
                                 if IsControlJustPressed(0, 74) then
                                     HackPlayerOwned(vehicle, plate)
                                 end
+                            end
                         end, plate)
                     end
                 end
