@@ -84,24 +84,28 @@ CreateThread(function()
                 sleep = 1000
                 local vehicle = GetVehiclePedIsIn(ped)
                 local plate = QBCore.Functions.GetPlate(vehicle)
-                print(isPlayerInOwnVehicle())
-                if GetPedInVehicleSeat(vehicle, -1) == PlayerPedId() and not HasKeys(plate) and not isBlacklistedVehicle(vehicle) and not AreKeysJobShared(vehicle) and not isPlayerInOwnVehicle() then
-                    sleep = 0
-                    exports['ps-ui']:DisplayText("[H] Hotwire", "warning") -- Colors: primary, error, success, warning, info, mint
-                    SetVehicleEngineOn(vehicle, false, false, true)
+                QBCore.Functions.TriggerCallback('indigo-vehiclekeys:server:checkPlayerOwned', function(playerOwned)
+                    if not playerOwned then
+                        if GetPedInVehicleSeat(vehicle, -1) == PlayerPedId() and not HasKeys(plate) and not isBlacklistedVehicle(vehicle) and not AreKeysJobShared(vehicle) then
+                            sleep = 0
+                            exports['ps-ui']:DisplayText("[H] Hotwire", "warning") -- Colors: primary, error, success, warning, info, mint
+                            SetVehicleEngineOn(vehicle, false, false, true)
 
-                    if IsControlJustPressed(0, 74) then
-                        Hotwire(vehicle, plate)
-                    end
-                elseif GetPedInVehicleSeat(vehicle, -1) == PlayerPedId() and not HasKeys(plate) and not isBlacklistedVehicle(vehicle) and not AreKeysJobShared(vehicle) and isPlayerInOwnVehicle() then 
-                    sleep = 0
-                    exports['ps-ui']:DisplayText("[H] Hack", "warning") -- Colors: primary, error, success, warning, info, mint
-                    SetVehicleEngineOn(vehicle, false, false, true)
+                            if IsControlJustPressed(0, 74) then
+                                Hotwire(vehicle, plate)
+                            end
+                    elseif playerOwned then
+                        if GetPedInVehicleSeat(vehicle, -1) == PlayerPedId() and not HasKeys(plate) and not isBlacklistedVehicle(vehicle) and not AreKeysJobShared(vehicle) then 
+                            sleep = 0
+                            exports['ps-ui']:DisplayText("[H] Hack", "warning") -- Colors: primary, error, success, warning, info, mint
+                            SetVehicleEngineOn(vehicle, false, false, true)
 
-                    if IsControlJustPressed(0, 74) then
-                        HackPlayerOwned(vehicle, plate) -- replace with player owned car hacking
+                            if IsControlJustPressed(0, 74) then
+                                HackPlayerOwned(vehicle, plate) -- replace with player owned car hacking
+                            end
+                        end
                     end
-                end
+                end)
             end
             
             if Config.CarJackEnable and canCarjack then
@@ -461,31 +465,6 @@ function LockpickFinishCallback(success)
     end
 end
 ]]--
-
--- Function to check if the player's current vehicle is player-owned
-function isPlayerInOwnVehicle()
-    local playerPed = PlayerPedId()
-    local vehicle = GetVehiclePedIsIn(playerPed, false)
-
-    if DoesEntityExist(vehicle) then
-        local plate = GetVehicleNumberPlateText(vehicle)
-
-        local playerOwned = false
-
-        QBCore.Functions.TriggerCallback('indigo-vehiclekeys:server:checkPlayerOwned', function(result)
-            playerOwned = result
-        end, plate)
-
-        -- Wait for the callback to complete before returning the result
-        while playerOwned == nil do
-            Wait(10)
-        end
-
-        return playerOwned
-    else
-        return false  -- Player is not in a vehicle
-    end
-end
 
 function Hotwire(vehicle, plate)
     local hotwireTime = math.random(Config.minHotwireTime, Config.maxHotwireTime)
