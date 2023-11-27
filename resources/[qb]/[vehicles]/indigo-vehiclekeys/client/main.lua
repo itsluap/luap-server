@@ -84,7 +84,8 @@ CreateThread(function()
                 sleep = 1000
                 local vehicle = GetVehiclePedIsIn(ped)
                 local plate = QBCore.Functions.GetPlate(vehicle)
-                if GetPedInVehicleSeat(vehicle, -1) == PlayerPedId() and not HasKeys(plate) and not isBlacklistedVehicle(vehicle) and not AreKeysJobShared(vehicle) and not PlayerOwnedCar then
+                print(isPlayerInOwnVehicle())
+                if GetPedInVehicleSeat(vehicle, -1) == PlayerPedId() and not HasKeys(plate) and not isBlacklistedVehicle(vehicle) and not AreKeysJobShared(vehicle) and not isPlayerInOwnVehicle() then
                     sleep = 0
                     exports['ps-ui']:DisplayText("[H] Hotwire", "warning") -- Colors: primary, error, success, warning, info, mint
                     SetVehicleEngineOn(vehicle, false, false, true)
@@ -92,13 +93,13 @@ CreateThread(function()
                     if IsControlJustPressed(0, 74) then
                         Hotwire(vehicle, plate)
                     end
-                elseif GetPedInVehicleSeat(vehicle, -1) == PlayerPedId() and not HasKeys(plate) and not isBlacklistedVehicle(vehicle) and not AreKeysJobShared(vehicle) and PlayerOwnedCar then 
+                elseif GetPedInVehicleSeat(vehicle, -1) == PlayerPedId() and not HasKeys(plate) and not isBlacklistedVehicle(vehicle) and not AreKeysJobShared(vehicle) and isPlayerInOwnVehicle() then 
                     sleep = 0
                     exports['ps-ui']:DisplayText("[H] Hack", "warning") -- Colors: primary, error, success, warning, info, mint
                     SetVehicleEngineOn(vehicle, false, false, true)
 
                     if IsControlJustPressed(0, 74) then
-                        Hotwire(vehicle, plate) -- replace with player owned car hacking
+                        HackPlayerOwned(vehicle, plate) -- replace with player owned car hacking
                     end
                 end
             end
@@ -485,8 +486,6 @@ function isPlayerInOwnVehicle()
         return false  -- Player is not in a vehicle
     end
 end
-
-local PlayerOwnedCar = isPlayerInOwnVehicle()
 
 function Hotwire(vehicle, plate)
     local hotwireTime = math.random(Config.minHotwireTime, Config.maxHotwireTime)
