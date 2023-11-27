@@ -69,7 +69,7 @@ RegisterNetEvent('indigo-houserobbery:server:searchCabin', function(cabin, house
                 Player.Functions.AddItem(randomItem, 2)
                 TriggerClientEvent('inventory:client:ItemBox', src, itemInfo, "add")
             elseif math.random(1, 100) == 35 then
-                randomItem = "weed_og-kush_seed"
+                randomItem = "weed_ogkush_seed"
                 itemInfo = QBCore.Shared.Items[randomItem]
                 Player.Functions.AddItem(randomItem, 1)
                 TriggerClientEvent('inventory:client:ItemBox', src, itemInfo, "add")

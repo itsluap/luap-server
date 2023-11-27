@@ -104,7 +104,7 @@ CreateThread(function()
     end
 end)
 
-QBCore.Functions.CreateUseableItem("weed_white-widow_seed", function(source, item)
+QBCore.Functions.CreateUseableItem("weed_whitewidow_seed", function(source, item)
     TriggerClientEvent('indigo-weed:client:placePlant', source, 'white-widow', item)
 end)
 
@@ -112,11 +112,11 @@ QBCore.Functions.CreateUseableItem("weed_skunk_seed", function(source, item)
     TriggerClientEvent('indigo-weed:client:placePlant', source, 'skunk', item)
 end)
 
-QBCore.Functions.CreateUseableItem("weed_purple-haze_seed", function(source, item)
+QBCore.Functions.CreateUseableItem("weed_purplehaze_seed", function(source, item)
     TriggerClientEvent('indigo-weed:client:placePlant', source, 'purple-haze', item)
 end)
 
-QBCore.Functions.CreateUseableItem("weed_og-kush_seed", function(source, item)
+QBCore.Functions.CreateUseableItem("weed_ogkush_seed", function(source, item)
     TriggerClientEvent('indigo-weed:client:placePlant', source, 'og-kush', item)
 end)
 

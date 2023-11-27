@@ -51,7 +51,7 @@ Config.Products = {
         minrep = 80,
     },
     [6] = {
-        name = "weed_white-widow_seed",
+        name = "weed_whitewidow_seed",
         price = 15,
         amount = 150,
         info = {},
@@ -69,7 +69,7 @@ Config.Products = {
         minrep = 120,
     },
     [8] = {
-        name = "weed_purple-haze_seed",
+        name = "weed_purplehaze_seed",
         price = 15,
         amount = 150,
         info = {},
@@ -78,7 +78,7 @@ Config.Products = {
         minrep = 140,
     },
     [9] = {
-        name = "weed_og-kush_seed",
+        name = "weed_ogkush_seed",
         price = 15,
         amount = 150,
         info = {},
