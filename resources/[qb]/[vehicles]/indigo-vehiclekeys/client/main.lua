@@ -789,10 +789,10 @@ end)
 
 RegisterNetEvent('luap-vehiclekeys:disableThrottle')
 AddEventHandler('luap-vehiclekeys:disableThrottle', function()
-    DisableControlAction(0, 32, true)  -- Disable W key (throttle)
+    DisableControlAction(0, 71, true)  -- Disable W key (throttle)
 end)
 
 RegisterNetEvent('luap-vehiclekeys:enableThrottle')
 AddEventHandler('luap-vehiclekeys:enableThrottle', function()
-    EnableControlAction(0, 32, true)  -- Enable W key (throttle)
+    EnableControlAction(0, 71, true)  -- Enable W key (throttle)
 end)
