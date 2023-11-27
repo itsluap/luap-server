@@ -41,7 +41,7 @@ RegisterNetEvent('indigo-vehiclekeys:server:breakLockpick', function(itemName)
     if not Player then return end
     if not (itemName == "lockpick" or itemName == "advancedlockpick") then return end
     if Player.Functions.RemoveItem(itemName, 1) then
-            TriggerClientEvent("inventory:client:ItemBox", source, QBCore.Shared.Items[itemName], "remove")
+        TriggerClientEvent("inventory:client:ItemBox", source, QBCore.Shared.Items[itemName], "remove")
     end
 end)
 
@@ -50,7 +50,9 @@ RegisterNetEvent('indigo-vehiclekeys:server:setVehLockState', function(vehNetId,
 end)
 
 QBCore.Functions.CreateCallback('indigo-vehiclekeys:server:GetVehicleKeys', function(source, cb)
-    local citizenid = QBCore.Functions.GetPlayer(source).PlayerData.citizenid
+    local Player = QBCore.Functions.GetPlayer(source)
+    if not Player then return end
+    local citizenid = Player.PlayerData.citizenid
     local keysList = {}
     for plate, citizenids in pairs (VehicleList) do
         if citizenids[citizenid] then
@@ -73,14 +75,22 @@ end)
 -----------------------
 
 function GiveKeys(id, plate)
-    local citizenid = QBCore.Functions.GetPlayer(id).PlayerData.citizenid
-
+    local Player = QBCore.Functions.GetPlayer(id)
+    if not Player then return end
+    local citizenid = Player.PlayerData.citizenid
+    if not plate then
+        if GetVehiclePedIsIn(GetPlayerPed(id), false) ~= 0 then
+            plate = QBCore.Shared.Trim(GetVehicleNumberPlateText(GetVehiclePedIsIn(GetPlayerPed(id), false)))
+        else
+            return
+        end
+    end
     if not VehicleList[plate] then VehicleList[plate] = {} end
     VehicleList[plate][citizenid] = true
-    
     TriggerClientEvent('QBCore:Notify', id, Lang:t("notify.vgetkeys"))
     TriggerClientEvent('indigo-vehiclekeys:client:AddKeys', id, plate)
 end
+exports('GiveKeys', GiveKeys)
 
 function RemoveKeys(id, plate)
     local citizenid = QBCore.Functions.GetPlayer(id).PlayerData.citizenid
@@ -91,6 +101,7 @@ function RemoveKeys(id, plate)
 
     TriggerClientEvent('indigo-vehiclekeys:client:RemoveKeys', id, plate)
 end
+exports('RemoveKeys', RemoveKeys)
 
 function HasKeys(id, plate)
     local citizenid = QBCore.Functions.GetPlayer(id).PlayerData.citizenid
@@ -99,6 +110,7 @@ function HasKeys(id, plate)
     end
     return false
 end
+exports('HasKeys', HasKeys)
 
 QBCore.Commands.Add("givekeys", Lang:t("addcom.givekeys"), {{name = Lang:t("addcom.givekeys_id"), help = Lang:t("addcom.givekeys_id_help")}}, false, function(source, args)
 	local src = source
