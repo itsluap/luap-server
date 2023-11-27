@@ -101,12 +101,12 @@ local function robKeyLoop()
                             end
                         else 
                             exports['ps-ui']:DisplayText("[H] Hack", "warning") -- Colors: primary, error, success, warning, info, mints"))
-                            if QBCore.Functions.HasItem('electronickit') then
-                                if IsControlJustPressed(0, 74) then
+                            if IsControlJustPressed(0, 74) then
+                                if QBCore.Functions.HasItem('electronickit') then
                                     HackPlayerOwned(vehicle, plate)
-                                end
-                            else
-                                QBCore.Functions.Notify('You need an electronic kit', "error")
+                                else 
+                                    QBCore.Functions.Notify('You need an electronic kit', "error")
+                                end   
                             end
                         end
                     end
