@@ -74,11 +74,11 @@ end)
 function IsPlateInDatabase(plate, callback)
     local isPlateInDatabase = false
 
-    local query = "SELECT COUNT(*) FROM player_vehicles WHERE plate = @plate"
-    local parameters = {["@plate"] = plate}
+    local query = "SELECT COUNT(*) FROM player_vehicles WHERE plate = ?"
+    local parameters = {plate}
 
-    -- Execute the database query
-    MySQL.Async.fetchScalar(query, parameters, function(result)
+    -- Execute the database query using oxmysql
+    exports.oxmysql:scalar(query, parameters, function(result)
         isPlateInDatabase = result > 0
         callback(isPlateInDatabase)
     end)
