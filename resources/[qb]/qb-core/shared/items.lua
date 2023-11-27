@@ -350,7 +350,7 @@ QBShared.Items = {
     tenkgoldchain                = { name = '10kgoldchain',                 label = '10k Gold Chain',                           weight = 2000,      type = 'item',      image = '10kgoldchain.png',             unique = false,     useable = false,    shouldClose = true,     combinable = nil, description = '10 carat golden chain' },
     goldbar                      = { name = 'goldbar',                      label = 'Gold Bar',                                 weight = 7000,      type = 'item',      image = 'goldbar.png',                  unique = false,     useable = false,    shouldClose = true,     combinable = nil, description = 'Looks pretty expensive to me' },
     painting1                    = { name = 'painting1',                    label = 'Painting',                                 weight = 1500,      type = 'item',      image = 'painting2.png',                unique = true,      useable = false,    shouldClose = true,     combinable = nil, description = 'A very expensive painting'},
-    goldmask                     = { name = 'goldmask',                     label = 'Burial Mask',                              weight = 7000,      type = 'item',      image = 'goldmask.png',                 unique = true,      useable = false,    shouldClose = true,     combinable = nil, description = 'A very expensive and very old burial mask'}
+    goldmask                     = { name = 'goldmask',                     label = 'Burial Mask',                              weight = 7000,      type = 'item',      image = 'goldmask.png',                 unique = true,      useable = false,    shouldClose = true,     combinable = nil, description = 'A very expensive and very old burial mask'},
 
 
     -- Cops Tools
@@ -413,7 +413,7 @@ QBShared.Items = {
     weapon_sledgehammer = {name = 'weapon_sledgehammer', label = 'Sledge Hammer', weight = 13000, type = 'weapon', ammotype = nil, image = 'sledgehammer.png', unique = true, useable = false, created = nil, description = 'A Sledge Hammer to destroy peoples heads'},
     weapon_mp9 = {name = 'weapon_mp9', label = 'MP9', weight = 10000, type = 'weapon', ammotype = 'AMMO_SMG', image = 'mp9.png', unique = true, useable = false, created = nil, description = 'A handheld lightweight machine gun'},
     weapon_m110 = {name = 'weapon_m110', label = 'M110', weight = 23000, type = 'weapon', ammotype = 'AMMO_SNIPER', image = 'm110.png', unique = true, useable = false, created = nil, description = 'A very accurate single-fire rifle'},
-    weapon_hk416 = {name = 'weapon_hk416', label = 'HK-416', weight = 13000, type = 'weapon', ammotype = 'AMMO_RIFLE', image = 'weapon_carbinerifle.png', unique = true, useable = false, created = nil, description = 'A lightweight automatic rifle'}
+    weapon_hk416 = {name = 'weapon_hk416', label = 'HK-416', weight = 13000, type = 'weapon', ammotype = 'AMMO_RIFLE', image = 'weapon_carbinerifle.png', unique = true, useable = false, created = nil, description = 'A lightweight automatic rifle'},
 
     -- Boosting
     pixellaptop = {name = 'pixellaptop', label = 'Personal Laptop', weight = 2000, type = 'item', image = 'laptop.png', unique = true, useable = true, shouldClose = true, combinable = nil, description = 'A laptop that could be very very beneficial'}, 
