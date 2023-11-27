@@ -1,6 +1,8 @@
 local disableHudComponents = Config.Disable.disableHudComponents
 local disableControls = Config.Disable.disableControls
 local displayAmmo = Config.Disable.displayAmmo
+local recentViewMode = 0
+local changedViewMode = false
 
 local function DecorSet(Type, Value)
     if Type == 'parked' then
@@ -28,7 +30,23 @@ CreateThread(function()
         end
 
         ---------------------------------
-        if IsAimCamActive() and not GlobalState.TakingPhoto and not IsFirstPersonAimCamActive() and not IsPedDoingDriveby(PlayerPedId()) then
+        local ped = PlayerPedId()
+        if IsPedInAnyVehicle(ped) then
+            if IsPedDoingDriveby(ped) then 
+                if GetFollowVehicleCamViewMode() ~= 4 then
+                    recentViewMode = GetFollowVehicleCamViewMode()
+					local context = GetCamActiveViewModeContext()
+					SetCamViewModeForContext(context, 4)
+					changedViewMode = true
+                end
+            end
+            if changedViewMode and not IsPedDoingDriveby(ped) then
+				local context = GetCamActiveViewModeContext()
+				SetCamViewModeForContext(context, recentViewMode)
+				changedViewMode = false
+			end
+        end
+        if IsAimCamActive() and not GlobalState.TakingPhoto and not IsFirstPersonAimCamActive() and not IsPedDoingDriveby(ped) then
             HideHudComponentThisFrame(14)
             SendNUIMessage({
                 action = "togglexhair",
