@@ -70,6 +70,14 @@ QBCore.Functions.CreateCallback('indigo-vehiclekeys:server:checkPlayerOwned', fu
     cb(playerOwned)
 end)
 
+RegisterNetEvent('indigo-vehiclekeys:server:setGlobalState', function(plate)
+    if VehicleList[plate] then
+        GlobalState.isPlayerOwnedCar = true
+    else
+        GlobalState.isPlayerOwnedCar = false
+    end
+end)
+
 -----------------------
 ----   Functions   ----
 -----------------------

@@ -10,6 +10,7 @@ local AlertSend = false
 local lastPickedVehicle = nil
 local usingAdvanced = false
 local IsHotwiring = false
+local IsHacking = false
 local trunkclose = true
 local looped = false
 
@@ -83,27 +84,28 @@ local function robKeyLoop()
                 end
 
                 -- Hotwiring while in vehicle, also keeps engine off for vehicles you don't own keys to
-                if IsPedInAnyVehicle(ped, false) and not IsHotwiring then
+                if IsPedInAnyVehicle(ped, false) and not IsHotwiring and not IsHacking then
                     sleep = 1000
                     local vehicle = GetVehiclePedIsIn(ped)
                     local plate = QBCore.Functions.GetPlate(vehicle)
 
+                    TriggerServerEvent('indigo-vehiclekeys:server:setGlobalState') -- setting globalstate so it can be used below
+
                     if GetPedInVehicleSeat(vehicle, -1) == PlayerPedId() and not HasKeys(plate) and not isBlacklistedVehicle(vehicle) and not AreKeysJobShared(vehicle) then
                         sleep = 0
                         SetVehicleEngineOn(vehicle, false, false, true)
-                        QBCore.Functions.TriggerCallback('indigo-vehiclekeys:server:checkPlayerOwned', function(playerOwned)
-                            if not playerOwned then
-                                exports['ps-ui']:DisplayText("[H] Hotwire", "warning") -- Colors: primary, error, success, warning, info, mints"))
-                                if IsControlJustPressed(0, 74) then
-                                    Hotwire(vehicle, plate)
-                                end
-                            else 
-                                exports['ps-ui']:DisplayText("[H] Hack", "warning") -- Colors: primary, error, success, warning, info, mints"))
-                                if IsControlJustPressed(0, 74) then
-                                    HackPlayerOwned(vehicle, plate)
-                                end
+
+                        if not GlobalState.isPlayerOwnedCar then -- trying to use globalstate to see if car is player owned or not
+                            exports['ps-ui']:DisplayText("[H] Hotwire", "warning") -- Colors: primary, error, success, warning, info, mints"))
+                            if IsControlJustPressed(0, 74) then
+                                Hotwire(vehicle, plate)
                             end
-                        end, plate)
+                        else 
+                            exports['ps-ui']:DisplayText("[H] Hack", "warning") -- Colors: primary, error, success, warning, info, mints"))
+                            if IsControlJustPressed(0, 74) then
+                                HackPlayerOwned(vehicle, plate)
+                            end
+                        end
                     end
                 end
 
