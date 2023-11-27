@@ -105,7 +105,7 @@ CreateThread(function()
                             end
                         end
                     end
-                end)
+                end, plate)
             end
             
             if Config.CarJackEnable and canCarjack then
