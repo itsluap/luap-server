@@ -90,6 +90,7 @@ local function robKeyLoop()
 
                     if GetPedInVehicleSeat(vehicle, -1) == PlayerPedId() and not HasKeys(plate) and not isBlacklistedVehicle(vehicle) and not AreKeysJobShared(vehicle) then
                         SetVehicleEngineOn(vehicle, false, false, true)
+                        TriggerEvent('luap-vehiclekeys:disableThrottle')
                         QBCore.Functions.TriggerCallback('indigo-vehiclekeys:server:checkPlayerOwned', function(playerOwned)
                             if not playerOwned then
                                 sleep = 0
@@ -244,6 +245,7 @@ RegisterNetEvent('indigo-vehiclekeys:client:AddKeys', function(plate)
             SetVehicleEngineOn(vehicle, false, false, false)
         end
     end
+    TriggerEvent('luap-vehiclekeys:enableThrottle')
 end)
 
 RegisterNetEvent('indigo-vehiclekeys:client:RemoveKeys', function(plate)
@@ -781,4 +783,16 @@ end)
 RegisterNUICallback('engine', function()
     ToggleEngine(GetVehicle())
 	SetNuiFocus(false, false)
+end)
+
+-- luap stuff --
+
+RegisterNetEvent('luap-vehiclekeys:disableThrottle')
+AddEventHandler('luap-vehiclekeys:disableThrottle', function()
+    DisableControlAction(0, 32, true)  -- Disable W key (throttle)
+end)
+
+RegisterNetEvent('luap-vehiclekeys:enableThrottle')
+AddEventHandler('luap-vehiclekeys:enableThrottle', function()
+    EnableControlAction(0, 32, true)  -- Enable W key (throttle)
 end)
