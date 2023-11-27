@@ -104,7 +104,7 @@ local function robKeyLoop()
                             if IsControlJustPressed(0, 74) then
                                 if QBCore.Functions.HasItem('electronickit') then
                                     HackPlayerOwned(vehicle, plate)
-                                else 
+                                else
                                     QBCore.Functions.Notify('You need an electronic kit', "error")
                                 end   
                             end
