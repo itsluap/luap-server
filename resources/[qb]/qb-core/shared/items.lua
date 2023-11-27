@@ -645,10 +645,10 @@ QBShared.Items = {
 
     -- deliveries --
     delivery_box = {name = "delivery_box", label = "Delivery Package", weight = 25000, type = "item", image = "delivery-box.png", unique = true, useable = false, shouldClose = true, combinable = nil, description = "", created = nil, decay = 1.0},
-    small_box = {name = "small-box", label = "Delivery Package", weight = 40000, type = "item", image = "small-box.png", unique = true, useable = false, shouldClose = true, combinable = nil, description = "", created = nil, decay = 1.0}
-    medium_box = {name = "medium-box", label = "Delivery Package", weight = 40000, type = "item", image = "medium-box.png", unique = true, useable = false, shouldClose = true, combinable = nil, description = "", created = nil, decay = 1.0}
-    large_box = {name = "large-box", label = "Delivery Package", weight = 40000, type = "item", image = "large-box.png", unique = true, useable = false, shouldClose = true, combinable = nil, description = "", created = nil, decay = 1.0}
-    large_box2 = {name = "large-box2", label = "Delivery Package", weight = 40000, type = "item", image = "large-box2.png", unique = true, useable = false, shouldClose = true, combinable = nil, description = "", created = nil, decay = 1.0}
+    small_box = {name = "small-box", label = "Delivery Package", weight = 40000, type = "item", image = "small-box.png", unique = true, useable = false, shouldClose = true, combinable = nil, description = "", created = nil, decay = 1.0},
+    medium_box = {name = "medium-box", label = "Delivery Package", weight = 40000, type = "item", image = "medium-box.png", unique = true, useable = false, shouldClose = true, combinable = nil, description = "", created = nil, decay = 1.0},
+    large_box = {name = "large-box", label = "Delivery Package", weight = 40000, type = "item", image = "large-box.png", unique = true, useable = false, shouldClose = true, combinable = nil, description = "", created = nil, decay = 1.0},
+    large_box2 = {name = "large-box2", label = "Delivery Package", weight = 40000, type = "item", image = "large-box2.png", unique = true, useable = false, shouldClose = true, combinable = nil, description = "", created = nil, decay = 1.0},
 
 
     -- indigo-stancer --
