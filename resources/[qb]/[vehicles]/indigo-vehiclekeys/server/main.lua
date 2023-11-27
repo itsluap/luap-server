@@ -70,18 +70,36 @@ QBCore.Functions.CreateCallback('indigo-vehiclekeys:server:checkPlayerOwned', fu
     cb(playerOwned)
 end)
 
+-- Function to check if the plate is in the database
+function IsPlateInDatabase(plate, callback)
+    local isPlateInDatabase = false
+
+    local query = "SELECT COUNT(*) FROM player_vehicles WHERE plate = @plate"
+    local parameters = {["@plate"] = plate}
+
+    -- Execute the database query
+    MySQL.Async.fetchScalar(query, parameters, function(result)
+        isPlateInDatabase = result > 0
+        callback(isPlateInDatabase)
+    end)
+end
+
+-- Event handler
 RegisterNetEvent('indigo-vehiclekeys:server:setGlobalState', function(plate)
     print('running globalstate event')
-    -- do not use this anywhere else, globalstates are a fucking mess but i needed this for an efficient player owned check
-    if VehicleList[plate] then
-        GlobalState.isPlayerOwnedCar = true
-        print('setting playerownedcar to true')
 
-    else
-        GlobalState.isPlayerOwnedCar = false
-        print('simply just not working')
-    end
+    -- Call the function with a callback to set the global state
+    IsPlateInDatabase(plate, function(isPlateInDatabase)
+        if isPlateInDatabase then
+            GlobalState.isPlayerOwnedCar = true
+            print('setting playerownedcar to true')
+        else
+            GlobalState.isPlayerOwnedCar = false
+            print('plate not found in the database')
+        end
+    end)
 end)
+
 
 -----------------------
 ----   Functions   ----
