@@ -80,7 +80,6 @@ function closeScramblerMenu() {
         current_pos = correct_pos-codes_pos;
         drawPosition('green', false);
         $.post(`https://${GetParentResourceName()}/scrambler-callback`, JSON.stringify({ 'success': false }));
-        setTimeout(function() { $(".scrambler").fadeOut() }, 500);
     }, 500);
 }
 
