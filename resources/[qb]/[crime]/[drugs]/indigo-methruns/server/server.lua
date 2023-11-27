@@ -48,7 +48,7 @@ function PassedCheck()
 			end
 		end
 	else
-		local passedCheck = exports.ox_inventory:Search('handoff_member', 'count', 'floor-cleaner')
+		local passedCheck = exports.ox_inventory:Search('handoff_member', 'count', 'floor_cleaner')
 		if passedCheck == Config.RequiredAmount then
 			return true
 		end

@@ -641,10 +641,15 @@ QBShared.Items = {
     -- methruns --
     methcontainer = {name = "methcontainer", label = "Meth Container", weight = 9500, type = "item", image = "methcontainer.png", unique = true, useable = false, shouldClose = true, combinable = nil, description = "Container full of white powder"},
     methcase = {name = "methcase", label = "Shiny Case", weight = 4500, type = "item", image = "securitycase.png", unique = true, useable = true, shouldClose = true, combinable = nil, description = "Briefcase full of money"},
-    floor-cleaner = {name = "floor-cleaner", label = "Floor Cleaner", weight = 1000, type = "item", image = "floorcleaner.png", unique = true, useable = false, shouldClose = true, combinable = nil, description = "", created = nil, decay = 0.0},
+    floor_cleaner = {name = "floor_cleaner", label = "Floor Cleaner", weight = 1000, type = "item", image = "floorcleaner.png", unique = true, useable = false, shouldClose = true, combinable = nil, description = "", created = nil, decay = 0.0},
 
     -- deliveries --
-    delivery-box = {name = "delivery-box", label = "Delivery Package", weight = 25000, type = "item", image = "delivery-box.png", unique = true, useable = false, shouldClose = true, combinable = nil, description = "", created = nil, decay = 1.0},
+    delivery_box = {name = "delivery_box", label = "Delivery Package", weight = 25000, type = "item", image = "delivery-box.png", unique = true, useable = false, shouldClose = true, combinable = nil, description = "", created = nil, decay = 1.0},
+    small_box = {name = "small-box", label = "Delivery Package", weight = 40000, type = "item", image = "small-box.png", unique = true, useable = false, shouldClose = true, combinable = nil, description = "", created = nil, decay = 1.0}
+    medium_box = {name = "medium-box", label = "Delivery Package", weight = 40000, type = "item", image = "medium-box.png", unique = true, useable = false, shouldClose = true, combinable = nil, description = "", created = nil, decay = 1.0}
+    large_box = {name = "large-box", label = "Delivery Package", weight = 40000, type = "item", image = "large-box.png", unique = true, useable = false, shouldClose = true, combinable = nil, description = "", created = nil, decay = 1.0}
+    large_box2 = {name = "large-box2", label = "Delivery Package", weight = 40000, type = "item", image = "large-box2.png", unique = true, useable = false, shouldClose = true, combinable = nil, description = "", created = nil, decay = 1.0}
+
 
     -- indigo-stancer --
     stancerkit = {name = 'stancerkit', label = 'Camber Arms', weight = 2000, type = 'item', image = 'tunerchip.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'Camber arms can be used to adjust vehicle tire angle'},

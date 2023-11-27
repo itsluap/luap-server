@@ -18,7 +18,7 @@ Config.UseItemsStacked = true -- have the items you put in the start ped invento
 Config.Caseitem = 'methcase'
 Config.RequiredAmount = 20 -- Amount of the starting item you need
 ----Low Rep Settings----
-Config.LowRepItem = 'floor-cleaner'
+Config.LowRepItem = 'floor_cleaner'
 Config.MinMethPayoutLowRep = 25000
 Config.MaxMethPayoutLowRep = 50000
 Config.LowRepPedHealth = 200

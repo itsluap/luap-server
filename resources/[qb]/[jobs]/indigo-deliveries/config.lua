@@ -165,7 +165,7 @@ Config.Shops = {
 -- }
 
 Config.BoxesData = {
-    ['small-box'] = { -- name of the items for the inventory 
+    ['small_box'] = { -- name of the items for the inventory 
         name = `smalldelivery_box`, -- prop names for the delivery boxes
         placement = {
             x = 0.01,
@@ -176,7 +176,7 @@ Config.BoxesData = {
             zrot = 0.0,
         }
     },
-    ['medium-box'] = {
+    ['medium_box'] = {
         name = `mediumdelivery_box`,
         placement = {
             x = 0.01,
@@ -187,7 +187,7 @@ Config.BoxesData = {
             zrot = 0.0,
         }
     },
-    ['large-box'] = {
+    ['large_box'] = {
         name = `largedelivery_box`,
         placement = {
             x = 0.01,
@@ -198,7 +198,7 @@ Config.BoxesData = {
             zrot = 0.0,
         }
     },
-    ['large-box2'] = {
+    ['large_box2'] = {
         name = `largedelivery_box2`,
         placement = {
             x = 5,
