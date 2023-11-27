@@ -70,16 +70,15 @@ QBCore.Functions.CreateCallback('indigo-vehiclekeys:server:checkPlayerOwned', fu
     cb(playerOwned)
 end)
 
+local isCheckingDatabase = false
+
 -- Function to check if the plate is in the database
 function IsPlateInDatabase(plate, callback)
-    local isPlateInDatabase = false
-
     local query = "SELECT COUNT(*) FROM player_vehicles WHERE plate = ?"
     local parameters = {plate}
 
-    -- Execute the database query using oxmysql
     exports.oxmysql:scalar(query, parameters, function(result)
-        isPlateInDatabase = result > 0
+        local isPlateInDatabase = result > 0
         callback(isPlateInDatabase)
     end)
 end
@@ -88,17 +87,28 @@ end
 RegisterNetEvent('indigo-vehiclekeys:server:setGlobalState', function(plate)
     print('running globalstate event')
 
-    -- Call the function with a callback to set the global state
-    IsPlateInDatabase(plate, function(isPlateInDatabase)
-        if isPlateInDatabase then
-            GlobalState.isPlayerOwnedCar = true
-            print('setting playerownedcar to true')
-        else
-            GlobalState.isPlayerOwnedCar = false
-            print('plate not found in the database')
-        end
-    end)
+    -- Check if it's already checking the database
+    if not isCheckingDatabase then
+        -- Set flag to indicate that it's checking the database
+        isCheckingDatabase = true
+
+        -- Call the function with a callback to set the global state
+        IsPlateInDatabase(plate, function(isPlateInDatabase)
+            if isPlateInDatabase then
+                GlobalState.isPlayerOwnedCar = true
+                print('setting playerownedcar to true')
+            else
+                GlobalState.isPlayerOwnedCar = false
+                print('plate not found in the database')
+            end
+
+            -- Reset the flag after 10 seconds
+            Citizen.Wait(10000)
+            isCheckingDatabase = false
+        end)
+    end
 end)
+
 
 
 -----------------------
