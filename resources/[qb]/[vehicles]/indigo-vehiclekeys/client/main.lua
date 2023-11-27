@@ -141,7 +141,7 @@ local function robKeyLoop()
 end
 
 function HackPlayerOwned(vehicle, plate)
-    local hackingTime = math.random(Config.minHackingTime, Config.maxHackingTime)
+    local hackingTime = math.random(Config.minHotwireTime, Config.maxHotwireTime)
     local ped = PlayerPedId()
     IsHacking = true
     exports['ps-ui']:HideText()
@@ -155,7 +155,7 @@ function HackPlayerOwned(vehicle, plate)
             else
                 QBCore.Functions.Notify(Lang:t("notify.fvhacking"), "error")
         end
-    end, "greek", 30, 0) -- Type (alphabet, numeric, alphanumeric, greek, braille, runes), Time (Seconds), Mirrored (0: Normal, 1: Normal + Mirrored 2: Mirrored only )
+    end, "alphanumeric", 30, 0) -- Type (alphabet, numeric, alphanumeric, greek, braille, runes), Time (Seconds), Mirrored (0: Normal, 1: Normal + Mirrored 2: Mirrored only )
     SetTimeout(10000, function()
         AttemptPoliceAlert("steal")
     end)

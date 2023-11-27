@@ -70,6 +70,8 @@ QBCore.Functions.CreateCallback('indigo-vehiclekeys:server:checkPlayerOwned', fu
     cb(playerOwned)
 end)
 
+-- added by luap for playerowned vehicle hacking --
+
 local isCheckingDatabase = false
 
 -- Function to check if the plate is in the database
@@ -85,8 +87,6 @@ end
 
 -- Event handler
 RegisterNetEvent('indigo-vehiclekeys:server:setGlobalState', function(plate)
-    print('running globalstate event')
-
     -- Check if it's already checking the database
     if not isCheckingDatabase then
         -- Set flag to indicate that it's checking the database
@@ -96,14 +96,12 @@ RegisterNetEvent('indigo-vehiclekeys:server:setGlobalState', function(plate)
         IsPlateInDatabase(plate, function(isPlateInDatabase)
             if isPlateInDatabase then
                 GlobalState.isPlayerOwnedCar = true
-                print('setting playerownedcar to true')
             else
                 GlobalState.isPlayerOwnedCar = false
-                print('plate not found in the database')
             end
 
-            -- Reset the flag after 10 seconds
-            Citizen.Wait(10000)
+            -- Reset the flag after 15 seconds
+            Citizen.Wait(1000 * 15)
             isCheckingDatabase = false
         end)
     end
