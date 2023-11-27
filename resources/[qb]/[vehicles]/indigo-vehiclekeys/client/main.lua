@@ -94,6 +94,7 @@ CreateThread(function()
                             if IsControlJustPressed(0, 74) then
                                 Hotwire(vehicle, plate)
                             end
+                        end
                     elseif playerOwned then
                         if GetPedInVehicleSeat(vehicle, -1) == PlayerPedId() and not HasKeys(plate) and not isBlacklistedVehicle(vehicle) and not AreKeysJobShared(vehicle) then 
                             sleep = 0
@@ -107,7 +108,7 @@ CreateThread(function()
                     end
                 end, plate)
             end
-            
+
             if Config.CarJackEnable and canCarjack then
                 local playerid = PlayerId()
                 local aiming, target = GetEntityPlayerIsFreeAimingAt(playerid)
