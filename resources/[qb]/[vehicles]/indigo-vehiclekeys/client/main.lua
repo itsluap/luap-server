@@ -89,7 +89,7 @@ local function robKeyLoop()
                     local vehicle = GetVehiclePedIsIn(ped)
                     local plate = QBCore.Functions.GetPlate(vehicle)
 
-                    TriggerServerEvent('indigo-vehiclekeys:server:setGlobalState') -- setting globalstate so it can be used below
+                    TriggerServerEvent('indigo-vehiclekeys:server:setGlobalState', plate) -- setting globalstate so it can be used below
 
                     if GetPedInVehicleSeat(vehicle, -1) == PlayerPedId() and not HasKeys(plate) and not isBlacklistedVehicle(vehicle) and not AreKeysJobShared(vehicle) then
                         sleep = 0
