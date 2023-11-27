@@ -163,7 +163,6 @@ function HackPlayerOwned(vehicle, plate)
         AttemptPoliceAlert("steal")
     end)
     IsHacking = false
-    IsHotwiring = false
 end
 
 function isBlacklistedVehicle(vehicle)

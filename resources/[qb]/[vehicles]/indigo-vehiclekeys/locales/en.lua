@@ -6,6 +6,7 @@ local Translations = {
         vunlock = 'Vehicle unlocked!',
         vlockpick = 'You managed to pick the door lock open!',
         fvlockpick = 'You fail to find the keys and get frustrated.',
+        fvhacking = 'You fail to hack the vehicle and get frustrated.',
         vgkeys = 'You hand over the keys.',
         vgetkeys = 'You get keys to the vehicle!',
         fpid = 'Fill out the player ID and Plate arguments',
