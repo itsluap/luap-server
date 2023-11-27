@@ -7,6 +7,8 @@ local vehicleIndex = nil
 
 local DynamicMenuItems = {}
 local FinalMenuItems = {}
+local controlsToToggle = { 24, 0, 1, 2, 142, 257, 346 } -- if not using toggle
+
 -- Functions
 
 local function deepcopy(orig) -- modified the deep copy function from http://lua-users.org/wiki/CopyTable
@@ -27,7 +29,7 @@ local function deepcopy(orig) -- modified the deep copy function from http://lua
                     copy[deepcopy(orig_key)] = deepcopy(orig_value)
                 end
             end
-            for i=1, #toRemove do table.remove(copy, i) --[[ Using this to make sure all indexes get re-indexed and no empty spaces are in the radialmenu ]] end
+            for i = 1, #toRemove do table.remove(copy, i) --[[ Using this to make sure all indexes get re-indexed and no empty spaces are in the radialmenu ]] end
             if copy and next(copy) then setmetatable(copy, deepcopy(getmetatable(orig))) end
         end
     elseif orig_type ~= 'function' then
@@ -55,14 +57,16 @@ local function RemoveOption(id)
 end
 
 local function SetupJobMenu()
+    local JobInteractionCheck = PlayerData.job.name
+    if PlayerData.job.type == "leo" then JobInteractionCheck = "police" end
     local JobMenu = {
         id = 'jobinteractions',
         title = 'Work',
         icon = 'briefcase',
         items = {}
     }
-    if Config.JobInteractions[PlayerData.job.name] and next(Config.JobInteractions[PlayerData.job.name]) and PlayerData.job.onduty then
-        JobMenu.items = Config.JobInteractions[PlayerData.job.name]
+    if Config.JobInteractions[JobInteractionCheck] and next(Config.JobInteractions[JobInteractionCheck]) and PlayerData.job.onduty then
+        JobMenu.items = Config.JobInteractions[JobInteractionCheck]
     end
 
     if #JobMenu.items == 0 then
@@ -85,14 +89,15 @@ local function SetupVehicleMenu()
 
     local ped = PlayerPedId()
     local Vehicle = GetVehiclePedIsIn(ped) ~= 0 and GetVehiclePedIsIn(ped) or getNearestVeh()
+
     if Vehicle ~= 0 then
         VehicleMenu.items[#VehicleMenu.items+1] =  {
-                id = 'vehicle-control',
-                title = 'Vehicle Control',
-                icon = 'car-side',
-                type = 'client',
-                event = 'vehcontrol:openExternal',
-                shouldClose = true
+            id = 'vehicle-control',
+            title = 'Vehicle Control',
+            icon = 'car-side',
+            type = 'client',
+            event = 'vehcontrol:openExternal',
+            shouldClose = true
         }
         VehicleMenu.items[#VehicleMenu.items+1] =  {
             id = 'vehicle-keys',
@@ -102,11 +107,10 @@ local function SetupVehicleMenu()
             event = 'indigo-vehiclekeys:client:GiveKeys',
             shouldClose = true
         }
+        if Config.EnableExtraMenu then VehicleMenu.items[#VehicleMenu.items + 1] = Config.VehicleExtras end
 
-        if Config.EnableExtraMenu then VehicleMenu.items[#VehicleMenu.items+1] = Config.VehicleExtras end
-        
         if not IsVehicleOnAllWheels(Vehicle) then
-            VehicleMenu.items[#VehicleMenu.items+1] = {
+            VehicleMenu.items[#VehicleMenu.items + 1] = {
                 id = 'vehicle-flip',
                 title = 'Flip Vehicle',
                 icon = 'car-burst',
@@ -147,7 +151,7 @@ local function selectOption(t, t2)
 end
 
 local function IsPoliceOrEMS()
-    return (QBCore.Functions.GetPlayerData().job.type== 'leo' or PlayerData.job.name == "ambulance")
+    return (PlayerData.job.name == "police" or PlayerData.job.type == "leo" or PlayerData.job.name == "ambulance")
 end
 
 local function IsDowned()
@@ -157,42 +161,65 @@ end
 local function SetupRadialMenu()
     FinalMenuItems = {}
     if (IsDowned() and IsPoliceOrEMS()) then
-            FinalMenuItems = {
-                [1] = {
-                    id = 'emergencybutton2',
-                    title = Lang:t("options.emergency_button"),
-                    icon = 'circle-exclamation',
-                    type = 'client',
-                    event = 'police:client:SendPoliceEmergencyAlert',
-                    shouldClose = true,
-                },
-            }
+        FinalMenuItems = {
+            [1] = {
+                id = 'emergencybutton2',
+                title = Lang:t("options.emergency_button"),
+                icon = 'circle-exclamation',
+                type = 'client',
+                event = 'police:client:SendPoliceEmergencyAlert',
+                shouldClose = true,
+            },
+        }
     else
         SetupSubItems()
         FinalMenuItems = deepcopy(Config.MenuItems)
         for _, v in pairs(DynamicMenuItems) do
-            FinalMenuItems[#FinalMenuItems+1] = v
+            FinalMenuItems[#FinalMenuItems + 1] = v
         end
-
     end
 end
 
+local function controlToggle(bool)
+    for i = 1, #controlsToToggle, 1 do
+        if bool then
+            exports['indigo-smallresources']:addDisableControls(controlsToToggle[i])
+        else
+            exports['indigo-smallresources']:removeDisableControls(controlsToToggle[i])
+        end
+    end
+end
+
+
 local function setRadialState(bool, sendMessage, delay)
     -- Menuitems have to be added only once
-
-    if bool then
-        TriggerEvent('indigo-radialmenu:client:onRadialmenuOpen')
-        SetupRadialMenu()
+    if Config.UseWhilstWalking then
+        if bool then
+            SetupRadialMenu()
+            PlaySoundFrontend(-1, "NAV", "HUD_AMMO_SHOP_SOUNDSET", 1)
+            controlToggle(true)
+        else
+            controlToggle(false)
+        end
+        SetNuiFocus(bool, bool)
+        SetNuiFocusKeepInput(bool, true)
     else
-        TriggerEvent('indigo-radialmenu:client:onRadialmenuClose')
+        if bool then
+            TriggerEvent('indigo-radialmenu:client:onRadialmenuOpen')
+            SetupRadialMenu()
+        else
+            TriggerEvent('indigo-radialmenu:client:onRadialmenuClose')
+        end
+        SetNuiFocus(bool, bool)
     end
 
-    SetNuiFocus(bool, bool)
     if sendMessage then
         SendNUIMessage({
             action = "ui",
             radial = bool,
-            items = FinalMenuItems
+            items = FinalMenuItems,
+            toggle = Config.Toggle,
+            keybind = Config.Keybind
         })
     end
     if delay then Wait(500) end
@@ -208,7 +235,7 @@ RegisterCommand('radialmenu', function()
     end
 end)
 
-RegisterKeyMapping('radialmenu', Lang:t("general.command_description"), 'keyboard', 'F1')
+RegisterKeyMapping('radialmenu', Lang:t("general.command_description"), 'keyboard', Config.Keybind)
 
 -- Events
 
@@ -278,12 +305,9 @@ RegisterNetEvent('indigo-radialmenu:client:setExtra', function(data)
                 if IsVehicleExtraTurnedOn(veh, extra) then
                     SetVehicleExtra(veh, extra, 1)
                     QBCore.Functions.Notify(Lang:t("error.extra_deactivated", { extra = extra }), 'error', 2500)
-                    --refreshVehicle(veh)
                 else
                     SetVehicleExtra(veh, extra, 0)
                     QBCore.Functions.Notify(Lang:t("success.extra_activated", { extra = extra }), 'success', 2500)
-                    --refreshVehicle(veh)
-
                 end
             else
                 QBCore.Functions.Notify(Lang:t("error.extra_not_present", { extra = extra }), 'error', 2500)
@@ -318,7 +342,7 @@ RegisterNetEvent('indigo-radialmenu:client:ChangeSeat', function(data)
         if IsSeatFree then
             if kmh <= 100.0 then
                 SetPedIntoVehicle(PlayerPedId(), Veh, data.id)
-                QBCore.Functions.Notify(Lang:t("info.switched_seats", {seat = data.title}))
+                QBCore.Functions.Notify(Lang:t("info.switched_seats", { seat = data.title }))
             else
                 QBCore.Functions.Notify(Lang:t("error.vehicle_driving_fast"), 'error')
             end
@@ -331,19 +355,22 @@ RegisterNetEvent('indigo-radialmenu:client:ChangeSeat', function(data)
 end)
 
 RegisterNetEvent('indigo-radialmenu:flipVehicle', function()
-    TriggerEvent('animations:client:EmoteCommandStart', {"mechanic"})
     QBCore.Functions.Progressbar("pick_grape", Lang:t("progress.flipping_car"), Config.Fliptime, false, true, {
         disableMovement = true,
         disableCarMovement = true,
         disableMouse = false,
         disableCombat = true,
-    }, {}, {}, {}, function() -- Done
+    }, {
+        animDict = 'mini@repair',
+        anim = 'fixing_a_ped',
+        flags = 1,
+    }, {}, {}, function() -- Done
         local vehicle = getNearestVeh()
         SetVehicleOnGroundProperly(vehicle)
-        TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+        StopAnimTask(PlayerPedId(), 'mini@repair', 'fixing_a_ped', 1.0)
     end, function() -- Cancel
         QBCore.Functions.Notify(Lang:t("task.cancel_task"), "error")
-        TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+        StopAnimTask(PlayerPedId(), 'mini@repair', 'fixing_a_ped', 1.0)
     end)
 end)
 

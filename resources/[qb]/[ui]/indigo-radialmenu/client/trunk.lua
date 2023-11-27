@@ -29,11 +29,11 @@ local function DrawText3Ds(x, y, z, text)
     SetTextFont(4)
     SetTextProportional(1)
     SetTextColour(255, 255, 255, 215)
-    SetTextEntry("STRING")
+    BeginTextCommandDisplayText("STRING")
     SetTextCentre(true)
-    AddTextComponentString(text)
+    AddTextComponentSubstringPlayerName(text)
     SetDrawOrigin(x,y,z, 0)
-    DrawText(0.0, 0.0)
+    EndTextCommandDisplayText(0.0, 0.0)
     local factor = (string.len(text)) / 370
     DrawRect(0.0, 0.0+0.0125, 0.017+ factor, 0.03, 0, 0, 0, 75)
     ClearDrawOrigin()
@@ -75,7 +75,7 @@ RegisterNetEvent('qb-kidnapping:client:SetKidnapping', function(bool)
     isKidnapping = bool
 end)
 
-RegisterNetEvent('qb-trunk:client:KidnapTrunk', function()
+RegisterNetEvent('indigo-trunk:client:KidnapTrunk', function()
     local closestPlayer, distance = QBCore.Functions.GetClosestPlayer()
     if distance ~= -1 and distance < 2 then
         if isKidnapping then
@@ -84,7 +84,7 @@ RegisterNetEvent('qb-trunk:client:KidnapTrunk', function()
                 TriggerEvent('police:client:KidnapPlayer')
                 TriggerServerEvent("police:server:CuffPlayer", GetPlayerServerId(closestPlayer), false)
                 Wait(50)
-                TriggerServerEvent("qb-trunk:server:KidnapTrunk", GetPlayerServerId(closestPlayer), closestVehicle)
+                TriggerServerEvent("indigo-trunk:server:KidnapTrunk", GetPlayerServerId(closestPlayer), closestVehicle)
             end
         else
             QBCore.Functions.Notify(Lang:t("error.not_kidnapped"), 'error')
@@ -92,13 +92,13 @@ RegisterNetEvent('qb-trunk:client:KidnapTrunk', function()
     end
 end)
 
-RegisterNetEvent('qb-trunk:client:KidnapGetIn', function(veh)
+RegisterNetEvent('indigo-trunk:client:KidnapGetIn', function(veh)
     local ped = PlayerPedId()
     local closestVehicle = veh
     local vehClass = GetVehicleClass(closestVehicle)
     local plate = QBCore.Functions.GetPlate(closestVehicle)
     if Config.TrunkClasses[vehClass].allowed then
-        QBCore.Functions.TriggerCallback('qb-trunk:server:getTrunkBusy', function(isBusy)
+        QBCore.Functions.TriggerCallback('indigo-trunk:server:getTrunkBusy', function(isBusy)
             if not disabledTrunk[GetEntityModel(closestVehicle)] then
                 if not inTrunk then
                     if not isBusy then
@@ -115,7 +115,7 @@ RegisterNetEvent('qb-trunk:client:KidnapGetIn', function(veh)
                                 end
                                 TaskPlayAnim(ped, "fin_ext_p1-7", "cs_devin_dual-7", 8.0, 8.0, -1, 1, 999.0, 0, 0, 0)
                                 AttachEntityToEntity(ped, closestVehicle, 0, offset.x, offset.y, offset.z, 0, 0, 40.0, 1, 1, 1, 1, 1, 1)
-                                TriggerServerEvent('qb-trunk:server:setTrunkBusy', plate, true)
+                                TriggerServerEvent('indigo-trunk:server:setTrunkBusy', plate, true)
                                 inTrunk = true
                                 Wait(500)
                                 SetVehicleDoorShut(closestVehicle, 5, false)
@@ -133,7 +133,7 @@ RegisterNetEvent('qb-trunk:client:KidnapGetIn', function(veh)
                                 DetachEntity(ped, true, true)
                                 ClearPedTasks(ped)
                                 inTrunk = false
-                                TriggerServerEvent('indigo-smallresources:trunk:server:setTrunkBusy', plate, nil)
+                                TriggerServerEvent('qb-smallresources:trunk:server:setTrunkBusy', plate, nil)
                                 SetEntityCoords(ped, vehCoords.x, vehCoords.y, vehCoords.z)
                                 SetEntityCollision(PlayerPedId(), true, true)
                                 TrunkCam(false)
@@ -156,14 +156,14 @@ RegisterNetEvent('qb-trunk:client:KidnapGetIn', function(veh)
     end
 end)
 
-RegisterNetEvent('qb-trunk:client:GetIn', function()
+RegisterNetEvent('indigo-trunk:client:GetIn', function()
     local ped = PlayerPedId()
     local closestVehicle = getNearestVeh()
     if closestVehicle ~= 0 then
         local vehClass = GetVehicleClass(closestVehicle)
         local plate = QBCore.Functions.GetPlate(closestVehicle)
         if Config.TrunkClasses[vehClass].allowed then
-            QBCore.Functions.TriggerCallback('qb-trunk:server:getTrunkBusy', function(isBusy)
+            QBCore.Functions.TriggerCallback('indigo-trunk:server:getTrunkBusy', function(isBusy)
                 if not disabledTrunk[GetEntityModel(closestVehicle)] then
                     if not inTrunk then
                         if not isBusy then
@@ -179,7 +179,7 @@ RegisterNetEvent('qb-trunk:client:GetIn', function()
                                 end
                                 TaskPlayAnim(ped, "fin_ext_p1-7", "cs_devin_dual-7", 8.0, 8.0, -1, 1, 999.0, 0, 0, 0)
                                 AttachEntityToEntity(ped, closestVehicle, 0, offset.x, offset.y, offset.z, 0, 0, 40.0, 1, 1, 1, 1, 1, 1)
-                                TriggerServerEvent('qb-trunk:server:setTrunkBusy', plate, true)
+                                TriggerServerEvent('indigo-trunk:server:setTrunkBusy', plate, true)
                                 inTrunk = true
                                 Wait(500)
                                 SetVehicleDoorShut(closestVehicle, 5, false)
@@ -241,7 +241,7 @@ CreateThread(function()
                             DetachEntity(ped, true, true)
                             ClearPedTasks(ped)
                             inTrunk = false
-                            TriggerServerEvent('qb-trunk:server:setTrunkBusy', plate, false)
+                            TriggerServerEvent('indigo-trunk:server:setTrunkBusy', plate, false)
                             SetEntityCoords(ped, vehCoords.x, vehCoords.y, vehCoords.z)
                             SetEntityCollision(ped, true, true)
                             TrunkCam(false)

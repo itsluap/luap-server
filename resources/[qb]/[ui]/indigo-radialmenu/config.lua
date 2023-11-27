@@ -1,5 +1,7 @@
 Config = {}
-
+Config.Keybind = 'F1' -- FiveM Keyboard, this is registered keymapping, so needs changed in keybindings if player already has this mapped.
+Config.Toggle = false -- use toggle mode. False requires hold of key
+Config.UseWhilstWalking = false -- use whilst walking
 Config.EnableExtraMenu = true
 Config.Fliptime = 15000
 
@@ -21,7 +23,7 @@ Config.MenuItems = {
                 title = 'Get In Trunk',
                 icon = 'car',
                 type = 'client',
-                event = 'qb-trunk:client:GetIn',
+                event = 'indigo-trunk:client:GetIn',
                 shouldClose = true
             }, {
                 id = 'cornerselling',
@@ -102,69 +104,6 @@ Config.MenuItems = {
         icon = 'rectangle-list',
         items = {
             {
-                id = 'house',
-                title = 'House Interaction',
-                icon = 'house',
-                items = {
-                    {
-                        id = 'givehousekey',
-                        title = 'Give House Keys',
-                        icon = 'key',
-                        type = 'client',
-                        event = 'indigo-houses:client:giveHouseKey',
-                        shouldClose = true
-                    }, {
-                        id = 'removehousekey',
-                        title = 'Remove House Keys',
-                        icon = 'key',
-                        type = 'client',
-                        event = 'indigo-houses:client:removeHouseKey',
-                        shouldClose = true
-                    }, {
-                        id = 'togglelock',
-                        title = 'Toggle Doorlock',
-                        icon = 'door-closed',
-                        type = 'client',
-                        event = 'indigo-houses:client:toggleDoorlock',
-                        shouldClose = true
-                    }, {
-                        id = 'decoratehouse',
-                        title = 'Decorate House',
-                        icon = 'box',
-                        type = 'client',
-                        event = 'indigo-houses:client:decorate',
-                        shouldClose = true
-                    }, {
-                        id = 'houseLocations',
-                        title = 'Interaction Locations',
-                        icon = 'house',
-                        items = {
-                            {
-                                id = 'setstash',
-                                title = 'Set Stash',
-                                icon = 'box-open',
-                                type = 'client',
-                                event = 'indigo-houses:client:setLocation',
-                                shouldClose = true
-                            }, {
-                                id = 'setoutift',
-                                title = 'Set Wardrobe',
-                                icon = 'shirt',
-                                type = 'client',
-                                event = 'indigo-houses:client:setLocation',
-                                shouldClose = true
-                            }, {
-                                id = 'setlogout',
-                                title = 'Set Logout',
-                                icon = 'door-open',
-                                type = 'client',
-                                event = 'indigo-houses:client:setLocation',
-                                shouldClose = true
-                            }
-                        }
-                    }
-                }
-            }, {
                 id = 'clothesmenu',
                 title = 'Clothing',
                 icon = 'shirt',
@@ -295,6 +234,57 @@ Config.MenuItems = {
     },
 }
 
+Config.VehicleDoors = {
+    id = 'vehicledoors',
+    title = 'Vehicle Doors',
+    icon = 'car-side',
+    items = {
+        {
+            id = 'door0',
+            title = 'Drivers door',
+            icon = 'car-side',
+            type = 'client',
+            event = 'indigo-radialmenu:client:openDoor',
+            shouldClose = false
+        }, {
+            id = 'door4',
+            title = 'Hood',
+            icon = 'car',
+            type = 'client',
+            event = 'indigo-radialmenu:client:openDoor',
+            shouldClose = false
+        }, {
+            id = 'door1',
+            title = 'Passengers door',
+            icon = 'car-side',
+            type = 'client',
+            event = 'indigo-radialmenu:client:openDoor',
+            shouldClose = false
+        }, {
+            id = 'door3',
+            title = 'Right rear',
+            icon = 'car-side',
+            type = 'client',
+            event = 'indigo-radialmenu:client:openDoor',
+            shouldClose = false
+        }, {
+            id = 'door5',
+            title = 'Trunk',
+            icon = 'car',
+            type = 'client',
+            event = 'indigo-radialmenu:client:openDoor',
+            shouldClose = false
+        }, {
+            id = 'door2',
+            title = 'Left rear',
+            icon = 'car-side',
+            type = 'client',
+            event = 'indigo-radialmenu:client:openDoor',
+            shouldClose = false
+        }
+    }
+}
+
 Config.VehicleExtras = {
     id = 'vehicleextras',
     title = 'Vehicle Extras',
@@ -395,6 +385,13 @@ Config.VehicleExtras = {
     }
 }
 
+Config.VehicleSeats = {
+    id = 'vehicleseats',
+    title = 'Vehicle Seats',
+    icon = 'chair',
+    items = {}
+}
+
 Config.JobInteractions = {
     ["ambulance"] = {
         {
@@ -461,21 +458,21 @@ Config.JobInteractions = {
             title = 'Show/Hide Meter',
             icon = 'eye-slash',
             type = 'client',
-            event = 'qb-taxi:client:toggleMeter',
+            event = 'indigo-taxi:client:toggleMeter',
             shouldClose = false
         }, {
             id = 'togglemouse',
             title = 'Start/Stop Meter',
             icon = 'hourglass-start',
             type = 'client',
-            event = 'qb-taxi:client:enableMeter',
+            event = 'indigo-taxi:client:enableMeter',
             shouldClose = true
         }, {
             id = 'npc_mission',
             title = 'NPC Mission',
             icon = 'taxi',
             type = 'client',
-            event = 'qb-taxi:client:DoTaxiNpc',
+            event = 'indigo-taxi:client:DoTaxiNpc',
             shouldClose = true
         }
     },
@@ -492,7 +489,7 @@ Config.JobInteractions = {
             title = 'Tow vehicle',
             icon = 'truck-pickup',
             type = 'client',
-            event = 'qb-tow:client:TowVehicle',
+            event = 'indigo-tow:client:TowVehicle',
             shouldClose = true
         }
     },
@@ -502,7 +499,7 @@ Config.JobInteractions = {
             title = 'Tow vehicle',
             icon = 'truck-pickup',
             type = 'client',
-            event = 'qb-tow:client:TowVehicle',
+            event = 'indigo-tow:client:TowVehicle',
             shouldClose = true
         }
     },
@@ -519,272 +516,7 @@ Config.JobInteractions = {
             title = 'Check Tune Status',
             icon = 'circle-info',
             type = 'client',
-            event = 'qb-tunerchip:client:TuneStatus',
-            shouldClose = true
-        }, {
-            id = 'resethouse',
-            title = 'Reset house lock',
-            icon = 'key',
-            type = 'client',
-            event = 'indigo-houses:client:ResetHouse',
-            shouldClose = true
-        }, {
-            id = 'takedriverlicense',
-            title = 'Revoke Drivers License',
-            icon = 'id-card',
-            type = 'client',
-            event = 'police:client:SeizeDriverLicense',
-            shouldClose = true
-        }, {
-            id = 'policeinteraction',
-            title = 'Police Actions',
-            icon = 'list-check',
-            items = {
-                {
-                    id = 'statuscheck',
-                    title = 'Check Health Status',
-                    icon = 'heart-pulse',
-                    type = 'client',
-                    event = 'hospital:client:CheckStatus',
-                    shouldClose = true
-                }, {
-                    id = 'checkstatus',
-                    title = 'Check status',
-                    icon = 'question',
-                    type = 'client',
-                    event = 'police:client:CheckStatus',
-                    shouldClose = true
-                }, {
-                    id = 'escort',
-                    title = 'Escort',
-                    icon = 'user-group',
-                    type = 'client',
-                    event = 'police:client:EscortPlayer',
-                    shouldClose = true
-                }, {
-                    id = 'searchplayer',
-                    title = 'Search',
-                    icon = 'magnifying-glass',
-                    type = 'client',
-                    event = 'police:client:SearchPlayer',
-                    shouldClose = true
-                }, {
-                    id = 'jailplayer',
-                    title = 'Jail',
-                    icon = 'user-lock',
-                    type = 'client',
-                    event = 'police:client:JailPlayer',
-                    shouldClose = true
-                }
-            }
-        }, {
-            id = 'policeobjects',
-            title = 'Objects',
-            icon = 'road',
-            items = {
-                {
-                    id = 'spawnpion',
-                    title = 'Cone',
-                    icon = 'triangle-exclamation',
-                    type = 'client',
-                    event = 'police:client:spawnCone',
-                    shouldClose = false
-                }, {
-                    id = 'spawnhek',
-                    title = 'Gate',
-                    icon = 'torii-gate',
-                    type = 'client',
-                    event = 'police:client:spawnBarrier',
-                    shouldClose = false
-                }, {
-                    id = 'spawnschotten',
-                    title = 'Speed Limit Sign',
-                    icon = 'sign-hanging',
-                    type = 'client',
-                    event = 'police:client:spawnRoadSign',
-                    shouldClose = false
-                }, {
-                    id = 'spawntent',
-                    title = 'Tent',
-                    icon = 'campground',
-                    type = 'client',
-                    event = 'police:client:spawnTent',
-                    shouldClose = false
-                }, {
-                    id = 'spawnverlichting',
-                    title = 'Lighting',
-                    icon = 'lightbulb',
-                    type = 'client',
-                    event = 'police:client:spawnLight',
-                    shouldClose = false
-                }, {
-                    id = 'spikestrip',
-                    title = 'Spike Strips',
-                    icon = 'caret-up',
-                    type = 'client',
-                    event = 'police:client:SpawnSpikeStrip',
-                    shouldClose = false
-                }, {
-                    id = 'deleteobject',
-                    title = 'Remove object',
-                    icon = 'trash',
-                    type = 'client',
-                    event = 'police:client:deleteObject',
-                    shouldClose = false
-                }
-            }
-        }
-    },
-    ["sheriff"] = {
-        {
-            id = 'emergencybutton',
-            title = 'Emergency button',
-            icon = 'bell',
-            type = 'client',
-            event = 'police:client:SendPoliceEmergencyAlert',
-            shouldClose = true
-        }, {
-            id = 'checkvehstatus',
-            title = 'Check Tune Status',
-            icon = 'circle-info',
-            type = 'client',
-            event = 'qb-tunerchip:client:TuneStatus',
-            shouldClose = true
-        }, {
-            id = 'resethouse',
-            title = 'Reset house lock',
-            icon = 'key',
-            type = 'client',
-            event = 'indigo-houses:client:ResetHouse',
-            shouldClose = true
-        }, {
-            id = 'takedriverlicense',
-            title = 'Revoke Drivers License',
-            icon = 'id-card',
-            type = 'client',
-            event = 'police:client:SeizeDriverLicense',
-            shouldClose = true
-        }, {
-            id = 'policeinteraction',
-            title = 'Police Actions',
-            icon = 'list-check',
-            items = {
-                {
-                    id = 'statuscheck',
-                    title = 'Check Health Status',
-                    icon = 'heart-pulse',
-                    type = 'client',
-                    event = 'hospital:client:CheckStatus',
-                    shouldClose = true
-                }, {
-                    id = 'checkstatus',
-                    title = 'Check status',
-                    icon = 'question',
-                    type = 'client',
-                    event = 'police:client:CheckStatus',
-                    shouldClose = true
-                }, {
-                    id = 'escort',
-                    title = 'Escort',
-                    icon = 'user-group',
-                    type = 'client',
-                    event = 'police:client:EscortPlayer',
-                    shouldClose = true
-                }, {
-                    id = 'searchplayer',
-                    title = 'Search',
-                    icon = 'magnifying-glass',
-                    type = 'client',
-                    event = 'police:client:SearchPlayer',
-                    shouldClose = true
-                }, {
-                    id = 'jailplayer',
-                    title = 'Jail',
-                    icon = 'user-lock',
-                    type = 'client',
-                    event = 'police:client:JailPlayer',
-                    shouldClose = true
-                }
-            }
-        }, {
-            id = 'policeobjects',
-            title = 'Objects',
-            icon = 'road',
-            items = {
-                {
-                    id = 'spawnpion',
-                    title = 'Cone',
-                    icon = 'triangle-exclamation',
-                    type = 'client',
-                    event = 'police:client:spawnCone',
-                    shouldClose = false
-                }, {
-                    id = 'spawnhek',
-                    title = 'Gate',
-                    icon = 'torii-gate',
-                    type = 'client',
-                    event = 'police:client:spawnBarrier',
-                    shouldClose = false
-                }, {
-                    id = 'spawnschotten',
-                    title = 'Speed Limit Sign',
-                    icon = 'sign-hanging',
-                    type = 'client',
-                    event = 'police:client:spawnRoadSign',
-                    shouldClose = false
-                }, {
-                    id = 'spawntent',
-                    title = 'Tent',
-                    icon = 'campground',
-                    type = 'client',
-                    event = 'police:client:spawnTent',
-                    shouldClose = false
-                }, {
-                    id = 'spawnverlichting',
-                    title = 'Lighting',
-                    icon = 'lightbulb',
-                    type = 'client',
-                    event = 'police:client:spawnLight',
-                    shouldClose = false
-                }, {
-                    id = 'spikestrip',
-                    title = 'Spike Strips',
-                    icon = 'caret-up',
-                    type = 'client',
-                    event = 'police:client:SpawnSpikeStrip',
-                    shouldClose = false
-                }, {
-                    id = 'deleteobject',
-                    title = 'Remove object',
-                    icon = 'trash',
-                    type = 'client',
-                    event = 'police:client:deleteObject',
-                    shouldClose = false
-                }
-            }
-        }
-    },
-    ["trooper"] = {
-        {
-            id = 'emergencybutton',
-            title = 'Emergency button',
-            icon = 'bell',
-            type = 'client',
-            event = 'police:client:SendPoliceEmergencyAlert',
-            shouldClose = true
-        }, {
-            id = 'checkvehstatus',
-            title = 'Check Tune Status',
-            icon = 'circle-info',
-            type = 'client',
-            event = 'qb-tunerchip:client:TuneStatus',
-            shouldClose = true
-        }, {
-            id = 'resethouse',
-            title = 'Reset house lock',
-            icon = 'key',
-            type = 'client',
-            event = 'indigo-houses:client:ResetHouse',
+            event = 'indigo-tunerchip:client:TuneStatus',
             shouldClose = true
         }, {
             id = 'takedriverlicense',
