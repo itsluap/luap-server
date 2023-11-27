@@ -38,14 +38,14 @@ const randomSetChar = () => {
 
 document.addEventListener("keydown", function(ev) {
     let key_pressed = ev.key;
-    let valid_keys = ['a','w','s','d','ArrowUp','ArrowDown','ArrowRight','ArrowLeft','Enter'];
+    let valid_keys = ['a', 'w', 's', 'd', 'ArrowUp', 'ArrowDown', 'ArrowRight', 'ArrowLeft', 'Enter', 'Escape'];
 
-    if(scrambler_started && valid_keys.includes(key_pressed) ){
-        switch(key_pressed){
+    if (scrambler_started && valid_keys.includes(key_pressed)) {
+        switch (key_pressed) {
             case 'w':
             case 'ArrowUp':
                 current_pos -= 10;
-                if(current_pos < 0) current_pos += 80;
+                if (current_pos < 0) current_pos += 80;
                 break;
             case 's':
             case 'ArrowDown':
@@ -55,7 +55,7 @@ document.addEventListener("keydown", function(ev) {
             case 'a':
             case 'ArrowLeft':
                 current_pos--;
-                if(current_pos < 0) current_pos = 79;
+                if (current_pos < 0) current_pos = 79;
                 break;
             case 'd':
             case 'ArrowRight':
@@ -65,10 +65,24 @@ document.addEventListener("keydown", function(ev) {
             case 'Enter':
                 CheckScrambler();
                 return;
+            case 'Escape':
+                closeScramblerMenu();
+                return;
         }
         drawPosition();
     }
 });
+
+
+function closeScramblerMenu() {
+    setTimeout(function() {
+        resetScrambler(false);
+        current_pos = correct_pos-codes_pos;
+        drawPosition('green', false);
+        $.post(`https://${GetParentResourceName()}/scrambler-callback`, JSON.stringify({ 'success': false }));
+        setTimeout(function() { $(".scrambler").fadeOut() }, 500);
+    }, 500);
+}
 
 function CheckScrambler() {
     StopScramblerTimer();
