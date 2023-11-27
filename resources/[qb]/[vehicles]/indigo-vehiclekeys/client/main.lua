@@ -94,7 +94,7 @@ local function robKeyLoop()
                     if GetPedInVehicleSeat(vehicle, -1) == PlayerPedId() and not HasKeys(plate) and not isBlacklistedVehicle(vehicle) and not AreKeysJobShared(vehicle) then
                         sleep = 0
                         SetVehicleEngineOn(vehicle, false, false, true)
-
+                        print(GlobalState.isPlayerOwnedCar)
                         if not GlobalState.isPlayerOwnedCar then -- trying to use globalstate to see if car is player owned or not
                             exports['ps-ui']:DisplayText("[H] Hotwire", "warning") -- Colors: primary, error, success, warning, info, mints"))
                             if IsControlJustPressed(0, 74) then
