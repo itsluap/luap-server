@@ -1,5 +1,5 @@
 local function hideText()
-    exports['ps-ui']:HideText
+    exports['ps-ui']:HideText()
 end
 
 local function drawText(text, position)
