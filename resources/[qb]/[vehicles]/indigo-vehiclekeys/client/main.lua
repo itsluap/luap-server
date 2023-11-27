@@ -90,12 +90,20 @@ local function robKeyLoop()
 
                     if GetPedInVehicleSeat(vehicle, -1) == PlayerPedId() and not HasKeys(plate) and not isBlacklistedVehicle(vehicle) and not AreKeysJobShared(vehicle) then
                         sleep = 0
-                        exports['ps-ui']:DisplayText("[H] Hotwire", "warning") -- Colors: primary, error, success, warning, info, mints"))
                         SetVehicleEngineOn(vehicle, false, false, true)
-
-                        if IsControlJustPressed(0, 74) then
-                            Hotwire(vehicle, plate)
-                        end
+                        QBCore.Functions.TriggerCallback('indigo-vehiclekeys:server:checkPlayerOwned', function(playerOwned)
+                            if not playerOwned then
+                                exports['ps-ui']:DisplayText("[H] Hotwire", "warning") -- Colors: primary, error, success, warning, info, mints"))
+                                if IsControlJustPressed(0, 74) then
+                                    Hotwire(vehicle, plate)
+                                end
+                            else 
+                                exports['ps-ui']:DisplayText("[H] Hack", "warning") -- Colors: primary, error, success, warning, info, mints"))
+                                if IsControlJustPressed(0, 74) then
+                                    HackPlayerOwned(vehicle, plate)
+                                end
+                            end
+                        end, plate)
                     end
                 end
 
