@@ -7,7 +7,7 @@ CreateThread(function()
         error(locale("ui_not_built"))
         return StopResource("Renewed-Banking")
     end
-    MySQL.query('SELECT * FROM bank_accounts_new', {}, function(accounts)
+    MySQL.query('SELECT * FROM bank_accounts', {}, function(accounts)
         for _,v in pairs (accounts) do
             local job = v.id
             v.auth = json.decode(v.auth)
@@ -34,7 +34,7 @@ function UpdatePlayerAccount(cid)
     local p = promise.new()
     MySQL.query('SELECT * FROM player_transactions WHERE id = ?', {cid}, function(account)
         local query = '%' .. cid .. '%'
-        MySQL.query("SELECT * FROM bank_accounts_new WHERE auth LIKE ? ", {query}, function(shared)
+        MySQL.query("SELECT * FROM bank_accounts WHERE auth LIKE ? ", {query}, function(shared)
             cachedPlayers[cid] = {
                 isFrozen = 0,
                 transactions = #account > 0 and json.decode(account[1].transactions) or {},
@@ -145,7 +145,7 @@ local function handleTransaction(account, title, amount, message, issuer, receiv
     if cachedAccounts[account] then
         table.insert(cachedAccounts[account].transactions, 1, transaction)
         local transactions = json.encode(cachedAccounts[account].transactions)
-        MySQL.prepare("INSERT INTO bank_accounts_new (id, transactions) VALUES (?, ?) ON DUPLICATE KEY UPDATE transactions = ?",{
+        MySQL.prepare("INSERT INTO bank_accounts (id, transactions) VALUES (?, ?) ON DUPLICATE KEY UPDATE transactions = ?",{
             account, transactions, transactions
         })
     elseif cachedPlayers[account] then
@@ -170,7 +170,7 @@ end
 exports('getAccountMoney', GetAccountMoney)
 
 local function updateBalance(account)
-    MySQL.prepare("UPDATE bank_accounts_new SET amount = ? WHERE id = ?",{ cachedAccounts[account].amount, account })
+    MySQL.prepare("UPDATE bank_accounts SET amount = ? WHERE id = ?",{ cachedAccounts[account].amount, account })
 end
 
 function AddAccountMoney(account, amount)
@@ -356,7 +356,7 @@ RegisterNetEvent('Renewed-Banking:server:createNewAccount', function(accountid)
 
     }
     cachedPlayers[cid].accounts[#cachedPlayers[cid].accounts+1] = accountid
-    MySQL.insert("INSERT INTO bank_accounts_new (id, amount, transactions, auth, isFrozen, creator) VALUES (?, ?, ?, ?, ?, ?) ",{
+    MySQL.insert("INSERT INTO bank_accounts (id, amount, transactions, auth, isFrozen, creator) VALUES (?, ?, ?, ?, ?, ?) ",{
         accountid, cachedAccounts[accountid].amount, json.encode(cachedAccounts[accountid].transactions), json.encode({cid}), cachedAccounts[accountid].frozen, cid
     })
 end)
@@ -412,7 +412,7 @@ RegisterNetEvent('Renewed-Banking:server:addAccountMember', function(account, me
     for k in pairs(cachedAccounts[account].auth) do auth[#auth+1] = k end
     auth[#auth+1] = targetCID
     cachedAccounts[account].auth[targetCID] = true
-    MySQL.update('UPDATE bank_accounts_new SET auth = ? WHERE id = ?',{json.encode(auth), account})
+    MySQL.update('UPDATE bank_accounts SET auth = ? WHERE id = ?',{json.encode(auth), account})
 end)
 
 RegisterNetEvent('Renewed-Banking:server:removeAccountMember', function(data)
@@ -441,7 +441,7 @@ RegisterNetEvent('Renewed-Banking:server:removeAccountMember', function(data)
         cachedPlayers[targetCID].accounts = newAccount
     end
     cachedAccounts[data.account].auth[targetCID] = nil
-    MySQL.update('UPDATE bank_accounts_new SET auth = ? WHERE id = ?',{json.encode(tmp), data.account})
+    MySQL.update('UPDATE bank_accounts SET auth = ? WHERE id = ?',{json.encode(tmp), data.account})
 end)
 
 RegisterNetEvent('Renewed-Banking:server:deleteAccount', function(data)
@@ -457,7 +457,7 @@ RegisterNetEvent('Renewed-Banking:server:deleteAccount', function(data)
         end
     end
 
-    MySQL.update("DELETE FROM `bank_accounts_new` WHERE id=:id", { id = account })
+    MySQL.update("DELETE FROM `bank_accounts` WHERE id=:id", { id = account })
 end)
 
 local find = string.find
@@ -518,7 +518,7 @@ local function updateAccountName(account, newName, src)
         end
         ::Skip::
     end
-    MySQL.update('UPDATE bank_accounts_new SET id = ? WHERE id = ?',{newName, account})
+    MySQL.update('UPDATE bank_accounts SET id = ? WHERE id = ?',{newName, account})
     return true
 end
 
@@ -543,7 +543,7 @@ local function addAccountMember(account, member)
     for k, _ in pairs(cachedAccounts[account].auth) do auth[#auth+1] = k end
     auth[#auth+1] = targetCID
     cachedAccounts[account].auth[targetCID] = true
-    MySQL.update('UPDATE bank_accounts_new SET auth = ? WHERE id = ?',{json.encode(auth), account})
+    MySQL.update('UPDATE bank_accounts SET auth = ? WHERE id = ?',{json.encode(auth), account})
 
 end exports("addAccountMember", addAccountMember)
 
@@ -576,7 +576,7 @@ local function removeAccountMember(account, member)
 
     cachedAccounts[account].auth[targetCID] = nil
 
-    MySQL.update('UPDATE bank_accounts_new SET auth = ? WHERE id = ?',{json.encode(tmp), account})
+    MySQL.update('UPDATE bank_accounts SET auth = ? WHERE id = ?',{json.encode(tmp), account})
 end
 exports("removeAccountMember", removeAccountMember)
 
