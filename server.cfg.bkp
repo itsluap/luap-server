@@ -1,8 +1,8 @@
 ## You CAN edit the following:
 endpoint_add_tcp "0.0.0.0:30120"
 endpoint_add_udp "0.0.0.0:30120"
-sv_maxclients 100
-set steam_webApiKey "AF94A1DB58A91D044F2A6A3E0C7A444D"
+sv_maxclients 30
+set steam_webApiKey "AED5CF4DC99F2D87B2C106076DEF8B58"
 sets tags "roleplay, police, ems, drugs"
 #set onesync on
 
@@ -20,7 +20,7 @@ sets activitypubFeed indigorp@mstdn.social
 sets Website "indigorp.net"
 #sets sv_pureLevel 1
 load_server_icon myLogo.png
-set sv_enforceGameBuild 2944
+set sv_enforceGameBuild 3095
 #set mysql_connection_string "user=root;password=YellowMustang12;host=localhost;port=3306;database=indigo-live;charset=utf8mb4"
 set mysql_connection_string "user=root;host=localhost;port=3306;database=indigo-live;charset=utf8mb4"
 sv_tebexSecret 9ece67381cffad8ef67ec7d10f20b2b0b41b86b6
