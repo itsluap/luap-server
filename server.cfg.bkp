@@ -141,15 +141,10 @@ ensure [voice]
 ## Permissions ##
 add_ace group.admin command allow # allow all commands
 #add_principal identifier.{{principalMasterIdentifier}} qbcore.god <- doesn't exist yet, change the generated one below to qbcore.god
-add_principal identifier.fivem:2448277 qbcore.god #luap2
+add_principal identifier.fivem:2448277 qbcore.god #luap
+add_principal identifier.fivem:2448277 group.admin #luap
 add_principal identifier.discord:406599443601817650 group.admin #mediumking
 add_principal identifier.discord:406599443601817650 qbcore.admin #mediumking
-add_principal identifier.discord:651614268306882570 group.admin #goose
-add_principal identifier.discord:651614268306882570 qbcore.admin #goose
-add_principal identifier.discord:325010690148663296 group.admin #learning life
-add_principal identifier.discord:325010690148663296 qbcore.admin #learning life
-add_principal identifier.discord:469602408570290176 group.admin #requis
-add_principal identifier.discord:469602408570290176 qbcore.admin #requis
 
 # Resources
 add_ace resource.qb-core command allow # Allow qb-core to execute commands
