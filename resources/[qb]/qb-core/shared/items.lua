@@ -631,4 +631,34 @@ QBShared.Items = {
     internals = {name = "internals", label = "Internal Cosmetics", weight = 0, type = "item", image = "internals.png", unique = true, useable = true, shouldClose = true, combinable = nil, description = ""},
     externals = {name = "externals", label = "Exterior Cosmetics", weight = 0, type = "item", image = "mirror.png", unique = true, useable = true, shouldClose = true, combinable = nil, description = ""},
 
+    -- methruns --
+    methcontainer = {name = "methcontainer", label = "Meth Container", weight = 9500, type = "item", image = "methcontainer.png", unique = true, useable = false, shouldClose = true, combinable = nil, description = "Container full of white powder"},
+    methcase = {name = "methcase", label = "Shiny Case", weight = 4500, type = "item", image = "securitycase.png", unique = true, useable = true, shouldClose = true, combinable = nil, description = "Briefcase full of money"},
+    floor_cleaner = {name = "floor_cleaner", label = "Floor Cleaner", weight = 1000, type = "item", image = "floorcleaner.png", unique = true, useable = false, shouldClose = true, combinable = nil, description = "", created = nil, decay = 0.0},
+
+    -- deliveries --
+    delivery_box = {name = "delivery_box", label = "Delivery Package", weight = 25000, type = "item", image = "delivery-box.png", unique = true, useable = false, shouldClose = true, combinable = nil, description = "", created = nil, decay = 1.0},
+    small_box = {name = "small-box", label = "Delivery Package", weight = 40000, type = "item", image = "small-box.png", unique = true, useable = false, shouldClose = true, combinable = nil, description = "", created = nil, decay = 1.0},
+    medium_box = {name = "medium-box", label = "Delivery Package", weight = 40000, type = "item", image = "medium-box.png", unique = true, useable = false, shouldClose = true, combinable = nil, description = "", created = nil, decay = 1.0},
+    large_box = {name = "large-box", label = "Delivery Package", weight = 40000, type = "item", image = "large-box.png", unique = true, useable = false, shouldClose = true, combinable = nil, description = "", created = nil, decay = 1.0},
+    large_box2 = {name = "large-box2", label = "Delivery Package", weight = 40000, type = "item", image = "large-box2.png", unique = true, useable = false, shouldClose = true, combinable = nil, description = "", created = nil, decay = 1.0},
+
+
+    -- indigo-stancer --
+    stancerkit = {name = 'stancerkit', label = 'Camber Arms', weight = 2000, type = 'item', image = 'tunerchip.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'Camber arms can be used to adjust vehicle tire angle'},
+    slushy = {name = 'slushy', label = 'Slushy', weight = 750, type = 'item', image = 'slushy.png', unique = true, useable = true, shouldClose = true, combinable = nil, description = 'A nice cold drink'},
+
+    -- casino --
+    casino_beer = {name = "casino_beer", label = "Casino Beer", weight = 0, type = "item", image = "casino_beer.png", unique = true, useable = false, shouldClose = false, combinable = nil, description = "Casino Beer"},
+    casino_burger = {name = "casino_burger", label = "Casino Burger", weight = 0, type = "item", image = "casino_burger.png", unique = true, useable = false, shouldClose = false, combinable = nil, description = "Casino Burger"},
+    casino_chips = {name = "casino_chips", label = "Casino Chips", weight = 0, type = "item", image = "casinochips.png", unique = true, useable = false, shouldClose = false, combinable = nil, description = "Casino Chips"},
+    casino_coffee = {name = "casino_coffee", label = "Casino Coffee", weight = 0, type = "item", image = "casino_coffee.png", unique = true, useable = false, shouldClose = false, combinable = nil, description = "Casino Coffee"},
+    casino_coke = {name = "casino_coke", label = "Casino Kofola", weight = 0, type = "item", image = "casino_coke.png", unique = true, useable = false, shouldClose = false, combinable = nil, description = "Casino Kofola"},
+    casino_donut = {name = "casino_donut", label = "Casino Donut", weight = 0, type = "item", image = "casino_donut.png", unique = true, useable = false, shouldClose = false, combinable = nil, description = "Casino Donut"},
+    casino_ego_chaser = {name = "casino_ego_chaser", label = "Casino Ego Chaser", weight = 0, type = "item", image = "casino_ego_chaser.png", unique = true, useable = false, shouldClose = false, combinable = nil, description = "Casino Ego Chaser"},
+    casino_luckypotion = {name = "casino_luckypotion", label = "Casino Lucky Potion", weight = 0, type = "item", image = "casino_luckypotion.png", unique = true, useable = false, shouldClose = false, combinable = nil, description = "Casino Lucky Potion"},
+    casino_psqs = {name = "casino_psqs", label = "Casino Ps & Qs", weight = 0, type = "item", image = "casino_psqs.png", unique = true, useable = false, shouldClose = false, combinable = nil, description = "Casino Ps & Qs"},
+    casino_sandwitch = {name = "casino_sandwitch", label = "Casino Sandwitch", weight = 0, type = "item", image = "casino_sandwitch.png", unique = true, useable = false, shouldClose = false, combinable = nil, description = "Casino Sandwitch"},
+    casino_sprite = {name = "casino_sprite", label = "Casino Sprite", weight = 0, type = "item", image = "casino_sprite.png", unique = true, useable = false, shouldClose = false, combinable = nil, description = "Casino Sprite"},
+
 }
