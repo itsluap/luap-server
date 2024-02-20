@@ -7,6 +7,7 @@
 		{ value: 'Staffchat', icon: 'fas fa-message' },
 		{ value: 'Players', icon: 'fas fa-users' },
 		{ value: 'Server', icon: 'fas fa-server' },
+		{ value: 'Commands', icon: 'fas fa-slash' },
 		{ value: 'Actions', icon: 'fas fa-wand-magic-sparkles' },
 	]
 </script>
@@ -32,12 +33,16 @@
 	{/each}
 
 	<button
-		class="w-[4vh] h-[4vh] rounded-[0.5vh] hover:bg-tertiary {$DEV_MODE ? "text-accent" : ""}
+		class="w-[4vh] h-[4vh] rounded-[0.5vh] hover:bg-tertiary {$DEV_MODE
+			? 'text-accent'
+			: ''}
 		relative
 		before:content-[attr(data-tip)]
 		before:absolute
 		before:-right-3 before:top-1/2
 		before:w-max before:max-w-xs
+		before:px-[1vh]
+		before:py-[0.5vh]
 		before:-translate-x-full before:-translate-y-1/2
 		before:bg-tertiary before:text-white
 		before:rounded-md before:opacity-0
@@ -56,20 +61,13 @@
 
 		hover:before:opacity-100 hover:after:opacity-100
 		"
-		data-tip='Dev Mode'
+		data-tip="Dev Mode"
 		on:click={() => {
 			DEV_MODE.update((wide) => !wide)
-			let data = {
-				type: 'client',
-				event: 'ps-adminmenu:client:ToggleDev',
-				label: 'Toggled Devmode',
-				perms: 'admin'
-			}
-			SendNUI("clickButton", {
-				data: data,
+			SendNUI('clickButton', {
+				data: 'toggleDevmode',
 			})
-			}
-		}
+		}}
 	>
 		<i class="fas fa-code"></i>
 	</button>
