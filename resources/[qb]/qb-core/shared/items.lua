@@ -661,4 +661,79 @@ QBShared.Items = {
     casino_sandwitch = {name = "casino_sandwitch", label = "Casino Sandwitch", weight = 0, type = "item", image = "casino_sandwitch.png", unique = true, useable = false, shouldClose = false, combinable = nil, description = "Casino Sandwitch"},
     casino_sprite = {name = "casino_sprite", label = "Casino Sprite", weight = 0, type = "item", image = "casino_sprite.png", unique = true, useable = false, shouldClose = false, combinable = nil, description = "Casino Sprite"},
 
+    -- puff puff pass --
+
+    -- lighters --
+    lighter_yellow = {name = "lighter_yellow", label = "Yellow Lighter", weight = 200, type = "item", image = "lighter_yellow.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "lighter"},
+    lighter_green = {name = "lighter_green", label = "Green Lighter", weight = 200, type = "item", image = "lighter_green.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "lighter"},
+    lighter_blue = {name = "lighter_blue", label = "Blue Lighter", weight = 200, type = "item", image = "lighter_blue.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "lighter"},
+
+    -- pounds --
+    white_widow_lb = {name = "white_widow_lb", label = "Pound of White Widow", weight = 10000, type = "item", image = "white_widow_lb.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "pound"},
+    skunk_lb = {name = "skunk_lb", label = "Pound of Skunk", weight = 10000, type = "item", image = "skunk_lb.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "pound"},
+    purple_haze_lb = {name = "purple_haze_lb", label = "Pound of Purple Haze", weight = 10000, type = "item", image = "purple_haze_lb.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "pound"},
+    og_kush_lb = {name = "og_kush_lb", label = "Pound of OG Kush", weight = 10000, type = "item", image = "og_kush_lb.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "pound"},
+    amnesia_lb = {name = "amnesia_lb", label = "Pound of Amnesia", weight = 10000, type = "item", image = "amnesia_lb.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "pound"},
+    ak47_lb = {name = "ak47_lb", label = "Pound of White Widow", weight = 10000, type = "item", image = "ak47_lb.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "pound"},
+
+    -- ounces --
+    white_widow_oz = {name = "white_widow_oz", label = "Ounce of White Widow", weight = 5000, type = "item", image = "white_widow_oz.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "ounce"},
+    skunk_oz = {name = "skunk_oz", label = "Ounce of Skunk", weight = 5000, type = "item", image = "skunk_oz.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "ounce"},
+    purple_haze_oz = {name = "purple_haze_oz", label = "Ounce of Purple Haze", weight = 5000, type = "item", image = "purple_haze_oz.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "ounce"},
+    og_kush_oz = {name = "og_kush_oz", label = "Ounce of OG Kush", weight = 5000, type = "item", image = "og_kush_oz.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "ounce"},
+    amnesia_oz = {name = "amnesia_oz", label = "Ounce of Amnesia", weight = 5000, type = "item", image = "amnesia_oz.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "ounce"},
+    ak47_oz = {name = "ak47_oz", label = "Ounce of White Widow", weight = 5000, type = "item", image = "ak47_oz.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "ounce"},
+
+    -- papers --
+    rolling_paper_orange = {name = "rolling_paper_orange", label = "Orange Rolling Papers", weight = 1000, type = "item", image = "rolling_paper_orange.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "papers"},
+    rolling_paper_purple = {name = "rolling_paper_purple", label = "Purple Rolling Papers", weight = 1000, type = "item", image = "rolling_paper_purple.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "papers"},
+    rolling_paper_yellow = {name = "rolling_paper_yellow", label = "Yellow Rolling Papers", weight = 1000, type = "item", image = "rolling_paper_yellow.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "papers"},
+    rolling_paper_red = {name = "rolling_paper_red", label = "Red Rolling Papers", weight = 1000, type = "item", image = "rolling_paper_red.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "papers"},
+    rolling_paper_green = {name = "rolling_paper_green", label = "Green Rolling Papers", weight = 1000, type = "item", image = "rolling_paper_green.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "papers"},
+    rolling_paper_blue = {name = "rolling_paper_blue", label = "Blue Rolling Papers", weight = 1000, type = "item", image = "rolling_paper_blue.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "papers"},
+
+    -- bags --
+    pink_weed_bag = {name = "pink_weed_bag", label = "Bag", weight = 1000, type = "item", image = "pink_weed_bag.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "bag"},
+    blue_weed_bag = {name = "blue_weed_bag", label = "Bag", weight = 1000, type = "item", image = "blue_weed_bag.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "bag"},
+    green_weed_bag = {name = "green_weed_bag", label = "Bag", weight = 1000, type = "item", image = "green_weed_bag.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "bag"},
+    ak47_bag = {name = "ak47_bag", label = "Bag of AK47", weight = 1000, type = "item", image = "ak47_bag.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "bag"},
+    skunk_bag = {name = "skunk_bag", label = "Bag of Skunk", weight = 1000, type = "item", image = "skunk_bag.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "bag"},
+    purple_haze_bag = {name = "purple_haze_bag", label = "Bag of Purple Haze", weight = 1000, type = "item", image = "purple_haze_bag.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "bag"},
+    og_kush_bag = {name = "og_kush_bag", label = "Bag of OG Kush", weight = 1000, type = "item", image = "og_kush_bag.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "bag"},
+    white_widow_bag = {name = "white_widow_bag", label = "Bag of White Widow", weight = 1000, type = "item", image = "white_widow_bag.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "bag"},
+    blue_dream_bag = {name = "blue_dream_bag", label = "Bag of Blue Dream", weight = 1000, type = "item", image = "blue_dream_bag.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "bag"},
+    amnesia_bag = {name = "amnesia_bag", label = "Bag of Amnesia", weight = 1000, type = "item", image = "amnesia_bag.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "bag"},
+    banana_kush_bag = {name = "banana_kush_bag", label = "Bag of Banana Kush", weight = 1000, type = "item", image = "banana_kush_bag.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "bag"},
+
+    -- joints --
+    joint_whitewidow = {name = "joint_whitewidow", label = "Joint (White Widow)", weight = 100, type = "item", image = "joint_whitewidow.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "joint"},
+    joint_skunk = {name = "joint_skunk", label = "Joint (Skunk)", weight = 100, type = "item", image = "joint_skunk.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "joint"},
+    joint_purplehaze = {name = "joint_purplehaze", label = "Joint (Purple Haze)", weight = 100, type = "item", image = "joint_purplehaze.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "joint"},
+    joint_og_kush = {name = "joint_og_kush", label = "Joint (OG Kush)", weight = 100, type = "item", image = "joint_og_kush.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "joint"},
+    joint_amnesia = {name = "joint_amnesia", label = "Joint (Amnesia)", weight = 100, type = "item", image = "joint_amnesia.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "joint"},
+    joint_ak47 = {name = "joint_ak47", label = "Joint (AK47)", weight = 100, type = "item", image = "joint_ak47.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "joint"},
+
+    -- real smoking --
+    redw = {name = "redw", label = "Redwood Pack", weight = 200, type = "item", image = "redw.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "Take out your cigarettes"},
+    marlboro = {name = "marlboro", label = "Marlboro Pack", weight = 200, type = "item", image = "marlboro.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "Take out your cigarettes"},
+    cubancigar = {name = "cubancigar", label = "Cuban Cigar", weight = 200, type = "item", image = "cubancigar.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "Real cigar"},
+    davidoffcigar = {name = "davidoffcigar", label = "Davidoff Cigar", weight = 200, type = "item", image = "davidoffcigar.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "Real cigar"},
+    redwcig = {name = "redwcig", label = "Redwood Cigarette", weight = 200, type = "item", image = "redwcig.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "Smoking cigarette"},
+    marlborocig = {name = "marlborocig", label = "Marlboro Cigarette", weight = 200, type = "item", image = "marlborocig.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "Smoking cigarette"},
+    vape = {name = "vape", label = "Vape", weight = 200, type = "item", image = "vape.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "Electronic cigarette"},
+    liquid = {name = "liquid", label = "Liquid", weight = 200, type = "item", image = "liquid.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "Vape liquid"},
+    bong = {name = "bong", label = "Bong", weight = 200, type = "item", image = "bong.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "Bong"},
+    og_kush_joint = {name = "og_kush_joint", label = "Og Kush Joint", weight = 200, type = "item", image = "og_kush_joint.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "Good joint"},
+    blue_dream_joint = {name = "blue_dream_joint", label = "Blue Dream Joint", weight = 200, type = "item", image = "blue_dream_joint.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "Good joint"},
+    purple_haze_joint = {name = "purple_haze_joint", label = "Purple Haze Joint", weight = 200, type = "item", image = "purple_haze_joint.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "Good joint"},
+    banana_kush_joint = {name = "banana_kush_joint", label = "Banana Kush Joint", weight = 200, type = "item", image = "banana_kush_joint.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "Good joint"},
+    og_kush_weed = {name = "og_kush_weed", label = "Og Kush Weed 1G", weight = 200, type = "item", image = "og_kush_weed.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "Weed for packing"},
+    blue_dream_weed = {name = "blue_dream_weed", label = "Blue Dream Weed 1G", weight = 200, type = "item", image = "blue_dream_weed.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "Weed for packing"},
+    banana_kush_weed = {name = "banana_kush_weed", label = "Banana Kush Weed 1G", weight = 200, type = "item", image = "banana_kush_weed.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "Weed for packing"},
+    purple_haze_weed = {name = "purple_haze_weed", label = "Purple Haze Weed 1G", weight = 200, type = "item", image = "purple_haze_weed.png", unique = false, useable = true, shouldClose = true, combinable = nil, description = "Weed for packing"},
+
+    -- drones --
+    drone = {name = 'drone', label = 'Drone', weight = 1500, type = 'item', image = 'drone.png', unique = true, useable = true, shouldClose = true, combinable = nil, description = 'Regular Drone with regular options.'},
+    drone_lspd = {name = 'drone_lspd', label = 'LSPD Drone', weight = 1500, type = 'item', image = 'drone_lspd.png', unique = true, useable = true, shouldClose = true, combinable = nil, description = 'Advanced LSPD Drone with and advanced options.'},
+
 }
