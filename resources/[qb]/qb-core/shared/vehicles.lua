@@ -12,25 +12,6 @@ local Vehicles = {
         type = 'automobile',   -- Vehicle type, refer here https://docs.fivem.net/natives/?_0x6AE51D4B & here https://docs.fivem.net/natives/?_0xA273060E
         shop = 'pdm',          -- Can be a single shop or multiple shops. For multiple shops for example {'shopname1','shopname2','shopname3'}
     },
-    
-	-- PD CARS --
-	
-    { model = 'poldemonrb',            name = 'Police Demon',               brand = 'Dodge',           price = 1000000,   category = 'sports',       type = 'automobile', shop = '1of1' },
-
-	-- LUAP VEHICELS --
-
-    { model = 'chr20',            name = '2020 Hellcat',               brand = 'Dodge',           price = 1000000,   category = 'sports',       type = 'automobile', shop = '1of1' },
-    { model = 'rmodm4gts',        name = 'M4 GTS',                     brand = 'BMW',             price = 1000000,   category = 'sports',       type = 'automobile', shop = '1of1' },
-
-	-- king -- 
-
-    { model = 'navigator',        name = 'Navigator',                  brand = 'Lincoln',         price = 1000000,   category = 'sports',       type = 'automobile', shop = '1of1' },
-    { model = 'rmodf40',          name = 'F40',                        brand = 'Ferrari',         price = 1000000,   category = 'sports',       type = 'automobile', shop = '1of1' },
-
-	--------- 1of1 -------------------------
-
-    { model = 'leikam2',        name = 'M2',                           brand = 'BMW',             price = 1000000,   category = 'sports',       type = 'automobile', shop = '1of1' },
-    { model = 'ttsto',          name = 'Huracan STO',                  brand = 'Lamborghini',     price = 1000000,   category = 'sports',       type = 'automobile', shop = '1of1' },
 
 	----------------------------------------
     { model = 'blista',        name = 'Blista',                        brand = 'Dinka',           price = 13000,   category = 'compacts',       type = 'automobile', shop = 'pdm' },
