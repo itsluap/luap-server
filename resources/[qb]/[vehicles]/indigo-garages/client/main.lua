@@ -820,7 +820,7 @@ RegisterNetEvent('indigo-garages:client:TakeOutDepot', function(data)
     local vehExists = DoesEntityExist(OutsideVehicles[vehicle.plate])
     QBCore.Functions.TriggerCallback('indigo-garages:server:IsSpawnOk', function(spawn)
         if spawn and not vehExists then
-            print('garage spawn') print(spawn) print(vehExists) print (OutsideVehicles[vehicle.plate])
+            -- print('garage spawn') print(spawn) print(vehExists) print (OutsideVehicles[vehicle.plate])
             if UseEnc0dedPersistenVehicles then
                 QBCore.Functions.TriggerCallback('indigo-garages:server:checkIsSpawned', function(spawned)
                     if spawned then
