@@ -223,7 +223,7 @@ CreateThread(function()
         },
     distance = 3.5
     })
-    exports["qb-target"]:AddBoxZone("weedproces", vector3(2328.53, 2570.99, 45.61), 2.5, 2.5, {
+    exports["qb-target"]:AddBoxZone("weedproces", vector3(2328.53, 2570.99, 45.61), 1.5, 1.5, {
         name = "weedproces",
         heading = 331.74,
         debugPoly = true,
