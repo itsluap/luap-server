@@ -205,12 +205,12 @@ CreateThread(function()
         },
     distance = 3.5
     })
-    exports["qb-target"]:AddBoxZone("cokebricked", vector3(1100.51, -3199.46, -38.93), 2.6, 1.0, {
+    exports["qb-target"]:AddBoxZone("cokebricked", vector3(1100.51, -3199.46, -39.99), 2.6, 1.0, {
         name = "cokebricked",
         heading = 90,
         debugPoly = true,
-        minZ = -39.99,
-        maxZ = -38.59,
+        minZ = -40.99,
+        maxZ = -39.99,
     }, {
         options = {
             {
