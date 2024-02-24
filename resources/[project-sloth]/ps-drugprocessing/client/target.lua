@@ -173,8 +173,8 @@ CreateThread(function()
         name = "cokeleafproc",
         heading = 0,
         debugPoly = true,
-        minZ = -44.39,
-        maxZ = -43.39,
+        minZ = -46.39,
+        maxZ = -45.39,
     }, {
         options = {
             {
