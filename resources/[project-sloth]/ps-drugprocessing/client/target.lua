@@ -169,7 +169,7 @@ CreateThread(function()
         },
     distance = 3.5
     })
-    exports["qb-target"]:AddBoxZone("cokeleafproc", vector3(1086.2, -3194.9, -38.99), 2.5, 1.4, {
+    exports["qb-target"]:AddBoxZone("cokeleafproc", vector3(1086.2, -3194.9, -39.99), 2.5, 1.4, {
         name = "cokeleafproc",
         heading = 0,
         debugPoly = true,
