@@ -74,7 +74,7 @@ local function RobberyPed()
                 if dist > 100 then
                     stealingPed = nil
                     stealData = {}
-                    exports['qb-target']:RemoveZone('stealingPed')
+                    exports.ox_target:removeLocalEntity('stealingPed')
                     break
                 end
                 Wait(0)
@@ -205,7 +205,7 @@ local function SellToPed(ped)
                 if pedDist2 < 1.5 and cornerselling then
                     if Config.UseTarget and not zoneMade then
                         zoneMade = true
-                        exports['qb-target']:AddEntityZone('sellingPed', ped, {
+                        exports.ox_target:addLocalEntity('sellingPed', ped, {
                             name = 'sellingPed',
                             debugPoly = false,
                         }, {
@@ -224,7 +224,7 @@ local function SellToPed(ped)
                                         SetEntityAsNoLongerNeeded(entity)
                                         ClearPedTasksImmediately(entity)
                                         lastPed[#lastPed + 1] = entity
-                                        exports['qb-target']:RemoveZone('sellingPed')
+                                        exports.ox_target:removeLocalEntity('sellingPed')
                                         PoliceCall()
                                     end,
                                 },
@@ -238,7 +238,7 @@ local function SellToPed(ped)
                                         SetEntityAsNoLongerNeeded(entity)
                                         ClearPedTasksImmediately(entity)
                                         lastPed[#lastPed + 1] = entity
-                                        exports['qb-target']:RemoveZone('sellingPed')
+                                        exports.ox_target:removeLocalEntity('sellingPed')
                                     end,
                                 },
                             },
@@ -279,7 +279,7 @@ local function SellToPed(ped)
                 else
                     if Config.UseTarget then
                         zoneMade = false
-                        exports['qb-target']:RemoveZone('sellingPed')
+                        exports.ox_target:removeLocalEntity('sellingPed')
                     else
                         if textDrawn then
                             exports['qb-core']:HideText()
