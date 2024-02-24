@@ -208,7 +208,7 @@ CreateThread(function()
     exports["qb-target"]:AddBoxZone("cokebricked", vector3(1100.51, -3199.46, -39.99), 2.6, 1.0, {
         name = "cokebricked",
         heading = 90,
-        debugPoly = true,
+        debugPoly = false,
         minZ = -40.99,
         maxZ = -39.99,
     }, {
@@ -226,7 +226,7 @@ CreateThread(function()
     exports["qb-target"]:AddBoxZone("weedproces", vector3(2328.53, 2570.99, 46.61), 2.5, 2.5, {
         name = "weedproces",
         heading = 331.74,
-        debugPoly = false,
+        debugPoly = true,
         minZ = 45.99,
         maxZ = 47.59,
     }, {
