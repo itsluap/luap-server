@@ -187,12 +187,12 @@ CreateThread(function()
         },
     distance = 3.5
     })
-    exports["qb-target"]:AddBoxZone("cokepowdercut", vector3(1092.89, -3195.78, -38.99), 7.65, 1.2, {
+    exports["qb-target"]:AddBoxZone("cokepowdercut", vector3(1092.89, -3195.78, -39.99), 7.65, 1.2, {
         name = "cokepowdercut",
         heading = 90,
         debugPoly = true,
-        minZ = -39.39,
-        maxZ = -38.44,
+        minZ = -40.99,
+        maxZ = -39.99,
     }, {
         options = {
             {
