@@ -33,7 +33,7 @@ end
 
 local function RobberyPed()
     if Config.UseTarget then
-        exports['qb-target']:addEntity('stealingPed', stealingPed, {
+        exports['qb-target']:AddEntityZone('stealingPed', stealingPed, {
             name = 'stealingPed',
             debugPoly = false,
         }, {
@@ -204,7 +204,7 @@ local function SellToPed(ped)
                 if pedDist2 < 1.5 and cornerselling then
                     if Config.UseTarget and not zoneMade then
                         zoneMade = true
-                        exports['qb-target']:addEntity('sellingPed', ped, {
+                        exports['qb-target']:AddEntityZone('sellingPed', ped, {
                             name = 'sellingPed',
                             debugPoly = false,
                         }, {
