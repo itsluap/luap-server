@@ -33,7 +33,7 @@ end
 
 local function RobberyPed()
     if Config.UseTarget then
-        exports['qb-target']:AddEntityZone('stealingPed', stealingPed, {
+        exports.ox_target:addLocalEntity('stealingPed', stealingPed, {
             name = 'stealingPed',
             debugPoly = false,
         }, {
@@ -54,7 +54,7 @@ local function RobberyPed()
                         TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items[stealData.item], "add")
                         stealingPed = nil
                         stealData = {}
-                        exports['qb-target']:RemoveZone('stealingPed')
+                        exports.ox_target:removeLocalEntity('stealingPed')
                     end,
                     canInteract = function(entity)
                         if IsEntityDead(entity) then
@@ -80,7 +80,8 @@ local function RobberyPed()
                 Wait(0)
             end
         end)
-    else
+    end
+        --[[
         CreateThread(function()
             while stealingPed do
                 if IsEntityDead(stealingPed) then
@@ -121,7 +122,7 @@ local function RobberyPed()
                 Wait(0)
             end
         end)
-    end
+    end--]]
 end
 
 local function SellToPed(ped)
