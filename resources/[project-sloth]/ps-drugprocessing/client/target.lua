@@ -77,7 +77,7 @@ CreateThread(function()
                 --job = "methcook", -- Remove this line if you do not want a job check.
             },
         },
-    distance = 3.5
+    distance = 2.0
     })
     exports["qb-target"]:AddBoxZone("methtempup", vector3(982.56, -145.59, -49.0), 1.2, 1.4, {
         name = "methtempup",
@@ -95,7 +95,7 @@ CreateThread(function()
                 --job = "methcook", -- Remove this line if you do not want a job check.
             },
         },
-    distance = 3.5
+    distance = 2.0
     })
     exports["qb-target"]:AddBoxZone("methtempdown", vector3(979.59, -144.14, -49.0), 1.2, 0.5, {
         name = "methtempdown",
@@ -113,7 +113,7 @@ CreateThread(function()
                 --job = "methcook", -- Remove this line if you do not want a job check.
             },
         },
-    distance = 3.5
+    distance = 2.0
     })
     exports["qb-target"]:AddBoxZone("methbagging", vector3(987.44, -140.5, -49.0), 0.5, 0.7, {
         name = "methbagging",
@@ -131,7 +131,7 @@ CreateThread(function()
                 --job = "methcook", -- Remove this line if you do not want a job check.
             },
         },
-    distance = 3.5
+    distance = 2.0
     })
     exports["qb-target"]:AddBoxZone("methkeypad", vector3(969.04, -146.17, -46.4), 0.4, 0.2, {
         name = "methkeypad",
@@ -149,7 +149,7 @@ CreateThread(function()
                 --job = "methcook", -- Remove this line if you do not want a job check.
             },
         },
-    distance = 3.5
+    distance = 2.0
     })
     exports["qb-target"]:AddBoxZone("cokeleave", vector3(1088.56, -3187.02, -38.67), 1, 1, {
         name = "cokeleave",
@@ -167,7 +167,7 @@ CreateThread(function()
                 --job = "cokecutter", -- Remove this line if you do not want a job check.
             },
         },
-    distance = 3.5
+    distance = 2.0
     })
     exports["qb-target"]:AddBoxZone("cokeleafproc", vector3(1086.2, -3194.9, -39.99), 2.5, 1.4, {
         name = "cokeleafproc",
@@ -185,7 +185,7 @@ CreateThread(function()
                 --job = "cokecutter", -- Remove this line if you do not want a job check.
             },
         },
-    distance = 3.5
+    distance = 2.0
     })
     exports["qb-target"]:AddBoxZone("cokepowdercut", vector3(1092.89, -3195.78, -39.99), 7.65, 1.2, {
         name = "cokepowdercut",
@@ -203,7 +203,7 @@ CreateThread(function()
                 --job = "cokecutter", -- Remove this line if you do not want a job check.
             },
         },
-    distance = 3.5
+    distance = 2.0
     })
     exports["qb-target"]:AddBoxZone("cokebricked", vector3(1100.51, -3199.46, -39.99), 2.6, 1.0, {
         name = "cokebricked",
@@ -221,7 +221,7 @@ CreateThread(function()
                 --job = "cokecutter", -- Remove this line if you do not want a job check.
             },
         },
-    distance = 3.5
+    distance = 2.0
     })
     exports["qb-target"]:AddBoxZone("weedproces", vector3(2328.53, 2570.99, 45.61), 1.0, 1.0, {
         name = "weedproces",
@@ -238,7 +238,7 @@ CreateThread(function()
                 label = Lang:t("target.weedproces"),
             },
         },
-    distance = 3.5
+    distance = 2.0
     })
 	exports["qb-target"]:AddBoxZone("heroinproces", vector3(1384.9, -2080.61, 52.21), 2.5, 2.5, {
         name = "heroinproces",
@@ -255,7 +255,7 @@ CreateThread(function()
                 label = Lang:t("target.heroinproces"),
             },
         },
-    distance = 3.5
+    distance = 2.0
     })
     exports['qb-target']:AddBoxZone("thychloride", vector3(-679.77, 5800.7, 17.33), 1, 1, {
 		name="thychloride",
