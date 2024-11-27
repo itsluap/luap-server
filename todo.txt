@@ -1,8 +1,0 @@
-- need to create an overview of everything done in the server already
-    - go through github commits if needed
-
-- need to fix any bugs that are still hanging around
-    - this includes cleaning and optimizing scripts as much as possible
-
-- need to get other people on board with starting a new server and actively helping
-    - around 20 people or so 
